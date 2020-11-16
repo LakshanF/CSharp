@@ -36,7 +36,7 @@ namespace ReflectIt
             {
                 var destination = _map[sourceType.GetGenericTypeDefinition()];
                 var closeDestination = destination.MakeGenericType(sourceType.GenericTypeArguments);
-                return Activator.CreateInstance(closeDestination);
+                return CreateInstance(closeDestination);
             }
             else if (!sourceType.IsAbstract)
             {
