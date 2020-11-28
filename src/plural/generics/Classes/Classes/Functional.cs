@@ -5,11 +5,11 @@ using System.Linq;
 using System.Diagnostics;
 using System.Net;
 
-namespace Plural_CSharp
+namespace Classes
 {
-    static class Program
+    public static class Functional
     {
-        static void Main(string[] args)
+        public static void Run()
         {
             Console.WriteLine("Start");
 
