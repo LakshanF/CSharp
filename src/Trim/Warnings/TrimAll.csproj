@@ -2,10 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-    <runtimeidentifier>win-x64</runtimeidentifier>
-    <PublishTrimmed>true</PublishTrimmed>
-    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    <TargetFramework>net7.0</TargetFramework>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
   </PropertyGroup>
 
 </Project>

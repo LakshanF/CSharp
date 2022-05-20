@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 namespace TrimAll
@@ -13,6 +14,7 @@ namespace TrimAll
 
         public void DoTheTango()
         {
+            typeof(IL2055_Reflection<>).MakeGenericType(new Type[] { typeof(IL2055) });
             Type t = GetTheType();
             Type[] typeArgs = { typeof(string)};
 
@@ -21,7 +23,7 @@ namespace TrimAll
         }        
     }
 
-    class IL2055_Reflection<T>
+    class IL2055_Reflection<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)] T>
     {
         public bool Add(T t)
         {
@@ -29,3 +31,19 @@ namespace TrimAll
         }
     }
 }
+
+/**
+class Lazy<[DynamicallyAccessedMembers(DynamicallyAccessedMemberType.PublicParameterlessConstructor)] T>
+{
+    // ...
+}
+
+void TestMethod(Type unknownType)
+{
+    // IL2055 Trim analysis: Call to `System.Type.MakeGenericType(Type[])` can not be statically analyzed. It's not possible to guarantee the availability of requirements of the generic type.
+    typeof(Lazy<>).MakeGenericType(new Type[] { typeof(TestType) });
+
+    // IL2055 Trim analysis: Call to `System.Type.MakeGenericType(Type[])` can not be statically analyzed. It's not possible to guarantee the availability of requirements of the generic type.
+    unknownType.MakeGenericType(new Type[] { typeof(TestType) });
+}
+**/
