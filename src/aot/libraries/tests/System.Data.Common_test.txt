@@ -1,0 +1,131 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Data.Common\tests\System.Data.Common.Tests.csproj (in 577 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Data.Common.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.Common.Tests\Release\net7.0\System.Data.Common.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.Common.Tests\Release\net7.0\native\System.Data.Common.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.Common.Tests\Release\net7.0\native\System.Data.Common.Tests.exp
+  System.Data.Common.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.Common.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:00:55.06 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.Common.Tests\Release\net7.0\publish\
+  System.Data.Common.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Data.Common.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Data.Tests.DataCommonEventSourceTest.InvokeCodeThatShouldFirEvents_EnsureEventsFired
+  [FAIL] System.Data.Tests.FacadeTest.TestSystemData(typeName: "Microsoft.SqlServer.Server.SqlMetaData")
+  System.IO.FileNotFoundException : Cannot load assembly 'System.Data'. No metadata found for this assembly.
+     at System.Reflection.Runtime.TypeParsing.GetTypeOptions.CoreResolveAssembly(RuntimeAssemblyName) + 0x74
+     at System.Reflection.Runtime.TypeParsing.AssemblyQualifiedTypeName.ResolveType(Assembly, GetTypeOptions) + 0x1f
+     at System.Data.Tests.FacadeTest.TestSystemData(String) + 0x49
+     at System.Data.Common.Tests!<BaseAddress>+0x10fca3f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Data.Tests.FacadeTest.TestSystemData(typeName: "System.Data.SqlTypes.SqlBytes")
+  System.IO.FileNotFoundException : Cannot load assembly 'System.Data'. No metadata found for this assembly.
+     at System.Reflection.Runtime.TypeParsing.GetTypeOptions.CoreResolveAssembly(RuntimeAssemblyName) + 0x74
+     at System.Reflection.Runtime.TypeParsing.AssemblyQualifiedTypeName.ResolveType(Assembly, GetTypeOptions) + 0x1f
+     at System.Data.Tests.FacadeTest.TestSystemData(String) + 0x49
+     at System.Data.Common.Tests!<BaseAddress>+0x10fca3f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Data.Tests.XmlDataReaderTest.XmlLoadTest
+  System.ArgumentException : Column requires a valid DataType.
+     at System.Data.DataColumn.set_DataType(Type) + 0x530
+     at System.Data.XSDSchema.SetProperties(Object, XmlAttribute[]) + 0x240
+     at System.Data.XSDSchema.HandleElementColumn(XmlSchemaElement, DataTable, Boolean) + 0x4ad
+     at System.Data.XSDSchema.HandleParticle(XmlSchemaParticle, DataTable, ArrayList, Boolean) + 0x31b
+     at System.Data.XSDSchema.HandleComplexType(XmlSchemaComplexType, DataTable, ArrayList, Boolean) + 0x43b
+     at System.Data.XSDSchema.InstantiateTable(XmlSchemaElement, XmlSchemaComplexType, Boolean) + 0x3fc
+     at System.Data.XSDSchema.HandleTable(XmlSchemaElement) + 0xc5
+     at System.Data.XSDSchema.HandleDataSet(XmlSchemaElement, Boolean) + 0x428
+     at System.Data.XSDSchema.LoadSchema(XmlSchemaSet, DataSet) + 0x8ea
+     at System.Data.DataSet.ReadXSDSchema(XmlReader, Boolean) + 0x1df
+     at System.Data.DataSet.ReadXmlSchema(XmlReader, Boolean) + 0x1e6
+     at System.Data.Tests.XmlDataReaderTest.XmlLoadTest() + 0x47
+     at System.Data.Common.Tests!<BaseAddress>+0x11bc978
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Data.Tests.DataSetTest2.Bug537229_BinFormatSerializer_Test
+  [SKIP] System.Data.Tests.DataSetTest.SerializationFormat_Binary_works_with_appconfig_switch
+  [SKIP] System.Data.SqlTypes.Tests.SqlStringSortingTest.SqlStringValidComparisonTest(cultureName: "ja-JP", localeId: 1041)
+  [SKIP] System.Data.Tests.DataSetTypedDataSetTest.TypedDataSet
+  [SKIP] System.Data.Tests.DataTableReadXmlSchemaTest.XsdSchemaSerializationIgnoresLocale
+  [SKIP] System.Data.Tests.DataTableReadXmlSchemaTest.XsdSchemaDeserializationIgnoresLocale
+  [FAIL] System.Data.Tests.RestrictedTypeHandlingTests.DataTable_ReadXml_ForbidsUnknownTypes
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.Data.Tests.RestrictedTypeHandlingTests.<ForbiddenTypes>d__3.MoveNext() + 0x17b
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Data.Tests.RestrictedTypeHandlingTests.DataTable_ReadXmlSchema_AllowsUnknownTypes
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.Data.Tests.RestrictedTypeHandlingTests.<ForbiddenTypes>d__3.MoveNext() + 0x17b
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Data.Tests.RestrictedTypeHandlingTests.DataSet_ReadXmlSchema_AllowsUnknownTypes
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.Data.Tests.RestrictedTypeHandlingTests.<ForbiddenTypes>d__3.MoveNext() + 0x17b
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Data.Tests.RestrictedTypeHandlingTests.DataSet_ReadXml_ForbidsUnknownTypes
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.Data.Tests.RestrictedTypeHandlingTests.<ForbiddenTypes>d__3.MoveNext() + 0x17b
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [SKIP] System.Data.Tests.DataTableTest.Serialize
+  [SKIP] System.Data.Tests.DataTableTest.SerializationFormat_Binary_works_with_appconfig_switch
+  Finished System.Data.Common.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 11676, Errors: 0, Failures: 7, Skipped: 9. Time: 0.5796447s
+  ----- end Sun 05/29/2022  8:01:02.19 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Data.Common.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Data.Common\tests\System.Data.Common.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Data.Common.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Data.Common\tests\System.Data.Common.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:51.92

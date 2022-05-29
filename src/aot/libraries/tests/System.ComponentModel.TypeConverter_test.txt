@@ -1,0 +1,834 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.ComponentModel.TypeConverter\tests\System.ComponentModel.TypeConverter.Tests.csproj (in 2.12 sec).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.ComponentModel.TypeConverter.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.TypeConverter.Tests\Release\net7.0\System.ComponentModel.TypeConverter.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.TypeConverter.Tests\Release\net7.0\native\System.ComponentModel.TypeConverter.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.TypeConverter.Tests\Release\net7.0\native\System.ComponentModel.TypeConverter.Tests.exp
+  System.ComponentModel.TypeConverter.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.TypeConverter.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  7:59:11.51 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.TypeConverter.Tests\Release\net7.0\publish\
+  System.ComponentModel.TypeConverter.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.ComponentModel.TypeConverter.Tests, Version=9.9.9.9, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_NullInstanceWithParent_ThrowsArgumentNullException
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeObjectWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeTypeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeTypeWithoutParent_CallsTypeObjectOverload_ByObjectAndType
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_NullInstanceWithParent_ThrowsArgumentNullException
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeTypeObjectWithoutParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeTypeWithoutParent_CallsTypeObjectOverload_ByType
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetRuntimeType_InvokeWithoutParentWithUserDefinedType_RetunsUnderlyingSystemType
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeTypeWithoutParent_CallsTypeObjectOverload_Object
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeTypeWithoutParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.IsSupportedType_NullTypeWithParent_ThrowsArgumentNullException
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeObjectWithoutParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetFullComponentName_InvokeWithoutParent_ReturnsNull
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetCache_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeTypeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeTypeWithoutParent_CallsTypeObjectOverload_Type
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.CreateInstance_InvokeWithoutParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeTypeWithoutParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetExtenderProviders_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeTypeObjectWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetReflectionType_InvokeObjectWithoutParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.CreateInstance_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetFullComponentName_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetRuntimeType_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetRuntimeType_InvokeWithoutParentSystemDefinedType_ReturnsSame
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.IsSupportedType_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeTypeObjectWithoutParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetFullComponentName_InvokeWithCustomTypeDescriptor_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetExtendedTypeDescriptor_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Design.Tests.CheckoutExceptionTests.Ctor_SerializationInfo_StreamingContext
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetFullComponentName_InvokeWithNullTypeDescriptor_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeTypeObjectWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.TypeDescriptionProviderTests.GetTypeDescriptor_InvokeObjectWithParent_ReturnsExpected
+  [FAIL] System.ComponentModel.Tests.InheritanceAttributeTests.Default_Get_ReturnsExpected
+  Assert.Same() Failure
+  Expected: NotInherited
+  Actual:   NotInherited
+     at System.ComponentModel.Tests.InheritanceAttributeTests.Default_Get_ReturnsExpected() + 0xf8
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.ComponentModel.Tests.LicenseExceptionTests.Ctor_SerializationInfo_StreamingContext
+  [FAIL] System.ComponentModel.Tests.PasswordPropertyTextAttributeTests.Default_Get_ReturnsExpected
+  Assert.Same() Failure
+  Expected: PasswordPropertyTextAttribute { Password = False, TypeId = typeof(System.ComponentModel.PasswordPropertyTextAttribute) }
+  Actual:   PasswordPropertyTextAttribute { Password = False, TypeId = typeof(System.ComponentModel.PasswordPropertyTextAttribute) }
+     at System.ComponentModel.Tests.PasswordPropertyTextAttributeTests.Default_Get_ReturnsExpected() + 0xe7
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.RecommendedAsConfigurableAttributeTests.Default_Get_ReturnsExpected
+  Assert.Same() Failure
+  Expected: RecommendedAsConfigurableAttribute { RecommendedAsConfigurable = False, TypeId = typeof(System.ComponentModel.RecommendedAsConfigurableAttribute) }
+  Actual:   RecommendedAsConfigurableAttribute { RecommendedAsConfigurable = False, TypeId = typeof(System.ComponentModel.RecommendedAsConfigurableAttribute) }
+     at System.ComponentModel.Tests.RecommendedAsConfigurableAttributeTests.Default_Get_ReturnsExpected() + 0xdf
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.RunInstallerAttributeTests.Default_Get_ReturnsExpected
+  Assert.Same() Failure
+  Expected: RunInstallerAttribute { RunInstaller = False, TypeId = typeof(System.ComponentModel.RunInstallerAttribute) }
+  Actual:   RunInstallerAttribute { RunInstaller = False, TypeId = typeof(System.ComponentModel.RunInstallerAttribute) }
+     at System.ComponentModel.Tests.RunInstallerAttributeTests.Default_Get_ReturnsExpected() + 0xe7
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementElementsPropertyDescriptor
+  Assert.NotNull() Failure
+     at System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementElementsPropertyDescriptor() + 0x33f
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementAttributePropertyDescriptor
+  Assert.NotNull() Failure
+     at System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementAttributePropertyDescriptor() + 0x561
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementValuePropertyDescriptor
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementValuePropertyDescriptor() + 0x15b
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XAttributeValuePropertyDescriptor
+  Assert.False() Failure
+  Expected: False
+  Actual:   True
+     at System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XAttributeValuePropertyDescriptor() + 0xa2
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementDescendantsPropertyDescriptor
+  Assert.NotNull() Failure
+     at System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementDescendantsPropertyDescriptor() + 0x3ae
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementXmlPropertyDescriptor
+  Assert.NotNull() Failure
+     at System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementXmlPropertyDescriptor() + 0x2d1
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementElementPropertyDescriptor
+  System.NullReferenceException : Object reference not set to an instance of an object.
+     at System.Xml.Linq.Tests.XTypeDescriptionProviderTests.XElementElementPropertyDescriptor() + 0x75
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.EnumConverterTests.ConvertTo_LongFlagsEnum_EnumArray
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  System.ComponentModel.Tests.LongFlagsEnum[]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at System.RuntimeType.GetEnumValues() + 0x8a
+     at System.ComponentModel.EnumConverter.ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type) + 0x309
+     at System.ComponentModel.Tests.EnumConverterTests.ConvertTo_LongFlagsEnum_EnumArray() + 0x6c
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb552e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.InstallerTypeAttributeTests.Ctor_NullTypeName_InstallerTypeThrowsArgumentNullException
+  Assert.Equal() Failure
+  Expected: typeName
+  Actual:   (null)
+     at System.AssertExtensions.Throws[T](String, Func`1) + 0x3c
+     at System.ComponentModel.Tests.InstallerTypeAttributeTests.Ctor_NullTypeName_InstallerTypeThrowsArgumentNullException() + 0x63
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.EnumConverterTests.ConvertTo_ULongFlagsEnum_EnumArray
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  System.ComponentModel.Tests.ULongFlagsEnum[]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at System.RuntimeType.GetEnumValues() + 0x8a
+     at System.ComponentModel.EnumConverter.ConvertTo(ITypeDescriptorContext, CultureInfo, Object, Type) + 0x309
+     at System.ComponentModel.Tests.EnumConverterTests.ConvertTo_ULongFlagsEnum_EnumArray() + 0x6c
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb552e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.BindableAttributeTests.Default_Get_ReturnsExpected
+  Assert.Same() Failure
+  Expected: BindableAttribute { Bindable = False, Direction = OneWay, TypeId = typeof(System.ComponentModel.BindableAttribute) }
+  Actual:   BindableAttribute { Bindable = False, Direction = OneWay, TypeId = typeof(System.ComponentModel.BindableAttribute) }
+     at System.ComponentModel.Tests.BindableAttributeTests.Default_Get_ReturnsExpected() + 0x106
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.ComponentModel.Tests.WarningExceptionTests.Ctor_SerializationInfo_StreamingContext
+  [FAIL] System.ComponentModel.Tests.DataObjectAttributeTests.Default_Get_ReturnsExpected
+  Assert.Same() Failure
+  Expected: DataObjectAttribute { IsDataObject = False, TypeId = typeof(System.ComponentModel.DataObjectAttribute) }
+  Actual:   DataObjectAttribute { IsDataObject = False, TypeId = typeof(System.ComponentModel.DataObjectAttribute) }
+     at System.ComponentModel.Tests.DataObjectAttributeTests.Default_Get_ReturnsExpected() + 0x9c
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.ComponentModel.Design.Tests.DesigntimeLicenseContextSerializerTests.SerializeAndDeserialize
+  [SKIP] System.ComponentModel.Design.Tests.DesigntimeLicenseContextSerializerTests.SerializeWithBinaryFormatter_DeserializeWithBinaryWriter
+  [FAIL] System.ComponentModel.Tests.ListBindableAttributeTests.Default_Get_ReturnsExpected
+  Assert.Same() Failure
+  Expected: ListBindableAttribute { ListBindable = True, TypeId = typeof(System.ComponentModel.ListBindableAttribute) }
+  Actual:   ListBindableAttribute { ListBindable = True, TypeId = typeof(System.ComponentModel.ListBindableAttribute) }
+     at System.ComponentModel.Tests.ListBindableAttributeTests.Default_Get_ReturnsExpected() + 0xde
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetConverter_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetPropertyOwner_InvokeWithoutParent_ReturnsNull
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetComponentName_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetDefaultProperty_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetProperties_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetEditor_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetEvents_InvokeAttributesWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetDefaultEvent_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetEvents_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetProperties_InvokeAttributesWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetAttributes_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetClassName_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CustomTypeDescriptorTests.GetPropertyOwner_InvokeWithParent_ReturnsExpected
+  [SKIP] System.ComponentModel.Tests.CultureInfoConverterTests.CultureInfoConverterForDefaultValue
+  [FAIL] System.ComponentModel.Tests.ReflectionCachesUpdateHandlerTests.ReflectionCachesUpdateHandler_CachesCleared
+  System.TypeLoadException : The type 'System.ComponentModel.ReflectionCachesUpdateHandler' cannot be found in assembly 'System.ComponentModel.TypeConverter, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'.
+     at System.Reflection.Runtime.General.Helpers.CreateTypeLoadException(String, Assembly) + 0x63
+     at System.Reflection.Runtime.TypeParsing.GetTypeOptions.CoreResolveType(Assembly, String) + 0x47
+     at System.ComponentModel.Tests.ReflectionCachesUpdateHandlerTests.ReflectionCachesUpdateHandler_CachesCleared() + 0xfa
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeObjectMultipleTimes_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeObjectMultipleTimes_Refreshes() + 0x3ae
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeTypeWithoutProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeTypeWithoutProviders_Refreshes() + 0x97
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeType_RemovesProvider
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeType_RemovesProvider() + 0x8aa
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeTypeWithProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeTypeWithProviders_Refreshes() + 0xc5
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeObjectMultipleTimes_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeObjectMultipleTimes_Refreshes() + 0x3ae
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_NullInstance_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass38_0.<RemoveProvider_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass38_0.<RemoveProvider_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeObjectWithoutProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeObjectWithoutProviders_Refreshes() + 0x97
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeObjectWithProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeObjectWithProviders_Refreshes() + 0xc5
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeType_RemovesProvider
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeType_RemovesProvider() + 0x8aa
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeObjectWithProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeObjectWithProviders_Refreshes() + 0xc5
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_NullType_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass39_0.<RemoveProvider_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass39_0.<RemoveProvider_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeType_GetProviderReturnsExpected
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeType_GetProviderReturnsExpected() + 0x48a
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.SortDescriptorArray_Invoke_ReturnsExpected
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.SortDescriptorArray_Invoke_ReturnsExpected() + 0x3db
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_NullInstance_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass16_0.<AddProviderTransparent_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass16_0.<AddProviderTransparent_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_NullInstance_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass7_0.<AddProvider_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass7_0.<AddProvider_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeTypeWithoutProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeTypeWithoutProviders_Refreshes() + 0x97
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_NullType_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass8_0.<AddProvider_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass8_0.<AddProvider_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_NullType_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass51_0.<RemoveProviderTransparent_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass51_0.<RemoveProviderTransparent_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_NullInstance_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass50_0.<RemoveProviderTransparent_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass50_0.<RemoveProviderTransparent_NullInstance_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_NullType_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass17_0.<AddProviderTransparent_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at Moq.Mock`1.get_Object() + 0x22
+     at System.ComponentModel.Tests.TypeDescriptorTests.<>c__DisplayClass17_0.<AddProviderTransparent_NullType_ThrowsArgumentNullException>b__0() + 0x11
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeTypeMultipleTimes_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeTypeMultipleTimes_Refreshes() + 0x3ae
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeObjectWithoutProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeObjectWithoutProviders_Refreshes() + 0x97
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeObject_RemovesProvider
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProviderTransparent_InvokeObject_RemovesProvider() + 0x8aa
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeObject_GetProviderReturnsExpected
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeObject_GetProviderReturnsExpected() + 0x48a
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeType_GetProviderReturnsExpected
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProvider_InvokeType_GetProviderReturnsExpected() + 0x48a
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeObject_GetProviderReturnsExpected
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeObject_GetProviderReturnsExpected() + 0x48a
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeObject_RemovesProvider
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeObject_RemovesProvider() + 0x8aa
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeTypeMultipleTimes_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.AddProviderTransparent_InvokeTypeMultipleTimes_Refreshes() + 0x3ae
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeTypeWithProviders_Refreshes
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at Castle.DynamicProxy.ModuleScope.ObtainDynamicModuleWithStrongName() + 0x57
+     at Castle.DynamicProxy.Generators.Emitters.ClassEmitter..ctor(ModuleScope, String, Type, IEnumerable`1, TypeAttributes, Boolean) + 0x55
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.BuildClassEmitter(String, Type, IEnumerable`1) + 0x7c
+     at Castle.DynamicProxy.Generators.ClassProxyGenerator.GenerateType(String, Type[], INamingScope) + 0xea
+     at Castle.Core.Internal.SynchronizedDictionary`2.GetOrAdd(TKey, Func`2) + 0x132
+     at Castle.DynamicProxy.Generators.BaseProxyGenerator.ObtainProxyType(CacheKey, Func`3) + 0x70
+     at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type, Type[], ProxyGenerationOptions, Object[], IInterceptor[]) + 0x82
+     at Moq.CastleProxyFactory.CreateProxy(Type, IInterceptor, Type[], Object[]) + 0x25b
+     at Moq.Mock`1.InitializeInstance() + 0xb0
+     at Moq.Mock`1.OnGetObject() + 0x17
+     at System.ComponentModel.Tests.TypeDescriptorTests.RemoveProvider_InvokeTypeWithProviders_Refreshes() + 0xc5
+     at System.ComponentModel.TypeConverter.Tests!<BaseAddress>+0xcb5518
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.ComponentModel.TypeConverter.Tests, Version=9.9.9.9, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 7664, Errors: 0, Failures: 47, Skipped: 51. Time: 0.4196096s
+  ----- end Sun 05/29/2022  7:59:17.07 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.ComponentModel.TypeConverter.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.ComponentModel.TypeConverter\tests\System.ComponentModel.TypeConverter.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.ComponentModel.TypeConverter.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.ComponentModel.TypeConverter\tests\System.ComponentModel.TypeConverter.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:51.91

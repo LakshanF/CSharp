@@ -1,0 +1,44 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.ComponentModel.Primitives\tests\System.ComponentModel.Primitives.Tests.csproj (in 348 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.ComponentModel.Primitives.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.Primitives.Tests\Release\net7.0\System.ComponentModel.Primitives.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.Primitives.Tests\Release\net7.0\native\System.ComponentModel.Primitives.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.Primitives.Tests\Release\net7.0\native\System.ComponentModel.Primitives.Tests.exp
+  System.ComponentModel.Primitives.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.Primitives.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  7:58:21.94 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.Primitives.Tests\Release\net7.0\publish\
+  System.ComponentModel.Primitives.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.ComponentModel.Primitives.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.ComponentModel.Tests.InvalidEnumArgumentExceptionTests.Ctor_SerializationInfo_StreamingContext
+  [SKIP] System.ComponentModel.Tests.InvalidAsynchronousStateExceptionTests.Ctor_SerializationInfo_StreamingContext
+  [FAIL] System.ComponentModel.Tests.ComponentTests.Finalize_Invoke_DoesNotCallDisposedEvent
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.ComponentModel.Component.Finalize()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ComponentModel.Tests.ComponentTests.Finalize_Invoke_DoesNotCallDisposedEvent() + 0xad
+     at System.ComponentModel.Primitives.Tests!<BaseAddress>+0x57c678
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.ComponentModel.Primitives.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 350, Errors: 0, Failures: 1, Skipped: 2. Time: 0.0186245s
+  ----- end Sun 05/29/2022  7:58:24.45 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.ComponentModel.Primitives.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.ComponentModel.Primitives\tests\System.ComponentModel.Primitives.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.ComponentModel.Primitives.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.ComponentModel.Primitives\tests\System.ComponentModel.Primitives.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:23.62

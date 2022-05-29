@@ -1,0 +1,435 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.ObjectModel\tests\System.ObjectModel.Tests.csproj (in 365 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.ObjectModel.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ObjectModel.Tests\Release\net7.0\System.ObjectModel.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ObjectModel.Tests\Release\net7.0\native\System.ObjectModel.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ObjectModel.Tests\Release\net7.0\native\System.ObjectModel.Tests.exp
+  System.ObjectModel.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ObjectModel.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:17:49.69 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ObjectModel.Tests\Release\net7.0\publish\
+  System.ObjectModel.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.ObjectModel.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Collections.ObjectModel.Tests.ReadOnlyObservableCollection_Serialization.SerializeDeserialize_Roundtrips
+  [SKIP] System.Collections.ObjectModel.Tests.KeyedCollection_Serialization.SerializeDeserialize_Roundtrips
+  [SKIP] System.Collections.ObjectModel.Tests.ReadOnlyDictionaryTestsStringInt.CopyToArrayWithNonZeroBounds
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringInt.CopyToArrayWithNonZeroBounds
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringInt.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.Int32][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x142
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntString.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.String][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x14b
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.ConstructorAndPropertyTests.DebuggerAttributeTests
+  System.Reflection.MissingMetadataException : 'System.Collections.Generic.CollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.ObjectModel.Tests.ConstructorAndPropertyTests.DebuggerAttributeTests() + 0x70
+     at System.ObjectModel.Tests!<BaseAddress>+0x61549e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.ConstructorAndPropertyTests.DebuggerAttribute_NullCollection_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Generic.CollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Generic.CollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntString.CopyToArrayWithNonZeroBounds
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Clear(collectionSize: 4)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x139
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Clear(collectionSize: 25)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x139
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Clear(collectionSize: 33)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x139
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Clear(collectionSize: 0)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x139
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntStringBadKey.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.String][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x14b
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.ReadOnlyObservableCollectionTests.DebuggerAttribute_Tests
+  System.Reflection.MissingMetadataException : 'System.Collections.Generic.CollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.ObjectModel.Tests.ReadOnlyObservableCollectionTests.DebuggerAttribute_Tests() + 0x8a
+     at System.ObjectModel.Tests!<BaseAddress>+0x61549e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: 32, addItems: Add<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x154
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Clear(collectionSize: 25)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x11e
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Clear(collectionSize: 0)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x11e
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Clear(collectionSize: 4)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x11e
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Clear(collectionSize: 33)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Clear(Int32) + 0x11e
+     at System.ObjectModel.Tests!<BaseAddress>+0x50970a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.ReadOnlyDictionaryTests.DebuggerAttribute_NullDictionary_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Generic.IDictionaryDebugView<System.Int32,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Generic.IDictionaryDebugView<System.Int32,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  [FAIL] System.Collections.ObjectModel.Tests.ReadOnlyObservableCollectionTests.DebuggerAttribute_NullCollection_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Generic.CollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Generic.CollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: 32, addItems: Add<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x127
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.ReadOnlyDictionaryTests.DebuggerAttribute_NullDictionaryKeys_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Generic.ICollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Generic.ICollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+  [FAIL] System.Collections.ObjectModel.Tests.ReadOnlyDictionaryTests.DebuggerAttributeTests
+  System.Reflection.MissingMetadataException : 'System.Collections.Generic.IDictionaryDebugView<System.Int32,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.ObjectModel.Tests.ReadOnlyDictionaryTests.DebuggerAttributeTests() + 0xbc
+     at System.ObjectModel.Tests!<BaseAddress>+0x61549e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: -1, addItems: Add<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x3aa
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: 32, addItems: Insert<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x154
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntStringBadKey.CopyToArrayWithNonZeroBounds
+  [SKIP] System.Collections.ObjectModel.Tests.ReadOnlyDictionaryOverNonGenericTests.CopyToArrayWithNonZeroBounds
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: -1, addItems: Add<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x33b
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: 32, addItems: Insert<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x127
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringStringBadKey.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.String][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x14b
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: -1, addItems: Insert<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x3aa
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: 32, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x154
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringStringBadKey.CopyToArrayWithNonZeroBounds
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntIntBadKey.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.Int32][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x142
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntInt.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.Int32][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x142
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntInt.CopyToArrayWithNonZeroBounds
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionIntIntBadKey.CopyToArrayWithNonZeroBounds
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: -1, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x3aa
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: 32, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x154
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.ObservableCollection_Serialization.OnDeserialized_MonitorNotInitialized_ExpectSuccess
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.ObservableCollection<System.Int32>.OnDeserialized(System.Runtime.Serialization.StreamingContext)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Collections.ObjectModel.Tests.ObservableCollection_Serialization.OnDeserialized_MonitorNotInitialized_ExpectSuccess() + 0x99
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Collections.ObjectModel.Tests.ObservableCollection_Serialization.SerializeDeserialize_Roundtrips
+  [SKIP] System.Collections.ObjectModel.Tests.ReadOnlyDictionary_Serialization.SerializeDeserialize_Roundtrips
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: -1, addItems: Insert<T>)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x33b
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: 32, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x127
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntString.Threshold(collectionDictionaryThreshold: -1, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.String>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x3aa
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: -1, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x33b
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: 32, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x127
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringString.CopyToArrayWithNonZeroBounds
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringString.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.String][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x14b
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.KeyedCollectionTestsIntInt.Threshold(collectionDictionaryThreshold: -1, addItems: Add)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.Collections.ObjectModel.KeyedCollection<System.Int32,System.Collections.ObjectModel.Tests.IKeyedItem<System.Int32,System.Int32>>.get_Dictionary()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.ObjectModel.Tests!<BaseAddress>+0x51e8cc
+     at System.Collections.ObjectModel.Tests.KeyedCollectionTests`2.Threshold(Int32, Named`1) + 0x33b
+     at System.ObjectModel.Tests!<BaseAddress>+0x51d28c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringIntBadKey.CopyToArrayWithNonZeroBounds
+  [FAIL] System.Collections.ObjectModel.Tests.IListTestKeyedCollectionStringIntBadKey.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.Int32][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x142
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.ReadOnlyDictionaryTestsStringInt.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.Collections.Generic.KeyValuePair`2[System.String,System.Int32]][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x14b
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.ObjectModel.Tests.ReadOnlyDictionaryOverNonGenericTests.CopyToInvalidTypes
+  System.Reflection.MissingMetadataException : This operation cannot be carried out because metadata for the following object was removed for performance reasons:\n\n  Tests.Collections.ICollectionTest`1+MyInvalidValueType[System.Collections.Generic.KeyValuePair`2[System.String,System.Int32]][]\n\nNo further information is available. Rebuild in debug mode for better information.\n\n
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x6b
+     at System.Array.CreateInstance(Type, Int32) + 0x46
+     at Tests.Collections.ICollectionTest`1.CopyToInvalidTypes() + 0x14b
+     at System.ObjectModel.Tests!<BaseAddress>+0x615488
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.ObjectModel.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 2152, Errors: 0, Failures: 42, Skipped: 14. Time: 0.2802323s
+  ----- end Sun 05/29/2022 10:17:52.36 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.ObjectModel.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.ObjectModel\tests\System.ObjectModel.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.ObjectModel.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.ObjectModel\tests\System.ObjectModel.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:23.53

@@ -1,0 +1,516 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Emit.Lightweight\tests\System.Reflection.Emit.Lightweight.Tests.csproj (in 358 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Reflection.Emit.Lightweight.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Emit.Lightweight.Tests\Release\net7.0\System.Reflection.Emit.Lightweight.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Emit.Lightweight.Tests\Release\net7.0\native\System.Reflection.Emit.Lightweight.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Emit.Lightweight.Tests\Release\net7.0\native\System.Reflection.Emit.Lightweight.Tests.exp
+  System.Reflection.Emit.Lightweight.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Emit.Lightweight.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:19:52.10 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Emit.Lightweight.Tests\Release\net7.0\publish\
+  System.Reflection.Emit.Lightweight.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Reflection.Emit.Lightweight.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodDefineParameter.DefineParameter_SetsParameterCorrectly
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodDefineParameter.DefineParameter_SetsParameterCorrectly() + 0x66
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_Module(skipVisibility: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_Module(Boolean) + 0x6e
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodToString.ToStringTest(returnType: typeof(string), parameterTypes: [typeof(System.Reflection.Emit.Tests.GenericClass<>)], expected: "System.String MethodName(System.Reflection.Emit.Te"...)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodToString.ToStringTest(Type, Type[], String) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodInitLocals.InitLocals_Set_ReturnsNewValue(newInitLocals: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodInitLocals.InitLocals_Set_ReturnsNewValue(Boolean) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodToString.ToStringTest(returnType: null, parameterTypes: null, expected: "Void MethodName()")
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodToString.ToStringTest(Type, Type[], String) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Module(target: IDClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Module(IDClass) + 0x93
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_Module(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_Module(Boolean) + 0x6e
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.Test_TwoDimTest
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.Test_TwoDimTest() + 0x13
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Module(target: IDSubClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Module(IDClass) + 0x93
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_TypeOwner(skipVisibility: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_TypeOwner(Boolean) + 0x4e
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Module_CoreclrIgnoresSkipVisibility
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Module(Boolean) + 0xa4
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodToString.ToStringTest(returnType: typeof(string), parameterTypes: [typeof(string), typeof(int), typeof(System.Reflection.Emit.Tests.TestClass)], expected: "System.String MethodName(System.String, Int32, Sys"...)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodToString.ToStringTest(Type, Type[], String) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NegativeInputSize_ThrowsArgumentOutOfRangeException(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicMethod(Boolean) + 0x66
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NegativeInputSize_ThrowsArgumentOutOfRangeException(Boolean) + 0x27
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_TypeOwner(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetBaseDefinition.CreateDynMethod_TypeOwner(Boolean) + 0x4e
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_DelegateTypeInvalid_ThrowsArgumentException(delegateType: typeof(System.Reflection.Emit.Tests.WrongParamNumber))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_DelegateTypeInvalid_ThrowsArgumentException(Type) + 0x8e
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Owner(skipVisibility: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Owner(Boolean) + 0x84
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NegativeInputSize_ThrowsArgumentOutOfRangeException(skipVisibility: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicMethod(Boolean) + 0x66
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NegativeInputSize_ThrowsArgumentOutOfRangeException(Boolean) + 0x27
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_DelegateTypeInvalid_ThrowsArgumentException(delegateType: typeof(System.Reflection.Emit.Tests.InvalidParamType))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_DelegateTypeInvalid_ThrowsArgumentException(Type) + 0x8e
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Owner(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Owner(Boolean) + 0x84
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_DelegateTypeInvalid_ThrowsArgumentException(delegateType: typeof(System.Reflection.Emit.Tests.InvalidRetType))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_DelegateTypeInvalid_ThrowsArgumentException(Type) + 0x8e
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.Test_GenericMethod
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.Test_GenericMethod() + 0x13
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.InvalidOwner_ThrowsArgumentException(owner: typeof(System.Reflection.Emit.Tests.GenericClass<>))
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Module_CoreclrIgnoresSkipVisibility
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Module(Boolean) + 0xa4
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NullInput_ThrowsArgumentNullException(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicMethod(Boolean) + 0x66
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NullInput_ThrowsArgumentNullException(Boolean) + 0x27
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.InvalidOwner_ThrowsArgumentException(owner: typeof(System.Int32*))
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Owner(skipVisibility: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Owner(Boolean) + 0x84
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NullInput_ThrowsArgumentNullException(skipVisibility: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicMethod(Boolean) + 0x66
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.SetX_NullInput_ThrowsArgumentNullException(Boolean) + 0x27
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Owner(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Owner(Boolean) + 0x84
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.InvalidOwner_ThrowsArgumentException(owner: typeof(int[]))
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_IntGenerics_Success
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_IntGenerics_Success() + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Module(target: IDClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Module(IDClass) + 0x93
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.InvalidOwner_ThrowsArgumentException(owner: typeof(System.Reflection.Emit.Tests.TestInterface))
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass8_0.<InvalidOwner_ThrowsArgumentException>b__0() + 0xe
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Module(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Int_Module(Boolean) + 0xa4
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_CtorMethodAndField_Success
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_CtorMethodAndField_Success() + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodInitLocals.InitLocals_Set_ReturnsNewValue(newInitLocals: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodInitLocals.InitLocals_Set_ReturnsNewValue(Boolean) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Module(target: IDSubClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Module(IDClass) + 0x93
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Module(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodGetILGenerator1.GetILGenerator_Module(Boolean) + 0xa4
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicILInfo_NotSameNotNull(skipVisibility: True)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicMethod(Boolean) + 0x66
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicILInfo_NotSameNotNull(Boolean) + 0xd
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.ByRefReturnType_DoesNotThrow
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.ByRefReturnType_DoesNotThrow() + 0x86
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicILInfo_NotSameNotNull(skipVisibility: False)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicMethod(Boolean) + 0x66
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetDynamicILInfo_NotSameNotNull(Boolean) + 0xd
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x43b28b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Type(target: IDClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Type(IDClass) + 0x73
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_String_Success
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_String_Success() + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Type(target: IDSubClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Target_Type(IDClass) + 0x73
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: null, parameterTypes: null)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_StringGenerics_Success
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_StringGenerics_Success() + 0x13
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.Test_CallGM
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.Test_CallGM() + 0x13
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Type(target: IDClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Type(IDClass) + 0x73
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "", returnType: typeof(string), parameterTypes: [typeof(int), typeof(string)])
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_Exception_Success
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_Exception_Success() + 0x13
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Type(target: IDSubClass { ID = 0 })
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_Type(IDClass) + 0x73
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x51893f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(System.Reflection.Emit.Tests.TestClass), parameterTypes: null)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_DynamicMethod_Success
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicILInfoTests.GetTokenFor_DynamicMethod_Success() + 0x36
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_InvalidTarget_ThrowsArgumentException
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_InvalidTarget_ThrowsArgumentException() + 0x73
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(System.Reflection.Emit.Tests.GenericClass<>), parameterTypes: null)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_NoMethodBody_ThrowsInvalidOperationException
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodCreateDelegateTests.CreateDelegate_NoMethodBody_ThrowsInvalidOperationException() + 0x7a
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x565b58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "method", returnType: typeof(string), parameterTypes: [typeof(char?)])
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(int), parameterTypes: [typeof(int)])
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(string), parameterTypes: null)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(string), parameterTypes: [typeof(int), typeof(string)])
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(string), parameterTypes: [typeof(System.Reflection.Emit.Tests.GenericClass2<,>), typeof(System.Reflection.Emit.Tests.GenericClass2<,>)])
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(System.Reflection.Emit.Tests.TestInterface), parameterTypes: null)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(System.Void), parameterTypes: null)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(string), parameterTypes: [typeof(System.Reflection.Emit.Tests.TestInterface)])
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(System.Void), parameterTypes: [typeof(int), typeof(string)])
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(name: "Method", returnType: typeof(char?), parameterTypes: null)
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Module(String, Type, Type[]) + 0x29
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x55dbbc
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(name: "Method", returnType: typeof(System.Void), parameterTypes: null, owner: typeof(System.Reflection.Emit.Tests.TestClass))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(String, Type, Type[], Type) + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x561bd5
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(name: "Method", returnType: typeof(string), parameterTypes: null, owner: typeof(System.Reflection.Emit.Tests.TestClass))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(String, Type, Type[], Type) + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x561bd5
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(name: "Method", returnType: typeof(string), parameterTypes: [typeof(int), typeof(string)], owner: typeof(System.Reflection.Emit.Tests.TestClass))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(String, Type, Type[], Type) + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x561bd5
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(name: "Method", returnType: typeof(System.Void), parameterTypes: [typeof(int), typeof(string)], owner: typeof(System.Reflection.Emit.Tests.TestClass))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(String, Type, Type[], Type) + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x561bd5
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(name: "", returnType: typeof(string), parameterTypes: [typeof(int), typeof(string)], owner: typeof(System.Reflection.Emit.Tests.TestClass))
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.String_Type_TypeArray_Type(String, Type, Type[], Type) + 0x9
+     at System.Reflection.Emit.Lightweight.Tests!<BaseAddress>+0x561bd5
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.NullModule_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c.<NullModule_ThrowsArgumentNullException>b__6_0() + 0x9
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c.<NullModule_ThrowsArgumentNullException>b__6_0() + 0x9
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.NullName_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass4_0.<NullName_ThrowsArgumentNullException>b__0() + 0xe
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass4_0.<NullName_ThrowsArgumentNullException>b__0() + 0xe
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.NullOwner_ThrowsArgumentNullException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c.<NullOwner_ThrowsArgumentNullException>b__7_0() + 0x9
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c.<NullOwner_ThrowsArgumentNullException>b__7_0() + 0x9
+  [FAIL] System.Reflection.Emit.Tests.DynamicMethodctor1.NullObjectInParameterTypes_ThrowsArgumentException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass3_0.<NullObjectInParameterTypes_ThrowsArgumentException>b__0() + 0x3f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.Emit.Tests.DynamicMethodctor1.<>c__DisplayClass3_0.<NullObjectInParameterTypes_ThrowsArgumentException>b__0() + 0x3f
+  Finished System.Reflection.Emit.Lightweight.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 74, Errors: 0, Failures: 74, Skipped: 0. Time: 0.0179789s
+  ----- end Sun 05/29/2022 10:19:54.53 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Emit.Lightweight.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Emit.Lightweight\tests\System.Reflection.Emit.Lightweight.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Emit.Lightweight.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Emit.Lightweight\tests\System.Reflection.Emit.Lightweight.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:21.50

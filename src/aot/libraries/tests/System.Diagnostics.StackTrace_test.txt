@@ -1,0 +1,752 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.StackTrace\tests\ExceptionTestAssembly\ExceptionTestAssembly.csproj (in 158 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.StackTrace\tests\System.Diagnostics.StackTrace.Tests.csproj (in 265 ms).
+  3 of 5 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  ExceptionTestAssembly -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ExceptionTestAssembly\Release\netstandard2.0\ExceptionTestAssembly.dll
+  System.Diagnostics.StackTrace.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.StackTrace.Tests\Release\net7.0\System.Diagnostics.StackTrace.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.StackTrace.Tests\Release\net7.0\native\System.Diagnostics.StackTrace.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.StackTrace.Tests\Release\net7.0\native\System.Diagnostics.StackTrace.Tests.exp
+  System.Diagnostics.StackTrace.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.StackTrace.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:17:20.51 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.StackTrace.Tests\Release\net7.0\publish\
+  System.Diagnostics.StackTrace.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Diagnostics.StackTrace.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Diagnostics.SymbolStore.Tests.StackTraceSymbolsTests.StackTraceSymbolsDoNotLockFile
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.SymbolStore.Tests.StackTraceSymbolsTests.StackTraceSymbolsDoNotLockFile() + 0x56
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa75128
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameExtensionsTests.HasMethod_Invoke_ReturnsExpected
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameExtensionsTests.<HasMethod_TestData>d__4.MoveNext() + 0xe5
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Diagnostics.Tests.StackFrameExtensionsTests.GetNativeImageBase_StackFrame_ReturnsZero
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameExtensionsTests.<StackFrame_TestData>d__0.MoveNext() + 0xe8
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Diagnostics.Tests.StackFrameExtensionsTests.GetNativeIP_StackFrame_ReturnsZero
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameExtensionsTests.<StackFrame_TestData>d__0.MoveNext() + 0xe8
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: -1, fNeedFileInfo: False)
+  Expected GetILOffset() -1 for .ctor at offset 27 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(Int32, Boolean) + 0x63
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameExtensionsTests.HasNativeImage_StackFrame_ReturnsFalse
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameExtensionsTests.<StackFrame_TestData>d__0.MoveNext() + 0xe8
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: 0, fNeedFileInfo: False)
+  Expected GetILOffset() -1 for Ctor_SkipFrames_FNeedFileInfo at offset 44 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(Int32, Boolean) + 0x63
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameExtensionsTests.HasSource_Invoke_ReturnsExpected
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameExtensionsTests.<HasSource_TestData>d__9.MoveNext() + 0x153
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: 0, fNeedFileInfo: True)
+  Expected GetILOffset() -1 for Ctor_SkipFrames_FNeedFileInfo at offset 44 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(Int32, Boolean) + 0x63
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameExtensionsTests.HasILOffset_Invoke_ReturnsExpected
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameExtensionsTests.<HasMethod_TestData>d__4.MoveNext() + 0xe5
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: -1, fNeedFileInfo: True)
+  Expected GetILOffset() -1 for .ctor at offset 27 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames_FNeedFileInfo(Int32, Boolean) + 0x63
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber_ColNumber(fileName: null, lineNumber: -1, columnNumber: 0)
+  Expected GetILOffset() -1 for Ctor_Filename_LineNumber_ColNumber at offset 51 in file:line:column <filename unknown>:-1:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber_ColNumber(String, Int32, Int32) + 0xd5
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa0ff07
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber_ColNumber(fileName: "", lineNumber: 0, columnNumber: -1)
+  Expected GetILOffset() -1 for Ctor_Filename_LineNumber_ColNumber at offset 51 in file:line:column :0:-1
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber_ColNumber(String, Int32, Int32) + 0xd5
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa0ff07
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber_ColNumber(fileName: "FileName", lineNumber: 1, columnNumber: 2)
+  Expected GetILOffset() -1 for Ctor_Filename_LineNumber_ColNumber at offset 51 in file:line:column FileName:1:2
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber_ColNumber(String, Int32, Int32) + 0xd5
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa0ff07
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.ToString_Invoke_ReturnsExpected
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameTests.<ToString_TestData>d__10.MoveNext() + 0x162
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber(fileName: "FileName", lineNumber: 1)
+  Expected GetILOffset() -1 for Ctor_Filename_LineNumber at offset 43 in file:line:column FileName:1:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber(String, Int32) + 0xcd
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa0bab1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber(fileName: "", lineNumber: 0)
+  Expected GetILOffset() -1 for Ctor_Filename_LineNumber at offset 43 in file:line:column :0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber(String, Int32) + 0xcd
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa0bab1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber(fileName: null, lineNumber: -1)
+  Expected GetILOffset() -1 for Ctor_Filename_LineNumber at offset 43 in file:line:column <filename unknown>:-1:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_Filename_LineNumber(String, Int32) + 0xcd
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa0bab1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames(skipFrames: 0)
+  Expected GetILOffset() -1 for Ctor_SkipFrames at offset 33 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames(Int32) + 0x60
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x878d1a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames(skipFrames: -1)
+  Expected GetILOffset() -1 for .ctor at offset 26 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_SkipFrames(Int32) + 0x60
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x878d1a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.SkipFrames_ManyFrames_HasNoMethod(skipFrames: -2147483648)
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameTests.SkipFrames_ManyFrames_HasNoMethod(Int32) + 0x21
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x878d1a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.SkipFrames_ManyFrames_HasNoMethod(skipFrames: 2147483647)
+  System.OverflowException : Arithmetic operation resulted in an overflow.
+     at System.Runtime.EH.FailedAllocation(EETypePtr, Boolean) + 0x21
+     at System.Diagnostics.StackFrame.BuildStackFrame(Int32, Boolean) + 0x25
+     at System.Diagnostics.StackFrame..ctor(Int32) + 0x1a
+     at System.Diagnostics.Tests.StackFrameTests.SkipFrames_ManyFrames_HasNoMethod(Int32) + 0x21
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x878d1a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_Default
+  Expected GetILOffset() -1 for Ctor_Default at offset 31 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_Default() + 0xb4
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa75128
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_FNeedFileInfo(fNeedFileInfo: True)
+  Expected GetILOffset() -1 for Ctor_FNeedFileInfo at offset 37 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_FNeedFileInfo(Boolean) + 0x5c
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x83d66b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackFrameTests.Ctor_FNeedFileInfo(fNeedFileInfo: False)
+  Expected GetILOffset() -1 for Ctor_FNeedFileInfo at offset 37 in file:line:column <filename unknown>:0:0
+   to be greater or equal to zero.
+  Expected: True
+  Actual:   False
+     at System.Diagnostics.Tests.StackFrameTests.VerifyStackFrameSkipFrames(StackFrame, Boolean, Int32, MethodInfo, Boolean) + 0x1e2
+     at System.Diagnostics.Tests.StackFrameTests.Ctor_FNeedFileInfo(Boolean) + 0x5c
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x83d66b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: 1, fNeedFileInfo: False)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: 0, fNeedFileInfo: True)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: 0, fNeedFileInfo: False)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_SkipFrames_FNeedFileInfo(skipFrames: 1, fNeedFileInfo: True)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x87d20a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.ToString_NullFrame_ThrowsNullReferenceException
+  System.NullReferenceException : Object reference not set to an instance of an object.
+     at System.Diagnostics.StackTrace.ToString(StackTrace.TraceFormat, StringBuilder) + 0x38
+     at System.Diagnostics.StackTrace.ToString(StackTrace.TraceFormat) + 0x3b
+     at System.Diagnostics.Tests.StackTraceTests.ToString_NullFrame_ThrowsNullReferenceException() + 0x33
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa75128
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(stackTrace: , expectedToString: "")
+  Assert.Equal() Failure
+             (pos 0)
+  Expected: \r\n
+  Actual:   
+             (pos 0)
+     at System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(StackTrace, String) + 0x41
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa4f86a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(stackTrace:    at System.Diagnostics.Tests.StackTraceTests.OneParameter(Int32) + 0x2c
+     at System.Diagnostics.Tests.StackTraceTests.<ToString_TestData>d__20.MoveNext() + 0x1cc
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+     at Xunit.Sdk.XunitTheoryTestCaseRunner.<AfterTestCaseStartingAsync>d__9.MoveNext() + 0x9a7
+     at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+     at Xunit.Sdk.XunitTheoryTestCaseRunner.AfterTestCaseStartingAsync() + 0x36
+     at Xunit.Sdk.TestCaseRunner`1.<RunAsync>d__19.MoveNext() + 0x151
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b850b
+     at Xunit.Sdk.TestCaseRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.XunitTestMethodRunner.RunTestCaseAsync(IXunitTestCase) + 0x81
+     at Xunit.Sdk.TestMethodRunner`1.<RunTestCasesAsync>d__32.MoveNext() + 0xc3
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba42b
+     at Xunit.Sdk.TestMethodRunner`1.RunTestCasesAsync() + 0x54
+     at Xunit.Sdk.TestMethodRunner`1.<RunAsync>d__31.MoveNext() + 0x155
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba05b
+     at Xunit.Sdk.TestMethodRunner`1.RunAsync() + 0x4f
+     at Xunit.Sdk.TestClassRunner`1.<RunTestMethodsAsync>d__38.MoveNext() + 0x1e3
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b8ccb
+     at Xunit.Sdk.TestClassRunner`1.RunTestMethodsAsync() + 0x59
+     at Xunit.Sdk.TestClassRunner`1.<RunAsync>d__37.MoveNext() + 0x1dc
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b88eb
+     at Xunit.Sdk.TestClassRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.TestCollectionRunner`1.<RunTestClassesAsync>d__28.MoveNext() + 0x169
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b949b
+     at Xunit.Sdk.TestCollectionRunner`1.RunTestClassesAsync() + 0x54
+     at Xunit.Sdk.TestCollectionRunner`1.<RunAsync>d__27.MoveNext() + 0x1c0
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b90bb
+     at Xunit.Sdk.TestCollectionRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.XunitTestAssemblyRunner.<>c__DisplayClass14_2.<RunTestCollectionsAsync>b__2() + 0x35
+     at System.Threading.Tasks.Task`1.InnerInvoke() + 0x2e
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+     at System.Threading.Tasks.Task.ExecuteEntry() + 0x7b
+     at System.Threading.Tasks.SynchronizationContextTaskScheduler.<>c.<.cctor>b__8_0(Object) + 0x2a
+     at Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext(SendOrPostCallback, Object) + 0x51
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa683b8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+     at System.Linq.Expressions.Interpreter.MethodInfoCallInstruction.Run(InterpretedFrame) + 0x67
+     at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame) + 0x2d
+     at System.Linq.Expressions.Interpreter.LightLambda.RunVoid(Object[]) + 0x84
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x7a7c14
+     at Xunit.Sdk.MaxConcurrencySyncContext.WorkerThreadProc() + 0x162
+     at Xunit.Sdk.XunitWorkerThread.<>c.<QueueUserWorkItem>b__5_0(Object) + 0x2d
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+     at System.Threading.Thread.StartThread(IntPtr) + 0x117
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x44b08a
+  , expectedToString: "System.Diagnostics.Tests.StackTraceTests.OneParame"...)
+  Assert.Contains() Failure
+  Not found: System.Diagnostics.Tests.StackTraceTests.OneParameter(Int32 x)
+  In value:     at System.Diagnostics.Tests.StackTraceTests.OneParameter(Int32) + 0x2c
+                at System.Diagnostics.Tests.StackTraceTests.<ToString_TestData>d__20.MoveNext() + 0x1cc
+                at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+                at Xunit.Sdk.XunitTheoryTestCaseRunner.<AfterTestCaseStartingAsync>d__9.MoveNext() + 0x9a7
+                at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+                at Xunit.Sdk.XunitTheoryTestCaseRunner.AfterTestCaseStartingAsync() + 0x36
+                at Xunit.Sdk.TestCaseRunner`1.<RunAsync>d__19.MoveNext() + 0x151
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b850b
+                at Xunit.Sdk.TestCaseRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestMethodRunner.RunTestCaseAsync(IXunitTestCase) + 0x81
+                at Xunit.Sdk.TestMethodRunner`1.<RunTestCasesAsync>d__32.MoveNext() + 0xc3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba42b
+                at Xunit.Sdk.TestMethodRunner`1.RunTestCasesAsync() + 0x54
+                at Xunit.Sdk.TestMethodRunner`1.<RunAsync>d__31.MoveNext() + 0x155
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba05b
+                at Xunit.Sdk.TestMethodRunner`1.RunAsync() + 0x4f
+                at Xunit.Sdk.TestClassRunner`1.<RunTestMethodsAsync>d__38.MoveNext() + 0x1e3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b8ccb
+                at Xunit.Sdk.TestClassRunner`1.RunTestMethodsAsync() + 0x59
+                at Xunit.Sdk.TestClassRunner`1.<RunAsync>d__37.MoveNext() + 0x1dc
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b88eb
+                at Xunit.Sdk.TestClassRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunTestClassesAsync>d__28.MoveNext() + 0x169
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b949b
+                at Xunit.Sdk.TestCollectionRunner`1.RunTestClassesAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunAsync>d__27.MoveNext() + 0x1c0
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b90bb
+                at Xunit.Sdk.TestCollectionRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestAssemblyRunner.<>c__DisplayClass14_2.<RunTestCollectionsAsync>b__2() + 0x35
+                at System.Threading.Tasks.Task`1.InnerInvoke() + 0x2e
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Tasks.Task.ExecuteEntry() + 0x7b
+                at System.Threading.Tasks.SynchronizationContextTaskScheduler.<>c.<.cctor>b__8_0(Object) + 0x2a
+                at Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext(SendOrPostCallback, Object) + 0x51
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa683b8
+                at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+                at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+                at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+                at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+                at System.Linq.Expressions.Interpreter.MethodInfoCallInstruction.Run(InterpretedFrame) + 0x67
+                at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame) + 0x2d
+                at System.Linq.Expressions.Interpreter.LightLambda.RunVoid(Object[]) + 0x84
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x7a7c14
+                at Xunit.Sdk.MaxConcurrencySyncContext.WorkerThreadProc() + 0x162
+                at Xunit.Sdk.XunitWorkerThread.<>c.<QueueUserWorkItem>b__5_0(Object) + 0x2d
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Thread.StartThread(IntPtr) + 0x117
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x44b08a
+             
+     at System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(StackTrace, String) + 0x6b
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa4f86a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(stackTrace:    at System.Diagnostics.Tests.StackTraceTests.TwoParameters(Int32, String) + 0x30
+     at System.Diagnostics.Tests.StackTraceTests.<ToString_TestData>d__20.MoveNext() + 0x227
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+     at Xunit.Sdk.XunitTheoryTestCaseRunner.<AfterTestCaseStartingAsync>d__9.MoveNext() + 0x9a7
+     at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+     at Xunit.Sdk.XunitTheoryTestCaseRunner.AfterTestCaseStartingAsync() + 0x36
+     at Xunit.Sdk.TestCaseRunner`1.<RunAsync>d__19.MoveNext() + 0x151
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b850b
+     at Xunit.Sdk.TestCaseRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.XunitTestMethodRunner.RunTestCaseAsync(IXunitTestCase) + 0x81
+     at Xunit.Sdk.TestMethodRunner`1.<RunTestCasesAsync>d__32.MoveNext() + 0xc3
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba42b
+     at Xunit.Sdk.TestMethodRunner`1.RunTestCasesAsync() + 0x54
+     at Xunit.Sdk.TestMethodRunner`1.<RunAsync>d__31.MoveNext() + 0x155
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba05b
+     at Xunit.Sdk.TestMethodRunner`1.RunAsync() + 0x4f
+     at Xunit.Sdk.TestClassRunner`1.<RunTestMethodsAsync>d__38.MoveNext() + 0x1e3
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b8ccb
+     at Xunit.Sdk.TestClassRunner`1.RunTestMethodsAsync() + 0x59
+     at Xunit.Sdk.TestClassRunner`1.<RunAsync>d__37.MoveNext() + 0x1dc
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b88eb
+     at Xunit.Sdk.TestClassRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.TestCollectionRunner`1.<RunTestClassesAsync>d__28.MoveNext() + 0x169
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b949b
+     at Xunit.Sdk.TestCollectionRunner`1.RunTestClassesAsync() + 0x54
+     at Xunit.Sdk.TestCollectionRunner`1.<RunAsync>d__27.MoveNext() + 0x1c0
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b90bb
+     at Xunit.Sdk.TestCollectionRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.XunitTestAssemblyRunner.<>c__DisplayClass14_2.<RunTestCollectionsAsync>b__2() + 0x35
+     at System.Threading.Tasks.Task`1.InnerInvoke() + 0x2e
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+     at System.Threading.Tasks.Task.ExecuteEntry() + 0x7b
+     at System.Threading.Tasks.SynchronizationContextTaskScheduler.<>c.<.cctor>b__8_0(Object) + 0x2a
+     at Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext(SendOrPostCallback, Object) + 0x51
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa683b8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+     at System.Linq.Expressions.Interpreter.MethodInfoCallInstruction.Run(InterpretedFrame) + 0x67
+     at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame) + 0x2d
+     at System.Linq.Expressions.Interpreter.LightLambda.RunVoid(Object[]) + 0x84
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x7a7c14
+     at Xunit.Sdk.MaxConcurrencySyncContext.WorkerThreadProc() + 0x162
+     at Xunit.Sdk.XunitWorkerThread.<>c.<QueueUserWorkItem>b__5_0(Object) + 0x2d
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+     at System.Threading.Thread.StartThread(IntPtr) + 0x117
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x44b08a
+  , expectedToString: "System.Diagnostics.Tests.StackTraceTests.TwoParame"...)
+  Assert.Contains() Failure
+  Not found: System.Diagnostics.Tests.StackTraceTests.TwoParameters(Int32 x, String y)
+  In value:     at System.Diagnostics.Tests.StackTraceTests.TwoParameters(Int32, String) + 0x30
+                at System.Diagnostics.Tests.StackTraceTests.<ToString_TestData>d__20.MoveNext() + 0x227
+                at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+                at Xunit.Sdk.XunitTheoryTestCaseRunner.<AfterTestCaseStartingAsync>d__9.MoveNext() + 0x9a7
+                at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+                at Xunit.Sdk.XunitTheoryTestCaseRunner.AfterTestCaseStartingAsync() + 0x36
+                at Xunit.Sdk.TestCaseRunner`1.<RunAsync>d__19.MoveNext() + 0x151
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b850b
+                at Xunit.Sdk.TestCaseRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestMethodRunner.RunTestCaseAsync(IXunitTestCase) + 0x81
+                at Xunit.Sdk.TestMethodRunner`1.<RunTestCasesAsync>d__32.MoveNext() + 0xc3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba42b
+                at Xunit.Sdk.TestMethodRunner`1.RunTestCasesAsync() + 0x54
+                at Xunit.Sdk.TestMethodRunner`1.<RunAsync>d__31.MoveNext() + 0x155
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba05b
+                at Xunit.Sdk.TestMethodRunner`1.RunAsync() + 0x4f
+                at Xunit.Sdk.TestClassRunner`1.<RunTestMethodsAsync>d__38.MoveNext() + 0x1e3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b8ccb
+                at Xunit.Sdk.TestClassRunner`1.RunTestMethodsAsync() + 0x59
+                at Xunit.Sdk.TestClassRunner`1.<RunAsync>d__37.MoveNext() + 0x1dc
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b88eb
+                at Xunit.Sdk.TestClassRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunTestClassesAsync>d__28.MoveNext() + 0x169
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b949b
+                at Xunit.Sdk.TestCollectionRunner`1.RunTestClassesAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunAsync>d__27.MoveNext() + 0x1c0
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b90bb
+                at Xunit.Sdk.TestCollectionRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestAssemblyRunner.<>c__DisplayClass14_2.<RunTestCollectionsAsync>b__2() + 0x35
+                at System.Threading.Tasks.Task`1.InnerInvoke() + 0x2e
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Tasks.Task.ExecuteEntry() + 0x7b
+                at System.Threading.Tasks.SynchronizationContextTaskScheduler.<>c.<.cctor>b__8_0(Object) + 0x2a
+                at Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext(SendOrPostCallback, Object) + 0x51
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa683b8
+                at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+                at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+                at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+                at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+                at System.Linq.Expressions.Interpreter.MethodInfoCallInstruction.Run(InterpretedFrame) + 0x67
+                at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame) + 0x2d
+                at System.Linq.Expressions.Interpreter.LightLambda.RunVoid(Object[]) + 0x84
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x7a7c14
+                at Xunit.Sdk.MaxConcurrencySyncContext.WorkerThreadProc() + 0x162
+                at Xunit.Sdk.XunitWorkerThread.<>c.<QueueUserWorkItem>b__5_0(Object) + 0x2d
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Thread.StartThread(IntPtr) + 0x117
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x44b08a
+             
+     at System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(StackTrace, String) + 0x6b
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa4f86a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(stackTrace:    at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x89e38d
+     at System.Diagnostics.Tests.StackTraceTests.<ToString_TestData>d__20.MoveNext() + 0x2d6
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+     at Xunit.Sdk.XunitTheoryTestCaseRunner.<AfterTestCaseStartingAsync>d__9.MoveNext() + 0x9a7
+     at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+     at Xunit.Sdk.XunitTheoryTestCaseRunner.AfterTestCaseStartingAsync() + 0x36
+     at Xunit.Sdk.TestCaseRunner`1.<RunAsync>d__19.MoveNext() + 0x151
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b850b
+     at Xunit.Sdk.TestCaseRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.XunitTestMethodRunner.RunTestCaseAsync(IXunitTestCase) + 0x81
+     at Xunit.Sdk.TestMethodRunner`1.<RunTestCasesAsync>d__32.MoveNext() + 0xc3
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba42b
+     at Xunit.Sdk.TestMethodRunner`1.RunTestCasesAsync() + 0x54
+     at Xunit.Sdk.TestMethodRunner`1.<RunAsync>d__31.MoveNext() + 0x155
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba05b
+     at Xunit.Sdk.TestMethodRunner`1.RunAsync() + 0x4f
+     at Xunit.Sdk.TestClassRunner`1.<RunTestMethodsAsync>d__38.MoveNext() + 0x1e3
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b8ccb
+     at Xunit.Sdk.TestClassRunner`1.RunTestMethodsAsync() + 0x59
+     at Xunit.Sdk.TestClassRunner`1.<RunAsync>d__37.MoveNext() + 0x1dc
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b88eb
+     at Xunit.Sdk.TestClassRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.TestCollectionRunner`1.<RunTestClassesAsync>d__28.MoveNext() + 0x169
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b949b
+     at Xunit.Sdk.TestCollectionRunner`1.RunTestClassesAsync() + 0x54
+     at Xunit.Sdk.TestCollectionRunner`1.<RunAsync>d__27.MoveNext() + 0x1c0
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b90bb
+     at Xunit.Sdk.TestCollectionRunner`1.RunAsync() + 0x54
+     at Xunit.Sdk.XunitTestAssemblyRunner.<>c__DisplayClass14_2.<RunTestCollectionsAsync>b__2() + 0x35
+     at System.Threading.Tasks.Task`1.InnerInvoke() + 0x2e
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+     at System.Threading.Tasks.Task.ExecuteEntry() + 0x7b
+     at System.Threading.Tasks.SynchronizationContextTaskScheduler.<>c.<.cctor>b__8_0(Object) + 0x2a
+     at Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext(SendOrPostCallback, Object) + 0x51
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa683b8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+     at System.Linq.Expressions.Interpreter.MethodInfoCallInstruction.Run(InterpretedFrame) + 0x67
+     at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame) + 0x2d
+     at System.Linq.Expressions.Interpreter.LightLambda.RunVoid(Object[]) + 0x84
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x7a7c14
+     at Xunit.Sdk.MaxConcurrencySyncContext.WorkerThreadProc() + 0x162
+     at Xunit.Sdk.XunitWorkerThread.<>c.<QueueUserWorkItem>b__5_0(Object) + 0x2d
+     at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+     at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+     at System.Threading.Thread.StartThread(IntPtr) + 0x117
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x44b08a
+  , expectedToString: "System.Diagnostics.Tests.StackTraceTests.Generic[T"...)
+  Assert.Contains() Failure
+  Not found: System.Diagnostics.Tests.StackTraceTests.Generic[T,U]()
+  In value:     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x89e38d
+                at System.Diagnostics.Tests.StackTraceTests.<ToString_TestData>d__20.MoveNext() + 0x2d6
+                at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+                at Xunit.Sdk.XunitTheoryTestCaseRunner.<AfterTestCaseStartingAsync>d__9.MoveNext() + 0x9a7
+                at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+                at Xunit.Sdk.XunitTheoryTestCaseRunner.AfterTestCaseStartingAsync() + 0x36
+                at Xunit.Sdk.TestCaseRunner`1.<RunAsync>d__19.MoveNext() + 0x151
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b850b
+                at Xunit.Sdk.TestCaseRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestMethodRunner.RunTestCaseAsync(IXunitTestCase) + 0x81
+                at Xunit.Sdk.TestMethodRunner`1.<RunTestCasesAsync>d__32.MoveNext() + 0xc3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba42b
+                at Xunit.Sdk.TestMethodRunner`1.RunTestCasesAsync() + 0x54
+                at Xunit.Sdk.TestMethodRunner`1.<RunAsync>d__31.MoveNext() + 0x155
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba05b
+                at Xunit.Sdk.TestMethodRunner`1.RunAsync() + 0x4f
+                at Xunit.Sdk.TestClassRunner`1.<RunTestMethodsAsync>d__38.MoveNext() + 0x1e3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b8ccb
+                at Xunit.Sdk.TestClassRunner`1.RunTestMethodsAsync() + 0x59
+                at Xunit.Sdk.TestClassRunner`1.<RunAsync>d__37.MoveNext() + 0x1dc
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b88eb
+                at Xunit.Sdk.TestClassRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunTestClassesAsync>d__28.MoveNext() + 0x169
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b949b
+                at Xunit.Sdk.TestCollectionRunner`1.RunTestClassesAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunAsync>d__27.MoveNext() + 0x1c0
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b90bb
+                at Xunit.Sdk.TestCollectionRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestAssemblyRunner.<>c__DisplayClass14_2.<RunTestCollectionsAsync>b__2() + 0x35
+                at System.Threading.Tasks.Task`1.InnerInvoke() + 0x2e
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Tasks.Task.ExecuteEntry() + 0x7b
+                at System.Threading.Tasks.SynchronizationContextTaskScheduler.<>c.<.cctor>b__8_0(Object) + 0x2a
+                at Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext(SendOrPostCallback, Object) + 0x51
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa683b8
+                at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+                at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+                at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+                at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+                at System.Linq.Expressions.Interpreter.MethodInfoCallInstruction.Run(InterpretedFrame) + 0x67
+                at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame) + 0x2d
+                at System.Linq.Expressions.Interpreter.LightLambda.RunVoid(Object[]) + 0x84
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x7a7c14
+                at Xunit.Sdk.MaxConcurrencySyncContext.WorkerThreadProc() + 0x162
+                at Xunit.Sdk.XunitWorkerThread.<>c.<QueueUserWorkItem>b__5_0(Object) + 0x2d
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Thread.StartThread(IntPtr) + 0x117
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x44b08a
+             
+     at System.Diagnostics.Tests.StackTraceTests.ToString_Invoke_ReturnsExpected(StackTrace, String) + 0x6b
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa4f86a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.ToString_FunctionPointerSignature
+  Assert.Contains() Failure
+  Not found: System.Diagnostics.Tests.StackTraceTests.FunctionPointerParameter(IntPtr x)
+  In value:     at System.Diagnostics.Tests.StackTraceTests.FunctionPointerParameter(IntPtr) + 0x2d
+                at System.Diagnostics.Tests.StackTraceTests.ToString_FunctionPointerSignature() + 0xb
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa75128
+                at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+                at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+                at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+                at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+                at Xunit.Sdk.TestInvoker`1.CallTestMethod(Object) + 0x2a
+                at Xunit.Sdk.TestInvoker`1.<>c__DisplayClass48_0.<<InvokeTestMethodAsync>b__1>d.MoveNext() + 0x1c0
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9bac0b
+                at Xunit.Sdk.TestInvoker`1.<>c__DisplayClass48_0.<InvokeTestMethodAsync>b__1() + 0x4f
+                at Xunit.Sdk.ExecutionTimer.<AggregateAsync>d__4.MoveNext() + 0xab
+                at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+                at Xunit.Sdk.ExecutionTimer.AggregateAsync(Func`1) + 0x40
+                at Xunit.Sdk.ExceptionAggregator.<RunAsync>d__9.MoveNext() + 0x2e
+                at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+                at Xunit.Sdk.ExceptionAggregator.RunAsync(Func`1) + 0x3b
+                at Xunit.Sdk.TestInvoker`1.<InvokeTestMethodAsync>d__48.MoveNext() + 0x191
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b9c7b
+                at Xunit.Sdk.TestInvoker`1.InvokeTestMethodAsync(Object) + 0x59
+                at Xunit.Sdk.TestInvoker`1.<<RunAsync>b__47_0>d.MoveNext() + 0x270
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b988b
+                at Xunit.Sdk.TestInvoker`1.<RunAsync>b__47_0() + 0x54
+                at Xunit.Sdk.ExceptionAggregator.<RunAsync>d__10`1.MoveNext() + 0x32
+                at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+                at Xunit.Sdk.ExceptionAggregator.RunAsync[T](Func`1) + 0x3b
+                at Xunit.Sdk.XunitTestRunner.<InvokeTestAsync>d__4.MoveNext() + 0xb7
+                at System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[TStateMachine](TStateMachine&) + 0x40
+                at Xunit.Sdk.XunitTestRunner.InvokeTestAsync(ExceptionAggregator) + 0x40
+                at Xunit.Sdk.ExceptionAggregator.<RunAsync>d__10`1.MoveNext() + 0x36
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b5efb
+                at Xunit.Sdk.ExceptionAggregator.RunAsync[T](Func`1) + 0x4d
+                at Xunit.Sdk.TestRunner`1.<RunAsync>d__43.MoveNext() + 0x27b
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba81b
+                at Xunit.Sdk.TestRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.TestCaseRunner`1.<RunAsync>d__19.MoveNext() + 0x1de
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b850b
+                at Xunit.Sdk.TestCaseRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestMethodRunner.RunTestCaseAsync(IXunitTestCase) + 0x81
+                at Xunit.Sdk.TestMethodRunner`1.<RunTestCasesAsync>d__32.MoveNext() + 0xc3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba42b
+                at Xunit.Sdk.TestMethodRunner`1.RunTestCasesAsync() + 0x54
+                at Xunit.Sdk.TestMethodRunner`1.<RunAsync>d__31.MoveNext() + 0x155
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9ba05b
+                at Xunit.Sdk.TestMethodRunner`1.RunAsync() + 0x4f
+                at Xunit.Sdk.TestClassRunner`1.<RunTestMethodsAsync>d__38.MoveNext() + 0x1e3
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b8ccb
+                at Xunit.Sdk.TestClassRunner`1.RunTestMethodsAsync() + 0x59
+                at Xunit.Sdk.TestClassRunner`1.<RunAsync>d__37.MoveNext() + 0x1dc
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b88eb
+                at Xunit.Sdk.TestClassRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunTestClassesAsync>d__28.MoveNext() + 0x169
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b949b
+                at Xunit.Sdk.TestCollectionRunner`1.RunTestClassesAsync() + 0x54
+                at Xunit.Sdk.TestCollectionRunner`1.<RunAsync>d__27.MoveNext() + 0x1c0
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x9b90bb
+                at Xunit.Sdk.TestCollectionRunner`1.RunAsync() + 0x54
+                at Xunit.Sdk.XunitTestAssemblyRunner.<>c__DisplayClass14_2.<RunTestCollectionsAsync>b__2() + 0x35
+                at System.Threading.Tasks.Task`1.InnerInvoke() + 0x2e
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Tasks.Task.ExecuteEntry() + 0x7b
+                at System.Threading.Tasks.SynchronizationContextTaskScheduler.<>c.<.cctor>b__8_0(Object) + 0x2a
+                at Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext(SendOrPostCallback, Object) + 0x51
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa683b8
+                at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+                at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+                at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+                at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+                at System.Linq.Expressions.Interpreter.MethodInfoCallInstruction.Run(InterpretedFrame) + 0x67
+                at System.Linq.Expressions.Interpreter.Interpreter.Run(InterpretedFrame) + 0x2d
+                at System.Linq.Expressions.Interpreter.LightLambda.RunVoid(Object[]) + 0x84
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x7a7c14
+                at Xunit.Sdk.MaxConcurrencySyncContext.WorkerThreadProc() + 0x162
+                at Xunit.Sdk.XunitWorkerThread.<>c.<QueueUserWorkItem>b__5_0(Object) + 0x2d
+                at System.Threading.ExecutionContext.RunInternal(ExecutionContext, ContextCallback, Object) + 0x7f
+                at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&, Thread) + 0x218
+                at System.Threading.Thread.StartThread(IntPtr) + 0x117
+                at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x44b08a
+             
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa75128
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Diagnostics.Tests.StackTraceTests.ToString_ShowILOffset
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_SkipFrames(skipFrames: 1)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x878d1a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_SkipFrames(skipFrames: 0)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x878d1a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_Default
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0xa75128
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_FNeedFileInfo(fNeedFileInfo: False)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x83d66b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Diagnostics.Tests.StackTraceTests.Ctor_FNeedFileInfo(fNeedFileInfo: True)
+  Assert.NotNull() Failure
+     at System.Diagnostics.Tests.StackTraceTests.VerifyFrames(StackTrace, Boolean) + 0x17a
+     at System.Diagnostics.StackTrace.Tests!<BaseAddress>+0x83d66b
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Diagnostics.StackTrace.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 106, Errors: 0, Failures: 40, Skipped: 1. Time: 0.038312s
+  ----- end Sun 05/29/2022  8:17:24.42 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Diagnostics.StackTrace.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.StackTrace\tests\System.Diagnostics.StackTrace.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Diagnostics.StackTrace.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.StackTrace\tests\System.Diagnostics.StackTrace.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:33.69

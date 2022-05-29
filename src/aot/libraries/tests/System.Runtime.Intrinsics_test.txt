@@ -1,0 +1,51 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Intrinsics\tests\System.Runtime.Intrinsics.Tests.csproj (in 703 ms).
+  4 of 5 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  TestUtilities.Unicode -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities.Unicode\Release\net7.0\TestUtilities.Unicode.dll
+  System.Runtime.Intrinsics.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Intrinsics.Tests\Release\net7.0-windows\System.Runtime.Intrinsics.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+EXEC : error : One or more errors occurred. (Code generation failed for method '[System.Runtime.Intrinsics.Tests]System.Runtime.Intrinsics.Tests.Vectors.Vector128Tests.Vector128Int64ShuffleOneInputWithDirectVectorTest()') [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Intrinsics\tests\System.Runtime.Intrinsics.Tests.csproj]
+  System.AggregateException: One or more errors occurred. (Code generation failed for method '[System.Runtime.Intrinsics.Tests]System.Runtime.Intrinsics.Tests.Vectors.Vector128Tests.Vector128Int64ShuffleOneInputWithDirectVectorTest()')
+   ---> ILCompiler.CodeGenerationFailedException: Code generation failed for method '[System.Runtime.Intrinsics.Tests]System.Runtime.Intrinsics.Tests.Vectors.Vector128Tests.Vector128Int64ShuffleOneInputWithDirectVectorTest()'
+   ---> System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+     at Internal.JitInterface.CorInfoImpl.HandleToObject(CORINFO_CLASS_STRUCT_* type) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\Common\JitInterface\CorInfoImpl.cs:line 617
+     at Internal.JitInterface.CorInfoImpl._isValueClass(IntPtr thisHandle, IntPtr* ppException, CORINFO_CLASS_STRUCT_* cls) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\Common\JitInterface\CorInfoBase.cs:line 623
+     --- End of inner exception stack trace ---
+     at Internal.JitInterface.CorInfoImpl.CompileMethodInternal(IMethodNode methodCodeNodeNeedingCode, MethodIL methodIL) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\Common\JitInterface\CorInfoImpl.cs:line 338
+     at Internal.JitInterface.CorInfoImpl.CompileMethod(MethodCodeNode methodCodeNodeNeedingCode, MethodIL methodIL) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\JitInterface\CorInfoImpl.RyuJit.cs:line 63
+     at ILCompiler.RyuJitCompilation.CompileSingleMethod(CorInfoImpl corInfo, MethodCodeNode methodCodeNodeNeedingCode) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\Compiler\RyuJitCompilation.cs:line 190
+     at ILCompiler.RyuJitCompilation.CompileSingleMethod(MethodCodeNode methodCodeNodeNeedingCode) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\Compiler\RyuJitCompilation.cs:line 175
+     at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+  --- End of stack trace from previous location ---
+     at System.Threading.Tasks.Parallel.<>c__DisplayClass19_0`1.<ForWorker>b__1(RangeWorker& currentWorker, Int32 timeout, Boolean& replicationDelegateYieldedBeforeCompletion)
+     at System.Threading.Tasks.TaskReplicator.Replica.Execute()
+     --- End of inner exception stack trace ---
+     at System.Threading.Tasks.TaskReplicator.Run[TState](ReplicatableUserAction`1 action, ParallelOptions options, Boolean stopOnFirstFailure)
+     at System.Threading.Tasks.Parallel.ForWorker[TLocal](Int32 fromInclusive, Int32 toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+  --- End of stack trace from previous location ---
+     at System.Threading.Tasks.Parallel.ForWorker[TLocal](Int32 fromInclusive, Int32 toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+     at ILCompiler.RyuJitCompilation.CompileMultiThreaded(List`1 methodsToCompile) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\Compiler\RyuJitCompilation.cs:line 150
+     at ILCompiler.RyuJitCompilation.ComputeDependencyNodeDependencies(List`1 obj) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\Compiler\RyuJitCompilation.cs:line 140
+     at ILCompiler.DependencyAnalysisFramework.DependencyAnalyzer`2.ComputeMarkedNodes() in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.DependencyAnalysisFramework\DependencyAnalyzer.cs:line 315
+     at ILCompiler.RyuJitCompilation.CompileInternal(String outputFile, ObjectDumper dumper) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\Compiler\RyuJitCompilation.cs:line 88
+     at ILCompiler.Compilation.ILCompiler.ICompilation.Compile(String outputFile, ObjectDumper dumper) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler.Compiler\Compiler\Compilation.cs:line 526
+     at ILCompiler.Program.Run(String[] args) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler\Program.cs:line 893
+     at ILCompiler.Program.Main(String[] args) in D:\work\Core\CurrentWork2\runtime\src\coreclr\tools\aot\ILCompiler\Program.cs:line 1085
+D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\build\Microsoft.NETCore.Native.targets(269,5): error MSB3073: The command ""D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\ilc\\ilc" @"D:\work\Core\CurrentWork2\runtime\artifacts\obj\System.Runtime.Intrinsics.Tests\Release\net7.0-windows\native\System.Runtime.Intrinsics.Tests.ilc.rsp"" exited with code 1. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Intrinsics\tests\System.Runtime.Intrinsics.Tests.csproj]
+
+Build FAILED.
+
+EXEC : error : One or more errors occurred. (Code generation failed for method '[System.Runtime.Intrinsics.Tests]System.Runtime.Intrinsics.Tests.Vectors.Vector128Tests.Vector128Int64ShuffleOneInputWithDirectVectorTest()') [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Intrinsics\tests\System.Runtime.Intrinsics.Tests.csproj]
+D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\build\Microsoft.NETCore.Native.targets(269,5): error MSB3073: The command ""D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\ilc\\ilc" @"D:\work\Core\CurrentWork2\runtime\artifacts\obj\System.Runtime.Intrinsics.Tests\Release\net7.0-windows\native\System.Runtime.Intrinsics.Tests.ilc.rsp"" exited with code 1. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Intrinsics\tests\System.Runtime.Intrinsics.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:15.16

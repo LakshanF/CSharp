@@ -1,0 +1,908 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Formats.Asn1\tests\System.Formats.Asn1.Tests.csproj (in 512 ms).
+  12 of 13 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Formats.Asn1.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1.Tests\Release\net7.0\System.Formats.Asn1.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1.Tests\Release\net7.0\native\System.Formats.Asn1.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1.Tests\Release\net7.0\native\System.Formats.Asn1.Tests.exp
+  System.Formats.Asn1.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:21:48.58 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1.Tests\Release\net7.0\publish\
+  System.Formats.Asn1.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Formats.Asn1.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithInsufficientData(inputHex: "05")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x167
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x167
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithInsufficientData(inputHex: "0481")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithInsufficientData(inputHex: "0484010203")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithInsufficientData(inputHex: "")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithInsufficientData(inputHex: "04830102")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithInsufficientData(inputHex: "048201")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass4_0.<ReadWithInsufficientData>b__0() + 0x24
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "BER too large", rules: BER, inputHex: "048480000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER uint.MaxValue", rules: DER, inputHex: "0484FFFFFFFF")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER non-minimal 80", rules: DER, inputHex: "04820080")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER uint.MaxValue", rules: CER, inputHex: "0484FFFFFFFF")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER too large", rules: DER, inputHex: "048480000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER non-minimal 7F", rules: CER, inputHex: "04817F")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "0xFF-DER", rules: DER, inputHex: "04FF")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER indefinite constructed", rules: DER, inputHex: "308005000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER non-minimal 0", rules: CER, inputHex: "048100")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "BER uint.MaxValue", rules: BER, inputHex: "0484FFFFFFFF")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "BER indefinite primitive", rules: BER, inputHex: "04800000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "BER padded too large", rules: BER, inputHex: "0486000080000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER too large", rules: CER, inputHex: "048480000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "BER padded 5 byte spread", rules: BER, inputHex: "0486000100000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER non-minimal 80", rules: CER, inputHex: "04820080")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER 5 byte spread", rules: CER, inputHex: "04850100000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER definite constructed", rules: CER, inputHex: "30820500")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "BER 5 byte spread", rules: BER, inputHex: "04850100000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER 5 byte spread", rules: DER, inputHex: "04850100000000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "CER indefinite primitive", rules: CER, inputHex: "04800000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "0xFF-BER", rules: BER, inputHex: "04FF")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER indefinite primitive", rules: DER, inputHex: "04800000")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "0xFF-CER", rules: CER, inputHex: "04FF")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER non-minimal 7F", rules: DER, inputHex: "04817F")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "DER non-minimal 0", rules: DER, inputHex: "048100")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.InvalidLengths(description: "BER padded uint.MaxValue", rules: BER, inputHex: "048800000000FFFFFFFF")
+  Assert.Throws() Failure
+  Expected: typeof(System.Formats.Asn1.AsnContentException)
+  Actual:   typeof(System.TypeInitializationException): A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  -------- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.<>c__DisplayClass5_0.<InvalidLengths>b__0() + 0x1f
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithDataRemaining(ruleSet: BER, tagValue: 4, expectedLength: 0, expectedBytesRead: 5, inputHex: "04830000000500")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithDataRemaining(AsnEncodingRules, Int32, Nullable`1, Int32, String) + 0x42
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f1524
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithDataRemaining(ruleSet: CER, tagValue: 16, expectedLength: null, expectedBytesRead: 2, inputHex: "308005000000")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithDataRemaining(AsnEncodingRules, Int32, Nullable`1, Int32, String) + 0x42
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f1524
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithDataRemaining(ruleSet: DER, tagValue: 1, expectedLength: 1, expectedBytesRead: 2, inputHex: "0101FF")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.ReadWithDataRemaining(AsnEncodingRules, Int32, Nullable`1, Int32, String) + 0x42
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f1524
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(tagValue: 4, length: 127, inputHex: "047F")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(Int32, Int32, String) + 0xba
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f19e9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(tagValue: 4, length: 128, inputHex: "048180")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(Int32, Int32, String) + 0xba
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f19e9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(tagValue: 4, length: 0, inputHex: "0400")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(Int32, Int32, String) + 0xba
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f19e9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(tagValue: 4, length: 255, inputHex: "0481FF")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(Int32, Int32, String) + 0xba
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f19e9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(tagValue: 1, length: 1, inputHex: "0101")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(Int32, Int32, String) + 0xba
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f19e9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(tagValue: 2, length: 256, inputHex: "02820100")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(Int32, Int32, String) + 0xba
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f19e9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(tagValue: 4, length: 2147483647, inputHex: "04847FFFFFFF")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.MinimalPrimitiveLength(Int32, Int32, String) + 0xba
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4f19e9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.BerNonMinimalLength(expectedLength: 1, inputHex: "048A00000000000000000001")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.BerNonMinimalLength(Int32, String) + 0x83
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4fc798
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.BerNonMinimalLength(expectedLength: 128, inputHex: "049000000000000000000000000000000080")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.BerNonMinimalLength(Int32, String) + 0x83
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4fc798
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.BerNonMinimalLength(expectedLength: 0, inputHex: "0483000000")
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.BerNonMinimalLength(Int32, String) + 0x83
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4fc798
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.IndefiniteLength(ruleSet: BER)
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.IndefiniteLength(AsnEncodingRules) + 0x97
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4e62b6
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Formats.Asn1.Tests.Reader.ReadLength.IndefiniteLength(ruleSet: CER)
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xbd
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Formats.Asn1.Tests.Reader.ReadLength.IndefiniteLength(AsnEncodingRules) + 0x97
+     at System.Formats.Asn1.Tests!<BaseAddress>+0x4e62b6
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateNoThrowOnBindFailure(RuntimeTypeInfo, Object, Boolean) + 0x301
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.CreateDelegateWorker(Type, Object, Boolean) + 0x4c
+     at System.Formats.Asn1.Tests.Reader.ReadLength..cctor() + 0x44
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  Finished System.Formats.Asn1.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 3418, Errors: 0, Failures: 47, Skipped: 0. Time: 0.1196126s
+  ----- end Sun 05/29/2022  8:21:51.53 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Formats.Asn1.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Formats.Asn1\tests\System.Formats.Asn1.Tests.csproj]
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net462\TestUtilities.dll
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\ref\Release\net462\System.Collections.Immutable.dll
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\Release\net462\System.Collections.Immutable.dll
+  System.Formats.Asn1 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1\ref\Release\net462\System.Formats.Asn1.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\ref\Release\net462\System.Reflection.Metadata.dll
+  System.Formats.Asn1 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1\Release\net462\System.Formats.Asn1.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\Release\net462\System.Reflection.Metadata.dll
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Formats.Asn1\tests\System.Formats.Asn1.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Formats.Asn1.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Formats.Asn1\tests\System.Formats.Asn1.Tests.csproj]
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Formats.Asn1\tests\System.Formats.Asn1.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:29.77

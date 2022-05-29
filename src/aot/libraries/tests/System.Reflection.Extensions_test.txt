@@ -1,0 +1,54 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Extensions\tests\System.Reflection.Extensions.Tests.csproj (in 427 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Reflection.Extensions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Extensions.Tests\Release\net7.0\System.Reflection.Extensions.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Extensions.Tests\Release\net7.0\native\System.Reflection.Extensions.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Extensions.Tests\Release\net7.0\native\System.Reflection.Extensions.Tests.exp
+  System.Reflection.Extensions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Extensions.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:20:20.72 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Extensions.Tests\Release\net7.0\publish\
+  System.Reflection.Extensions.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Reflection.Extensions.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Reflection.Tests.GetCustomAttributes_ParameterInfo.GetCustom_Attribute_On_Return_Parameter_On_Parent_Method
+  System.IndexOutOfRangeException : Index was outside the bounds of the array.
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowIndexOutOfRangeException() + 0x24
+     at Internal.Reflection.Extensions.NonPortable.CustomAttributeInheritanceRules.ParameterCustomAttributeSearcher.GetParent(ParameterInfo) + 0x82
+     at Internal.Reflection.Extensions.NonPortable.CustomAttributeSearcher`1.<GetMatchingCustomAttributesIterator>d__2.MoveNext() + 0x203
+     at System.Attribute.OneOrNull(IEnumerable`1) + 0x20
+     at System.Reflection.Extensions.Tests!<BaseAddress>+0x5137cb
+     at System.Reflection.Tests.GetCustomAttributes_ParameterInfo.GetCustom_Attribute_On_Return_Parameter_On_Parent_Method() + 0x4d
+     at System.Reflection.Extensions.Tests!<BaseAddress>+0x562f48
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Tests.RuntimeReflectionExtensionsTests.GetRuntimeInterfaceMap
+  Assert.Equal() Failure
+              (pos 1)
+  Expected: ifaceType
+  Actual:   interfaceType
+              (pos 1)
+     at System.AssertExtensions.Throws[T](String, Func`1) + 0x3c
+     at System.Reflection.Tests.RuntimeReflectionExtensionsTests.GetRuntimeInterfaceMap() + 0xca
+     at System.Reflection.Extensions.Tests!<BaseAddress>+0x562f48
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Reflection.Extensions.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 45, Errors: 0, Failures: 2, Skipped: 0. Time: 0.0157062s
+  ----- end Sun 05/29/2022 10:20:22.96 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Extensions.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Extensions\tests\System.Reflection.Extensions.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Extensions.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Extensions\tests\System.Reflection.Extensions.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:27.66

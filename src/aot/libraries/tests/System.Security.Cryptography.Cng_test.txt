@@ -1,0 +1,137 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.Cryptography.Cng\tests\System.Security.Cryptography.Cng.Tests.csproj (in 1.39 sec).
+  7 of 8 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Security.Claims -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Claims\ref\Release\net7.0\System.Security.Claims.dll
+  System.Security.Principal.Windows -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Principal.Windows\ref\Release\net7.0\System.Security.Principal.Windows.dll
+  System.Security.Principal.Windows -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Principal.Windows\Release\net7.0-windows\System.Security.Principal.Windows.dll
+  System.Security.Cryptography.Cng.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Cng.Tests\Release\net7.0-windows\System.Security.Cryptography.Cng.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Cng.Tests\Release\net7.0-windows\native\System.Security.Cryptography.Cng.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Cng.Tests\Release\net7.0-windows\native\System.Security.Cryptography.Cng.Tests.exp
+  System.Security.Cryptography.Cng.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Cng.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022 11:22:54.84 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Cng.Tests\Release\net7.0-windows\publish\
+  System.Security.Cryptography.Cng.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Security.Cryptography.Cng.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Security.Cryptography.Cng.Tests.AesCngTests.VerifyMachineKey
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaTests_Array.TestRegenKeyExplicit(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaTests.TestRegenKeyExplicit(CurveDef) + 0x285
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3af
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaTests_Array.TestRegenKeyNamed(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaTests.TestRegenKeyNamed(CurveDef) + 0x220
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3af
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Security.Cryptography.Cng.Tests.TripleDESCngTests.VerifyMachineKey
+  [FAIL] System.Security.Cryptography.EcDiffieHellman.Tests.ECDiffieHellmanTests.TestExplicitCurves(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDiffieHellman.Tests.ECDiffieHellmanTests.VerifyExplicitCurve(ECParameters, ECDiffieHellman, CurveDef) + 0x333
+     at System.Security.Cryptography.EcDiffieHellman.Tests.ECDiffieHellmanTests.TestExplicitCurves(CurveDef) + 0x105
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3cd
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.EcDiffieHellman.Tests.ECDiffieHellmanTests.TestExplicitCurves(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDiffieHellman.Tests.ECDiffieHellmanTests.VerifyExplicitCurve(ECParameters, ECDiffieHellman, CurveDef) + 0x333
+     at System.Security.Cryptography.EcDiffieHellman.Tests.ECDiffieHellmanTests.TestExplicitCurves(CurveDef) + 0x105
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3cd
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaImportExportTests.TestExplicitCurves(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaImportExportTests.VerifyExplicitCurve(ECParameters, ECDsa, CurveDef) + 0x333
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaImportExportTests.TestExplicitCurves(CurveDef) + 0xe1
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3cd
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Security.Cryptography.Encryption.Aes.Tests.AesModeTests.Windows7DoesNotSupportCFB128
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaTests_Span.TestRegenKeyNamed(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaTests.TestRegenKeyNamed(CurveDef) + 0x220
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3af
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaImportExportTests.TestExplicitCurves(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaImportExportTests.VerifyExplicitCurve(ECParameters, ECDsa, CurveDef) + 0x333
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaImportExportTests.TestExplicitCurves(CurveDef) + 0xe1
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3cd
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaTests_Span.TestRegenKeyExplicit(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaTests.TestRegenKeyExplicit(CurveDef) + 0x285
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3af
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Security.Cryptography.Encryption.TripleDes.Tests.TripleDESContractTests.Windows7DoesNotSupportCFB64
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaTests_Stream.TestRegenKeyExplicit(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaTests.TestRegenKeyExplicit(CurveDef) + 0x285
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3af
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Security.Cryptography.Rsa.Tests.KeyGeneration.GenerateMaxKey
+  [FAIL] System.Security.Cryptography.EcDsa.Tests.ECDsaTests_Stream.TestRegenKeyNamed(curveDef: CurveDef Explicit:PrimeShortWeierstrass - NIST P-256)
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Security.Cryptography.HashAlgorithmName>.Equals(System.Security.Cryptography.HashAlgorithmName)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.Security.Cryptography.Tests.EccTestBase.CompareCurve(ECCurve&, ECCurve&) + 0x36a
+     at System.Security.Cryptography.EcDsa.Tests.ECDsaTests.TestRegenKeyNamed(CurveDef) + 0x220
+     at System.Security.Cryptography.Cng.Tests!<BaseAddress>+0x95f3af
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  Finished System.Security.Cryptography.Cng.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 2559, Errors: 0, Failures: 10, Skipped: 5. Time: 7.2683729s
+  ----- end Sun 05/29/2022 11:23:05.83 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Security.Cryptography.Cng.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.Cryptography.Cng\tests\System.Security.Cryptography.Cng.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Security.Cryptography.Cng.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.Cryptography.Cng\tests\System.Security.Cryptography.Cng.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:42.61

@@ -1,0 +1,31 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.CompilerServices.Unsafe\tests\System.Runtime.CompilerServices.Unsafe.Tests.csproj (in 1.31 sec).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime.CompilerServices.Unsafe.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.CompilerServices.Unsafe.Tests\Release\net7.0\System.Runtime.CompilerServices.Unsafe.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.CompilerServices.Unsafe.Tests\Release\net7.0\native\System.Runtime.CompilerServices.Unsafe.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.CompilerServices.Unsafe.Tests\Release\net7.0\native\System.Runtime.CompilerServices.Unsafe.Tests.exp
+  System.Runtime.CompilerServices.Unsafe.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.CompilerServices.Unsafe.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:35:51.47 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.CompilerServices.Unsafe.Tests\Release\net7.0\publish\
+  System.Runtime.CompilerServices.Unsafe.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Runtime.CompilerServices.Unsafe.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  Finished System.Runtime.CompilerServices.Unsafe.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 117, Errors: 0, Failures: 0, Skipped: 0. Time: 0.0462121s
+  ----- end Sun 05/29/2022 10:35:53.65 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:31.98

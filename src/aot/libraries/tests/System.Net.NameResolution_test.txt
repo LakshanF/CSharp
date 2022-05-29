@@ -1,0 +1,5 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+MSBUILD : error MSB1003: Specify a project or solution file. The current working directory does not contain a project or solution file.

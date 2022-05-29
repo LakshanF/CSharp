@@ -1,0 +1,653 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Memory\tests\System.Memory.Tests.csproj (in 386 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Memory.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Memory.Tests\Release\net7.0\System.Memory.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,__Canon>(ReadOnlySpan`1<__Canon>,AssertThrowsActionReadOnly`1<__Canon>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,__Canon>(Span`1<__Canon>,AssertThrowsAction`1<__Canon>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,uint32>(ReadOnlySpan`1<uint32>,AssertThrowsActionReadOnly`1<uint32>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,uint32>(Span`1<uint32>,AssertThrowsAction`1<uint32>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,int32>(ReadOnlySpan`1<int32>,AssertThrowsActionReadOnly`1<int32>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,int32>(Span`1<int32>,AssertThrowsAction`1<int32>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,char>(ReadOnlySpan`1<char>,AssertThrowsActionReadOnly`1<char>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,char>(Span`1<char>,AssertThrowsAction`1<char>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,uint8>(ReadOnlySpan`1<uint8>,AssertThrowsActionReadOnly`1<uint8>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,uint8>(Span`1<uint8>,AssertThrowsAction`1<uint8>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,StructWithReferences>(ReadOnlySpan`1<StructWithReferences>,AssertThrowsActionReadOnly`1<StructWithReferences>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,StructWithReferences>(Span`1<StructWithReferences>,AssertThrowsAction`1<StructWithReferences>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,TestStructExplicit>(ReadOnlySpan`1<TestStructExplicit>,AssertThrowsActionReadOnly`1<TestStructExplicit>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Memory.Tests]System.TestHelpers.AssertThrows<__Canon,TestStructExplicit>(Span`1<TestStructExplicit>,AssertThrowsAction`1<TestStructExplicit>)' will always throw because: Invalid IL or CLR metadata
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Memory.Tests\Release\net7.0\native\System.Memory.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Memory.Tests\Release\net7.0\native\System.Memory.Tests.exp
+  System.Memory.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Memory.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  9:59:55.80 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Memory.Tests\Release\net7.0\publish\
+  System.Memory.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Memory.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Buffers.Binary.Tests.BinaryReaderUnitTests.SpanReadFail
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.Buffers.Binary.Tests.BinaryReaderUnitTests.SpanReadFail() + 0xfc
+     at System.Memory.Tests!<BaseAddress>+0x810278
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Buffers.Binary.Tests.BinaryReaderUnitTests.ReadOnlySpanReadFail
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.Buffers.Binary.Tests.BinaryReaderUnitTests.ReadOnlySpanReadFail() + 0xe7
+     at System.Memory.Tests!<BaseAddress>+0x810278
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Buffers.Binary.Tests.BinaryWriterUnitTests.SpanWriteFail
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.Buffers.Binary.Tests.BinaryWriterUnitTests.SpanWriteFail() + 0x233
+     at System.Memory.Tests!<BaseAddress>+0x810278
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.CopyToShorterArray
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.SpanTests.CopyToShorterArray() + 0xb4
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "<CR><CR>", expectedRanges: ["0..0", "1..1", "2..2"])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "a<CR>b<LF>c", expectedRanges: ["..1", "2..3", "4.."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "<CR><LF>", expectedRanges: ["..0", "^0.."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "a<CR><LF><LF>z", expectedRanges: ["..1", "3..3", "4.."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "a<CR>b<VT>c<LF>d<NEL>e<FF>f<PS>g<LS>h", expectedRanges: ["..1", "2..5", "6..7", "8..9", "10..11", ...])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "aa<CR>bb<LF><CR>cc", expectedRanges: ["..2", "3..5", "6..6", "7.."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "<NEL>xyz", expectedRanges: ["..0", "^3.."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "abc", expectedRanges: [".."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "xyz<NEL>", expectedRanges: ["..3", "^0.."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "abc<NAK>%def", expectedRanges: [".."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: null, expectedRanges: [".."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "", expectedRanges: [".."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.EnumerateLines_Battery(input: "<CR>", expectedRanges: ["..0", "1.."])
+  System.Reflection.MissingRuntimeArtifactException : This object cannot be invoked because no code was generated for it: 'System.IEquatable<System.Range>.Equals(System.Range)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x34
+     at System.SpanTests.SpanTests.EnumerateLines_Battery(String, String[]) + 0x209
+     at System.Memory.Tests!<BaseAddress>+0x7fa44c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.MemoryMarshalTests.CastSpanToTypeContainsReferences
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.CastSpanToTypeContainsReferences() + 0x8a
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.CastReadOnlySpanOverflow
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.CastReadOnlySpanOverflow() + 0x6e
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.CastReadOnlySpanFromTypeContainsReferences
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.CastReadOnlySpanFromTypeContainsReferences() + 0x84
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.GetArrayDataReference_NonEmptyInput_ReturnsRefToFirstElement
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.SpanTests.MemoryMarshalTests.GetArrayDataReference_NonEmptyInput_ReturnsRefToFirstElement() + 0x180
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.ReadOnlySpan_AsBytesContainsReferences
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.ReadOnlySpan_AsBytesContainsReferences() + 0x84
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(rank: 2)
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(Int32) + 0x55
+     at System.Memory.Tests!<BaseAddress>+0x6b5d16
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(rank: 3)
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(Int32) + 0x55
+     at System.Memory.Tests!<BaseAddress>+0x6b5d16
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(rank: 1)
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(Int32) + 0x55
+     at System.Memory.Tests!<BaseAddress>+0x6b5d16
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(rank: 4)
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at System.SpanTests.MemoryMarshalTests.GetArrayDataReference_EmptyInput_ReturnsRefToWhereFirstElementWouldBe_MdArray(Int32) + 0x55
+     at System.Memory.Tests!<BaseAddress>+0x6b5d16
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.CastReadOnlySpanToTypeContainsReferences
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.CastReadOnlySpanToTypeContainsReferences() + 0x84
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.CastSpanOverflow
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.CastSpanOverflow() + 0x6e
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.CastSpanFromTypeContainsReferences
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.CastSpanFromTypeContainsReferences() + 0x8a
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.MemoryMarshalTests.Span_AsBytesContainsReferences
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.MemoryMarshalTests.Span_AsBytesContainsReferences() + 0x84
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(action: AssertThrowsAction`1 { Method = (throws MissingRuntimeArtifactException), Target = <>c { } })
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.MemoryExtensionsToUpperLowerOverlappingThrows(TestHelpers.AssertThrowsAction`1) + 0x54
+     at System.Memory.Tests!<BaseAddress>+0x7b915d
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.SpanTests.SpanTests.Sort
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.SpanTests.SpanTests.Sort<System.Byte>(System.Byte[],System.Collections.Generic.IComparer<System.Byte>)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+  [FAIL] System.SpanTests.SpanTests.Span_Constructor
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetException)
+  Actual:   (No exception was thrown)
+     at System.SpanTests.SpanTests.Span_Constructor() + 0xaf
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.ReadOnlySpan_Constructor
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetException)
+  Actual:   (No exception was thrown)
+     at System.SpanTests.SpanTests.ReadOnlySpan_Constructor() + 0xaf
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.MemoryTests.ReadOnlyMemoryTests.SpanFromCtorArrayObject
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.TestHelpers.ValidateReferenceType[T](ReadOnlySpan`1, T[]) + 0xd5
+     at System.MemoryTests.ReadOnlyMemoryTests.SpanFromCtorArrayObject() + 0x14d
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.ObjectArrayAsSpan
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.TestHelpers.ValidateReferenceType[T](Span`1, T[]) + 0xd5
+     at System.SpanTests.SpanTests.ObjectArrayAsSpan() + 0xb2
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.CtorArray3
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.TestHelpers.ValidateReferenceType[T](Span`1, T[]) + 0xd5
+     at System.SpanTests.SpanTests.CtorArray3() + 0xb6
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.CopyToShorter
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.SpanTests.SpanTests.CopyToShorter() + 0xb4
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.ReadOnlySpanTests.CtorVariantArrayType
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.TestHelpers.ValidateReferenceType[T](ReadOnlySpan`1, T[]) + 0xd5
+     at System.SpanTests.ReadOnlySpanTests.CtorVariantArrayType() + 0x86
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.MemoryTests.MemoryTests.SpanFromCtorArrayObject
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.TestHelpers.ValidateReferenceType[T](Span`1, T[]) + 0xd5
+     at System.MemoryTests.MemoryTests.SpanFromCtorArrayObject() + 0x14d
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.ObjectArraySegmentAsSpan
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](Span`1, TestHelpers.AssertThrowsAction`1) + 0xe
+     at System.TestHelpers.ValidateReferenceType[T](Span`1, T[]) + 0xd5
+     at System.SpanTests.SpanTests.ObjectArraySegmentAsSpan() + 0xf4
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.SpanTests.MemoryMarshal_GenericStaticReturningSpan
+  System.NotSupportedException : Cannot create boxed ByRef-like values.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x109
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.SpanTests.SpanTests.MemoryMarshal_GenericStaticReturningSpan() + 0x85
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.ReadOnlySpanTests.CopyToShorter
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.CopyToShorter() + 0xb4
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.ReadOnlySpanTests.CtorArray3
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.TestHelpers.ValidateReferenceType[T](ReadOnlySpan`1, T[]) + 0xd5
+     at System.SpanTests.ReadOnlySpanTests.CtorArray3() + 0xb6
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.SpanTests.ReadOnlySpanTests.EqualsUnknownComparisonType_StringComparison
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.TestHelpers.AssertThrows[E, T](ReadOnlySpan`1, TestHelpers.AssertThrowsActionReadOnly`1) + 0xe
+     at System.SpanTests.ReadOnlySpanTests.EqualsUnknownComparisonType_StringComparison() + 0xa1
+     at System.Memory.Tests!<BaseAddress>+0x81028e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Memory.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 47817, Errors: 0, Failures: 76, Skipped: 0. Time: 278.7549507s
+  ----- end Sun 05/29/2022 10:04:38.15 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Memory.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Memory\tests\System.Memory.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Memory.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Memory\tests\System.Memory.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:05:10.61

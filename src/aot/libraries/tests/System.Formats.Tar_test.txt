@@ -1,0 +1,37 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Formats.Tar\tests\System.Formats.Tar.Tests.csproj (in 5.32 sec).
+  6 of 7 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Formats.Tar -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Tar\ref\Release\net7.0\System.Formats.Tar.dll
+  System.Formats.Tar -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Tar\Release\net7.0-windows\System.Formats.Tar.dll
+  System.Formats.Tar.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Tar.Tests\Release\net7.0-windows\System.Formats.Tar.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Tar.Tests\Release\net7.0-windows\native\System.Formats.Tar.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Tar.Tests\Release\net7.0-windows\native\System.Formats.Tar.Tests.exp
+  System.Formats.Tar.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Tar.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022  8:22:25.03 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Tar.Tests\Release\net7.0-windows\publish\
+  System.Formats.Tar.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Formats.Tar.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  You do not have sufficient privilege to perform this operation.
+  [SKIP] System.Formats.Tar.Tests.TarFile_ExtractToDirectory_Stream_Tests.Extract_SymbolicLinkEntry_TargetInsideDirectory
+  [SKIP] System.Formats.Tar.Tests.TarWriter_WriteEntry_File_Tests.Add_SymbolicLink
+  Finished System.Formats.Tar.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 235, Errors: 0, Failures: 0, Skipped: 2. Time: 0.4250004s
+  ----- end Sun 05/29/2022  8:22:27.87 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:30.47

@@ -1,0 +1,44 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Resources.Reader\tests\System.Resources.Reader.Tests.csproj (in 387 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Resources.Reader.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.Reader.Tests\Release\net7.0\System.Resources.Reader.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.Reader.Tests\Release\net7.0\native\System.Resources.Reader.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.Reader.Tests\Release\net7.0\native\System.Resources.Reader.Tests.exp
+  System.Resources.Reader.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.Reader.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:31:24.92 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.Reader.Tests\Release\net7.0\publish\
+  System.Resources.Reader.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Resources.Reader.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Resources.ResourceWriterTests.ResourceReaderTests.ReadV1Resources
+  System.NotSupportedException : Use of ResourceManager for custom types is disabled. Set the MSBuild Property CustomResourceTypesSupport to true in order to enable it.
+     at System.Resources.ResourceReader.FindType(Int32) + 0x33
+     at System.Resources.ResourceReader._LoadObjectV1(Int32) + 0x8f
+     at System.Resources.ResourceReader.LoadObjectV1(Int32) + 0x11
+     at System.Resources.ResourceReader.ResourceEnumerator.get_Entry() + 0xd9
+     at System.Resources.ResourceReader.ResourceEnumerator.get_Current() + 0x24
+     at System.Resources.ResourceWriterTests.ResourceReaderTests.ReadV1Resources() + 0x263
+     at System.Resources.Reader.Tests!<BaseAddress>+0x5684fe
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Resources.Reader.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 25, Errors: 0, Failures: 1, Skipped: 0. Time: 0.0142549s
+  ----- end Sun 05/29/2022 10:31:27.14 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Resources.Reader.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Resources.Reader\tests\System.Resources.Reader.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Resources.Reader.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Resources.Reader\tests\System.Resources.Reader.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:21.92

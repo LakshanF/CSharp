@@ -1,0 +1,121 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Collections -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections\ref\Release\net7.0\System.Collections.dll
+  System.ObjectModel -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ObjectModel\ref\Release\net7.0\System.ObjectModel.dll
+  System.Linq.Expressions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Expressions\ref\Release\net7.0\System.Linq.Expressions.dll
+  System.Linq.Expressions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Expressions\Release\net7.0\System.Linq.Expressions.dll
+  System.Linq.Expressions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Expressions.Tests\Release\net7.0\System.Linq.Expressions.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Expressions.Tests\Release\net7.0\native\System.Linq.Expressions.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Expressions.Tests\Release\net7.0\native\System.Linq.Expressions.Tests.exp
+  System.Linq.Expressions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Expressions.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  9:18:24.99 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Expressions.Tests\Release\net7.0\publish\
+  System.Linq.Expressions.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Linq.Expressions.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.VerifyIL_Closure3
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.EmitConstantsToIL_ShareReferences
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.EmitConstantsToIL_ReferenceTypes
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.VariableBinder_CatchBlock_Filter2
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.VerifyIL_Exceptions
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.EmitConstantsToIL_NonNullableValueTypes
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.VariableBinder_CatchBlock_Filter1
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.EmitConstantsToIL_NullableValueTypes
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.VerifyIL_Simple
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.VerifyIL_Closure2
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.VerifyIL_Closure1
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.EmitConstantsToIL_LiftedToClosure
+  [SKIP] System.Linq.Expressions.Tests.CompilerTests.EmitConstantsToIL_Enums
+  [SKIP] System.Linq.Expressions.Tests.ConstantTests.CheckMethodInfoConstantTest
+  [SKIP] System.Linq.Expressions.Tests.UnaryArithmeticNegateCheckedNullableTests.VerifyIL_NullableShortNegateChecked
+  [SKIP] System.Linq.Expressions.Tests.InvocationTests.InvokePrivateDelegateTypeLambda
+  [SKIP] System.Linq.Expressions.Tests.InvocationTests.InvokePrivateDelegate
+  [SKIP] System.Linq.Expressions.Tests.UnaryArithmeticNegateCheckedTests.VerifyIL_ShortNegateChecked
+  [SKIP] System.Linq.Expressions.Tests.ListBindTests.GlobalMethod
+  [SKIP] System.Dynamic.Tests.InvokeMemberBindingTests.NonIndexerParameterizedSetterOnlyIndexAccess
+  [SKIP] System.Dynamic.Tests.InvokeMemberBindingTests.NonIndexerParameterizedGetterOnlyIndexAccess
+  [SKIP] System.Dynamic.Tests.InvokeMemberBindingTests.NonIndexerParameterizedGetterAndSetterIndexAccess
+  [SKIP] System.Dynamic.Tests.InvokeMemberBindingTests.NonIndexerParameterizedDirectAccess
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_VoidReturnType_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_NotStatic_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_DoesntHaveTwoParameters_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_ReturnTypeNotEqualToParameterTypes_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_ExpressionDoesntMatchMethodParameters_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_ExpressionDoesntMatchMethodParameters_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.Method_NoTrueFalseOperator_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_DoesntHaveTwoParameters_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_TrueOperatorIncorrectMethod_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.Method_FalseOperatorIncorrectMethod_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElseGlobalMethod
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_ParamsDontMatchOperator_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.Method_TrueOperatorIncorrectMethod_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_NoTrueFalseOperator_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_NotStatic_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_NoTrueFalseOperator_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_ReturnTypeNotEqualToParameterTypes_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlsoGlobalMethod
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_ParamsDontMatchOperator_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.OrElse_NoMethod_TrueOperatorIncorrectMethod_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.Method_ParamsDontMatchOperator_ThrowsInvalidOperationException
+  [SKIP] System.Linq.Expressions.Tests.BinaryLogicalTests.AndAlso_NoMethod_VoidReturnType_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.BindTests.GlobalField
+  [SKIP] System.Linq.Expressions.Tests.BindTests.GlobalMethod
+  [SKIP] System.Linq.Expressions.Tests.MemberAccessTests.Property_NoGetOrSetAccessors_ThrowsArgumentException
+  [SKIP] System.Linq.Expressions.Tests.MemberBindTests.GlobalMethod
+  [SKIP] System.Linq.Expressions.Tests.InterpreterTests.VerifyInstructions_Exceptions
+  [SKIP] System.Linq.Expressions.Tests.InterpreterTests.VerifyInstructions_Simple
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_RuntimeVariables1
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_RuntimeVariables2
+  [SKIP] System.Linq.Expressions.Tests.ArrayIndexTests.NonZeroBasedOneDimensionalArrayIndex
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_StaticReadOnlyField
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_Default
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_LiteralField_NotNetFramework
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_NoSpillBeyondSpillSite2
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_Constant
+  [SKIP] System.Linq.Expressions.Tests.StackSpillerTests.Spill_Optimizations_NoSpillBeyondSpillSite1
+  [SKIP] System.Linq.Expressions.Tests.ArrayIndexTests.NonZeroBasedOneDimensionalArrayIndexMethod
+  [SKIP] System.Linq.Expressions.Tests.ArrayAccessTests.ArrayIndex_MultiDimensionalOf1
+  [SKIP] System.Linq.Expressions.Tests.ArrayAccessTests.NonZeroBasedOneDimensionalArrayAccess
+  [SKIP] System.Linq.Expressions.Tests.ArrayAccessTests.ArrayAccess_MultiDimensionalOf1
+  [SKIP] System.Linq.Expressions.Tests.ExceptionHandlingExpressions.CatchFromExternallyThrownString
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertySetterNoParams
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.ByRefIndexer
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.InstanceToStaticProperty
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertyGetterInstanceSetterStatic
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertyGetterSetterArgCountMismatch
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.ByRefIndexedProperty
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.VoidIndexedProperty
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.NoAccessorIndexedProperty
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertyGetReturnsWrongType
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertyGetterSetterArgumentTypeMismatch
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertySetterByrefValueType
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertySetterValueTypeNotMatchPropertyType
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertyVarArgs
+  [SKIP] System.Linq.Expressions.Tests.IndexExpressionTests.IndexedPropertySetterNotReturnVoid
+  [SKIP] System.Linq.Expressions.Tests.LambdaTests.AboveByteMaxArityArgIL
+  [SKIP] System.Linq.Expressions.Tests.LambdaTests.AboveByteMaxArityArgAddressIL
+  [SKIP] System.Linq.Expressions.Tests.LambdaTests.PrivateDelegate
+  [SKIP] System.Linq.Expressions.Tests.ArrayLengthTests.ArrayTypeArrayNotAllowedIfNonZeroBoundArray
+  [SKIP] System.Linq.Expressions.Tests.NewTests.GlobalMethodInMembers
+  [SKIP] System.Linq.Expressions.Tests.NewTests.GlobalFieldInMembers
+  [SKIP] System.Linq.Expressions.Tests.BinaryCoalesceTests.VerifyIL_NullableIntCoalesceToNullableInt
+  Finished System.Linq.Expressions.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 23948, Errors: 0, Failures: 0, Skipped: 86. Time: 2.6442768s
+  ----- end Sun 05/29/2022  9:18:32.83 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:01:05.03

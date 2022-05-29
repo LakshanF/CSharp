@@ -1,0 +1,141 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Threading.Channels\tests\System.Threading.Channels.Tests.csproj (in 417 ms).
+  6 of 7 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Threading.Channels.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels.Tests\Release\net7.0\System.Threading.Channels.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels.Tests\Release\net7.0\native\System.Threading.Channels.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels.Tests\Release\net7.0\native\System.Threading.Channels.Tests.exp
+  System.Threading.Channels.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 11:32:42.33 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels.Tests\Release\net7.0\publish\
+  System.Threading.Channels.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Threading.Channels.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Threading.Channels.Tests.StressTests.CanceledReads
+  [SKIP] System.Threading.Channels.Tests.StressTests.ReadWriteVariations
+  [SKIP] System.Threading.Channels.Tests.ChannelClosedExceptionTests.Serialization_Roundtrip
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: UnboundedChannel`1 { Reader = UnboundedChannelReader { CanCount = True, CanPeek = True, Completion = Task { Status = WaitingForActivation }, Count = 0 }, Writer = UnboundedChannelWriter { } })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.UnboundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.SyncSingleReaderUnboundedChannelTests.ValidateDebuggerAttributes
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.SingleConsumerUnboundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.ChannelTestBase.ValidateDebuggerAttributes() + 0x43
+     at System.Threading.Channels.Tests!<BaseAddress>+0x634e28
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: UnboundedChannelReader { CanCount = True, CanPeek = True, Completion = Task { Status = WaitingForActivation }, Count = 0 })
+  System.Reflection.MissingMetadataException : 'System.Threading.Channels.DebugEnumeratorDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x36
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: UnboundedChannelWriter { })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.UnboundedChannel`1+UnboundedChannelWriter[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: SingleConsumerUnboundedChannel`1 { Reader = UnboundedChannelReader { CanCount = False, CanPeek = True, Completion = Task { Status = WaitingForActivation }, Count = (throws NotSupportedException) }, Writer = UnboundedChannelWriter { } })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.SingleConsumerUnboundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: UnboundedChannelReader { CanCount = False, CanPeek = True, Completion = Task { Status = WaitingForActivation }, Count = (throws NotSupportedException) })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.SingleConsumerUnboundedChannel`1+UnboundedChannelReader[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: UnboundedChannelWriter { })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.SingleConsumerUnboundedChannel`1+UnboundedChannelWriter[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: BoundedChannel`1 { Reader = BoundedChannelReader { CanCount = True, CanPeek = True, Completion = Task { Status = WaitingForActivation }, Count = 0 }, Writer = BoundedChannelWriter { } })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.BoundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.BoundedChannelTests.ValidateDebuggerAttributes
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.BoundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.ChannelTestBase.ValidateDebuggerAttributes() + 0x43
+     at System.Threading.Channels.Tests!<BaseAddress>+0x634e28
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: BoundedChannelReader { CanCount = True, CanPeek = True, Completion = Task { Status = WaitingForActivation }, Count = 0 })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.BoundedChannel`1+BoundedChannelReader[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(obj: BoundedChannelWriter { })
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.BoundedChannel`1+BoundedChannelWriter[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.DebugAttributeTests.TestDebuggerDisplaysAndTypeProxies(Object) + 0x11
+     at System.Threading.Channels.Tests!<BaseAddress>+0x5e633f
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Threading.Channels.Tests.AsyncSingleReaderUnboundedChannelTests.ValidateInternalDebuggerAttributes
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Collections.Concurrent.SingleProducerSingleConsumerQueue`1[System.Int32] contains the expression "Count".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.SingleReaderUnboundedChannelTests.ValidateInternalDebuggerAttributes() + 0x80
+     at System.Threading.Channels.Tests!<BaseAddress>+0x634e28
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Threading.Channels.Tests.AsyncMultiReaderUnboundedChannelTests.ValidateDebuggerAttributes
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.UnboundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.ChannelTestBase.ValidateDebuggerAttributes() + 0x43
+     at System.Threading.Channels.Tests!<BaseAddress>+0x634e28
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Threading.Channels.Tests.SyncMultiReaderUnboundedChannelTests.ValidateDebuggerAttributes
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.UnboundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.ChannelTestBase.ValidateDebuggerAttributes() + 0x43
+     at System.Threading.Channels.Tests!<BaseAddress>+0x634e28
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Threading.Channels.Tests.SyncSingleReaderUnboundedChannelTests.ValidateInternalDebuggerAttributes
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Collections.Concurrent.SingleProducerSingleConsumerQueue`1[System.Int32] contains the expression "Count".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.SingleReaderUnboundedChannelTests.ValidateInternalDebuggerAttributes() + 0x80
+     at System.Threading.Channels.Tests!<BaseAddress>+0x634e28
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Threading.Channels.Tests.AsyncSingleReaderUnboundedChannelTests.ValidateDebuggerAttributes
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Threading.Channels.SingleConsumerUnboundedChannel`1[System.Int32] contains the expression "ItemsCountForDebugger".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Threading.Channels.Tests.ChannelTestBase.ValidateDebuggerAttributes() + 0x43
+     at System.Threading.Channels.Tests!<BaseAddress>+0x634e28
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Threading.Channels.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 1149, Errors: 0, Failures: 16, Skipped: 3. Time: 0.4883414s
+  ----- end Sun 05/29/2022 11:32:46.18 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Threading.Channels.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Threading.Channels\tests\System.Threading.Channels.Tests.csproj]
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net462\TestUtilities.dll
+  System.Threading.Channels -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels\ref\Release\net462\System.Threading.Channels.dll
+  System.Threading.Channels -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels\Release\net462\System.Threading.Channels.dll
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Threading.Channels\tests\System.Threading.Channels.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Threading.Channels.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Threading.Channels\tests\System.Threading.Channels.Tests.csproj]
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Threading.Channels\tests\System.Threading.Channels.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:25.77

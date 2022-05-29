@@ -1,0 +1,1116 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Xml\tests\System.Runtime.Serialization.Xml.Tests.csproj (in 364 ms).
+  5 of 6 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.CodeDom -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.CodeDom\ref\Release\net7.0\System.CodeDom.dll
+  System.CodeDom -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.CodeDom\Release\net7.0\System.CodeDom.dll
+  System.Runtime.Serialization.Xml.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Xml.Tests\Release\net7.0\System.Runtime.Serialization.Xml.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Xml.Tests\Release\net7.0\native\System.Runtime.Serialization.Xml.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Xml.Tests\Release\net7.0\native\System.Runtime.Serialization.Xml.Tests.exp
+  System.Runtime.Serialization.Xml.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Xml.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 11:19:06.38 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Xml.Tests\Release\net7.0\publish\
+  System.Runtime.Serialization.Xml.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Runtime.Serialization.Xml.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] DataContractSerializerTests.DCS_GenericICollectionOfBoolean
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Boolean>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericICollectionOfBoolean() + 0xec
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_ArrayAsGetOnly
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.ReflectionReader.GetCollectionSetItemDelegate<System.Int32>(System.Runtime.Serialization.CollectionDataContract,System.Object,System.Boolean)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.ReflectionReader.ReadCollectionItems(XmlReaderDelegator, XmlObjectSerializerReadContext, XmlDictionaryString, XmlDictionaryString, CollectionDataContract, Object, Boolean) + 0xbe
+     at System.Runtime.Serialization.ReflectionReader.ReflectionReadGetOnlyCollection(XmlReaderDelegator, XmlObjectSerializerReadContext, XmlDictionaryString, XmlDictionaryString, CollectionDataContract) + 0xa1
+     at System.Runtime.Serialization.CollectionDataContract.ReadXmlValue(XmlReaderDelegator, XmlObjectSerializerReadContext) + 0x5c
+     at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator, String, String, Type, DataContract&) + 0x199
+     at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator, Int32, RuntimeTypeHandle, String, String) + 0x5d
+     at System.Runtime.Serialization.ReflectionReader.ReflectionReadValue(XmlReaderDelegator, XmlObjectSerializerReadContext, Type, String, String, PrimitiveDataContract) + 0x16e
+     at System.Runtime.Serialization.ReflectionReader.ReflectionReadValue(XmlReaderDelegator, XmlObjectSerializerReadContext, DataMember, String) + 0x5b
+     at System.Runtime.Serialization.ReflectionReader.ReflectionReadMember(XmlReaderDelegator, XmlObjectSerializerReadContext, ClassDataContract, Object&, Int32, DataMember[]) + 0x96
+     at System.Runtime.Serialization.ReflectionXmlReader.ReflectionReadMembers(XmlReaderDelegator, XmlObjectSerializerReadContext, XmlDictionaryString[], XmlDictionaryString[], ClassDataContract, Object&) + 0x214
+     at System.Runtime.Serialization.ReflectionReader.ReflectionReadClass(XmlReaderDelegator, XmlObjectSerializerReadContext, XmlDictionaryString[], XmlDictionaryString[], ClassDataContract) + 0xa9
+     at System.Runtime.Serialization.ReflectionXmlClassReader.ReflectionReadClass(XmlReaderDelegator, XmlObjectSerializerReadContext, XmlDictionaryString[], XmlDictionaryString[]) + 0x22
+     at System.Runtime.Serialization.ClassDataContract.ReadXmlValue(XmlReaderDelegator, XmlObjectSerializerReadContext) + 0x43
+     at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator, String, String, Type, DataContract&) + 0x199
+     at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator, Type, DataContract, String, String) + 0x61
+     at System.Runtime.Serialization.DataContractSerializer.InternalReadObject(XmlReaderDelegator, Boolean, DataContractResolver) + 0x146
+     at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator, Boolean, DataContractResolver) + 0x22
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0x1eb
+     at DataContractSerializerTests.DCS_ArrayAsGetOnly() + 0xf2
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DateTimeOffsetAsRoot
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'UtcDateTime' in type 'System.Runtime.Serialization.DateTimeOffsetAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xf5
+     at DataContractSerializerTests.DCS_DateTimeOffsetAsRoot() + 0x509
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_EnumerableCollection
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.ReflectionReader.GetCollectionSetItemDelegate<System.DateTime>(System.Runtime.Serialization.CollectionDataContract,System.Object,System.Boolean)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.ReflectionReader.ReadCollectionItems(XmlReaderDelegator, XmlObjectSerializerReadContext, XmlDictionaryString, XmlDictionaryString, CollectionDataContract, Object, Boolean) + 0xbe
+     at System.Runtime.Serialization.ReflectionReader.ReflectionReadCollectionCore(XmlReaderDelegator, XmlObjectSerializerReadContext, XmlDictionaryString, XmlDictionaryString, CollectionDataContract) + 0x110
+     at System.Runtime.Serialization.CollectionDataContract.ReadXmlValue(XmlReaderDelegator, XmlObjectSerializerReadContext) + 0x85
+     at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator, String, String, Type, DataContract&) + 0x199
+     at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator, Type, DataContract, String, String) + 0x61
+     at System.Runtime.Serialization.DataContractSerializer.InternalReadObject(XmlReaderDelegator, Boolean, DataContractResolver) + 0x146
+     at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator, Boolean, DataContractResolver) + 0x22
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0x1eb
+     at DataContractSerializerTests.DCS_EnumerableCollection() + 0x11b
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_NonGenericDictionaryOfInt32String
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Object,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_NonGenericDictionaryOfInt32String() + 0xbf
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_CollectionDataContract
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[SerializationTestTypes.SimpleDC,SerializationTestTypes.SimpleDC]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeAndVerifyType(DataContract, XmlWriterDelegator, Object, Boolean, RuntimeTypeHandle, Type) + 0xd2
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x24c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.TestObjectInObjectContainerWithSimpleResolver[T](T, String, Boolean) + 0xb4
+     at DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_CollectionDataContract() + 0x887
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericDictionaryOfInt32String
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.Int32,System.String>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericDictionaryOfInt32String() + 0x7c
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericICollectionOfInt64
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Int64>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericICollectionOfInt64() + 0x111
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericICollectionOfDouble
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Double>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericICollectionOfDouble() + 0x116
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_SampleTypes
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Object,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x1b0
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.TestObjectInObjectContainerWithSimpleResolver[T](T, String, Boolean) + 0xb4
+     at DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_SampleTypes() + 0x12e6
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_TypeWithIDictionaryPropertyInitWithConcreteType
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.String,System.String]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x85
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_TypeWithIDictionaryPropertyInitWithConcreteType() + 0xac
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_TypeWithGenericDictionaryAsKnownType
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.Int32,SerializationTypes.Level>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContract.CheckAndAdd(Type, Dictionary`2, Dictionary`2&) + 0x3f
+     at System.Runtime.Serialization.DataContract.ImportKnownTypeAttributes(Type, Dictionary`2, Dictionary`2&) + 0x10c
+     at System.Runtime.Serialization.DataContract.ImportKnownTypeAttributes(Type) + 0x3c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.get_KnownDataContracts() + 0x4e
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithoutXsiType(DataContract, XmlWriterDelegator, Object, RuntimeTypeHandle) + 0x3f
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_TypeWithGenericDictionaryAsKnownType() + 0xe6
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DictionaryMembers
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Object,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_DictionaryMembers() + 0x3ba
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DuplicatedKeyDateTimeOffset
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'UtcDateTime' in type 'System.Runtime.Serialization.DateTimeOffsetAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xf5
+     at DataContractSerializerTests.DCS_DuplicatedKeyDateTimeOffset() + 0xd4
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicRoundTripResolvePrimitiveTypes_NotNetFramework
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.DateTimeOffset>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xbd
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeAndVerifyType(DataContract, XmlWriterDelegator, Object, Boolean, RuntimeTypeHandle, Type) + 0xd2
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x24c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_BasicRoundTripResolvePrimitiveTypes(String) + 0xaf
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_CollectionDataContractWithCustomKeyNameDuplicate
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.Int32,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_CollectionDataContractWithCustomKeyNameDuplicate() + 0x7c
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_ReadOnlyDictionary
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x85
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_ReadOnlyDictionary() + 0x9a
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DictionaryGenericMembers
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_DictionaryGenericMembers() + 0x229
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_NonGenericDictionaryOfInt32Boolean
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Object,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_NonGenericDictionaryOfInt32Boolean() + 0xdd
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_NonGenericDictionaryOfStringInt32
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Object,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_NonGenericDictionaryOfStringInt32() + 0xbf
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicRoundtripDCRDefaultCollections
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.Int32,System.Object>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_BasicRoundtripDCRDefaultCollections() + 0x75
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_MemoryStream_Serialize_UsesBuiltInAdapter
+  System.Runtime.Serialization.InvalidDataContractException : No get method for property 'Capacity' in type 'System.Runtime.Serialization.MemoryStreamAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x36b
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.<DCS_MemoryStream_Serialize_UsesBuiltInAdapter>g__ValidateObject|228_0(MemoryStream, String, Byte[], Int32, Boolean) + 0x44
+     at DataContractSerializerTests.DCS_MemoryStream_Serialize_UsesBuiltInAdapter() + 0x4a
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_TypeWithDatetimeOffsetTypeProperty
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'UtcDateTime' in type 'System.Runtime.Serialization.DateTimeOffsetAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x12b
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_TypeWithDatetimeOffsetTypeProperty() + 0xfe
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DictionaryRoot
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Object,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_DictionaryRoot() + 0xbd
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_TypeWithCollectionAndDateTimeOffset
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Int32>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xbd
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_TypeWithCollectionAndDateTimeOffset() + 0x32f
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericICollectionOfInt32
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Int32>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericICollectionOfInt32() + 0x70
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_TypeWithCollectionAndDateTimeOffset_ListIsNull
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'UtcDateTime' in type 'System.Runtime.Serialization.DateTimeOffsetAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x12b
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_TypeWithCollectionAndDateTimeOffset_ListIsNull() + 0x280
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DuplicatedKnownTypesWithAdapterThroughConstructor
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'UtcDateTime' in type 'System.Runtime.Serialization.DateTimeOffsetAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x1b0
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_DuplicatedKnownTypesWithAdapterThroughConstructor() + 0x116
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DictionaryGenericRoot
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_DictionaryGenericRoot() + 0x7b
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_ConcurrentDictionary
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_ConcurrentDictionary() + 0xea
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_EnumStruct_NotNetFramework
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.DateTimeOffset>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xbd
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeAndVerifyType(DataContract, XmlWriterDelegator, Object, Boolean, RuntimeTypeHandle, Type) + 0xd2
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x24c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.TestObjectInObjectContainerWithSimpleResolver[T](T, String, Boolean) + 0xb4
+     at DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_EnumStruct_NotNetFramework() + 0x35
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_DictionaryWithVariousKeyValueTypes
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<SerializationTypes.MyEnum,SerializationTypes.MyEnum>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_DictionaryWithVariousKeyValueTypes() + 0x48
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericICollectionOfSingle
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Single>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericICollectionOfSingle() + 0x101
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_DataSet
+  System.Runtime.Serialization.InvalidDataContractException : Type 'System.Data.DataSet' does not have a static method 'GetDataSetSchema' that takes a parameter of type 'System.Xml.Schema.XmlSchemaSet' as specified by the XmlSchemaProviderAttribute attribute.
+     at System.Runtime.Serialization.SchemaExporter.InvokeSchemaProviderMethod(Type, XmlSchemaSet, XmlQualifiedName&, XmlSchemaType&, Boolean&) + 0x605
+     at System.Runtime.Serialization.SchemaExporter.GetXmlTypeInfo(Type, XmlQualifiedName&, XmlSchemaType&, Boolean&) + 0x8e
+     at System.Runtime.Serialization.XmlDataContract.XmlDataContractCriticalHelper..ctor(Type) + 0x73
+     at System.Runtime.Serialization.XmlDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0xdc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeAndVerifyType(DataContract, XmlWriterDelegator, Object, Boolean, RuntimeTypeHandle, Type) + 0xd2
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x24c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.TestObjectInObjectContainerWithSimpleResolver[T](T, String, Boolean) + 0xb4
+     at DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_DataSet() + 0x41
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_EnumStruct
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Byte[],System.Byte[]]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerContext.GetDataContract(Int32, RuntimeTypeHandle) + 0x50
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xa7
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeAndVerifyType(DataContract, XmlWriterDelegator, Object, Boolean, RuntimeTypeHandle, Type) + 0xd2
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x24c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.TestObjectInObjectContainerWithSimpleResolver[T](T, String, Boolean) + 0xb4
+     at DataContractSerializerTests.DCS_BasicPerSerializerRoundTripAndCompare_EnumStruct() + 0x130
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_SortedList
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.Object,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_SortedList() + 0x91
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_TypeWithEmitDefaultValueFalse
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.XmlObjectSerializerWriteContext.GetDefaultValue<System.Int32>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.XmlFormatGeneratorStatics.GetDefaultValue(Type) + 0x41
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x156
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_TypeWithEmitDefaultValueFalse() + 0x3a
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_KeyValuePair
+  XML comparison is also failing
+  Test failed for input: [FooKey, FooValue]
+  Expected: <KeyValuePairOfstringanyType xmlns="http://schemas.datacontract.org/2004/07/System.Collections.Generic" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><key>FooKey</key><value i:type="a:string" xmlns:a="http://www.w3.org/2001/XMLSchema">FooValue</value></KeyValuePairOfstringanyType>
+  Actual: <KeyValuePairOfstringanyType xmlns="http://schemas.datacontract.org/2004/07/System.Collections.Generic" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"/>
+  Expected: True
+  Actual:   False
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xd76e4b
+     at DataContractSerializerTests.DCS_KeyValuePair() + 0x61
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_MemoryStream_Deserialize_CompatibleWithFullFramework
+  System.Runtime.Serialization.InvalidDataContractException : No get method for property 'Capacity' in type 'System.Runtime.Serialization.MemoryStreamAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x36b
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalReadObject(XmlReaderDelegator, Boolean, DataContractResolver) + 0x33
+     at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator, Boolean, DataContractResolver) + 0x22
+     at DataContractSerializerTests.<DCS_MemoryStream_Deserialize_CompatibleWithFullFramework>g__DeserializeObjectAndValidate|229_0(String, Byte[], Int32, Boolean, Boolean) + 0xdd
+     at DataContractSerializerTests.DCS_MemoryStream_Deserialize_CompatibleWithFullFramework() + 0x44
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_BasicRoundTripResolveDTOTypes
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'UtcDateTime' in type 'System.Runtime.Serialization.DateTimeOffsetAdapter'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type) + 0x33a
+     at System.Runtime.Serialization.ClassDataContract..ctor(Type) + 0x27
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x1da
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x1b0
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeAndVerifyType(DataContract, XmlWriterDelegator, Object, Boolean, RuntimeTypeHandle, Type) + 0xd2
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithXsiType(XmlWriterDelegator, Object, RuntimeTypeHandle, Type, Int32, RuntimeTypeHandle, Type) + 0x24c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x184
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_BasicRoundTripResolveDTOTypes() + 0x98
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericDictionaryOfStringInt32
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericDictionaryOfStringInt32() + 0x7e
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericDictionaryOfInt32Boolean
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.Int32,System.Boolean>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericDictionaryOfInt32Boolean() + 0x77
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_ListGenericMembers
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Int32>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerialize(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0xbd
+     at System.Runtime.Serialization.XmlObjectSerializerWriteContext.InternalSerializeReference(XmlWriterDelegator, Object, Boolean, Boolean, Int32, RuntimeTypeHandle) + 0x7a
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteValue(XmlWriterDelegator, XmlObjectSerializerWriteContext, Type, Object, Boolean, PrimitiveDataContract) + 0x2d3
+     at System.Runtime.Serialization.ReflectionXmlClassWriter.ReflectionWriteMembers(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, ClassDataContract, Int32, XmlDictionaryString[]) + 0x3b9
+     at System.Runtime.Serialization.ReflectionClassWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract, XmlDictionaryString[]) + 0xd7
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteClass(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, ClassDataContract) + 0x20
+     at System.Runtime.Serialization.ClassDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x37
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_ListGenericMembers() + 0x29d
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_CollectionDataContractWithCustomKeyName
+  System.Reflection.MissingMetadataException : 'System.Runtime.Serialization.KeyValue<System.Int32,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0x4c
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_CollectionDataContractWithCustomKeyName() + 0x7c
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_GenericICollectionOfDecimal
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.BuildIncrementCollectionCountDelegate<System.Decimal>()'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.IncrementCollectionCount(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0xa2
+     at System.Runtime.Serialization.ReflectionXmlFormatWriter.ReflectionWriteCollection(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext, CollectionDataContract) + 0x1e2
+     at System.Runtime.Serialization.CollectionDataContract.WriteXmlValue(XmlWriterDelegator, Object, XmlObjectSerializerWriteContext) + 0x3c
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObjectContent(XmlWriterDelegator, Object, DataContractResolver) + 0x119
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x4d
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_GenericICollectionOfDecimal() + 0x13d
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DataContractSerializerTests.DCS_SuspensionManager
+  System.Runtime.Serialization.InvalidDataContractException : No set method for property 'Key' in type 'System.Runtime.Serialization.KeyValue`2[System.String,System.Object]'.
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String, Type) + 0xb9
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper.ImportDataMembers() + 0x3ff
+     at System.Runtime.Serialization.ClassDataContract.ClassDataContractCriticalHelper..ctor(Type, XmlDictionaryString, String[]) + 0x8c
+     at System.Runtime.Serialization.ClassDataContract.CreateClassDataContractForKeyValue(Type, XmlDictionaryString, String[]) + 0x42
+     at System.Runtime.Serialization.CollectionDataContract.CollectionDataContractCriticalHelper.get_ItemContract() + 0xb6
+     at System.Runtime.Serialization.CollectionDataContract.InitCollectionDataContract(DataContract) + 0x5a
+     at System.Runtime.Serialization.CollectionDataContract.IsCollectionOrTryCreate(Type, Boolean, DataContract&, Type&, Boolean) + 0xedc
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Type) + 0x13e
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.CreateDataContract(Int32, RuntimeTypeHandle, Type) + 0x8f
+     at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.GetDataContractSkipValidation(Int32, RuntimeTypeHandle, Type) + 0x37
+     at System.Runtime.Serialization.DataContract.GetDataContract(RuntimeTypeHandle, Type, SerializationMode) + 0x21
+     at System.Runtime.Serialization.DataContractSerializer.get_RootContract() + 0x56
+     at System.Runtime.Serialization.DataContractSerializer.InternalWriteObject(XmlWriterDelegator, Object, DataContractResolver) + 0x1f
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator, Object, DataContractResolver) + 0x29
+     at System.Runtime.Serialization.XmlObjectSerializer.WriteObject(Stream, Object) + 0x3b
+     at System.Runtime.Serialization.Tests.DataContractSerializerHelper.SerializeAndDeserialize[T](T, String, DataContractSerializerSettings, Func`1, Boolean) + 0xde
+     at DataContractSerializerTests.DCS_SuspensionManager() + 0x96
+     at System.Runtime.Serialization.Xml.Tests!<BaseAddress>+0xe24ede
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Runtime.Serialization.Xml.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 247, Errors: 0, Failures: 46, Skipped: 0. Time: 0.5481556s
+  ----- end Sun 05/29/2022 11:19:12.27 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Runtime.Serialization.Xml.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Xml\tests\System.Runtime.Serialization.Xml.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Runtime.Serialization.Xml.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Xml\tests\System.Runtime.Serialization.Xml.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:42.66

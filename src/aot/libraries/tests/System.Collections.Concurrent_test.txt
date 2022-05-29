@@ -1,0 +1,207 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Collections.Concurrent\tests\System.Collections.Concurrent.Tests.csproj (in 402 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Collections.Concurrent.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Concurrent.Tests\Release\net7.0\System.Collections.Concurrent.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Concurrent.Tests\Release\net7.0\native\System.Collections.Concurrent.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Concurrent.Tests\Release\net7.0\native\System.Collections.Concurrent.Tests.exp
+  System.Collections.Concurrent.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Concurrent.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  4:13:44.13 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Concurrent.Tests\Release\net7.0\publish\
+  System.Collections.Concurrent.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Collections.Concurrent.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Collections.Tests.DebugView_Tests.TestDebuggerAttributes
+  [SKIP] System.Collections.Tests.DebugView_Tests.TestDebuggerAttributes_Null
+  [SKIP] System.Collections.Concurrent.Tests.EtwTests.TestEtw
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentStackTests.DebuggerAttributes_Success(count: 10)
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.DebuggerAttributes_Success(Int32) + 0x53
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0x9ecf8a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentStackTests.DebuggerAttributes_Success(count: 0)
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.DebuggerAttributes_Success(Int32) + 0x53
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0x9ecf8a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentDictionary_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentDictionary_Generic_Tests_ulong_ulong.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentDictionary_Generic_Tests_enum_enum.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentDictionary_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [FAIL] System.Collections.Concurrent.Tests.BlockingCollectionTests.TestDebuggerAttributes
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.BlockingCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.BlockingCollectionTests.TestDebuggerAttributes() + 0xdb
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0xc135be
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.Concurrent.Tests.BlockingCollectionTests.TestDebuggerAttributes_Null
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Concurrent.BlockingCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.BlockingCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.BlockingCollectionTests.<>c__DisplayClass5_0.<TestDebuggerAttributes_Null>b__0() + 0x4a
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.BlockingCollectionTests.<>c__DisplayClass5_0.<TestDebuggerAttributes_Null>b__0() + 0x4a
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentDictionary_Generic_Tests_string_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentDictionary_Generic_Tests_int_int.IGenericSharedAPI_SerializeDeserialize
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentDictionaryTests.TestDebuggerAttributes_Null
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Concurrent.IDictionaryDebugView<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IDictionaryDebugView<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.ConcurrentDictionaryTests.<>c__DisplayClass23_0.<TestDebuggerAttributes_Null>b__0() + 0x4a
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.ConcurrentDictionaryTests.<>c__DisplayClass23_0.<TestDebuggerAttributes_Null>b__0() + 0x4a
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentQueueTests.DebuggerAttributes_Success(count: 10)
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.DebuggerAttributes_Success(Int32) + 0x53
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0x9ecf8a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentQueueTests.DebuggerAttributes_Success(count: 0)
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.DebuggerAttributes_Success(Int32) + 0x53
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0x9ecf8a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentDictionaryTests.TestDebuggerAttributes
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IDictionaryDebugView<System.String,System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.ConcurrentDictionaryTests.TestDebuggerAttributes() + 0x11b
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0xc135be
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentBagTests.DebuggerAttributes_Success(count: 0)
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.DebuggerAttributes_Success(Int32) + 0x53
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0x9ecf8a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentBagTests.DebuggerAttributes_Success(count: 10)
+  System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerTypeProxyProperties(Type, Type[], Object) + 0x5e
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.DebuggerAttributes_Success(Int32) + 0x53
+     at System.Collections.Concurrent.Tests!<BaseAddress>+0x9ecf8a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentBagTests.IGenericSharedAPI_SerializeDeserialize
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentBagTests.DebuggerTypeProxy_Ctor_NullArgument_Throws
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.<>c__DisplayClass56_0.<DebuggerTypeProxy_Ctor_NullArgument_Throws>b__0() + 0x4a
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.<>c__DisplayClass56_0.<DebuggerTypeProxy_Ctor_NullArgument_Throws>b__0() + 0x4a
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentQueueTests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Concurrent.Tests.ConcurrentStackTests.IGenericSharedAPI_SerializeDeserialize
+  [FAIL] System.Collections.Concurrent.Tests.ConcurrentStackTests.DebuggerTypeProxy_Ctor_NullArgument_Throws
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.Reflection.MissingMetadataException): 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+  ---- System.Reflection.MissingMetadataException : 'System.Collections.Concurrent.IProducerConsumerCollectionDebugView<System.Int32>' is missing metadata. For more information, please visit http://go.microsoft.com/fwlink/?LinkID=392859
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.<>c__DisplayClass56_0.<DebuggerTypeProxy_Ctor_NullArgument_Throws>b__0() + 0x4a
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.TypeInfos.RuntimeTypeInfo.get_TypeHandle() + 0x8e
+     at System.Reflection.Runtime.MethodInfos.RuntimePlainConstructorInfo`1.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x42
+     at System.ActivatorImplementation.CreateInstance(Type, BindingFlags, Binder, Object[], CultureInfo, Object[]) + 0x294
+     at System.Collections.Concurrent.Tests.ProducerConsumerCollectionTests.<>c__DisplayClass56_0.<DebuggerTypeProxy_Ctor_NullArgument_Throws>b__0() + 0x4a
+Attempting to cancel the build...
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(156,5): warning MSB5021: Terminating the task executable "cmd" and its child processes because the build was canceled. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Collections.Concurrent\tests\System.Collections.Concurrent.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(156,5): warning MSB5021: Terminating the task executable "cmd" and its child processes because the build was canceled. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Collections.Concurrent\tests\System.Collections.Concurrent.Tests.csproj]
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 03:14:35.12
+Terminate batch job (Y/N)? Y
+

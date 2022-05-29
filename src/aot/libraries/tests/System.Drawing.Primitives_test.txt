@@ -1,0 +1,40 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Drawing.Primitives\tests\System.Drawing.Primitives.Tests.csproj (in 377 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Drawing.Primitives.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Primitives.Tests\Release\net7.0\System.Drawing.Primitives.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Primitives.Tests\Release\net7.0\native\System.Drawing.Primitives.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Primitives.Tests\Release\net7.0\native\System.Drawing.Primitives.Tests.exp
+  System.Drawing.Primitives.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Primitives.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:20:21.69 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Primitives.Tests\Release\net7.0\publish\
+  System.Drawing.Primitives.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Drawing.Primitives.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Drawing.Primitives.Tests.ColorTests.DebuggerAttributesAreValid
+  System.InvalidOperationException : The DebuggerDisplayAttribute for System.Drawing.Color contains the expression "NameAndARGBValue".
+     at System.Diagnostics.DebuggerAttributes.ValidateDebuggerDisplayReferences(Object) + 0x61d
+     at System.Drawing.Primitives.Tests.ColorTests.DebuggerAttributesAreValid() + 0x32
+     at System.Drawing.Primitives.Tests!<BaseAddress>+0xa2d268
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Drawing.Primitives.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 2447, Errors: 0, Failures: 1, Skipped: 0. Time: 0.1128279s
+  ----- end Sun 05/29/2022  8:20:25.83 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Drawing.Primitives.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Drawing.Primitives\tests\System.Drawing.Primitives.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Drawing.Primitives.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Drawing.Primitives\tests\System.Drawing.Primitives.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:31.86

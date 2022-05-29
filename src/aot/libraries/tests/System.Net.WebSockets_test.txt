@@ -1,0 +1,160 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Net.WebSockets\tests\System.Net.WebSockets.Tests.csproj (in 355 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Net.WebSockets.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Net.WebSockets.Tests\Release\net7.0\System.Net.WebSockets.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Net.WebSockets.Tests\Release\net7.0\native\System.Net.WebSockets.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Net.WebSockets.Tests\Release\net7.0\native\System.Net.WebSockets.Tests.exp
+  System.Net.WebSockets.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Net.WebSockets.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:09:21.69 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Net.WebSockets.Tests\Release\net7.0\publish\
+  System.Net.WebSockets.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Net.WebSockets.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Net.WebSockets.Tests.WebSocketTests.ThrowOnInvalidState_ThrowsIfNotInValidList(state: Closed, validStates: [])
+  System.ArgumentException : Object of type 'System.Object[]' cannot be converted to type 'System.Net.WebSockets.WebSocketState[]'.
+     at System.InvokeUtils.CheckArgument(Object, EETypePtr, InvokeUtils.CheckArgumentSemantics, BinderBundle, InvokeUtils.ArgSetupState&) + 0x1a8
+     at System.InvokeUtils.DynamicInvokeParamHelperCore(InvokeUtils.ArgSetupState&, RuntimeTypeHandle, InvokeUtils.DynamicInvokeParamLookupType&, Int32&, InvokeUtils.DynamicInvokeParamType) + 0x2df
+     at System.InvokeUtils.DynamicInvokeParamHelperIn(InvokeUtils.ArgSetupState&, RuntimeTypeHandle) + 0x1b
+     at System.Net.WebSockets.Tests!<BaseAddress>+0x56cfa0
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.Net.WebSockets.Tests.WebSocketTests.ThrowOnInvalidState_ThrowsIfNotInValidList(state: Closed, validStates: [Open])
+  System.ArgumentException : Object of type 'System.Object[]' cannot be converted to type 'System.Net.WebSockets.WebSocketState[]'.
+     at System.InvokeUtils.CheckArgument(Object, EETypePtr, InvokeUtils.CheckArgumentSemantics, BinderBundle, InvokeUtils.ArgSetupState&) + 0x1a8
+     at System.InvokeUtils.DynamicInvokeParamHelperCore(InvokeUtils.ArgSetupState&, RuntimeTypeHandle, InvokeUtils.DynamicInvokeParamLookupType&, Int32&, InvokeUtils.DynamicInvokeParamType) + 0x2df
+     at System.InvokeUtils.DynamicInvokeParamHelperIn(InvokeUtils.ArgSetupState&, RuntimeTypeHandle) + 0x1b
+     at System.Net.WebSockets.Tests!<BaseAddress>+0x56cfa0
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.Net.WebSockets.Tests.WebSocketTests.ThrowOnInvalidState_ThrowsIfNotInValidList(state: Open, validStates: [Aborted, CloseSent])
+  System.ArgumentException : Object of type 'System.Object[]' cannot be converted to type 'System.Net.WebSockets.WebSocketState[]'.
+     at System.InvokeUtils.CheckArgument(Object, EETypePtr, InvokeUtils.CheckArgumentSemantics, BinderBundle, InvokeUtils.ArgSetupState&) + 0x1a8
+     at System.InvokeUtils.DynamicInvokeParamHelperCore(InvokeUtils.ArgSetupState&, RuntimeTypeHandle, InvokeUtils.DynamicInvokeParamLookupType&, Int32&, InvokeUtils.DynamicInvokeParamType) + 0x2df
+     at System.InvokeUtils.DynamicInvokeParamHelperIn(InvokeUtils.ArgSetupState&, RuntimeTypeHandle) + 0x1b
+     at System.Net.WebSockets.Tests!<BaseAddress>+0x56cfa0
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.Net.WebSockets.Tests.WebSocketTests.ThrowOnInvalidState_SuccessIfInList(state: Open, validStates: [Aborted, Open, Closed])
+  System.ArgumentException : Object of type 'System.Object[]' cannot be converted to type 'System.Net.WebSockets.WebSocketState[]'.
+     at System.InvokeUtils.CheckArgument(Object, EETypePtr, InvokeUtils.CheckArgumentSemantics, BinderBundle, InvokeUtils.ArgSetupState&) + 0x1a8
+     at System.InvokeUtils.DynamicInvokeParamHelperCore(InvokeUtils.ArgSetupState&, RuntimeTypeHandle, InvokeUtils.DynamicInvokeParamLookupType&, Int32&, InvokeUtils.DynamicInvokeParamType) + 0x2df
+     at System.InvokeUtils.DynamicInvokeParamHelperIn(InvokeUtils.ArgSetupState&, RuntimeTypeHandle) + 0x1b
+     at System.Net.WebSockets.Tests!<BaseAddress>+0x56cfa0
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.Net.WebSockets.Tests.WebSocketTests.ThrowOnInvalidState_SuccessIfInList(state: Open, validStates: [Open])
+  System.ArgumentException : Object of type 'System.Object[]' cannot be converted to type 'System.Net.WebSockets.WebSocketState[]'.
+     at System.InvokeUtils.CheckArgument(Object, EETypePtr, InvokeUtils.CheckArgumentSemantics, BinderBundle, InvokeUtils.ArgSetupState&) + 0x1a8
+     at System.InvokeUtils.DynamicInvokeParamHelperCore(InvokeUtils.ArgSetupState&, RuntimeTypeHandle, InvokeUtils.DynamicInvokeParamLookupType&, Int32&, InvokeUtils.DynamicInvokeParamType) + 0x2df
+     at System.InvokeUtils.DynamicInvokeParamHelperIn(InvokeUtils.ArgSetupState&, RuntimeTypeHandle) + 0x1b
+     at System.Net.WebSockets.Tests!<BaseAddress>+0x56cfa0
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.Net.WebSockets.Tests.WebSocketTests.ThrowOnInvalidState_SuccessIfInList(state: Open, validStates: [Aborted, CloseSent, Open])
+  System.ArgumentException : Object of type 'System.Object[]' cannot be converted to type 'System.Net.WebSockets.WebSocketState[]'.
+     at System.InvokeUtils.CheckArgument(Object, EETypePtr, InvokeUtils.CheckArgumentSemantics, BinderBundle, InvokeUtils.ArgSetupState&) + 0x1a8
+     at System.InvokeUtils.DynamicInvokeParamHelperCore(InvokeUtils.ArgSetupState&, RuntimeTypeHandle, InvokeUtils.DynamicInvokeParamLookupType&, Int32&, InvokeUtils.DynamicInvokeParamType) + 0x2df
+     at System.InvokeUtils.DynamicInvokeParamHelperIn(InvokeUtils.ArgSetupState&, RuntimeTypeHandle) + 0x1b
+     at System.Net.WebSockets.Tests!<BaseAddress>+0x56cfa0
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.Net.WebSockets.Tests.WebSocketTests.ThrowOnInvalidState_SuccessIfInList(state: Open, validStates: [Open, Aborted, Closed])
+  System.ArgumentException : Object of type 'System.Object[]' cannot be converted to type 'System.Net.WebSockets.WebSocketState[]'.
+     at System.InvokeUtils.CheckArgument(Object, EETypePtr, InvokeUtils.CheckArgumentSemantics, BinderBundle, InvokeUtils.ArgSetupState&) + 0x1a8
+     at System.InvokeUtils.DynamicInvokeParamHelperCore(InvokeUtils.ArgSetupState&, RuntimeTypeHandle, InvokeUtils.DynamicInvokeParamLookupType&, Int32&, InvokeUtils.DynamicInvokeParamType) + 0x2df
+     at System.InvokeUtils.DynamicInvokeParamHelperIn(InvokeUtils.ArgSetupState&, RuntimeTypeHandle) + 0x1b
+     at System.Net.WebSockets.Tests!<BaseAddress>+0x56cfa0
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+     at Internal.Reflection.Execution.MethodInvokers.StaticMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x4e
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) + 0x58
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  Finished System.Net.WebSockets.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 233, Errors: 0, Failures: 7, Skipped: 0. Time: 3.8215995s
+  ----- end Sun 05/29/2022 10:09:28.12 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Net.WebSockets.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Net.WebSockets\tests\System.Net.WebSockets.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Net.WebSockets.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Net.WebSockets\tests\System.Net.WebSockets.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:27.17

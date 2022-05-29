@@ -1,0 +1,1478 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.IO\tests\System.IO.Tests.csproj (in 278 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\StreamConformanceTests\StreamConformanceTests.csproj (in 275 ms).
+  3 of 5 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  StreamConformanceTests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\StreamConformanceTests\Release\net7.0\StreamConformanceTests.dll
+  System.IO.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.Tests\Release\net7.0\System.IO.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.Tests\Release\net7.0\native\System.IO.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.Tests\Release\net7.0\native\System.IO.Tests.exp
+  System.IO.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:24:23.00 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.Tests\Release\net7.0\publish\
+  System.IO.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.IO.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SetLength_DataFromShrinkNotPreserved_Success(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StreamConformanceTests.<ReadAllAsync>d__47.MoveNext() + 0xff
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SetLength_DataFromShrinkNotPreserved_Success>d__39.MoveNext() + 0x325
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SetLength_DataFromShrinkNotPreserved_Success(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StreamConformanceTests.<ReadAllAsync>d__47.MoveNext() + 0xff
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SetLength_DataFromShrinkNotPreserved_Success>d__39.MoveNext() + 0x325
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SetLength_DataFromShrinkNotPreserved_Success(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StreamConformanceTests.<ReadAllAsync>d__47.MoveNext() + 0xff
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SetLength_DataFromShrinkNotPreserved_Success>d__39.MoveNext() + 0x325
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SetLength_DataFromShrinkNotPreserved_Success(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StreamConformanceTests.<ReadAllAsync>d__47.MoveNext() + 0xff
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SetLength_DataFromShrinkNotPreserved_Success>d__39.MoveNext() + 0x325
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: SyncAPM, size: 4097)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: AsyncAPM, size: 4097)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: AsyncArray, size: 4097)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: SyncAPM, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: AsyncMemory, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: AsyncAPM, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: AsyncMemory, size: 4097)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_ToEof_Success(mode: AsyncArray, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_ToEof_Success>d__20.MoveNext() + 0x29d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Flush_ReadOnly_DoesntImpactReading(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Flush_ReadOnly_DoesntImpactReading>d__27.MoveNext() + 0x336
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Flush_ReadOnly_DoesntImpactReading(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Flush_ReadOnly_DoesntImpactReading>d__27.MoveNext() + 0x336
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Flush_ReadOnly_DoesntImpactReading(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Flush_ReadOnly_DoesntImpactReading>d__27.MoveNext() + 0x336
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Flush_ReadOnly_DoesntImpactReading(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Flush_ReadOnly_DoesntImpactReading>d__27.MoveNext() + 0x336
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: AsyncAPM, size: 256)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: AsyncArray, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: AsyncAPM, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: SyncAPM, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: AsyncMemory, size: 256)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: AsyncArray, size: 256)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: AsyncMemory, size: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PopulatedWithInitialData_KnownSize_Success(mode: SyncAPM, size: 256)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PopulatedWithInitialData_KnownSize_Success>d__19.MoveNext() + 0x240
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.CopyTo_CopiesAllDataFromRightPosition_Success(useAsync: True, expected: [20, 65, 91, 141, 37, ...], position: 0)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Stream.<<CopyToAsync>g__Core|27_0>d.MoveNext() + 0x29c
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<CopyTo_CopiesAllDataFromRightPosition_Success>d__24.MoveNext() + 0x246
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.CopyTo_CopiesAllDataFromRightPosition_Success(useAsync: True, expected: [20, 65, 91, 141, 37, ...], position: 1)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Stream.<<CopyToAsync>g__Core|27_0>d.MoveNext() + 0x29c
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<CopyTo_CopiesAllDataFromRightPosition_Success>d__24.MoveNext() + 0x246
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.CopyTo_CopiesAllDataFromRightPosition_Success(useAsync: True, expected: [20, 65, 91, 141, 37, ...], position: 16384)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Stream.<<CopyToAsync>g__Core|27_0>d.MoveNext() + 0x29c
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<CopyTo_CopiesAllDataFromRightPosition_Success>d__24.MoveNext() + 0x246
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.CopyTo_CopiesAllDataFromRightPosition_Success(useAsync: True, expected: [20, 65, 91, 141, 37, ...], position: 8192)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Stream.<<CopyToAsync>g__Core|27_0>d.MoveNext() + 0x29c
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<CopyTo_CopiesAllDataFromRightPosition_Success>d__24.MoveNext() + 0x246
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PartiallySatisfied_RemainderOfBufferUntouched(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PartiallySatisfied_RemainderOfBufferUntouched>d__21.MoveNext() + 0x213
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PartiallySatisfied_RemainderOfBufferUntouched(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PartiallySatisfied_RemainderOfBufferUntouched>d__21.MoveNext() + 0x213
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PartiallySatisfied_RemainderOfBufferUntouched(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PartiallySatisfied_RemainderOfBufferUntouched>d__21.MoveNext() + 0x213
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_PartiallySatisfied_RemainderOfBufferUntouched(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_PartiallySatisfied_RemainderOfBufferUntouched>d__21.MoveNext() + 0x213
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_EmptyStream_Nop_Success(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_EmptyStream_Nop_Success>d__18.MoveNext() + 0x1d2
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_EmptyStream_Nop_Success(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_EmptyStream_Nop_Success>d__18.MoveNext() + 0x1d2
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_EmptyStream_Nop_Success(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_EmptyStream_Nop_Success>d__18.MoveNext() + 0x1d2
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_EmptyStream_Nop_Success(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_EmptyStream_Nop_Success>d__18.MoveNext() + 0x1d2
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SeekPastEnd_Write_BeyondCapacity(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x3bf
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SeekPastEnd_Write_BeyondCapacity>d__41.MoveNext() + 0x2d1
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SeekPastEnd_Write_BeyondCapacity(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x730b0d
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x452
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SeekPastEnd_Write_BeyondCapacity>d__41.MoveNext() + 0x2d1
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SeekPastEnd_Write_BeyondCapacity(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.WriteAsync(ReadOnlyMemory`1, CancellationToken) + 0x7f
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x266
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SeekPastEnd_Write_BeyondCapacity>d__41.MoveNext() + 0x2d1
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.SeekPastEnd_Write_BeyondCapacity(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x17d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<SeekPastEnd_Write_BeyondCapacity>d__41.MoveNext() + 0x2d1
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Read_Success(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x17d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Read_Success>d__26.MoveNext() + 0x228
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Read_Success(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x730b0d
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x452
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Read_Success>d__26.MoveNext() + 0x228
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Read_Success(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x3bf
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Read_Success>d__26.MoveNext() + 0x228
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Read_Success(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.WriteAsync(ReadOnlyMemory`1, CancellationToken) + 0x7f
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x266
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Read_Success>d__26.MoveNext() + 0x228
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_DataStoredAtDesiredOffset(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_DataStoredAtDesiredOffset>d__16.MoveNext() + 0x202
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_DataStoredAtDesiredOffset(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_DataStoredAtDesiredOffset>d__16.MoveNext() + 0x202
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_NonEmptyStream_Nop_Success(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x189
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_NonEmptyStream_Nop_Success>d__14.MoveNext() + 0x1dd
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_NonEmptyStream_Nop_Success(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x7308dd
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x446
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_NonEmptyStream_Nop_Success>d__14.MoveNext() + 0x1dd
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_NonEmptyStream_Nop_Success(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_NonEmptyStream_Nop_Success>d__14.MoveNext() + 0x1dd
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_NonEmptyStream_Nop_Success(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x3b0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_NonEmptyStream_Nop_Success>d__14.MoveNext() + 0x1dd
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_CustomMemoryManager_Success(useAsync: True)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.WriteAsync(ReadOnlyMemory`1, CancellationToken) + 0x15a
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_CustomMemoryManager_Success>d__23.MoveNext() + 0x2b1
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_CustomMemoryManager_Success(useAsync: False)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0x71
+     at System.IO.Tests.StreamConformanceTests.<ReadAsync>d__46.MoveNext() + 0x276
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StreamConformanceTests.<ReadAllAsync>d__47.MoveNext() + 0xff
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_CustomMemoryManager_Success>d__23.MoveNext() + 0x56c
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Disposed_ThrowsObjectDisposedException
+  Unexpected: System.NotImplementedException
+  Expected: True
+  Actual:   False
+     at System.IO.Tests.StreamConformanceTests.<<ValidateDisposedExceptionsAsync>g__AssertDisposedAsync|52_26>d.MoveNext() + 0x105
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StreamConformanceTests.<ValidateDisposedExceptionsAsync>d__52.MoveNext() + 0x221
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Disposed_ThrowsObjectDisposedException>d__12.MoveNext() + 0x1c1
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Disposed_ThrowsObjectDisposedException>d__12.MoveNext() + 0x47e
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_DataReadFromDesiredOffset(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x17d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_DataReadFromDesiredOffset>d__17.MoveNext() + 0x1db
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_DataReadFromDesiredOffset(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x730b0d
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x452
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_DataReadFromDesiredOffset>d__17.MoveNext() + 0x1db
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Nop_Success(mode: AsyncMemory)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.WriteAsync(ReadOnlyMemory`1, CancellationToken) + 0x7f
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x266
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Nop_Success>d__15.MoveNext() + 0x1d0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Nop_Success(mode: AsyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests!<BaseAddress>+0x730b0d
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x452
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Nop_Success>d__15.MoveNext() + 0x1d0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Nop_Success(mode: SyncAPM)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x3bf
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Nop_Success>d__15.MoveNext() + 0x1d0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Write_Nop_Success(mode: AsyncArray)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginWrite(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndWriteAsync>b__62_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d1ae
+     at System.IO.Stream.BeginEndWriteAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.WriteAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<WriteAsync>d__48.MoveNext() + 0x17d
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Write_Nop_Success>d__15.MoveNext() + 0x1d0
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.Read_CustomMemoryManager_Success(useAsync: True)
+  System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Stream.ReadAsync(Memory`1, CancellationToken) + 0xd2
+     at System.IO.Tests.StandaloneStreamConformanceTests.<Read_CustomMemoryManager_Success>d__22.MoveNext() + 0x1f5
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  --- End of stack trace from previous location ---
+     at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw() + 0x20
+     at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task) + 0xb6
+     at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task) + 0x42
+  [FAIL] System.IO.Tests.SyncStreamConformanceTests.ArgumentValidation_ThrowsExpectedException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentNullException)
+  Actual:   typeof(System.NotImplementedException): The method or operation is not implemented.
+  ---- System.NotImplementedException : The method or operation is not implemented.
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<>c__DisplayClass51_2.<ValidateMisuseExceptionsAsync>b__37() + 0x2d
+  ----- Inner Stack Trace -----
+     at System.IO.Stream.SyncStream.BeginRead(Byte[], Int32, Int32, AsyncCallback, Object) + 0x24
+     at System.IO.Stream.<>c.<BeginEndReadAsync>b__49_0(Stream, Stream.ReadWriteParameters, AsyncCallback, Object) + 0x2a
+     at System.IO.Tests!<BaseAddress>+0x74d0fe
+     at System.IO.Stream.BeginEndReadAsync(Byte[], Int32, Int32) + 0xb5
+     at System.IO.Stream.ReadAsync(Byte[], Int32, Int32, CancellationToken) + 0x27
+     at System.IO.Tests.StreamConformanceTests.<>c__DisplayClass51_2.<ValidateMisuseExceptionsAsync>b__37() + 0x2d
+  Finished System.IO.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 1637, Errors: 0, Failures: 61, Skipped: 0. Time: 81.1692384s
+  ----- end Sun 05/29/2022  8:25:47.91 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.IO.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.IO\tests\System.IO.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.IO.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.IO\tests\System.IO.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:01:47.23

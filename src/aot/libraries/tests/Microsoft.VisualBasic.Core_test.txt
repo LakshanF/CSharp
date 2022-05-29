@@ -1,0 +1,308 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\Microsoft.VisualBasic.Core\tests\Microsoft.VisualBasic.Core.Tests.csproj (in 611 ms).
+  6 of 7 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  Microsoft.VisualBasic.Core.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.VisualBasic.Core.Tests\Release\net7.0\Microsoft.VisualBasic.Core.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.VisualBasic.Core.Tests]Microsoft.VisualBasic.Tests.FileSystemTests.AssertThrows<__Canon>(Action)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.VisualBasic.Core.Tests\Release\net7.0\native\Microsoft.VisualBasic.Core.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.VisualBasic.Core.Tests\Release\net7.0\native\Microsoft.VisualBasic.Core.Tests.exp
+  Microsoft.VisualBasic.Core.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.VisualBasic.Core.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  4:10:30.42 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.VisualBasic.Core.Tests\Release\net7.0\publish\
+  Microsoft.VisualBasic.Core.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:Microsoft.VisualBasic.Core.Tests, Version=12.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] Microsoft.VisualBasic.FileIO.Tests.FileSystemTests.DeleteDirectory_Directory_UIOption_Delete
+  [SKIP] Microsoft.VisualBasic.FileIO.Tests.FileSystemTests.MoveDirectory_Source_DirectoryName_DestinationDirectoryName_UIOptionOverwriteFalse
+  [SKIP] Microsoft.VisualBasic.FileIO.Tests.FileSystemTests.DeleteDirectory_Directory_UIOption_DoNotDelete
+  [SKIP] Microsoft.VisualBasic.FileIO.Tests.FileSystemTests.CopyDirectory_SourceDirectoryName_DestinationDirectoryName_SkipFile
+  [SKIP] Microsoft.VisualBasic.FileIO.Tests.FileSystemTests.MoveFile_SourceFileName_DestinationFileName_UIOptionOverWriteFalse
+  [SKIP] Microsoft.VisualBasic.FileIO.Tests.FileSystemTests.CopyFile_SourceFileName_DestinationFileName_UIOptionTestOverWriteFalse
+  [SKIP] Microsoft.VisualBasic.FileIO.Tests.FileSystemTests.CopyFile_SourceFileName_DestinationFileName_UIOptionTestOverWriteTrue
+  [FAIL] Microsoft.VisualBasic.Tests.VersionedTests.TypeName_ComObject(progId: "ADODB.Stream", expected: "Stream")
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Runtime.MethodInfos.RuntimeCLSIDNullaryConstructorInfo.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x24
+     at System.ActivatorImplementation.CreateInstance(Type, Boolean) + 0xb9
+     at Microsoft.VisualBasic.Tests.VersionedTests.TypeName_ComObject(String, String) + 0x31
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcbe05a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] Microsoft.VisualBasic.Tests.VersionedTests.TypeName_ComObject(progId: "MSXML2.DOMDocument", expected: "DOMDocument")
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Runtime.MethodInfos.RuntimeCLSIDNullaryConstructorInfo.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x24
+     at System.ActivatorImplementation.CreateInstance(Type, Boolean) + 0xb9
+     at Microsoft.VisualBasic.Tests.VersionedTests.TypeName_ComObject(String, String) + 0x31
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcbe05a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] Microsoft.VisualBasic.Tests.VersionedTests.TypeName_ComObject(progId: "Scripting.Dictionary", expected: "Dictionary")
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Runtime.MethodInfos.RuntimeCLSIDNullaryConstructorInfo.Invoke(BindingFlags, Binder, Object[], CultureInfo) + 0x24
+     at System.ActivatorImplementation.CreateInstance(Type, Boolean) + 0xb9
+     at Microsoft.VisualBasic.Tests.VersionedTests.TypeName_ComObject(String, String) + 0x31
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcbe05a
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToSByte_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToSByte_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToShort_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToShort_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToLong_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToLong_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToDouble_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToDouble_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToInteger_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToInteger_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToSingle_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToSingle_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToByte_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToByte_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToULong_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToULong_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToUShort_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToUShort_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToUInteger_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToUInteger_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToBoolean_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToBoolean_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToChar_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToChar_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToString_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToString_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ConversionsTests.ToDecimal_InvalidBool_ThrowsInvalidOperationException
+  System.InvalidOperationException : No data found for Microsoft.VisualBasic.Tests.ConversionsTests.ToDecimal_InvalidBool_ThrowsInvalidOperationException
+  
+  [FAIL] Microsoft.VisualBasic.Tests.ErrObjectTests.MakeHelpLink
+  Assert.Throws() Failure
+  Expected: typeof(System.OutOfMemoryException)
+  Actual:   typeof(System.PlatformNotSupportedException): Operation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.ErrObject.Raise(Int32, Object, Object, Object, Object) + 0x8d
+     at Microsoft.VisualBasic.Tests.ErrObjectTests.<>c.<MakeHelpLink>b__4_0() + 0x2a
+  ----- Inner Stack Trace -----
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.ErrObject.Raise(Int32, Object, Object, Object, Object) + 0x8d
+     at Microsoft.VisualBasic.Tests.ErrObjectTests.<>c.<MakeHelpLink>b__4_0() + 0x2a
+  [FAIL] Microsoft.VisualBasic.Tests.ErrObjectTests.Raise
+  Assert.Throws() Failure
+  Expected: typeof(System.OutOfMemoryException)
+  Actual:   typeof(System.PlatformNotSupportedException): Operation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.ErrObject.Raise(Int32, Object, Object, Object, Object) + 0x8d
+     at Microsoft.VisualBasic.Tests.ErrObjectTests.<>c.<Raise>b__1_1() + 0x2a
+  ----- Inner Stack Trace -----
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.ErrObject.Raise(Int32, Object, Object, Object, Object) + 0x8d
+     at Microsoft.VisualBasic.Tests.ErrObjectTests.<>c.<Raise>b__1_1() + 0x2a
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.Write_ArgumentException
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.Write_ArgumentException() + 0x1e
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.FileGetObject_FilePutObject
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.FileGetObject_FilePutObject() + 0x3c
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.MkDir_RmDir
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at Microsoft.VisualBasic.Tests.FileSystemTests.AssertThrows[TException](Action) + 0xe
+     at Microsoft.VisualBasic.Tests.FileSystemTests.MkDir_RmDir() + 0xda
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.Rename
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.Rename(String, String) + 0x20
+     at Microsoft.VisualBasic.Tests.FileSystemTests.Rename() + 0x107
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] Microsoft.VisualBasic.Tests.FileSystemTests.CloseAllFiles
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.Dir
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.Dir(String, FileAttribute) + 0x110
+     at Microsoft.VisualBasic.Tests.FileSystemTests.Dir() + 0xf2
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.FileLen
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.FileLen() + 0xf
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.Kill
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.Kill(String) + 0x11f
+     at Microsoft.VisualBasic.Tests.FileSystemTests.Kill() + 0xc1
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.FileCopy
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FileCopy(String, String) + 0x66
+     at Microsoft.VisualBasic.Tests.FileSystemTests.FileCopy() + 0xae
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.Input_Object_Write
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.Input_Object_Write() + 0x41
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.Input_Write
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.Input_Write() + 0x48
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.FileGet_FilePut
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.FileGet_FilePut() + 0x48
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] Microsoft.VisualBasic.Tests.FileSystemTests.Lock_Unlock
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.EOF
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.EOF() + 0x16
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.FileClose
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.FileClose() + 0xf
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.FreeFile
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.FreeFile() + 0x10
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.FileSystemTests.FileOpen
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at Microsoft.VisualBasic.FileSystem.FreeFile() + 0xb
+     at Microsoft.VisualBasic.Tests.FileSystemTests.FileOpen() + 0x32
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.InformationTests.UBound
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at Microsoft.VisualBasic.Tests.InformationTests.UBound() + 0xe4
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.Tests.InformationTests.LBound
+  System.PlatformNotSupportedException : Arrays with non-zero lower bounds are not supported.
+     at System.Array.InternalCreate(RuntimeType, Int32, Int32*, Int32*) + 0x199
+     at System.Array.CreateInstance(Type, Int32[], Int32[]) + 0xb1
+     at Microsoft.VisualBasic.Tests.InformationTests.LBound() + 0x9f
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] Microsoft.VisualBasic.CompilerServices.Tests.NewLateBindingTests.Properties_GetAndInit_01
+  Assert.Throws() Failure
+  Expected: typeof(System.MissingMemberException)
+  Actual:   (No exception was thrown)
+     at Microsoft.VisualBasic.CompilerServices.Tests.NewLateBindingTests.Properties_GetAndInit_01() + 0x6b
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] Microsoft.VisualBasic.CompilerServices.Tests.NewLateBindingTests.LateCall_OptionalValues
+  [FAIL] Microsoft.VisualBasic.CompilerServices.Tests.NewLateBindingTests.Properties_GetAndInit_02
+  Assert.Throws() Failure
+  Expected: typeof(System.MissingMemberException)
+  Actual:   (No exception was thrown)
+     at Microsoft.VisualBasic.CompilerServices.Tests.NewLateBindingTests.Properties_GetAndInit_02() + 0x69
+     at Microsoft.VisualBasic.Core.Tests!<BaseAddress>+0xcec648
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] Microsoft.VisualBasic.CompilerServices.Tests.ProjectDataTests.EndApp
+  [SKIP] Microsoft.VisualBasic.CompilerServices.Tests.UtilsTests.CopyArray_RankGreaterThanTwoAndNonMatchingBounds_ThrowsArrayTypeMismatchException
+  [SKIP] Microsoft.VisualBasic.CompilerServices.Tests.UtilsTests.CopyArray_NonMatchingBounds_ThrowsArgumentOutOfRangeException
+  Finished Microsoft.VisualBasic.Core.Tests, Version=12.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 22226, Errors: 0, Failures: 38, Skipped: 13. Time: 1.7034817s
+  ----- end Sun 05/29/2022  4:10:38.57 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'Microsoft.VisualBasic.Core.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\Microsoft.VisualBasic.Core\tests\Microsoft.VisualBasic.Core.Tests.csproj]
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net462\TestUtilities.dll
+  System.Text.Encoding.CodePages -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Text.Encoding.CodePages\ref\Release\net462\System.Text.Encoding.CodePages.dll
+  System.Text.Encoding.CodePages -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Text.Encoding.CodePages\Release\net462\System.Text.Encoding.CodePages.dll
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\Microsoft.VisualBasic.Core\tests\Microsoft.VisualBasic.Core.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'Microsoft.VisualBasic.Core.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\Microsoft.VisualBasic.Core\tests\Microsoft.VisualBasic.Core.Tests.csproj]
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\Microsoft.VisualBasic.Core\tests\Microsoft.VisualBasic.Core.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:01:09.16

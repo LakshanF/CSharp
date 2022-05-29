@@ -1,0 +1,226 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Process\tests\LongPath\LongPath.csproj (in 214 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Process\tests\System.Diagnostics.Process.Tests.csproj (in 1.34 sec).
+  20 of 22 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Collections.NonGeneric -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Release\net7.0\System.Collections.NonGeneric.dll
+  System.Security.Claims -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Claims\ref\Release\net7.0\System.Security.Claims.dll
+  System.Security.Principal.Windows -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Principal.Windows\ref\Release\net7.0\System.Security.Principal.Windows.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\ref\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  System.Security.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl\ref\Release\net7.0\System.Security.AccessControl.dll
+  Microsoft.Win32.Registry -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.Registry\ref\Release\net7.0\Microsoft.Win32.Registry.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0-windows\Microsoft.Win32.SystemEvents.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\ref\Release\net7.0\System.Drawing.Common.dll
+  Microsoft.Win32.Registry -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.Registry\Release\net7.0-windows\Microsoft.Win32.Registry.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0-windows\System.Drawing.Common.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\ref\Release\net7.0\System.Windows.Extensions.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0\System.Drawing.Common.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0-windows\System.Windows.Extensions.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0\System.Windows.Extensions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\ref\Release\net7.0\System.Security.Permissions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\Release\net7.0\System.Security.Permissions.dll
+  System.DirectoryServices -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices\ref\Release\net7.0\System.DirectoryServices.dll
+  System.DirectoryServices -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices\Release\net7.0-windows\System.DirectoryServices.dll
+  LongPath -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LongPath\Release\net7.0\LongPath.dll
+  System.Diagnostics.Process.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Process.Tests\Release\net7.0-windows\System.Diagnostics.Process.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+  ILC: Method '[System.DirectoryServices]System.DirectoryServices.Interop.UnsafeNativeMethods+PropertyValue..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void PropertyValue..ctor()'
+  ILC: Method '[System.DirectoryServices]System.DirectoryServices.Interop.UnsafeNativeMethods+PropertyEntry..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void PropertyEntry..ctor()'
+  ILC: Method '[System.DirectoryServices]System.DirectoryServices.ActiveDirectory.NativeComInterfaces+Pathname..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Pathname..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Process.Tests\Release\net7.0-windows\native\System.Diagnostics.Process.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Process.Tests\Release\net7.0-windows\native\System.Diagnostics.Process.Tests.exp
+  System.Diagnostics.Process.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Process.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022  8:16:09.49 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Process.Tests\Release\net7.0-windows\publish\
+  System.Diagnostics.Process.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Diagnostics.Process.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Diagnostics.Tests.ProcessCollectionTests.TestThreadCollectionBehavior
+  [SKIP] System.Diagnostics.Tests.ProcessModuleTests.ModulesAreDisposedWhenProcessIsDisposed
+  [FAIL] System.Diagnostics.Tests.ProcessModuleTests.LongModuleFileNamesAreSupported
+  System.ArgumentNullException : Value cannot be null. (Parameter 'path1')
+     at System.ArgumentNullException.Throw(String) + 0x2b
+     at System.IO.Path.Combine(String, String) + 0x23
+     at System.Diagnostics.Tests.ProcessModuleTests.LongModuleFileNamesAreSupported() + 0x4d
+     at System.Diagnostics.Process.Tests!<BaseAddress>+0xb6aec8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Diagnostics.Tests.ProcessStandardConsoleTests.TestChangesInConsoleEncoding
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.TestEnvironmentOfChildProcess
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.TestWorkingDirectoryPropertyInChildProcess
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.EnvironmentGetEnvironmentVariablesIsCaseSensitive
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.TestUserCredentialsPropertiesOnWindows
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.TestSetEnvironmentOnChildProcess
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.TestWorkingDirectoryPropertyDefaultCase
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.TestCreateNoWindowProperty
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.TestUseShellExecuteProperty_Redirects_NotSupported
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.ProcessStartInfoEnvironmentVariablesDoesNotThrowForCaseSensitiveDuplicates
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.ProcessStartInfoEnvironmentDoesNotThrowForCaseSensitiveDuplicates
+  [SKIP] System.Diagnostics.Tests.ProcessStartInfoTests.ShellExecute_Nano_Fails_Start
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestClosingStreamsUndefinedDoesNotThrow
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestAsyncErrorStream_SynchronizingObject
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestMismatchedStandardInputEncoding
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestAsyncOutputStream
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestSyncStreams
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestClosingStreamsAsyncDoesNotThrow
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestAsyncErrorStream
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestClosingSyncModeDoesNotCloseStreams
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestManyOutputLines
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestSyncErrorStream
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestManyOutputLines_SynchronizingObject
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestEOFReceivedWhenStdInClosed
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestAsyncOutputStream_CancelOutputRead
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestAsyncOutputStream_BeginCancelBeginOutputRead
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestAsyncHalfCharacterAtATime
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestCustomStandardInputEncoding
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestSyncOutputStream
+  [SKIP] System.Diagnostics.Tests.ProcessStreamReadTests.TestStreamNegativeTests
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestToString_OnExitedProcess
+  [SKIP] System.Diagnostics.Tests.ProcessTests.BothArgumentCtorAndArgumentListSet
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPriorityBoostEnabled
+  [SKIP] System.Diagnostics.Tests.ProcessTests.CloseMainWindow_NoWindow_ReturnsFalse
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestExitTime
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPeakWorkingSet64
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestExited_SynchronizingObject
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPagedSystemMemorySize64
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestSafeHandle
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestProcessName
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestProcessorTime
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestMachineName
+  [SKIP] System.Diagnostics.Tests.ProcessTests.ProcessStart_UseShellExecute_ExecuteOrder
+  [SKIP] System.Diagnostics.Tests.ProcessTests.Kill_EntireProcessTree_False_OnlyRootProcessTerminated
+  [SKIP] System.Diagnostics.Tests.ProcessTests.HandleCountChanges
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestProcessorAffinity
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPagedMemorySize
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestBasePriorityOnWindows
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPrivateMemorySize
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestVirtualMemorySize
+  [SKIP] System.Diagnostics.Tests.ProcessTests.StartProcessWithSameArgumentList
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestLongProcessIsWorking
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestProcessStartTime
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPeakPagedMemorySize64
+  [SKIP] System.Diagnostics.Tests.ProcessTests.StartInfo_GetFileName_ReturnsExpected
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TotalProcessorTime_PerformLoop_TotalProcessorTimeValid
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPagedSystemMemorySize
+  [SKIP] System.Diagnostics.Tests.ProcessTests.Kill_EntireProcessTree_True_EntireTreeTerminated
+  [SKIP] System.Diagnostics.Tests.ProcessTests.ArgumentListArgumentNullThrowsOnStart
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPagedMemorySize64
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestWorkingSet64
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestExitCode
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestNonpagedSystemMemorySize
+  [SKIP] System.Diagnostics.Tests.ProcessTests.GetProcessById_KilledProcess_ThrowsArgumentException
+  [SKIP] System.Diagnostics.Tests.ProcessTests.Start_RedirectStandardOutput_StartAgain_DoesntThrow
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPeakVirtualMemorySize
+  [SKIP] System.Diagnostics.Tests.ProcessTests.StartInfo_SetOnRunningProcess_ThrowsInvalidOperationException
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPeakPagedMemorySize
+  [SKIP] System.Diagnostics.Tests.ProcessTests.Handle_CreateEvent_BlocksUntilProcessCompleted
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestMaxWorkingSet
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestEnableRaiseEvents
+  [SKIP] System.Diagnostics.Tests.ProcessTests.MainWindowHandle_NoWindow_ReturnsEmptyHandle
+  [SKIP] System.Diagnostics.Tests.ProcessTests.ProcessStartTime_Deterministic_Across_Instances
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestHasExited
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPrivateMemorySize64
+  [SKIP] System.Diagnostics.Tests.ProcessTests.BothArgumentSetAndArgumentListSet
+  [SKIP] System.Diagnostics.Tests.ProcessTests.StartProcessWithArgumentList
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestWorkingSet
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestWaitForExitValidation
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestSessionId
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPeakWorkingSet
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPeakVirtualMemorySize64
+  Invalid number of parameters
+  0 File(s) copied
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestVirtualMemorySize64
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestId
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestPriorityClassWindows
+  [SKIP] System.Diagnostics.Tests.ProcessTests.MainWindowTitle_NoWindow_ReturnsEmpty
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestGetProcessById
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestToString_OnRunningProcess
+  [SKIP] System.Diagnostics.Tests.ProcessTests.Start_StandardInputEncodingPropagatesToStreamWriter
+  [SKIP] System.Diagnostics.Tests.ProcessTests.Kill_ExitedChildProcess_DoesNotThrow
+  [SKIP] System.Diagnostics.Tests.ProcessTests.Kill_EntireProcessTree_True_CalledOnTreeContainingCallingProcess_ThrowsInvalidOperationException
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestMinWorkingSet
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestArgumentParsing
+  [SKIP] System.Diagnostics.Tests.ProcessTests.TestNonpagedSystemMemorySize64
+  [SKIP] System.Diagnostics.Tests.ProcessThreadTests.TestCommonPriorityAndTimeProperties
+  [SKIP] System.Diagnostics.Tests.ProcessThreadTests.TestThreadStateProperty
+  [SKIP] System.Diagnostics.Tests.ProcessThreadTests.ThreadsAreDisposedWhenProcessIsDisposed
+  [SKIP] System.Diagnostics.Tests.ProcessThreadTests.Threads_GetMultipleTimes_ReturnsSameInstance
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitAsyncForPeerProcess
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.SingleProcess_EnableRaisingEvents_CorrectExitCode
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.MultipleProcesses_StartAllKillAllWaitAll
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.MultipleProcesses_StartAllKillAllWaitAllAsync
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.SingleProcess_TryWaitMultipleTimesBeforeCompleting
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.SingleProcess_CopiesShareExitAsyncInformation
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.SingleProcess_WaitAfterExited
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.SingleProcess_TryWaitAsyncMultipleTimesBeforeCompleting
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitForExit_AfterProcessExit_ShouldConsumeOutputDataReceived
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitForSelfTerminatingChild
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitForExitAsync_AfterProcessExit_ShouldConsumeOutputDataReceived
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitForPeerProcess
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.SingleProcess_WaitAsyncAfterExited
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.MultipleProcesses_ParallelStartKillWaitAsync
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitAsyncForSelfTerminatingChild
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.MultipleProcesses_ParallelStartKillWait
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.MultipleProcesses_SerialStartKillWait
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitChain
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.MultipleProcesses_SerialStartKillWaitAsync
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.SingleProcess_CopiesShareExitInformation
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitAsyncChain
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitForSignal
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitAsyncForSignal
+  [SKIP] System.Diagnostics.Tests.ProcessWaitingTests.WaitAsyncForProcess
+  Finished System.Diagnostics.Process.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 302, Errors: 0, Failures: 1, Skipped: 124. Time: 36.5008788s
+  ----- end Sun 05/29/2022  8:16:49.99 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Diagnostics.Process.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Process\tests\System.Diagnostics.Process.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Diagnostics.Process.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Process\tests\System.Diagnostics.Process.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:01:42.39

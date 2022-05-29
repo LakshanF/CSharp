@@ -1,0 +1,30 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\coreclr\System.Private.CoreLib\System.Private.CoreLib.csproj (in 172 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Private.Uri\src\System.Private.Uri.csproj (in 176 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Threading\src\System.Threading.csproj (in 177 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\src\System.Runtime.csproj (in 154 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Debug\tests\System.Diagnostics.Debug.Tests.csproj (in 338 ms).
+  6 of 11 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Private.CoreLib.Generators -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Private.CoreLib.Generators\Release\netstandard2.0\System.Private.CoreLib.Generators.dll
+  System.Private.CoreLib -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\IL\System.Private.CoreLib.dll
+  System.Private.Uri -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Private.Uri\Release\net7.0\System.Private.Uri.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Threading -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading\ref\Release\net7.0\System.Threading.dll
+  System.Threading -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading\Release\net7.0\System.Threading.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\Release\net7.0\System.Runtime.dll
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(55,52): error CS0433: The type 'List<T>' exists in both 'System.Collections, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' and 'System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e' [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Debug\tests\System.Diagnostics.Debug.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(55,52): error CS0433: The type 'List<T>' exists in both 'System.Collections, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' and 'System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e' [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Debug\tests\System.Diagnostics.Debug.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:39.83

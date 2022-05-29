@@ -1,0 +1,44 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Linq\tests\System.Linq.Tests.csproj (in 1.49 sec).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Linq.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Tests\Release\net7.0\System.Linq.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Tests\Release\net7.0\native\System.Linq.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Tests\Release\net7.0\native\System.Linq.Tests.exp
+  System.Linq.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  9:17:22.61 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Linq.Tests\Release\net7.0\publish\
+  System.Linq.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Linq.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  Unhandled Exception: System.Reflection.MissingRuntimeArtifactException: MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Linq.Tests.DistinctTests.FindDistinctAndValidate<System.Int32>(System.Collections.Generic.IEnumerable<System.Int32>)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at Xunit.Sdk.ReflectionMethodInfo.MakeGenericMethod(ITypeInfo[]) + 0x77
+     at Xunit.Sdk.TestMethodTestCase.Initialize() + 0x168
+     at Xunit.Sdk.XunitTestCase.Initialize() + 0x2d
+     at Xunit.Sdk.TestMethodTestCase.get_Traits() + 0x1b
+     at Xunit.XunitFilters.FilterExcludedTraits(ITestCase) + 0x59
+     at Xunit.XunitFilters.Filter(ITestCase) + 0x54
+     at System.Linq.Enumerable.WhereListIterator`1.ToList() + 0x5e
+     at SingleFileTestRunner.Main(String[]) + 0x3fa
+     at System.Linq.Tests!<BaseAddress>+0x5fef53
+  ----- end Sun 05/29/2022  9:17:26.72 ----- exit code -1888053697 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Linq.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Linq\tests\System.Linq.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Linq.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Linq\tests\System.Linq.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:49.17

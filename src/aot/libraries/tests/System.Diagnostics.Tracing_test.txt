@@ -1,0 +1,149 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Tracing\tests\System.Diagnostics.Tracing.Tests.csproj (in 449 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Diagnostics.Tracing.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Tracing.Tests\Release\net7.0-windows\System.Diagnostics.Tracing.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void TraceReloggerLib.CTraceReloggerClass..ctor()'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.AddLogfileTraceStream(string,native int)' will always throw because: Invalid IL or CLR metadata in 'UInt64 TraceReloggerLib.CTraceReloggerClass.AddLogfileTraceStream(System.String, IntPtr)'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.AddRealtimeTraceStream(string,native int)' will always throw because: Invalid IL or CLR metadata in 'UInt64 TraceReloggerLib.CTraceReloggerClass.AddRealtimeTraceStream(System.String, IntPtr)'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.RegisterCallback(ITraceEventCallback)' will always throw because: Invalid IL or CLR metadata in 'Void TraceReloggerLib.CTraceReloggerClass.RegisterCallback(TraceReloggerLib.ITraceEventCallback)'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.Inject(ITraceEvent)' will always throw because: Invalid IL or CLR metadata in 'Void TraceReloggerLib.CTraceReloggerClass.Inject(TraceReloggerLib.ITraceEvent)'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.CreateEventInstance(uint64,uint32)' will always throw because: Invalid IL or CLR metadata in 'TraceReloggerLib.ITraceEvent TraceReloggerLib.CTraceReloggerClass.CreateEventInstance(UInt64, UInt32)'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.ProcessTrace()' will always throw because: Invalid IL or CLR metadata in 'Void TraceReloggerLib.CTraceReloggerClass.ProcessTrace()'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.SetOutputFilename(string)' will always throw because: Invalid IL or CLR metadata in 'Void TraceReloggerLib.CTraceReloggerClass.SetOutputFilename(System.String)'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.SetCompressionMode(int8)' will always throw because: Invalid IL or CLR metadata in 'Void TraceReloggerLib.CTraceReloggerClass.SetCompressionMode(SByte)'
+  ILC: Method '[TraceReloggerLib]TraceReloggerLib.CTraceReloggerClass.Cancel()' will always throw because: Invalid IL or CLR metadata in 'Void TraceReloggerLib.CTraceReloggerClass.Cancel()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass..ctor()'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.get_lastError()' will always throw because: Invalid IL or CLR metadata in 'System.String Dia2Lib.DiaSourceClass.get_lastError()'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.loadDataFromPdb(string)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.loadDataFromPdb(System.String)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.loadAndValidateDataFromPdb(string,Guid&,uint32,uint32)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.loadAndValidateDataFromPdb(System.String, System.Guid ByRef, UInt32, UInt32)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.loadDataForExe(string,string,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.loadDataForExe(System.String, System.String, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.loadDataFromIStream(IStream)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.loadDataFromIStream(Dia2Lib.IStream)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.openSession(IDiaSession&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.openSession(Dia2Lib.IDiaSession ByRef)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.loadDataFromCodeViewInfo(string,string,uint32,uint8&,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.loadDataFromCodeViewInfo(System.String, System.String, UInt32, Byte ByRef, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.loadDataFromMiscInfo(string,string,uint32,uint32,uint32,uint32,uint8&,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.loadDataFromMiscInfo(System.String, System.String, UInt32, UInt32, UInt32, UInt32, Byte ByRef, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_get_lastError()' will always throw because: Invalid IL or CLR metadata in 'System.String Dia2Lib.DiaSourceClass.IDiaDataSource3_get_lastError()'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromPdb(string)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromPdb(System.String)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_loadAndValidateDataFromPdb(string,Guid&,uint32,uint32)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.IDiaDataSource3_loadAndValidateDataFromPdb(System.String, System.Guid ByRef, UInt32, UInt32)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataForExe(string,string,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataForExe(System.String, System.String, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromIStream(IStream)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromIStream(Dia2Lib.IStream)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_openSession(IDiaSession&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.IDiaDataSource3_openSession(Dia2Lib.IDiaSession ByRef)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromCodeViewInfo(string,string,uint32,uint8&,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromCodeViewInfo(System.String, System.String, UInt32, Byte ByRef, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromMiscInfo(string,string,uint32,uint32,uint32,uint32,uint8&,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.IDiaDataSource3_loadDataFromMiscInfo(System.String, System.String, UInt32, UInt32, UInt32, UInt32, Byte ByRef, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.getRawPDBPtr(native int&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.getRawPDBPtr(IntPtr ByRef)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.loadDataFromRawPDBPtr(native int)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.loadDataFromRawPDBPtr(IntPtr)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.getStreamSize(string,uint32&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.getStreamSize(System.String, UInt32 ByRef)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceClass.getStreamRawData(string,uint32,uint8&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceClass.getStreamRawData(System.String, UInt32, Byte ByRef)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass..ctor()'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.get_lastError()' will always throw because: Invalid IL or CLR metadata in 'System.String Dia2Lib.DiaSourceAltClass.get_lastError()'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.loadDataFromPdb(string)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass.loadDataFromPdb(System.String)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.loadAndValidateDataFromPdb(string,Guid&,uint32,uint32)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass.loadAndValidateDataFromPdb(System.String, System.Guid ByRef, UInt32, UInt32)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.loadDataForExe(string,string,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass.loadDataForExe(System.String, System.String, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.loadDataFromIStream(IStream)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass.loadDataFromIStream(Dia2Lib.IStream)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.openSession(IDiaSession&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass.openSession(Dia2Lib.IDiaSession ByRef)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.loadDataFromCodeViewInfo(string,string,uint32,uint8&,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass.loadDataFromCodeViewInfo(System.String, System.String, UInt32, Byte ByRef, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaSourceAltClass.loadDataFromMiscInfo(string,string,uint32,uint32,uint32,uint32,uint8&,object)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaSourceAltClass.loadDataFromMiscInfo(System.String, System.String, UInt32, UInt32, UInt32, UInt32, Byte ByRef, System.Object)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaStackWalkerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaStackWalkerClass..ctor()'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaStackWalkerClass.getEnumFrames(IDiaStackWalkHelper,IDiaEnumStackFrames&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaStackWalkerClass.getEnumFrames(Dia2Lib.IDiaStackWalkHelper, Dia2Lib.IDiaEnumStackFrames ByRef)'
+  ILC: Method '[Dia2Lib]Dia2Lib.DiaStackWalkerClass.getEnumFrames2(CV_CPU_TYPE_e,IDiaStackWalkHelper,IDiaEnumStackFrames&)' will always throw because: Invalid IL or CLR metadata in 'Void Dia2Lib.DiaStackWalkerClass.getEnumFrames2(Dia2Lib.CV_CPU_TYPE_e, Dia2Lib.IDiaStackWalkHelper, Dia2Lib.IDiaEnumStackFrames ByRef)'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Tracing.Tests\Release\net7.0-windows\native\System.Diagnostics.Tracing.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Tracing.Tests\Release\net7.0-windows\native\System.Diagnostics.Tracing.Tests.exp
+  System.Diagnostics.Tracing.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Tracing.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022  8:19:44.11 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Tracing.Tests\Release\net7.0-windows\publish\
+  System.Diagnostics.Tracing.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Diagnostics.Tracing.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] BasicEventSourceTests.TestsWrite.Test_Write_T_ETW
+  [FAIL] BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener
+  Assert.Equal() Failure
+                  (pos 5)
+  Expected: EventSourceMessage
+  Actual:   Event1
+                  (pos 5)
+     at BasicEventSourceTests.TestsUserErrors.Test_Bad_EventSource_Startup(Boolean, Listener, EventSourceSettings) + 0x1cf
+     at BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds_WithEtwListener() + 0x1e1
+     at System.Diagnostics.Tracing.Tests!<BaseAddress>+0xff5df8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds
+  Assert.Equal() Failure
+                  (pos 5)
+  Expected: EventSourceMessage
+  Actual:   Event1
+                  (pos 5)
+     at BasicEventSourceTests.TestsUserErrors.Test_Bad_EventSource_Startup(Boolean, Listener, EventSourceSettings) + 0x1cf
+     at BasicEventSourceTests.TestsUserErrors.Test_BadEventSource_MismatchedIds() + 0x132
+     at System.Diagnostics.Tracing.Tests!<BaseAddress>+0xff5df8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] BasicEventSourceTests.TestsWriteEvent.Test_WriteEvent_Manifest_ETW
+  [SKIP] BasicEventSourceTests.TestsWriteEvent.Test_WriteEvent_SelfDescribing_ETW
+  [SKIP] BasicEventSourceTests.TestsWriteEvent.Test_WriteEvent_ComplexData_SelfDescribing_ETW
+  [SKIP] BasicEventSourceTests.TestsWriteEvent.Test_WriteEvent_ByteArray_SelfDescribing_ETW
+  [SKIP] BasicEventSourceTests.TestsWriteEvent.Test_WriteEvent_ByteArray_Manifest_ETW
+  [SKIP] BasicEventSourceTests.TestsWriteEventToListener.Test_WriteEvent_TransferEvents
+  [SKIP] BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGenerationRollover
+  [SKIP] BasicEventSourceTests.TestsManifestGeneration.Test_EventSource_EtwManifestGeneration
+  [SKIP] BasicEventSourceTests.TestNotSupported.TestBasicOperations_IsSupported_False
+  [FAIL] BasicEventSourceTests.TestsManifestNegative.Test_GenerateManifest_InvalidEventSources
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   (No exception was thrown)
+     at System.AssertExtensions.Throws[T](String, Func`1) + 0x19
+     at BasicEventSourceTests.TestsManifestNegative.Test_GenerateManifest_InvalidEventSources() + 0x670
+     at System.Diagnostics.Tracing.Tests!<BaseAddress>+0xff5df8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Diagnostics.Tracing.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 46, Errors: 0, Failures: 3, Skipped: 10. Time: 2.483599s
+  ----- end Sun 05/29/2022  8:19:52.75 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Diagnostics.Tracing.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Tracing\tests\System.Diagnostics.Tracing.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Diagnostics.Tracing.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Tracing\tests\System.Diagnostics.Tracing.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:55.55

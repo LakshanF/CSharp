@@ -1,0 +1,44 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.IO.IsolatedStorage\tests\System.IO.IsolatedStorage.Tests.csproj (in 533 ms).
+  13 of 14 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\ref\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0-windows\Microsoft.Win32.SystemEvents.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\ref\Release\net7.0\System.Drawing.Common.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0\System.Drawing.Common.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0-windows\System.Drawing.Common.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\ref\Release\net7.0\System.Windows.Extensions.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0-windows\System.Windows.Extensions.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0\System.Windows.Extensions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\ref\Release\net7.0\System.Security.Permissions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\Release\net7.0\System.Security.Permissions.dll
+  System.DirectoryServices -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices\ref\Release\net7.0\System.DirectoryServices.dll
+  System.DirectoryServices -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices\Release\net7.0-windows\System.DirectoryServices.dll
+  System.IO.IsolatedStorage.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.IsolatedStorage.Tests\Release\net7.0-windows\System.IO.IsolatedStorage.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.IsolatedStorage.Tests\Release\net7.0-windows\native\System.IO.IsolatedStorage.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.IsolatedStorage.Tests\Release\net7.0-windows\native\System.IO.IsolatedStorage.Tests.exp
+  System.IO.IsolatedStorage.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.IsolatedStorage.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022  8:43:13.87 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.IsolatedStorage.Tests\Release\net7.0-windows\publish\
+  System.IO.IsolatedStorage.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.IO.IsolatedStorage.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  Finished System.IO.IsolatedStorage.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 267, Errors: 0, Failures: 0, Skipped: 0. Time: 0.5219122s
+  ----- end Sun 05/29/2022  8:43:16.68 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:24.17

@@ -1,0 +1,191 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Resources.ResourceManager\tests\System.Resources.ResourceManager.Tests.csproj (in 488 ms).
+  9 of 10 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\ref\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0-windows\Microsoft.Win32.SystemEvents.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\ref\Release\net7.0\System.Drawing.Common.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0-windows\System.Drawing.Common.dll
+  System.Resources.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.Extensions\ref\Release\net7.0\System.Resources.Extensions.dll
+  System.Resources.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.Extensions\Release\net7.0\System.Resources.Extensions.dll
+  System.Resources.ResourceManager.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.ResourceManager.Tests\Release\net7.0-windows\System.Resources.ResourceManager.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.ResourceManager.Tests\Release\net7.0-windows\native\System.Resources.ResourceManager.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.ResourceManager.Tests\Release\net7.0-windows\native\System.Resources.ResourceManager.Tests.exp
+  System.Resources.ResourceManager.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.ResourceManager.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022 10:32:10.48 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Resources.ResourceManager.Tests\Release\net7.0-windows\publish\
+  System.Resources.ResourceManager.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Resources.ResourceManager.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Resources.Tests.TrimCompatibilityTests.VerifyFeatureSwitchGeneratesTheRightException
+  [SKIP] System.Resources.Tests.ResourceManagerTests.GetResourceSet_NonStrings
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(key: "Lang", cultureName: "es-MX", expectedValue: "es")
+  Assert.Equal() Failure
+  Expected: es
+  Actual:   (null)
+     at System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(String, String, String) + 0x81
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa918a8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(key: "OneLoc", cultureName: "es", expectedValue: "Value-One(es)")
+  Assert.Equal() Failure
+                      (pos 9)
+  Expected: Value-One(es)
+  Actual:   Value-One
+                      (pos 9)
+     at System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(String, String, String) + 0x81
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa918a8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(key: "OneLoc", cultureName: "fr-FR", expectedValue: "Value-One(fr-FR)")
+  Assert.Equal() Failure
+                      (pos 9)
+  Expected: Value-One(fr-FR)
+  Actual:   Value-One
+                      (pos 9)
+     at System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(String, String, String) + 0x81
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa918a8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(key: "OneLoc", cultureName: "es-ES", expectedValue: "Value-One(es)")
+  Assert.Equal() Failure
+                      (pos 9)
+  Expected: Value-One(es)
+  Actual:   Value-One
+                      (pos 9)
+     at System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(String, String, String) + 0x81
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa918a8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(key: "OneLoc", cultureName: "es-MX", expectedValue: "Value-One(es-MX)")
+  Assert.Equal() Failure
+                      (pos 9)
+  Expected: Value-One(es-MX)
+  Actual:   Value-One
+                      (pos 9)
+     at System.Resources.Tests.ResourceManagerTests.GetString_CultureFallback(String, String, String) + 0x81
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa918a8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetResourceSet_Images(key: "Bitmap", expectedValue: Bitmap { Height = 1, RawFormat = Bmp, Width = 1 })
+  System.NotSupportedException : Use of ResourceManager for custom types is disabled. Set the MSBuild Property CustomResourceTypesSupport to true in order to enable it.
+     at System.Resources.ResourceReader.DeserializeObject(Int32) + 0x33
+     at System.Resources.ResourceReader._LoadObjectV2(Int32, ResourceTypeCode&) + 0x5d5
+     at System.Resources.ResourceReader.LoadObjectV2(Int32, ResourceTypeCode&) + 0x11
+     at System.Resources.RuntimeResourceSet.ReadValue(ResourceReader, Int32, Boolean, ResourceLocator&) + 0x35
+     at System.Resources.RuntimeResourceSet.GetObject(String, Boolean, Boolean) + 0xde
+     at System.Resources.Tests.ResourceManagerTests.GetResourceSet_Images(String, Object) + 0xa4
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa78a5c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetResourceSet_Images(key: "Icon", expectedValue: (Icon))
+  System.NotSupportedException : Use of ResourceManager for custom types is disabled. Set the MSBuild Property CustomResourceTypesSupport to true in order to enable it.
+     at System.Resources.ResourceReader.DeserializeObject(Int32) + 0x33
+     at System.Resources.ResourceReader._LoadObjectV2(Int32, ResourceTypeCode&) + 0x5d5
+     at System.Resources.ResourceReader.LoadObjectV2(Int32, ResourceTypeCode&) + 0x11
+     at System.Resources.RuntimeResourceSet.ReadValue(ResourceReader, Int32, Boolean, ResourceLocator&) + 0x35
+     at System.Resources.RuntimeResourceSet.GetObject(String, Boolean, Boolean) + 0xde
+     at System.Resources.Tests.ResourceManagerTests.GetResourceSet_Images(String, Object) + 0xa4
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa78a5c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Resources.Tests.ResourceManagerTests.GetString_ExpectEvents
+  [SKIP] System.Resources.Tests.ResourceManagerTests.GetObject
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetString_FromTestClassWithoutNeutralResources
+  System.Resources.MissingManifestResourceException : Could not find the resource "System.Resources.Tests.Resources.TestClassWithoutNeutralResources.resources" among the resources "System.Resources.Tests.Resources.TestResx.resources", "System.Resources.Tests.Resources.CustomReader.resources", "System.Resources.Tests.Resources.TestResx.netstandard17.resources" embedded in the assembly "System.Resources.ResourceManager.Tests", nor among the resources in any satellite assemblies for the specified culture. Perhaps the resources were embedded with an incorrect name.
+     at System.Resources.ManifestBasedResourceGroveler.HandleResourceStreamMissing(String) + 0x185
+     at System.Resources.ManifestBasedResourceGroveler.GrovelForResourceSet(CultureInfo, Dictionary`2, Boolean, Boolean) + 0x184
+     at System.Resources.ResourceManager.InternalGetResourceSet(CultureInfo, Boolean, Boolean) + 0x1ce
+     at System.Resources.ResourceManager.GetString(String, CultureInfo) + 0x11b
+     at System.Resources.Tests.ResourceManagerTests.GetString_FromTestClassWithoutNeutralResources() + 0x65
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa9e66e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Resources.Tests.ResourceManagerTests.GetResourceSet_NonStringsIgnoreCase
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetObject_Images(key: "Bitmap", expectedValue: Bitmap { Height = 1, RawFormat = Bmp, Width = 1 })
+  System.NotSupportedException : Use of ResourceManager for custom types is disabled. Set the MSBuild Property CustomResourceTypesSupport to true in order to enable it.
+     at System.Resources.ResourceReader.DeserializeObject(Int32) + 0x33
+     at System.Resources.ResourceReader._LoadObjectV2(Int32, ResourceTypeCode&) + 0x5d5
+     at System.Resources.ResourceReader.LoadObjectV2(Int32, ResourceTypeCode&) + 0x11
+     at System.Resources.RuntimeResourceSet.ReadValue(ResourceReader, Int32, Boolean, ResourceLocator&) + 0x35
+     at System.Resources.RuntimeResourceSet.GetObject(String, Boolean, Boolean) + 0xde
+     at System.Resources.ResourceManager.GetObject(String, CultureInfo, Boolean) + 0x1ab
+     at System.Resources.Tests.ResourceManagerTests.GetObject_Images(String, Object) + 0x72
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa78a5c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetObject_Images(key: "Icon", expectedValue: (Icon))
+  System.NotSupportedException : Use of ResourceManager for custom types is disabled. Set the MSBuild Property CustomResourceTypesSupport to true in order to enable it.
+     at System.Resources.ResourceReader.DeserializeObject(Int32) + 0x33
+     at System.Resources.ResourceReader._LoadObjectV2(Int32, ResourceTypeCode&) + 0x5d5
+     at System.Resources.ResourceReader.LoadObjectV2(Int32, ResourceTypeCode&) + 0x11
+     at System.Resources.RuntimeResourceSet.ReadValue(ResourceReader, Int32, Boolean, ResourceLocator&) + 0x35
+     at System.Resources.RuntimeResourceSet.GetObject(String, Boolean, Boolean) + 0xde
+     at System.Resources.ResourceManager.GetObject(String, CultureInfo, Boolean) + 0x1ab
+     at System.Resources.Tests.ResourceManagerTests.GetObject_Images(String, Object) + 0x72
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa78a5c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetObject_Images_ResourceSet(key: "Bitmap", expectedValue: Bitmap { Height = 1, RawFormat = Bmp, Width = 1 })
+  System.NotSupportedException : Use of ResourceManager for custom types is disabled. Set the MSBuild Property CustomResourceTypesSupport to true in order to enable it.
+     at System.Resources.ManifestBasedResourceGroveler.CreateResourceSet(Stream, Assembly) + 0x3ed
+     at System.Resources.ManifestBasedResourceGroveler.GrovelForResourceSet(CultureInfo, Dictionary`2, Boolean, Boolean) + 0x155
+     at System.Resources.ResourceManager.InternalGetResourceSet(CultureInfo, Boolean, Boolean) + 0x1ce
+     at System.Resources.ResourceManager.GetObject(String, CultureInfo, Boolean) + 0x188
+     at System.Resources.Tests.ResourceManagerTests.GetObject_Images_ResourceSet(String, Object) + 0x84
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa78a5c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Resources.Tests.ResourceManagerTests.GetObject_Images_ResourceSet(key: "Icon", expectedValue: (Icon))
+  System.NotSupportedException : Use of ResourceManager for custom types is disabled. Set the MSBuild Property CustomResourceTypesSupport to true in order to enable it.
+     at System.Resources.ManifestBasedResourceGroveler.CreateResourceSet(Stream, Assembly) + 0x3ed
+     at System.Resources.ManifestBasedResourceGroveler.GrovelForResourceSet(CultureInfo, Dictionary`2, Boolean, Boolean) + 0x155
+     at System.Resources.ResourceManager.InternalGetResourceSet(CultureInfo, Boolean, Boolean) + 0x1ce
+     at System.Resources.ResourceManager.GetObject(String, CultureInfo, Boolean) + 0x188
+     at System.Resources.Tests.ResourceManagerTests.GetObject_Images_ResourceSet(String, Object) + 0x84
+     at System.Resources.ResourceManager.Tests!<BaseAddress>+0xa78a5c
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  Finished System.Resources.ResourceManager.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 111, Errors: 0, Failures: 12, Skipped: 5. Time: 0.0376638s
+  ----- end Sun 05/29/2022 10:32:14.82 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Resources.ResourceManager.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Resources.ResourceManager\tests\System.Resources.ResourceManager.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Resources.ResourceManager.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Resources.ResourceManager\tests\System.Resources.ResourceManager.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:46.97

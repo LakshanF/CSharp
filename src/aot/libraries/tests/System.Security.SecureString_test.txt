@@ -1,0 +1,31 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.SecureString\tests\System.Security.SecureString.Tests.csproj (in 362 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Security.SecureString.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.SecureString.Tests\Release\net7.0\System.Security.SecureString.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.SecureString.Tests\Release\net7.0\native\System.Security.SecureString.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.SecureString.Tests\Release\net7.0\native\System.Security.SecureString.Tests.exp
+  System.Security.SecureString.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.SecureString.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 11:28:58.88 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.SecureString.Tests\Release\net7.0\publish\
+  System.Security.SecureString.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Security.SecureString.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  Finished System.Security.SecureString.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 43, Errors: 0, Failures: 0, Skipped: 0. Time: 5.1083563s
+  ----- end Sun 05/29/2022 11:29:06.61 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:26.63

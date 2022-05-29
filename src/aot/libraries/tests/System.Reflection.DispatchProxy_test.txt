@@ -1,0 +1,520 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.DispatchProxy\tests\TestDependency\System.Reflection.DispatchProxy.TestDependency.csproj (in 153 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.DispatchProxy\tests\System.Reflection.DispatchProxy.Tests.csproj (in 279 ms).
+  3 of 5 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Reflection.DispatchProxy.TestDependency -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.DispatchProxy.TestDependency\Release\net7.0\System.Reflection.DispatchProxy.TestDependency.dll
+  System.Reflection.DispatchProxy.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.DispatchProxy.Tests\Release\net7.0\System.Reflection.DispatchProxy.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.DispatchProxy.Tests\Release\net7.0\native\System.Reflection.DispatchProxy.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.DispatchProxy.Tests\Release\net7.0\native\System.Reflection.DispatchProxy.Tests.exp
+  System.Reflection.DispatchProxy.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.DispatchProxy.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:18:43.88 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.DispatchProxy.Tests\Release\net7.0\publish\
+  System.Reflection.DispatchProxy.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Reflection.DispatchProxy.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_Abstract_BaseType_Throws_ArgumentException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Multiple_Parameters_Via_Params_Receives_Correct_Arguments
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Multiple_Parameters_Via_Params_Receives_Correct_Arguments() + 0xa5
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_PrivateProxy
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_PrivateProxy() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Proxy_Declares_Interface_Indexers
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Proxy_Declares_Interface_Indexers() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Proxy_Derives_From_DispatchProxy_BaseType
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Proxy_Derives_From_DispatchProxy_BaseType() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_BaseType_Without_Default_Ctor_Throws_ArgumentException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Created_Proxy_With_Different_Proxy_Type_Use_Different_Generated_Type
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Created_Proxy_With_Different_Proxy_Type_Use_Different_Generated_Type() + 0x20
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Receives_Correct_MethodInfo_And_Arguments
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Receives_Correct_MethodInfo_And_Arguments() + 0x7f
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_Concrete_Proxy_Type_Throws_ArgumentException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Receives_Correct_Arguments
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Receives_Correct_Arguments() + 0x3c
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Same_Proxy_Type_And_Base_Type_Reuses_Same_Generated_Type
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Same_Proxy_Type_And_Base_Type_Reuses_Same_Generated_Type() + 0x12
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Multiple_Parameters_Receives_Correct_Arguments
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Multiple_Parameters_Receives_Correct_Arguments() + 0xa5
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_ExternalNonPublicService
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_ExternalNonPublicService() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Proxy_Implements_Internal_Interfaces
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Proxy_Implements_Internal_Interfaces() + 0x14
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Proxy_Internal_Interface
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Proxy_Internal_Interface() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_PrivateProxyAndInternalService
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_PrivateProxyAndInternalService() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_InternalProxy
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_InternalProxy() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Same_Proxy_Type_With_Different_BaseType_Uses_Different_Generated_Type
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Same_Proxy_Type_With_Different_BaseType_Uses_Different_Generated_Type() + 0x28
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Ref_Out_In_Method
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.testRefOutInInvocation(Action`1, String) + 0x2b
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Ref_Out_In_Method() + 0x4f
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_InternalServiceWithGenericArgumentBeingNonPublicExternalService
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_InternalServiceWithGenericArgumentBeingNonPublicExternalService() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Property_Setter_And_Getter_Invokes_Correct_Methods
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Property_Setter_And_Getter_Invokes_Correct_Methods() + 0x68
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Proxy_Implements_All_Interfaces
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Proxy_Implements_All_Interfaces() + 0x14
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Thrown_Exception_Rethrown_To_Caller
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Thrown_Exception_Rethrown_To_Caller() + 0x72
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Same_Method_Multiple_Interfaces_Calls_Correct_Method
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Same_Method_Multiple_Interfaces_Calls_Correct_Method() + 0x64
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Proxy_Declares_Interface_Properties
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Proxy_Declares_Interface_Properties() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Returns_Correct_Value
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Returns_Correct_Value() + 0x13
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_PrivateProxyAndInternalServiceWithExternalGenericArgument
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_PrivateProxyAndInternalServiceWithExternalGenericArgument() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Void_Returning_Method_Accepts_Null_Return
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Void_Returning_Method_Accepts_Null_Return() + 0x35
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_InternalProxyWithBaseTypeImplementingServiceWithgenericArgumentBeingNonPublicExternalService
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_InternalProxyWithBaseTypeImplementingServiceWithgenericArgumentBeingNonPublicExternalService() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_Sealed_BaseType_Throws_ArgumentException
+  Assert.Throws() Failure
+  Expected: typeof(System.ArgumentException)
+  Actual:   typeof(System.PlatformNotSupportedException): Dynamic code generation is not supported on this platform.
+  ---- System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  ----- Inner Stack Trace -----
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Proxy_Instances_Of_Same_Proxy_And_Base_Type_Are_Unique
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Proxy_Instances_Of_Same_Proxy_And_Base_Type_Are_Unique() + 0x20
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Receives_Correct_MethodInfo
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Receives_Correct_MethodInfo() + 0x35
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_InternalServiceImplementingNonPublicExternalService
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_InternalServiceImplementingNonPublicExternalService() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Event_Add_And_Remove_And_Raise_Invokes_Correct_Methods
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Event_Add_And_Remove_And_Raise_Invokes_Correct_Methods() + 0x38
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Create_Using_InternalProxyWithExternalNonPublicBaseType
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Create_Using_InternalProxyWithExternalNonPublicBaseType() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Proxy_Declares_Interface_Events
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Proxy_Declares_Interface_Events() + 0x11
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Indexer_Setter_And_Getter_Invokes_Correct_Methods
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Indexer_Setter_And_Getter_Invokes_Correct_Methods() + 0x68
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] DispatchProxyTests.DispatchProxyTests.Invoke_Generic_Method
+  System.PlatformNotSupportedException : Dynamic code generation is not supported on this platform.
+     at System.Reflection.Emit.ReflectionEmitThrower.ThrowPlatformNotSupportedException() + 0x33
+     at System.Reflection.DispatchProxyGenerator.ProxyAssembly..ctor(AssemblyLoadContext) + 0x159
+     at System.Reflection.DispatchProxyGenerator.<>c.<CreateProxyInstance>b__6_0(AssemblyLoadContext) + 0x23
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValueLocked(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x26
+     at System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(TKey, ConditionalWeakTable`2.CreateValueCallback) + 0x3e
+     at System.Reflection.DispatchProxyGenerator.CreateProxyInstance(Type, Type) + 0x78
+     at System.Reflection.DispatchProxy.Create[T, TProxy]() + 0x2d
+     at DispatchProxyTests.DispatchProxyTests.testGenericMethodRoundTrip[T](T) + 0x21
+     at DispatchProxyTests.DispatchProxyTests.Invoke_Generic_Method() + 0x18
+     at System.Reflection.DispatchProxy.Tests!<BaseAddress>+0x564c6e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Reflection.DispatchProxy.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 40, Errors: 0, Failures: 38, Skipped: 0. Time: 0.0161693s
+  ----- end Sun 05/29/2022 10:18:46.20 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.DispatchProxy.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.DispatchProxy\tests\System.Reflection.DispatchProxy.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.DispatchProxy.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.DispatchProxy\tests\System.Reflection.DispatchProxy.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:21.36

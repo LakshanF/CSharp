@@ -1,0 +1,157 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.DiagnosticSource\tests\System.Diagnostics.DiagnosticSource.Tests.csproj (in 592 ms).
+  6 of 7 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Diagnostics.DiagnosticSource -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource\ref\Release\net7.0\System.Diagnostics.DiagnosticSource.dll
+  System.Diagnostics.DiagnosticSource -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource\Release\net7.0\System.Diagnostics.DiagnosticSource.dll
+  System.Diagnostics.DiagnosticSource.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource.Tests\Release\net7.0\System.Diagnostics.DiagnosticSource.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource.Tests\Release\net7.0\native\System.Diagnostics.DiagnosticSource.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource.Tests\Release\net7.0\native\System.Diagnostics.DiagnosticSource.Tests.exp
+  System.Diagnostics.DiagnosticSource.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:10:37.85 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource.Tests\Release\net7.0\publish\
+  System.Diagnostics.DiagnosticSource.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Diagnostics.DiagnosticSource.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.ParallelRunningTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.ObservableInstrumentMeasurementTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.TestRecordingMeasurementsWithTagList
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.MeterDisposalsTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.PassingVariableTagsParametersTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.InstrumentMeasurementTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.EnableListeneingMultipleTimesWithDifferentState
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.InstrumentCreationTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.SerializedEventsTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.NullMeasurementEventCallbackTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.CreateInstrumentParametersTest
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestWithPropertyThrowing
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.ListenerDisposalsTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.MeterConstructionTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.SupportedGenericParameterTypesTest
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestEnableAllActivitySourcesAllEvents
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.ThrowingExceptionsFromObservableInstrumentCallbacks
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.LinuxNewLineConventions
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.ListeningToInstrumentsPublishingTest
+  [SKIP] System.Diagnostics.Metrics.Tests.MetricsTests.MultipleListenersTest
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestFilteringWithActivityName
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestTraceIdAutoGenerationWithNullParentId
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestTransformSpecs
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestActivityContextIsRemote
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestNulls
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.EnsureRecordingTest
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestWildCardSourceName
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestActivityTriggeringCallerMemberNameAttribute
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.IndexGetters_DontThrow
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestDefaultParentContext
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestBadProperties
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestActivitySourceAttachedObject
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestAddingSamplerTagsFromMultipleListeners
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestStartActivityWithNoListener
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestAddingSamplerTagsUsingParentId
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestAddingMorePropertiesWithActivityCreate
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestActivityCreate
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestActivityCreationProperties
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestHasRemoteParent
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestNotAddedSamplerTags
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestAddingSamplerTags
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestTraceState
+  [SKIP] System.Diagnostics.Tests.PropagatorTests.TestCustomPropagator
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.RestoreOriginalParentTest
+  [SKIP] System.Diagnostics.Tests.PropagatorTests.TestAllPropagators
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestAddSamplerAndActivityCreationTags
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestCreatingActivityUsingDifferentParentIds
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestExpectedListenersReturnValues
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestTraceIdAutoGeneration
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestActivityWithListenerActivityCreateAndAllDataRequested
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestDefaultTraceIdWithHierarchicalParentId
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestActivityWithListenerNoActivityCreate
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestEventNotificationOrder
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestListeningToConstructedActivityEvents
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestIdFormats
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestConstruction
+  [SKIP] System.Diagnostics.Tests.ActivitySourceTests.TestSamplerTagsWithMixedListenerModels
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestShortcutKeywords
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestMessages
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestEnableAllActivitySourcesWithOneEvent
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.Stress_WriteConcurrently_DoesntCrash
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestDefaultActivitySource
+  [SKIP] System.Diagnostics.Tests.ActivityTests.TestBaggageWithChainedActivities
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestBaseClassProperties
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestSpecificEvents
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestMultipleSpecs
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestWildCardEventName
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestEnableAllActivitySourcesWithSpeciifcSamplingResult
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.ActivityObjectsAreInspectable
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestNoImplicitTransforms
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestActivities
+  [SKIP] System.Diagnostics.Tests.DiagnosticSourceEventSourceBridgeTests.TestBaseClassDuplicateProperties
+  [SKIP] System.Diagnostics.Tests.ActivityTests.IdFormat_WithTheEnvironmentSwitch
+  [SKIP] System.Diagnostics.Tests.ActivityTests.SetIdFormat_OverridesForcedHierarchical
+  [SKIP] System.Diagnostics.Tests.ActivityTests.RestoreOriginalParentTest
+  [SKIP] System.Diagnostics.Tests.ActivityTests.IdFormat_W3CWhenDefaultIsW3C
+  [SKIP] System.Diagnostics.Tests.ActivityTests.IdFormat_W3CForcedOverridesParentActivityIdFormat
+  [SKIP] System.Diagnostics.Tests.ActivityTests.TraceIdBeforeStart_NoParent
+  [SKIP] System.Diagnostics.Tests.ActivityTests.SetIdFormat_OverridesForcedW3C
+  [SKIP] System.Diagnostics.Tests.ActivityTests.TraceIdCustomGenerationTest
+  [SKIP] System.Diagnostics.Tests.ActivityTests.IdFormat_W3CWhenForcedAndHierarchicalParentId
+  [SKIP] System.Diagnostics.Tests.ActivityTests.IdFormat_HierarchicalWhenDefaultIsW3CButHierarchicalParentId
+  [SKIP] System.Diagnostics.Tests.ActivityTests.ActivityCurrentEventTest
+  Finished System.Diagnostics.DiagnosticSource.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 256, Errors: 0, Failures: 0, Skipped: 83. Time: 255.1628855s
+  ----- end Sun 05/29/2022  8:14:57.29 ----- exit code 0 ----------------------------------------------------------
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net462\TestUtilities.dll
+  System.Diagnostics.DiagnosticSource -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource\ref\Release\net462\System.Diagnostics.DiagnosticSource.dll
+  System.Diagnostics.DiagnosticSource -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.DiagnosticSource\Release\net462\System.Diagnostics.DiagnosticSource.dll
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.DiagnosticSource\tests\System.Diagnostics.DiagnosticSource.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.DiagnosticSource\tests\System.Diagnostics.DiagnosticSource.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:05:03.68

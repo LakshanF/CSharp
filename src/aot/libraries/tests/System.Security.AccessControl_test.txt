@@ -1,0 +1,38 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.AccessControl\tests\System.Security.AccessControl.Tests.csproj (in 364 ms).
+  10 of 11 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Security.Claims -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Claims\ref\Release\net7.0\System.Security.Claims.dll
+  System.Collections.NonGeneric -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Release\net7.0\System.Collections.NonGeneric.dll
+  System.Security.Principal.Windows -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Principal.Windows\ref\Release\net7.0\System.Security.Principal.Windows.dll
+  System.Security.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl\ref\Release\net7.0\System.Security.AccessControl.dll
+  System.IO.FileSystem.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.AccessControl\ref\Release\net7.0\System.IO.FileSystem.AccessControl.dll
+  System.IO.FileSystem.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.AccessControl\Release\net7.0-windows\System.IO.FileSystem.AccessControl.dll
+  System.Security.AccessControl.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl.Tests\Release\net7.0-windows\System.Security.AccessControl.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl.Tests\Release\net7.0-windows\native\System.Security.AccessControl.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl.Tests\Release\net7.0-windows\native\System.Security.AccessControl.Tests.exp
+  System.Security.AccessControl.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022 11:19:33.90 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl.Tests\Release\net7.0-windows\publish\
+  System.Security.AccessControl.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Security.AccessControl.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  Finished System.Security.AccessControl.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 676, Errors: 0, Failures: 0, Skipped: 0. Time: 0.1275772s
+  ----- end Sun 05/29/2022 11:19:36.92 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:23.95

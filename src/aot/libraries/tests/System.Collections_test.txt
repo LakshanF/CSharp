@@ -1,0 +1,157 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Collections.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Tests\Release\net7.0\System.Collections.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Tests\Release\net7.0\native\System.Collections.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Tests\Release\net7.0\native\System.Collections.Tests.exp
+  System.Collections.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  4:06:32.87 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Tests\Release\net7.0\publish\
+  System.Collections.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Collections.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Collections.Generic.Tests.NullableInt32EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.NullableUInt32EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.UInt32ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.DebugView_Tests.TestDebuggerAttributes
+  [SKIP] System.Collections.Tests.DebugView_Tests.TestDebuggerAttributes_Null
+  [SKIP] System.Collections.Generic.Tests.IntPtrComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.PriorityQueue_Generic_Tests_string_string_CustomComparer.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_EquatableBackwardsOrder_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_string_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_Keys.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.EquatableComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.List_Generic_Tests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_Keys_AsICollection.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_Keys_AsICollection.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_string_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.PriorityQueue_Generic_Tests_string_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.DoubleComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.BadlyBehavingComparableComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_Values_AsICollection.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_Values_AsICollection.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedDictionary_IDictionary_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedDictionary_IDictionary_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Generic.Tests.Int32ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.NullableInt16EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_Keys.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.HashSet_IEnumerable_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.List_Generic_Tests_string_ReadOnly.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_Values_AsICollection.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_Values_AsICollection.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.SortedSet_ICollection_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedSet_ICollection_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Generic.Tests.SingleComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.NullableUInt32ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_AbsOfInt.ComparerSerialization
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_AbsOfInt.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_int_With_Comparer_AbsOfInt.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_EquatableBackwardsOrder.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_Keys.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.Int64ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_EquatableBackwardsOrder.ComparerSerialization
+  [SKIP] System.Collections.Generic.Tests.NonGenericComparableComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.DecimalComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.NullableSByteEnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_int_With_Comparer_SameAsDefaultComparer.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Queue_ICollection_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Queue_ICollection_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_int_With_Comparer_HashCodeAlwaysReturnsZero.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_string_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.Int16EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.NullableByteEnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.NullableUInt16EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.Int32EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.LinkedList_ICollection_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.LinkedList_ICollection_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_ModOfInt.ComparerSerialization
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_ModOfInt.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.ObjectComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int.ComparerSerialization
+  [SKIP] System.Collections.Generic.Tests.NullableUIntPtrComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.LinkedList_Generic_Tests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Queue_Generic_Tests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.NullableUInt64EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.UInt64EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_SameAsDefaultComparer.ComparerSerialization
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_SameAsDefaultComparer.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.Int16ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_int_With_NullComparer.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_SimpleInt_int_With_Comparer_WrapStructural_SimpleInt.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_int_With_Comparer_ModOfInt.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_Keys_AsICollection.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.Queue_Generic_Tests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_Keys_AsICollection.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.UInt16EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.Dictionary_IDictionary_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_int_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_string.ComparerSerialization
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Dictionary_IDictionary_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.SByteComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.Stack_Generic_Tests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.UInt64ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_Values_AsICollection.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_Values_AsICollection.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.List_Generic_Tests_int_ReadOnly.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.NullableInt64EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.Dictionary_Tests.ComparerSerialization
+  [SKIP] System.Collections.Generic.Tests.GenericComparableComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.List_Generic_Tests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Stack_ICollection_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Stack_ICollection_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Generic.Tests.NullableInt32ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.StringComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.NullableIntPtrComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_WrapStructural_Int.ComparerSerialization
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_WrapStructural_Int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_Keys_AsICollection.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_Keys_AsICollection.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.UIntPtrComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_int_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.SByteEnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.PriorityQueue_Generic_Tests_int_int_CustomComparer.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_Values.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.LinkedList_Generic_Tests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.ByteComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_int_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.Stack_Generic_Tests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.UInt16ComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Generic.Tests.UInt32EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_EquatableBackwardsOrder.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_Generic_Tests_EquatableBackwardsOrder_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_HashCodeAlwaysReturnsZero.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedSet_Generic_Tests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_HashCodeAlwaysReturnsZero.ComparerSerialization
+  [SKIP] System.Collections.Generic.Tests.ByteEnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.Dictionary_Generic_Tests_Values.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.PriorityQueue_Generic_Tests_int_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Generic.Tests.Int64EnumComparersTests.EqualityComparer_SerializationRoundtrip
+  [SKIP] System.Collections.Tests.SortedDictionary_Generic_Tests_Values.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_IDictionary_NonGeneric_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedList_IDictionary_NonGeneric_Tests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_WrapStructural_SimpleInt.ComparerSerialization
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_WrapStructural_SimpleInt.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_BadIntEqualityComparer.ComparerSerialization
+  [SKIP] System.Collections.Tests.HashSet_Generic_Tests_int_With_Comparer_BadIntEqualityComparer.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedSet_TreeSubset_Int_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Tests.SortedSet_TreeSubset_String_Tests.IGenericSharedAPI_SerializeDeserialize
+  Finished System.Collections.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 54457, Errors: 0, Failures: 0, Skipped: 128. Time: 19.98684s
+  ----- end Sun 05/29/2022  4:07:04.50 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:58.47

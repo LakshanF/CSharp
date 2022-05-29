@@ -1,0 +1,194 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.IO.FileSystem\tests\System.IO.FileSystem.Tests.csproj (in 520 ms).
+  16 of 17 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Diagnostics.EventLog.Messages -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.EventLog.Messages\Release\netstandard2.0\System.Diagnostics.EventLog.Messages.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Security.Claims -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Claims\ref\Release\net7.0\System.Security.Claims.dll
+  System.Security.Principal.Windows -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Principal.Windows\ref\Release\net7.0\System.Security.Principal.Windows.dll
+  System.Diagnostics.EventLog -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.EventLog\ref\Release\net7.0\System.Diagnostics.EventLog.dll
+  System.Collections.NonGeneric -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Release\net7.0\System.Collections.NonGeneric.dll
+  System.Diagnostics.EventLog -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.EventLog\Release\net7.0-windows\System.Diagnostics.EventLog.dll
+  System.Security.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.AccessControl\ref\Release\net7.0\System.Security.AccessControl.dll
+  System.IO.FileSystem.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.AccessControl\ref\Release\net7.0\System.IO.FileSystem.AccessControl.dll
+  System.ServiceProcess.ServiceController -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ServiceProcess.ServiceController\ref\Release\net7.0\System.ServiceProcess.ServiceController.dll
+  System.ServiceProcess.ServiceController -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ServiceProcess.ServiceController\Release\net7.0-windows\System.ServiceProcess.ServiceController.dll
+  System.IO.FileSystem.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.AccessControl\Release\net7.0-windows\System.IO.FileSystem.AccessControl.dll
+  StreamConformanceTests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\StreamConformanceTests\Release\net7.0\StreamConformanceTests.dll
+  System.IO.FileSystem.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Tests\Release\net7.0-windows\System.IO.FileSystem.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Tests\Release\net7.0-windows\native\System.IO.FileSystem.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Tests\Release\net7.0-windows\native\System.IO.FileSystem.Tests.exp
+  System.IO.FileSystem.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022  8:32:49.70 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Tests\Release\net7.0-windows\publish\
+  System.IO.FileSystem.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.IO.FileSystem.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  You do not have sufficient privilege to perform this operation.
+  [SKIP] System.IO.Tests.DirectoryInfo_Exists.SymlinkToNewDirectoryInfo
+  [SKIP] System.IO.Tests.DirectoryInfo_Exists.CaseSensitivity
+  [SKIP] System.IO.Tests.DirectoryInfo_Exists.SymLinksMayExistIndependentlyOfTarget
+  [SKIP] System.IO.Tests.Directory_EnumDir_str.EnumerateWithSymLinkToDirectory
+  [SKIP] System.IO.Tests.FileInfo_Exists.CaseSensitivity
+  [SKIP] System.IO.Tests.FileInfo_Exists.UnsharedFileExists
+  [SKIP] System.IO.Tests.FileInfo_Exists.SymLinksMayExistIndependentlyOfTarget
+  [SKIP] System.IO.Tests.FileInfo_Exists.LockedFileExists
+  [SKIP] System.IO.Tests.File_Create_str_i.CaseSensitive
+  [SKIP] System.IO.Tests.Directory_EnumFiles_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_GetFiles.EnumerateWithSymLinkToFile
+  [SKIP] System.IO.Tests.Directory_GetDirectories_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_GetFileSystemInfos_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_Exists.DoesCaseSensitiveComparisons
+  [SKIP] System.IO.Tests.Directory_EnumFiles_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumerateFiles_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_EnumDir_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.FileStream_ctor_str_fm_fa_fs.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.DirectoryInfo_GetFiles_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_GetEntries_CurrentDirectory.CurrentDirectory
+  [SKIP] System.IO.Tests.Directory_GetDirectories_str.EnumerateWithSymLinkToDirectory
+  [SKIP] System.IO.Tests.Directory_GetFiles_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_GetDirectories_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_SetCurrentDirectory.SetToValidOtherDirectory
+  [SKIP] System.IO.Tests.DirectoryInfo_GetSetAttributes.SymLinksAreReparsePoints
+  [SKIP] System.IO.Tests.Directory_GetFiles_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_EnumFiles_str.EnumerateWithSymLinkToFile
+  [SKIP] System.IO.Tests.DirectoryInfo_GetSetAttributes.SymLinksReflectSymLinkAttributes
+  [SKIP] System.IO.Tests.FileInfo_OpenSpecial.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.DirectoryInfo_GetFileSystemInfos_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_GetFileSystemEntries_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.File_Delete.DeletingSymLinkDoesntDeleteTarget
+  [SKIP] System.IO.Tests.DirectoryInfo_GetDirectories_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_SetCurrentDirectory+Directory_SetCurrentDirectory_SymLink.SetToPathContainingSymLink
+  [SKIP] System.IO.Tests.DirectoryInfo_Create.RootPath_AppContainer
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumFSI_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumDir_Str.EnumerateWithSymLinkToDirectory
+  [SKIP] System.IO.Tests.Directory_GetFileSystemEntries_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_Exists.PathWithReservedDeviceNameAsPath_ReturnsFalse
+  [SKIP] System.IO.Tests.Directory_Exists.SymlinkToNewDirectory
+  [SKIP] System.IO.Tests.Directory_Exists.SymLinksMayExistIndependentlyOfTarget
+  [SKIP] System.IO.Tests.Directory_GetFiles_str.EnumerateWithSymLinkToFile
+  [SKIP] System.IO.Tests.DirectoryInfo_Delete.DeletingSymLinkDoesntDeleteTarget
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumerateFiles_str.EnumerateWithSymLinkToFile
+  [SKIP] System.IO.Tests.Directory_GetSetTimes.SettingUpdatesPropertiesOnSymlink
+  [SKIP] System.IO.Tests.Directory_GetSetTimes.TimesIncludeMillisecondPart_LowTempRes
+  [SKIP] System.IO.Tests.DirectoryInfo_GetDirectories.EnumerateWithSymLinkToDirectory
+  [SKIP] System.IO.Tests.FileInfo_Open_fm_fa_fs.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.Directory_EnumFSE_str_str_so_alldirs.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.File_GetSetTimes.TimesIncludeMillisecondPart_LowTempRes
+  [SKIP] System.IO.Tests.FileStream_ctor_str_fm_fa_fs_buffer_async.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.File_GetSetTimes.SettingUpdatesPropertiesOnSymlink
+  [SKIP] System.IO.Tests.FileStream_LockUnlock.OverlappingRegionsFromOtherProcess_ThrowsException
+  [SKIP] System.IO.Tests.FileStream_LockUnlock.OverlappingRegionsFromOtherProcess_With_WriteLock_ThrowsException
+  [SKIP] System.IO.Tests.PathDirectory_Exists.SymlinkToNewDirectory
+  [SKIP] System.IO.Tests.PathDirectory_Exists.SymLinksMayExistIndependentlyOfTarget
+  [SKIP] System.IO.Tests.PathDirectory_Exists.DoesCaseSensitiveComparisons
+  [SKIP] System.IO.Tests.PathDirectory_Exists.PathWithReservedDeviceNameAsPath_ReturnsFalse
+  [SKIP] System.IO.Tests.DirectoryInfo_Create.PathWithReservedDeviceNameAsPath_ThrowsDirectoryNotFoundException
+  [SKIP] System.IO.Tests.DirectoryInfo_Create.PathWithReservedDeviceNameAsExtendedPath
+  [SKIP] System.IO.Tests.DirectoryInfo_Create.FileNameIsToString_NotFullPath
+  [SKIP] System.IO.Tests.FileInfo_GetSetAttributes.SymLinksAreReparsePoints
+  [SKIP] System.IO.Tests.File_Create_str_i_fo.CaseSensitive
+  [SKIP] System.IO.Tests.FileInfo_GetSetAttributes.SymLinksReflectSymLinkAttributes
+  [SKIP] System.IO.Tests.FileInfo_Create.CaseSensitive
+  [SKIP] System.IO.Tests.FileStream_ctor_str_fm_fa_fs_buffer.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.DirectoryInfo_ToString.ParentToString_Framework
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumFSI_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_EnumFSE_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_GetSetTimes.TimesIncludeMillisecondPart_LowTempRes
+  [SKIP] System.IO.Tests.DirectoryInfo_GetSetTimes.SettingUpdatesPropertiesOnSymlink
+  [SKIP] System.IO.Tests.File_Open_str_fm_fa_fs.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.Directory_CreateDirectory.PathWithReservedDeviceNameAsPath_ThrowsDirectoryNotFoundException
+  [SKIP] System.IO.Tests.Directory_CreateDirectory.FileNameIsToString_NotFullPath
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumDir_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.PathFile_Exists.DoesCaseSensitiveComparisons
+  [SKIP] System.IO.Tests.PathFile_Exists.SymLinksMayExistIndependentlyOfTarget
+  [SKIP] System.IO.Tests.PathFile_Exists.PathWithReservedDeviceNameAsPath_ReturnsFalse
+  [SKIP] System.IO.Tests.FileInfo_GetSetTimes.SettingUpdatesPropertiesOnSymlink
+  [SKIP] System.IO.Tests.FileInfo_GetSetTimes.CopyToMillisecondPresent_LowTempRes
+  [SKIP] System.IO.Tests.FileInfo_GetSetTimes.MoveToMillisecondPresent_LowTempRes
+  [SKIP] System.IO.Tests.FileInfo_GetSetTimes.CopyToNanosecondsPresent_LowTempRes
+  [SKIP] System.IO.Tests.FileInfo_GetSetTimes.TimesIncludeMillisecondPart_LowTempRes
+  [SKIP] System.IO.Tests.FileInfo_Length.SymLinkLength
+  [SKIP] System.IO.Tests.DirectoryInfo_Delete_bool.DeletingSymLinkDoesntDeleteTarget
+  [SKIP] System.IO.Tests.Directory_GetDirectories_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_CreateDirectory.PathWithReservedDeviceNameAsExtendedPath
+  [SKIP] System.IO.Tests.Directory_CreateDirectory.RootPath_AppContainer
+  [SKIP] System.IO.Tests.FileInfo_Delete.DeletingSymLinkDoesntDeleteTarget
+  [SKIP] System.IO.Tests.File_Exists.SymLinksMayExistIndependentlyOfTarget
+  [SKIP] System.IO.Tests.File_Exists.DoesCaseSensitiveComparisons
+  [SKIP] System.IO.Tests.File_Exists.PathWithReservedDeviceNameAsPath_ReturnsFalse
+  [SKIP] System.IO.Tests.Directory_GetFileSystemEntries_str_str_so_alldirs.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.FileStream_ctor_str_fm_fa_fs_buffer_fo.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.File_Create_str.CaseSensitive
+  [SKIP] System.IO.Tests.File_OpenSpecial.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.Directory_EnumDir_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_EnumFSE_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumDir_str_str.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_Delete_str.DeletingSymLinkDoesntDeleteTarget
+  [SKIP] System.IO.Tests.DirectoryInfo_GetFiles_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.DirectoryInfo_EnumerateFiles_str_str_so.SearchPatternCaseSensitive
+  [SKIP] System.IO.Tests.Directory_Delete_str_bool.DeletingSymLinkDoesntDeleteTarget
+  [SKIP] System.IO.Tests.Directory_Delete_str_bool.RecursiveDeletingDoesntFollowLinks
+  [SKIP] System.IO.Tests.DirectoryInfo_Delete_bool.RecursiveDeletingDoesntFollowLinks
+  [SKIP] System.IO.Tests.FileStream_ctor_options.WhenFileIsTooLargeTheErrorMessageContainsAllDetails
+  [SKIP] System.IO.Tests.FileStream_ctor_options.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.FileInfo_Open_options.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.FileInfo_Open_options.WhenFileIsTooLargeTheErrorMessageContainsAllDetails
+  [SKIP] System.IO.Tests.FileStream_Dispose.NoDispose_CallsVirtualDisposeFalseArg_ThrowsDuringFlushWriteBuffer_FinalizerWontThrow
+  [SKIP] System.IO.Tests.FileStream_Dispose.Dispose_CallsVirtualDisposeTrueArg_ThrowsDuringFlushWriteBuffer_DisposeThrows
+  [SKIP] System.IO.Tests.File_Open_str_options.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.File_Open_str_options.WhenFileIsTooLargeTheErrorMessageContainsAllDetails
+  [SKIP] System.IO.Tests.File_OpenHandle.FileShareOpen_Inheritable
+  [SKIP] System.IO.Tests.File_OpenHandle.WhenFileIsTooLargeTheErrorMessageContainsAllDetails
+  Finished System.IO.FileSystem.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 9215, Errors: 0, Failures: 0, Skipped: 115. Time: 422.5330169s
+  ----- end Sun 05/29/2022  8:40:08.57 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:08:08.31

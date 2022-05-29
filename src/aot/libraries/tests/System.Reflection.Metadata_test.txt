@@ -1,0 +1,114 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Metadata\tests\System.Reflection.Metadata.Tests.csproj (in 1.46 sec).
+  9 of 10 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Collections -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections\ref\Release\net7.0\System.Collections.dll
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\ref\Release\net7.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\Release\net7.0\System.Collections.Immutable.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\ref\Release\net7.0\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\Release\net7.0\System.Reflection.Metadata.dll
+  System.Reflection.Metadata.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata.Tests\Release\net7.0\System.Reflection.Metadata.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[System.Reflection.Metadata.Tests]System.Reflection.Metadata.Tests.AssertEx.Throws<__Canon>(Func`1<object>,Action`1<__Canon>)' will always throw because: Invalid IL or CLR metadata
+  ILC: Method '[System.Reflection.Metadata.Tests]System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests+VarArgsToDecode.VarArgsCaller()' will always throw because: Vararg call to 'Void VarArgsToDecode.VarArgsCallee(Int32)' not supported
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata.Tests\Release\net7.0\native\System.Reflection.Metadata.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata.Tests\Release\net7.0\native\System.Reflection.Metadata.Tests.exp
+  System.Reflection.Metadata.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:21:14.55 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata.Tests\Release\net7.0\publish\
+  System.Reflection.Metadata.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Reflection.Metadata.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] System.Reflection.Metadata.Decoding.Tests.CustomAttributeDecoderTests.TestCustomAttributeDecoder
+  System.ArgumentException : The value cannot be an empty string. (Parameter 'path')
+     at System.ArgumentException.ThrowNullOrEmptyException(String, String) + 0x48
+     at System.IO.Strategies.FileStreamHelpers.ValidateArguments(String, FileMode, FileAccess, FileShare, Int32, FileOptions, Int64) + 0x215
+     at System.Reflection.Metadata.Decoding.Tests.CustomAttributeDecoderTests.TestCustomAttributeDecoder() + 0xb3
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.DecodeVarArgsDefAndRef
+  System.ArgumentException : The value cannot be an empty string. (Parameter 'path')
+     at System.ArgumentException.ThrowNullOrEmptyException(String, String) + 0x48
+     at System.IO.Strategies.FileStreamHelpers.ValidateArguments(String, FileMode, FileAccess, FileShare, Int32, FileOptions, Int64) + 0x215
+     at System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.DecodeVarArgsDefAndRef() + 0xba
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.SimpleSignatureProviderCoverage
+  System.ArgumentException : The value cannot be an empty string. (Parameter 'path')
+     at System.ArgumentException.ThrowNullOrEmptyException(String, String) + 0x48
+     at System.IO.Strategies.FileStreamHelpers.ValidateArguments(String, FileMode, FileAccess, FileShare, Int32, FileOptions, Int64) + 0x215
+     at System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.SimpleSignatureProviderCoverage() + 0xc1
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.PinnedAndUnpinnedLocals
+  System.ArgumentException : The value cannot be an empty string. (Parameter 'path')
+     at System.ArgumentException.ThrowNullOrEmptyException(String, String) + 0x48
+     at System.IO.Strategies.FileStreamHelpers.ValidateArguments(String, FileMode, FileAccess, FileShare, Int32, FileOptions, Int64) + 0x215
+     at System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.PinnedAndUnpinnedLocals() + 0xbd
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.WrongSignatureType
+  System.ArgumentException : The value cannot be an empty string. (Parameter 'path')
+     at System.ArgumentException.ThrowNullOrEmptyException(String, String) + 0x48
+     at System.IO.Strategies.FileStreamHelpers.ValidateArguments(String, FileMode, FileAccess, FileShare, Int32, FileOptions, Int64) + 0x215
+     at System.Reflection.Metadata.Decoding.Tests.SignatureDecoderTests.WrongSignatureType() + 0x88
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Metadata.Tests.TagToTokenTests.ValidateTagToTokenConversion
+  System.NullReferenceException : Object reference not set to an instance of an object.
+     at System.Reflection.Metadata.Tests.TagToTokenTests.<>c.<GetTags>b__1_1(<>f__AnonymousType4`2) + 0xad
+     at System.Linq.Enumerable.SelectArrayIterator`2.MoveNext() + 0x75
+     at System.Reflection.Metadata.Tests.TagToTokenTests.ValidateTagToTokenConversion() + 0x728
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.PortableExecutable.Tests.PEReaderTests.TryOpenAssociatedPortablePdb_ExpectedExceptionFromStreamProvider_NoFallback
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.Reflection.Metadata.Tests.AssertEx.Throws[T](Func`1, Action`1) + 0xe
+     at System.Reflection.PortableExecutable.Tests.PEReaderTests.TryOpenAssociatedPortablePdb_ExpectedExceptionFromStreamProvider_NoFallback() + 0x1fe
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.PortableExecutable.Tests.PEReaderTests.TryOpenAssociatedPortablePdb_ExpectedExceptionFromStreamProvider_FallbackOnEmbedded_Invalid
+  System.InvalidProgramException : Common Language Runtime detected an invalid program.
+     at Internal.Runtime.TypeLoaderExceptionHelper.CreateInvalidProgramException(ExceptionStringID) + 0x31
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowInvalidProgramException(ExceptionStringID) + 0x9
+     at System.Reflection.Metadata.Tests.AssertEx.Throws[T](Func`1, Action`1) + 0xe
+     at System.Reflection.PortableExecutable.Tests.PEReaderTests.TryOpenAssociatedPortablePdb_ExpectedExceptionFromStreamProvider_FallbackOnEmbedded_Invalid() + 0x263
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.PortableExecutable.Tests.PEBuilderTests.ChecksumFXAssemblies
+  System.ArgumentException : The value cannot be an empty string. (Parameter 'path')
+     at System.ArgumentException.ThrowNullOrEmptyException(String, String) + 0x48
+     at System.IO.Strategies.FileStreamHelpers.ValidateArguments(String, FileMode, FileAccess, FileShare, Int32, FileOptions, Int64) + 0x215
+     at System.Reflection.PortableExecutable.Tests.PEBuilderTests.ChecksumFXAssemblies() + 0x327
+     at System.Reflection.Metadata.Tests!<BaseAddress>+0x78d508
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Reflection.Metadata.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 594, Errors: 0, Failures: 9, Skipped: 0. Time: 0.2011997s
+  ----- end Sun 05/29/2022 10:21:17.86 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Metadata.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Metadata\tests\System.Reflection.Metadata.Tests.csproj]
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\ref\Release\net462\System.Collections.Immutable.dll
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\Release\net462\System.Collections.Immutable.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net462\TestUtilities.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\ref\Release\net462\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\Release\net462\System.Reflection.Metadata.dll
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Metadata\tests\System.Reflection.Metadata.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Metadata.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Metadata\tests\System.Reflection.Metadata.Tests.csproj]
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.Metadata\tests\System.Reflection.Metadata.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:53.27

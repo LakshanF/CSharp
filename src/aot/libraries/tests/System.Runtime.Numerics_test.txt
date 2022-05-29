@@ -1,0 +1,34 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Numerics\tests\System.Runtime.Numerics.Tests.csproj (in 379 ms).
+  6 of 7 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Runtime.Numerics -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics\ref\Release\net7.0\System.Runtime.Numerics.dll
+  System.Runtime.Numerics -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics\Release\net7.0\System.Runtime.Numerics.dll
+  System.Runtime.Numerics.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics.Tests\Release\net7.0\System.Runtime.Numerics.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics.Tests\Release\net7.0\native\System.Runtime.Numerics.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics.Tests\Release\net7.0\native\System.Runtime.Numerics.Tests.exp
+  System.Runtime.Numerics.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 11:15:46.50 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics.Tests\Release\net7.0\publish\
+  System.Runtime.Numerics.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Runtime.Numerics.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  Finished System.Runtime.Numerics.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 2315, Errors: 0, Failures: 0, Skipped: 0. Time: 12.7089344s
+  ----- end Sun 05/29/2022 11:16:01.90 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:39.38

@@ -1,0 +1,31 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Diagnostics.Contracts\tests\System.Diagnostics.Contracts.Tests.csproj (in 354 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Diagnostics.Contracts.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Contracts.Tests\Release\net7.0\System.Diagnostics.Contracts.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Contracts.Tests\Release\net7.0\native\System.Diagnostics.Contracts.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Contracts.Tests\Release\net7.0\native\System.Diagnostics.Contracts.Tests.exp
+  System.Diagnostics.Contracts.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Contracts.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:09:14.56 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.Contracts.Tests\Release\net7.0\publish\
+  System.Diagnostics.Contracts.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Diagnostics.Contracts.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  Finished System.Diagnostics.Contracts.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 19, Errors: 0, Failures: 0, Skipped: 0. Time: 0.0010371s
+  ----- end Sun 05/29/2022  8:09:16.75 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:22.10

@@ -1,0 +1,146 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.TypeExtensions\tests\System.Reflection.TypeExtensions.Tests.csproj (in 460 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Reflection.TypeExtensions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.TypeExtensions.Tests\Release\net7.0\System.Reflection.TypeExtensions.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.TypeExtensions.Tests\Release\net7.0\native\System.Reflection.TypeExtensions.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.TypeExtensions.Tests\Release\net7.0\native\System.Reflection.TypeExtensions.Tests.exp
+  System.Reflection.TypeExtensions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.TypeExtensions.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:31:01.75 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.TypeExtensions.Tests\Release\net7.0\publish\
+  System.Reflection.TypeExtensions.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Reflection.TypeExtensions.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Reflection.Tests.MetadataTokenTests.ReflectionEmitType_HasMetadataToken
+  [FAIL] System.Reflection.Tests.ModuleTests.GetModuleVersionId_KnownAssembly_ReturnsExpected
+  System.IO.FileNotFoundException : Cannot load assembly 'TinyAssembly'. No metadata found for this assembly.
+     at System.Reflection.Runtime.General.ReflectionCoreCallbacksImplementation.Load(AssemblyName, Boolean) + 0x7d
+     at System.Reflection.Tests.ModuleTests.GetModuleVersionId_KnownAssembly_ReturnsExpected() + 0x4b
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x590a18
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Reflection.Tests.MethodBaseTests.ContainsGenericParameters
+  System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Reflection.Tests.MethodBaseTests.NonGenericClass.TestGenericMethod<System.Int32>(System.Int32)'.
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Reflection.Tests.MethodBaseTests.<ContainsGenericParameters_TestData>d__0.MoveNext() + 0x137
+     at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext() + 0x50
+  [FAIL] System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(member: typeof(System.Reflection.Tests.MetadataTokenTests), expectedTableIndex: 2)
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(MemberInfo, Int32) + 0x2b
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x550db1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(member: Void GetMetadataToken_ArraysAndTheirMembers_DoNotHaveMetadataTokens(), expectedTableIndex: 6)
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(MemberInfo, Int32) + 0x2b
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x550db1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(member: Int32 Property, expectedTableIndex: 23)
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(MemberInfo, Int32) + 0x2b
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x550db1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(member: System.EventHandler Event, expectedTableIndex: 20)
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(MemberInfo, Int32) + 0x2b
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x550db1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(member: Int32 Field, expectedTableIndex: 4)
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(MemberInfo, Int32) + 0x2b
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x550db1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(member: typeof(T), expectedTableIndex: 42)
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Reflection.Tests.MetadataTokenTests.SuccessImpliesNonNilWithCorrectTable(MemberInfo, Int32) + 0x2b
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x550db1
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: Instance | Static | NonPublic, expectedNames: ["System.IConvertible.ToBoolean", "System.IConvertible.ToChar", "System.IConvertible.ToSByte", "System.IConvertible.ToByte", "System.IConvertible.ToInt16", ...])
+  Assert.Equal() Failure
+  Expected: 17
+  Actual:   18
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: Instance | Static | Public | NonPublic, expectedNames: ["CompareTo", "CompareTo", "Equals", "Equals", "GetHashCode", ...])
+  Assert.Equal() Failure
+  Expected: 34
+  Actual:   35
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: IgnoreCase | Instance | Public | NonPublic, expectedNames: ["CompareTo", "CompareTo", "Equals", "Equals", "GetHashCode", ...])
+  Assert.Equal() Failure
+  Expected: 28
+  Actual:   29
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: IgnoreCase | Instance | NonPublic, expectedNames: ["System.IConvertible.ToBoolean", "System.IConvertible.ToChar", "System.IConvertible.ToSByte", "System.IConvertible.ToByte", "System.IConvertible.ToInt16", ...])
+  Assert.Equal() Failure
+  Expected: 17
+  Actual:   18
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: IgnoreCase | Instance | Static | Public | NonPublic, expectedNames: ["CompareTo", "CompareTo", "Equals", "Equals", "GetHashCode", ...])
+  Assert.Equal() Failure
+  Expected: 34
+  Actual:   35
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: Instance | Public | NonPublic, expectedNames: ["CompareTo", "CompareTo", "Equals", "Equals", "GetHashCode", ...])
+  Assert.Equal() Failure
+  Expected: 28
+  Actual:   29
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: Instance | NonPublic, expectedNames: ["System.IConvertible.ToBoolean", "System.IConvertible.ToChar", "System.IConvertible.ToSByte", "System.IConvertible.ToByte", "System.IConvertible.ToInt16", ...])
+  Assert.Equal() Failure
+  Expected: 17
+  Actual:   18
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Reflection.Tests.TypeTests.GetMethods(type: typeof(System.Reflection.Tests.Int32Impersonator), bindingAttributes: IgnoreCase | Instance | Static | NonPublic, expectedNames: ["System.IConvertible.ToBoolean", "System.IConvertible.ToChar", "System.IConvertible.ToSByte", "System.IConvertible.ToByte", "System.IConvertible.ToInt16", ...])
+  Assert.Equal() Failure
+  Expected: 17
+  Actual:   18
+     at System.Reflection.Tests.TypeTests.GetMethods(Type, BindingFlags, String[]) + 0x1b6
+     at System.Reflection.TypeExtensions.Tests!<BaseAddress>+0x5595a9
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  Finished System.Reflection.TypeExtensions.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 407, Errors: 0, Failures: 16, Skipped: 1. Time: 0.0386374s
+  ----- end Sun 05/29/2022 10:31:04.06 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.TypeExtensions.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.TypeExtensions\tests\System.Reflection.TypeExtensions.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.TypeExtensions.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection.TypeExtensions\tests\System.Reflection.TypeExtensions.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:31.43

@@ -1,0 +1,38 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.IO.FileSystem.Watcher\tests\System.IO.FileSystem.Watcher.Tests.csproj (in 607 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.IO.FileSystem.Watcher.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Watcher.Tests\Release\net7.0-windows\System.IO.FileSystem.Watcher.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Watcher.Tests\Release\net7.0-windows\native\System.IO.FileSystem.Watcher.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Watcher.Tests\Release\net7.0-windows\native\System.IO.FileSystem.Watcher.Tests.exp
+  System.IO.FileSystem.Watcher.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Watcher.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022  8:42:45.84 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.FileSystem.Watcher.Tests\Release\net7.0-windows\publish\
+  System.IO.FileSystem.Watcher.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.IO.FileSystem.Watcher.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  You do not have sufficient privilege to perform this operation.
+  [SKIP] System.IO.Tests.File_Delete_Tests.FileSystemWatcher_File_Delete_SymLink
+  [SKIP] System.IO.Tests.Directory_Delete_Tests.FileSystemWatcher_Directory_Delete_SymLink
+  [SKIP] System.IO.Tests.Directory_Create_Tests.FileSystemWatcher_Directory_Create_SymLink
+  [SKIP] System.IO.Tests.Directory_Changed_Tests.FileSystemWatcher_Directory_Changed_SymLink
+  [SKIP] System.IO.Tests.File_Create_Tests.FileSystemWatcher_File_Create_SymLink
+  [SKIP] System.IO.Tests.File_Changed_Tests.FileSystemWatcher_File_Changed_SymLink
+  Finished System.IO.FileSystem.Watcher.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 355, Errors: 0, Failures: 0, Skipped: 6. Time: 3.2113487s
+  ----- end Sun 05/29/2022  8:42:51.89 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:25.69

@@ -1,0 +1,93 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\TestExe\System.Reflection.TestExe.csproj (in 147 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_0_0_0_0.csproj (in 173 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\ForwardedTypesAssembly\ForwardedTypesAssembly.csproj (in 173 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_1_1_0.csproj (in 147 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_1_1_2.csproj (in 173 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\TestAssembly\TestAssembly.csproj (in 2 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\UnloadableAssembly\UnloadableAssembly.csproj (in 2 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_3_0_0_0.csproj (in 2 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_2_0_0.csproj (in 1 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_0_0_0.csproj (in 173 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_1_3_0.csproj (in 2 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_3_0_0.csproj (in 2 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_1_2_0.csproj (in 1 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_1_0_0.csproj (in 173 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\AssemblyVersion\System.Reflection.Tests.Assembly_1_1_1_3.csproj (in 2 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\System.Reflection.Tests.csproj (in 350 ms).
+  3 of 19 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Reflection.Tests.Assembly_1_1_1_2 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_1_1_2\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_1_1_2.dll
+  System.Reflection.Tests.Assembly_1_0_0_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_0_0_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_0_0_0.dll
+  System.Reflection.Tests.Assembly_0_0_0_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_0_0_0_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_0_0_0_0.dll
+  System.Reflection.Tests.Assembly_1_1_1_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_1_1_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_1_1_0.dll
+  System.Reflection.Tests.Assembly_1_1_0_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_1_0_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_1_0_0.dll
+  System.Reflection.Tests.Assembly_1_1_1_3 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_1_1_3\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_1_1_3.dll
+  System.Reflection.Tests.Assembly_1_1_3_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_1_3_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_1_3_0.dll
+  System.Reflection.Tests.Assembly_1_1_2_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_1_2_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_1_2_0.dll
+  TestAssembly -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestAssembly\Release\netstandard2.0\TestAssembly.dll
+  System.Reflection.Tests.Assembly_1_2_0_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_2_0_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_2_0_0.dll
+  System.Reflection.Tests.Assembly_1_3_0_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_1_3_0_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_1_3_0_0.dll
+  System.Reflection.TestExe -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.TestExe\Release\net7.0\System.Reflection.TestExe.dll
+  System.Reflection.Tests.Assembly_3_0_0_0 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests.Assembly_3_0_0_0\Release\netstandard2.0\System.Reflection.Tests.Assembly_3_0_0_0.dll
+  UnloadableAssembly -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\UnloadableAssembly\Release\netstandard2.0\UnloadableAssembly.dll
+  ForwardedTypesAssembly -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ForwardedTypesAssembly\Release\netstandard2.0\ForwardedTypesAssembly.dll
+  System.Reflection.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests\Release\net7.0\System.Reflection.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests\Release\net7.0\native\System.Reflection.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests\Release\net7.0\native\System.Reflection.Tests.exp
+  System.Reflection.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022 10:18:20.87 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Tests\Release\net7.0\publish\
+  System.Reflection.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Reflection.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Reflection.Tests.ConstructorInfoTests.Invoke_StaticConstructor_NullObject_NullParameters
+  [SKIP] System.Reflection.Tests.ConstructorInfoTests.Invoke_StaticConstructorMultipleTimes
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadModule
+  [FAIL] System.Reflection.Tests.MethodInfoTests.CallStackFrame_AggressiveInlining
+  System.PlatformNotSupportedException : Operation is not supported on this platform.
+     at System.Reflection.Assembly.GetCallingAssembly() + 0x5b
+     at System.Reflection.TestAssembly.ClassToInvoke.CallMeActual() + 0x9
+     at System.Reflection.Tests!<BaseAddress>+0x5d11ac
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Reflection.Tests.AssemblyNameTests.EmptyFusionLog
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFile
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFrom_NoSuchFile_ThrowsFileNotFoundException
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFile_ValidPEBadIL_ThrowsBadImageFormatExceptionWithPath_ByInitialSeek
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFile_PartiallyQualifiedPath_ThrowsArgumentException
+  [SKIP] System.Reflection.Tests.AssemblyTests.AssemblyReflectionOnlyLoadFromBytes
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFrom_SamePath_ReturnsEqualAssemblies
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFrom_NullAssemblyFile_ThrowsArgumentNullException
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFromUsingHashValue
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFrom_WithHashValue_ThrowsNotSupportedException
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFile_NullPath_ThrowsArgumentNullException
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFrom_SameIdentityAsAssemblyWithDifferentPath_ReturnsEqualAssemblies
+  [SKIP] System.Reflection.Tests.AssemblyTests.AssemblyLoadFromBytesWithSymbols
+  [SKIP] System.Reflection.Tests.AssemblyTests.CodeBaseInMemory
+  [SKIP] System.Reflection.Tests.AssemblyTests.GetFile_InMemory
+  [SKIP] System.Reflection.Tests.AssemblyTests.UnsafeLoadFrom_SamePath_ReturnsEqualAssemblies
+  [SKIP] System.Reflection.Tests.AssemblyTests.AssemblyLoadFromBytes
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFile_NoSuchPath_ThrowsFileNotFoundException
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFrom_EmptyAssemblyFile_ThrowsArgumentException
+  [SKIP] System.Reflection.Tests.AssemblyTests.LoadFile_ValidPEBadIL_ThrowsBadImageFormatExceptionWithPath
+  Finished System.Reflection.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 1386, Errors: 0, Failures: 1, Skipped: 23. Time: 0.4886917s
+  ----- end Sun 05/29/2022 10:18:24.10 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\System.Reflection.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Reflection.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Reflection\tests\System.Reflection.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:29.22

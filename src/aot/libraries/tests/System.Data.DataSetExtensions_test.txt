@@ -1,0 +1,66 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Data.DataSetExtensions\tests\System.Data.DataSetExtensions.Tests.csproj (in 426 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Data.DataSetExtensions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.DataSetExtensions.Tests\Release\net7.0\System.Data.DataSetExtensions.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.DataSetExtensions.Tests\Release\net7.0\native\System.Data.DataSetExtensions.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.DataSetExtensions.Tests\Release\net7.0\native\System.Data.DataSetExtensions.Tests.exp
+  System.Data.DataSetExtensions.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.DataSetExtensions.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  8:08:49.11 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.DataSetExtensions.Tests\Release\net7.0\publish\
+  System.Data.DataSetExtensions.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Data.DataSetExtensions.Tests, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [FAIL] MonoTests.System.Data.DataRowExtensionsTest.Field_T_DBNullFieldValue
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Data.DataRowExtensions.UnboxT<System.Nullable<System.Int32>>.NullableField<System.Int32>(System.Object)'.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x167
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Data.DataRowExtensions.Field[T](DataRow, String) + 0x16
+     at MonoTests.System.Data.DataRowExtensionsTest.Field_T_DBNullFieldValue() + 0x88
+     at System.Data.DataSetExtensions.Tests!<BaseAddress>+0xb9ea58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Data.DataRowExtensions.UnboxT`1.Create() + 0x101
+     at System.Data.DataRowExtensions.UnboxT`1..cctor() + 0x1e
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  [FAIL] System.Data.Tests.DataRowExtensionsTests.Field_Nullable_Enum
+  System.TypeInitializationException : A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+  ---- System.Reflection.MissingRuntimeArtifactException : MakeGenericMethod() cannot create this generic method instantiation because no code was generated for it: 'System.Data.DataRowExtensions.UnboxT<System.Nullable<System.Data.Tests.DataRowExtensionsTests.SomeEnum>>.NullableField<System.Data.Tests.DataRowExtensionsTests.SomeEnum>(System.Object)'.
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x167
+     at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0xd
+     at System.Data.DataRowExtensions.Field[T](DataRow, String) + 0x16
+     at System.Data.Tests.DataRowExtensionsTests.Field_Nullable_Enum() + 0x166
+     at System.Data.DataSetExtensions.Tests!<BaseAddress>+0xb9ea58
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  ----- Inner Stack Trace -----
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x113
+     at System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xa1
+     at System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x183
+     at System.Data.DataRowExtensions.UnboxT`1.Create() + 0x101
+     at System.Data.DataRowExtensions.UnboxT`1..cctor() + 0x1e
+     at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xc6
+  Finished System.Data.DataSetExtensions.Tests, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 102, Errors: 0, Failures: 2, Skipped: 0. Time: 0.0281315s
+  ----- end Sun 05/29/2022  8:08:53.24 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Data.DataSetExtensions.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Data.DataSetExtensions\tests\System.Data.DataSetExtensions.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Data.DataSetExtensions.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Data.DataSetExtensions\tests\System.Data.DataSetExtensions.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:37.99

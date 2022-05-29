@@ -1,0 +1,85 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.Cryptography\tests\System.Security.Cryptography.Tests.csproj (in 537 ms).
+  11 of 12 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  StreamConformanceTests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\StreamConformanceTests\Release\net7.0\StreamConformanceTests.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Runtime.Numerics -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Numerics\ref\Release\net7.0\System.Runtime.Numerics.dll
+  System.Collections -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections\ref\Release\net7.0\System.Collections.dll
+  System.Formats.Asn1 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1\ref\Release\net7.0\System.Formats.Asn1.dll
+  System.Formats.Asn1 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Formats.Asn1\Release\net7.0\System.Formats.Asn1.dll
+  System.Security.Cryptography.Pkcs -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Pkcs\ref\Release\net7.0\System.Security.Cryptography.Pkcs.dll
+  System.Security.Cryptography.Pkcs -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Pkcs\Release\net7.0-windows\System.Security.Cryptography.Pkcs.dll
+  System.Security.Cryptography.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Tests\Release\net7.0-windows\System.Security.Cryptography.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Tests\Release\net7.0-windows\native\System.Security.Cryptography.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Tests\Release\net7.0-windows\native\System.Security.Cryptography.Tests.exp
+  System.Security.Cryptography.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022 11:21:00.91 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Tests\Release\net7.0-windows\publish\
+  System.Security.Cryptography.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Security.Cryptography.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Security.Cryptography.Encryption.Des.Tests.DesContractTests.Windows7DoesNotSupportCFB
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb8_TooShortDoesNotContainPlaintext(paddingMode: ANSIX923)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb8_TooShortDoesNotContainPlaintext(paddingMode: ISO10126)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb8_TooShortDoesNotContainPlaintext(paddingMode: PKCS7)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb8_ToleratesExtraPadding
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb_InvalidPadding_DoesNotContainPlaintext(paddingMode: ISO10126, ciphertextSize: 0)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb_InvalidPadding_DoesNotContainPlaintext(paddingMode: ISO10126, ciphertextSize: 2048)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb_InvalidPadding_DoesNotContainPlaintext(paddingMode: PKCS7, ciphertextSize: 0)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb_InvalidPadding_DoesNotContainPlaintext(paddingMode: ANSIX923, ciphertextSize: 2048)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb_InvalidPadding_DoesNotContainPlaintext(paddingMode: PKCS7, ciphertextSize: 2048)
+  [SKIP] System.Security.Cryptography.Encryption.RC2.Tests.RC2CipherOneShotTests.DecryptOneShot_Cfb_InvalidPadding_DoesNotContainPlaintext(paddingMode: ANSIX923, ciphertextSize: 0)
+  [SKIP] System.Security.Cryptography.Tests.ChaCha20Poly1305IsSupportedTests.CtorThrowsPNSEIfNotSupported
+  [SKIP] System.Security.Cryptography.Encryption.TripleDes.Tests.TripleDESContractTests.Windows7DoesNotSupportCFB64
+  [SKIP] System.Security.Cryptography.Tests.OidCollectionTests.CopyTo_NonZeroLowerBound_ThrowsIndexOutOfRangeException
+  [SKIP] System.Security.Cryptography.Tests.AesGcmIsSupportedTests.CtorThrowsPNSEIfNotSupported
+  [SKIP] System.Security.Cryptography.Encryption.Aes.Tests.AesModeTests.Windows7DoesNotSupportCFB128
+  [FAIL] System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(name: "1.2.840.113549.1.9.3", typeName: "System.Security.Cryptography.Pkcs.Pkcs9ContentType", supportsUnixMac: True)
+  Assert.NotNull() Failure
+     at System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(String, String, Boolean) + 0x117
+     at System.Security.Cryptography.Tests!<BaseAddress>+0xb1de38
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(name: "1.3.6.1.4.1.311.88.2.1", typeName: "System.Security.Cryptography.Pkcs.Pkcs9DocumentNam"..., supportsUnixMac: True)
+  Assert.NotNull() Failure
+     at System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(String, String, Boolean) + 0x117
+     at System.Security.Cryptography.Tests!<BaseAddress>+0xb1de38
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(name: "1.3.6.1.4.1.311.88.2.2", typeName: "System.Security.Cryptography.Pkcs.Pkcs9DocumentDes"..., supportsUnixMac: True)
+  Assert.NotNull() Failure
+     at System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(String, String, Boolean) + 0x117
+     at System.Security.Cryptography.Tests!<BaseAddress>+0xb1de38
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(name: "1.2.840.113549.1.9.4", typeName: "System.Security.Cryptography.Pkcs.Pkcs9MessageDige"..., supportsUnixMac: True)
+  Assert.NotNull() Failure
+     at System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(String, String, Boolean) + 0x117
+     at System.Security.Cryptography.Tests!<BaseAddress>+0xb1de38
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [FAIL] System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(name: "1.2.840.113549.1.9.5", typeName: "System.Security.Cryptography.Pkcs.Pkcs9SigningTime", supportsUnixMac: True)
+  Assert.NotNull() Failure
+     at System.Security.Cryptography.Tests.CryptoConfigTests.CreateFromName_AllValidNames(String, String, Boolean) + 0x117
+     at System.Security.Cryptography.Tests!<BaseAddress>+0xb1de38
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x113
+  [SKIP] System.Security.Cryptography.Rsa.Tests.KeyGeneration.GenerateMaxKey
+  [SKIP] System.Security.Cryptography.Tests.AesCcmIsSupportedTests.CtorThrowsPNSEIfNotSupported
+  Finished System.Security.Cryptography.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 6123, Errors: 0, Failures: 5, Skipped: 18. Time: 7.5124092s
+  ----- end Sun 05/29/2022 11:21:14.16 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Security.Cryptography.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.Cryptography\tests\System.Security.Cryptography.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Security.Cryptography.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.Cryptography\tests\System.Security.Cryptography.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:01:01.93

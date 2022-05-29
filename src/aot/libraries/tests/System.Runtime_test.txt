@@ -1,0 +1,489 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\tests\TestLoadAssembly\TestLoadAssembly.csproj (in 123 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\tests\TestStructs\System.TestStructs.ilproj (in 154 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\tests\TestModule\System.Reflection.TestModule.ilproj (in 132 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\tests\TestCollectibleAssembly\TestCollectibleAssembly.csproj (in 182 ms).
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\tests\System.Runtime.Tests.csproj (in 1.02 sec).
+  15 of 20 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  TestLoadAssembly -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestLoadAssembly\Release\netstandard2.0\TestLoadAssembly.dll
+  TestCollectibleAssembly -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestCollectibleAssembly\Release\netstandard2.0\TestCollectibleAssembly.dll
+  System.TestStructs -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.TestStructs\Release\netstandard2.0\System.TestStructs.dll
+  System.Reflection.TestModule -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.TestModule\Release\netstandard2.0\System.Reflection.TestModule.dll
+  TestUtilities.Unicode -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities.Unicode\Release\net7.0\TestUtilities.Unicode.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\ref\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\ref\Release\net7.0\System.Drawing.Common.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0\System.Drawing.Common.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\ref\Release\net7.0\System.Windows.Extensions.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0\System.Windows.Extensions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\ref\Release\net7.0\System.Security.Permissions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\Release\net7.0\System.Security.Permissions.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0-windows\Microsoft.Win32.SystemEvents.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0-windows\System.Drawing.Common.dll
+  System.Threading.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.AccessControl\ref\Release\net7.0\System.Threading.AccessControl.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0-windows\System.Windows.Extensions.dll
+  System.Threading.AccessControl -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.AccessControl\Release\net7.0-windows\System.Threading.AccessControl.dll
+  System.Text.RegularExpressions.Generator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Text.RegularExpressions.Generator\Release\netstandard2.0\System.Text.RegularExpressions.Generator.dll
+  System.Runtime.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Tests\Release\net7.0-windows\System.Runtime.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[System.Runtime.Tests]System.Runtime.CompilerServices.Tests.RuntimeHelpersTests+WbemContext..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void WbemContext..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+  ILC: Method '[System.Runtime.Tests]System.Tests.TypedReferenceTests.PointerTypeTests()' will always throw because: Failed to load type 'Void*' from assembly '?'
+  ILC: Method '[System.Runtime.Tests]System.Tests.ArgIteratorTests.ArgIterator_GetRemainingCount_GetNextArg()' will always throw because: Vararg call to 'System.Object[] System.Tests.ArgIteratorTests.GetAllArgs(System.Object, System.Object, System.Object, System.Object)' not supported
+  ILC: Method '[System.Runtime.Tests]System.Tests.ArgIteratorTests.ArgIterator_GetNextArgType()' will always throw because: Vararg call to 'Void System.Tests.ArgIteratorTests.VerifyTypes(System.Type[])' not supported
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Tests\Release\net7.0-windows\native\System.Runtime.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Tests\Release\net7.0-windows\native\System.Runtime.Tests.exp
+  System.Runtime.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022 10:33:41.75 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Tests\Release\net7.0-windows\publish\
+  System.Runtime.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Runtime.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.ComponentModel.Tests.DefaultValueAttributeTests.Ctor_TypeDescriptorNotFound_ExceptionFallback
+  [SKIP] System.Tests.TypeTestsExtended.GetTypeByName_NoSuchType_ThrowsTypeLoadException
+  [SKIP] System.Tests.TypeTestsExtended.GetTypeByNameCaseSensitiveTypeloadFailure
+  [SKIP] System.Tests.TypeTestsExtended.MakeGenericType_NonRuntimeType
+  [SKIP] System.Tests.TypeTestsExtended.GetTypeByName
+  [SKIP] System.Tests.GCTests.ExpensiveFinalizerDoesNotBlockShutdown
+  [SKIP] System.Reflection.Tests.NullabilityInfoContextTests.VerifyIsSupportedWorks
+  [SKIP] System.Reflection.Tests.NullabilityInfoContextTests.VerifyIsSupportedThrows
+  [SKIP] System.Tests.ArraySegment_Tests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Runtime.Tests.UseResourceKeysTest.ReturnsResourceKeyWhenFeatureSwitchIsEnabled
+  [SKIP] System.Runtime.Tests.UseResourceKeysTest.ReturnsResourceWhenFeatureSwitchIsDisabled
+  [SKIP] System.Runtime.Serialization.Tests.SerializationExceptionTests.Ctor_SerializationInfo_StreamingContext
+  [SKIP] System.Tests.ArrayEnumeratorTests_string.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Tests.AttributeGetCustomAttributes.GetCustomAttributes_DynamicMethod
+  [SKIP] System.Runtime.ExceptionServices.Tests.HandleProcessCorruptedStateExceptionsTests.ProcessExit_Called
+  [SKIP] System.Reflection.Tests.MethodBaseTests.TestMethodBody
+  [SKIP] System.Tests.ActivatorTests.CreateInstanceAssemblyResolve
+  [SKIP] System.Tests.ActivatorTests.TestingCreateInstanceObjectHandle
+  [SKIP] System.Tests.ActivatorTests.CreateInstance_NonPublicValueTypeWithPrivateDefaultConstructor_Success
+  [SKIP] System.Tests.ActivatorTests.TestingBindingFlags
+  [SKIP] System.Tests.ActivatorTests.TestingCreateInstanceObjectHandleFullSignature
+  [SKIP] System.Tests.ActivatorTests.CreateInstance_TypeBuilder_ThrowsNotSupportedException
+  [SKIP] System.Tests.ActivatorTests.TestingCreateInstanceFromObjectHandleFullSignature
+  [SKIP] System.Tests.ActivatorTests.CreateInstance_PublicOnlyValueTypeWithPrivateDefaultConstructor_ThrowsMissingMethodException
+  [SKIP] System.Tests.ActivatorTests.TestingCreateInstanceFromObjectHandle
+  [SKIP] System.Tests.StringGetHashCodeTests.GetHashCodeWithStringComparer_UseSameStringInTwoProcesses_ReturnsDifferentHashCodes
+  [SKIP] System.Runtime.Tests.JitInfoTests.JitInfoCurrentThreadIsPopulated
+  [SKIP] System.Runtime.Tests.JitInfoTests.JitInfoIsNotPopulated
+  [SKIP] System.Runtime.Tests.JitInfoTests.JitInfoIsPopulated
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Boolean>(value: True)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Char>(value: 'a')
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Byte>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<SByte>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<UInt16>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Int16>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<UInt32>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Int32>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<UInt64>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Int64>(value: 42)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Single>(value: 43.6699982)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Double>(value: 43.670000000000002)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<BindingFlags>(value: IgnoreCase)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<String>(value: "Hello")
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Object>(value: Object { })
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<UriBuilder>(value: http://localhost/)
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Int32[]>(value: [0, 0, 0, 0, 0])
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnInvoke<Int32[,]>(value: [0, 0, 0, 0, 0, ...])
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [FAIL] System.Reflection.Tests.InvokeRefReturnNetcoreTests.TestNullRefReturnOfPointer
+  Assert.Throws() Failure
+  Expected: typeof(System.Reflection.TargetInvocationException)
+  Actual:   typeof(System.NullReferenceException): The target method returned a null reference.
+  ---- System.NullReferenceException : The target method returned a null reference.
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  ----- Inner Stack Trace -----
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x1da
+     at Internal.Reflection.Execution.MethodInvokers.InstanceMethodInvoker.Invoke(Object, Object[], BinderBundle, Boolean) + 0x65
+     at Internal.Reflection.Core.Execution.MethodInvoker.Invoke(Object, Object[], Binder, BindingFlags, CultureInfo) + 0x45
+     at System.Reflection.PropertyInfo.GetValue(Object, Object[]) + 0x1d
+  [SKIP] System.Tests.ExceptionDataTests.ICollection_NonGeneric_CopyTo_NonZeroLowerBound
+  [SKIP] System.Reflection.Tests.MethodBodyTests.Test_MethodBody_ExceptionHandlingClause
+  [SKIP] System.Tests.ArgIteratorTests.ArgIterator_GetNextArgType
+  [SKIP] System.Tests.ArgIteratorTests.ArgIterator_GetRemainingCount_GetNextArg
+  [SKIP] System.Tests.ArraySegment_Tests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Text.Tests.RuneTests.Casing_Invariant
+  [SKIP] System.Tests.UnitySerializationHolderTests.UnitySerializationHolderWithAssemblySingleton
+  [SKIP] System.Tests.TimeZoneInfoTests.TimeZoneInfo_LocalZoneWithInvariantMode
+  [SKIP] System.Tests.TimeZoneInfoTests.UnsupportedImplicitConversionTest
+  [SKIP] System.Tests.TimeZoneInfoTests.TestNameWithInvariantCulture
+  [SKIP] System.Tests.TimeZoneInfoTests.IsIanaIdWithNotCacheTest
+  [SKIP] System.Tests.TimeZoneInfoTests.TestWindowsNlsDisplayNames
+  [SKIP] System.Text.Tests.RuneTests.Casing_CultureAware
+  [SKIP] System.Tests.TimeZoneInfoTests.BinaryFormatter_RoundTrips
+  [FAIL] System.Tests.TypedReferenceTests.PointerTypeTests
+  System.TypeLoadException : Could not load type 'Void*' from assembly '?'.
+     at Internal.Runtime.CompilerHelpers.ThrowHelpers.ThrowTypeLoadException(ExceptionStringID, String, String) + 0x11
+     at System.Tests.TypedReferenceTests.PointerTypeTests() + 0x19
+     at System.Runtime.Tests!<BaseAddress>+0x121581e
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [SKIP] System.Tests.ArrayTests.Reverse_IndexLessThanLowerBound_ThrowsArgumentOutOfRangeException
+  [SKIP] System.Text.Tests.EncodingTests.GetEncoding_FromProvider_ByCodePage_WithDisallowedEncoding_Throws
+  [SKIP] System.Text.Tests.EncodingTests.GetEncoding_FromProvider_ByEncodingName_WithDisallowedEncoding_Throws
+  [SKIP] System.Text.Tests.EncodingTests.GetEncodings_FromProvider_DoesNotContainDisallowedEncodings
+  [SKIP] System.Text.Tests.EncodingTests.RegisterProvider_EncodingsAreUsable
+  [SKIP] System.Tests.ArrayTests.Reverse_IndexLessThanPositiveLowerBound_ThrowsArgumentOutOfRangeException
+  [SKIP] System.Tests.ArrayEnumeratorTests_int.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Tests.ArrayTests.Sort_DifferentLowerBounds_ThrowsArgumentException
+  [SKIP] System.Tests.ArrayTests.Reverse_NonSZArrayWithMinValueLowerBound
+  [SKIP] System.Reflection.Tests.InvokeWithRefLikeArgs.MethodTakesRefToRefStructAsArg_ThrowsNSE
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveMethodsByMethodInfo
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveFieldFail
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveFieldsByMemberInfo
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveTypeFail
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveMethodsByMemberInfo
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveStringFail
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveFieldsByFieldInfo
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveTypes
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveTypesByMemberInfo
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveMethodFail
+  [SKIP] System.Reflection.Tests.ModuleTests.ResolveMethodOfGenericClass
+  [SKIP] System.Tests.EnumTests.GetValues_InvokeIntPtrEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.IsDefined_UnsupportedEnumType_ThrowsInvalidOperationException
+  [SKIP] System.Tests.EnumTests.GetNames_InvokeBoolEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetNames_InvokeSingleEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.ToString_UnsupportedEnumType_ThrowsArgumentException
+  [SKIP] System.Tests.EnumTests.GetValues_InvokeDoubleEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.IsDefined_InvokeCharEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetNames_InvokeIntPtrEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetName_Unsupported_ThrowsArgumentException
+  [SKIP] System.Tests.EnumTests.GetValues_InvokeSingleEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetName_InvokeCharEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetValues_InvokeCharEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetValues_InvokeBoolEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetNames_InvokeCharEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetNames_InvokeDoubleEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.Format_UnsupportedEnumType_ThrowsArgumentException
+  [SKIP] System.Tests.EnumTests.GetValues_InvokeUIntPtrEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetName_InvokeBoolEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.GetNames_InvokeUIntPtrEnum_ReturnsExpected
+  [SKIP] System.Tests.EnumTests.IsDefined_InvokeBoolEnum_ReturnsExpected
+  [SKIP] System.Tests.ArrayTests.CreateInstance_Type_LengthsPlusLowerBoundOverflows_ThrowsArgumentOutOfRangeException
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.Assembly_IsCollectibleFalse_WhenUsingAssemblyLoadContext
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.MemberInfoGeneric_IsCollectibleTrue_WhenUsingAssemblyLoadContext
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.MemberInfo_IsCollectibleTrue_WhenUsingAssemblyLoadContext
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.Assembly_IsCollectibleFalse_WhenUsingAssemblyLoad
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.MemberInfo_IsCollectibleFalse_WhenUsingAssemblyLoad
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.MemberInfoGeneric_IsCollectibleFalse_WhenUsingAssemblyLoad
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.Assembly_IsCollectibleTrue_WhenUsingTestAssemblyLoadContext
+  [SKIP] System.Reflection.Tests.IsCollectibleTests.GenericWithCollectibleTypeParameter_IsCollectibleTrue_WhenUsingAssemblyLoadContext
+  [SKIP] System.Tests.GCExtendedTests.GetGCMemoryInfo
+  [SKIP] System.Tests.GCExtendedTests.GCNotificationTests
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_SOHSize_LOHSize
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_SOHSize
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_StartWhileInNoGCRegion
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_StartWhileInNoGCRegion_LargeObjectHeapSize
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_TotalSizeOutOfRange
+  [SKIP] System.Tests.GCExtendedTests.GetGeneration_WeakReference
+  [SKIP] System.Tests.DateTimeOffsetTests.ToLocalTime_MaxValue
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_SettingLatencyMode_ThrowsInvalidOperationException
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_SOHSize_BlockingCollection
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_ExitThroughAllocation
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_EndNoGCRegion_ThrowsInvalidOperationException
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_LOHSizeInvalid
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_StartWhileInNoGCRegion_BlockingCollection
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_StartWhileInNoGCRegion_BlockingCollectionAndLOH
+  [SKIP] System.Tests.GCExtendedTests.TryStartNoGCRegion_SOHSize_LOHSize_BlockingCollection
+  [SKIP] System.Tests.StringTests.IndexOf_SingleLetter(s: "Hello", target: '\0', startIndex: 0, count: 5, expected: -1)
+  [SKIP] System.Tests.StringTests.LastIndexOf_NullInStrings
+  [SKIP] System.Tests.StringTests.IndexOf_NullInStrings
+  [SKIP] System.Tests.StringTests.EndsWith_NullInStrings_NonOrdinal
+  [SKIP] System.Tests.StringTests.StartsWith_NullInStrings_NonOrdinal
+  [SKIP] System.Tests.StringTests.EndsWith_NullInStrings
+  [SKIP] System.Tests.StringTests.StartsWith_NullInStrings
+  [SKIP] System.Tests.StringTests.GetPinnableReference_WithNullInput_ThrowsNullRef
+  [SKIP] System.Reflection.Tests.ReflectionCacheTests.GetMethod_MultipleCalls_ClearCache_DifferentObjects
+  [SKIP] System.Reflection.Tests.ReflectionCacheTests.InvokeClearCache_NoExceptions
+  [SKIP] System.Tests.DangerousArrayTests.Clear_LargeMultiDimensionalArray
+  [SKIP] System.Tests.DangerousArrayTests.Copy_LargeMultiDimensionalArray
+  Finished System.Runtime.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 47356, Errors: 0, Failures: 20, Skipped: 122. Time: 87.7620336s
+  ----- end Sun 05/29/2022 10:35:17.28 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Runtime.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\tests\System.Runtime.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Runtime.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime\tests\System.Runtime.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:02:39.04

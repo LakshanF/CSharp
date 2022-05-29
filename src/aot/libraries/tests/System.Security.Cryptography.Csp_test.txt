@@ -1,0 +1,75 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Security.Cryptography.Csp\tests\System.Security.Cryptography.Csp.Tests.csproj (in 510 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Security.Cryptography.Csp.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Csp.Tests\Release\net7.0-windows\System.Security.Cryptography.Csp.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Csp.Tests\Release\net7.0-windows\native\System.Security.Cryptography.Csp.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Csp.Tests\Release\net7.0-windows\native\System.Security.Cryptography.Csp.Tests.exp
+  System.Security.Cryptography.Csp.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Csp.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022 11:23:33.29 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.Csp.Tests\Release\net7.0-windows\publish\
+  System.Security.Cryptography.Csp.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Security.Cryptography.Csp.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Stream.VerifyKnown_2048_SHA256
+  [SKIP] System.Security.Cryptography.Rsa.Tests.RSAKeyFileTests.ReadWriteSubjectPublicKeyInfo
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAKeyFileTests.ReadWriteDsa2048DeficientXPkcs8
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Stream.Verify2048WithSha1
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Span.PssSignature_WrongLength
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Span.PssSignature_WrongData
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Array.PssSignature_WrongData
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Array.PssVerifyHash_MismatchedHashSize
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAKeyFileTests.ReadWriteDsa2048SubjectPublicKeyInfo
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Stream.Sign2048WithSha1
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Stream.SignAndVerifyDataExplicit2048
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Stream.VerifyKnown_2048_SHA512
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Stream.VerifyKnown_2048_SHA384
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Array.Sign2048WithSha1
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Array.SignAndVerifyDataExplicit2048
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Array.PssSignHash_MismatchedHashSize
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Array.VerifyKnown_2048_SHA384
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Array.VerifyKnown_2048_SHA512
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Array.VerifyKnown_2048_SHA256
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Array.Verify2048WithSha1
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAKeyFileTests.ReadWriteDsa2048EncryptedPkcs8
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAXml.TestRead2048Parameters_Private_Base64Binary
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Span.PssVerifyHash_MismatchedHashSize
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAXml.TestWriteDeficientXParameters
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAXml.TestRead2048Parameters_Private_CryptoBinary
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAXml.TestRead2048Parameters_Public
+  [SKIP] System.Security.Cryptography.Rsa.Tests.EncryptDecrypt_Array.RsaDecryptOaepWrongAlgorithm
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Span.PssSignHash_MismatchedHashSize
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Span.PssSignature_WrongHashAlgorithm
+  [SKIP] System.Security.Cryptography.Rsa.Tests.EncryptDecrypt_Span.RsaDecryptOaepWrongAlgorithm
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Array.PssSignature_WrongHashAlgorithm
+  [SKIP] System.Security.Cryptography.Rsa.Tests.SignVerify_Array.PssSignature_WrongLength
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Span.Sign2048WithSha1
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Span.Verify2048WithSha1
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Span.VerifyKnown_2048_SHA384
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Span.VerifyKnown_2048_SHA256
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Span.SignAndVerifyDataExplicit2048
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSASignVerify_Span.VerifyKnown_2048_SHA512
+  [SKIP] System.Security.Cryptography.Csp.Tests.CspParametersTests.KeyPassword_SmartCard_Manual_Test
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAImportExport.Import_2048
+  [SKIP] System.Security.Cryptography.Rsa.Tests.KeyGeneration.GenerateMaxKey
+  [SKIP] System.Security.Cryptography.Rsa.Tests.EncryptDecrypt_Span.Decrypt_WrongKey_OAEP_SHA256
+  [SKIP] System.Security.Cryptography.Rsa.Tests.RSAKeyFileTests.ReadWriteBigExponentPrivatePkcs1
+  [SKIP] System.Security.Cryptography.Dsa.Tests.DSAKeyFileTests.ReadWriteDsa2048DeficientXEncryptedPkcs8
+  Finished System.Security.Cryptography.Csp.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 689, Errors: 0, Failures: 0, Skipped: 44. Time: 3.8914257s
+  ----- end Sun 05/29/2022 11:23:41.73 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:35.21

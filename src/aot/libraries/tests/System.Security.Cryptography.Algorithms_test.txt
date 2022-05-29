@@ -1,0 +1,138 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Private.CoreLib.Generators -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Private.CoreLib.Generators\Release\netstandard2.0\System.Private.CoreLib.Generators.dll
+  System.Private.CoreLib -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\IL\System.Private.CoreLib.dll
+  Executing "D:\work\Core\CurrentWork2\runtime\src\coreclr\build-runtime.cmd" -x64 -release -os windows -pgodatapath "C:\Users\laksh\.nuget\packages\optimization.windows_nt-x64.pgo.coreclr\1.0.0-prerelease.22217.3"
+  BUILD: Starting Build at 11:21:46.95
+  BUILD: Commencing CoreCLR product build
+  BUILD: Checking prerequisites
+  BUILD: Using CMake from C:\Program Files\CMake\bin\cmake.exe
+  BUILD: Number of processor cores 8
+  BUILD: Commencing build of native components for windows.x64.Release
+  BUILD: Using environment: "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvarsall.bat" amd64
+  **********************************************************************
+  ** Visual Studio 2022 Developer Command Prompt v17.2.0
+  ** Copyright (c) 2022 Microsoft Corporation
+  **********************************************************************
+  [vcvarsall.bat] Environment initialized for: 'x64'
+  BUILD: Regenerating the Visual Studio solution
+  Calling "D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\eng\native\gen-buildsys.cmd" "D:\work\Core\CurrentWork2\runtime\src\coreclr" "D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\artifacts\obj\coreclr\windows.x64.Release" vs2022 x64 "-DCMAKE_BUILD_TYPE=Release" "-DCLR_CMAKE_TARGET_ARCH=x64" "-DCLR_CMAKE_TARGET_OS=windows" "-DCLR_CMAKE_PGO_INSTRUMENT=0" "-DCLR_CMAKE_OPTDATA_PATH="C:\Users\laksh\.nuget\packages\optimization.windows_nt-x64.pgo.coreclr\1.0.0-prerelease.22217.3"" "-DCLR_CMAKE_PGO_OPTIMIZE=1" 
+  The CMake command line is the same as the last run. Skipping running CMake.
+  running "C:\Program Files\CMake\bin\cmake.exe" --build D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\artifacts\obj\coreclr\windows.x64.Release --target install --config Release -- 
+  [1/4] Linking RC shared library dlls\clretwrc\clretwrc.dll
+  [2/4] Linking RC shared library dlls\mscorrc\mscorrc.dll
+  [3/4] cmd.exe /C "cd /D D:\work\Core\CurrentWork2\runtime\artifacts\obj\coreclr\windows.x64.Release\dlls\mscoree\coreclr && powershell -NoProfile -ExecutionPolicy ByPass -File D:/work/Core/CurrentWork2/runtime/src/coreclr/dlls/mscoree/coreclr/GenClrDebugResource.ps1 -dac D:/work/Core/CurrentWork2/runtime/artifacts/obj/coreclr/windows.x64.Release/dlls/mscordac/mscordaccore.dll -dbi D:/work/Core/CurrentWork2/runtime/artifacts/obj/coreclr/windows.x64.Release/dlls/mscordbi/mscordbi.dll -out D:/work/Core/CurrentWork2/runtime/artifacts/obj/coreclr/windows.x64.Release/dlls/mscoree/coreclr/clr_debug_resource.bin"
+  [3/4] Install the project...
+  -- Install configuration: "Release"
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/./clretwrc.dll
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/./PDB/clretwrc.pdb
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/sharedFramework/clretwrc.dll
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/sharedFramework/PDB/clretwrc.pdb
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/./mscorrc.dll
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/./PDB/mscorrc.pdb
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/sharedFramework/mscorrc.dll
+  -- Installing: D:/work/Core/CurrentWork2/runtime/artifacts/bin/coreclr/windows.x64.Release/sharedFramework/PDB/mscorrc.pdb
+  BUILD: Build succeeded.  Finished at 11:22:00.21
+  BUILD: Product binaries are available at D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\artifacts\bin\coreclr\windows.x64.Release
+  Executing "D:\work\Core\CurrentWork2\runtime\src\coreclr\build-runtime.cmd" -x64 -cmakeargs "-DCLR_CROSS_COMPONENTS_BUILD=1" -release -os Linux -hostarch x64 -component crosscomponents
+  BUILD: Starting Build at 11:22:00.33
+  BUILD: Commencing CoreCLR product build
+  BUILD: Checking prerequisites
+  BUILD: Using CMake from C:\Program Files\CMake\bin\cmake.exe
+  BUILD: Number of processor cores 8
+  BUILD: Commencing build of native components for Linux.x64.Release
+  BUILD: Using environment: "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvarsall.bat" amd64
+  **********************************************************************
+  ** Visual Studio 2022 Developer Command Prompt v17.2.0
+  ** Copyright (c) 2022 Microsoft Corporation
+  **********************************************************************
+  [vcvarsall.bat] Environment initialized for: 'x64'
+  BUILD: Regenerating the Visual Studio solution
+  Calling "D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\eng\native\gen-buildsys.cmd" "D:\work\Core\CurrentWork2\runtime\src\coreclr" "D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\artifacts\obj\coreclr\Linux.x64.Release" vs2022 x64 "-DCMAKE_BUILD_TYPE=Release" "-DCLR_CMAKE_TARGET_ARCH=x64" "-DCLR_CMAKE_TARGET_OS=Linux" "-DCLR_CMAKE_PGO_INSTRUMENT=0" "-DCLR_CMAKE_OPTDATA_PATH=" "-DCLR_CMAKE_PGO_OPTIMIZE=0" "-DCLR_CROSS_COMPONENTS_BUILD=1" 
+  The CMake command line is the same as the last run. Skipping running CMake.
+  running "C:\Program Files\CMake\bin\cmake.exe" --build D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\artifacts\obj\coreclr\Linux.x64.Release --target  crosscomponents --config Release -- 
+  [1/1] cmd.exe /C "cd /D D:\work\Core\CurrentWork2\runtime\artifacts\obj\coreclr\Linux.x64.Release && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_COMPONENT=crosscomponents -DBUILD_TYPE=Release -P D:/work/Core/CurrentWork2/runtime/artifacts/obj/coreclr/Linux.x64.Release/cmake_install.cmake"
+  -- Install configuration: "Release"
+  BUILD: Build succeeded.  Finished at 11:22:04.89
+  BUILD: Product binaries are available at D:\work\Core\CurrentWork2\runtime\src\coreclr\..\..\artifacts\bin\coreclr\Linux.x64.Release
+  runincontext -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\runincontext.dll
+  tieringtest -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\tieringtest.dll
+  ILCompiler.Reflection.ReadyToRun -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\ILCompiler.Reflection.ReadyToRun.dll
+  ILCompiler.TypeSystem -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILCompiler.TypeSystem\x64\Release\ILCompiler.TypeSystem.dll
+  ILCompiler.Diagnostics -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILCompiler.Diagnostics\x64\Release\ILCompiler.Diagnostics.dll
+  R2RDump -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\R2RDump\R2RDump.dll
+  dotnet-pgo -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\dotnet-pgo\dotnet-pgo.dll
+  repro -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\repro\x64\Release\repro.dll
+  R2RTest -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\R2RTest\R2RTest.dll
+  ILCompiler.DependencyAnalysisFramework -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILCompiler.DependencyAnalysisFramework\x64\Release\ILCompiler.DependencyAnalysisFramework.dll
+  ILCompiler.ReadyToRun -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILCompiler.ReadyToRun\x64\Release\ILCompiler.ReadyToRun.dll
+  crossgen2 -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\crossgen2\crossgen2.dll
+  ILCompiler.Build.Tasks -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\ilc\netstandard\ILCompiler.Build.Tasks.dll
+  ILCompiler.MetadataTransform -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILCompiler.MetadataTransform\x64\Release\ILCompiler.MetadataTransform.dll
+  ILCompiler.Compiler -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILCompiler.Compiler\x64\Release\ILCompiler.Compiler.dll
+  ILCompiler.RyuJit -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILCompiler.RyuJit\x64\Release\ILCompiler.RyuJit.dll
+  ILCompiler -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\ilc\ilc.dll
+  ILCompiler.Reflection.ReadyToRun -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\ILCompiler.Reflection.ReadyToRun.dll
+  ILVerification -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILVerification\x64\Release\ILVerification.dll
+  ILVerify -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\ILVerify\x64\Release\ILVerify.dll
+  Microsoft.NETCore.TestHost -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\NonShipping\runtime.win-x64.Microsoft.NETCore.TestHost.7.0.0-dev.nupkg
+  ILCompiler.Reflection.ReadyToRun.Experimental -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\NonShipping\ILCompiler.Reflection.ReadyToRun.Experimental.7.0.0-dev.nupkg
+  dotnet-ilverify -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\dotnet-ilverify.7.0.0-dev.nupkg
+  Microsoft.ILVerification -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\Microsoft.ILVerification.7.0.0-dev.nupkg
+  Microsoft.NET.Sdk.IL -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\Microsoft.NET.Sdk.IL.7.0.0-dev.nupkg
+  Microsoft.NETCore.ILDAsm -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\runtime.win-x64.Microsoft.NETCore.ILDAsm.7.0.0-dev.nupkg
+  Microsoft.NETCore.TestHost -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\NonShipping\Microsoft.NETCore.TestHost.7.0.0-dev.nupkg
+  Microsoft.NETCore.ILAsm -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\runtime.win-x64.Microsoft.NETCore.ILAsm.7.0.0-dev.nupkg
+  Microsoft.NETCore.ILAsm -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\Microsoft.NETCore.ILAsm.7.0.0-dev.nupkg
+  Microsoft.NETCore.ILDAsm -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\Microsoft.NETCore.ILDAsm.7.0.0-dev.nupkg
+  dotnet-pgo -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\dotnet-pgo\dotnet-pgo.dll
+  Successfully created package 'D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\NonShipping\dotnet-pgo.7.0.0-dev.nupkg'.
+  Successfully created package 'D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\NonShipping\dotnet-pgo.7.0.0-dev.symbols.nupkg'.
+  System.Private.CoreLib -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk\System.Private.CoreLib.dll
+  System.Private.DisabledReflection -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk\System.Private.DisabledReflection.dll
+  System.Private.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk\System.Private.Reflection.Metadata.dll
+  System.Private.TypeLoader -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk\System.Private.TypeLoader.dll
+  System.Private.Reflection.Core -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk\System.Private.Reflection.Core.dll
+  System.Private.Reflection.Execution -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk\System.Private.Reflection.Execution.dll
+  System.Private.StackTraceMetadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk\System.Private.StackTraceMetadata.dll
+  Test.CoreLib -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Test.CoreLib\x64\Release\Test.CoreLib.dll
+  AssemblyStripper -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\AssemblyStripper\Release\net472\AssemblyStripper.dll
+  AssemblyStripper -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\AssemblyStripper\Release\net7.0\AssemblyStripper.dll
+  MonoTargetsTasks -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\MonoTargetsTasks\Release\net472\MonoTargetsTasks.dll
+  MonoTargetsTasks -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\MonoTargetsTasks\Release\net7.0\MonoTargetsTasks.dll
+  Microsoft.NET.Runtime.MonoTargets.Sdk -> D:\work\Core\CurrentWork2\runtime\artifacts\packages\Release\Shipping\Microsoft.NET.Runtime.MonoTargets.Sdk.7.0.0-dev.nupkg
+  The CMake command line is the same as the last run. Skipping running CMake configure.
+  Running 'call "D:\work\Core\CurrentWork2\runtime\eng\native\init-vs-env.cmd" x64 && cd /D "D:\work\Core\CurrentWork2\runtime\artifacts\obj\mono\windows.x64.Release\" &&  cmake --build . --target install --config Release' in 'D:\work\Core\CurrentWork2\runtime\artifacts\obj\mono\windows.x64.Release\'
+  **********************************************************************
+  ** Visual Studio 2022 Developer Command Prompt v17.2.0
+  ** Copyright (c) 2022 Microsoft Corporation
+  **********************************************************************
+  [vcvarsall.bat] Environment initialized for: 'x86_x64'
+  [0/1] Install the project...
+  -- Install configuration: "Release"
+  System.Private.CoreLib -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\mono\windows.x64.Release\IL\System.Private.CoreLib.dll
+  InjectResource -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\InjectResource\InjectResource.dll
+  It was not possible to find any compatible framework version
+  The framework 'Microsoft.NETCore.App', version '7.0.0-preview.5.22272.3' (x64) was not found.
+    - The following frameworks were found:
+        7.0.0-preview.3.22175.4 at [D:\work\Core\CurrentWork2\runtime\.dotnet\shared\Microsoft.NETCore.App]
+  
+  You can resolve the problem by installing the specified framework and/or SDK.
+  
+  The specified framework can be found at:
+    - https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=7.0.0-preview.5.22272.3&arch=x64&rid=win10-x64
+D:\work\Core\CurrentWork2\runtime\src\native\corehost\corehost.proj(41,5): error MSB3073: The command ""D:\work\Core\CurrentWork2\runtime\.dotnet\dotnet.exe" exec D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\InjectResource\InjectResource.dll --bin "D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\/mscordaccore.dll" --image "D:\work\Core\CurrentWork2\runtime\artifacts\bin\win-x64.Release\corehost\/singlefilehost.exe" --name MINIDUMP_EMBEDDED_AUXILIARY_PROVIDER" exited with code -2147450730.
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\src\native\corehost\corehost.proj(41,5): error MSB3073: The command ""D:\work\Core\CurrentWork2\runtime\.dotnet\dotnet.exe" exec D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\InjectResource\InjectResource.dll --bin "D:\work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\/mscordaccore.dll" --image "D:\work\Core\CurrentWork2\runtime\artifacts\bin\win-x64.Release\corehost\/singlefilehost.exe" --name MINIDUMP_EMBEDDED_AUXILIARY_PROVIDER" exited with code -2147450730.
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:01:04.76

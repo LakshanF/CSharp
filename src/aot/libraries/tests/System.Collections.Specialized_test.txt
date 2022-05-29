@@ -1,0 +1,39 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Collections.Specialized\tests\System.Collections.Specialized.Tests.csproj (in 508 ms).
+  3 of 4 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.Collections.Specialized.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Specialized.Tests\Release\net7.0\System.Collections.Specialized.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Specialized.Tests\Release\net7.0\native\System.Collections.Specialized.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Specialized.Tests\Release\net7.0\native\System.Collections.Specialized.Tests.exp
+  System.Collections.Specialized.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Specialized.Tests\Release\net7.0\publish\
+  ----- start Sun 05/29/2022  7:56:27.06 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Specialized.Tests\Release\net7.0\publish\
+  System.Collections.Specialized.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Collections.Specialized.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Collections.Specialized.Tests.ListDictionaryKeysTests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Specialized.Tests.ListDictionaryValuesTests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Specialized.Tests.HybridDictionaryKeysTests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Specialized.Tests.HybridDictionaryValuesTests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Specialized.Tests.ListDictionary_NoComparer_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Specialized.Tests.HybridDictionary_CaseSensitive_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Specialized.Tests.HybridDictionary_CaseInsensitive_Tests.IGenericSharedAPI_SerializeDeserialize
+  [SKIP] System.Collections.Specialized.Tests.ListDictionary_CustomComparer_Tests.IGenericSharedAPI_SerializeDeserialize
+  Finished System.Collections.Specialized.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 2112, Errors: 0, Failures: 0, Skipped: 8. Time: 0.1277004s
+  ----- end Sun 05/29/2022  7:56:29.72 ----- exit code 0 ----------------------------------------------------------
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:25.15

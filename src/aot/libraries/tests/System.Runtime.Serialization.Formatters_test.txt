@@ -1,0 +1,136 @@
+D:\work\Core\CurrentWork2\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Formatters\tests\System.Runtime.Serialization.Formatters.Tests.csproj (in 1.16 sec).
+  42 of 43 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Release\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\LibraryImportGenerator\Release\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net6.0\TestUtilities.dll
+  System.IO.Packaging -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.Packaging\ref\Release\net7.0\System.IO.Packaging.dll
+  System.ComponentModel.Composition -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.Composition\ref\Release\net7.0\System.ComponentModel.Composition.dll
+  System.CodeDom -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.CodeDom\ref\Release\net7.0\System.CodeDom.dll
+  System.Security.Cryptography.ProtectedData -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.ProtectedData\ref\Release\net7.0\System.Security.Cryptography.ProtectedData.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\ref\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0\Microsoft.Win32.SystemEvents.dll
+  System.CodeDom -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.CodeDom\Release\net7.0\System.CodeDom.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\ref\Release\net7.0\System.Drawing.Common.dll
+  System.ComponentModel.Composition -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.ComponentModel.Composition\Release\net7.0\System.ComponentModel.Composition.dll
+  System.Security.Cryptography.ProtectedData -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.ProtectedData\Release\net7.0\System.Security.Cryptography.ProtectedData.dll
+  System.IO.Packaging -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.IO.Packaging\Release\net7.0\System.IO.Packaging.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0\System.Drawing.Common.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\ref\Release\net7.0\System.Windows.Extensions.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0\System.Windows.Extensions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\ref\Release\net7.0\System.Security.Permissions.dll
+  System.Security.Permissions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Permissions\Release\net7.0\System.Security.Permissions.dll
+  System.Configuration.ConfigurationManager -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Configuration.ConfigurationManager\ref\Release\net7.0\System.Configuration.ConfigurationManager.dll
+  System.Configuration.ConfigurationManager -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Configuration.ConfigurationManager\Release\net7.0\System.Configuration.ConfigurationManager.dll
+  System.Diagnostics.EventLog.Messages -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.EventLog.Messages\Release\netstandard2.0\System.Diagnostics.EventLog.Messages.dll
+  System.DirectoryServices.Protocols -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices.Protocols\ref\Release\net7.0\System.DirectoryServices.Protocols.dll
+  System.DirectoryServices -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices\ref\Release\net7.0\System.DirectoryServices.dll
+  System.Diagnostics.EventLog -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.EventLog\ref\Release\net7.0\System.Diagnostics.EventLog.dll
+  Microsoft.Win32.SystemEvents -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\Microsoft.Win32.SystemEvents\Release\net7.0-windows\Microsoft.Win32.SystemEvents.dll
+  System.Security.Cryptography.ProtectedData -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Security.Cryptography.ProtectedData\Release\net7.0-windows\System.Security.Cryptography.ProtectedData.dll
+  System.DirectoryServices.Protocols -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices.Protocols\Release\net7.0-windows\System.DirectoryServices.Protocols.dll
+  System.Runtime -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime\ref\Release\net7.0\System.Runtime.dll
+  System.Text.Encoding.CodePages -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Text.Encoding.CodePages\ref\Release\net7.0\System.Text.Encoding.CodePages.dll
+  System.Diagnostics.EventLog -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Diagnostics.EventLog\Release\net7.0-windows\System.Diagnostics.EventLog.dll
+  System.Text.Encoding.CodePages -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Text.Encoding.CodePages\Release\net7.0-windows\System.Text.Encoding.CodePages.dll
+  System.Data.Odbc -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.Odbc\ref\Release\net7.0\System.Data.Odbc.dll
+  System.Data.Odbc -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Data.Odbc\Release\net7.0-windows\System.Data.Odbc.dll
+  System.Drawing.Common -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Drawing.Common\Release\net7.0-windows\System.Drawing.Common.dll
+  System.Windows.Extensions -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Windows.Extensions\Release\net7.0-windows\System.Windows.Extensions.dll
+  System.DirectoryServices -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices\Release\net7.0-windows\System.DirectoryServices.dll
+  System.DirectoryServices.AccountManagement -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices.AccountManagement\ref\Release\net7.0\System.DirectoryServices.AccountManagement.dll
+  System.DirectoryServices.AccountManagement -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.DirectoryServices.AccountManagement\Release\net7.0-windows\System.DirectoryServices.AccountManagement.dll
+  System.Runtime.Serialization.Formatters.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Formatters.Tests\Release\net7.0-windows\System.Runtime.Serialization.Formatters.Tests.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating compatible native code. To optimize for size or speed, visit https://aka.ms/OptimizeNativeAOT
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[S.P.CompilerGenerated]Internal.CompilerGenerated.<Module>.ReverseOpenStaticDelegateStub__RequestDelegate(native int,uint32,uint32,uint8*,uint32,uint8*)' will always throw because: Marshaling directives are invalid
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugManagerClass..ctor()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(uint32,int32)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CanLaunchOrAttach(UInt32, Int32)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(string,string,SECURITY_ATTRIBUTES,SECURITY_ATTRIBUTES,int32,uint32,native int,string,STARTUPINFO,PROCESS_INFORMATION,CorDebugCreateProcessFlags,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.CreateProcess(System.String, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Microsoft.Diagnostics.Runtime.ICorDebug.SECURITY_ATTRIBUTES, Int32, UInt32, IntPtr, System.String, Microsoft.Diagnostics.Runtime.ICorDebug.STARTUPINFO, Microsoft.Diagnostics.Runtime.ICorDebug.PROCESS_INFORMATION, Microsoft.Diagnostics.Runtime.ICorDebug.CorDebugCreateProcessFlags, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(uint32,int32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.DebugActiveProcess(UInt32, Int32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(ICorDebugProcessEnum&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.EnumerateProcesses(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcessEnum ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(uint32,ICorDebugProcess&)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.GetProcess(UInt32, Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugProcess ByRef)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Initialize()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(ICorDebugManagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetManagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugManagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(ICorDebugUnmanagedCallback)' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.SetUnmanagedHandler(Microsoft.Diagnostics.Runtime.ICorDebug.ICorDebugUnmanagedCallback)'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass.Terminate()'
+  ILC: Method '[Microsoft.Diagnostics.Runtime]Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void Microsoft.Diagnostics.Runtime.ICorDebug.EmbeddedCLRCorDebugClass..ctor()'
+  ILC: Method '[System.Runtime.Serialization.Formatters.Tests]System.Runtime.Serialization.Formatters.Tests.FormatterServicesTests+COMObject..ctor()' will always throw because: Invalid IL or CLR metadata in 'Void COMObject..ctor()'
+     Creating library D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Formatters.Tests\Release\net7.0-windows\native\System.Runtime.Serialization.Formatters.Tests.lib and object D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Formatters.Tests\Release\net7.0-windows\native\System.Runtime.Serialization.Formatters.Tests.exp
+  System.Runtime.Serialization.Formatters.Tests -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Formatters.Tests\Release\net7.0-windows\publish\
+  ----- start Sun 05/29/2022 11:17:18.56 ===============  To repro directly: ===================================================== 
+  pushd D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Runtime.Serialization.Formatters.Tests\Release\net7.0-windows\publish\
+  System.Runtime.Serialization.Formatters.Tests.exe -notrait category=OuterLoop -notrait category=failing 
+  popd
+  ===========================================================================================================
+  Running assembly:System.Runtime.Serialization.Formatters.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  [SKIP] System.Runtime.Serialization.Formatters.Tests.DisableBitTests.DisabledThroughFeatureSwitch
+  [FAIL] System.Runtime.Serialization.Formatters.Tests.DisableBitTests.DisabledAlwaysInBrowser
+  Assert.Throws() Failure
+  Expected: typeof(System.PlatformNotSupportedException)
+  Actual:   typeof(System.NotSupportedException): BinaryFormatter serialization and deserialization are disabled within this application. See https://aka.ms/binaryformatter for more information.
+  ---- System.NotSupportedException : BinaryFormatter serialization and deserialization are disabled within this application. See https://aka.ms/binaryformatter for more information.
+     at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize(Stream, Object) + 0x33
+  ----- Inner Stack Trace -----
+     at System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize(Stream, Object) + 0x33
+  [SKIP] System.Runtime.Serialization.Formatters.Tests.SerializationBinderTests.BindToType_AllValuesTracked
+  [FAIL] System.Runtime.Serialization.Formatters.Tests.FormatterServicesTests.GetUninitializedObject_SharedGenericInstance_NetCore_ThrowsNotSupportedException
+  Assert.NotNull() Failure
+     at System.Runtime.Serialization.Formatters.Tests.FormatterServicesTests.GetUninitializedObject_SharedGenericInstance_NetCore_ThrowsNotSupportedException() + 0x134
+     at System.Runtime.Serialization.Formatters.Tests!<BaseAddress>+0x104d9e8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  [FAIL] System.Runtime.Serialization.Formatters.Tests.FormatterServicesTests.GetUninitializedObject_COMObject_ThrowsNotSupportedException
+  Assert.True() Failure
+  Expected: True
+  Actual:   False
+     at System.Runtime.Serialization.Formatters.Tests.FormatterServicesTests.GetUninitializedObject_COMObject_ThrowsNotSupportedException() + 0x34
+     at System.Runtime.Serialization.Formatters.Tests!<BaseAddress>+0x104d9e8
+     at System.InvokeUtils.CallDynamicInvokeMethod(Object, IntPtr, IntPtr, IntPtr, Object, Object[], BinderBundle, Boolean, Boolean) + 0x158
+  Finished System.Runtime.Serialization.Formatters.Tests, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+  
+  Tests run: 72, Errors: 0, Failures: 3, Skipped: 2. Time: 0.017507s
+  ----- end Sun 05/29/2022 11:17:24.77 ----- exit code 1 ----------------------------------------------------------
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Runtime.Serialization.Formatters.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Formatters\tests\System.Runtime.Serialization.Formatters.Tests.csproj]
+  TestUtilities -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\TestUtilities\Release\net462\TestUtilities.dll
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\ref\Release\net462\System.Collections.Immutable.dll
+  System.Threading.Channels -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels\ref\Release\net462\System.Threading.Channels.dll
+  System.Collections.Immutable -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Collections.Immutable\Release\net462\System.Collections.Immutable.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\ref\Release\net462\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Reflection.Metadata\Release\net462\System.Reflection.Metadata.dll
+  System.Threading.Channels -> D:\work\Core\CurrentWork2\runtime\artifacts\bin\System.Threading.Channels\Release\net462\System.Threading.Channels.dll
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Formatters\tests\System.Runtime.Serialization.Formatters.Tests.csproj]
+
+Build FAILED.
+
+D:\work\Core\CurrentWork2\runtime\eng\testing\tests.targets(169,5): error : One or more tests failed while running tests from 'System.Runtime.Serialization.Formatters.Tests'. [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Formatters\tests\System.Runtime.Serialization.Formatters.Tests.csproj]
+D:\work\Core\CurrentWork2\runtime\src\libraries\Common\tests\SingleFileTestRunner\SingleFileTestRunner.cs(11,22): error CS0234: The type or namespace name 'Loader' does not exist in the namespace 'System.Runtime' (are you missing an assembly reference?) [D:\work\Core\CurrentWork2\runtime\src\libraries\System.Runtime.Serialization.Formatters\tests\System.Runtime.Serialization.Formatters.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:01:26.79
