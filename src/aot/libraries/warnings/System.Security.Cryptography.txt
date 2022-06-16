@@ -3,17 +3,16 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Cryptography\src\System.Security.Cryptography.csproj (in 215 ms).
-  11 of 12 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
-  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
-  Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
   System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
-  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
-  System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
+  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
   System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
+  Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
+  System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
   System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.Formats.Asn1 -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Asn1\ref\Debug\net7.0\System.Formats.Asn1.dll
   System.Security.Cryptography -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography\ref\Debug\net7.0\System.Security.Cryptography.dll
   System.Security.Cryptography -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography\Debug\net7.0\System.Security.Cryptography.dll
@@ -37,4 +36,4 @@ c:\work\core\CurrentWork\runtime\src\libraries\Common\src\System\Net\Http\X509Re
     0 Warning(s)
     7 Error(s)
 
-Time Elapsed 00:00:39.11
+Time Elapsed 00:00:37.25

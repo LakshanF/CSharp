@@ -3,13 +3,11 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Cryptography.Cng\src\System.Security.Cryptography.Cng.csproj (in 172 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Cryptography.Cng\ref\System.Security.Cryptography.Cng.csproj (in 143 ms).
-  9 of 11 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
   Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
-  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
   System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
   System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
   System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
   System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
@@ -22,4 +20,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:04.76
+Time Elapsed 00:00:02.24

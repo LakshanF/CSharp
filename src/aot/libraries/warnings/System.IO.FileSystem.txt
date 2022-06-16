@@ -3,9 +3,7 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.FileSystem\src\System.IO.FileSystem.csproj (in 153 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.FileSystem\ref\System.IO.FileSystem.csproj (in 153 ms).
-  1 of 3 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
   System.IO.FileSystem -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem\ref\Debug\net7.0\System.IO.FileSystem.dll
   System.IO.FileSystem -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem\Debug\net7.0\System.IO.FileSystem.dll
@@ -14,4 +12,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:03.48
+Time Elapsed 00:00:01.57

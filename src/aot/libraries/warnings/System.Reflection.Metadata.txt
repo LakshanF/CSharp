@@ -6,27 +6,27 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   All projects are up-to-date for restore.
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
-  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net462\System.Collections.Immutable.dll
   System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\netstandard2.0\System.Collections.Immutable.dll
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
-  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net6.0\System.Collections.Immutable.dll
   System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
   System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net7.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net462\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net6.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\net7.0\System.Collections.Immutable.dll
   System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\net462\System.Collections.Immutable.dll
+  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\net7.0\System.Reflection.Metadata.dll
   System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\netstandard2.0\System.Collections.Immutable.dll
   System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\net6.0\System.Collections.Immutable.dll
-  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\netstandard2.0\System.Reflection.Metadata.dll
-  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\net462\System.Reflection.Metadata.dll
-  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\net7.0\System.Collections.Immutable.dll
-  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\Debug\netstandard2.0\System.Reflection.Metadata.dll
-  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\net7.0\System.Reflection.Metadata.dll
-  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\net6.0\System.Reflection.Metadata.dll
-  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\Debug\net462\System.Reflection.Metadata.dll
-  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\Debug\net6.0\System.Reflection.Metadata.dll
   System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\Debug\net7.0\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\net462\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\netstandard2.0\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\Debug\net462\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\ref\Debug\net6.0\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\Debug\netstandard2.0\System.Reflection.Metadata.dll
+  System.Reflection.Metadata -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Metadata\Debug\net6.0\System.Reflection.Metadata.dll
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:20.07
+Time Elapsed 00:00:03.71

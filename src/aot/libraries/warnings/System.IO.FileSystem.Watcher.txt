@@ -3,27 +3,25 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.FileSystem.Watcher\src\System.IO.FileSystem.Watcher.csproj (in 200 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.FileSystem.Watcher\ref\System.IO.FileSystem.Watcher.csproj (in 170 ms).
-  8 of 10 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
   System.ComponentModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel\ref\Debug\net7.0\System.ComponentModel.dll
-  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
   System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
   LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.ObjectModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ObjectModel\ref\Debug\net7.0\System.ObjectModel.dll
   System.ComponentModel.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel.Primitives\ref\Debug\net7.0\System.ComponentModel.Primitives.dll
   System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\ref\Debug\net7.0\System.IO.FileSystem.Watcher.dll
   System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0\System.IO.FileSystem.Watcher.dll
-  System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0-linux\System.IO.FileSystem.Watcher.dll
+  System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0-maccatalyst\System.IO.FileSystem.Watcher.dll
   System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0-osx\System.IO.FileSystem.Watcher.dll
   System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0-freebsd\System.IO.FileSystem.Watcher.dll
+  System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0-linux\System.IO.FileSystem.Watcher.dll
   System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0-windows\System.IO.FileSystem.Watcher.dll
-  System.IO.FileSystem.Watcher -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.FileSystem.Watcher\Debug\net7.0-maccatalyst\System.IO.FileSystem.Watcher.dll
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:06.96
+Time Elapsed 00:00:06.24

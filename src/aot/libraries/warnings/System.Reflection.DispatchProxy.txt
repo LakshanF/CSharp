@@ -3,9 +3,7 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Reflection.DispatchProxy\src\System.Reflection.DispatchProxy.csproj (in 168 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Reflection.DispatchProxy\ref\System.Reflection.DispatchProxy.csproj (in 167 ms).
-  1 of 3 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
   System.Reflection.DispatchProxy -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.DispatchProxy\ref\Debug\net7.0\System.Reflection.DispatchProxy.dll
 c:\work\core\CurrentWork\runtime\src\libraries\System.Reflection.DispatchProxy\src\System\Reflection\DispatchProxyGenerator.cs(130,23): error IL3050: Using member 'System.Reflection.Emit.AssemblyBuilder.DefineDynamicAssembly(AssemblyName, AssemblyBuilderAccess)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Defining a dynamic assembly requires dynamic code. [c:\work\core\CurrentWork\runtime\src\libraries\System.Reflection.DispatchProxy\src\System.Reflection.DispatchProxy.csproj]
@@ -16,4 +14,4 @@ c:\work\core\CurrentWork\runtime\src\libraries\System.Reflection.DispatchProxy\s
     0 Warning(s)
     1 Error(s)
 
-Time Elapsed 00:00:02.73
+Time Elapsed 00:00:02.21

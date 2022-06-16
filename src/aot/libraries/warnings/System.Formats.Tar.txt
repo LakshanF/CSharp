@@ -3,13 +3,11 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Formats.Tar\ref\System.Formats.Tar.csproj (in 145 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Formats.Tar\src\System.Formats.Tar.csproj (in 145 ms).
-  3 of 5 projects are up-to-date for restore.
-  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  All projects are up-to-date for restore.
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
-  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   System.Formats.Tar -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Tar\ref\Debug\net7.0\System.Formats.Tar.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.Formats.Tar -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Tar\Debug\net7.0\System.Formats.Tar.dll
   System.Formats.Tar -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Tar\Debug\net7.0-unix\System.Formats.Tar.dll
   System.Formats.Tar -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Tar\Debug\net7.0-windows\System.Formats.Tar.dll
@@ -18,4 +16,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:05.24
+Time Elapsed 00:00:04.83

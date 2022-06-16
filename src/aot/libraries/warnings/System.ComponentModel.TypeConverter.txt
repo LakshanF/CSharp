@@ -3,16 +3,14 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.ComponentModel.TypeConverter\src\System.ComponentModel.TypeConverter.csproj (in 155 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Text.RegularExpressions\gen\System.Text.RegularExpressions.Generator.csproj (in 1.1 sec).
-  10 of 12 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.Text.RegularExpressions.Generator -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.RegularExpressions.Generator\Debug\netstandard2.0\System.Text.RegularExpressions.Generator.dll
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
-  System.ComponentModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel\ref\Debug\net7.0\System.ComponentModel.dll
   System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
   System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.ComponentModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel\ref\Debug\net7.0\System.ComponentModel.dll
   System.Resources.Writer -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Resources.Writer\ref\Debug\net7.0\System.Resources.Writer.dll
   System.ObjectModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ObjectModel\ref\Debug\net7.0\System.ObjectModel.dll
   System.ComponentModel.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel.Primitives\ref\Debug\net7.0\System.ComponentModel.Primitives.dll
@@ -25,4 +23,4 @@ c:\work\core\CurrentWork\runtime\src\libraries\System.ComponentModel.TypeConvert
     0 Warning(s)
     1 Error(s)
 
-Time Elapsed 00:00:17.56
+Time Elapsed 00:00:06.38

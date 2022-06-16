@@ -3,14 +3,12 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.Compression.Brotli\src\System.IO.Compression.Brotli.csproj (in 170 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.Compression.Brotli\ref\System.IO.Compression.Brotli.csproj (in 170 ms).
-  4 of 6 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
-  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   System.IO.Compression -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression\ref\Debug\net7.0\System.IO.Compression.dll
-  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   System.IO.Compression.Brotli -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression.Brotli\ref\Debug\net7.0\System.IO.Compression.Brotli.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.IO.Compression.Brotli -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression.Brotli\Debug\net7.0\System.IO.Compression.Brotli.dll
   System.IO.Compression.Brotli -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression.Brotli\Debug\net7.0-unix\System.IO.Compression.Brotli.dll
   System.IO.Compression.Brotli -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression.Brotli\Debug\net7.0-windows\System.IO.Compression.Brotli.dll
@@ -19,4 +17,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:04.60
+Time Elapsed 00:00:04.10

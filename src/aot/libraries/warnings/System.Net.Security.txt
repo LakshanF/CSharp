@@ -3,27 +3,26 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Security\src\System.Net.Security.csproj (in 244 ms).
-  12 of 13 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
-  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
-  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
-  System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
   System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
   Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
+  System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
   System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
   System.Formats.Asn1 -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Asn1\ref\Debug\net7.0\System.Formats.Asn1.dll
   System.Security.Cryptography -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography\ref\Debug\net7.0\System.Security.Cryptography.dll
   System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\ref\Debug\net7.0\System.Net.Security.dll
   System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0\System.Net.Security.dll
+  System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0-tvos\System.Net.Security.dll
 c:\work\core\CurrentWork\runtime\src\libraries\Common\src\System\Net\Http\X509ResourceClient.cs(100,54): error IL3050: Using member 'System.Type.MakeGenericType(params Type[])' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. The native code for this instantiation might not be available at runtime. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Security\src\System.Net.Security.csproj]
 c:\work\core\CurrentWork\runtime\src\libraries\Common\src\System\Net\Http\X509ResourceClient.cs(100,54): error IL3050: Using member 'System.Type.MakeGenericType(params Type[])' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. The native code for this instantiation might not be available at runtime. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Security\src\System.Net.Security.csproj]
   System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0-android\System.Net.Security.dll
-  System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0-osx\System.Net.Security.dll
   System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0-ios\System.Net.Security.dll
-  System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0-tvos\System.Net.Security.dll
+  System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0-osx\System.Net.Security.dll
   System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\Debug\net7.0-windows\System.Net.Security.dll
 
 Build FAILED.
@@ -33,4 +32,4 @@ c:\work\core\CurrentWork\runtime\src\libraries\Common\src\System\Net\Http\X509Re
     0 Warning(s)
     2 Error(s)
 
-Time Elapsed 00:00:16.09
+Time Elapsed 00:00:15.87

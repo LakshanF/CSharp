@@ -3,10 +3,7 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Diagnostics.TextWriterTraceListener\src\System.Diagnostics.TextWriterTraceListener.csproj (in 147 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Diagnostics.TraceSource\ref\System.Diagnostics.TraceSource.csproj (in 179 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Diagnostics.TextWriterTraceListener\ref\System.Diagnostics.TextWriterTraceListener.csproj (in 179 ms).
-  9 of 12 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
   LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
@@ -24,4 +21,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:05.14
+Time Elapsed 00:00:03.95

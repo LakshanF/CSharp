@@ -3,26 +3,23 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Requests\src\System.Net.Requests.csproj (in 186 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.ServicePoint\ref\System.Net.ServicePoint.csproj (in 189 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Requests\ref\System.Net.Requests.csproj (in 186 ms).
-  17 of 20 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
-  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
-  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
   Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
   System.ComponentModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel\ref\Debug\net7.0\System.ComponentModel.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
   System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
+  System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
   System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
   System.ObjectModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ObjectModel\ref\Debug\net7.0\System.ObjectModel.dll
-  System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
   System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
   System.ComponentModel.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel.Primitives\ref\Debug\net7.0\System.ComponentModel.Primitives.dll
   System.Formats.Asn1 -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Asn1\ref\Debug\net7.0\System.Formats.Asn1.dll
   System.Collections.Specialized -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Specialized\ref\Debug\net7.0\System.Collections.Specialized.dll
-  System.Net.WebHeaderCollection -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebHeaderCollection\ref\Debug\net7.0\System.Net.WebHeaderCollection.dll
   System.Security.Cryptography -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography\ref\Debug\net7.0\System.Security.Cryptography.dll
+  System.Net.WebHeaderCollection -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebHeaderCollection\ref\Debug\net7.0\System.Net.WebHeaderCollection.dll
   System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\ref\Debug\net7.0\System.Net.Security.dll
   System.Net.ServicePoint -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.ServicePoint\ref\Debug\net7.0\System.Net.ServicePoint.dll
   System.Net.Requests -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Requests\ref\Debug\net7.0\System.Net.Requests.dll
@@ -34,4 +31,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:07.46
+Time Elapsed 00:00:06.99

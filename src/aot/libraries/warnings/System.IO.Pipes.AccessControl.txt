@@ -3,9 +3,7 @@ Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
 Copyright (C) Microsoft Corporation. All rights reserved.
 
   Determining projects to restore...
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.Pipes.AccessControl\ref\System.IO.Pipes.AccessControl.csproj (in 200 ms).
-  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.Pipes.AccessControl\src\System.IO.Pipes.AccessControl.csproj (in 200 ms).
-  9 of 11 projects are up-to-date for restore.
+  All projects are up-to-date for restore.
   System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
   System.IO.Pipes -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Pipes\ref\Debug\net7.0\System.IO.Pipes.dll
   Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
@@ -24,4 +22,4 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:04.42
+Time Elapsed 00:00:03.73
