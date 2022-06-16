@@ -1,0 +1,21 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.Compression.ZipFile\src\System.IO.Compression.ZipFile.csproj (in 164 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.IO.Compression.ZipFile\ref\System.IO.Compression.ZipFile.csproj (in 164 ms).
+  4 of 6 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.IO.Compression -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression\ref\Debug\net7.0\System.IO.Compression.dll
+  System.IO.Compression.ZipFile -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression.ZipFile\ref\Debug\net7.0\System.IO.Compression.ZipFile.dll
+  System.IO.Compression.ZipFile -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression.ZipFile\Debug\net7.0\System.IO.Compression.ZipFile.dll
+  System.IO.Compression.ZipFile -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.IO.Compression.ZipFile\Debug\net7.0-windows\System.IO.Compression.ZipFile.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.42

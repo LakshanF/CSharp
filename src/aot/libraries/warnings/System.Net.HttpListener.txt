@@ -1,0 +1,47 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Cryptography\ref\System.Security.Cryptography.csproj (in 184 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.WebSockets\ref\System.Net.WebSockets.csproj (in 181 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.WebHeaderCollection\ref\System.Net.WebHeaderCollection.csproj (in 184 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System.Net.HttpListener.csproj (in 220 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Security\ref\System.Net.Security.csproj (in 184 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\ref\System.Net.HttpListener.csproj (in 184 ms).
+  15 of 21 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Security.Claims -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Claims\ref\Debug\net7.0\System.Security.Claims.dll
+  System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
+  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
+  System.ComponentModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel\ref\Debug\net7.0\System.ComponentModel.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
+  System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
+  System.ObjectModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ObjectModel\ref\Debug\net7.0\System.ObjectModel.dll
+  System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
+  System.ComponentModel.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel.Primitives\ref\Debug\net7.0\System.ComponentModel.Primitives.dll
+  System.Formats.Asn1 -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Asn1\ref\Debug\net7.0\System.Formats.Asn1.dll
+  System.Collections.Specialized -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Specialized\ref\Debug\net7.0\System.Collections.Specialized.dll
+  System.Net.WebSockets -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebSockets\ref\Debug\net7.0\System.Net.WebSockets.dll
+  System.Net.WebHeaderCollection -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebHeaderCollection\ref\Debug\net7.0\System.Net.WebHeaderCollection.dll
+  System.Security.Cryptography -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography\ref\Debug\net7.0\System.Security.Cryptography.dll
+  System.Net.Security -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Security\ref\Debug\net7.0\System.Net.Security.dll
+  System.Net.HttpListener -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.HttpListener\ref\Debug\net7.0\System.Net.HttpListener.dll
+  System.Net.HttpListener -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.HttpListener\Debug\net7.0\System.Net.HttpListener.dll
+c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System\Net\Windows\HttpListener.Windows.cs(139,32): error IL3050: Using member 'System.Runtime.InteropServices.Marshal.SizeOf(Type)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Marshalling code for the object might not be available. Use the SizeOf<T> overload instead. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System.Net.HttpListener.csproj]
+c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System\Net\Windows\HttpListener.Windows.cs(317,32): error IL3050: Using member 'System.Runtime.InteropServices.Marshal.SizeOf(Type)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Marshalling code for the object might not be available. Use the SizeOf<T> overload instead. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System.Net.HttpListener.csproj]
+c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System\Net\Windows\HttpListener.Windows.cs(339,32): error IL3050: Using member 'System.Runtime.InteropServices.Marshal.SizeOf(Type)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Marshalling code for the object might not be available. Use the SizeOf<T> overload instead. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System.Net.HttpListener.csproj]
+  System.Net.HttpListener -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.HttpListener\Debug\net7.0-unix\System.Net.HttpListener.dll
+
+Build FAILED.
+
+c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System\Net\Windows\HttpListener.Windows.cs(139,32): error IL3050: Using member 'System.Runtime.InteropServices.Marshal.SizeOf(Type)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Marshalling code for the object might not be available. Use the SizeOf<T> overload instead. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System.Net.HttpListener.csproj]
+c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System\Net\Windows\HttpListener.Windows.cs(317,32): error IL3050: Using member 'System.Runtime.InteropServices.Marshal.SizeOf(Type)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Marshalling code for the object might not be available. Use the SizeOf<T> overload instead. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System.Net.HttpListener.csproj]
+c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System\Net\Windows\HttpListener.Windows.cs(339,32): error IL3050: Using member 'System.Runtime.InteropServices.Marshal.SizeOf(Type)' which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. Marshalling code for the object might not be available. Use the SizeOf<T> overload instead. [c:\work\core\CurrentWork\runtime\src\libraries\System.Net.HttpListener\src\System.Net.HttpListener.csproj]
+    0 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:08.46

@@ -1,0 +1,17 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Resources.Reader\src\System.Resources.Reader.csproj (in 156 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Resources.Reader\ref\System.Resources.Reader.csproj (in 156 ms).
+  1 of 3 projects are up-to-date for restore.
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Resources.Reader -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Resources.Reader\ref\Debug\net7.0\System.Resources.Reader.dll
+  System.Resources.Reader -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Resources.Reader\Debug\net7.0\System.Resources.Reader.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.37

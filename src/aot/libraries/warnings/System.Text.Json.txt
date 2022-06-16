@@ -1,0 +1,46 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\Microsoft.Bcl.AsyncInterfaces\src\Microsoft.Bcl.AsyncInterfaces.csproj (in 248 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\Microsoft.Bcl.AsyncInterfaces\ref\Microsoft.Bcl.AsyncInterfaces.csproj (in 248 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Text.Json\ref\System.Text.Json.csproj (in 248 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Text.Json\src\System.Text.Json.csproj (in 248 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Text.Json\gen\System.Text.Json.SourceGeneration.Roslyn3.11.csproj (in 1.03 sec).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Text.Json\gen\System.Text.Json.SourceGeneration.Roslyn4.0.csproj (in 1.06 sec).
+  8 of 14 projects are up-to-date for restore.
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\ref\Debug\net7.0\System.Text.Encodings.Web.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\Debug\net7.0\System.Text.Encodings.Web.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\ref\Debug\net462\System.Text.Encodings.Web.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\ref\Debug\netstandard2.0\System.Text.Encodings.Web.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\Debug\net462\System.Text.Encodings.Web.dll
+  Microsoft.Bcl.AsyncInterfaces -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Bcl.AsyncInterfaces\ref\Debug\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll
+  Microsoft.Bcl.AsyncInterfaces -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Bcl.AsyncInterfaces\ref\Debug\net462\Microsoft.Bcl.AsyncInterfaces.dll
+  Microsoft.Bcl.AsyncInterfaces -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Bcl.AsyncInterfaces\Debug\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\Debug\netstandard2.0\System.Text.Encodings.Web.dll
+  Microsoft.Bcl.AsyncInterfaces -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Bcl.AsyncInterfaces\Debug\net462\Microsoft.Bcl.AsyncInterfaces.dll
+  System.Text.Json.SourceGeneration.Roslyn3.11 -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json.SourceGeneration.Roslyn3.11\Debug\netstandard2.0\System.Text.Json.SourceGeneration.dll
+  System.Text.Json.SourceGeneration.Roslyn4.0 -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json.SourceGeneration.Roslyn4.0\Debug\netstandard2.0\System.Text.Json.SourceGeneration.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\ref\Debug\net6.0\System.Text.Encodings.Web.dll
+  System.Collections.Concurrent -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Concurrent\ref\Debug\net7.0\System.Collections.Concurrent.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\ref\Debug\netstandard2.0\System.Text.Json.dll
+  System.Text.Encodings.Web -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Encodings.Web\Debug\net6.0\System.Text.Encodings.Web.dll
+  System.Memory -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Memory\ref\Debug\net7.0\System.Memory.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\ref\Debug\net462\System.Text.Json.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\ref\Debug\net6.0\System.Text.Json.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\Debug\net462\System.Text.Json.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\Debug\netstandard2.0\System.Text.Json.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\ref\Debug\net7.0\System.Text.Json.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\Debug\net6.0\System.Text.Json.dll
+  System.Text.Json -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.Json\Debug\net7.0\System.Text.Json.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:24.79

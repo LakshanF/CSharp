@@ -1,0 +1,22 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.WebHeaderCollection\src\System.Net.WebHeaderCollection.csproj (in 200 ms).
+  8 of 9 projects are up-to-date for restore.
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.ComponentModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel\ref\Debug\net7.0\System.ComponentModel.dll
+  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
+  System.ObjectModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ObjectModel\ref\Debug\net7.0\System.ObjectModel.dll
+  System.ComponentModel.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ComponentModel.Primitives\ref\Debug\net7.0\System.ComponentModel.Primitives.dll
+  System.Collections.Specialized -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Specialized\ref\Debug\net7.0\System.Collections.Specialized.dll
+  System.Net.WebHeaderCollection -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebHeaderCollection\ref\Debug\net7.0\System.Net.WebHeaderCollection.dll
+  System.Net.WebHeaderCollection -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebHeaderCollection\Debug\net7.0\System.Net.WebHeaderCollection.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.62

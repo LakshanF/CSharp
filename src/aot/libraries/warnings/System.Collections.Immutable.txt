@@ -1,0 +1,26 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Collections.Immutable\src\System.Collections.Immutable.csproj (in 375 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Collections.Immutable\ref\System.Collections.Immutable.csproj (in 375 ms).
+  4 of 6 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net462\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net7.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\net462\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\netstandard2.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\net7.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\ref\Debug\net6.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\netstandard2.0\System.Collections.Immutable.dll
+  System.Collections.Immutable -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Immutable\Debug\net6.0\System.Collections.Immutable.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:15.20

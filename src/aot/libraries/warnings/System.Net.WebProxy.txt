@@ -1,0 +1,28 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.WebProxy\src\System.Net.WebProxy.csproj (in 176 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Reflection.Primitives\ref\System.Reflection.Primitives.csproj (in 176 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Text.RegularExpressions\ref\System.Text.RegularExpressions.csproj (in 176 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Reflection.Emit.ILGeneration\ref\System.Reflection.Emit.ILGeneration.csproj (in 177 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.WebProxy\ref\System.Net.WebProxy.csproj (in 176 ms).
+  5 of 10 projects are up-to-date for restore.
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
+  System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
+  System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
+  System.Reflection.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Primitives\ref\Debug\net7.0\System.Reflection.Primitives.dll
+  System.Reflection.Emit.ILGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Reflection.Emit.ILGeneration\ref\Debug\net7.0\System.Reflection.Emit.ILGeneration.dll
+  System.Text.RegularExpressions -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Text.RegularExpressions\ref\Debug\net7.0\System.Text.RegularExpressions.dll
+  System.Net.WebProxy -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebProxy\ref\Debug\net7.0\System.Net.WebProxy.dll
+  System.Net.WebProxy -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebProxy\Debug\net7.0-browser\System.Net.WebProxy.dll
+  System.Net.WebProxy -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.WebProxy\Debug\net7.0\System.Net.WebProxy.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:05.28

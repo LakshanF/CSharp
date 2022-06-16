@@ -1,0 +1,25 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Cryptography.X509Certificates\src\System.Security.Cryptography.X509Certificates.csproj (in 141 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Cryptography.X509Certificates\ref\System.Security.Cryptography.X509Certificates.csproj (in 169 ms).
+  9 of 11 projects are up-to-date for restore.
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
+  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
+  System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
+  System.Runtime.Numerics -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.Numerics\ref\Debug\net7.0\System.Runtime.Numerics.dll
+  System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
+  System.Formats.Asn1 -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Formats.Asn1\ref\Debug\net7.0\System.Formats.Asn1.dll
+  System.Security.Cryptography -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography\ref\Debug\net7.0\System.Security.Cryptography.dll
+  System.Security.Cryptography.X509Certificates -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography.X509Certificates\ref\Debug\net7.0\System.Security.Cryptography.X509Certificates.dll
+  System.Security.Cryptography.X509Certificates -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Cryptography.X509Certificates\Debug\net7.0\System.Security.Cryptography.X509Certificates.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.17

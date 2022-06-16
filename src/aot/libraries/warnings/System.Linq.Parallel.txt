@@ -1,0 +1,20 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Linq.Parallel\src\System.Linq.Parallel.csproj (in 174 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Linq.Parallel\ref\System.Linq.Parallel.csproj (in 174 ms).
+  4 of 6 projects are up-to-date for restore.
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.Linq -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Linq\ref\Debug\net7.0\System.Linq.dll
+  System.Collections.Concurrent -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.Concurrent\ref\Debug\net7.0\System.Collections.Concurrent.dll
+  System.Linq.Parallel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Linq.Parallel\ref\Debug\net7.0\System.Linq.Parallel.dll
+  System.Linq.Parallel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Linq.Parallel\Debug\net7.0\System.Linq.Parallel.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.67

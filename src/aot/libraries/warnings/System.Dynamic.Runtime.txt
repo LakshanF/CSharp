@@ -1,0 +1,20 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Dynamic.Runtime\src\System.Dynamic.Runtime.csproj (in 142 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Dynamic.Runtime\ref\System.Dynamic.Runtime.csproj (in 142 ms).
+  4 of 6 projects are up-to-date for restore.
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.ObjectModel -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.ObjectModel\ref\Debug\net7.0\System.ObjectModel.dll
+  System.Linq.Expressions -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Linq.Expressions\ref\Debug\net7.0\System.Linq.Expressions.dll
+  System.Dynamic.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Dynamic.Runtime\ref\Debug\net7.0\System.Dynamic.Runtime.dll
+  System.Dynamic.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Dynamic.Runtime\Debug\net7.0\System.Dynamic.Runtime.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.98

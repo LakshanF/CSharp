@@ -1,0 +1,25 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Sockets\src\System.Net.Sockets.csproj (in 168 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Net.Sockets\ref\System.Net.Sockets.csproj (in 168 ms).
+  7 of 9 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  Microsoft.Win32.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Primitives\ref\Debug\net7.0\Microsoft.Win32.Primitives.dll
+  System.Collections -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections\ref\Debug\net7.0\System.Collections.dll
+  System.Runtime.InteropServices -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime.InteropServices\ref\Debug\net7.0\System.Runtime.InteropServices.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Net.Primitives -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Primitives\ref\Debug\net7.0\System.Net.Primitives.dll
+  System.Net.Sockets -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Sockets\ref\Debug\net7.0\System.Net.Sockets.dll
+  System.Net.Sockets -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Sockets\Debug\net7.0\System.Net.Sockets.dll
+  System.Net.Sockets -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Sockets\Debug\net7.0-unix\System.Net.Sockets.dll
+  System.Net.Sockets -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Net.Sockets\Debug\net7.0-windows\System.Net.Sockets.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:08.12

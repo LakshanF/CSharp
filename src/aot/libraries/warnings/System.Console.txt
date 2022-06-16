@@ -1,0 +1,27 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Private.Runtime.InteropServices.JavaScript\src\System.Private.Runtime.InteropServices.JavaScript.csproj (in 145 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Console\src\System.Console.csproj (in 145 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Console\ref\System.Console.csproj (in 145 ms).
+  3 of 6 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\ref\Debug\net7.0\System.Console.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\Debug\net7.0\System.Console.dll
+  System.Private.Runtime.InteropServices.JavaScript -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Private.Runtime.InteropServices.JavaScript\Debug\net7.0-browser\System.Private.Runtime.InteropServices.JavaScript.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\Debug\net7.0-android\System.Console.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\Debug\net7.0-unix\System.Console.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\Debug\net7.0-windows\System.Console.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\Debug\net7.0-tvos\System.Console.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\Debug\net7.0-ios\System.Console.dll
+  System.Console -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Console\Debug\net7.0-browser\System.Console.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:10.19

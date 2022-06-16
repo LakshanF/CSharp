@@ -1,0 +1,28 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\Microsoft.Win32.Registry\src\Microsoft.Win32.Registry.csproj (in 172 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Claims\ref\System.Security.Claims.csproj (in 173 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.AccessControl\ref\System.Security.AccessControl.csproj (in 173 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\Microsoft.Win32.Registry\ref\Microsoft.Win32.Registry.csproj (in 173 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Collections.NonGeneric\ref\System.Collections.NonGeneric.csproj (in 172 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Security.Principal.Windows\ref\System.Security.Principal.Windows.csproj (in 172 ms).
+  3 of 9 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  System.Collections.NonGeneric -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Collections.NonGeneric\ref\Debug\net7.0\System.Collections.NonGeneric.dll
+  System.Security.Claims -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Claims\ref\Debug\net7.0\System.Security.Claims.dll
+  System.Security.Principal.Windows -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.Principal.Windows\ref\Debug\net7.0\System.Security.Principal.Windows.dll
+  System.Security.AccessControl -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Security.AccessControl\ref\Debug\net7.0\System.Security.AccessControl.dll
+  Microsoft.Win32.Registry -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Registry\ref\Debug\net7.0\Microsoft.Win32.Registry.dll
+  Microsoft.Win32.Registry -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Registry\Debug\net7.0\Microsoft.Win32.Registry.dll
+  Microsoft.Win32.Registry -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Win32.Registry\Debug\net7.0-windows\Microsoft.Win32.Registry.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.27

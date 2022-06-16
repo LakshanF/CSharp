@@ -1,0 +1,27 @@
+C:\work\core\CurrentWork\runtime\.dotnet
+Microsoft (R) Build Engine version 17.2.0-preview-22175-02+058a0262c for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Threading.Tasks.Dataflow\src\System.Threading.Tasks.Dataflow.csproj (in 200 ms).
+  Restored c:\work\core\CurrentWork\runtime\src\libraries\System.Threading.Tasks.Dataflow\ref\System.Threading.Tasks.Dataflow.csproj (in 200 ms).
+  3 of 5 projects are up-to-date for restore.
+  Microsoft.Interop.SourceGeneration -> c:\work\core\CurrentWork\runtime\artifacts\bin\Microsoft.Interop.SourceGeneration\Debug\netstandard2.0\Microsoft.Interop.SourceGeneration.dll
+  System.Runtime -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Runtime\ref\Debug\net7.0\System.Runtime.dll
+  LibraryImportGenerator -> c:\work\core\CurrentWork\runtime\artifacts\bin\LibraryImportGenerator\Debug\netstandard2.0\Microsoft.Interop.LibraryImportGenerator.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\ref\Debug\net7.0\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\ref\Debug\net462\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\ref\Debug\netstandard2.1\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\ref\Debug\netstandard2.0\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\ref\Debug\net6.0\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\Debug\netstandard2.0\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\Debug\net462\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\Debug\netstandard2.1\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\Debug\net6.0\System.Threading.Tasks.Dataflow.dll
+  System.Threading.Tasks.Dataflow -> c:\work\core\CurrentWork\runtime\artifacts\bin\System.Threading.Tasks.Dataflow\Debug\net7.0\System.Threading.Tasks.Dataflow.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:11.60
