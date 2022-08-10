@@ -1,0 +1,234 @@
+https://github.com/dotnet/runtime/issues/72415
+Also look at https://github.com/dotnet/runtime/pull/72346
+
+PR: https://github.com/dotnet/runtime/pull/73416
+
+Proposal
+https://github.com/dotnet/runtime/issues/72415#issuecomment-1205540035
+
+
+Changes
+ - SDK: Do the check
+    + RuntimePackagePath>@(ResolvedILCompilerPack->'%(PackageDirectory)')</RuntimePackagePath>
+        <Target Name="ProcessFrameworkReferences" BeforeTargets="_CheckForInvalidConfigurationAndPlatform;CollectPackageReferences;CollectPackageDownloads"
+                DependsOnTargets="AddWindowsSdkKnownFrameworkReferences"
+                Condition="'@(FrameworkReference)' != ''">
+
+
+Goals:
+ 1) Get a deep understanding of the Aot Publish Process
+ 2) Clean up the publish Process
+ 3) AOT ILC compiler
+
+
+Resources 
+ - https://github.com/dotnet/installer/pull/13756
+ - https://github.com/dotnet/installer/blob/main/src/redist/targets/GenerateBundledVersions.targets#L383-L388
+ - C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\BuildIntegration
+
+
+Qns:
+ - Should we change the runtime package version? https://github.com/dotnet/sdk/blob/main/src/Layout/toolset-tasks/OverrideAndCreateBundledNETCoreAppPackageVersion.cs#L116-L117
+ - Should we continue to support reference packages on their own
+
+ Approaches:
+  - Understand SDK info contains in runtime repo for ILCompiler packages
+    + pkg dir
+        * [Only via SDK] SDk.props: (src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Sdk.props, <Import Project="Sdk.props" Sdk="Microsoft.DotNet.ILCompiler" />)
+            # if sentinel ILCompilerTargetsPath is empty, initializes AotRuntimePackageLoadedViaSDK and loads the Microsoft.DotNet.ILCompiler.props (sets sentinel, see BuildIntegration below)
+        * [Both SDK (via sdk.props) and nuget (auto)]: 
+            # loads Microsoft.DotNet.ILCompiler.props to set the sentinel ILCompilerTargetsPath
+        * target: GetIlcCompilerFiles (src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.Sdk.targets, <Import Project="$(ILCompilerTargetsPath)" Condition="'$(PublishAot)' == 'true'"/>)
+            # add the required files in 2 item groups
+        * Properties
+            # sets RIDPropsFile (supported Rids)
+    + BuildIntegration
+        * [Both, Nuget-auto, SDK, explicit] Microsoft.DotNet.ILCompiler.props
+            # set the sentinel, ILCompilerTargetsPath, to the full file path to the targets file below
+        * [Both, Nuget-auto, SDK, explicit] Microsoft.DotNet.ILCompiler.targets
+            # Properties (if RuntimeIdentifier not empty)
+                - OSIdentifier, RidWithHyphen, TargetArchitecture, RuntimeIlcPackageName, OSHostArch
+                - IlcHostArch, IlcHostPackageName, IlcCalledViaPackage
+            # Target Name="ImportRuntimeIlcPackageTarget"
+        * 22 Targets
+            # (N)_ComputeManagedAssemblyForILLink->(L)PrepareForILLink->(N)WriteIlcRspFileForCompilation->
+            # (N)IlcCompile->(N)GenerateResFile->(N)LinkNative->(NP)ComputeLinkedFilesToPublish...[]... [Publish]->(NP)CopyNativeBinary
+            # Target order: What is the entry target (and who calls it) and the exist target (who gets called afterwards)
+                - ComputeFilesToPublish (Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Publish.targets)
+                    * has DOT on ILLink (but doesn't get run on AOT)
+                - (PrepareForILLink) Microsoft.NET.ILLink.Tasks\build\Microsoft.NET.ILLink.targets
+                        Set up the default options and inputs to ILLink. Other targets are expected to hook into
+                        this extension point via BeforeTargets/AfterTargets to opt assemblies into or out of trimming
+                        using global ILLink options, or per-assembly IsTrimmable and TrimMode metadata.
+
+                        Note that adding items to or removing items from ManagedAssemblyToLink is unsupported. To change
+                        the set of inputs to the linker, instead use a different extension point to
+                        set PostprocessAssembly metadata on ResolvedFileToPublish.
+                 - (ComputeLinkedFilesToPublish) Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.Publish.targets
+                        This target hooks into the dotnet CLI publish pipeline. That pipeline has
+                        a target called ComputeFilesToPublish which produces the ItemGroup
+                        ResolvedFileToPublish based on the inputs of @(IntermediateAssembly)
+                        and @(ResolvedAssembliesToPublish). We modify those two item groups
+                        to control what gets published after NativeAOT optimizes the application.                    
+                - scratch
+                - ComputeLinkedFilesToPublish
+  - Follow binlog and pre-process steps of the 3 variations of testN (See below)
+    + Follow Reference only
+        * pp
+            # Around 450 targets
+            # Build is the first target (DependsOnTargets empty: BeforeBuild;CoreBuild;AfterBuild)
+            # _PublishBuildAlternative target has a DependsOnTargets on Build
+        * binlog
+            # _CreateAppHost -> CreateAppHost
+            # SetupOSSpecificProps
+            # IlcCompile
+            # LinkNative
+
+Resources:
+ - Evaluation Order: https://docs.microsoft.com/en-us/visualstudio/msbuild/build-process-overview?
+
+
+ -- Repo setup
+ git checkout -b CleanPublishAot
+ Desktop: CurrentWork\runtime
+ Laptop: CurrentWork\SDK
+
+See OneNote, new
+
+Files
+ - Microsoft.NET.Sdk.props
+
+
+Test1: PublishAot => 
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish\test1.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\test1.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\test1.exe
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=false -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish\test1.exe
+
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+    (temp? Not there anymore <PublishAot Condition="'$(PublishAot)' == ''">true</PublishAot>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets
+    (temp? <Import Project="$(ILCompilerTargetsPath)" Condition="'$(PublishAot)' == 'true'"/>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+    (also has <PublishAot Condition="'$(PublishAot)' == ''">true</PublishAot>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.targets
+
+    - ILCompilerTargetsPath
+    - paths 
+        c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+        c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+        
+        Old:c:\cli2\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.targets
+
+        C:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+        Change the sentinel, specifically, change the filename from $(MSBuildThisFileDirectory)Microsoft.DotNet.ILCompiler.targets to $(MSBuildThisFileDirectory)Microsoft.DotNet.ILCompiler.SingleEntry.targets
+        ren Microsoft.DotNet.ILCompiler.targets to Microsoft.DotNet.ILCompiler.SingleEntry.targets
+
+        C:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\Sdk\Sdk.props
+
+
+        c:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.targets
+        c:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.Publish.targets
+    - KnownILCompilerPacks->ILCompilerPackVersion = 7.0.0-rc.1.22380.3
+        = Used = C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22380.3
+
+Test2: Reference and PublishAot => 
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish\test2.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\test2.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\test2.exe
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=false -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish\test2.exe
+
+
+    - ILCompilerTargetsPath = C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.targets
+    - KnownILCompilerPacks->ILCompilerPackVersion = 7.0.0-rc.1.22380.3
+        - Used = C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8
+
+Test3: Just Reference => 
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish\test3.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\test3.exe
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=false -bl & dir C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish\test3.exe
+
+
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.props
+(Removed the PublishAot setting - will not work until the SDK changes are there)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets
+    (temp? <Import Project="$(ILCompilerTargetsPath)" Condition="'$(PublishAot)' == 'true'"/>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+    (also has <PublishAot Condition="'$(PublishAot)' == ''">true</PublishAot>)
+C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+
+
+    - ILCompilerTargetsPath = C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.targets
+    -paths
+        C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.targets
+
+    - KnownILCompilerPacks->ILCompilerPackVersion = 7.0.0-rc.1.22380.3
+    - Used: C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8
+test4: Normal => c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true
+
+Repo: 
+build.cmd & build.cmd clr.aot+libs -rc Debug & Build.cmd clr.alljits+clr.tools+clr.nativeaotlibs+clr.nativeaotruntime+libs+libs.tests -rc Release -lc Release /p:TestNativeAot=true
+pushd src\libraries\System.Collections\tests
+c:\work\Core\CurrentWork\runtime\dotnet.cmd build -c Release /t:Test /p:TestNativeAot=true -bl
+build.cmd -subset host+packs -ci -test -configuration Release  /p:RuntimeArtifactsPath=C:\work\core\CurrentWork\runtime\artifacts\transport\corecl /p:RuntimeConfiguration=release  /p:LibrariesConfiguration=Debug /p:TargetArchitecture=x64 /p:PortableBuild=true /p:SkipTests=False /p:RuntimeFlavor=coreclr  
+
+    paths
+        - Import: C:\Program Files\dotnet\sdk\7.0.100-preview.6.22352.1\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ILCompiler.targets at (1158;3)
+
+C:\work\core\CurrentWork\runtime\artifacts\bin\coreclr\windows.x64.Release\build\Microsoft.DotNet.ILCompiler.targets
+@TODO
+C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\BuildIntegration
+PrivateSdkAssemblies
+WriteIlcRspFileForCompilation
+IlcCompile->ilc
+LinkNative->
+System.Collections.Tests.ilc.rsp
+
+ -- Test setup
+c:\cli\dotnet new console
+
+c:\cli\dotnet add package Microsoft.DotNet.ILCompiler -v 7.0.0-*
+
+c:\cli\dotnet publish -r win-x64 -c Release 
+
+c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true
+
+c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true -bl
+c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true -pp
+
+
+bin\Release\net7.0\win-x64\publish\test
+
+scratch
+ - microsoft.dotnet.ilcompiler - C:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler
+    7.0.100-rc.1.22381.2
+ - runtime.win-x64.microsoft.dotnet.ilcompiler - C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8
+    7.0.0-rc.1.22402.8
+
+
+  <!-- Locate the runtime package according to the current target runtime -->
+  <Target Name="ImportRuntimeIlcPackageTarget" Condition="'$(BuildingFrameworkLibrary)' != 'true' AND $(IlcCalledViaPackage) == 'true'" DependsOnTargets="$(ImportRuntimeIlcPackageTargetDependsOn)" BeforeTargets="Publish">
+    <!-- This targets file is imported by the SDK when the AotRuntimePackageLoadedViaSDK property is set. SDK resolves runtime package paths differently-->
+    <Error Condition="'@(ResolvedILCompilerPack)' == '' AND '$(AotRuntimePackageLoadedViaSDK)' == 'true'" Text="The ResolvedILCompilerPack ItemGroup is required for target ImportRuntimeIlcPackageTarget" />
+    <!-- NativeAOT runtime pack assemblies need to be defined to avoid the default CoreCLR implementations being set as compiler inputs -->
+    <Error Condition="'@(PackageDefinitions)' == '' AND '$(AotRuntimePackageLoadedViaSDK)' != 'true'" Text="The PackageDefinitions ItemGroup is required for target ImportRuntimeIlcPackageTarget" />
+
+
+    <!-- This targets file is imported by the SDK when the AotRuntimePackageLoadedViaSDK property is set. Use the SDK runtime package resolve property to set  down stream properties -->
+    <PropertyGroup Condition="'$(AotRuntimePackageLoadedViaSDK)' == 'true'">
+      <RuntimePackagePath>@(ResolvedILCompilerPack->'%(PackageDirectory)')</RuntimePackagePath>
+      <IlcHostPackagePath>@(ResolvedILCompilerPack->'%(PackageDirectory)')</IlcHostPackagePath>
+      <IlcPath>>@(ResolvedILCompilerPack->'%(PackageDirectory)')</IlcPath>
+    </PropertyGroup>
+
+    <!-- Use the non-SDK runtime package resolve property to set down stream properties if there is an explicit reference in the project -->
+    <PropertyGroup Condition="'$(AotRuntimePackageLoadedViaSDK)' != 'true'">
+      <RuntimePackagePath Condition="'%(PackageDefinitions.Name)' == '$(RuntimeIlcPackageName)'">%(PackageDefinitions.ResolvedPath)</RuntimePackagePath>
+      <IlcHostPackagePath Condition="'%(PackageDefinitions.Name)' == '$(IlcHostPackageName)'">%(PackageDefinitions.ResolvedPath)</IlcHostPackagePath>
+    </PropertyGroup>
+
+  </Target>
+
