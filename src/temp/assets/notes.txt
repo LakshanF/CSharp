@@ -1,0 +1,115 @@
+CleanPublishAot
+
+
+Import: C:\Work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\build\Microsoft.NETCore.Native.targets at (58;3)
+    Import: C:\Work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\build\Microsoft.NETCore.Native.Windows.targets at (276;3)
+    NoImport: $(MSBuildThisFileDirectory)Microsoft.NETCore.Native.Unix.targets at (277;3) false condition; ('$(TargetOS)' != 'windows' was evaluated as 'windows' != 'windows').
+    Import: C:\Work\Core\CurrentWork2\runtime\artifacts\bin\coreclr\windows.x64.Release\build\Microsoft.NETCore.Native.Publish.targets at (376;3)
+
+
+
+/azp run runtime-extra-platforms
+
+[ActiveIssue("https://github.com/dotnet/runtime/issues/1979")]
+
+
+/azp run runtime-extra-platforms
+
+
+
+Test1: PublishAot => 
+..\..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish\test1.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\test1.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\test1.exe
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=false -bl & dir C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test1\bin\Release\net7.0\win-x64\publish\test1.exe
+
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+    (temp? Not there anymore <PublishAot Condition="'$(PublishAot)' == ''">true</PublishAot>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets
+    (temp? <Import Project="$(ILCompilerTargetsPath)" Condition="'$(PublishAot)' == 'true'"/>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+    (also has <PublishAot Condition="'$(PublishAot)' == ''">true</PublishAot>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.targets
+
+    - ILCompilerTargetsPath
+    - paths 
+        c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+        c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+        
+        Old:c:\cli2\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.targets
+
+        C:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+        Change the sentinel, specifically, change the filename from $(MSBuildThisFileDirectory)Microsoft.DotNet.ILCompiler.targets to $(MSBuildThisFileDirectory)Microsoft.DotNet.ILCompiler.SingleEntry.targets
+        ren Microsoft.DotNet.ILCompiler.targets to Microsoft.DotNet.ILCompiler.SingleEntry.targets
+
+        C:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\Sdk\Sdk.props
+
+
+        c:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.targets
+        c:\cli\sdk\7.0.100-rc.1.22381.2\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.Publish.targets
+    - KnownILCompilerPacks->ILCompilerPackVersion = 7.0.0-rc.1.22380.3
+        = Used = C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22380.3
+
+Test2: Reference and PublishAot => 
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish\test2.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\test2.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release /p:PublishAot=true -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\test2.exe
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=false -bl & dir C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test2\bin\Release\net7.0\win-x64\publish\test2.exe
+
+
+    - ILCompilerTargetsPath = C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.targets
+    - KnownILCompilerPacks->ILCompilerPackVersion = 7.0.0-rc.1.22380.3
+        - Used = C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8
+
+Test3: Just Reference => 
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish\test3.exe
+..\..\run.bat & c:\cli\dotnet build -r win-x64 -c Release -bl & dir C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64 & C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\test3.exe
+..\..\run.bat & c:\cli\dotnet publish -r win-x64 -c Release /p:PublishAot=false -bl & dir C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish & C:\work\core\Test\8_1\test3\bin\Release\net7.0\win-x64\publish\test3.exe
+
+
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.props
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.props
+C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.props
+(Removed the PublishAot setting - will not work until the SDK changes are there)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.Sdk.targets
+    (temp? <Import Project="$(ILCompilerTargetsPath)" Condition="'$(PublishAot)' == 'true'"/>)
+c:\cli\sdk\7.0.100-rc.1.22405.5\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+    (also has <PublishAot Condition="'$(PublishAot)' == ''">true</PublishAot>)
+C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets
+
+
+    - ILCompilerTargetsPath = C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.targets
+    -paths
+        C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8\build\Microsoft.DotNet.ILCompiler.targets
+
+    - KnownILCompilerPacks->ILCompilerPackVersion = 7.0.0-rc.1.22380.3
+    - Used: C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.1.22402.8
+
+test4: Normal => 
+..\..\run.bat & c:\cli2\dotnet publish -r win-x64 -c Release & dir C:\work\core\Test\8_1\test4\bin\Release\net6.0\win-x64\publish\ & C:\work\core\Test\8_1\test4\bin\Release\net6.0\win-x64\publish\test4.exe
+[DOES NOT WORK] ..\..\run.bat & c:\cli2\dotnet publish -r win-x64 -c Release /p:PublishAot=true & dir C:\work\core\Test\8_1\test4\bin\Release\net6.0\win-x64\publish\ & C:\work\core\Test\8_1\test4\bin\Release\net6.0\win-x64\publish\test4.exe
+..\..\run.bat & c:\cli2\dotnet publish -r win-arm64 -c Release -bl
+
+..\..\run.bat & c:\cli\dotnet publish -r win-arm64 -c Release -bl
+
+..\..\run.bat & c:\cli\dotnet publish -r win-arm64 -c Release /p:PublishAot=true -bl
+
+
+bin\Release\net7.0\win-arm64\native\test4.exe : fatal error LNK1120: 130 unresolved externals [C:\work\core\Test\8_1\test4\test4.csproj]
+C:\Program Files\dotnet\sdk\7.0.100-preview.6.22352.1\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.targets(342,5): error MSB3073: 
+The command "
+"C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.33.31629\bin\Hostx64\arm64\link.exe"  @"obj\Release\net7.0\win-arm64\native\link.rsp"" exited with code 1120. [C:\work\core\Test\8_1\test4\test4.csproj]
+"C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.33.31629\bin\Hostx64\arm64\link.exe"  @obj\Release\net7.0\win-arm64\native\link.rsp
+
+
+C:\work\core\Test\8_1\test4\obj\Release\net7.0\win-arm64\native\link.rsp
+
+Repo: 
+build.cmd & build.cmd clr.aot+libs -rc Debug & Build.cmd clr.alljits+clr.tools+clr.nativeaotlibs+clr.nativeaotruntime+libs+libs.tests -rc Release -lc Release /p:TestNativeAot=true
+pushd src\libraries\System.Collections\tests
+c:\work\Core\CurrentWork\runtime\dotnet.cmd build -c Release /t:Test /p:TestNativeAot=true -bl
+build.cmd -subset host+packs -ci -test -configuration Release  /p:RuntimeArtifactsPath=C:\work\core\CurrentWork\runtime\artifacts\transport\corecl /p:RuntimeConfiguration=release  /p:LibrariesConfiguration=Debug /p:TargetArchitecture=x64 /p:PortableBuild=true /p:SkipTests=False /p:RuntimeFlavor=coreclr  
+
+    paths
+        - Import: C:\Program Files\dotnet\sdk\7.0.100-preview.6.22352.1\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ILCompiler.targets at (1158;3)
