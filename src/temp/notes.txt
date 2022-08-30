@@ -24,10 +24,13 @@ Options
     b) Use the new ILC, and other related NativeAOT assets to nativeAOT ILC
     c) Point to the AOT ILC location for all future references, including where the pkg is getting to be used
 
+Plan - @TODO
+
 Pre-Reqs (understand first)
  - Packages: How are they build
-    + How is each OfficialBuildRID supported, specifically for aot ilc (linux arm64?)
- - CrossGen: Uses AOT ILC
+    + How is each OfficialBuildRID (via PackageTargetRuntime) supported, specifically for aot ilc (linux arm64?)
+ - CrossGen: Uses AOT ILC, how is that used
+ - ILC: How is it currently build
 
 Investigation - Packages
 [Build]
@@ -42,14 +45,17 @@ Investigation - Packages
  - CoreCLRBuildIntegrationDir = c:\work\core\CurrentWork\runtime\artifacts\bin\coreclr\windows.x64.Debug\build\
     + Has build assets including sdk.props (sets the SDK paths if first loaded))
  - Message: Microsoft.DotNet.ILCompiler -> c:\work\core\CurrentWork\runtime\artifacts\packages\Debug\Shipping\Microsoft.DotNet.ILCompiler.7.0.0-dev.nupkg
+ Microsoft.DotNet.ILCompiler -> C:\Work\Core\CurrentWork\runtime\artifacts\packages\Debug\Shipping\Microsoft.DotNet.ILCompiler.8.0.0-dev.nupkg
     + Contains the build package
 
 [Runtime]
  - c:\work\core\CurrentWork\runtime\artifacts\packages\Debug\Shipping\runtime.win-x64.Microsoft.DotNet.ILCompiler.7.0.0-dev.nupkg
+ - C:\Work\Core\CurrentWork\runtime\artifacts\packages\Debug\Shipping\runtime.linux-arm64.Microsoft.DotNet.ILCompiler.8.0.0-dev.nupkg
+
 
 Task "CreateTrimDependencyGroups" skipped, due to false condition; ('@(FilePackageDependency)' != '' AND '$(PackageTargetRuntime)' == '') was evaluated as ('' != '' AND '' == '').
 
 
-
+ C:\Work\Core\CurrentWork\runtime\artifacts\packages\Debug\Shipping\runtime.win-x64.Microsoft.DotNet.ILCompiler.8.0.0-dev.nupkg
 
 
