@@ -1,0 +1,1 @@
+Obsolete - see https://github.com/LakshanF/CSharp/blob/master/src/aot/experiments/Diagnostics.txt

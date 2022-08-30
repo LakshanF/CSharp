@@ -6,11 +6,17 @@ Goals:
   - https://docs.microsoft.com/en-us/dotnet/core/diagnostics/
 
 
+Local resources:
+ - laptop
+  - C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging
+
+
 A) - Logging
 ..\..\..\..\..\run.bat
 
 C:\work\core\Tools\PerfView.exe
 
+DiagnsoticSource, EventSource
 
 Demo:1:4
 
