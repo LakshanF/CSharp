@@ -1,19 +1,6 @@
-Microsoft.DotNet.ILCompiler.SingleEntry.targets
-https://github.com/dotnet/sdk/tree/release/7.0.1xx-rc1
-GivenThatWeWantToPublishAnAotApp.cs
- public void NativeAot_hw_runs_with_cross_PackageReference_PublishAot_is_enabled(string targetFramework)
-
-
- CommandLineArguments = "C:\work\core\main\sdk\artifacts\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-preview.5.22301.12\tools\\ilc" @"obj\Debug\net7.0\win-arm64\native\HellowWorldNativeAotApp.ilc.rsp"
-CommandLineArguments = "C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\bin\Hostx64\arm64\link.exe" @"obj\Debug\net7.0\win-arm64\native\link.rsp"
-
-
-
-Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets at (1166;3)
-    Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.targets at (60;3)
-        Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.Windows.targets at (278;3)
-        NoImport: $(MSBuildThisFileDirectory)Microsoft.NETCore.Native.Unix.targets at (279;3) false condition; ('$(TargetOS)' != 'windows' was evaluated as 'windows' != 'windows').
-        Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.Publish.targets at (381;3)
+Goals:
+ - Prepare for the meeting with WinForms team, 9/8/22
+ - Understand clearly the big blockers and if a 8.0 solution is feasible
 
 
 ..\..\..\run.bat
@@ -27,17 +14,6 @@ C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Mic
  dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
 
 
-ImplicitAspNetVersions.cs
-
- start "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\devenv.exe" .\sdk.sln
-
-   <data name="AotNoValidRuntimePackageError" xml:space="preserve">
-    <value>NETSDK1183: Unable to optimize assemblies for Ahead of time compilation: a valid runtime package was not found. Either set the PublishAot property to false, or use a supported runtime identifier when publishing. When targeting .NET 7 or higher, make sure to restore packages with the PublishAot property set to true.</value>
-    <comment>{StrBegin="NETSDK1183: "}</comment>
-  </data>
-
-Diagnostics
- ..\..\..\..\run.bat
  
  dotnet publish --self-contained true -r win-x64 -c Release
  dir C:\work\core\Test\8_18\sdk\Diagnostics\Source\bin\Release\net7.0\win-x64\publish\

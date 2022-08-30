@@ -1,3 +1,12 @@
+Goals:
+ - Write up of the current status of Diagnsotics in AOT
+ - Proposal for way forward including 8.0 recommendations
+
+ Resources
+  - https://docs.microsoft.com/en-us/dotnet/core/diagnostics/
+
+
+A) - Logging
 ..\..\..\..\..\run.bat
 
 C:\work\core\Tools\PerfView.exe
@@ -10,6 +19,7 @@ Demo:1:4
 dotnet publish -r win-x64 --self-contained true
 
 C:\work\core\test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish\DotNetTest.exe
+71 MB
 
 C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\PerfView\DotNet
 
@@ -29,6 +39,7 @@ Can see events
 dotnet publish -r win-x64 -c Debug /p:PublishAot=true
 
 C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish\NativeAotTest.exe
+5 MB
 
 C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\PerfView\NativeAOT
 
