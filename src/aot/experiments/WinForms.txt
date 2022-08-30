@@ -1,0 +1,86 @@
+Microsoft.DotNet.ILCompiler.SingleEntry.targets
+https://github.com/dotnet/sdk/tree/release/7.0.1xx-rc1
+GivenThatWeWantToPublishAnAotApp.cs
+ public void NativeAot_hw_runs_with_cross_PackageReference_PublishAot_is_enabled(string targetFramework)
+
+
+ CommandLineArguments = "C:\work\core\main\sdk\artifacts\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-preview.5.22301.12\tools\\ilc" @"obj\Debug\net7.0\win-arm64\native\HellowWorldNativeAotApp.ilc.rsp"
+CommandLineArguments = "C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\bin\Hostx64\arm64\link.exe" @"obj\Debug\net7.0\win-arm64\native\link.rsp"
+
+
+
+Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.DotNet.ILCompiler.SingleEntry.targets at (1166;3)
+    Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.targets at (60;3)
+        Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.Windows.targets at (278;3)
+        NoImport: $(MSBuildThisFileDirectory)Microsoft.NETCore.Native.Unix.targets at (279;3) false condition; ('$(TargetOS)' != 'windows' was evaluated as 'windows' != 'windows').
+        Import: C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.DotNet.ILCompiler\build\Microsoft.NETCore.Native.Publish.targets at (381;3)
+
+
+..\..\..\run.bat
+
+dotnet new winforms
+dotnet publish /p:PublishAot=true -r win-x64 -c Release
+
+176
+C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets
+
+ dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
+
+
+ImplicitAspNetVersions.cs
+
+ start "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\devenv.exe" .\sdk.sln
+
+   <data name="AotNoValidRuntimePackageError" xml:space="preserve">
+    <value>NETSDK1183: Unable to optimize assemblies for Ahead of time compilation: a valid runtime package was not found. Either set the PublishAot property to false, or use a supported runtime identifier when publishing. When targeting .NET 7 or higher, make sure to restore packages with the PublishAot property set to true.</value>
+    <comment>{StrBegin="NETSDK1183: "}</comment>
+  </data>
+
+Diagnostics
+ ..\..\..\..\run.bat
+ 
+ dotnet publish --self-contained true -r win-x64 -c Release
+ dir C:\work\core\Test\8_18\sdk\Diagnostics\Source\bin\Release\net7.0\win-x64\publish\
+ 71 MB
+
+
+ dotnet publish /p:PublishAot=true -r win-x64 -c Release
+ dir C:\work\core\Test\8_18\sdk\Diagnostics\Source\bin\Release\net7.0\win-x64\publish\
+ 5 MB
+RUN OK
+C:\work\core\Test\8_18\runtime>C:\work\core\Test\8_18\sdk\Diagnostics\Source\bin\Release\net7.0\win-x64\publish\Source.exe
+New Listener discovered: System.Net.Http
+Data received: RequestStart: { Url = https://docs.microsoft.com/dotnet/core/diagnostics/ }
+
+dir C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\bin\Release\net7.0\win-x64\publish\
+71 MB
+dotnet-trace collect --providers Demo -- EventSource.exe
+
+PS C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\bin\Release\net7.0\win-x64\publish> dotnet-trace collect --providers Demo -- EventSource.exe    
+
+Provider Name                           Keywords            Level               Enabled By
+Demo                                    0xFFFFFFFFFFFFFFFF  Verbose(5)          --providers
+
+Launching: EventSource.exe
+Process        : C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\bin\Release\net7.0\win-x64\publish\EventSource.exe
+Output File    : C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\bin\Release\net7.0\win-x64\publish\EventSource.exe_20220823_111803.nettrace
+
+[00:00:00:00]   Recording trace 0.00     (B)
+Press <Enter> or <Ctrl+C> to exit...
+
+Trace completed.
+Process exited with code '0'.
+
+PS C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\bin\Release\net7.0\win-x64\publish> dotnet-trace collect --providers Demo -- EventSource.exe
+
+Provider Name                           Keywords            Level               Enabled By
+Demo                                    0xFFFFFFFFFFFFFFFF  Verbose(5)          --providers
+
+Launching: EventSource.exe 
+Unable to start tracing session - the target app failed to connect to the diagnostics port. This may happen if the target application is running .NET Core 3.1 or older versions. Attaching at startup is only available from .NET 5.0 or later.
+[ERROR] System.TimeoutException: The operation has timed out.
+   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(Handler handler, TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/HandleableCollection.cs:line 155
+   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/HandleableCollection.cs:line 130
+   at Microsoft.Diagnostics.NETCore.Client.ReversedDiagnosticsServer.Accept(TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/ReversedServer/ReversedDiagnosticsServer.cs:line 140
+   at Microsoft.Internal.Common.Utils.DiagnosticsClientBuilder.Build(CancellationToken ct, Int32 processId, String diagnosticPort, Boolean showChildIO, Boolean printLaunchCommand) in /_/src/Tools/Common/ReversedServerHelpers/ReversedServerHelpers.cs:line 225
+   at Microsoft.Diagnostics.Tools.Trace.CollectCommandHandler.Collect(CancellationToken ct, IConsole console, Int32 processId, FileInfo output, UInt32 buffersize, String providers, String profile, TraceFileFormat format, TimeSpan duration, String clrevents, String clreventlevel, String name, String diagnosticPort, Boolean showchildio, Boolean resumeRuntime) in /_/src/Tools/dotnet-trace/CommandLine/Commands/CollectCommand.cs:line 167

@@ -1,0 +1,53 @@
+..\..\..\..\..\run.bat
+
+C:\work\core\Tools\PerfView.exe
+
+
+Demo:1:4
+
+1) .NET
+ 
+dotnet publish -r win-x64 --self-contained true
+
+C:\work\core\test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish\DotNetTest.exe
+
+C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\PerfView\DotNet
+
+a) PerfView
+Can See events
+
+b) dotnet-trace
+pushd C:\work\core\test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish
+
+dotnet-trace collect --providers Demo -- DotNetTest.exe
+
+C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish\DotNetTest.exe_20220829_162804.nettrace
+
+Can see events
+
+2) NativeAOT
+dotnet publish -r win-x64 -c Debug /p:PublishAot=true
+
+C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish\NativeAotTest.exe
+
+C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\PerfView\NativeAOT
+
+a) PerfView
+
+Can See events
+
+b) dotnet-trace
+pushd C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish
+
+dotnet-trace collect --providers Demo -- NativeAotTest.exe
+
+Launching: NativeAotTest.exe 
+Unable to start tracing session - the target app failed to connect to the diagnostics port. This may happen if the target application is running .NET Core 3.1 or older versions. Attaching at startup is only available from .NET 5.0 or later.
+[ERROR] System.TimeoutException: The operation has timed out.
+   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(Handler handler, TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/HandleableCollection.cs:line 155
+   at Microsoft.Internal.Common.Utils.DiagnosticsClientBuilder.Build(CancellationToken ct, Int32 processId, String diagnosticPort, Boolean showChildIO, Boolean printLaunchCommand) in /_/src/Tools/Common/ReversedServerHelpers/ReversedServerHelpers.cs:line 0
+   at Microsoft.Diagnostics.Tools.Trace.CollectCommandHandler.Collect(CancellationToken ct, IConsole console, Int32 processId, FileInfo output, UInt32 buffersize, String providers, String profile, TraceFileFormat format, TimeSpan duration, String clrevents, String clreventlevel, String name, String diagnosticPort, Boolean showchildio, Boolean resumeRuntime) in /_/src/Tools/dotnet-trace/CommandLine/Commands/CollectCommand.cs:line 167
+
+3) Dotnet-trace
+https://github.com/dotnet/diagnostics
+c:\work\core\main\diagnostics
