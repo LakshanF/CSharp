@@ -37,6 +37,8 @@ pushd C:\work\core\test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0
 
 dotnet-trace collect --providers Demo -- DotNetTest.exe
 
+collect --providers Demo -- C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish\NativeAotTest.exe
+
 C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish\DotNetTest.exe_20220829_162804.nettrace
 
 Can see events
@@ -58,6 +60,24 @@ pushd C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net
 
 dotnet-trace collect --providers Demo -- NativeAotTest.exe
 
+collect --providers Demo -- C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish\NativeAotTest.exe
+
+PROBABLE CAUSE:
+ - EventPipe is not NativeAOT friendly and dotnet tracing tools (dotnet-trace, counters, gcdump) to not work
+    + https://docs.microsoft.com/en-us/dotnet/core/diagnostics/eventpipe
+      * However, because EventPipe is a runtime built-in component, its scope is limited to managed code and the runtime itself.
+    + It seems to expect the application that is being monitored for trace/logging to be managed (See callstack below)
+      * ReversedDiagnosticsServer.Accept time outs
+        - private readonly HandleableCollection<IpcEndpointInfo> _endpointInfos = new HandleableCollection<IpcEndpointInfo>();
+        - IpcEndpointInfo: Represents a runtine instance connection to a reversed diagnostics server.
+
+POSSIBLE SOLUTION:
+  - Make EventPipe handle nativeaot apps as well
+    + How? https://docs.microsoft.com/en-us/dotnet/core/diagnostics/diagnostics-client-library
+  - Read Diagnostics port
+    + https://docs.microsoft.com/en-us/dotnet/core/diagnostics/diagnostic-port
+      * The .NET Core runtime exposes a service endpoint that allows other processes to send diagnostic commands and receive responses over an IPC channe
+
 Launching: NativeAotTest.exe 
 Unable to start tracing session - the target app failed to connect to the diagnostics port. This may happen if the target application is running .NET Core 3.1 or older versions. Attaching at startup is only available from .NET 5.0 or later.
 [ERROR] System.TimeoutException: The operation has timed out.
@@ -65,6 +85,39 @@ Unable to start tracing session - the target app failed to connect to the diagno
    at Microsoft.Internal.Common.Utils.DiagnosticsClientBuilder.Build(CancellationToken ct, Int32 processId, String diagnosticPort, Boolean showChildIO, Boolean printLaunchCommand) in /_/src/Tools/Common/ReversedServerHelpers/ReversedServerHelpers.cs:line 0
    at Microsoft.Diagnostics.Tools.Trace.CollectCommandHandler.Collect(CancellationToken ct, IConsole console, Int32 processId, FileInfo output, UInt32 buffersize, String providers, String profile, TraceFileFormat format, TimeSpan duration, String clrevents, String clreventlevel, String name, String diagnosticPort, Boolean showchildio, Boolean resumeRuntime) in /_/src/Tools/dotnet-trace/CommandLine/Commands/CollectCommand.cs:line 167
 
+
+System.AggregateException
+  HResult=0x80131500
+  Message=One or more errors occurred. (The operation has timed out.)
+  Source=System.Private.CoreLib
+  StackTrace:
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(Handler handler, TimeSpan timeout) in C:\work\core\main\diagnostics\src\Microsoft.Diagnostics.NETCore.Client\HandleableCollection.cs:line 151
+
+Inner Exception 1:
+TimeoutException: The operation has timed out.
+
+
 3) Dotnet-trace
 https://github.com/dotnet/diagnostics
 c:\work\core\main\diagnostics
+
+
+B) Debugging
+Debug 
+ - VS: debenv -debugexe <pathToNativeAotExe>
+ - Open the source
+ - setup a bp and start debugging (F5)
+
+Observations
+ - Stack (mangled names but reasonable)
+ - Disassebmly has debug symbols
+ - F10, F11, Local Views, virtual methods (FEEFEEFOO)
+ - Not working: Interface calls
+ - Partially working: yield return, state machine
+
+ASK:
+- Dump Debugging: to be comtaible with coreclr
+	* During development, build time debugging experience will be coreclr (nativeaot comes at publish) and that can be sufficient
