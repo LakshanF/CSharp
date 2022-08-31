@@ -56,6 +56,9 @@ a) PerfView
 Can See events
 
 b) dotnet-trace
+https://docs.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-trace
+  Enables the collection of .NET Core traces of a running process without a native profiler.
+
 pushd C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish
 
 dotnet-trace collect --providers Demo -- NativeAotTest.exe
@@ -64,19 +67,20 @@ collect --providers Demo -- C:\work\core\LakshanF\CSharp\src\aot\experiments\Dia
 
 PROBABLE CAUSE:
  - EventPipe is not NativeAOT friendly and dotnet tracing tools (dotnet-trace, counters, gcdump) to not work
+    + EventPipe port to runtime (C++) was started but needs to happen
     + https://docs.microsoft.com/en-us/dotnet/core/diagnostics/eventpipe
       * However, because EventPipe is a runtime built-in component, its scope is limited to managed code and the runtime itself.
     + It seems to expect the application that is being monitored for trace/logging to be managed (See callstack below)
       * ReversedDiagnosticsServer.Accept time outs
         - private readonly HandleableCollection<IpcEndpointInfo> _endpointInfos = new HandleableCollection<IpcEndpointInfo>();
         - IpcEndpointInfo: Represents a runtine instance connection to a reversed diagnostics server.
+  - Read Diagnostics port
+    + https://docs.microsoft.com/en-us/dotnet/core/diagnostics/diagnostic-port
+      * The .NET Core runtime exposes a service endpoint that allows other processes to send diagnostic commands and receive responses over an IPC channe
 
 POSSIBLE SOLUTION:
   - Make EventPipe handle nativeaot apps as well
     + How? https://docs.microsoft.com/en-us/dotnet/core/diagnostics/diagnostics-client-library
-  - Read Diagnostics port
-    + https://docs.microsoft.com/en-us/dotnet/core/diagnostics/diagnostic-port
-      * The .NET Core runtime exposes a service endpoint that allows other processes to send diagnostic commands and receive responses over an IPC channe
 
 Launching: NativeAotTest.exe 
 Unable to start tracing session - the target app failed to connect to the diagnostics port. This may happen if the target application is running .NET Core 3.1 or older versions. Attaching at startup is only available from .NET 5.0 or later.
@@ -100,11 +104,6 @@ Inner Exception 1:
 TimeoutException: The operation has timed out.
 
 
-3) Dotnet-trace
-https://github.com/dotnet/diagnostics
-c:\work\core\main\diagnostics
-
-
 B) Debugging
 Debug 
  - VS: debenv -debugexe <pathToNativeAotExe>
@@ -121,3 +120,10 @@ Observations
 ASK:
 - Dump Debugging: to be comtaible with coreclr
 	* During development, build time debugging experience will be coreclr (nativeaot comes at publish) and that can be sufficient
+
+
+C) Dotnet-trace (AOT it)
+https://github.com/dotnet/diagnostics
+c:\work\core\main\diagnostics
+
+C:\work\core\main\diagnostics\artifacts\bin\dotnet-trace\Release\net7.0\win-x64\publish\dotnet-trace.exe
