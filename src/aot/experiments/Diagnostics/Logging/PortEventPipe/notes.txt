@@ -1,0 +1,41 @@
+Port eventpipe
+
+Exploration
+ - Explore Jan's guidance
+ - Explore Chris's guidance
+ - plan for next step
+
+Temp resources
+ - c:\work\core\CurrentWork3\runtime
+
+--------------------------------------------------------------------------------
+Jan's guidance
+
+Implementation
+https://github.com/dotnet/runtime/tree/main/src/native/eventpipe
+ - c:\work\core\CurrentWork3\runtime\src\native\eventpipe\
+    + 80 files (728K, h (46), c(30))
+    + ep-buffer-manager.c (63K), ep.c (49K)
+    + ep-rt.h (30K), ep-rt.h(11K)
+
+Hook to runtime
+(copy and ifdef coreclr or start from scratch)
+https://github.com/dotnet/runtime/tree/main/src/coreclr/vm/eventing/eventpipe
+ - c:\work\core\CurrentWork3\runtime\src\coreclr\vm\eventing\eventpipe
+    + 7 files (116K, h(5), cpp(1))
+    + ep-rt-coreclr.h(83K), ds-rt-coreclr.h(11K)
+
+
+https://github.com/dotnet/runtime/tree/main/src/mono/mono/eventpipe
+
+--------------------------------------------------------------------------------
+Chris's guidance
+ - get familar with the terminology
+    + resources: binlog, coreclr build, nativeaot build
+ - how does "Runtime.WorkstationGC.lib" get build
+ - add EventPipe assets and understand errors, 
+    + from nativeAOT rt perspective
+    + NativePipe perspective
+
+--------------------------------------------------------------------------------
+Next steps
