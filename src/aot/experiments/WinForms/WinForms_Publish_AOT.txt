@@ -1,0 +1,352 @@
+dotnet new winforms
+dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
+
+Runtime Environment:
+ OS Name:     Windows
+ OS Version:  10.0.22000
+ OS Platform: Windows
+ RID:         win10-x64
+ Base Path:   c:\cli\sdk\7.0.100-rc.2.22457.11\
+
+Directory of C:\Work\Core\LakshanF\CSharp\src\aot\experiments\WinForms\bin\Release\net7.0-windows\win-x64\publish
+
+09/08/2022  08:31 AM    <DIR>          .
+09/08/2022  08:31 AM    <DIR>          ..
+05/06/2022  08:30 AM         4,916,728 D3DCompiler_47_cor3.dll
+08/31/2022  09:31 AM           147,968 PenImc_cor3.dll
+08/19/2022  10:04 AM         1,233,536 PresentationNative_cor3.dll
+08/19/2022  06:43 AM            98,736 vcruntime140_cor3.dll
+09/08/2022  08:31 AM        23,241,216 WinForms.exe
+09/08/2022  08:31 AM        52,178,944 WinForms.pdb
+08/31/2022  09:33 AM         1,948,160 wpfgfx_cor3.dll
+               7 File(s)     83,765,288 bytes
+               2 Dir(s)  1,446,416,019,456 bytes free
+
+--------------BUILD------------------------------
+C:\Work\Core\LakshanF\CSharp\src\aot\experiments\WinForms>c:\cli\dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
+MSBuild version 17.4.0-preview-22451-06+2db11c256 for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+c:\cli\sdk\7.0.100-rc.2.22457.11\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets(219,5): message NETSDK1057: You are using a preview version of .NET. See: https://aka.ms/dotnet-support-policy [C:\Work\Core\LakshanF\CS
+harp\src\aot\experiments\WinForms\WinForms.csproj]
+  WinForms -> C:\Work\Core\LakshanF\CSharp\src\aot\experiments\WinForms\bin\Release\net7.0-windows\win-x64\WinForms.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+  Generating native code
+C:\Users\lakshanf\.nuget\packages\microsoft.windowsdesktop.app.runtime.win-x64\7.0.0-rc.2.22431.6\runtimes\win-x64\lib\net7.0\System.Windows.Forms.Design.dll : warning IL3053: Assembly 'System.Windows.Forms.Design' produced AOT analysis warnings. [C
+:\Work\Core\LakshanF\CSharp\src\aot\experiments\WinForms\WinForms.csproj]
+C:\Users\lakshanf\.nuget\packages\microsoft.windowsdesktop.app.runtime.win-x64\7.0.0-rc.2.22431.6\runtimes\win-x64\lib\net7.0\System.Windows.Forms.dll : warning IL3053: Assembly 'System.Windows.Forms' produced AOT analysis warnings. [C:\Work\Core\La
+kshanF\CSharp\src\aot\experiments\WinForms\WinForms.csproj]
+C:\Users\lakshanf\.nuget\packages\microsoft.windowsdesktop.app.runtime.win-x64\7.0.0-rc.2.22431.6\runtimes\win-x64\lib\net7.0\System.Drawing.Common.dll : warning IL3053: Assembly 'System.Drawing.Common' produced AOT analysis warnings. [C:\Work\Core\
+LakshanF\CSharp\src\aot\experiments\WinForms\WinForms.csproj]
+C:\Users\lakshanf\.nuget\packages\microsoft.windowsdesktop.app.runtime.win-x64\7.0.0-rc.2.22431.6\runtimes\win-x64\lib\net7.0\System.Windows.Forms.Primitives.dll : warning IL3053: Assembly 'System.Windows.Forms.Primitives' produced AOT analysis warn
+ings. [C:\Work\Core\LakshanF\CSharp\src\aot\experiments\WinForms\WinForms.csproj]
+C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.2.22451.11\framework\System.Private.Xml.dll : warning IL3053: Assembly 'System.Private.Xml' produced AOT analysis warnings. [C:\Work\Core\LakshanF\CSharp\src\aot\
+experiments\WinForms\WinForms.csproj]
+C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.2.22451.11\framework\System.Net.Http.dll : warning IL3053: Assembly 'System.Net.Http' produced AOT analysis warnings. [C:\Work\Core\LakshanF\CSharp\src\aot\experi
+ments\WinForms\WinForms.csproj]
+     Creating library bin\Release\net7.0-windows\win-x64\native\WinForms.lib and object bin\Release\net7.0-windows\win-x64\native\WinForms.exp
+  WinForms -> C:\Work\Core\LakshanF\CSharp\src\aot\experiments\WinForms\bin\Release\net7.0-windows\win-x64\publish\
+
+-------------RUN-------------------------------------------------------------------------
+ See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+System.InvalidOperationException: COM Interop requires ComWrapper instance registered for marshalling.
+   at System.Runtime.InteropServices.ComWrappers.ComObjectForInterface(IntPtr) + 0x59
+   at System.Windows.Forms.UnsafeNativeMethods.CreateStdAccessibleObject(HandleRef, Int32, Guid&, Object&) + 0xbb
+   at System.Windows.Forms.AccessibleObject.UseStdAccessibleObjects(IntPtr, Int32) + 0x4a
+   at System.Windows.Forms.Form.CreateAccessibilityInstance() + 0x23
+   at System.Windows.Forms.Control.get_AccessibilityObject() + 0x60
+   at System.Windows.Forms.Control.GetAccessibilityObject(Int32) + 0x14
+   at System.Windows.Forms.Control.WmGetObject(Message&) + 0x84
+   at System.Windows.Forms.Control.WndProc(Message&) + 0x141
+   at System.Windows.Forms.ScrollableControl.WndProc(Message&) + 0xa7
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr, Interop.User32.WM, IntPtr, IntPtr) + 0x70
+
+
+************** Loaded Assemblies **************
+System.Runtime.InteropServices
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Runtime.Serialization.Formatters
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.ComponentModel
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.ComponentModel.EventBasedAsync
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Security.Claims
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Configuration.ConfigurationManager
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Windows.Forms
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Windows.Forms.Primitives
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.IO.Compression
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Private.Reflection.Core
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+Microsoft.Win32.Registry
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Design
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Security.Principal.Windows
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Linq
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Text.RegularExpressions
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Private.Xml
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.ComponentModel.Primitives
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Security.Cryptography
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Private.TypeLoader
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Private.Reflection.Execution
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Drawing
+    Assembly Version: 4.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Diagnostics.FileVersionInfo
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Drawing.Common
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Collections.Concurrent
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Runtime.Numerics
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Private.Uri
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.ServicePoint
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Windows.Forms.Design
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.Requests
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.Http
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.Quic
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.Primitives
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Resources.Writer
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Collections.NonGeneric
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+Accessibility
+    Assembly Version: 4.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.WebHeaderCollection
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.IO.Compression.Brotli
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System
+    Assembly Version: 4.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Diagnostics.DiagnosticSource
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Collections
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Private.CoreLib
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Threading.Channels
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.NetworkInformation
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.Security
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.NameResolution
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.Sockets
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Drawing.Primitives
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Threading
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.CodeDom
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+test1
+    Assembly Version: 1.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Net.WebClient
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Collections.Specialized
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+Microsoft.Win32.SystemEvents
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.Diagnostics.TraceSource
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.ObjectModel
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+System.ComponentModel.TypeConverter
+    Assembly Version: 7.0.0.0
+    Win32 Version: n/a
+    CodeBase: 
+----------------------------------------
+
+************** JIT Debugging **************
+
+
