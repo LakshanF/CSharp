@@ -32,6 +32,12 @@ https://github.com/dotnet/runtime/tree/main/src/mono/mono/eventpipe
 Chris's guidance
  - get familar with the terminology
     + resources: binlog, coreclr build, nativeaot build
+    C:\work\core\CurrentWork3\runtime\src\coreclr\runtime.proj
+    CommandLineArguments = "C:\work\core\CurrentWork3\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows
+[325/638] Building C object mono\mini\CMakeFiles\diagnostics_tracing-objects.dir\C_\work\core\CurrentWork3\runtime\src\native\eventpipe\ep-buffer-manager.c.obj
+running "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --build C:\work\core\CurrentWork3\runtime\src\coreclr\..\..\artifacts\obj\coreclr\windows.x64.Debug --target install --config Debug -- 
+[337/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\UniversalTransitionHelpers.cpp.obj
+
  - how does "Runtime.WorkstationGC.lib" get build
  - add EventPipe assets and understand errors, 
     + from nativeAOT rt perspective
