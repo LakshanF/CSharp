@@ -13,7 +13,7 @@ C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Mic
 
  dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
 
-
+"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\devenv.exe" -debugexe C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\bin\Release\net7.0-windows\win-x64\publish\WinForms.exe
  
  dotnet publish --self-contained true -r win-x64 -c Release
  dir C:\work\core\Test\8_18\sdk\Diagnostics\Source\bin\Release\net7.0\win-x64\publish\

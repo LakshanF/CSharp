@@ -1,0 +1,126 @@
+
+.NET Native IL Compiler 7.0.0.0
+
+usage: ilc [-h] [-r <arg>...] [-o <arg>] [-O] [--Os] [--Ot] [-m <arg>...] [-g] [--gdwarf-5]
+           [--nativelib] [--exportsfile <arg>] [--dgmllog <arg>] [--fulllog] [--scandgmllog <arg>]
+           [--scanfulllog] [--verbose] [--systemmodule <arg>] [--multifile] [--waitfordebugger]
+           [--resilient] [--codegenopt <arg>...] [--rdxml <arg>...] [--descriptor <arg>...]
+           [--map <arg>] [--mstat <arg>] [--metadatalog <arg>] [--nometadatablocking]
+           [--completetypemetadata] [--reflectiondata <arg>] [--scanreflection] [--scan]
+           [--noscan] [--ildump <arg>] [--stacktracedata] [--methodbodyfolding]
+           [--initassembly <arg>...] [--appcontextswitch <arg>...] [--feature <arg>...]
+           [--runtimeopt <arg>...] [--parallelism <arg>] [--instruction-set <arg>] [--guard <arg>]
+           [--preinitstatics] [--nopreinitstatics] [--nowarn <arg>...] [--singlewarn]
+           [--notrimwarn] [--noaotwarn] [--singlewarnassembly <arg>...]
+           [--nosinglewarnassembly <arg>...] [--directpinvoke <arg>...]
+           [--directpinvokelist <arg>...] [--maxgenericcycle <arg>] [--root <arg>...]
+           [--conditionalroot <arg>...] [--trim <arg>...] [--defaultrooting] [--targetarch <arg>]
+           [--targetos <arg>] [--jitpath <arg>] [--singlemethodtypename <arg>]
+           [--singlemethodname <arg>] [--singlemethodgenericarg <arg>...]
+           [--make-repro-path <arg>] [--] <in>...
+
+    -h, --help                           Help message for ILC
+    -r, --reference <arg>...             Reference file(s) for compilation
+    -o, --out <arg>                      Output file path
+    -O                                   Enable optimizations
+    --Os                                 Enable optimizations, favor code space
+    --Ot                                 Enable optimizations, favor code speed
+    -m, --mibc <arg>...                  Mibc file(s) for profile guided optimization
+    -g                                   Emit debugging information
+    --gdwarf-5                           Generate source-level debug information with dwarf
+                                         version 5
+    --nativelib                          Compile as static or shared library
+    --exportsfile <arg>                  File to write exported method definitions
+    --dgmllog <arg>                      Save result of dependency analysis as DGML
+    --fulllog                            Save detailed log of dependency analysis
+    --scandgmllog <arg>                  Save result of scanner dependency analysis as DGML
+    --scanfulllog                        Save detailed log of scanner dependency analysis
+    --verbose                            Enable verbose logging
+    --systemmodule <arg>                 System module name (default: System.Private.CoreLib)
+    --multifile                          Compile only input files (do not compile referenced
+                                         assemblies)
+    --waitfordebugger                    Pause to give opportunity to attach debugger
+    --resilient                          Ignore unresolved types, methods, and assemblies.
+                                         Defaults to false
+    --codegenopt <arg>...                Define a codegen option
+    --rdxml <arg>...                     RD.XML file(s) for compilation
+    --descriptor <arg>...                ILLinkTrim.Descriptor file(s) for compilation
+    --map <arg>                          Generate a map file
+    --mstat <arg>                        Generate an mstat file
+    --metadatalog <arg>                  Generate a metadata log file
+    --nometadatablocking                 Ignore metadata blocking for internal implementation
+                                         details
+    --completetypemetadata               Generate complete metadata for types
+    --reflectiondata <arg>               Reflection data to generate (one of: all, none)
+    --scanreflection                     Scan IL for reflection patterns
+    --scan                               Use IL scanner to generate optimized code (implied by -O)
+    --noscan                             Do not use IL scanner to generate optimized code
+    --ildump <arg>                       Dump IL assembly listing for compiler-generated IL
+    --stacktracedata                     Emit data to support generating stack trace strings at
+                                         runtime
+    --methodbodyfolding                  Fold identical method bodies
+    --initassembly <arg>...              Assembly(ies) with a library initializer
+    --appcontextswitch <arg>...          System.AppContext switches to set (format: 'Key=Value')
+    --feature <arg>...                   Feature switches to apply (format:
+                                         'Namespace.Name=[true|false]'
+    --runtimeopt <arg>...                Runtime options to set
+    --parallelism <arg>                  Maximum number of threads to use during compilation
+    --instruction-set <arg>              Instruction set to allow or disallow
+    --guard <arg>                        Enable mitigations. Options: 'cf': CFG (Control Flow
+                                         Guard, Windows only)
+    --preinitstatics                     Interpret static constructors at compile time if possible
+                                         (implied by -O)
+    --nopreinitstatics                   Do not interpret static constructors at compile time
+    --nowarn <arg>...                    Disable specific warning messages
+    --singlewarn                         Generate single AOT/trimming warning per assembly
+    --notrimwarn                         Disable warnings related to trimming
+    --noaotwarn                          Disable warnings related to AOT
+    --singlewarnassembly <arg>...        Generate single AOT/trimming warning for given assembly
+    --nosinglewarnassembly <arg>...      Expand AOT/trimming warnings for given assembly
+    --directpinvoke <arg>...             PInvoke to call directly
+    --directpinvokelist <arg>...         File with list of PInvokes to call directly
+    --maxgenericcycle <arg>              Max depth of generic cycle
+    --root <arg>...                      Fully generate given assembly
+    --conditionalroot <arg>...           Fully generate given assembly if it's used
+    --trim <arg>...                      Trim the specified assembly
+    --defaultrooting                     Root assemblies that are not marked [IsTrimmable]
+    --targetarch <arg>                   Target architecture for cross compilation
+    --targetos <arg>                     Target OS for cross compilation
+    --jitpath <arg>                      Path to JIT compiler library
+    --singlemethodtypename <arg>         Single method compilation: assembly-qualified name of the
+                                         owning type
+    --singlemethodname <arg>             Single method compilation: name of the method
+    --singlemethodgenericarg <arg>...    Single method compilation: generic arguments to the
+                                         method
+    --make-repro-path <arg>              Path where to place a repro package
+    <in>...                              Input file(s) to compile
+
+Options may be passed on the command line, or via response file. On the command line switch values
+may be specified by passing the option followed by a space followed by the value of the option, or
+by specifying a : between option and switch value. A response file is specified by passing the @
+symbol before the response file name. In a response file all options must be specified on their
+own lines, and only the : syntax for switches is supported.
+
+Use the '--' option to disambiguate between input files that have begin with -- and options. After
+a '--' option, all arguments are considered to be input files. If no input files begin with '--'
+then this option is not necessary.
+
+Valid switches for --targetos are: 'windows', 'linux', 'osx'. The default value is 'windows'
+
+Valid switches for --targetarch are: 'arm', 'arm64', 'x86', 'x64'. The default value is 'x64'
+
+The allowable values for the --instruction-set option are described in the table below. Each
+architecture has a different set of valid instruction sets, and multiple instruction sets may be
+specified by separating the instructions sets by a ','. For example 'avx2,bmi,lzcnt'
+arm: 
+arm64: base, neon, aes, crc, dotprod, rdma, sha1, sha2, lse, rcpc
+x86: base, sse, sse2, sse3, ssse3, sse4.1, sse4.2, avx, avx2, aes, bmi, bmi2, fma, lzcnt, pclmul,
+popcnt, avxvnni, movbe, serialize
+x64: base, sse, sse2, sse3, ssse3, sse4.1, sse4.2, avx, avx2, aes, bmi, bmi2, fma, lzcnt, pclmul,
+popcnt, avxvnni, movbe, serialize
+
+The following CPU names are predefined groups of instruction sets and can be used in
+--instruction-set too:
+x86-x64, x86-x64-v2, x86-x64-v3, skylake, armv8-a, armv8.1-a, armv8.2-a, armv8.3-a, armv8.4-a,
+armv8.5-a, armv8.6-a, apple-m1
+

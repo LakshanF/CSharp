@@ -1,0 +1,4 @@
+Command = "C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.2.22451.11\tools\\ilc" @"obj\Release\net7.0\win-x64\native\HelloWorld.ilc.rsp"
+
+
+IlcSdkPath = C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.2.22451.11\sdk\

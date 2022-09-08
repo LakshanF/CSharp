@@ -48,22 +48,8 @@ ments\WinForms\WinForms.csproj]
   WinForms -> C:\Work\Core\LakshanF\CSharp\src\aot\experiments\WinForms\bin\Release\net7.0-windows\win-x64\publish\
 
 -------------RUN-------------------------------------------------------------------------
- See the end of this message for details on invoking 
-just-in-time (JIT) debugging instead of this dialog box.
-
-************** Exception Text **************
-System.InvalidOperationException: COM Interop requires ComWrapper instance registered for marshalling.
-   at System.Runtime.InteropServices.ComWrappers.ComObjectForInterface(IntPtr) + 0x59
-   at System.Windows.Forms.UnsafeNativeMethods.CreateStdAccessibleObject(HandleRef, Int32, Guid&, Object&) + 0xbb
-   at System.Windows.Forms.AccessibleObject.UseStdAccessibleObjects(IntPtr, Int32) + 0x4a
-   at System.Windows.Forms.Form.CreateAccessibilityInstance() + 0x23
-   at System.Windows.Forms.Control.get_AccessibilityObject() + 0x60
-   at System.Windows.Forms.Control.GetAccessibilityObject(Int32) + 0x14
-   at System.Windows.Forms.Control.WmGetObject(Message&) + 0x84
-   at System.Windows.Forms.Control.WndProc(Message&) + 0x141
-   at System.Windows.Forms.ScrollableControl.WndProc(Message&) + 0xa7
-   at System.Windows.Forms.NativeWindow.Callback(IntPtr, Interop.User32.WM, IntPtr, IntPtr) + 0x70
-
+ 
+ "Hello World"
 
 ************** Loaded Assemblies **************
 System.Runtime.InteropServices
