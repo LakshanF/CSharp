@@ -2,3 +2,35 @@ Command = "C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.il
 
 
 IlcSdkPath = C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.2.22451.11\sdk\
+
+C:\Users\lakshanf\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.0-rc.2.22451.11\runtimes\win-x64\lib\net7.0\WindowsBase.dll
+    FileVersion = 7.0.22.45111
+    DestinationSubPath = WindowsBase.dll
+    NuGetPackageVersion = 7.0.0-rc.2.22451.11
+    PublicKeyToken = 31bf3856ad364e35
+    AssetType = runtime
+    RuntimeIdentifier = win-x64
+    NuGetPackageId = Microsoft.NETCore.App.Runtime.win-x64
+    DropFromSingleFile = 
+    IsTrimmable = 
+    AssemblyVersion = 4.0.0.0
+    CopyLocal = true
+C:\Users\lakshanf\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.0-rc.2.22451.11\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll
+    FileVersion = 7.0.22.45111
+    DestinationSubPath = Microsoft.CSharp.dll
+    NuGetPackageVersion = 7.0.0-rc.2.22451.11
+    PublicKeyToken = b03f5f7f11d50a3a
+    AssetType = runtime
+    RuntimeIdentifier = win-x64
+    NuGetPackageId = Microsoft.NETCore.App.Runtime.win-x64
+    DropFromSingleFile = 
+    IsTrimmable = 
+    AssemblyVersion = 7.0.0.0
+    CopyLocal = true
+
+
+C:\Users\lakshanf\.nuget\packages\runtime.win-x64.microsoft.dotnet.ilcompiler\7.0.0-rc.2.22451.11\sdk\System.Private.CoreLib.dll
+
+
+
+C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.ilcompiler
