@@ -45,3 +45,51 @@ running "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\Commo
 
 --------------------------------------------------------------------------------
 Next steps
+ - how does "Runtime.WorkstationGC.lib" get build
+
+
+Goal: Add NativePipe files to nativeaot build.
+    + specifically, add the files to runtime.workstationGC.lib or *ServerGC.lib
+
+Exploration
+ - How does nativeaot runtime lib gets build?
+
+Runtime.WorkstationGC.dir (somewhat contigous files with few missing numbers)
+[222/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\rhassert.cpp.obj
+...
+FEW Missing like
+    [226/2310] Linking CXX shared library tools\aot\jitinterface\jitinterface_x64.dll
+[316/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
+
+Runtime.ServerGC.dir
+[304/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\rhassert.cpp.obj
+...
+[394/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcsvr.cpp.obj
+
+Runtime.ServerGC.GuardCF.dir
+[383/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\rhassert.cpp.obj
+---
+[470/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\__\__\gc\gcsvr.cpp.obj
+
+
+
+
+    + runtime.proj, target:BuildRuntime, Task: coreclr\build-runtime.cmd" -x64 -debug -os windows
+[135/2310] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\work\core\CurrentWork\runtime\src\native\external\zlib-intel\inflate.c.obj
+AsmOffsets.cpp
+
+[316/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
+[392/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
+[466/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\windows\CoffNativeCodeManager.cpp.obj
+
+ - How does individual files get picked?
+    + Find how mono and coreclr pick the runtime
+
+C:\work\core\CurrentWork3\runtime\src\native\eventpipe\ep-event-payload.c 
+
+
+CommandLineArguments = "C:\work\core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows
+[1910/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
+
+CommandLineArguments = call "C:\work\core\CurrentWork\runtime\eng\native\init-vs-env.cmd" x64 && cd /D "C:\work\core\CurrentWork\runtime\artifacts\obj\mono\windows.x64.Debug\" &&  cmake --build . --target install --config Debug
+[325/638] Building C object mono\mini\CMakeFiles\diagnostics_tracing-objects.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
