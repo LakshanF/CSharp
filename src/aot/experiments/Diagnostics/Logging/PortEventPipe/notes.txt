@@ -1,5 +1,15 @@
 Port eventpipe
 
+Resources
+ - https://github.com/dotnet/runtime/tree/main/src/native/eventpipe
+ - Juan: Virtual Dispatch, Macros
+
+Terminology
+ - RPC, NamedPipe, Sockets
+ - EventPipeEvent (Schema), NS: EventPipeProvier
+ - EventPipeSession (Consumer), Specify events, sinks, int. storage
+ - EventSource->EventSession->Sink->ReadTrace
+
 Exploration
  - Explore Jan's guidance
  - Explore Chris's guidance
@@ -34,11 +44,11 @@ Chris's guidance
     + resources: binlog, coreclr build, nativeaot build
     C:\work\core\CurrentWork3\runtime\src\coreclr\runtime.proj
     CommandLineArguments = "C:\work\core\CurrentWork3\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows
-[325/638] Building C object mono\mini\CMakeFiles\diagnostics_tracing-objects.dir\C_\work\core\CurrentWork3\runtime\src\native\eventpipe\ep-buffer-manager.c.obj
-running "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --build C:\work\core\CurrentWork3\runtime\src\coreclr\..\..\artifacts\obj\coreclr\windows.x64.Debug --target install --config Debug -- 
-[337/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\UniversalTransitionHelpers.cpp.obj
+    CommandLineArguments = "C:\work\core\CurrentWork3\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows -component alljits -component nativeaot
 
  - how does "Runtime.WorkstationGC.lib" get build
+ Qns: How does the --component nativeaot pick up the source files?
+
  - add EventPipe assets and understand errors, 
     + from nativeAOT rt perspective
     + NativePipe perspective
@@ -60,6 +70,15 @@ Runtime.WorkstationGC.dir (somewhat contigous files with few missing numbers)
 FEW Missing like
     [226/2310] Linking CXX shared library tools\aot\jitinterface\jitinterface_x64.dll
 [316/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
+
+NOTE: clr.cot means reduced build
+[229/1028] Linking CXX static library nativeaot\Runtime\Full\Runtime.WorkstationGC.lib
+[391/1028] cmd.exe /C "cd /D C:\work\core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Debug && 
+"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" 
+-DCMAKE_INSTALL_COMPONENT=nativeaot -DBUILD_TYPE=Debug -P C:/work/core/CurrentWork3/runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+
+-- Installing: C:/work/core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Debug/aotsdk/Runtime.WorkstationGC.lib
+
 
 Runtime.ServerGC.dir
 [304/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\rhassert.cpp.obj
@@ -89,7 +108,55 @@ C:\work\core\CurrentWork3\runtime\src\native\eventpipe\ep-event-payload.c
 
 
 CommandLineArguments = "C:\work\core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows
+[1906/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.c.obj
 [1910/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
+[1942/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\ep-rt-coreclr.cpp.obj
 
 CommandLineArguments = call "C:\work\core\CurrentWork\runtime\eng\native\init-vs-env.cmd" x64 && cd /D "C:\work\core\CurrentWork\runtime\artifacts\obj\mono\windows.x64.Debug\" &&  cmake --build . --target install --config Debug
 [325/638] Building C object mono\mini\CMakeFiles\diagnostics_tracing-objects.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
+
+
+
+-------------------------------------------------------------------------------
+ - add EventPipe assets and understand errors, 
+    + c:\work\core\CurrentWork3\runtime\src\native\eventpipe\
+        * ep-buffer-manager.c (63K), ep.c (49K)
+        * C:\work\core\CurrentWork3\runtime\src\native\eventpipe\CMakeLists.txt
+    + c:\work\core\CurrentWork3\runtime\src\coreclr\vm\eventing\eventpipe
+        * ep-rt-coreclr.h(83K), ds-rt-coreclr.h(11K)
+        * C:\work\core\CurrentWork3\runtime\src\coreclr\vm\eventing\eventpipe\CMakeLists.txt
+
+Exploration
+1) Hooking up
+ - C:\work\core\CurrentWork3\runtime\src\native\eventpipe\ep-rt-config.h
+    + defines coreclr files,
+// EventPipe runtime implementation.
+#define EP_RT_H "ep-rt-coreclr.h"
+#define EP_RT_TYPES_H "ep-rt-types-coreclr.h"
+#define EP_RT_CONFIG_H "ep-rt-config-coreclr.h"
+
+// DiagnosticServer runtime implementation.
+#define DS_RT_H "ds-rt-coreclr.h"
+#define DS_RT_TYPES_H "ds-rt-types-coreclr.h"
+
+2) Details for ep-rt.h (common) vs ep-rt-coreclr.h (CoreCLR)
+ - [Common] #define EP_RT_DECLARE_LIST_PREFIX(prefix_name, list_name, list_type, item_type) \
+    + 	static void EP_RT_BUILD_TYPE_FUNC_NAME(prefix_name, list_name, alloc) (list_type *list); \
+ - [CoreCLR] #define EP_RT_DEFINE_LIST_PREFIX(prefix_name, list_name, list_type, item_type) \
+    + 	static inline void EP_RT_BUILD_TYPE_FUNC_NAME(prefix_name, list_name, alloc) (list_type *list) \
+	{ \
+		STATIC_CONTRACT_NOTHROW; \
+		_rt_coreclr_list_alloc<list_type>(list); \
+	} \
+
+    + template<typename LIST_TYPE>
+static
+inline
+void
+_rt_coreclr_list_alloc (LIST_TYPE *list) {
+	STATIC_CONTRACT_NOTHROW;
+	EP_ASSERT (list != NULL);
+
+	list->list = new (nothrow) typename LIST_TYPE::list_type_t ();
+}
+

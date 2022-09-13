@@ -10,3 +10,6 @@
 
 # Binlog files
 *.binlog
+
+# Scratch files
+scratch.txt
