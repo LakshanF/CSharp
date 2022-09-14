@@ -12,4 +12,4 @@
 *.binlog
 
 # Scratch files
-scratch.txt
+scratch*.txt
