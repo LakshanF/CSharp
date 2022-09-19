@@ -1,5 +1,14 @@
 dotnet new winforms
-dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
+
+ - Just AOT
+..\..\run.bat & c:\cli\dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
+ - AOT warnings
+..\..\run.bat & c:\cli\dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true /p:TrimmerSingleWarn=false 
+ - AOT warnings + trimmer warnings
+..\..\run.bat & c:\cli\dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true /p:TrimmerSingleWarn=false /p:SuppressTrimAnalysisWarnings=false
+ - Trimmed + Warnings
+..\..\run.bat & c:\cli\dotnet publish /p:PublishTrimmed=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true --self-contained /p:TrimmerSingleWarn=false /p:SuppressTrimAnalysisWarnings=false
+ - TrimmedSize=38M
 
 Runtime Environment:
  OS Name:     Windows
