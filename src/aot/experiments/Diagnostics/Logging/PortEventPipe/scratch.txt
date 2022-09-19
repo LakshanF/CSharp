@@ -1,0 +1,73 @@
+-------------------------------------------------------------------
+ - How does nativeaot runtime lib gets build?
+    + Looks like CMakeLists.txt control this
+    + See scratch.txt
+
+ Directory of c:\work\core\CurrentWork3\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk
+
+09/19/2022  07:49 AM         9,212,990 Runtime.ServerGC.GuardCF.lib
+09/19/2022  07:49 AM         9,176,824 Runtime.ServerGC.lib
+09/19/2022  07:49 AM         6,797,454 Runtime.WorkstationGC.lib
+               3 File(s)     25,187,268 bytes
+
+ Directory of c:\work\core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full
+
+09/19/2022  07:49 AM         9,212,990 Runtime.ServerGC.GuardCF.lib
+09/19/2022  07:49 AM         9,176,824 Runtime.ServerGC.lib
+09/19/2022  07:49 AM         6,797,454 Runtime.WorkstationGC.lib
+               3 File(s)     25,187,268 bytes
+
+
+Runtime.WorkstationGC.dir (somewhat contigous files with few missing numbers)
+[222/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\rhassert.cpp.obj
+...
+FEW Missing like
+    [226/2310] Linking CXX shared library tools\aot\jitinterface\jitinterface_x64.dll
+[316/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
+
+NOTE: clr.cot means reduced build
+[229/1028] Linking CXX static library nativeaot\Runtime\Full\Runtime.WorkstationGC.lib
+[391/1028] cmd.exe /C "cd /D C:\work\core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Debug && 
+"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" 
+-DCMAKE_INSTALL_COMPONENT=nativeaot -DBUILD_TYPE=Debug -P C:/work/core/CurrentWork3/runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+
+-- Installing: C:/work/core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Debug/aotsdk/Runtime.WorkstationGC.lib
+
+
+Runtime.ServerGC.dir
+[304/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\rhassert.cpp.obj
+...
+[394/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcsvr.cpp.obj
+
+Runtime.ServerGC.GuardCF.dir
+[383/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\rhassert.cpp.obj
+---
+[470/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\__\__\gc\gcsvr.cpp.obj
+
+
+
+
+    + runtime.proj, target:BuildRuntime, Task: coreclr\build-runtime.cmd" -x64 -debug -os windows
+[135/2310] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\work\core\CurrentWork\runtime\src\native\external\zlib-intel\inflate.c.obj
+AsmOffsets.cpp
+
+[316/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
+[392/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
+[466/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\windows\CoffNativeCodeManager.cpp.obj
+
+-------------------------------------------------------------------
+ - How does individual files get picked?
+    + Find how mono and coreclr pick the runtime
+C:\work\core\CurrentWork3\runtime\src\native\eventpipe\ep-event-payload.c 
+
+
+CommandLineArguments = "C:\work\core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows
+[1906/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.c.obj
+[1910/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
+[1942/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\ep-rt-coreclr.cpp.obj
+
+CommandLineArguments = call "C:\work\core\CurrentWork\runtime\eng\native\init-vs-env.cmd" x64 && cd /D "C:\work\core\CurrentWork\runtime\artifacts\obj\mono\windows.x64.Debug\" &&  cmake --build . --target install --config Debug
+[325/638] Building C object mono\mini\CMakeFiles\diagnostics_tracing-objects.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
+
+
+--------------------------
