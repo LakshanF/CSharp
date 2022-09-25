@@ -11,7 +11,7 @@ namespace TrimAll
             return "AnyName";
         }
 
-        public void DoTheTango()
+        public void Run()
         {
             string typeName = ReadName();
             Type.GetType(typeName);

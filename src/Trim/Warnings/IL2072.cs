@@ -13,7 +13,7 @@ namespace TrimAll
             return typeof(IL2072_Reflection);
         }
 
-        public void DoTheTango()
+        public void Run()
         {
             Type ct1 = GetTrimType();
             var c1 = Activator.CreateInstance(ct1);

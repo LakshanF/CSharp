@@ -1,0 +1,27 @@
+﻿using System.Diagnostics.CodeAnalysis;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        Type t1 = GetTypeToCall();
+        TrimmerTest test = new TrimmerTest();
+        test.TestMethod(t1);
+        test.TestMethod(typeof(Program));
+    }
+
+    [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods)]
+    static Type GetTypeToCall()
+    {
+        return typeof(Program);
+    }
+
+}
+
+public class TrimmerTest
+{
+    public void TestMethod([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods)]Type type)
+    {
+        Console.WriteLine(type.GetMethods());
+    }
+}

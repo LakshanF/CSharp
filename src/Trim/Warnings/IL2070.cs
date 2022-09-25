@@ -6,7 +6,7 @@ namespace TrimAll
 {
     public class IL2070
     {
-        public void DoTheTango()
+        public void Run()
         {
             DoThePropertyTango(typeof(IL2070_Reflection));
         }

@@ -16,7 +16,7 @@ namespace TrimAll
             _typeField =  typeof(IL2080_Reflection);
         }
 
-        public void DoTheTango()
+        public void Run()
         {
             GetTrimType();
             TestMethod();

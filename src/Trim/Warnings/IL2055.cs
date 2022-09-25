@@ -12,7 +12,7 @@ namespace TrimAll
             return generic;
         }
 
-        public void DoTheTango()
+        public void Run()
         {
             typeof(IL2055_Reflection<>).MakeGenericType(new Type[] { typeof(IL2055) });
             Type t = GetTheType();

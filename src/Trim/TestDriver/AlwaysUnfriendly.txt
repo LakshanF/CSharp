@@ -1,0 +1,17 @@
+﻿using System.Reflection;
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        TrimmerTest test = new TrimmerTest();
+        test.TestMethod("SomeUnknownType");
+    }
+}
+
+public class TrimmerTest
+{
+    public void TestMethod(string typeName)
+    {
+        Console.WriteLine(Assembly.LoadFrom(typeName));
+    }
+}
