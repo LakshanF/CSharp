@@ -142,7 +142,7 @@ Appraches
         * Directory depth is challenging
 
 2) Add the necessary files in the barest form possible - follow the mono model
- - git clean -xfd & build.cmd -arch x64 -os windows -s clr.aot -c Release -bl
+ - git clean -xfd & cls & build.cmd -arch x64 -os windows -s clr.aot -c Release -bl
  build.cmd -arch x64 -os windows -s Mono.Runtime -c Release -bl
 copy artifacts\log\Release\Build.binlog C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe\binlogs\take_2_Success_NoFiles.binlog
 C:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\eventpipe
