@@ -3,27 +3,15 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        AotTest test = new AotTest();
-        test.TestMethod();
+        TrimmerTest test = new TrimmerTest();
+        test.TestMethod("SomeKnownAssemblyFile");
     }
 }
 
-public class AotTest
+public class TrimmerTest
 {
-    public void TestMethod()
+    public void TestMethod(string assemblyName)
     {
-        Type ex = typeof(ClassWithGenericMethod);
-        Object o1 = Activator.CreateInstance(ex, null);
-        MethodInfo mi = ex.GetMethod("Generic");
-        MethodInfo miConstructed = mi.MakeGenericMethod(typeof(SomeClass));
-        miConstructed.Invoke(o1, null);
+        Console.WriteLine(Assembly.LoadFrom(assemblyName));
     }
 }
-
-public class ClassWithGenericMethod 
-{ 
-    public void Generic<T>()=>Console.WriteLine(typeof(T));
-}
-
-public class SomeClass { }
-
