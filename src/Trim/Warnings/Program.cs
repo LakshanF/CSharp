@@ -17,7 +17,7 @@ namespace TrimAll
                     Object o = Activator.CreateInstance(type);
                     foreach(var m in type.GetMethods())
                     {
-                        if(m.Name.Equals("DoTheTango"))
+                        if(m.Name.Equals("Run"))
                         {
                             m.Invoke(o, null);
                         }

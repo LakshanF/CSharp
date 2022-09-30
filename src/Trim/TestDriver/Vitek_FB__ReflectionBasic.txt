@@ -1,0 +1,23 @@
+﻿using System.Diagnostics.CodeAnalysis;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        TrimmerTest test = new TrimmerTest();
+        test.TestMethod(typeof(Program));
+    }
+
+    public static void M1()
+    {
+    }
+}
+
+public class TrimmerTest
+{
+    public void TestMethod([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods)]Type type)
+    {
+        foreach(var method in type.GetMethods())
+            Console.WriteLine(method.Name);
+    }
+}

@@ -6,7 +6,7 @@ namespace TrimAll
 {
     public class IL2026
     {
-        public void DoTheTango()
+        public void Run()
         {
             Type[] types = typeof(IL2026_Reflection).Assembly.GetTypes();
             Console.WriteLine($"Calling a method with RequiresUnreferencedCodeAttribute {types.Length}");

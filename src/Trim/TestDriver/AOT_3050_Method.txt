@@ -1,0 +1,40 @@
+﻿using System.Reflection;
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        //PrimeTest();
+        AotTest test = new AotTest();
+        test.TestMethod();
+    }
+
+    static void PrimeTest()
+    {
+        ClassWithGenericMethod gen1 = new ClassWithGenericMethod();
+        gen1.Generic<SomeStruct>();
+    }
+}
+
+public class AotTest
+{
+// AOT analysis warning IL3050: Program.<Main>$(String[]): Using member 'System.Type.MakeGenericType(Type[])'
+// which has 'RequiresDynamicCodeAttribute' can break functionality when AOT compiling. The native code for
+// this instantiation might not be available at runtime.
+
+    public void TestMethod()
+    {
+        Type ex = typeof(ClassWithGenericMethod);
+        Object o1 = Activator.CreateInstance(ex, null);
+        MethodInfo mi = ex.GetMethod("Generic");
+        MethodInfo miConstructed = mi.MakeGenericMethod(typeof(SomeStruct));
+        miConstructed.Invoke(o1, null);
+    }
+}
+
+public class ClassWithGenericMethod 
+{ 
+    public void Generic<T>()=>Console.WriteLine(typeof(T));
+}
+
+public struct SomeStruct { }
+

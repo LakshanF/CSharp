@@ -13,7 +13,7 @@ namespace TrimAll
             return generic;
         }
 
-        public void DoTheTango()
+        public void Run()
         {
             Type t = GetTheType();
 

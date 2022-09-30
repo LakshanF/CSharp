@@ -1,0 +1,3 @@
+run.bat & c:\cli\dotnet publish /p:PublishTrimmed=true -r win-x64 -c Debug &  C:\work\core\LakshanF\CSharp\src\Trim\TestDriver\bin\Debug\net7.0\win-x64\publish\TestDriver.exe
+
+run.bat & c:\cli\dotnet publish /p:PublishAot=true -r win-x64 -c Debug &  C:\work\core\LakshanF\CSharp\src\Trim\TestDriver\bin\Debug\net7.0\win-x64\publish\TestDriver.exe

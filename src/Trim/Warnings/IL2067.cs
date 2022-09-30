@@ -13,7 +13,7 @@ namespace TrimAll
             return typeof(IL2067_Reflection);
         }
 
-        public void DoTheTango()
+        public void Run()
         {
             Type ct1 = GetTrimType();
             TestMethod(ct1);

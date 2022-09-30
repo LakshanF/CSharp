@@ -14,7 +14,7 @@ namespace TrimAll
             return typeof(IL2075_Reflection);
         }
 
-        public void DoTheTango()
+        public void Run()
         {
             Type ct1 = GetTrimType();
 
