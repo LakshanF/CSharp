@@ -158,3 +158,22 @@ I) take_1
     b) ??: C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\CMakeLists.txt
         if(ENABLE_PERFTRACING)
 3) Back to CoreCLR! - After talking to Johan
+
+
+-------------------------------------------------------------------------------
+9/29/22 - Post Aaron/Johan meeting
+ + Step_1
+    - add_library_clr: had duplicates, changed the name to have a suffix of "_aot" (build logs upto 4)
+    - add_library: seems a better option. This is the way that aot creates static libs (build logs from 5)
+        + Goal: Get a static library that has the requires source files: common and nativeaot ones
+    - builds but no errors
+ + Step_2
+    - get the files under workstationGC (log file over 20)
+        + challenge with setting shim dir (recongnize the files under there)
+        + src\native\eventpipe\ep-rt-config.h(4): fatal error C1083: Cannot open include file: 'ep-shared-config.h': No such file or directory
+            * C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\configure.cmake
+            * configure_file(${CLR_SRC_NATIVE_DIR}/eventpipe/ep-shared-config.h.in ${EP_GENERATED_HEADER_PATH}/ep-shared-config.h)
+        + src\native\eventpipe\ep-rt-config.h(8): fatal error C1083: Cannot open include file: 'config.h': No such file or directory
+
+
+git clone https://github.com/LakshanF/runtime.git & cd runtime & git remote add upstream https://github.com/dotnet/runtime.git & git checkout -b temp & git branch -D main & git fetch --all & git checkout -b main upstream/main & git pull &  git branch -D temp & git checkout -b AotExp2 & 
