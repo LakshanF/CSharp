@@ -174,6 +174,8 @@ I) take_1
             * C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\configure.cmake
             * configure_file(${CLR_SRC_NATIVE_DIR}/eventpipe/ep-shared-config.h.in ${EP_GENERATED_HEADER_PATH}/ep-shared-config.h)
         + src\native\eventpipe\ep-rt-config.h(8): fatal error C1083: Cannot open include file: 'config.h': No such file or directory
+ + step_3
+    + runtime\artifacts\obj\coreclr\windows.x64.Debug\compile_commands.json
 
 
 git clone https://github.com/LakshanF/runtime.git & cd runtime & git remote add upstream https://github.com/dotnet/runtime.git & git checkout -b temp & git branch -D main & git fetch --all & git checkout -b main upstream/main & git pull &  git branch -D temp & git checkout -b AotExp2 & 
