@@ -1,0 +1,1319 @@
+  Determining projects to restore...
+  Tool 'coverlet.console' (version '3.1.2') was restored. Available commands: coverlet
+  Tool 'dotnet-reportgenerator-globaltool' (version '5.0.2') was restored. Available commands: reportgenerator
+  Tool 'microsoft.dotnet.xharness.cli' (version '1.0.0-prerelease.22456.1') was restored. Available commands: xharness
+  Tool 'microsoft.visualstudio.slngen.tool' (version '8.1.6') was restored. Available commands: slngen
+  Tool 'dotnet-format' (version '6.0.240501') was restored. Available commands: dotnet-format
+  
+  Restore was successful.
+  Restored C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.arcade.sdk\8.0.0-beta.22455.1\tools\Tools.proj (in 208 ms).
+  Determining projects to restore...
+  Restored C:\Work\Core\CurrentWork\runtime\src\libraries\System.Private.CoreLib\ref\System.Private.CoreLib.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.Reflection.ReadyToRun\ILCompiler.Reflection.ReadyToRun.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\runincontext\runincontext.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\libraries\System.Runtime.InteropServices\gen\Microsoft.Interop.SourceGeneration\Microsoft.Interop.SourceGeneration.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\libraries\System.Private.CoreLib\gen\System.Private.CoreLib.Generators.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\runtime.proj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Test.CoreLib\src\Test.CoreLib.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler\repro\repro.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\System.Private.DisabledReflection\src\System.Private.DisabledReflection.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\r2rdump\R2RDump.csproj (in 157 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\dotnet-pgo\dotnet-pgo.csproj (in 171 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\System.Private.Reflection.Execution\src\System.Private.Reflection.Execution.csproj (in 3 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\libraries\System.Runtime.InteropServices\gen\LibraryImportGenerator\LibraryImportGenerator.csproj (in 6 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.DependencyAnalysisFramework\ILCompiler.DependencyAnalysisFramework.csproj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\tieringtest\tieringtest.csproj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler\ILCompiler.csproj (in 17 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\System.Private.TypeLoader\src\System.Private.TypeLoader.csproj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\System.Private.StackTraceMetadata\src\System.Private.StackTraceMetadata.csproj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\tasks.proj (in 4 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\TestExclusionListTasks\TestExclusionListTasks.csproj (in 114 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\WorkloadBuildTasks\WorkloadBuildTasks.csproj (in 86 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\AndroidAppBuilder\AndroidAppBuilder.csproj (in 298 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\WasmBuildTasks\WasmBuildTasks.csproj (in 76 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\Crossgen2Tasks\Crossgen2Tasks.csproj (in 298 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\AppleAppBuilder\AppleAppBuilder.csproj (in 298 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\installer.tasks\installer.tasks.csproj (in 114 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\WasmAppBuilder\WasmAppBuilder.csproj (in 114 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\AotCompilerTask\MonoAOTCompiler.csproj (in 114 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\r2rtest\R2RTest.csproj (in 124 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\System.Private.CoreLib\src\System.Private.CoreLib.csproj (in 3 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\runtime-prereqs.proj (in 4 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\Build.proj (in 5 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.Build.Tasks\ILCompiler.Build.Tasks.csproj (in 1.16 sec).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.TypeSystem\ILCompiler.TypeSystem.csproj (in 989 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.Diagnostics\ILCompiler.Diagnostics.csproj (in 1.17 sec).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.MetadataTransform\ILCompiler.MetadataTransform.csproj (in 1.17 sec).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.ReadyToRun\ILCompiler.ReadyToRun.csproj (in 1.17 sec).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.Compiler\ILCompiler.Compiler.csproj (in 1.18 sec).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\ILCompiler.RyuJit.csproj (in 989 ms).
+  Restored C:\Work\Core\CurrentWork\runtime\src\coreclr\tools\aot\crossgen2\crossgen2.csproj (in 1.56 sec).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\MonoTargetsTasks\ILStrip\AssemblyStripper\AssemblyStripper.csproj (in 1.62 sec).
+  Restored C:\Work\Core\CurrentWork\runtime\src\tasks\MonoTargetsTasks\MonoTargetsTasks.csproj (in 1.6 sec).
+  MonoAOTCompiler -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\MonoAOTCompiler\Debug\net472\MonoAOTCompiler.dll
+  installer.tasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\installer.tasks\Debug\net472\installer.tasks.dll
+  AndroidAppBuilder -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\AndroidAppBuilder\Debug\net7.0\AndroidAppBuilder.dll
+  AppleAppBuilder -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\AppleAppBuilder\Debug\net7.0\AppleAppBuilder.dll
+  WasmBuildTasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\WasmBuildTasks\Debug\net7.0\WasmBuildTasks.dll
+  installer.tasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\installer.tasks\Debug\net7.0\installer.tasks.dll
+  WorkloadBuildTasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\WorkloadBuildTasks\Debug\net7.0\WorkloadBuildTasks.dll
+  WasmAppBuilder -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\WasmAppBuilder\Debug\net472\WasmAppBuilder.dll
+  TestExclusionListTasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\TestExclusionListTasks\Debug\net7.0\TestExclusionListTasks.dll
+  Crossgen2Tasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\Crossgen2Tasks\Debug\net7.0\Crossgen2Tasks.dll
+  AndroidAppBuilder -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\AndroidAppBuilder\Debug\net7.0\publish\
+  MonoAOTCompiler -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\MonoAOTCompiler\Debug\net7.0\MonoAOTCompiler.dll
+  WasmAppBuilder -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\WasmAppBuilder\Debug\net7.0\WasmAppBuilder.dll
+  WasmBuildTasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\WasmBuildTasks\Debug\net7.0\publish\
+  WorkloadBuildTasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\WorkloadBuildTasks\Debug\net7.0\publish\
+  AssemblyStripper -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\AssemblyStripper\Debug\net472\AssemblyStripper.dll
+  AssemblyStripper -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\AssemblyStripper\Debug\net7.0\AssemblyStripper.dll
+  MonoTargetsTasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\MonoTargetsTasks\Debug\net472\MonoTargetsTasks.dll
+  MonoTargetsTasks -> C:\Work\Core\CurrentWork\runtime\artifacts\bin\MonoTargetsTasks\Debug\net7.0\MonoTargetsTasks.dll
+  Executing "C:\Work\Core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -release -os windows -pgodatapath "C:\Users\lakshanf\.nuget\packages\optimization.windows_nt-x64.pgo.coreclr\1.0.0-prerelease.22415.6" -component alljits -component nativeaot
+  BUILD: Starting Build at  5:22:02.13
+  BUILD: Commencing CoreCLR product build
+  BUILD: Checking prerequisites
+  BUILD: Using CMake from C:\Program Files\CMake\bin\cmake.exe
+  BUILD: Number of processor cores 10
+  BUILD: Commencing build of native components for windows.x64.Release
+  BUILD: Using environment: "C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Auxiliary\Build\vcvarsall.bat" amd64
+  **********************************************************************
+  ** Visual Studio 2022 Developer Command Prompt v17.4.0-pre.1.0
+  ** Copyright (c) 2022 Microsoft Corporation
+  **********************************************************************
+  [vcvarsall.bat] Environment initialized for: 'x64'
+  BUILD: Regenerating the Visual Studio solution
+  Calling "C:\Work\Core\CurrentWork\runtime\src\coreclr\..\..\eng\native\gen-buildsys.cmd" "C:\Work\Core\CurrentWork\runtime\src\coreclr" "C:\Work\Core\CurrentWork\runtime\src\coreclr\..\..\artifacts\obj\coreclr\windows.x64.Release" vs2022 x64 "-DCMAKE_BUILD_TYPE=Release" "-DCLR_CMAKE_TARGET_ARCH=x64" "-DCLR_CMAKE_TARGET_OS=windows" "-DCLR_CMAKE_PGO_INSTRUMENT=0" "-DCLR_CMAKE_OPTDATA_PATH="C:\Users\lakshanf\.nuget\packages\optimization.windows_nt-x64.pgo.coreclr\1.0.0-prerelease.22415.6"" "-DCLR_CMAKE_PGO_OPTIMIZE=1" 
+  Not searching for unused variables given on the command line.
+  -- The C compiler identification is MSVC 19.34.31721.0
+  -- The CXX compiler identification is MSVC 19.34.31721.0
+  -- Detecting C compiler ABI info
+  -- Detecting C compiler ABI info - done
+  -- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.34.31721/bin/Hostx64/x64/cl.exe - skipped
+  -- Detecting C compile features
+  -- Detecting C compile features - done
+  -- Detecting CXX compiler ABI info
+  -- Detecting CXX compiler ABI info - done
+  -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.34.31721/bin/Hostx64/x64/cl.exe - skipped
+  -- Detecting CXX compile features
+  -- Detecting CXX compile features - done
+  -- The ASM_MASM compiler identification is MSVC
+  -- Found assembler: C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.34.31721/bin/Hostx64/x64/ml64.exe
+  -- Performing Test HAVE_DIRENT_D_TYPE
+  -- Performing Test HAVE_DIRENT_D_TYPE - Failed
+  -- Looking for getauxval
+  -- Looking for getauxval - not found
+  -- Looking for include file GSS/GSS.h
+  -- Looking for include file GSS/GSS.h - not found
+  -- Looking for accept4
+  -- Looking for accept4 - not found
+  --------laks_debug-------
+  C:/Work/Core/CurrentWork/runtime/artifacts/obj/coreclr/windows.x64.Release/inc
+  --------laks_debug-------
+  --------all-------
+  C:/Work/Core/CurrentWork/runtime/src/coreclr/nativeaot/Runtime/eventpipe/ep-rt-aot.cpp
+  C:/Work/Core/CurrentWork/runtime/src/coreclr/nativeaot/Runtime/eventpipe/ds-rt-aot.h
+  C:/Work/Core/CurrentWork/runtime/src/coreclr/nativeaot/Runtime/eventpipe/ds-rt-types-aot.h
+  C:/Work/Core/CurrentWork/runtime/src/coreclr/nativeaot/Runtime/eventpipe/ep-rt-aot.h
+  C:/Work/Core/CurrentWork/runtime/src/coreclr/nativeaot/Runtime/eventpipe/ep-rt-config-aot.h
+  C:/Work/Core/CurrentWork/runtime/src/coreclr/nativeaot/Runtime/eventpipe/ep-rt-types-aot.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-sources.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-block.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-buffer.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-buffer-manager.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-config.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event-instance.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event-payload.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event-source.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-file.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-json-file.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-metadata-generator.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-provider.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-sample-profiler.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-session.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-session-provider.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-stack-contents.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-stream.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-thread.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-block.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-buffer.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-buffer-manager.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-config.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-config-internals.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event-instance.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event-payload.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event-source.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-file.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-getter-setter.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-ipc-pal-types.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-ipc-pal-types-forward.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-ipc-stream.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-json-file.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-metadata-generator.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-provider.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-provider-internals.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-rt.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-rt-config.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-rt-types.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-sample-profiler.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-session.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-session-provider.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-stack-contents.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-stream.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-thread.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-types.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-types-forward.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-sources.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-dump-protocol.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-eventpipe-protocol.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-ipc.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-process-protocol.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-profiler-protocol.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-protocol.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-server.c
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-dump-protocol.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-eventpipe-protocol.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-getter-setter.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-ipc.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-ipc-pal.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-ipc-pal-types.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-process-protocol.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-profiler-protocol.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-protocol.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-rt.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-rt-config.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-rt-types.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-server.h
+  C:/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-types.h
+  C:/Work/Core/CurrentWork/runtime/artifacts/obj/coreclr/windows.x64.Release/inc/ep-shared-config.h
+  --------all-------
+  --------laks_debug_full-------
+  C:/Work/Core/CurrentWork/runtime/artifacts/obj/coreclr/windows.x64.Release/inc
+  --------laks_debug_full-------
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/utilcode/utilcode.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/utilcode/utilcode.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/utilcode/utilcode.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/jit/clrjit.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/jit/clrjit.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/jit/clrjit.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/jit/clrjit.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/jit/clrjit.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/jit/clrjit.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/vm/vm.natvis
+  Embedding natvis C:/Work/Core/CurrentWork/runtime/src/coreclr/vm/vm.natvis
+  -- Found PythonInterp: C:/Users/lakshanf/AppData/Local/Programs/Python/Python310/python.exe (found version "3.10.2") 
+  Read file version from native version header at 'C:/Work/Core/CurrentWork/runtime/artifacts/obj/_version.h'.
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: C:/Work/Core/CurrentWork/runtime/artifacts/obj/coreclr/windows.x64.Release
+  running "C:\Program Files\CMake\bin\cmake.exe" --build C:\Work\Core\CurrentWork\runtime\src\coreclr\..\..\artifacts\obj\coreclr\windows.x64.Release --target  alljits nativeaot --config Release -- 
+  [1/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\entrypoints.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [2/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\entrypoints.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [3/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_casing.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [4/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_idna.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [5/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_normalization.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [6/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_normalization.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [7/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_idna.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [8/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_locale.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [9/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_casing.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [10/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_localeStringData.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [11/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_locale.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [12/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_calendarData.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [13/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_timeZoneInfo.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [14/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_localeNumberData.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [15/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_timeZoneInfo.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [16/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_localeNumberData.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [17/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_calendarData.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [18/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_localeStringData.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [19/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\compress.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [20/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\adler32.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [21/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\huffman.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [22/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\state.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [23/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\inftrees.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [24/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\crc32.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [25/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\zlib-intel\deflate_medium.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [26/1265] cmd.exe /C "cd /D C:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_COMPONENT=coreclr_misc -DBUILD_TYPE=Release -P C:/Work/Core/CurrentWork/runtime/artifacts/obj/coreclr/windows.x64.Release/cmake_install.cmake"
+  -- Install configuration: "Release"
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corerror.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corprof.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/cfi.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/cor.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/cordebuginfo.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/coredistools.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corhdr.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corinfo.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corjit.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corjithost.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/opcode.def
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/openum.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/gcinfoencoder.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/gcinfotypes.h
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/gcinfo/gcinfoencoder.cpp
+  -- Installing: C:/Work/Core/CurrentWork/runtime/artifacts/bin/coreclr/windows.x64.Release/./SOS_README.md
+  [27/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\inffast.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [28/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\crc_folding.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [29/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\x86.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [30/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\match.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [31/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\zlib-intel\deflate_quick.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [32/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\bit_cost.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [33/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\common\context.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [34/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\common\constants.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [35/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\deflate.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [36/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\inflate.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [37/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\zutil.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [38/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\block_splitter.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [39/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\common\transform.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [40/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\slide_sse.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [41/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\backward_references_hq.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [42/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\bit_reader.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [43/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\common\platform.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [44/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\trees.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [45/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\common\dictionary.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [46/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\fast_log.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [47/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\dictionary_hash.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [48/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\entropy_encode.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [49/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\backward_references.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [50/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_collation.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [51/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\brotli_bit_stream.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [52/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\utf8_util.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [53/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\command.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [54/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\histogram.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [55/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_collation.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [56/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_icushim.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [57/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\literal_cost.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [58/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\memory.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [59/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\compress.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [60/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\cluster.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [61/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\encoder_dict.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [62/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\compress_fragment.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [63/1265] Linking CXX static library libs-native\System.Globalization.Native\System.Globalization.Native.Aot.GuardCF.lib
+  [64/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\adler32.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [65/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\inftrees.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [66/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\inffast.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [67/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\crc32.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [68/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\zlib-intel\deflate_quick.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [69/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\crc_folding.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [70/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\zutil.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [71/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\metablock.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [72/1265] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_icushim.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [73/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\decode.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [74/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\7e525ed8faa4ea998566c0f880affce5\brotli\enc\compress_fragment_two_pass.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [75/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\trees.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [76/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\common\context.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [77/1265] Linking CXX static library libs-native\System.Globalization.Native\System.Globalization.Native.Aot.lib
+  [78/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\static_dict.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [79/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\pal_zlib.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [80/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\x86.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [81/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\zlib-intel\deflate_medium.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [82/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\match.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [83/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\common\transform.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [84/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\common\platform.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [85/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\slide_sse.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [86/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\bit_reader.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [87/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\common\constants.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [88/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\state.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [89/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\deflate.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [90/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\huffman.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [91/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\common\dictionary.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [92/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\zlib-intel\inflate.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [93/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\fast_log.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [94/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\encode.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [95/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\entrypoints.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [96/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\bit_cost.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [97/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\dictionary_hash.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [98/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\memory.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [99/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\entropy_encode.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [100/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\brotli_bit_stream.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [101/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\cluster.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [102/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\literal_cost.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [103/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\command.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [104/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\block_splitter.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [105/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\backward_references_hq.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [106/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\histogram.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [107/1265] Building CXX object tools\aot\jitinterface\CMakeFiles\jitinterface_x64.dir\jithost.cpp.obj
+  [108/1265] Building CXX object tools\aot\jitinterface\CMakeFiles\jitinterface_x64.dir\corinfoexception.cpp.obj
+  [109/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\699cffde6f69a7aca318e535b14d1577\native\external\brotli\enc\encoder_dict.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [110/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\utf8_util.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [111/1265] Linking C static library libs-native\System.IO.Compression.Native\System.IO.Compression.Native.Aot.lib
+  [112/1265] Building CXX object nativeaot\Bootstrap\base\CMakeFiles\bootstrapper.dir\__\main.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [113/1265] Building CXX object tools\aot\jitinterface\CMakeFiles\jitinterface_x64.dir\jitinterface.cpp.obj
+  [114/1265] Building RC object tools\aot\jitinterface\CMakeFiles\jitinterface_x64.dir\Native.rc.res
+  Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+  
+  
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  
+  
+  
+  [115/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\backward_references.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [116/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\metablock.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [117/1265] Generating AsmOffsets.inc
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31721 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  AsmOffsets.cpp
+  [118/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\dec\decode.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [119/1265] Linking CXX static library nativeaot\Bootstrap\base\bootstrapper.lib
+  [120/1265] Building CXX object nativeaot\Bootstrap\dll\CMakeFiles\bootstrapperdll.dir\__\main.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [121/1265] Building CXX object nativeaot\Bootstrap\base\CMakeFiles\bootstrapper.GuardCF.dir\__\main.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [122/1265] Building CXX object nativeaot\Bootstrap\dll\CMakeFiles\bootstrapperdll.GuardCF.dir\__\main.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [123/1265] Building CXX object tools\aot\jitinterface\CMakeFiles\jitinterface_x64.dir\jitwrapper.cpp.obj
+  [124/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\pal_zlib.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [125/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\7e525ed8faa4ea998566c0f880affce5\brotli\enc\compress_fragment_two_pass.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [126/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\71ec4834fc7438a8dcd2385a88b6b91c\external\brotli\enc\compress_fragment.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [127/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-provider.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [128/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-session-provider.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [129/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stack-contents.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [130/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\static_dict.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [131/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-metadata-generator.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [132/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gccommon.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [133/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcscan.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [134/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gchandletable.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [135/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcconfig.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [136/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\Work\Core\CurrentWork\runtime\src\native\external\brotli\enc\encode.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [137/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gceewks.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [138/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-sample-profiler.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [139/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-session.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [140/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-thread.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [141/1265] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\entrypoints.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [142/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [143/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_universal_arm64.dir\arraylist.cpp.obj
+  [144/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_unix_x64.dir\arraylist.cpp.obj
+  [145/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_universal_arm64.dir\simplerhash.cpp.obj
+  [146/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_win_x86.dir\simplerhash.cpp.obj
+  [147/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_universal_arm64.dir\gcinfoencoder.cpp.obj
+  [148/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_unix_x64.dir\simplerhash.cpp.obj
+  [149/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_win_x86.dir\__\gcdump\gcdump.cpp.obj
+  [150/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_win_x64.dir\arraylist.cpp.obj
+  [151/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-ipc-pal-types-forward.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-ipc-pal-types-forward.h
+  [152/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-ipc-pal-types.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-ipc-pal-types.h
+  [153/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-ipc-stream.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-ipc-stream.h
+  [154/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-getter-setter.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-getter-setter.h
+  [155/1265] Building CXX object gcinfo\CMakeFiles\gcinfo_win_x86.dir\__\gcdump\i386\gcdumpx86.cpp.obj
+  [156/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-rt-types.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-rt-types.h
+  [157/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-session-provider.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-session-provider.h
+  [158/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-rt-config.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-rt-config.h
+  [159/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-block.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-block.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-block.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-block.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-block.h
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(201): error C3861: 'ep_rt_val_int16_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(202): error C3861: 'ep_rt_val_uint16_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(203): error C3861: 'ep_rt_val_int32_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(204): error C3861: 'ep_rt_val_uint32_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(205): error C3861: 'ep_rt_val_int64_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(206): error C3861: 'ep_rt_val_uint64_t': identifier not found
+  [160/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-types.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-types.h
+  [161/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [162/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-buffer.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-buffer.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [163/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-event.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [164/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-config.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-config.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-config.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-config.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-config.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [165/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-event-payload.h
+  [166/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-buffer-manager.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-buffer-manager.h
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(25): error C2079: '_EventPipeBufferList::thread_holder' uses undefined struct '_EventPipeThreadHolder'
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(45): error C2440: 'return': cannot convert from 'int *' to 'EventPipeThreadHolder *'
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(45): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(45): error C2440: 'return': cannot convert from 'const int *' to 'const EventPipeThreadHolder *'
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(45): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(52): error C3861: 'ep_thread_holder_get_thread': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(106): error C2079: '_EventPipeBufferManager::rt_wait_event' uses undefined struct '_rt_aot_event_internal_t'
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(148): error C2440: 'return': cannot convert from 'int *' to 'ep_rt_wait_event_handle_t *'
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(148): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(148): error C2440: 'return': cannot convert from 'const int *' to 'const ep_rt_wait_event_handle_t *'
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.h(148): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  [167/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-config-internals.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-config-internals.h
+  [168/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event-source.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-event-source.h
+  [169/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event-instance.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-event-instance.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event-instance.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-event-instance.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-event-instance.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [170/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-file.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-file.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-file.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-file.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-file.h
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(201): error C3861: 'ep_rt_val_int16_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(202): error C3861: 'ep_rt_val_uint16_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(203): error C3861: 'ep_rt_val_int32_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(204): error C3861: 'ep_rt_val_uint32_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(205): error C3861: 'ep_rt_val_int64_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(206): error C3861: 'ep_rt_val_uint64_t': identifier not found
+  [171/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-rt.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-rt.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-rt.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-rt.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-rt.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [172/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-provider.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-provider.h
+  [173/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-provider-internals.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-provider-internals.h
+  [174/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-metadata-generator.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-metadata-generator.h
+  [175/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-json-file.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-json-file.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-json-file.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-json-file.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-json-file.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [176/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-stream.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-stream.h
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(201): error C3861: 'ep_rt_val_int16_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(202): error C3861: 'ep_rt_val_uint16_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(203): error C3861: 'ep_rt_val_int32_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(204): error C3861: 'ep_rt_val_uint32_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(205): error C3861: 'ep_rt_val_int64_t': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stream.h(206): error C3861: 'ep_rt_val_uint64_t': identifier not found
+  [177/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcwks.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [178/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-session.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-session.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-session.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-session.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-session.h
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-thread.h(69): error C3861: 'ep_rt_thread_get_activity_id_cref': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-thread.h(120): error C3861: 'ep_rt_create_activity_id': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-thread.h(128): error C3861: 'ep_rt_thread_get_activity_id_handle': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-thread.h(139): error C3861: 'ep_rt_thread_get_activity_id': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-thread.h(150): error C3861: 'ep_rt_thread_set_activity_id': identifier not found
+  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-session.h(29): error C2079: '_EventPipeSession::rt_thread_shutdown_event' uses undefined struct '_rt_aot_event_internal_t'
+  [179/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stack-contents.h.obj
+  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ep-stack-contents.h.obj 
+  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stack-contents.h.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-stack-contents.h
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-stack-contents.h
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1534): error C2275: 'ep_rt_event_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1548): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1549): error C2275: 'ep_rt_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1672): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1673): error C2275: 'ep_rt_session_provider_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1702): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1703): error C2275: 'ep_rt_sequence_point_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2275: 'ep_rt_thread_list_iterator_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_alloc': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_append': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_aot_list_remove': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_find': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_empty': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1724): error C2065: '_rt_coreclr_list_is_valid': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2065: '_rt_coreclr_list_iterator_begin': undeclared identifier
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_t': expected an expression instead of a type
+  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1725): error C2275: 'ep_rt_thread_session_state_list_iterator_t': expected an expression instead of a type
+  [180/1265] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-sample-profiler.h.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  ep-sample-profiler.h
+  ninja: build stopped: subcommand failed.
+  BUILD: Error: native component build failed. Refer to the build log files for details.
+      "C:\Work\Core\CurrentWork\runtime\src\coreclr\..\..\artifacts\log\Release\CoreCLR_windows__x64__Release__x64.log"
+      "C:\Work\Core\CurrentWork\runtime\src\coreclr\..\..\artifacts\log\Release\CoreCLR_windows__x64__Release__x64.wrn"
+      "C:\Work\Core\CurrentWork\runtime\src\coreclr\..\..\artifacts\log\Release\CoreCLR_windows__x64__Release__x64.err"
+C:\Work\Core\CurrentWork\runtime\src\coreclr\runtime.proj(61,5): error MSB3073: The command ""C:\Work\Core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -release -os windows -pgodatapath "C:\Users\lakshanf\.nuget\packages\optimization.windows_nt-x64.pgo.coreclr\1.0.0-prerelease.22415.6" -component alljits -component nativeaot" exited with code 1.
+
+Build FAILED.
+
+C:\Work\Core\CurrentWork\runtime\src\coreclr\runtime.proj(61,5): error MSB3073: The command ""C:\Work\Core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -release -os windows -pgodatapath "C:\Users\lakshanf\.nuget\packages\optimization.windows_nt-x64.pgo.coreclr\1.0.0-prerelease.22415.6" -component alljits -component nativeaot" exited with code 1.
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:27.72
+Build failed with exit code 1. Check errors above.
+Some builds failed:
+	Configuration: Release, Architecture: x64
