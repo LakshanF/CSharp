@@ -1,95 +1,154 @@
--------------------------------------------------------------------
- - How does nativeaot runtime lib gets build?
-    + Looks like CMakeLists.txt control this
-    + See scratch.txt
-
- Directory of c:\work\core\CurrentWork3\runtime\artifacts\bin\coreclr\windows.x64.Release\aotsdk
-
-09/19/2022  07:49 AM         9,212,990 Runtime.ServerGC.GuardCF.lib
-09/19/2022  07:49 AM         9,176,824 Runtime.ServerGC.lib
-09/19/2022  07:49 AM         6,797,454 Runtime.WorkstationGC.lib
-               3 File(s)     25,187,268 bytes
-
- Directory of c:\work\core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full
-
-09/19/2022  07:49 AM         9,212,990 Runtime.ServerGC.GuardCF.lib
-09/19/2022  07:49 AM         9,176,824 Runtime.ServerGC.lib
-09/19/2022  07:49 AM         6,797,454 Runtime.WorkstationGC.lib
-               3 File(s)     25,187,268 bytes
-
-
-Runtime.WorkstationGC.dir (somewhat contigous files with few missing numbers)
-[222/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\rhassert.cpp.obj
-...
-FEW Missing like
-    [226/2310] Linking CXX shared library tools\aot\jitinterface\jitinterface_x64.dll
-[316/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
-
-NOTE: clr.cot means reduced build
-[229/1028] Linking CXX static library nativeaot\Runtime\Full\Runtime.WorkstationGC.lib
-[391/1028] cmd.exe /C "cd /D C:\work\core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Debug && 
-"C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" 
--DCMAKE_INSTALL_COMPONENT=nativeaot -DBUILD_TYPE=Debug -P C:/work/core/CurrentWork3/runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
-
--- Installing: C:/work/core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Debug/aotsdk/Runtime.WorkstationGC.lib
-
-
-Runtime.ServerGC.dir
-[304/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\rhassert.cpp.obj
-...
-[394/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcsvr.cpp.obj
-
-Runtime.ServerGC.GuardCF.dir
-[383/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\rhassert.cpp.obj
----
-[470/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\__\__\gc\gcsvr.cpp.obj
-
-
-
-
-    + runtime.proj, target:BuildRuntime, Task: coreclr\build-runtime.cmd" -x64 -debug -os windows
-[135/2310] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.GuardCF.dir\C_\work\core\CurrentWork\runtime\src\native\external\zlib-intel\inflate.c.obj
-AsmOffsets.cpp
-
-[316/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
-[392/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\windows\CoffNativeCodeManager.cpp.obj
-[466/2310] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.GuardCF.dir\__\windows\CoffNativeCodeManager.cpp.obj
-
--------------------------------------------------------------------
- - How does individual files get picked?
-    + Find how mono and coreclr pick the runtime
-C:\work\core\CurrentWork3\runtime\src\native\eventpipe\ep-event-payload.c 
-
-
-CommandLineArguments = "C:\work\core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows
-[1906/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-buffer-manager.c.obj
-[1910/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
-[1942/2310] Building CXX object vm\eventing\eventpipe\CMakeFiles\eventpipe_objs.dir\ep-rt-coreclr.cpp.obj
-
-CommandLineArguments = call "C:\work\core\CurrentWork\runtime\eng\native\init-vs-env.cmd" x64 && cd /D "C:\work\core\CurrentWork\runtime\artifacts\obj\mono\windows.x64.Debug\" &&  cmake --build . --target install --config Debug
-[325/638] Building C object mono\mini\CMakeFiles\diagnostics_tracing-objects.dir\C_\work\core\CurrentWork\runtime\src\native\eventpipe\ep-event-payload.c.obj
-
-
---------------------------
-9/29/22 - investigation, CMakeLists.txt in nativeaot
- - error in VM implementation (90)
-add_library_clr(eventpipe_gen_objs OBJECT ${GEN_EVENTPIPE_SOURCES})
-  CMake Error at C:/Work/Core/CurrentWork/runtime/eng/native/functions.cmake:642 (add_library):
-    No SOURCES given to target: eventpipe_gen_objs_aot
-
-
-
-  [21/1057] Building C object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ds-sources.c.obj
-  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork/runtime/src/native/eventpipe/ds-sources.c.obj 
-  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS 
-  -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG 
-  -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB 
-  -IC:\Work\Core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full 
-  -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork\runtime\src\native -IC:\Work\Core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc 
-  -IC:\Work\Core\CurrentWork\runtime\artifacts\obj -IC:\Work\Core\CurrentWork\runtime\src\native\aoteventpipe -IC:\Work\Core\CurrentWork\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS   /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /GL- /O2 -std:c11 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ds-sources.c.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ds-sources.c
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  C:\Work\Core\CurrentWork\runtime\src\native\eventpipe\ep-rt-config.h(4): fatal error C1083: Cannot open include file: 'ep-shared-config.h': No such file or directory
-  [22/1057] Building C object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork\runtime\src\native\eventpipe\ds-dump-protocol.c.obj
-
-
-
+del\buildLog_change_522.log:693:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:704:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:883:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:894:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1066:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1077:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1245:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1256:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1424:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1435:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1603:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1614:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1782:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1793:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1963:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:1974:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:2144:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:2155:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:2327:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:2338:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:2506:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_522.log:2517:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:689:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:700:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:875:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:886:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1062:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1073:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1241:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1252:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1420:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1431:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1599:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1610:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1780:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1791:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1961:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:1972:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:2140:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:2151:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:2319:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:2330:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:2498:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_523.log:2509:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:709:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:720:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:892:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:903:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1071:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1082:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1250:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1261:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1433:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1444:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1612:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1623:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1791:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1802:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1970:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:1981:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2149:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2160:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2328:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2339:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2508:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2519:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2687:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2698:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2866:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(32): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_524.log:2877:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(39): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:589:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:600:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:718:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:729:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:847:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:858:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:969:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:980:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1090:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1101:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1202:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1213:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1320:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1331:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1432:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1443:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1561:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1572:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1694:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1705:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1823:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_525.log:1834:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:582:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:593:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:711:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:722:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:829:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:840:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:964:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:975:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1076:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1087:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1194:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1205:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1323:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1334:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1452:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1463:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1564:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1575:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1693:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_526.log:1704:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-coreclr.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:593:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:604:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:723:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:734:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:848:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:859:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:960:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:971:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1082:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1093:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1215:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1226:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1344:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1355:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1457:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1468:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1575:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1586:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1704:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1715:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1816:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_527.log:1827:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:590:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:601:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:708:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:719:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:837:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:848:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:949:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:960:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1078:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1089:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1193:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1204:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1322:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1333:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1451:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1462:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1584:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1595:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1702:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(34): error C3856: 'SListElem': symbol is not a class template
+del\buildLog_change_529.log:1713:  C:\Work\Core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(41): error C3856: 'SListElem': symbol is not a class template
