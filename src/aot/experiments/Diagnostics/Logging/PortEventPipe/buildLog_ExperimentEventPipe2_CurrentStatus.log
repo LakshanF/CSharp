@@ -19,71 +19,71 @@ dotnet-install: Installation finished
   Tool 'dotnet-format' (version '6.0.240501') was restored. Available commands: dotnet-format
   
   Restore was successful.
-  Restored C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.arcade.sdk\8.0.0-beta.22524.5\tools\Tools.proj (in 319 ms).
+  Restored C:\Users\lakshanf\.nuget\packages\microsoft.dotnet.arcade.sdk\8.0.0-beta.22524.5\tools\Tools.proj (in 447 ms).
   Determining projects to restore...
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\tieringtest\tieringtest.csproj (in 164 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.TypeLoader\src\System.Private.TypeLoader.csproj (in 165 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\SuperFileCheck\SuperFileCheck.csproj (in 165 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Runtime.InteropServices\gen\Microsoft.Interop.SourceGeneration\Microsoft.Interop.SourceGeneration.csproj (in 165 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\runincontext\runincontext.csproj (in 165 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\tasks.proj (in 165 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.DependencyAnalysisFramework\ILCompiler.DependencyAnalysisFramework.csproj (in 164 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Private.CoreLib\ref\System.Private.CoreLib.csproj (in 164 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\r2rdump\R2RDump.csproj (in 165 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Reflection.ReadyToRun\ILCompiler.Reflection.ReadyToRun.csproj (in 164 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.DisabledReflection\src\System.Private.DisabledReflection.csproj (in 164 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.StackTraceMetadata\src\System.Private.StackTraceMetadata.csproj (in 4 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Private.CoreLib\gen\System.Private.CoreLib.Generators.csproj (in 6 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.Reflection.Execution\src\System.Private.Reflection.Execution.csproj (in 3 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Runtime.InteropServices\gen\LibraryImportGenerator\LibraryImportGenerator.csproj (in 6 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.CoreLib\src\System.Private.CoreLib.csproj (in 8 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\repro\repro.csproj (in 12 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\Build.proj (in 3 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\ILCompiler.csproj (in 20 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Test.CoreLib\src\Test.CoreLib.csproj (in 2 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\runtime-prereqs.proj (in 10 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\TestExclusionListTasks\TestExclusionListTasks.csproj (in 38 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\WasmBuildTasks\WasmBuildTasks.csproj (in 254 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\AppleAppBuilder\AppleAppBuilder.csproj (in 254 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\AndroidAppBuilder\AndroidAppBuilder.csproj (in 254 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\Crossgen2Tasks\Crossgen2Tasks.csproj (in 254 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\WorkloadBuildTasks\WorkloadBuildTasks.csproj (in 38 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\WasmAppBuilder\WasmAppBuilder.csproj (in 254 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\AotCompilerTask\MonoAOTCompiler.csproj (in 254 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\installer.tasks\installer.tasks.csproj (in 19 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\runtime.proj (in 3 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\r2rtest\R2RTest.csproj (in 94 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.TypeSystem\ILCompiler.TypeSystem.csproj (in 129 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Diagnostics\ILCompiler.Diagnostics.csproj (in 81 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.ReadyToRun\ILCompiler.ReadyToRun.csproj (in 329 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.MetadataTransform\ILCompiler.MetadataTransform.csproj (in 329 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Compiler\ILCompiler.Compiler.csproj (in 105 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\ILCompiler.RyuJit.csproj (in 128 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Build.Tasks\ILCompiler.Build.Tasks.csproj (in 347 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\dotnet-pgo\dotnet-pgo.csproj (in 418 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\crossgen2\crossgen2.csproj (in 640 ms).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\MonoTargetsTasks\MonoTargetsTasks.csproj (in 1.76 sec).
-  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\MonoTargetsTasks\ILStrip\AssemblyStripper\AssemblyStripper.csproj (in 1.78 sec).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Private.CoreLib\ref\System.Private.CoreLib.csproj (in 191 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.DependencyAnalysisFramework\ILCompiler.DependencyAnalysisFramework.csproj (in 191 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\runincontext\runincontext.csproj (in 191 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\Build.proj (in 191 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Test.CoreLib\src\Test.CoreLib.csproj (in 191 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\ILCompiler.csproj (in 197 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\r2rdump\R2RDump.csproj (in 213 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.Reflection.Execution\src\System.Private.Reflection.Execution.csproj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.DisabledReflection\src\System.Private.DisabledReflection.csproj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\tasks.proj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\SuperFileCheck\SuperFileCheck.csproj (in 233 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\repro\repro.csproj (in 13 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.TypeLoader\src\System.Private.TypeLoader.csproj (in 2 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.StackTraceMetadata\src\System.Private.StackTraceMetadata.csproj (in 3 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Reflection.ReadyToRun\ILCompiler.Reflection.ReadyToRun.csproj (in 40 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\runtime-prereqs.proj (in 70 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Runtime.InteropServices\gen\Microsoft.Interop.SourceGeneration\Microsoft.Interop.SourceGeneration.csproj (in 408 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Runtime.InteropServices\gen\LibraryImportGenerator\LibraryImportGenerator.csproj (in 408 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\System.Private.CoreLib\src\System.Private.CoreLib.csproj (in 18 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\libraries\System.Private.CoreLib\gen\System.Private.CoreLib.Generators.csproj (in 5 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\tieringtest\tieringtest.csproj (in 1 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\AndroidAppBuilder\AndroidAppBuilder.csproj (in 649 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\AppleAppBuilder\AppleAppBuilder.csproj (in 399 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\WasmBuildTasks\WasmBuildTasks.csproj (in 391 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\WorkloadBuildTasks\WorkloadBuildTasks.csproj (in 403 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\Crossgen2Tasks\Crossgen2Tasks.csproj (in 228 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\TestExclusionListTasks\TestExclusionListTasks.csproj (in 423 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\WasmAppBuilder\WasmAppBuilder.csproj (in 357 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\AotCompilerTask\MonoAOTCompiler.csproj (in 394 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\installer.tasks\installer.tasks.csproj (in 342 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\runtime.proj (in 4 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\r2rtest\R2RTest.csproj (in 698 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Build.Tasks\ILCompiler.Build.Tasks.csproj (in 850 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.MetadataTransform\ILCompiler.MetadataTransform.csproj (in 1.02 sec).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.TypeSystem\ILCompiler.TypeSystem.csproj (in 1.02 sec).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.ReadyToRun\ILCompiler.ReadyToRun.csproj (in 1.02 sec).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Diagnostics\ILCompiler.Diagnostics.csproj (in 1.02 sec).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.Compiler\ILCompiler.Compiler.csproj (in 537 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler.RyuJit\ILCompiler.RyuJit.csproj (in 789 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\dotnet-pgo\dotnet-pgo.csproj (in 1.38 sec).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\crossgen2\crossgen2.csproj (in 911 ms).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\MonoTargetsTasks\ILStrip\AssemblyStripper\AssemblyStripper.csproj (in 2.17 sec).
+  Restored C:\Work\Core\CurrentWork3\runtime\src\tasks\MonoTargetsTasks\MonoTargetsTasks.csproj (in 2.32 sec).
+  AssemblyStripper -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AssemblyStripper\Debug\net472\AssemblyStripper.dll
   installer.tasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\installer.tasks\Debug\net472\installer.tasks.dll
+  AssemblyStripper -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AssemblyStripper\Debug\net7.0\AssemblyStripper.dll
   installer.tasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\installer.tasks\Debug\net7.0\installer.tasks.dll
-  WasmBuildTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WasmBuildTasks\Debug\net7.0\WasmBuildTasks.dll
-  AndroidAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AndroidAppBuilder\Debug\net7.0\AndroidAppBuilder.dll
   MonoAOTCompiler -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\MonoAOTCompiler\Debug\net472\MonoAOTCompiler.dll
+  MonoTargetsTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\MonoTargetsTasks\Debug\net472\MonoTargetsTasks.dll
+  WasmBuildTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WasmBuildTasks\Debug\net7.0\WasmBuildTasks.dll
   WorkloadBuildTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WorkloadBuildTasks\Debug\net7.0\WorkloadBuildTasks.dll
-  AppleAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AppleAppBuilder\Debug\net7.0\AppleAppBuilder.dll
+  WasmAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WasmAppBuilder\Debug\net472\WasmAppBuilder.dll
+  WasmAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WasmAppBuilder\Debug\net7.0\WasmAppBuilder.dll
   MonoAOTCompiler -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\MonoAOTCompiler\Debug\net7.0\MonoAOTCompiler.dll
   Crossgen2Tasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\Crossgen2Tasks\Debug\net7.0\Crossgen2Tasks.dll
-  WasmAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WasmAppBuilder\Debug\net472\WasmAppBuilder.dll
-  AndroidAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AndroidAppBuilder\Debug\net7.0\publish\
-  TestExclusionListTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\TestExclusionListTasks\Debug\net7.0\TestExclusionListTasks.dll
   WasmBuildTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WasmBuildTasks\Debug\net7.0\publish\
-  AssemblyStripper -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AssemblyStripper\Debug\net472\AssemblyStripper.dll
-  AssemblyStripper -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AssemblyStripper\Debug\net7.0\AssemblyStripper.dll
-  WasmAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\WasmAppBuilder\Debug\net7.0\WasmAppBuilder.dll
-  MonoTargetsTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\MonoTargetsTasks\Debug\net472\MonoTargetsTasks.dll
+  AndroidAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AndroidAppBuilder\Debug\net7.0\AndroidAppBuilder.dll
   MonoTargetsTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\MonoTargetsTasks\Debug\net7.0\MonoTargetsTasks.dll
+  AndroidAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AndroidAppBuilder\Debug\net7.0\publish\
+  AppleAppBuilder -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\AppleAppBuilder\Debug\net7.0\AppleAppBuilder.dll
+  TestExclusionListTasks -> C:\Work\Core\CurrentWork3\runtime\artifacts\bin\TestExclusionListTasks\Debug\net7.0\TestExclusionListTasks.dll
   Executing "C:\Work\Core\CurrentWork3\runtime\src\coreclr\build-runtime.cmd" -x64 -release -os windows -pgodatapath "C:\Users\lakshanf\.nuget\packages\optimization.windows_nt-x64.pgo.coreclr\1.0.0-prerelease.22511.6" -component alljits -component nativeaot
-  BUILD: Starting Build at 14:35:15.43
+  BUILD: Starting Build at  8:06:55.29
   BUILD: Commencing CoreCLR product build
   BUILD: Checking prerequisites
   BUILD: Using CMake from C:\Program Files\CMake\bin\cmake.exe
@@ -140,54 +140,81 @@ dotnet-install: Installation finished
   [1/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\entrypoints.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [2/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\entrypoints.c.obj
+  [2/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_idna.c.obj
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [3/1057] Generating AsmOffsets.inc
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31721 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  
-  AsmOffsets.cpp
+  [3/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_idna.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
   [4/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_normalization.c.obj
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
   [5/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_normalization.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [6/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_idna.c.obj
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [7/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_casing.c.obj
+  [6/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_casing.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [8/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_calendarData.c.obj
+  [7/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_calendarData.c.obj
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [9/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_locale.c.obj
+  [8/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\entrypoints.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [9/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_casing.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [10/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_localeNumberData.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [11/1057] Generating AsmOffsets.inc
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31721 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  AsmOffsets.cpp
+  [12/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_timeZoneInfo.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [10/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_idna.c.obj
+  [13/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_timeZoneInfo.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [14/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_locale.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [11/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_casing.c.obj
+  [15/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_locale.c.obj
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [12/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_localeStringData.c.obj
+  [16/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_localeNumberData.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [13/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_calendarData.c.obj
+  [17/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_calendarData.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [14/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_timeZoneInfo.c.obj
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [15/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_localeNumberData.c.obj
+  [18/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_localeStringData.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [16/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_timeZoneInfo.c.obj
+  [19/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_localeStringData.c.obj
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [20/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork3\runtime\src\native\external\zlib-intel\compress.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [17/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_localeStringData.c.obj
+  [21/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork3\runtime\src\native\external\zlib-intel\inftrees.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [18/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_locale.c.obj
+  [22/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork3\runtime\src\native\external\zlib-intel\crc32.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [19/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_localeNumberData.c.obj
+  [23/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork3\runtime\src\native\external\zlib-intel\inffast.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [20/1057] cmd.exe /C "cd /D C:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_COMPONENT=coreclr_misc -DBUILD_TYPE=Release -P C:/Work/Core/CurrentWork3/runtime/artifacts/obj/coreclr/windows.x64.Release/cmake_install.cmake"
+  [24/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork3\runtime\src\native\external\zlib-intel\adler32.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [25/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\b8483f6cb1e1e9a119f0ab60fe06acac\native\external\zlib-intel\deflate_quick.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [26/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\b8483f6cb1e1e9a119f0ab60fe06acac\native\external\zlib-intel\crc_folding.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [27/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stack-contents.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [28/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-thread.c.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+  [29/1057] cmd.exe /C "cd /D C:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release && "C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_COMPONENT=coreclr_misc -DBUILD_TYPE=Release -P C:/Work/Core/CurrentWork3/runtime/artifacts/obj/coreclr/windows.x64.Release/cmake_install.cmake"
   -- Install configuration: "Release"
   -- Installing: C:/Work/Core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corerror.h
   -- Installing: C:/Work/Core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/corprof.h
@@ -205,472 +232,215 @@ dotnet-install: Installation finished
   -- Installing: C:/Work/Core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Release/inc/gcinfotypes.h
   -- Installing: C:/Work/Core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Release/gcinfo/gcinfoencoder.cpp
   -- Installing: C:/Work/Core/CurrentWork3/runtime/artifacts/bin/coreclr/windows.x64.Release/./SOS_README.md
-  [21/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-dump-protocol.c.obj
+  [30/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-eventpipe-protocol.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [22/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stack-contents.c.obj
+  [31/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-dump-protocol.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [23/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-protocol.c.obj
+  [32/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-profiler-protocol.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [24/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stream.c.obj
+  [33/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stream.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [25/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c.obj
+  [34/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-ipc.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [26/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-eventpipe-protocol.c.obj
+  [35/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-protocol.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [27/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-thread.c.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [28/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-process-protocol.c.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [29/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-profiler-protocol.c.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [30/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\allocheap.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [31/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-ipc.c.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [32/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\Crst.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [33/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\rhassert.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [34/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\CachedInterfaceDispatch.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [35/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gctoclreventsink.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [36/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\GCHelpers.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [37/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\DebugHeader.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [38/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\MethodTable.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [39/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\EHHelpers.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [40/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\FinalizerHelpers.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [41/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_collation.c.obj
+  [36/1057] Building C object libs-native\System.IO.Compression.Native\CMakeFiles\System.IO.Compression.Native.Aot.dir\C_\Work\Core\CurrentWork3\runtime\src\native\external\zlib-intel\inflate.c.obj
   cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [42/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\event.cpp.obj
+  [37/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [43/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\HandleTableHelpers.cpp.obj
+  [38/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-process-protocol.c.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [44/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_collation.c.obj
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [45/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gcrhscan.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [46/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\GCMemoryHelpers.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [47/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gcheaputilities.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [48/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_icushim.c.obj
-  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [49/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\GcStressControl.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [50/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_icushim.c.obj
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [51/1057] Linking CXX static library libs-native\System.Globalization.Native\System.Globalization.Native.Aot.lib
-  [52/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\profheapwalkhelper.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [53/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\MathHelpers.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [54/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gcrhenv.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [55/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\ObjectLayout.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [56/1057] Linking CXX static library libs-native\System.Globalization.Native\System.Globalization.Native.Aot.GuardCF.lib
-  [57/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\TypeManager.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [58/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\MiscHelpers.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [59/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\RhConfig.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [60/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\RWLock.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [61/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\portable.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [62/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\UniversalTransitionHelpers.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [63/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\RuntimeInstance.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [64/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\stressLog.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [65/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\SyncClean.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [66/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\thread.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [67/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\RestrictedCallouts.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [68/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\threadstore.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
-  cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [69/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-sources.c.obj
+  [39/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-sources.c.obj
   FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.WorkstationGC.dir/C_/Work/Core/CurrentWork3/runtime/src/native/eventpipe/ds-sources.c.obj 
   C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\native -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj -IC:\Work\Core\CurrentWork3\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-sources.c.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-sources.c
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(13): error C3646: 'PTR_AllocHeap': unknown override specifier
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(14): error C2373: 'CObjectHeader': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(14): note: see declaration of 'CObjectHeader'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(14): error C2146: syntax error: missing ';' before identifier 'PTR_CObjectHeader'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(15): error C2373: 'CLREventStatic': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(15): note: see declaration of 'CLREventStatic'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(15): error C2146: syntax error: missing ';' before identifier 'PTR_CLREventStatic'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(16): error C2373: 'CrstHolder': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(16): note: see declaration of 'CrstHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(16): error C2146: syntax error: missing ';' before identifier 'PTR_CrstHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(17): error C2373: 'CrstStatic': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(17): note: see declaration of 'CrstStatic'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(17): error C2146: syntax error: missing ';' before identifier 'PTR_CrstStatic'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(18): error C2373: 'EEMethodInfo': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(18): note: see declaration of 'EEMethodInfo'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(18): error C2146: syntax error: missing ';' before identifier 'PTR_EEMethodInfo'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(19): error C2373: 'EECodeManager': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(19): note: see declaration of 'EECodeManager'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(19): error C2146: syntax error: missing ';' before identifier 'PTR_EECodeManager'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(20): error C2373: 'EEThreadId': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(20): note: see declaration of 'EEThreadId'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(20): error C2146: syntax error: missing ';' before identifier 'PTR_EEThreadId'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(21): error C2373: 'MethodInfo': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(21): note: see declaration of 'MethodInfo'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(21): error C2146: syntax error: missing ';' before identifier 'PTR_MethodInfo'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(22): error C2373: 'Module': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(22): note: see declaration of 'Module'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(22): error C2146: syntax error: missing ';' before identifier 'PTR_Module'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(23): error C2373: 'Object': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(23): note: see declaration of 'Object'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(23): error C2146: syntax error: missing ';' before identifier 'PTR_Object'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(24): error C2373: 'OBJECTHANDLEHolder': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(24): note: see declaration of 'OBJECTHANDLEHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(24): error C2146: syntax error: missing ';' before identifier 'PTR_OBJECTHANDLEHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(25): error C2373: 'PageEntry': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(25): note: see declaration of 'PageEntry'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(25): error C2146: syntax error: missing ';' before identifier 'PTR_PageEntry'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(26): error C2373: 'PAL_EnterHolder': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(26): note: see declaration of 'PAL_EnterHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(26): error C2146: syntax error: missing ';' before identifier 'PTR_PAL_EnterHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(26): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(27): error C2373: 'PAL_LeaveHolder': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(27): note: see declaration of 'PAL_LeaveHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(27): error C2146: syntax error: missing ';' before identifier 'PTR_PAL_LeaveHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(27): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(28): error C2373: 'SpinLock': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(28): note: see declaration of 'SpinLock'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(28): error C2146: syntax error: missing ';' before identifier 'PTR_SpinLock'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(28): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(29): error C2373: 'RCOBJECTHANDLEHolder': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(29): note: see declaration of 'RCOBJECTHANDLEHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(29): error C2146: syntax error: missing ';' before identifier 'PTR_RCOBJECTHANDLEHolder'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(30): error C2373: 'RedhawkGCInterface': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(30): note: see declaration of 'RedhawkGCInterface'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(30): error C2146: syntax error: missing ';' before identifier 'PTR_RedhawkGCInterface'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(30): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(31): error C2373: 'RtuObjectRef': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(31): note: see declaration of 'RtuObjectRef'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(31): error C2146: syntax error: missing ';' before identifier 'PTR_RtuObjectRef'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(32): error C2373: 'RuntimeInstance': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(32): note: see declaration of 'RuntimeInstance'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(32): error C2146: syntax error: missing ';' before identifier 'PTR_RuntimeInstance'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(33): error C2373: 'StackFrameIterator': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(33): note: see declaration of 'StackFrameIterator'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(33): error C2146: syntax error: missing ';' before identifier 'PTR_StackFrameIterator'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(34): error C2373: 'SyncClean': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(34): note: see declaration of 'SyncClean'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(34): error C2146: syntax error: missing ';' before identifier 'PTR_SyncClean'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(34): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(35): error C2373: 'SyncState': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(35): note: see declaration of 'SyncState'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(35): error C2146: syntax error: missing ';' before identifier 'PTR_SyncState'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(35): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(36): error C2373: 'Thread': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(36): note: see declaration of 'Thread'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(36): error C2146: syntax error: missing ';' before identifier 'PTR_Thread'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(36): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(37): error C2373: 'ThreadStore': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(37): note: see declaration of 'ThreadStore'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(37): error C2146: syntax error: missing ';' before identifier 'PTR_ThreadStore'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(50): error C2373: 'EEInterfaceInfo': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(50): note: see declaration of 'EEInterfaceInfo'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(50): error C2146: syntax error: missing ';' before identifier 'PTR_EEInterfaceInfo'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(51): error C2373: 'MethodTable': redefinition; different type modifiers
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(51): note: see declaration of 'MethodTable'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(51): error C2146: syntax error: missing ';' before identifier 'PTR_MethodTable'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h(51): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  [70/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\yieldprocessornormalized.cpp.obj
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(590): error C2220: the following warning is treated as an error
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(590): warning C4091: 'static ': ignored on left of 'size_t' when no variable is declared
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(591): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(838): warning C4091: 'static ': ignored on left of 'size_t' when no variable is declared
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(839): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(843): error C2143: syntax error: missing ')' before ';'
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(843): error C2059: syntax error: ')'
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(843): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(846): warning C4091: 'static ': ignored on left of 'size_t' when no variable is declared
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(847): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1115): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1263): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1264): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1266): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1267): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1278): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1286): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1294): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1303): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1334): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1454): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1491): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1492): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1493): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1503): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1504): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1505): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1515): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1516): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1522): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1523): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1524): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1530): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1531): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1533): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1541): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1563): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1564): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1629): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1654): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1655): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1663): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1684): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1685): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1691): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1692): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1694): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1695): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1696): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1706): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1707): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1709): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1710): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1711): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1726): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1735): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2043): warning C4091: 'inline static ': ignored on left of 'size_t' when no variable is declared
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2045): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2135): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2226): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2232): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2233): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2409): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2424): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2437): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2467): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2498): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2519): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2580): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2597): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2663): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2674): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2724): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2736): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2747): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2752): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2762): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2768): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2798): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2809): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2830): warning C4091: 'inline static ': ignored on left of 'size_t' when no variable is declared
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2832): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2843): error C2143: syntax error: missing ')' before ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2843): error C2059: syntax error: ')'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2844): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2843): error C2086: 'int thread_id': redefinition
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h(843): note: see declaration of 'thread_id'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2845): error C2059: syntax error: 'return'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2846): error C2059: syntax error: '}'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2846): error C2143: syntax error: missing ';' before '}'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2852): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2853): error C2059: syntax error: ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2853): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2854): warning C4508: 'ep_rt_uint64_t_to_thread_id_t': function should return a value; 'void' return type assumed
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2896): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2927): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(2928): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(201): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(252): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(253): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(254): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(264): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(265): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(267): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(268): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(269): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h(270): error C2065: 'STATIC_CONTRACT_NOTHROW': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(80): error C2065: 'LF_DIAGNOSTICS_PORT': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(80): error C2065: 'LL_ERROR': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(80): error C3861: 'STRESS_LOG2': identifier not found
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(90): error C2065: 'LF_DIAGNOSTICS_PORT': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(90): error C2065: 'LL_ERROR': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(90): error C3861: 'STRESS_LOG2': identifier not found
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(99): error C2065: 'LF_DIAGNOSTICS_PORT': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(99): error C2065: 'LL_WARNING': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(99): error C3861: 'STRESS_LOG1': identifier not found
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(112): error C2065: 'LF_DIAGNOSTICS_PORT': undeclared identifier
+  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-server.c(112): fatal error C1003: error count exceeds 100; stopping compilation
+  [40/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\rhassert.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [71/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\StackFrameIterator.cpp.obj
+  [41/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\Crst.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [72/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\startup.cpp.obj
-  FAILED: nativeaot/Runtime/Full/CMakeFiles/Runtime.ServerGC.dir/__/startup.cpp.obj 
-  C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe  /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_SVR_GC -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\native -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj -IC:\Work\Core\CurrentWork3\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\startup.cpp.obj /Fdnativeaot\Runtime\Full\Runtime.ServerGC.pdb /FS -c C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\startup.cpp
+  [42/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\CachedInterfaceDispatch.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(35): error C3856: 'SListElem_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(38): note: see reference to class template instantiation '_rt_aot_list_internal_t<T>' being compiled
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(35): error C2098: unexpected token after data member 'T'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(35): error C2059: syntax error: '>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(36): error C3856: 'SList_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(36): error C2098: unexpected token after data member 'element_type_t'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(36): error C2059: syntax error: '>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(37): error C2143: syntax error: missing ';' before '*'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(37): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(42): error C3856: 'SListElem_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(45): note: see reference to class template instantiation '_rt_aot_queue_internal_t<T>' being compiled
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(42): error C2098: unexpected token after data member 'T'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(42): error C2059: syntax error: '>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(43): error C3856: 'SList_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(43): error C2098: unexpected token after data member 'element_type_t'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(43): error C2059: syntax error: '>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(44): error C2143: syntax error: missing ';' before '*'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(44): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(50): error C3856: 'CQuickArrayList_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(52): note: see reference to class template instantiation '_rt_aot_array_internal_t<T>' being compiled
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(50): error C2098: unexpected token after data member 'T'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(50): error C2059: syntax error: '>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(51): error C2143: syntax error: missing ';' before '*'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(51): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(51): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(68): error C3856: 'SHash_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(71): note: see reference to class template instantiation '_rt_aot_table_default_internal_t<T1,T2>' being compiled
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(68): error C2143: syntax error: missing ';' before '<'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(68): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(70): error C2143: syntax error: missing ';' before '*'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(70): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(70): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(75): error C3856: 'SHash_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(78): note: see reference to class template instantiation '_rt_aot_table_remove_internal_t<T1,T2>' being compiled
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(75): error C2143: syntax error: missing ';' before '<'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(75): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(77): error C2143: syntax error: missing ';' before '*'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(77): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(77): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(80): error C2504: 'NoRemoveSHashTraits_EP': base class undefined
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(80): error C2143: syntax error: missing ',' before '<'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(83): error C2143: syntax error: missing ';' before '<'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(83): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(83): error C2039: 'element_t': is not a member of '`global namespace''
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(83): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(84): error C2059: syntax error: '<'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(84): error C2039: 'count_t': is not a member of '`global namespace''
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(84): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(88): error C2061: syntax error: identifier 'element_t'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(100): error C3646: 'Hash': unknown override specifier
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(100): error C2275: 'EventPipeCoreCLRStackHashTraits::key_t': expected an expression instead of a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(100): error C2146: syntax error: missing ')' before identifier 'k'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(101): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(106): error C3646: 'Null': unknown override specifier
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(106): error C2059: syntax error: ')'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(107): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(111): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(111): error C2143: syntax error: missing ',' before '&'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(91): error C2065: 'e': undeclared identifier
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(113): error C2065: 'e': undeclared identifier
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(113): error C2065: 'e': undeclared identifier
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(119): error C3856: 'SHash_EP': symbol is not a class template
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(122): note: see reference to class template instantiation '_rt_aot_table_custom_internal_t<T1>' being compiled
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(119): error C2098: unexpected token after data member 'T1'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(119): error C2059: syntax error: '>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(121): error C2143: syntax error: missing ';' before '*'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(121): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(121): error C2238: unexpected token(s) preceding ';'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(167): error C3083: 'list_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(167): error C2039: 'Iterator': is not a member of '_rt_aot_list_internal_t<EventPipeEvent *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(164): note: see declaration of '_rt_aot_list_internal_t<EventPipeEvent *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(177): error C3083: 'table_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(177): error C2039: 'Iterator': is not a member of '_rt_aot_table_remove_internal_t<EventPipeEvent *,uint32_t>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(174): note: see declaration of '_rt_aot_table_remove_internal_t<EventPipeEvent *,uint32_t>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(183): error C3083: 'table_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(183): error C2039: 'Iterator': is not a member of '_rt_aot_table_custom_internal_t<EventPipeCoreCLRStackHashTraits>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(180): note: see declaration of '_rt_aot_table_custom_internal_t<EventPipeCoreCLRStackHashTraits>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(193): error C3083: 'list_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(193): error C2039: 'Iterator': is not a member of '_rt_aot_list_internal_t<EventPipeProvider *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(190): note: see declaration of '_rt_aot_list_internal_t<EventPipeProvider *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(216): error C3083: 'list_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(216): error C2039: 'Iterator': is not a member of '_rt_aot_list_internal_t<EventPipeSessionProvider *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(213): note: see declaration of '_rt_aot_list_internal_t<EventPipeSessionProvider *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(226): error C3083: 'list_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(226): error C2039: 'Iterator': is not a member of '_rt_aot_list_internal_t<EventPipeSequencePoint *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(223): note: see declaration of '_rt_aot_list_internal_t<EventPipeSequencePoint *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(236): error C3083: 'list_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(236): error C2039: 'Iterator': is not a member of '_rt_aot_list_internal_t<EventPipeThread *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(233): note: see declaration of '_rt_aot_list_internal_t<EventPipeThread *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(252): error C3083: 'list_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(252): error C2039: 'Iterator': is not a member of '_rt_aot_list_internal_t<EventPipeThreadSessionState *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(249): note: see declaration of '_rt_aot_list_internal_t<EventPipeThreadSessionState *>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(341): error C3083: 'table_type_t': the symbol to the left of a '::' must be a type
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(341): error C2039: 'Iterator': is not a member of '_rt_aot_table_remove_internal_t<EventPipeThreadSessionState *,uint32_t>'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h(338): note: see declaration of '_rt_aot_table_remove_internal_t<EventPipeThreadSessionState *,uint32_t>'
-  C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\excpt.h(23): error C2011: '_EXCEPTION_DISPOSITION': 'enum' type redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(464): note: see declaration of '_EXCEPTION_DISPOSITION'
-  C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\excpt.h(79): warning C4005: 'EXCEPTION_EXECUTE_HANDLER': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(462): note: see previous definition of 'EXCEPTION_EXECUTE_HANDLER'
-  C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\excpt.h(80): warning C4005: 'EXCEPTION_CONTINUE_SEARCH': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(461): note: see previous definition of 'EXCEPTION_CONTINUE_SEARCH'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(193): warning C4005: 'C_ASSERT': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\CommonMacros.h(232): note: see previous definition of 'C_ASSERT'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(664): warning C4005: 'DECLARE_HANDLE': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(102): note: see previous definition of 'DECLARE_HANDLE'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(850): error C2011: '_LARGE_INTEGER': 'union' type redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(82): note: see declaration of '_LARGE_INTEGER'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\guiddef.h(22): error C2011: '_GUID': 'struct' type redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(95): note: see declaration of '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(1186): error C2079: '_OBJECTID::Lineage' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2350): warning C4005: 'UNREFERENCED_PARAMETER': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\CommonMacros.h(253): note: see previous definition of 'UNREFERENCED_PARAMETER'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2496): error C2027: use of undefined type '_LARGE_INTEGER'
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(82): note: see declaration of '_LARGE_INTEGER'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2496): error C2338: static_assert failed: 'Windows headers require the default packing option. Changing this can lead to memory corruption. This diagnostic can be disabled by building with WINDOWS_IGNORE_PACKING_MISMATCH defined.'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2530): warning C4005: 'STATUS_BREAKPOINT': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(471): note: see previous definition of 'STATUS_BREAKPOINT'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2531): warning C4005: 'STATUS_SINGLE_STEP': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(472): note: see previous definition of 'STATUS_SINGLE_STEP'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2535): warning C4005: 'STATUS_ACCESS_VIOLATION': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(473): note: see previous definition of 'STATUS_ACCESS_VIOLATION'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2554): warning C4005: 'STATUS_STACK_OVERFLOW': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(474): note: see previous definition of 'STATUS_STACK_OVERFLOW'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2602): error C2011: '_XSAVE_FORMAT': 'struct' type redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(115): note: see declaration of '_XSAVE_FORMAT'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(2650): error C2079: '_XSAVE_AREA::LegacyState' uses undefined struct '_XSAVE_FORMAT'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(3367): warning C4005: 'YieldProcessor': macro redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\yieldprocessornormalized.h(15): note: see previous definition of 'YieldProcessor'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(3901): error C2011: '_CONTEXT': 'struct' type redefinition
-  C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\excpt.h(49): note: see declaration of '_CONTEXT'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(8877): error C2371: 'EXCEPTION_RECORD': redefinition; different basic types
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(449): note: see declaration of 'EXCEPTION_RECORD'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(8881): error C2011: '_EXCEPTION_RECORD32': 'struct' type redefinition
-  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(442): note: see declaration of '_EXCEPTION_RECORD32'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(8904): error C2011: '_EXCEPTION_POINTERS': 'struct' type redefinition
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(4114): note: see declaration of '_EXCEPTION_POINTERS'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10059): error C2079: '_ACCESS_ALLOWED_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10060): error C2079: '_ACCESS_ALLOWED_OBJECT_ACE::InheritedObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10068): error C2079: '_ACCESS_DENIED_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10069): error C2079: '_ACCESS_DENIED_OBJECT_ACE::InheritedObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10077): error C2079: '_SYSTEM_AUDIT_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10078): error C2079: '_SYSTEM_AUDIT_OBJECT_ACE::InheritedObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10086): error C2079: '_SYSTEM_ALARM_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10087): error C2079: '_SYSTEM_ALARM_OBJECT_ACE::InheritedObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10128): error C2079: '_ACCESS_ALLOWED_CALLBACK_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10129): error C2079: '_ACCESS_ALLOWED_CALLBACK_OBJECT_ACE::InheritedObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10138): error C2079: '_ACCESS_DENIED_CALLBACK_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10139): error C2079: '_ACCESS_DENIED_CALLBACK_OBJECT_ACE::InheritedObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10148): error C2079: '_SYSTEM_AUDIT_CALLBACK_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10149): error C2079: '_SYSTEM_AUDIT_CALLBACK_OBJECT_ACE::InheritedObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10158): error C2079: '_SYSTEM_ALARM_CALLBACK_OBJECT_ACE::ObjectType' uses undefined struct '_GUID'
-  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\winnt.h(10158): fatal error C1003: error count exceeds 100; stopping compilation
-  [73/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gchandletable.cpp.obj
+  [43/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\allocheap.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [74/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcconfig.cpp.obj
+  [44/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\MethodTable.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [75/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gccommon.cpp.obj
+  [45/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\EHHelpers.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [76/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gceventstatus.cpp.obj
+  [46/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\GcStressControl.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [77/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcload.cpp.obj
+  [47/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\DebugHeader.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [78/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gceewks.cpp.obj
+  [48/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\event.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [79/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\handletable.cpp.obj
+  [49/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gctoclreventsink.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [80/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\handletablescan.cpp.obj
+  [50/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\FinalizerHelpers.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [81/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\softwarewritewatch.cpp.obj
+  [51/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\GCHelpers.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [82/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\handletablecache.cpp.obj
+  [52/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gcrhscan.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [83/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\handletablecore.cpp.obj
+  [53/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\HandleTableHelpers.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [84/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcscan.cpp.obj
+  [54/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gcheaputilities.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [85/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\objecthandle.cpp.obj
+  [55/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\GCMemoryHelpers.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [86/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\eventtrace.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  [56/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_collation.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [87/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\windows\PalRedhawkCommon.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  [57/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_collation.c.obj
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [88/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\windows\gcenv.windows.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  [58/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_icushim.c.obj
+  cl : Command line warning D9025 : overriding '/guard:ehcont' with '/guard:cf-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [89/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\windows\PalRedhawkMinWin.cpp.obj
-  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  [59/1057] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.GuardCF.dir\pal_icushim.c.obj
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
-  [90/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\__\__\gc\gcwks.cpp.obj
+  [60/1057] Building CXX object nativeaot\Runtime\Full\CMakeFiles\Runtime.ServerGC.dir\__\gcrhenv.cpp.obj
   cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
   cl : Command line warning D9025 : overriding '/GL' with '/GL-'
   ninja: build stopped: subcommand failed.
@@ -686,7 +456,7 @@ C:\Work\Core\CurrentWork3\runtime\src\coreclr\runtime.proj(61,5): error MSB3073:
     0 Warning(s)
     1 Error(s)
 
-Time Elapsed 00:00:26.98
+Time Elapsed 00:00:25.88
 Build failed with exit code 1. Check errors above.
 Some builds failed:
 	Configuration: Release, Architecture: x64
