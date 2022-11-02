@@ -1,0 +1,193 @@
+C:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release>C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.317\bin\Hostx64\x64\cl.exe /d1PP /P /nologo /TP -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DNDEBUG -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Retail -DVERIFY_HEAP -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\native -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj -IC:\Work\Core\CurrentWork3\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /O2 /Ob2 /DNDEBUG -MT /Ox /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /GL /EHa /EHa- /EHs- /GL- /O2 /showIncludes /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-sources.c.obj /Fdnativeaot\Runtime\Full\Runtime.WorkstationGC.pdb /FS -c C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-sources.c
+cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+cl : Command line warning D9025 : overriding '/GL' with '/GL-'
+ep-sources.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt-config.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release\nativeaot\Runtime\Full\../../../inc/ep-shared-config.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\coreclr\gc\env\common.h
+Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\stdint.h
+Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\vcruntime.h
+Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\sal.h
+Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\concurrencysal.h
+Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\vadefs.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\stddef.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\stdio.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wstdio.h
+Note: including file:     C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_stdio_config.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\stdlib.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_malloc.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_search.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wstdlib.h
+Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\limits.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\string.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_memory.h
+Note: including file:     C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_memcpy_s.h
+Note: including file:      C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\errno.h
+Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\vcruntime_string.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wstring.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\wchar.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wconio.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wctype.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wdirect.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wio.h
+Note: including file:     C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_share.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wprocess.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wtime.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\sys/stat.h
+Note: including file:     C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\sys/types.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\assert.h
+Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\stdarg.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\memory.h
+Note: including file:   C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\new
+Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\yvals_core.h
+Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\xkeycheck.h
+Note: including file:    C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\exception
+Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\yvals.h
+Note: including file:      C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\crtdbg.h
+Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\vcruntime_new_debug.h
+Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\vcruntime_new.h
+Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\crtdefs.h
+Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\use_ansi.h
+Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\type_traits
+Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\cstdint
+Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\xstddef
+Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\cstddef
+Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\xtr1common
+Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\cstdlib
+Note: including file:        C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\math.h
+Note: including file:         C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_math.h
+Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\initializer_list
+Note: including file:     C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\malloc.h
+Note: including file:     C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\vcruntime_exception.h
+Note: including file:      C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\eh.h
+Note: including file:       C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_terminate.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe/ep-rt-config-aot.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep.c
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-types.h
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-ipc-pal-types.h
+Note: including file:     C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:     C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-ipc-pal-types-forward.h
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-types-forward.h
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt-types.h
+Note: including file:     C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe/ep-rt-types-aot.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\CommonMacros.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\rhassert.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\native\minipal/utils.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc\daccess.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc\type_traits.hpp
+Note: including file:        C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc\CommonTypes.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\EmptyContainers.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\forward_declarations.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stack-contents.h
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-rt.h
+Note: including file:     C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe/ep-rt-aot.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\NativeaotEventPipeSupport.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe/ep-thread.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe/ep-provider.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe/ep-session-provider.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawkCommon.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\gc\env\gcenv.structs.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\IntrinsicConstants.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\PalRedhawkFunctions.h
+Note: including file:       C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\intrin.h
+Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\intrin0.inl.h
+Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\setjmp.h
+Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\immintrin.h
+Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\wmmintrin.h
+Note: including file:          C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\nmmintrin.h
+Note: including file:           C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\smmintrin.h
+Note: including file:            C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\tmmintrin.h
+Note: including file:             C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\pmmintrin.h
+Note: including file:              C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\emmintrin.h
+Note: including file:               C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\xmmintrin.h
+Note: including file:                C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\mmintrin.h
+Note: including file:         C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\zmmintrin.h
+Note: including file:        C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.34.31721\include\ammintrin.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\windows\PalRedhawkInline.h
+Note: including file:      C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc\stresslog.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\loglf.h
+Note: including file:       C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc\../../../inc/gcmsg.inl
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-config.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event-instance.h
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-config-internals.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event-payload.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event-source.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-provider-internals.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-session.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-sample-profiler.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-block.c
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-block.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stream.h
+Note: including file:    C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-file.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-buffer.c
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-buffer.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-buffer-manager.c
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-buffer-manager.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-config.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event.c
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-metadata-generator.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event-instance.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event-payload.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-event-source.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-file.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-json-file.c
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-json-file.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-metadata-generator.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-provider.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-sample-profiler.c
+Note: including file:  C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsystem.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\winapifamily.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\winpackagefamily.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\pshpack1.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mciapi.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\apiset.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\apisetcconv.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmiscapi.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmiscapi2.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\playsoundapi.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmeapi.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\timeapi.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\joystickapi.h
+Note: including file:    C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um\mmsyscom.h
+Note: including file:   C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\poppack.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-session.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-session-provider.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stack-contents.c
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-stream.c
+Note: including file:  C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-ipc-stream.h
+Note: including file:   C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-getter-setter.h
+Note: including file: C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ep-thread.c
+
+C:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Release>
