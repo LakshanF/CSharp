@@ -24,42 +24,65 @@ Demo:1:4
  
 dotnet publish -r win-x64 --self-contained true
 
-C:\work\core\test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish\DotNetTest.exe
-71 MB
-
-C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\PerfView\DotNet
+C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish\DotNetTest.exe
+71 MB (with App size around 152 KB)
 
 a) PerfView
-Can See events
+Can See events (see below for nettrace stats)
 
 b) dotnet-trace
-pushd C:\work\core\test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish
+pushd C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish
 
 dotnet-trace collect --providers Demo -- DotNetTest.exe
 
-collect --providers Demo -- C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish\NativeAotTest.exe
+Ex. DotNetTest.exe_20221106_060019.nettrace (152 KB)
 
 C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\DotNet\bin\Debug\net7.0\win-x64\publish\DotNetTest.exe_20220829_162804.nettrace
 
 Can see events
 
+Name	Count	AverageSize	StackCount
+Microsoft-Windows-DotNETRuntimeRundown/Method/DCStopVerbose	620	262	0
+Microsoft-Windows-DotNETRuntimeRundown/Method/ILToNativeMapDCStop	20	271	0
+Microsoft-Windows-DotNETRuntimeRundown/Loader/ModuleDCStop	4	576	0
+Microsoft-Windows-DotNETRuntimeRundown/Loader/DomainModuleDCStop	4	324	0
+Microsoft-Windows-DotNETRuntimeRundown/Loader/AssemblyDCStop	4	196	0
+Demo/DebugMessage	2	49	2
+Demo/AppStarted	1	50	1
+Demo/Request/Start	1	4	1
+Demo/Request/Stop	1	4	1
+Microsoft-DotNETCore-EventPipe/ProcessInfo	1	58	0
+Microsoft-Windows-DotNETRuntimeRundown/Runtime/Start	1	309	0
+Microsoft-Windows-DotNETRuntimeRundown/Method/DCStopInit	1	2	0
+Microsoft-Windows-DotNETRuntimeRundown/Loader/AppDomainDCStop	1	34	0
+Microsoft-Windows-DotNETRuntimeRundown/Method/DCStopComplete	1	2	0
+
 2) NativeAOT
 dotnet publish -r win-x64 -c Debug /p:PublishAot=true
 
-C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish\NativeAotTest.exe
-5 MB
+C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish\NativeAotTest.exe
+6 MB
 
 C:\work\core\Test\8_18\sdk\Diagnostics\EventSource\PerfView\NativeAOT
 
-a) PerfView
+a) PerfView (Can NOT see relevant events even though some related events can be seen)
+ - C:\work\core\Tools\PerfView.exe
+ - launch the app via the collect option
+ - add the following to the "Addtional Providers", "Demo:1:4"
+  
 
-Can See events
+ - Related Events
+Microsoft-Windows-DotNETRuntime/Exception/Start
+Microsoft-Windows-DotNETRuntime/GC/AllocationTick
+Microsoft-Windows-DotNETRuntime/GC/CreateSegment
+
+
 
 b) dotnet-trace
 https://docs.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-trace
   Enables the collection of .NET Core traces of a running process without a native profiler.
 
-pushd C:\work\core\test\8_18\sdk\Diagnostics\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish
+pushd C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish
 
 dotnet-trace collect --providers Demo -- NativeAotTest.exe
 
@@ -82,27 +105,19 @@ POSSIBLE SOLUTION:
   - Make EventPipe handle nativeaot apps as well
     + How? https://docs.microsoft.com/en-us/dotnet/core/diagnostics/diagnostics-client-library
 
+C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\NativeAOT\bin\Debug\net7.0\win-x64\publish>dotnet-trace collect --providers Demo -- NativeAotTest.exe
+
+Provider Name                           Keywords            Level               Enabled By
+Demo                                    0xFFFFFFFFFFFFFFFF  Verbose(5)          --providers
+
 Launching: NativeAotTest.exe 
 Unable to start tracing session - the target app failed to connect to the diagnostics port. This may happen if the target application is running .NET Core 3.1 or older versions. Attaching at startup is only available from .NET 5.0 or later.
 [ERROR] System.TimeoutException: The operation has timed out.
-   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(Handler handler, TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/HandleableCollection.cs:line 155
-   at Microsoft.Internal.Common.Utils.DiagnosticsClientBuilder.Build(CancellationToken ct, Int32 processId, String diagnosticPort, Boolean showChildIO, Boolean printLaunchCommand) in /_/src/Tools/Common/ReversedServerHelpers/ReversedServerHelpers.cs:line 0
-   at Microsoft.Diagnostics.Tools.Trace.CollectCommandHandler.Collect(CancellationToken ct, IConsole console, Int32 processId, FileInfo output, UInt32 buffersize, String providers, String profile, TraceFileFormat format, TimeSpan duration, String clrevents, String clreventlevel, String name, String diagnosticPort, Boolean showchildio, Boolean resumeRuntime) in /_/src/Tools/dotnet-trace/CommandLine/Commands/CollectCommand.cs:line 167
-
-
-System.AggregateException
-  HResult=0x80131500
-  Message=One or more errors occurred. (The operation has timed out.)
-  Source=System.Private.CoreLib
-  StackTrace:
-   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
-   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
-   at System.Threading.Tasks.Task`1.get_Result()
-   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(Handler handler, TimeSpan timeout) in C:\work\core\main\diagnostics\src\Microsoft.Diagnostics.NETCore.Client\HandleableCollection.cs:line 151
-
-Inner Exception 1:
-TimeoutException: The operation has timed out.
-
+   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(Handler handler, TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/HandleableCollection.cs:line 156
+   at Microsoft.Diagnostics.NETCore.Client.HandleableCollection`1.Handle(TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/HandleableCollection.cs:line 131
+   at Microsoft.Diagnostics.NETCore.Client.ReversedDiagnosticsServer.Accept(TimeSpan timeout) in /_/src/Microsoft.Diagnostics.NETCore.Client/ReversedServer/ReversedDiagnosticsServer.cs:line 141
+   at Microsoft.Internal.Common.Utils.DiagnosticsClientBuilder.Build(CancellationToken ct, Int32 processId, String diagnosticPort, Boolean showChildIO, Boolean printLaunchCommand) in /_/src/Tools/Common/ReversedServerHelpers/ReversedServerHelpers.cs:line 225
+   at Microsoft.Diagnostics.Tools.Trace.CollectCommandHandler.Collect(CancellationToken ct, IConsole console, Int32 processId, FileInfo output, UInt32 buffersize, String providers, String profile, TraceFileFormat format, TimeSpan duration, String clrevents, String clreventlevel, String name, String diagnosticPort, Boolean showchildio, Boolean resumeRuntime) in /_/src/Tools/dotnet-trace/CommandLine/Commands/CollectCommand.cs:line 157
 
 B) Debugging
 Debug 
@@ -127,3 +142,11 @@ https://github.com/dotnet/diagnostics
 c:\work\core\main\diagnostics
 
 C:\work\core\main\diagnostics\artifacts\bin\dotnet-trace\Release\net7.0\win-x64\publish\dotnet-trace.exe
+
+-----------------
+
+dotnet add package Microsoft.Diagnostics.NETCore.Client --version 0.2.351802
+
+dotnet add package Microsoft.Diagnostics.Tracing.TraceEvent --version 3.0.5
+
+dotnet remove package Microsoft.Diagnostics.Tracing.TraceEvent --version 3.0.5

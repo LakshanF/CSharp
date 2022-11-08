@@ -6,11 +6,16 @@ namespace EventSourceDemo
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Please enter to continue:");
+            Console.ReadLine();
+
             DemoEventSource.Log.AppStarted("Hello World From .NET!", 12);
             DemoEventSource.Log.DebugMessage("Got here From .NET!");
             DemoEventSource.Log.DebugMessage("finishing startup From .NET!");
             DemoEventSource.Log.RequestStart(3);
             DemoEventSource.Log.RequestStop(3);
+
+            Console.WriteLine("Done done!");
         }
     }
 

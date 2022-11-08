@@ -11,6 +11,7 @@ namespace EventSourceDemo
             DemoEventSource.Log.DebugMessage("finishing startup From NativeAOT");
             DemoEventSource.Log.RequestStart(3);
             DemoEventSource.Log.RequestStop(3);
+            Console.WriteLine("Done!");
         }
     }
 
