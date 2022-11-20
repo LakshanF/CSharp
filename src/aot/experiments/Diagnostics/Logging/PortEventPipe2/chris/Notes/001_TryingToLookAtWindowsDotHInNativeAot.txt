@@ -1,0 +1,1190 @@
+
+
+Marks:
+
+    #MONOLITHIC_EP_AND_DS_SOURCES
+    #FINDING_A_WINDOWS_H_STRATEGY
+
+
+
+
+#
+
+Skip ahead to #FINDING_A_WINDOWS_H_STRATEGY for concrete experiments and analysis around
+finding a way to plug windows.h into the build in a way that works for both the
+native\EventPipe\... code and the NativeAOT runtime code.
+
+
+
+
+
+
+---------------- Getting a build going and learning which ninja commands to use in a clr.aot context ----------------
+
+
+
+#
+
+For reference, initial CoreCLR build experiments used the following command line:
+
+  [[
+    build.cmd -arch x64 -os windows -s clr -c Debug
+  ]]
+
+Note that:
+
+  .
+    The "-arch" and "-os" settings are just restating the defaults that are applied in any
+    builds kicked off on an x64 Windows machine.
+
+  .
+    The "-s clr" setting can also be supplied by listing "clr" as the first argument (since,
+    in the absence of an explicit "-s" argument, the first argument on the command line will
+    be interpreted as the subset collection).
+
+
+
+#
+
+From Lakshan:
+
+  [[
+    I use
+
+        build.cmd clr.aot+libs -rc Debug
+
+    to build and then follow the instructions at
+
+        https://github.com/dotnet/runtime/blob/main/docs/workflow/building/coreclr/nativeaot.md#convenience-visual-studio-repro-project
+
+    with
+
+        <repo>\artifacts\bin\repro\x64\Debug\compile-with-Debug-libs.rsp
+
+    for the debug arg for the ilcompiler.proj.
+  ]]
+
+
+The linked instructions have the following content:
+
+  [[
+
+    #
+
+    (1) Convenience Visual Studio "repro" project
+
+
+
+    #
+
+    Typical native AOT runtime developer scenario workflow is to native AOT compile a short
+    piece of C# and run it.
+
+    The repo contains helper projects that make debugging the AOT compiler and the runtime
+    easier.
+
+
+
+    #
+
+    The workflow looks like this:
+
+
+
+        #
+
+        Build the repo using the Building instructions above.
+
+
+
+        #
+
+            //
+            // Ref:
+            //
+            //      c:\Git\github\LakshanF\dotnet\runtime $ where /r . ilc.sln
+            //      c:\Git\github\LakshanF\dotnet\runtime\src\coreclr\tools\aot\ilc.sln
+            //
+
+        Open the ilc.sln solution described above.
+
+        This solution contains the compiler, but also an unrelated project named "repro".
+
+        This repro project is a small Hello World.
+
+        You can place any piece of C# you would like to compile in it.
+
+        Building the project will compile the source code into IL, but also generate a response
+        file that is suitable to pass to the AOT compiler.
+
+
+
+        #
+
+        Make sure you set the solution configuration in VS to the configuration you just built
+        (e.g., "x64 Debug").
+
+
+
+        #
+
+            //
+            // Ref (after running "build.cmd clr.aot+libs -rc Debug"):
+            //
+            //      c:\Git\github\LakshanF\dotnet\runtime $ where /r . compile-with-*
+            //      c:\Git\github\LakshanF\dotnet\runtime\artifacts\bin\repro\x64\Debug\compile-with-Debug-libs.rsp
+            //
+
+        In the ILCompiler project properties, on the Debug tab, set the "Application arguments"
+        to the generated response file.
+
+        This will be a file such as:
+
+            C:\runtime\artifacts\bin\repro\x64\Debug\compile-with-Release-libs.rsp
+
+        Prefix the path to the file with "@" to indicate this is a response file so that the
+        "Application arguments" field looks like:
+
+            @some\path\to\file.rsp
+
+
+
+        #
+
+        Build and run ILCompiler using F5.
+
+        This will compile the repro project into an .obj file.
+
+        You can debug the compiler and set breakpoints in it at this point.
+
+
+
+        #
+
+        The last step is linking the object file into an executable so that we can launch the
+        result of the AOT compilation.
+
+
+
+        #
+
+            //
+            // Ref:
+            //
+            //      c:\Git\github\LakshanF\dotnet\runtime $ where /r . reproNative.vcxproj
+            //      c:\Git\github\LakshanF\dotnet\runtime\src\coreclr\tools\aot\ILCompiler\reproNative\reproNative.vcxproj
+            //
+
+        Open the
+
+            src\coreclr\tools\aot\ILCompiler\reproNative\reproNative.vcxproj
+
+        project in Visual Studio.
+
+        This project is configured to pick up the .obj file we just compiled and link it with
+        the rest of the runtime.
+
+
+
+        #
+
+        Set the solution configuration to the tuple you've been using so far (e.g., "x64 Debug").
+
+
+
+        #
+
+        Build and run using F5.
+
+        This will run the platform linker to link the obj file with the runtime and launch it.
+
+        At this point you can debug the runtime and the various System.Private libraries.
+
+  ]]
+
+
+
+#
+
+There don't seem to be any "...\IL\..." paths in any artifacts area
+
+  [[
+    c:\Git\github\LakshanF\dotnet\runtime $ where /r . * | findstr /ir /c:"\\IL\\." | findstr /i artifacts
+    <no matches>
+  ]]
+
+so the *.csproj logic below was generating a "Could not locate CoreCLR IL files." error.
+
+I'm not sure why this is occurring (one possibility is that $(TestNativeAot) is supposed
+to be set).  Overall, I'm not concerned about it at all and have no interest in
+investigating further.
+
+I think it's likely that suppressing the error will be OK (especially since the logic
+seems to be configuring ReferenceCopyLocalPaths to ensure it includes a subset of the
+files in the IL directory, which is seemingly a no-op in this case since there are no IL
+directories, meaning there are no such "files to add").
+
+Ref:
+
+    {dotnet\runtime\src\libraries\externals.csproj}
+
+      [[
+          <PropertyGroup>
+            <SwapNativeForIL Condition="'$(SwapNativeForIL)' == '' and ('$(Configuration)' == 'Debug' or '$(Coverage)' == 'true') and '$(RuntimeFlavor)' != 'Mono'">true</SwapNativeForIL>
+            ...
+          </PropertyGroup>
+
+          ...
+
+          <Target Name="OverrideRuntimeCoreCLR"
+                  DependsOnTargets="ResolveRuntimeFilesFromLocalBuild"
+                  AfterTargets="AfterResolveReferences"
+                  Condition="'$(RuntimeFlavor)' != 'Mono' and '$(TestNativeAot)' != 'true'">
+            <ItemGroup>
+              <RuntimeFiles Include="@(HostFxrFile)" Condition="Exists('@(HostFxrFile)')" />
+              <RuntimeFiles Include="@(HostPolicyFile)" Condition="Exists('@(HostPolicyFile)')" />
+              <!-- CoreRun is not used for testing anymore, but we still use it for benchmarking and profiling -->
+              <RuntimeFiles Include="$(CoreCLRArtifactsPath)\corerun*" />
+              <RuntimeFiles Include="$(CoreCLRArtifactsPath)\PDB\corerun*" />
+              <ReferenceCopyLocalPaths Include="@(RuntimeFiles)" />
+            </ItemGroup>
+            <ItemGroup Condition="'$(SwapNativeForIL)' == 'true'">
+              <CoreCLRILFiles Include="$(CoreCLRArtifactsPath)\IL\*.*" />
+              <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" Condition="'@(CoreCLRILFiles->'%(FileName)%(Extension)')' == '%(FileName)%(Extension)'" />
+              <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" Condition="'@(CoreCLRILFiles->'%(FileName).ni%(Extension)')' == '%(FileName)%(Extension)'" />
+              <ReferenceCopyLocalPaths Include="@(CoreCLRILFiles)" />
+            </ItemGroup>
+
+          - <Error Condition="'$(SwapNativeForIL)' == 'true' and '@(CoreCLRILFiles)' == ''" Text="Could not locate CoreCLR IL files." />
+
+          + <!--
+          +     <Error Condition="'$(SwapNativeForIL)' == 'true' and '@(CoreCLRILFiles)' == ''" Text="Could not locate CoreCLR IL files." />
+          + -->
+      ]]
+
+
+
+#
+
+When building clr.aot, the runtime itself is built by the
+
+    clr.nativeaotruntime
+
+component, which in turn is seemingly built via the CMake
+
+    nativeaot
+
+target, which I believe translates to an underlying
+
+    ninja nativeaot
+
+operation.
+
+
+Ref (from NotesOn.2022_NetCore_BuildSystem_SrcListings):
+
+
+    #
+
+        <_subset>
+            $(_subset.Replace('+clr.aot+', '+$(DefaultNativeAotSubsets)+'))
+        </_subset>
+
+
+    #
+
+        <DefaultNativeAotSubsets>
+            clr.alljits+clr.tools+clr.nativeaotlibs+clr.nativeaotruntime
+        </DefaultNativeAotSubsets>
+
+
+    #
+
+        <PropertyGroup Condition="$(_subset.Contains('+clr.nativeaotruntime+')) and '$(NativeAotSupported)' == 'true'">
+
+            <ClrRuntimeBuildSubsets>
+                $(ClrRuntimeBuildSubsets);ClrNativeAotSubset=true
+            </ClrRuntimeBuildSubsets>
+
+        </PropertyGroup> // End of: <PropertyGroup Condition="$(_subset.Contains('+clr.nativeaotruntime+')) and '$(NativeAotSupported)' == 'true'">
+
+
+    #
+
+            <_CoreClrBuildArg
+                Condition="'$(ClrNativeAotSubset)' == 'true'"
+                Include="-component nativeaot"
+            />
+
+
+    #
+
+            if not "!string:-nativeaot-=!"=="!string!" (
+                set __CMakeTarget=!__CMakeTarget! nativeaot
+            )
+
+
+
+#
+
+For reference, within the expanded
+
+    clr.alljits+clr.tools+clr.nativeaotlibs+clr.nativeaotruntime
+
+form of the "clr.aot" subset, the clr.tools and clr.nativeaotlibs do not seem to add
+compilation work for coreclr\build-runtime.cmd itself.
+
+clr.nativeaotruntime expands in the manner described above, and specifically turns into
+a call to:
+
+    ninja nativeaot
+
+This means clr.alljits is the only remaining component, and it appears to expand into
+
+    ninja alljits
+
+as shown below.  This means that "alljits" and "nativeaot" are the only targets that the
+overall "clr.aot" build pushes through coreclr\build-runtime.cmd.  In other words, the
+coreclr\build-runtime.cmd part boils down to:
+
+    ninja alljits nativeaot
+
+The IfeoFilter output shown below seemingly confirms that this analysis is correct.
+
+
+Ref (from NotesOn.2022_NetCore_BuildSystem_SrcListings):
+
+
+    #
+
+        <PropertyGroup Condition="$(_subset.Contains('+clr.alljits+'))">
+
+            <ClrRuntimeBuildSubsets>
+                $(ClrRuntimeBuildSubsets);ClrAllJitsSubset=true
+            </ClrRuntimeBuildSubsets>
+
+        </PropertyGroup> // End of: <PropertyGroup Condition="$(_subset.Contains('+clr.alljits+'))">
+
+
+    #
+
+            <_CoreClrBuildArg
+                Condition="'$(ClrAllJitsSubset)' == 'true'"
+                Include="-component alljits"
+            />
+
+
+    #
+
+            if not "!string:-alljits-=!"=="!string!" (
+                set __CMakeTarget=!__CMakeTarget! alljits
+            )
+
+
+
+#
+
+"ninja nativeaot" seems to have the effect predicted above.
+
+"ninja clean" seems to be a larger operation (since 1062 files were initially compiled,
+but only 399 of them were rebuilt by "ninja nativeaot").
+
+Ref:
+
+  [[
+
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja nativeaot
+    [1/1] cmd.exe /C "cd /D C:\Git\github\LakshanF\dotnet\runtime\artifa...runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+    -- Install configuration: "Debug"
+
+
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja clean
+    [1/1] Cleaning all built files...
+    Cleaning... 1062 files.
+
+
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja nativeaot
+    [1/399] Building CXX object libs-native\System.Globalization.Native\CMakeFiles\System.Globalization.Native.Aot.dir\pal_idna.c.obj
+    ...
+    -- Installing: C:/Git/github/LakshanF/dotnet/runtime/artifacts/bin/coreclr/windows.x64.Debug/aotsdk/Runtime.ServerGC.GuardCF.lib
+    -- Installing: C:/Git/github/LakshanF/dotnet/runtime/artifacts/bin/coreclr/windows.x64.Debug/aotsdk/Runtime.ServerGC.GuardCF.pdb
+
+  ]]
+
+
+
+
+#
+
+Turning on IfeoFilter
+
+  [[
+    C:\tmp $ mkdir c:\IfeoLogs\101\Ninja
+
+    C:\tmp $ c:\bin\amd64\ManageIfeo.exe ninja.exe consolefilter64 c:\IfeoLogs\101\Ninja ShowCdPlusCmd ShowEnv
+    ...
+  ]]
+
+and then re-running the build
+
+  [[
+    c:\Git\github\LakshanF\dotnet\runtime $ rmdir /s /q artifacts
+
+    c:\Git\github\LakshanF\dotnet\runtime $ build.cmd clr.aot+libs -rc Debug
+    ...
+  ]]
+
+and then disabling IfeoFilter
+
+  [[
+    C:\tmp $ c:\bin\amd64\ManageIfeo.exe ninja.exe clear debugger
+    ...
+  ]]
+
+shows that Ninja invocations occurred as follows:
+
+
+        //
+        // The leading
+        //
+        //      IfeoFilter.01d8f9d5e5271473.0003327bb996a2e3.00001514.
+        //
+        // prefix has been trimmed to
+        //
+        //      1514.
+        //
+        // across the lines shown below, and the display has been trimmed to include only the
+        // "heavyweight" Ninja operations which actually generated build work (i.e., has been
+        // trimmed to omit the "preparatory" invocations which target CMakeTmp content and/or take
+        // only a fraction of a second each).
+        //
+
+  [[
+    c:\IfeoLogs\101\Ninja $ findstr /sprn "^CdPlusCmd: ^ChildProcessExecutionDuration:" *
+    ...
+    3634.General.txt:16:ChildProcessExecutionDuration: 0h:00m:58s:733ms
+    3634.Verb.ShowCdPlusCmd.txt:1:CdPlusCmd: cd /d "C:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug" & C:/PROGRA~1/MICROS~3/2022/ENTERP~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe alljits nativeaot
+    ...
+    1d2c.General.txt:16:ChildProcessExecutionDuration: 0h:00m:05s:159ms
+    1d2c.Verb.ShowCdPlusCmd.txt:1:CdPlusCmd: cd /d "C:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\native\net7.0-windows-Debug-x64" & C:/PROGRA~1/MICROS~3/2022/ENTERP~1/Common7/IDE/COMMON~1/MICROS~1/CMake/Ninja/ninja.exe install
+  ]]
+
+
+
+#
+
+Beyond
+
+    ninja clean
+
+running the "clean" target and therefore generating a "global" clean, I don't know any
+way to do a "more targeted" clean of any kind.
+
+That said, as shown below, re-running the full
+
+    ninja alljits nativeaot
+
+command seems to regenerate the full set of 1058 files that were established during the
+initial build.cmd operation.
+
+Ref:
+
+  [[
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja nativeaot
+    [1/1] cmd.exe /C "cd /D C:\Git\github\LakshanF\dotnet\runtime\artifa...runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+    -- Install configuration: "Debug"
+
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja clean nativeaot
+    [1/2] cmd.exe /C "cd /D C:\Git\github\LakshanF\dotnet\runtime\artifa...runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+    -- Install configuration: "Debug"
+    [2/2] Cleaning all built files...
+    Cleaning... 1062 files.
+
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja nativeaot
+    [1/399] Building CXX object libs-native\System.Globalization.Native\...Files\System.Globalization.Native.Aot.dir\pal_localeNumberData.c.obj
+    ...
+    -- Installing: C:/Git/github/LakshanF/dotnet/runtime/artifacts/bin/coreclr/windows.x64.Debug/aotsdk/Runtime.ServerGC.GuardCF.pdb
+
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja clean
+    [1/1] Cleaning all built files...
+    Cleaning... 398 files.
+
+    c:\Git\github\LakshanF\dotnet\runtime\artifacts\obj\coreclr\windows.x64.Debug $ ninja alljits nativeaot
+    [1/1058] cmd.exe /C "cd /D C:\Git\github\LakshanF\dotnet\runtime\art...runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+    ...
+  ]]
+
+
+
+#
+
+#FINDING_A_WINDOWS_H_STRATEGY
+
+Initial impressions:
+
+
+
+    #
+
+    CommonMacros.h is built to avoid duplicate definitions if <windows.h> has already been
+    included.  This is accomplished by suppressing the duplicate definitions if _INC_WINDOWS
+    is defined:
+
+      [[
+        m:\dd\K_1\src\Views\Net48Rel1Last_C\ndp\clr\src\vm $ findstr /sprn _INC_WINDOWS m:\dd\WCFB01_1\src\ExternalApis\Windows\8.1\sdk\inc\*
+        ...
+        m:\dd\WCFB01_1\src\ExternalApis\Windows\8.1\sdk\inc\windows.h:24:#ifndef _INC_WINDOWS
+        m:\dd\WCFB01_1\src\ExternalApis\Windows\8.1\sdk\inc\windows.h:25:#define _INC_WINDOWS
+        ...
+      ]]
+
+
+
+    #
+
+    The reverse is not true.
+
+    That is, <windows.h> assumes that it is the first entity supplying these definitions,
+    and will generate duplicate definitions if CommonMacros.h has already been included (and
+    has therefore already injected the initial definitions due to _INC_WINDOWS not being
+    defined as that time).
+
+
+
+    #
+
+    The following files
+
+        Runtime\windows\PalRedhawkCommon.cpp
+        Runtime\windows\PalRedhawkMinWin.cpp
+
+    both contain the following command from the Redhawk era:
+
+      [[
+        //
+        // Note that in general we don't want to assume that Windows and Redhawk global definitions
+        // can co-exist.
+        //
+        // Since this code must include Windows headers to do its job we can't therefore safely
+        // include general Redhawk header files.
+        //
+      ]]
+
+    Note that Runtime\windows\CoffNativeCodeManager.cpp includes <windows.h> in the same
+    manner but does not include any such comment.
+
+
+
+    #
+
+    The native EventPipe code definitely contains some inline islands of Windows-specific
+    code, which are specifically found inside of source files that are shared across OS-es
+    (as opposed to being factored into a fully-OS-specific PAL file as is done with the
+    windows\PalRedhawk* files mentioned above).
+
+    Ref:
+
+      [[
+        c:\Git\github\LakshanF\dotnet\runtime\src $ findstr /psrn HOST_WIN32 native\eventpipe\*
+
+            //
+            //  if (FEATURE_PERFTRACING_PAL_TCP)
+            //
+            //      list(APPEND SHARED_DIAGNOSTIC_SERVER_PAL_SOURCES
+            //          ds-ipc-pal-socket.c
+            //      )
+            //      list(APPEND SHARED_DIAGNOSTIC_SERVER_PAL_HEADERS
+            //          ds-ipc-pal-socket.h
+            //      )
+            //
+            //  else (FEATURE_PERFTRACING_PAL_TCP)
+            //
+            //      if(HOST_WIN32 OR CLR_CMAKE_TARGET_WIN32)
+            //
+            //          list(APPEND SHARED_DIAGNOSTIC_SERVER_PAL_SOURCES
+            //              ds-ipc-pal-namedpipe.c
+            //          )
+            //          list(APPEND SHARED_DIAGNOSTIC_SERVER_PAL_HEADERS
+            //              ds-ipc-pal-namedpipe.h
+            //          )
+            //
+            //      else(HOST_WIN32 OR CLR_CMAKE_TARGET_WIN32)
+            //
+            //          list(APPEND SHARED_DIAGNOSTIC_SERVER_PAL_SOURCES
+            //              ds-ipc-pal-socket.c
+            //          )
+            //          list(APPEND SHARED_DIAGNOSTIC_SERVER_PAL_HEADERS
+            //              ds-ipc-pal-socket.h
+            //          )
+            //
+            //      endif(HOST_WIN32 OR CLR_CMAKE_TARGET_WIN32)
+            //
+            //  endif (FEATURE_PERFTRACING_PAL_TCP)
+            //
+
+        native\eventpipe\CMakeLists.txt:98:        if(HOST_WIN32 OR CLR_CMAKE_TARGET_WIN32)
+        native\eventpipe\CMakeLists.txt:105:        else(HOST_WIN32 OR CLR_CMAKE_TARGET_WIN32)
+        native\eventpipe\CMakeLists.txt:112:        endif(HOST_WIN32 OR CLR_CMAKE_TARGET_WIN32)
+
+
+        native\eventpipe\ds-ipc-pal-namedpipe.c:11:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-namedpipe.c:906:#endif /* HOST_WIN32 */
+
+        native\eventpipe\ds-ipc-pal-namedpipe.h:10:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-namedpipe.h:67:#endif /* HOST_WIN32 */
+
+
+        native\eventpipe\ds-ipc-pal-socket.c:24:#ifndef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:47:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:229:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:241:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:255:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:356:#ifndef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:358:#endif // HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:399:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:437:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:459:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:999:#ifdef HOST_WIN32
+        native\eventpipe\ds-ipc-pal-socket.c:1014:#ifdef HOST_WIN32
+
+        native\eventpipe\ds-ipc-pal-socket.h:15:#ifdef HOST_WIN32
+
+
+            //
+            //  #ifndef HOST_WIN32
+            //
+            //      #define DS_IPC_PAL_UDS
+            //
+            //  #else
+            //
+            //      #define DS_IPC_PAL_NAMEDPIPES
+            //
+            //  #endif
+            //
+
+        native\eventpipe\ds-rt-config.h:17:#ifndef HOST_WIN32
+
+
+            //
+            // This file is definitely NOT Windows-specific (i.e., this #if starts an #elif chain that
+            // covers many other OSes).
+            //
+            // Further, #elif chain doesn't contain any code (it just configures an "_ep_os_info"
+            // string to point to the name of the host OS), and the broader content of the file appears
+            // to be OS-indepnedent.
+            //
+
+        native\eventpipe\ep-event-source.c:15:#if defined(HOST_WINDOWS) || defined(HOST_WIN32)
+
+
+        native\eventpipe\ep-rt-config.h:32:#define HOST_WIN32
+
+
+        native\eventpipe\ep-sample-profiler.c:24:#ifdef HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:116:#ifdef HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:127:#endif //HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:134:#ifdef HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:141:#endif //HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:148:#ifdef HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:168:#endif //HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:176:#ifdef HOST_WIN32
+        native\eventpipe\ep-sample-profiler.c:183:#endif //HOST_WIN32
+      ]]
+
+    Ref:
+
+      [[
+        c:\Git\github\LakshanF\dotnet\runtime\src $ findstr /pisrn WINDOWS native\eventpipe\*
+        native\eventpipe\ds-ipc-pal-namedpipe.h:4:#undef __AOT_WINDOWS_DEF_NOT_NEEDED___
+        native\eventpipe\ds-ipc-pal-namedpipe.h:5:#define __AOT_WINDOWS_DEF_NOT_NEEDED___
+        native\eventpipe\ds-ipc-pal-namedpipe.h:19:#include <Windows.h>
+        native\eventpipe\ds-ipc-pal.h:80:// unlinks Unix Domain Socket on Linux, no-op on Windows
+        native\eventpipe\ep-event-source.c:15:#if defined(HOST_WINDOWS) || defined(HOST_WIN32)
+        native\eventpipe\ep-event-source.c:16:const ep_char8_t* _ep_os_info = "Windows";
+        native\eventpipe\ep-rt-config.h:31:#ifdef TARGET_WINDOWS
+        native\eventpipe\ep-types.h:245:        return "Microsoft-Windows-DotNETRuntime";
+        native\eventpipe\ep-types.h:253:        return "Microsoft-Windows-DotNETRuntimePrivate";
+        native\eventpipe\ep-types.h:261:        return "Microsoft-Windows-DotNETRuntimeRundown";
+        native\eventpipe\README.md:8:on Windows. Previously when .NET primarily ran on Windows we relied solely on ETW, but now that
+      ]]
+
+
+
+    #
+
+    While the search results above may not be a comprehensive list of all Windows
+    dependencies hiding in the native EventPipe code, it seems likely that it is at least
+    close to complete (and maybe literally complete).
+
+    As shown above, relative to this list, "real" Windows dependencies (i.e., code that is
+    definitely expected and required to interact with <windows.h> definitions) only appear
+    to exist in the following files:
+
+        native\eventpipe\ep-sample-profiler.c
+        native\eventpipe\ds-ipc-pal-namedpipe.c
+        native\eventpipe\ds-ipc-pal-namedpipe.h
+        native\eventpipe\ds-ipc-pal-socket.c
+        native\eventpipe\ds-ipc-pal-socket.h
+
+    That said, as long as the #MONOLITHIC_EP_AND_DS_SOURCES system is unconditionally
+    enabled (like it is today), these files are compiled as part of much larger compilation
+    units, meaning any <windows.h> interventions would need to work for those files and all
+    of the "neighboring" content that gets pulled in both before and after the #include
+    directive that pulls in the specific *.c or *.h file from the list above.
+
+
+
+    #
+
+    Overall:
+
+      .
+        On the native EventPipe side, there is real need for windows.h, and the
+        #MONOLITHIC_EP_AND_DS_SOURCES system makes it harder than it otherwise would be to do a
+        scoped intervention.
+
+          .
+            I.e., if the whole ep-sources.c and ds-sources.c thing wasn't in hte picture, it might
+            be possible to identify a tiny set of *.c files where windows.h was really needed, and
+            then modify just those files to very carefully scope windows.h usage to just the tiny
+            set of dedicated cl.exe commands which compile those files.
+
+      .
+        In the NativeAOT runtime code, there is real precedent and inertia around NOT including
+        windows.h (most importantly on principle, and more practically because inclusion is
+        guaranteed to break the build unless it is somehow guaranteed that windows.h is always
+        included before CommonMacros.h).
+
+
+    In response, one option would be to have the EventPipe machinery (header files, build
+    steps, etc) always include windows.h when building source files on the EventPipe side,
+    but never include windows.h when building source on the NativeAOT runtime side.
+
+    One way to do this is to compile just the native\EventPipe\... files with a /FI compiler
+    switch which forces NativeaotEventPipeSupport.h to be included before anything else.
+
+    This creates a situation where NativeaotEventPipeSupport.h can be a file that holds
+    "stuff that the EventPipe machinery always provides on the native\EventPipe\... side,
+    but never provides in any other context".  In this light, the initial version would just
+    contain an unconditional
+
+        #include <windows.h>
+
+    to make sure native\EventPipe\... always has access to it without making any chance to
+    windows.h availability in the NativeAOT runtime itself.
+
+
+    Ref:
+
+        mono\mono\mini\CMakeLists.txt:80:
+
+            set_source_files_properties(
+                ${icu_shim_sources} PROPERTIES COMPILE_FLAGS
+                "-I\"${ICU_INCLUDEDIR}\" -I\"${CLR_SRC_NATIVE_DIR}/libs/System.Globalization.Native/\" -I\"${CLR_SRC_NATIVE_DIR}/libs/Common/\" ${ICU_FLAGS}"
+)
+
+    The following change to {nativeaot\Runtime\Full\CMakeLists.txt} seems to add the desired
+    /FI switches and seems to put overall compilation/linking on better footing:
+
+      [[
+        if (WIN32)
+            set_source_files_properties(${SHARED_EVENTPIPE_SOURCES} PROPERTIES COMPILE_FLAGS "/FI\"${RUNTIME_DIR}/eventpipe/NativeaotEventPipeSupport.h\"")
+            set_source_files_properties(${SHARED_DIAGNOSTIC_SERVER_SOURCES} PROPERTIES COMPILE_FLAGS "/FI\"${RUNTIME_DIR}/eventpipe/NativeaotEventPipeSupport.h\"")
+        endif()
+      ]]
+
+
+
+#
+
+    #
+
+    Ref:
+
+      [[
+        c:\Git\github\LakshanF\dotnet\runtime\src $ findstr /sprn /c:"ep-sample-profiler" *
+        coreclr\nativeaot\Runtime\CMakeLists.txt:33:    ${SHARED_EVENTPIPE_SOURCE_DIR}/ep-sample-profiler.c
+        coreclr\nativeaot\Runtime\CMakeLists.txt:64:    ${SHARED_EVENTPIPE_SOURCE_DIR}/ep-sample-profiler.h
+        mono\mono\eventpipe\test\ep-tests.c:11:#include <eventpipe/ep-sample-profiler.h>
+        native\eventpipe\CMakeLists.txt:22:        ep-sample-profiler.c
+        native\eventpipe\CMakeLists.txt:53:        ep-sample-profiler.h
+        native\eventpipe\ep-file.c:12:#include "ep-sample-profiler.h"
+        native\eventpipe\ep-sample-profiler.c:8:#include "ep-sample-profiler.h"
+
+
+            //
+            // Ref (entire file):
+            //
+            //    [[
+            //      #include "ep-rt-config.h"
+            //      
+            //      #ifdef ENABLE_PERFTRACING
+            //      
+            //          // Option to include all internal source files into ep-sources.c.
+            //          #ifdef EP_INCLUDE_SOURCE_FILES
+            //
+            //              #ifndef EP_FORCE_INCLUDE_SOURCE_FILES
+            //
+            //                  #define EP_FORCE_INCLUDE_SOURCE_FILES
+            //
+            //              #endif
+            //
+            //              #include "ep.c"
+            //              ...
+            //              #include "ep-thread.c"
+            //
+            //          #endif
+            //      
+            //      #endif /* ENABLE_PERFTRACING */
+            //      
+            //      extern const char quiet_linker_empty_file_warning_eventpipe_sources;
+            //      const char quiet_linker_empty_file_warning_eventpipe_sources = 0;
+            //    ]]
+            //
+
+        native\eventpipe\ep-sources.c:23:#include "ep-sample-profiler.c"
+
+
+        native\eventpipe\ep.c:16:#include "ep-sample-profiler.h"
+      ]]
+
+
+
+    #
+
+    Ref:
+
+      [[
+        c:\Git\github\LakshanF\dotnet\runtime\src $ findstr /sprn /c:"ep-sources" *
+        coreclr\nativeaot\Runtime\CMakeLists.txt:19:    ${SHARED_EVENTPIPE_SOURCE_DIR}/ep-sources.c
+        coreclr\vm\eventing\eventpipe\CMakeLists.txt:54:set_source_files_properties(${SHARED_EVENTPIPE_SOURCE_PATH}/ep-sources.c PROPERTIES COMPILE_DEFINITIONS EP_FORCE_INCLUDE_SOURCE_FILES)
+        mono\mono\eventpipe\CMakeLists.txt:93:    set_source_files_properties(${SHARED_EVENTPIPE_SOURCE_PATH}/ep-sources.c PROPERTIES COMPILE_DEFINITIONS EP_FORCE_INCLUDE_SOURCE_FILES)
+        native\eventpipe\CMakeLists.txt:8:        ep-sources.c
+        native\eventpipe\ep-sources.c:5:// Option to include all internal source files into ep-sources.c.
+      ]]
+
+
+
+    #
+
+    Ref:
+
+      [[
+        c:\Git\github\LakshanF\dotnet\runtime\src $ findstr /spirn ep_include_source_files *
+
+
+        native\eventpipe\ep-sources.c:6:#ifdef EP_INCLUDE_SOURCE_FILES
+
+
+            //
+            // At native\eventpipe\ep-rt-config.h:64:
+            //
+            //    [[
+            //      #define EP_INLINE_GETTER_SETTER
+            //
+            //      #ifdef EP_INLINE_GETTER_SETTER
+            //
+            //          #define EP_INCLUDE_SOURCE_FILES
+            //
+            //      #endif
+            //    ]]
+            //
+            //
+            // #MONOLITHIC_EP_AND_DS_SOURCES
+            //
+            // Notes:
+            //
+            //
+            //
+            //      #
+            //
+            //      In the current product, EP_INLINE_GETTER_SETTER is defined unconditionally, which means
+            //      the "monolithic ep-sources.c and ds-sources.cs" mechanism is unconditionally enabled.
+            //
+            //
+            //
+            //      #
+            //
+            //      EP_INLINE_GETTER_SETTER triggers many instances of a pattern like the following:
+            //
+            //        [[
+            //          #if defined(EP_INLINE_GETTER_SETTER) || defined(EP_IMPL_BLOCK_GETTER_SETTER)
+            //          struct _EventPipeBlock {
+            //          #else
+            //          struct _EventPipeBlock_Internal {
+            //          #endif
+            //
+            //              FastSerializableObject fast_serializer_object;
+            //              uint8_t *block;
+            //              uint8_t *write_pointer;
+            //              uint8_t *end_of_the_buffer;
+            //              EventPipeSerializationFormat format;
+            //          };
+            //
+            //          #if !defined(EP_INLINE_GETTER_SETTER) && !defined(EP_IMPL_BLOCK_GETTER_SETTER)
+            //          struct _EventPipeBlock {
+            //              uint8_t _internal [sizeof (struct _EventPipeBlock_Internal)];
+            //          };
+            //          #endif
+            //        ]]
+            //
+            //      In this case, EP_IMPL_BLOCK_GETTER_SETTER is ONLY ever defined by the following code at
+            //      the top of ep-block.c:
+            //
+            //        [[
+            //          #define EP_IMPL_BLOCK_GETTER_SETTER
+            //          #include "ep-block.h"
+            //        ]]
+            //
+            //
+            //
+            //      #
+            //
+            //      Correlating against {native\eventpipe\ep-getter-setter.h}, the EP_INLINE_GETTER_SETTER
+            //      setting triggers macro selection such as:
+            //
+            //          #if defined(EP_INLINE_GETTER_SETTER)
+            //
+            //              #define EP_DEFINE_GETTER EP_DEFINE_INLINE_GETTER
+            //
+            //          #elif defined(EP_IMPL_GETTER_SETTER)
+            //
+            //              #define EP_DEFINE_GETTER EP_IMPL_GETTER
+            //
+            //          #else
+            //
+            //              #define EP_DEFINE_GETTER EP_DEFINE_NOINLINE_GETTER
+            //
+            //          #endif
+            //
+            //
+            //      These three options correspond to code patterns of the form:
+            //
+            //
+            //        #C1
+            //              //
+            //              // When EP_INLINE_GETTER_SETTER IS defined, all compilation units see a header-file-friendly
+            //              // inline function which uses the "transparent" struct definition to access the field
+            //              // directly.
+            //              //
+            //
+            //          #define EP_DEFINE_INLINE_GETTER_PREFIX(prefix_name, instance_type, instance_type_name, return_type, instance_field_name) <
+            //              static inline
+            //              return_type
+            //              EP_BUILD_GETTER_GET_NAME(prefix_name, instance_type_name, instance_field_name) (
+            //                  const instance_type instance
+            //                  )
+            //              {
+            //                  return instance-> instance_field_name;
+            //              }
+            //          >
+            //
+            //
+            //        #C2
+            //              //
+            //              // When EP_INLINE_GETTER_SETTER is NOT defined, the one-and-only EP_IMPL_GETTER_SETTER
+            //              // compilation unit sees a function definition which publishes the one-and-only body for
+            //              // this getter.  The function body can access the field directly because the "impl"
+            //              // compilation unit implements the services associated with this "instance_type" and
+            //              // therefore always sees the "real" struct definition.
+            //              //
+            //
+            //          #define EP_IMPL_GETTER_PREFIX(prefix_name, instance_type, instance_type_name, return_type, instance_field_name) <
+            //              return_type
+            //              EP_BUILD_GETTER_GET_NAME(prefix_name, instance_type_name, instance_field_name) (
+            //                  const instance_type instance
+            //                  )
+            //              {
+            //                  return instance-> instance_field_name;
+            //              }
+            //          >
+            //
+            //
+            //        #C3
+            //              //
+            //              // When EP_INLINE_GETTER_SETTER is NOT defined, any compilation unit which is NOT the
+            //              // one-and-only EP_IMPL_GETTER_SETTER compilation unit sees a function declaration which
+            //              // refers to the definition that is supplied in the one-and-only EP_IMPL_GETTER_SETTER
+            //              // compilation unit (as discussed in the EP_IMPL_GETTER_PREFIX listing above).
+            //              //
+            //
+            //          #define EP_DEFINE_NOINLINE_GETTER_PREFIX(prefix_name, instance_type, instance_type_name, return_type, instance_field_name) <
+            //              return_type
+            //              EP_BUILD_GETTER_GET_NAME(prefix_name, instance_type_name, instance_field_name) (
+            //                  const instance_type instance
+            //              );
+            //          >
+            //
+            //
+            //
+            //      #
+            //
+            //      I think a goal may have been to create an environment where only the "impl" compilation
+            //      unit can see the real fields (i.e., where all other compilation units just see an opaque
+            //      structure of the same size, with the "real" fields only being listed under the
+            //      associated "{TStructure}_internal" type).
+            //
+            //      This could help enforce a convention where all accesses (and therefore all
+            //      modifications) of the fields on a given {TStructure} are known to only occur within the
+            //      associated "impl" *.c file.
+            //
+            //
+            //
+            //      #
+            //
+            //      That said, this also creates a situation where getter accesses in non-"impl" compilation
+            //      units CANNOT be inlined into the associated non-"impl" *.obj file.
+            //
+            //      Note that this statement only applies to non-LTCG contexts.  In builds where LTCG is
+            //      enabled, the *.obj files just contain syntax tree information, and all of the getter
+            //      calls very likely WILL be inlined when the "impl" and non-"impl" *.obj files are linked
+            //      together into the eventual executable binary.
+            //
+            //
+            //
+            //      #
+            //
+            //      Despite the LTCG caveat (and especially combined with other comments from JoLorens about
+            //      inlining and general perf in the EventPipe code), I believe that the *.obj inlining
+            //      concern probably explains why EP_INLINE_GETTER_SETTER is unconditionally enabled.
+            //
+            //
+            //
+            //      #
+            //
+            //      That said, enabling inlining (i.e., forcing all getters to take the #C1 form shown
+            //      above) will seemingly deliver the desired inlining benefit whether or not all of the
+            //      compilation units are mashed together into monolithic ep-sources.c and ds-sources.c
+            //      cases.
+            //
+            //      My best guess is that mashing these together was done for reasons like the following:
+            //
+            //        .
+            //          As a concession to some native toolchain where compiling a monolithic compilation unit
+            //          generates a "tighter" eventual binary compared to generating a bunch of interediate
+            //          *.obj files and then linking them together later on (e.g., this might apply to a
+            //          theoretical toolchain where separate compilation leads to binary bloat due to trouble
+            //          "de-duplicating" the "static inline" getters or other shared content that end up being
+            //          included into each *.obj).
+            //
+            //        .
+            //          As a "precompiled header"-like approach which reduces overall compilation time by
+            //          avoiding the repeated header file processing that would occur if each compilation unit
+            //          was compiled separately.
+            //
+            //
+            //
+            //      #
+            //
+            //      Looking at history, the "include everything in one monolithic compilation unit"
+            //      machinery seems to have appeared in:
+            //
+            //        [[
+            //          l:\Git\github\dotnet\runtime\src $ git show -s c5b55f06d6d65c4673734198a87a31f7ace789c2
+            //          commit c5b55f06d6d65c4673734198a87a31f7ace789c2 (HEAD)
+            //          Author: Johan Lorensson <lateralusx.github@gmail.com>
+            //          Date:   Tue May 26 15:28:53 2020 +0200
+            //
+            //              Initial work of porting native diagnostic eventpipe library to C. (#34600)
+            //        ]]
+            //
+            //      For example, the existing
+            //
+            //          {src\coreclr\src\vm\eventpipeeventinstance.cpp}
+            //
+            //      doesn't appear to include any machinery to allow the kind of "conditional monolithic
+            //      compilation" discussed above, but the ported
+            //
+            //          {mono\mono\eventpipe\ep-event-instance.c}
+            //
+            //      does contain such machinery.  While the commit has an excellent description attached to
+            //      it, the description does not appear to specifically discuss the monolithic compilation
+            //      machinerly (though it does refer to the off-by-default machinery discussed above which
+            //      can be used to ensure that only the "impl" compilation unit can see the "real" fields
+            //      within a given structure).
+            //
+
+        native\eventpipe\ep-rt-config.h:64:#define EP_INCLUDE_SOURCE_FILES
+
+
+            //
+            //  #ifdef EP_INCLUDE_SOURCE_FILES
+            //
+            //      #define DS_INCLUDE_SOURCE_FILES
+            //
+            //  #endif
+            //
+            // On this DS side, this configures ds-sources.c to be the only file that pulls in "real
+            // code" if and only if the EP side is doing the same thing with ep-sources.c.
+            //
+            // The DS_INCLUDE_SOURCE_FILES mechanism appears to be structurally identical to the
+            // EP_INCLUDE_SOURCE_FILES mechanism that is being analyzed here.
+            //
+
+        native\eventpipe\ds-rt-config.h:10:#ifdef EP_INCLUDE_SOURCE_FILES
+
+
+            //
+            // A large set of ep{SpecificName}.c files use the exact same pattern, namely:
+            //
+            //    [[
+            //      #ifdef ENABLE_PERFTRACING
+            //      #if !defined(EP_INCLUDE_SOURCE_FILES) || defined(EP_FORCE_INCLUDE_SOURCE_FILES)
+            //
+            //          //
+            //          // Real content of the file goes here.
+            //          //
+            //          // The conditional above is equivalent to:
+            //          //
+            //          //      #if !( defined(EP_INCLUDE_SOURCE_FILES) && !defined(EP_FORCE_INCLUDE_SOURCE_FILES) )
+            //          //
+            //          // This speaks to the idea that the real file content is "skipped" ONLY in the case
+            //          // where:
+            //          //
+            //          //    .
+            //          //      EP_INCLUDE_SOURCE_FILES is defined (indicating that the goal is for ep-sources.c
+            //          //      to be the only file that pulls in "real code" of any kind).
+            //          //
+            //          //    .
+            //          //      EP_FORCE_INCLUDE_SOURCE_FILES is NOT defined (indicating that the current
+            //          //      compilation is NOT the ep-sources.c compilation itself, since ep-sources.c
+            //          //      ALWAYS defines EP_FORCE_INCLUDE_SOURCE_FILES before including other
+            //          //      ep{SpecificName}.c files).
+            //          //
+            //
+            //          ...
+            //
+            //      #endif /* !defined(EP_INCLUDE_SOURCE_FILES) || defined(EP_FORCE_INCLUDE_SOURCE_FILES) */
+            //      #endif /* ENABLE_PERFTRACING */
+            //
+            //          //
+            //          // In any case where the "real" file content was skipped above, including trailing dummy
+            //          // content just to suppress the "file is empty" warning that would happen otherwise.
+            //          //
+            //
+            //      #if !defined(ENABLE_PERFTRACING) || (defined(EP_INCLUDE_SOURCE_FILES) && !defined(EP_FORCE_INCLUDE_SOURCE_FILES))
+            //          extern const char quiet_linker_empty_file_warning_eventpipe_block;
+            //          const char quiet_linker_empty_file_warning_eventpipe_block = 0;
+            //      #endif
+            //    ]]
+            //
+            // Only the first and last such files are listed below, but the same pattern appears across
+            // maybe 15 others (presumably corresponding to the set that are included inline in
+            // ep-sources.c).
+            //
+
+        native\eventpipe\ep-block.c:4:#if !defined(EP_INCLUDE_SOURCE_FILES) || defined(EP_FORCE_INCLUDE_SOURCE_FILES)
+        native\eventpipe\ep-block.c:1079:#endif /* !defined(EP_INCLUDE_SOURCE_FILES) || defined(EP_FORCE_INCLUDE_SOURCE_FILES) */
+        native\eventpipe\ep-block.c:1082:#if !defined(ENABLE_PERFTRACING) || (defined(EP_INCLUDE_SOURCE_FILES) && !defined(EP_FORCE_INCLUDE_SOURCE_FILES))
+
+        ...
+
+        native\eventpipe\ep.c:4:#if !defined(EP_INCLUDE_SOURCE_FILES) || defined(EP_FORCE_INCLUDE_SOURCE_FILES)
+        native\eventpipe\ep.c:1664:#endif /* !defined(EP_INCLUDE_SOURCE_FILES) || defined(EP_FORCE_INCLUDE_SOURCE_FILES) */
+        native\eventpipe\ep.c:1667:#if !defined(ENABLE_PERFTRACING) || (defined(EP_INCLUDE_SOURCE_FILES) && !defined(EP_FORCE_INCLUDE_SOURCE_FILES))
+
+      ]]
+
+
+
+

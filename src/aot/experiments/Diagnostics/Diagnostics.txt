@@ -201,6 +201,8 @@ bp coreclr!ep_init
 
 ds_server_init
 
+    __debugbreak();
+
 
 
 --------------------------------
@@ -246,3 +248,67 @@ _rt_coreclr_array_is_valid (CONST_ARRAY_TYPE *ep_array)
 	STATIC_CONTRACT_NOTHROW;
 	return (ep_array->array != NULL);
 }
+
+
+---------------------------------------------
+Michal's PR, https://github.com/dotnet/runtime/pull/77884
+ - C:\Work\Core\CurrentWork2\runtime\src\coreclr\nativeaot\Common\src\Internal\Runtime\CompilerHelpers\StartupCodeHelpers.cs
+  + RuntimeImports.RhpCreateTypeManager
+  + RuntimeImports.RhGetModuleSection
+  + DehydratedDataCommand
+
+------------------------------------------------
+
+dumpbin /HEADERS ep-sources.c.obj>C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\investigate\linker_err\ep-sources_main.txt
+
+/HEADERS
+/ALL /RAWDATA:NONE
+
+Build started...
+1>------ Build started: Project: reproNative, Configuration: Debug x64 ------
+1>main.cpp
+1>   Creating library C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\reproNative\x64\Debug\reproNative.lib and object C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\reproNative\x64\Debug\reproNative.exp
+1>Runtime.WorkstationGC.lib(ep-sources.c.obj) : error LNK2019: unresolved external symbol "__declspec(dllimport) int __cdecl FreeLibrary(void *)" (__imp_?FreeLibrary@@YAHPEAX@Z) referenced in function "void __cdecl sample_profiler_unload_dependencies(void)" (?sample_profiler_unload_dependencies@@YAXXZ)
+1>Runtime.WorkstationGC.lib(ep-sources.c.obj) : error LNK2019: unresolved external symbol "struct HWND__ * __cdecl LoadLibraryW(wchar_t const *)" (?LoadLibraryW@@YAPEAUHWND__@@PEB_W@Z) referenced in function "bool __cdecl sample_profiler_load_dependencies(void)" (?sample_profiler_load_dependencies@@YA_NXZ)
+1>C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\reproNative\x64\Debug\reproNative.exe : fatal error LNK1120: 2 unresolved externals
+1>Done building project "reproNative.vcxproj" -- FAILED.
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
+========== Elapsed 00:01.284 ==========
+
+C:\Work\Core\main\runtime\artifacts\obj\coreclr\windows.x64.Debug\dlls\mscoree\coreclr
+
+
+C:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Debug
+
+
+C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\investigate\
+
+
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ilc.sln
+C:\Work\Core\CurrentWork3\runtime\artifacts\bin\repro\x64\Debug\compile-with-Debug-libs.rsp
+
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\reproNative\reproNative.vcxproj
+
+
+ep.C
+ep_requires_lock_not_held (void)
+{
+	ep_rt_config_requires_lock_not_held ();
+}
+
+
+windiff \\chrisahnx74\LakshanF\EventPipe\2022_11_17\001\Diff\Old \\chrisahnx74\LakshanF\EventPipe\2022_11_17\001\Diff\New
+
+
+// 11/20/22
+ - Uber Goals 
+  + Get lock check working
+  + Walk through the code and come up with hypothesis
+  + Be in a state to write to Chris for status and next steps
+
+ - Needed steps
+  + check in csharp, including Chris notes
+  + Get pre-processor files for the following, both main and CurrentWork3, both clean and with errors, both release and debug
+    * ds-ipc-pal-namedpipe.c.obj
+    * ds-sources.c.obj 
+    * startup.cpp.obj 
