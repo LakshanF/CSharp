@@ -1,0 +1,747 @@
+
+
+Marks:
+
+    #BUG
+
+
+
+
+dotnet/runtime repo at commit 72ad6649b505a98cae5ff296818df2d7a5da4807
+
+
+
+
+
+
+{src\coreclr\vm\eventpipeadapter.h}
+
+
+static
+inline
+void
+EventPipeAdapter::Initialize(
+    )
+{
+
+
+    CONTRACTL
+    {
+        NOTHROW;
+    }
+    CONTRACTL_END;
+
+
+
+    ep_init();
+
+
+
+    return;
+}
+
+
+
+
+
+
+{src\native\eventpipe\ep.c}
+
+
+//
+// Tree:
+//
+//      ep_init
+//          |
+//          +-- EventPipeAdapter::Initialize {src\coreclr\vm\eventpipeadapter.h}
+//              ::EEStartupHelper {src\coreclr\vm\ceemain.cpp}
+//              ...
+//          |
+//          +-- {src\mono\mono\component\event_pipe.c}
+//                  [[
+//                      Slotted into the function table returned from mono_component_event_pipe_init.
+//                  ]]
+//
+
+void
+ep_init (
+    )
+{
+
+
+    //
+    // Notes:
+    //
+    //    .
+    //      During all valid scenarios, the lock isn't even initialized at this point (it is
+    //      initialized in ep_rt_init).
+    //
+    //    .
+    //      The check passes because ep_rt_lock_requires_lock_not_held is required to be a no-op
+    //      when it runs against an uninitialized lock (see the listing below).
+    //
+
+    ep_requires_lock_not_held ();
+
+
+
+    ep_rt_init ();
+
+
+
+
+    if (ep_volatile_load_eventpipe_state () != EP_STATE_NOT_INITIALIZED)
+    {
+
+
+        EP_ASSERT (
+           !"EventPipe already initialized."
+        );
+
+
+
+        return;
+
+
+    } // End of: if (ep_volatile_load_eventpipe_state () != EP_STATE_NOT_INITIALIZED)
+
+
+
+    ep_thread_init ();
+
+
+
+
+    for (uint32_t i = 0; i < EP_MAX_NUMBER_OF_SESSIONS; ++i)
+    {
+
+
+        ep_volatile_store_session (
+            i,
+            NULL
+        );
+
+        continue;
+
+
+    } // End of: for (uint32_t i = 0; i < EP_MAX_NUMBER_OF_SESSIONS; ++i)
+
+
+
+    ep_config_init (
+        ep_config_get ()
+    );
+
+
+
+    ep_event_source_init (
+        ep_event_source_get ()
+    );
+
+
+
+    //
+    // <InOriginal>
+    //
+    // This calls into auto-generated code to initialize the runtime specific providers and
+    // events so that the EventPipe configuration lock isn't taken at runtime.
+    //
+    // </InOriginal>
+    //
+
+    ep_rt_init_providers_and_events ();
+
+
+
+    //
+    // <InOriginal>
+    // Set the sampling rate for the sample profiler to 1 msec.
+    // </InOriginal>
+    //
+
+    const uint32_t default_profiler_sample_rate_in_nanoseconds = 1_000_000;
+
+    ep_sample_profiler_set_sampling_rate (
+        default_profiler_sample_rate_in_nanoseconds
+    );
+
+
+
+    ep_rt_session_id_array_alloc (
+        &_ep_deferred_enable_session_ids
+    );
+
+
+
+    ep_rt_session_id_array_alloc (
+        &_ep_deferred_disable_session_ids
+    );
+
+
+
+    ep_rt_execution_checkpoint_array_alloc (
+        &_ep_rundown_execution_checkpoints
+    );
+
+
+
+    EP_LOCK_ENTER (section1)
+    {
+
+
+        ep_volatile_store_eventpipe_state (
+            EP_STATE_INITIALIZED
+        );
+
+
+    }
+    EP_LOCK_EXIT (section1)
+
+
+
+    enable_default_session_via_env_variables ();
+
+
+
+ep_on_exit:
+
+
+
+    ep_requires_lock_not_held ();
+
+
+
+    return;
+
+
+
+ep_on_error:
+
+
+
+    ep_exit_error_handler ();
+
+
+
+    return;
+}
+
+
+
+
+
+
+
+{src\native\eventpipe\ep.c}
+
+
+//
+// The listing below captures the effect of the actual definition that occurs in the actual
+// sources.
+//
+// Ref:
+//      native\eventpipe\ep.h:114:ep_requires_lock_held (void);
+//      native\eventpipe\ep.h:119:#define ep_requires_lock_held()
+//
+
+void
+ep_requires_lock_held (
+    )
+{
+
+
+    #if defined(EP_CHECKED_BUILD)
+
+
+
+        //
+        // Ref:
+        //      l:\Git\github\dotnet\runtime\src $ findstr /sprn ep_rt_config_requires_lock_held *
+        //      coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h:1364:ep_rt_config_requires_lock_held (void)
+        //      mono\mono\eventpipe\ep-rt-mono.h:742:ep_rt_config_requires_lock_held (void)
+        //      ...
+        //
+
+        ep_rt_config_requires_lock_held ();
+
+
+    #endif // defined(EP_CHECKED_BUILD)
+
+
+
+    return;
+}
+
+
+
+
+
+
+
+{src\native\eventpipe\ep.c}
+
+
+//
+// The listing below captures the effect of the actual definition that occurs in the actual
+// sources.
+//
+// Ref:
+//      native\eventpipe\ep.h:117:ep_requires_lock_not_held (void);
+//      native\eventpipe\ep.h:120:#define ep_requires_lock_not_held()
+//
+
+void
+ep_requires_lock_not_held (
+    )
+{
+
+
+    #if defined(EP_CHECKED_BUILD)
+
+
+
+        //
+        // Ref:
+        //      l:\Git\github\dotnet\runtime\src $ findstr /sprn ep_rt_config_requires_lock_not_held *
+        //      coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h:1373:ep_rt_config_requires_lock_not_held (void)
+        //      mono\mono\eventpipe\ep-rt-mono.h:750:ep_rt_config_requires_lock_not_held (void)
+        //      ...
+        //
+
+        ep_rt_config_requires_lock_not_held ();
+
+
+    #endif // defined(EP_CHECKED_BUILD)
+
+
+
+    return;
+}
+
+
+
+
+
+
+
+{src\coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h}
+
+
+//
+// The listing below captures the effect of the actual definition that occurs in the actual
+// sources.
+//
+// Ref:
+//      native\eventpipe\ep-rt.h:266:ep_rt_config_requires_lock_held (void);
+//      native\eventpipe\ep-rt.h:272:#define ep_rt_config_requires_lock_held()
+//
+
+static
+inline
+void
+ep_rt_config_requires_lock_held (
+    )
+{
+
+
+    #if defined(EP_CHECKED_BUILD)
+
+
+
+        STATIC_CONTRACT_NOTHROW;
+
+
+
+        //
+        // Ref:
+        //      l:\Git\github\dotnet\runtime\src $ findstr /psrn ep_rt_lock_requires_lock_held *
+        //      coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h:1367:     ep_rt_lock_requires_lock_held (ep_rt_coreclr_config_lock_get ());
+        //      mono\mono\eventpipe\ep-rt-mono.h:1596:ep_rt_lock_requires_lock_held (const ep_rt_lock_handle_t *lock)
+        //      ...
+        //
+
+        ep_rt_lock_requires_lock_held (
+            ep_rt_coreclr_config_lock_get ()
+        );
+
+
+    #endif // defined(EP_CHECKED_BUILD)
+
+
+
+    return;
+}
+
+
+
+
+
+{src\coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h}
+
+
+//
+// The listing below captures the effect of the actual definition that occurs in the actual
+// sources.
+//
+// Ref:
+//      native\eventpipe\ep-rt.h:270:ep_rt_config_requires_lock_not_held (void);
+//      native\eventpipe\ep-rt.h:273:#define ep_rt_config_requires_lock_not_held()
+//
+
+static
+inline
+void
+ep_rt_config_requires_lock_not_held (
+    )
+{
+
+
+    #if defined(EP_CHECKED_BUILD)
+
+
+
+        STATIC_CONTRACT_NOTHROW;
+
+
+
+        //
+        // Ref:
+        //      l:\Git\github\dotnet\runtime\src $ findstr /psrn ep_rt_lock_requires_lock_not_held *
+        //      coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h:1376:     ep_rt_lock_requires_lock_not_held (ep_rt_coreclr_config_lock_get ());
+        //      mono\mono\eventpipe\ep-rt-mono.h:1604:ep_rt_lock_requires_lock_not_held (const ep_rt_lock_handle_t *lock)
+        //      ...
+        //
+
+        ep_rt_lock_requires_lock_not_held (
+            ep_rt_coreclr_config_lock_get ()
+        );
+
+
+    #endif // defined(EP_CHECKED_BUILD)
+
+
+
+    return;
+}
+
+
+
+
+
+
+{src\coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h}
+
+
+//
+// Tree:
+//
+//      ep_rt_coreclr_config_lock_get
+//          |
+//          +-- ep_rt_config_acquire
+//          |
+//          +-- ep_rt_config_release
+//          |
+//          +-- ep_rt_config_requires_lock_held
+//          |
+//          +-- ep_rt_config_requires_lock_not_held
+//
+
+static
+inline
+ep_rt_lock_handle_t*
+ep_rt_coreclr_config_lock_get (
+    )
+{
+
+
+    STATIC_CONTRACT_NOTHROW;
+
+
+
+    //
+    // Ref:
+    //      coreclr\vm\eventing\eventpipe\ep-rt-coreclr.cpp:10:ep_rt_lock_handle_t _ep_rt_coreclr_config_lock_handle;
+    //
+    // The global variable is initialized along the following stack:
+    //
+    //      ep_rt_init
+    //      ep_init
+    //      ...
+    //
+
+    extern ep_rt_lock_handle_t _ep_rt_coreclr_config_lock_handle;
+
+
+
+    return &(_ep_rt_coreclr_config_lock_handle);
+}
+
+
+
+
+
+
+{src\coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h}
+
+
+//
+// The listing below captures the effect of the actual definition that occurs in the actual
+// sources.
+//
+// Ref:
+//      native\eventpipe\ep-rt.h:680:ep_rt_lock_requires_lock_held (const ep_rt_lock_handle_t *lock);
+//      native\eventpipe\ep-rt.h:686:#define ep_rt_lock_requires_lock_held(lock)
+//
+
+static
+inline
+void
+ep_rt_lock_requires_lock_held (
+    const ep_rt_lock_handle_t * lock
+    )
+{
+
+
+    #if defined(EP_CHECKED_BUILD)
+
+
+
+        STATIC_CONTRACT_NOTHROW;
+
+
+
+        EP_ASSERT (
+              (
+                (ep_rt_lock_handle_t*)(
+                    lock
+                )
+              )
+            ->lock
+            ->OwnedByCurrentThread()
+        );
+
+
+    #endif // defined(EP_CHECKED_BUILD)
+
+
+
+    return;
+}
+
+
+
+
+
+{src\coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h}
+
+
+//
+// The listing below captures the effect of the actual definition that occurs in the actual
+// sources.
+//
+// Ref:
+//      native\eventpipe\ep-rt.h:684:ep_rt_lock_requires_lock_not_held (const ep_rt_lock_handle_t *lock);
+//      native\eventpipe\ep-rt.h:687:#define ep_rt_lock_requires_lock_not_held(lock)
+//
+
+static
+inline
+void
+ep_rt_lock_requires_lock_not_held (
+    const ep_rt_lock_handle_t * lock
+    )
+{
+
+
+    #if defined(EP_CHECKED_BUILD)
+
+
+
+        STATIC_CONTRACT_NOTHROW;
+
+
+
+        if (lock->lock != NULL)
+        {
+
+
+            EP_ASSERT (
+               !(
+                      (
+                        (ep_rt_lock_handle_t*)(
+                            lock
+                        )
+                      )
+                    ->lock
+                    ->OwnedByCurrentThread()
+                )
+            );
+
+
+        } // End of: if (lock->lock != NULL)
+
+
+    #endif // defined(EP_CHECKED_BUILD)
+
+
+
+    return;
+}
+
+
+
+
+
+
+{src\coreclr\vm\eventing\eventpipe\ep-rt-coreclr.h}
+
+
+//
+// Tree:
+//
+//      ep_rt_init
+//      ep_init
+//      ...
+//
+
+static
+void
+ep_rt_init (
+    )
+{
+
+
+    STATIC_CONTRACT_NOTHROW;
+
+
+
+    //
+    // Ref:
+    //      coreclr\vm\eventing\eventpipe\ep-rt-coreclr.cpp:10:ep_rt_lock_handle_t _ep_rt_coreclr_config_lock_handle;
+    //
+
+    extern ep_rt_lock_handle_t _ep_rt_coreclr_config_lock_handle;
+
+
+
+    //
+    // Ref:
+    //      coreclr\vm\eventing\eventpipe\ep-rt-coreclr.cpp:11:CrstStatic _ep_rt_coreclr_config_lock;
+    //
+
+    extern CrstStatic _ep_rt_coreclr_config_lock;
+
+
+
+	_ep_rt_coreclr_config_lock_handle.lock = &(_ep_rt_coreclr_config_lock);
+
+
+
+    _ep_rt_coreclr_config_lock_handle.lock->InitNoThrow (
+        CrstEventPipe
+      ,
+        (CrstFlags)(
+            CRST_REENTRANCY |
+            CRST_TAKEN_DURING_SHUTDOWN |
+            CRST_HOST_BREAKABLE
+        )
+    );
+
+
+
+    //
+    // Ref {coreclr\inc\clrconfigvalues.h}
+    //
+    //      RETAIL_CONFIG_DWORD_INFO(
+    //          INTERNAL_EventPipeProcNumbers,
+    //          W("EventPipeProcNumbers"),
+    //          defaultValue: 0,
+    //          "Enable/disable capturing processor numbers in EventPipe event headers"
+    //      )
+    //
+
+    if (CLRConfig::GetConfigValue (CLRConfig::INTERNAL_EventPipeProcNumbers) != 0)
+    {
+
+
+        #if !defined(TARGET_UNIX)
+
+
+
+            //
+            // <InOriginal>
+    		// Setup the windows processor group offset table.
+            // </InOriginal>
+            //
+            ;
+
+
+
+            uint16_t groups = ::GetActiveProcessorGroupCount ();
+
+
+
+            extern uint32_t* _ep_rt_coreclr_proc_group_offsets;
+
+
+
+            _ep_rt_coreclr_proc_group_offsets = new (nothrow) uint32_t [
+                groups
+            ];
+
+
+
+            if (_ep_rt_coreclr_proc_group_offsets != NULL)
+            {
+
+
+                uint32_t procs = 0;
+
+
+
+                //
+                // #BUG
+                //
+                // The "procs" component of this line was supposed to be "groups".
+                //
+                // The result is that the memory acquired by "operator new" above is never initialized and
+                // therefore contains unpredictable content when/if it is ever consulted during subsequent
+                // execution.
+                //
+
+                for (uint16_t i = 0; i < procs; ++i)
+                {
+
+
+                    _ep_rt_coreclr_proc_group_offsets [i] = procs;
+
+
+
+                    procs += GetActiveProcessorCount (
+                        i
+                    );
+
+
+
+                    continue;
+
+
+                } // End of: for (uint16_t i = 0; i < procs; ++i)
+
+
+            } // End of: if (_ep_rt_coreclr_proc_group_offsets != NULL)
+
+
+        #endif // defined(TARGET_UNIX)
+
+
+    } // End of: if (CLRConfig::GetConfigValue (CLRConfig::INTERNAL_EventPipeProcNumbers) != 0)
+
+
+
+    return;
+}
+
+
+
+
