@@ -1,0 +1,107 @@
+OK, thanks.  I have several thoughts on how to proceed.
+
+I'm going to start with some messages which describe items that, while less important overall, are much more concrete and actionable.
+
+After these initial messages, I'm going to send a final message which contains general thoughts about how to optimize the __debugbreak strategy, and how/when to start pulling in Johan's container work.  
+These are less concrete, but I think they are much more important overall since the affect the overall strategy for working through the entire hello-world bringup (across however many individual issues end up needing to be addressed).
+
+[2:10 PM] Chris Ahna
+I looked carefully at the very early stages of EventPipeAdapter::Initialize (specifically the code up to and including the call to ep_rt_init).  For reference, here are my notes on this code:
+ 
+\\chrisahnx74\LakshanF\EventPipe\2022_11_21\001\EarlyInitNotes.txt
+
+[2:10 PM] Chris Ahna
+For ep_requires_lock_not_held and for locking in general:
+ 
+Michal and I have suggesting starting with no-op implementations that don't do any locking of any kind.
+ 
+I think your current pushed change to ep_rt_aot_config_lock_get is fine in this regard, but it is missing the easy-to-search comment that Michal mentioned.  I know you are tracking your changes carefully, but for a case like this nothing beats throwing a searchable tag right into the changed code as well.  I'd use something like: "TODO: Implement EventPipe locking for NativeAOT"
+ 
+Beyond ep_rt_aot_config_lock_get, you also need changes to turn all of the lock operations into no-ops as well.  This would mean turning ep_rt_config_acquire and ep_rt_config_release into
+ 
+// TODO: Implement EventPipe locking for NativeAOT
+return true;
+ 
+and turning ep_rt_config_requires_lock_held and ep_rt_config_requires_lock_not_held into:
+ 
+// TODO: Implement EventPipe locking for NativeAOT
+return;
+ 
+Once these changes are made, there will be no more "friction" around locking.  Any EventPipe code that tries to acquire a lock will just act like it was able to acquire it immediately.  This is in fact correct behavior in initial single-threaded bringup, and only becomes incorrect when actual multi-threading is involved (and the TODO comments can be addressed at that time).
+
+[2:11 PM] Chris Ahna
+You also mentioned "processor group offset table for Windows" that is allocated in ep_rt_init.
+ 
+You definitely don't need to worry about this code.  For one thing, it is off by default unless a specific DOTNET_* setting is present.  Much more important, as described at the #BUG mark in the notes that I shared, the code is totally broken (i.e., just allocates some uninitialized memory and doesn't do anything else).
+ 
+If anyone cares about this code (and if you have any interest in following up), it would certainly be fine to file an issue on this.
+
+(This is the end of my "more specific" comments; My trailing "more general" comment will be ready in a few minutes.)
+
+Now for more general notes about the __debugbreak strategy (with my view on pulling in the container work listed at the very end):
+
+ 
+
+Looking at the __debugbreaks in the currently pushed code, it looks like they are placed on "entrypoint" functions where 1) we don't know how well the backing code will work on NativeAOT and 2) we strongly suspect that the backing code won't work correctly until at least a few fixes are made.
+
+ 
+
+It's fine to use __debugbreaks this way, but a risk that needs to be managed is whether these will "add too much friction", or similarly, whether they will encourage an examination of the EventPipe code that is "more detailed than necessary".
+
+ 
+
+There is an "inverted" strategy that can work really well, and I suspect it will actually work better for the specific project that is in front of us right now.
+
+ 
+
+In the inverted strategy, you only use __debugbreak to mark functions where you know that backing implementation is missing, and is missing "badly enough" that letting the scenario keep running would have "no real hope" of generating a useful result.  In other words, the __debugbreaks are the "aborts" that Michal mentioned.
+
+ 
+
+So in our case, __debugbreaks would go into the member functions of any "empty container" type that doesn't have a real implementation (meaning it isn't going to "actually build" the data structure that the caller needs).  __debugbreaks would also go into anything else where we end up learning that "this is missing and we'll need to fill it is right away once hello-world gets far enough to call into it".
+
+ 
+
+This inverted strategy moves all of the __debugbreaks to "known missing" code.  This means the remainder of the EventPipe code (including the startup path) becomes "maybe missing" code (because we know a few fixes are needed somewhere, but we don't know exactly where).  Crucially, this means the "maybe missing" code has no __debugbreaks inside of it.  This creates an environment where the hello-world will run "as far as possible" before crashing, hanging, generating a nonsense result, etc.  The important thing is that you now have a concrete failure in hand.
+
+ 
+
+The next step is to dig into the failure until you can tie it back to one (or more) things that are missing in the ported code.  Note that this will be trivial if the hello-world reached one of the "known missing" __debugbreak points (since the stack will point to the missing method that has been reached for the first time and now needs to be filled in).  Note that TTD is often a crucial tool when the investigation is less straightforward.  Once the investigation identifies a missing pieces, you now know about a missing piece that is causing a real failure in the hello-world scenario.
+
+ 
+
+The next step is to decide how to address the missing piece.  Options include things like 1) filling in the real implementation right away, 2) commenting something out and adding a "TODO" comment, etc.
+
+ 
+
+Once the missing piece is addressed, you can re-run the hello-world scenario.  This time it will once again get "as far as possible" before failing (and will hopefully get further than it did before the latest missing piece was addressed).
+
+ 
+
+The overall premise is that the vast majority of the ported code is probably "just plain C/C++ code full of weirdness and latent bugs" and that, crucially, this code is probably going to work just as well in the NativeAOT environment as it does in CoreCLR and Mono.
+
+ 
+
+If the premise holds, the vast majority of the codebase being ported never needs to be examined at all during the porting effort.  In other words, it is just "going to work perfectly on the first try" once the surrounding environment is able compile it, link it, and give it access to whatever runtime-specific services (if any) that it ends up using when it runs.
+
+ 
+
+In this kind of model, the inverted strategy ensures that when your hello-world hits a huge chunk of "code that's just going to work", the hello-world will immediately fly all the way out the other side, and will quickly proceed to whatever "real" failure is next in line (even if it is very, very far down the line).
+
+ 
+
+I suggest trying the strategy above to see if it helps (and it can of course be "rolled back" if eventual experience shows that it just slows things down).
+
+ 
+
+With this strategy in place, we wouldn't worry much about Johan's container work until the hello-world started to hit the __debugbreaks in "known missing" container-related services, at which point we'd take a closer look at his code (and maybe find a way to just incrementally copy/paste it in to incrementally replace __debugbreaks with real code as the hello-world runs into them).
+
+[2:44 PM] Chris Ahna
+(One additional note is that this inverted strategy requires "having all of the code compiled and ready to run just in case it happens to work on the first try".  As a result, the inverted strategy rarely involves working around compiler errors by commenting out large pieces of the mainline code being ported.  Instead, the idea is to address those compiler errors synchronously to make sure the entirety of the code being ported gets into that "ready to actually run" state.
+ 
+It is common to work around a compiler error by changing a function body to a "known missing" __debugbreak as a way of saying "I'm not going to implement this specific service now, and will return to it when/if hello-world runs into this function during actual execution".  This would usually be done in a case (like a container member function) where the function body itself is is known to be missing crucial pieces.
+ 
+It's fine to do this for "big" functions (e.g., functions that call through to lots of other functions), and is even fine to do it for functions that you know hello-world is going to run into before too long.
+ 
+The only caveat is that if you really know that hello-world is going to hit it right away, then the __debugbreak doesn't buy much.  The point of the whole inverted strategy is to create an environment where each hello-world re-run will possibly make it "much further down the line", and the strategy doesn't add nearly as much if you're freshly-adding __debugbreaks just a little bit forward from the current location.  If a "known missing" function is "just a little bit ahead" of the current location, it's probably better to just immediately start grappling with putting together a real implementation (instead of bothering to do a re-run that is guaranteed to just immediately run into the new __debugbreak).)
+

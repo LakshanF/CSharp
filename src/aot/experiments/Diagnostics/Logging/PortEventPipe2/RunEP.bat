@@ -26,6 +26,6 @@ REM call build.cmd -arch x64 -os windows -s clr -c Release > C:\Work\Core\Laksha
 
 REM call build.cmd -arch x64 -os windows -s clr.aot -c Release > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\build\buildLog_change_58.log
 
-REM call build.cmd -arch x64 -os windows -s clr.aot -c Debug > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\build\buildLog_change_49.log
+call build.cmd -arch x64 -os windows -s clr.aot -c Debug > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\build\buildLog_change_49.log
 
-call build.cmd clr.aot+libs -rc Debug > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\build\buildLog_change_50.log
+REM call build.cmd clr.aot+libs -rc Debug > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\build\buildLog_change_50.log
