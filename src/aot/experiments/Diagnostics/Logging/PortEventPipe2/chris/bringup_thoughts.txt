@@ -105,3 +105,44 @@ It's fine to do this for "big" functions (e.g., functions that call through to l
  
 The only caveat is that if you really know that hello-world is going to hit it right away, then the __debugbreak doesn't buy much.  The point of the whole inverted strategy is to create an environment where each hello-world re-run will possibly make it "much further down the line", and the strategy doesn't add nearly as much if you're freshly-adding __debugbreaks just a little bit forward from the current location.  If a "known missing" function is "just a little bit ahead" of the current location, it's probably better to just immediately start grappling with putting together a real implementation (instead of bothering to do a re-run that is guaranteed to just immediately run into the new __debugbreak).)
 
+> seems like the uber msg is to comment back the code except the exceptions you outlined below
+
+> As in "having all of the code compiled and ready to run just in case it happens to work on the first try".
+
+ 
+
+Yes, you've got it.
+
+ 
+
+> Is it ok to start by adding the __debugbreak to the empty containers and uncommenting out
+
+> rest of the code in 2-3 APIs at a time (as opposed to all the code) that will be hit in the init
+
+> sequence in order? Most of the code that is currently commented out will have compiler/linker
+
+> issues related to pointing to CoreCLR runtime and I worry that the number of issues might be overwhelming.
+
+ 
+
+I feel like there is a lot of upside in getting all of the code to compile/link before returning to live execution.  So to me it's fine to uncomment the code 2-3 APIs at a time as we get it all to compile/link, but I think we should repeat this process until everything is uncommented before trying to run any of it.
+
+ 
+
+If you think actually running the code a little bit after each 2-3 API iteration will give you a big boost, then that's fine, but otherwise I don't think "actually running" these intermediate iterations adds anything compared to pushing through the full compile/link first.
+
+ 
+
+Reasons for my stance above:
+
+ 
+
+I think everything needs to compile/link eventually, so I don't think any of this will be wasted work.  Further, I think working through errors one-by-one will be a good way to see individual places where the CoreCLR code can't be reused as-is.  This will help us understand the total "runtime-specific surface area" of the EventPipe code that we're porting, and will give us a natural opportunity to address each bit one at a time (even if it's just putting in a __debugbreak so it can be revisited during live execution much later on).
+
+ 
+
+So my prediction is that pushing through full compile/link would leave us in a spot where 1) we have "the whole EventPipe product" all together in the compiled binary, with the caveat that it has a number of __debugbreaks at places where we know a working NativeAOT implementation isn't ready yet and 2) we have a much improved global picture of what kind of runtime dependencies exist and where they are likely to crop up.  This is a good place to be when it comes to starting to run the hello-world and work through the __debugbreaks and other execution-time problems that occur.
+
+ 
+
+(Finally, I think the work involved in addressing compile/link errors will be very similar to the work that has gone in to addressing the initial issues that you identified via live debugging.  So in a way I think the character of the work will be the same (i.e., will involve addressing individual spots where the code current contains CoreCLR-specific stuff that doesn't work on NativeAOT as-is), we'll just be skipping the "overhead" of actually running anything under the debugger.  So I don't think there's a reason to run under the debugger unless it's going to give you an energy boost compared to just focusing on a big unbroken compile/link push.)
