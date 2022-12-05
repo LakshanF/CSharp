@@ -378,3 +378,226 @@ test_eventpipe_setup: OK
 
 
 C:\ProgramData\Dbg\raw.githubusercontent.com\dotnet\runtime\eecb02807867cad56cd05badddef65e432248b75\src\coreclr\inc\45469fee3d\src\coreclr\inc\volatile.h
+
+
+--------------------------------
+Removing __debugbreak()
+ - Plan
+  + Remove 203 total
+  + Add to EmptyContainer (55)
+
+Remove 204 Breakdown
+ - [4] C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipeadapter.h
+  + Can replace with C:\Work\Core\CurrentWork3\runtime\src\coreclr\vm\eventpipeadapter.h
+ - [12] C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ds-rt-aot.h
+  + Remove manually
+ - [181] C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h
+  + Remove manually
+ - [5] C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-types-aot.h
+   + Remove manually
+
+Add to EmptyContainer (55)
+
+/showIncludes /d1PP /P 
+
+C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.319\bin\Hostx64\x64\cl.exe  /showIncludes /d1PP /P /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_CORECLR -DFEATURE_PERFTRACING -DFEATURE_PERFTRACING_STANDALONE_PAL -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DPAL_STDCPP_COMPAT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DURTBLDENV_FRIENDLY=Debug -DWIN32_LEAN_AND_MEAN -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -IC:\Work\Core\CurrentWork3\runtime\src\native -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\debug\debug-pal\..\inc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\debug\debug-pal\..\..\pal\inc -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Debug\inc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\debug\debug-pal\..\..\inc /DWIN32 /D_WINDOWS    /GR- /guard:cf /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /Fodebug\debug-pal\CMakeFiles\debug-pal_obj.dir\C_\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-ipc-pal-namedpipe.c.obj /FdTARGET_COMPILE_PDB /FS -c C:\Work\Core\CurrentWork3\runtime\src\native\eventpipe\ds-ipc-pal-namedpipe.c
+
+C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\investigate
+C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe2\investigate\CrstStatic\main\ds-ipc-pal-namedpipe.i
+
+1) ep_rt_entrypoint_assembly_name_get_utf8, https://github.com/LakshanF/runtime/blob/ExperimentEventPipe2/src/coreclr/nativeaot/Runtime/eventpipe/ep-rt-aot.h#L1127,
+return empty string but TODO to return filename
+
+2) ep_rt_runtime_version_get_utf8, https://github.com/LakshanF/runtime/blob/ExperimentEventPipe2/src/coreclr/nativeaot/Runtime/eventpipe/ep-rt-aot.h#L1151
+Jan => "Try returning RuntimeProductVersion - it is a macro that should be defined by the build."
+src\coreclr\inc\clrversion.h, has a reference to this but not sure what "defined by the build means"
+
+// TODO: Find a way to use CoreCLR runtime_version.h here if a more exact version is needed
+
+return reinterpret_cast<const ep_char8_t*>("8.0.0");
+
+3) Exchange InterlockedCompareExchangeT<=>PalInterlockedExchange, src\coreclr\nativeaot\Runtime\unix\PalRedhawkInline.h
+[NEED_HELP]     typedef unsigned __int64 size_t;
+EXTERN_C long __PN__MACHINECALL_CDECL_OR_DEFAULT _InterlockedExchange(long volatile *, long);
+#pragma intrinsic(_InterlockedExchange)
+FORCEINLINE int32_t PalInterlockedExchange(_Inout_ int32_t volatile *pDst, int32_t iValue)
+{
+    return _InterlockedExchange((long volatile *)pDst, iValue);
+}
+
+4) ep_rt_method_get_full_name, Issue with MethodDesc (now on managed?) src\coreclr\nativeaot\Runtime\eventtracebase.h (etw related?) uses this but not sure how that works (perhaps reverse PINvokes?)
+// TODO: Design MethodDesc and method name services if/when needed
+__debugbreak();
+
+5) EX_TRY macros 
+error C2065: 'EX_TRY': undeclared identifier
+
+In the NativeAOT runtime, C++ code is never allowed to handle any exceptions in any way.  This is even enforced by passing "/EHa- /EHs-" on the cl.exe command line due to these settings in src\coreclr\nativeaot\CMakeLists.txt:
+
+6) ep_rt_method_get_full_name, SString, src\coreclr\inc\sstring.h
+Similar to MethodDesc, in that ETW (eventtrace*.*) seems to be using this
+
+@TODO - figure out the way to do this in NativeAOT
+
+// TODO: Design MethodDesc and method name services if/when needed
+__debugbreak();
+
+7) CLRConfig::GetConfigValue - how does nativeaot get config values? Eventtrace uses this in NativeAOT but seems under #ifndef FEATURE_NATIVEAOT
+
+https://github.com/dotnet/runtime/blob/main/src/coreclr/vm/eventing/eventpipe/ep-rt-coreclr.h#L1309
+
+INTERNAL_EventPipeProcNumbers, INTERNAL_EnableEventPipe, INTERNAL_EventPipeConfig, INTERNAL_EventPipeOutputPath, INTERNAL_EventPipeCircularMB, INTERNAL_EventPipeOutputStreaming, INTERNAL_EventPipeRundown
+
+ - g_pRhConfig->ReadConfigValue
+ extern RhConfig * g_pRhConfig;
+ https://github.com/dotnet/runtime/blob/main/src/coreclr/nativeaot/Runtime/RhConfig.h#L20
+
+Waiting for Michal
+
+// TODO: EventPipe Configuration values - RhConfig?
+
+	// TODO: EventPipe Configuration values - RhConfig?
+	__debugbreak();
+	return false;
+
+8) ep_rt_provider_config_init
+MICROSOFT_WINDOWS_DOTNETRUNTIME_RUNDOWN_PROVIDER_DOTNET_Context is not available in NativeAOT
+
+	// TODO: MICROSOFT_WINDOWS_DOTNETRUNTIME_RUNDOWN_PROVIDER_DOTNET_Context is not available in NativeAOT
+	__debugbreak();
+
+9) ep_rt_notify_profiler_provider_created
+#ifndef DACCESS_COMPILE
+		BEGIN_PROFILER_CALLBACK (CORProfilerTrackEventPipe ());
+		(&g_profControlBlock)->EventPipeProviderCreated (provider);
+		END_PROFILER_CALLBACK ();
+#endif // DACCESS_COMPILE
+
+src\coreclr\inc\profilepriv.inl
+FORCEINLINE BOOL CORProfilerTrackEventPipe()
+{
+    STATIC_CONTRACT_LIMITED_METHOD;
+
+    return (&g_profControlBlock)->globalEventMask.IsEventMaskHighSet(COR_PRF_HIGH_MONITOR_EVENT_PIPE);
+}
+
+	// TODO: EventPipe profiler callback needed
+	__debugbreak();
+
+10) ep_rt_wait_event_alloc, use of undefined type 'CLREventStatic'
+
+C:\Work\Core\main\runtime\src\coreclr\vm\synch.h
+
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\event.h
+ ues NoThrow versions, CreateManualEventNoThrow & CreateAutoEventNoThrow
+
+11) ep_rt_wait_event_get_wait_handle, NativeAOT CLREventStatic doesn't have GetHandleUNHOSTED
+	// TODO: 
+	__debugbreak();
+
+12) ep_rt_process_detach (void)
+g_fProcessDetach, g_fEEShutDown,  not defined
+
+NativeAOT seems not to have a concept of process detach, although there is a reference to DLL_PROCESS_DETACH
+
+	// TODO: 
+	__debugbreak();
+
+------------------------------------------------------------------------
+
+13) EP_RT_DEFINE_THREAD_FUNC (ep_rt_thread_aot_start_func)
+	DWORD result = thread_params->thread_params.thread_func (thread_params);
+	if (thread_params->thread_params.thread)
+		::DestroyThread (thread_params->thread_params.thread);
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1934): warning C4267: 'initializing': conversion from 'size_t' to 'DWORD', possible loss of data
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.h(1936): error C2039: 'DestroyThread': is not a member of '`global namespace''
+  
+		// thread_params->thread_params.thread == ep_rt_thread_handle_t == Thread
+		// CoreCLR ::DestroyThread (thread_params->thread_params.thread);
+
+		thread_params->thread_params.thread->Destroy();
+
+Include coreclr\nativeaot\Runtime\thread.h
+
+14) [NEED_HELP] nativeaot\Runtime\thread.h(62): error C3646: 'm_kind': unknown override specifier, lots of errors with #include <thread.h> at
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(62): error C3646: 'm_kind': unknown override specifier
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(65): error C2079: 'ExInfo::m_frameIter' uses undefined class 'StackFrameIterator'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(82): error C2143: syntax error: missing ';' before '*'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(82): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(82): error C2238: unexpected token(s) preceding ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(83): error C2143: syntax error: missing ';' before '*'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(83): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(83): error C2238: unexpected token(s) preceding ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(84): error C2143: syntax error: missing ';' before '*'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(84): error C2238: unexpected token(s) preceding ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(114): error C2143: syntax error: missing ';' before '*'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(114): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(114): error C2238: unexpected token(s) preceding ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(121): error C3856: 'DefaultSListTraits': symbol is not a class template
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(121): error C2098: unexpected token after data member 'Thread'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(121): error C2059: syntax error: '>'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(181): error C2143: syntax error: missing ';' before '*'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(181): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(181): error C2238: unexpected token(s) preceding ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(244): error C2143: syntax error: missing ';' before '*'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(244): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(244): error C2238: unexpected token(s) preceding ';'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(257): error C2061: syntax error: identifier 'PInvokeTransitionFrame'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(273): error C2061: syntax error: identifier 'PInvokeTransitionFrame'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(280): error C2061: syntax error: identifier 'PInvokeTransitionFrame'
+  C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\thread.h(281): error C2061: syntax error: identifier 'PInvokeTransitionFrame'
+
+15) ep_rt_thread_create, how to start thread?
+  thread_params->thread_params.thread = SetupUnstartedThread ();
+
+16) 
+
+unsigned int COUNT_T
+
+
+C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.319\bin\Hostx64\x64\cl.exe /showIncludes /d1PP /P /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_RX_THUNKS -DFEATURE_SUSPEND_REDIRECTION -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\Full -IC:\Work\Core\CurrentWork3\runtime\src\native -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\CurrentWork3\runtime\artifacts\obj -IC:\Work\Core\CurrentWork3\runtime\src\native\eventpipe -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\. -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS    /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /Fonativeaot\Runtime\Full\CMakeFiles\Runtime.WorkstationGC.dir\__\startup.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\startup.cpp
+
+C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.319\bin\Hostx64\x64\cl.exe  /showIncludes /d1PP /P  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DDEBUGGING_SUPPORTED -DEnC_SUPPORTED -DFEATURE_ARRAYSTUB_AS_IL -DFEATURE_BASICFREEZE -DFEATURE_CODE_VERSIONING -DFEATURE_COLLECTIBLE_TYPES -DFEATURE_COMINTEROP -DFEATURE_COMINTEROP_APARTMENT_SUPPORT -DFEATURE_COMINTEROP_UNMANAGED_ACTIVATION -DFEATURE_COMWRAPPERS -DFEATURE_CORECLR -DFEATURE_DATABREAKPOINT -DFEATURE_DEFAULT_INTERFACES -DFEATURE_EH_FUNCLETS -DFEATURE_ENC_SUPPORTED -DFEATURE_EVENT_TRACE -DFEATURE_HIJACK -DFEATURE_ICASTABLE -DFEATURE_INSTANTIATINGSTUB_AS_IL -DFEATURE_INTEROP_DEBUGGING -DFEATURE_ISYM_READER -DFEATURE_MANAGED_ETW -DFEATURE_MANAGED_ETW_CHANNELS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_MULTICASTSTUB_AS_IL -DFEATURE_MULTICOREJIT -DFEATURE_ON_STACK_REPLACEMENT -DFEATURE_PERFTRACING -DFEATURE_PGO -DFEATURE_PORTABLE_SHUFFLE_THUNKS -DFEATURE_PROFAPI_ATTACH_DETACH -DFEATURE_READYTORUN -DFEATURE_REJIT -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_STANDALONE_GC -DFEATURE_SVR_GC -DFEATURE_SYMDIFF -DFEATURE_TIERED_COMPILATION -DFEATURE_TYPEEQUIVALENCE -DFEATURE_USE_ASM_GC_WRITE_BARRIERS -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DFEATURE_WIN32_REGISTRY -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DOUT_OF_PROCESS_SETTHREADCONTEXT -DPROFILING_SUPPORTED -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE -DUNIX_AMD64_ABI_ITF -DURTBLDENV_FRIENDLY=Debug -DWIN32 -DWIN32_LEAN_AND_MEAN -DWINVER=0x0602 -DWRITE_BARRIER_CHECK -D_BLD_CLR -D_CRT_SECURE_NO_WARNINGS -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_SECURE_SCL=0 -D_UNICODE -D_WIN32 -D_WIN32_WINNT=0x0602 -IC:\Work\Core\main\runtime\artifacts\obj\coreclr\windows.x64.Debug\vm\wks -IC:\Work\Core\main\runtime\src\coreclr\vm\wks -IC:\Work\Core\main\runtime\src\coreclr\vm -IC:\Work\Core\main\runtime\src\native -IC:\Work\Core\main\runtime\src\coreclr\pal\prebuilt\inc -IC:\Work\Core\main\runtime\artifacts\obj -IC:\Work\Core\main\runtime\src\coreclr\inc -IC:\Work\Core\main\runtime\src\coreclr\debug\inc -IC:\Work\Core\main\runtime\src\coreclr\debug\inc\amd64 -IC:\Work\Core\main\runtime\src\coreclr\debug\inc\dump -IC:\Work\Core\main\runtime\src\coreclr\md\inc -IC:\Work\Core\main\runtime\src\coreclr\classlibnative\bcltype -IC:\Work\Core\main\runtime\src\coreclr\classlibnative\cryptography -IC:\Work\Core\main\runtime\src\coreclr\classlibnative\inc -IC:\Work\Core\main\runtime\artifacts\obj\coreclr\windows.x64.Debug\inc -IC:\Work\Core\main\runtime\src\coreclr\hosts\inc -IC:\Work\Core\main\runtime\src\coreclr\minipal -IC:\Work\Core\main\runtime\artifacts\obj\coreclr\windows.x64.Debug\inc\etw -IC:\Work\Core\main\runtime\src\coreclr\vm\amd64 -IC:\Work\Core\main\runtime\src\coreclr\vm\..\interop\inc -IC:\Work\Core\main\runtime\src\native\libs\System.IO.Compression.Native -IC:\Work\Core\main\runtime\src\native\libs\Common -IC:\Work\Core\main\runtime\src\coreclr\vm\eventing\eventpipe /DWIN32 /D_WINDOWS    /GR- /guard:cf /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /Zl /YuC:/Work/Core/main/runtime/artifacts/obj/coreclr/windows.x64.Debug/vm/wks/CMakeFiles/cee_wks_obj.dir/cmake_pch.hxx /FpC:/Work/Core/main/runtime/artifacts/obj/coreclr/windows.x64.Debug/vm/wks/CMakeFiles/cee_wks_obj.dir/./cmake_pch.cxx.pch /FIC:/Work/Core/main/runtime/artifacts/obj/coreclr/windows.x64.Debug/vm/wks/CMakeFiles/cee_wks_obj.dir/cmake_pch.hxx /Fovm\wks\CMakeFiles\cee_wks_obj.dir\__\ceemain.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\Work\Core\main\runtime\src\coreclr\vm\ceemain.cpp
+
+-------------------------------
+
+1>   
+reproNative.exe!SListElem_EP<_EventPipeProvider *>::SListElem_EP<_EventPipeProvider *><_EventPipeProvider * &>(_EventPipeProvider * & val) Line 174	C++
+ 	reproNative.exe!_rt_aot_list_append<_rt_aot_list_internal_t<_EventPipeProvider *>,_EventPipeProvider *>(_rt_aot_list_internal_t<_EventPipeProvider *> * list, _EventPipeProvider * item) Line 115	C++
+ 	reproNative.exe!ep_rt_provider_list_append(_rt_aot_list_internal_t<_EventPipeProvider *> * list, _EventPipeProvider * item) Line 1536	C++
+ 	reproNative.exe!config_register_provider(_EventPipeConfiguration * config, _EventPipeProvider * provider, _EventPipeProviderCallbackDataQueue * provider_callback_data_queue) Line 99	C++
+ 	reproNative.exe!config_create_provider(_EventPipeConfiguration * config, const char * provider_name, void(*)(const unsigned char *, unsigned long, unsigned char, unsigned __int64, unsigned __int64, _EventFilterDescriptor *, void *) callback_func, void(*)(void(*)(const unsigned char *, unsigned long, unsigned char, unsigned __int64, unsigned __int64, _EventFilterDescriptor *, void *), void *) callback_data_free_func, void * callback_data, _EventPipeProviderCallbackDataQueue * provider_callback_data_queue) Line 479	C++
+ 	reproNative.exe!provider_create_register(const char * provider_name, void(*)(const unsigned char *, unsigned long, unsigned char, unsigned __int64, unsigned __int64, _EventFilterDescriptor *, void *) callback_func, void(*)(void(*)(const unsigned char *, unsigned long, unsigned char, unsigned __int64, unsigned __int64, _EventFilterDescriptor *, void *), void *) callback_data_free_func, void * callback_data, _EventPipeProviderCallbackDataQueue * provider_callback_data_queue) Line 449	C++
+ 	reproNative.exe!ep_config_init(_EventPipeConfiguration * config) Line 176	C++
+ 	reproNative.exe!ep_init() Line 1340	C++
+ 	reproNative.exe!EventPipeAdapter::Initialize() Line 167	C++
+ 	reproNative.exe!InitDLL(void * hPalInstance) Line 91	C++
+ 	reproNative.exe!RhInitialize() Line 494	C++
+ 	reproNative.exe!InitializeRuntime() Line 151	C++
+ 	reproNative.exe!wmain(int argc, wchar_t * * argv) Line 198	C++
+ 	reproNative.exe!invoke_main() Line 91	C++
+
+
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.cpp
+
+-----------------------------------
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ilc.sln
+C:\Work\Core\CurrentWork3\runtime\artifacts\bin\repro\x64\Debug\compile-with-Debug-libs.rsp
+
+C:\Work\Core\CurrentWork3\runtime\src\coreclr\tools\aot\ILCompiler\reproNative\reproNative.vcxproj
+
+
+https://github.com/dotnet/runtime/issues/69739
+
+-----------------------------------
+
+
+
+\\chrisahnx74\LakshanF\EventPipe\2022_11_28\New \\chrisahnx74\LakshanF\EventPipe\2022_11_28\Latest
+
+---------------------------------
+
+
+ep_rt_provider_config_init 
