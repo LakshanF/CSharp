@@ -4,14 +4,16 @@ using Microsoft.Diagnostics.NETCore.Client;
 using Microsoft.Diagnostics.Tracing.Parsers;
 using Microsoft.Diagnostics.Tracing;
 
+namespace EP_Client;
+
 public class Program
 {
     public static void Main(string[] args)
     {
         Console.WriteLine("Please enter the program id:");
         int intPid = Convert.ToInt32(Console.ReadLine());
-        
-        PrintEventsLive(intPid);        
+
+        PrintEventsLive(intPid);
     }
 
     public static void PrintEventsLive(int processId)
@@ -47,7 +49,7 @@ public class Program
             {
                 Console.WriteLine("Press Enter to exit");
                 while (Console.ReadKey().Key != ConsoleKey.Enter)
-                { 
+                {
                     Thread.Sleep(100);
                 }
                 session.Stop();
