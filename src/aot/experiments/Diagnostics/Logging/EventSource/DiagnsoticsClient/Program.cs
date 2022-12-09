@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.Tracing;
+﻿using System.Diagnostics;
+using System.Diagnostics.Tracing;
+using System.Linq;
 
 using Microsoft.Diagnostics.NETCore.Client;
 using Microsoft.Diagnostics.Tracing.Parsers;
@@ -10,8 +12,15 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Please enter the program id:");
-        int intPid = Convert.ToInt32(Console.ReadLine());
+        string processName = "reproNative";
+        if (args.Length > 0)
+        {
+            processName = args[0];
+        }
+        Console.WriteLine("Assumes ProcessName is <target_process>");
+        var intPid = Process.GetProcessesByName("target_process").Single().Id;
+
+        Console.WriteLine($"Starting an StartEventPipeSession for Process:<{processName}>, PID:{intPid}");
 
         PrintEventsLive(intPid);
     }

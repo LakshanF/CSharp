@@ -628,3 +628,29 @@ C:\PROGRA~1\MIB055~1\2022\Preview\VC\Tools\MSVC\1434~1.319\bin\Hostx64\x64\cl.ex
 
 -----------------------
 C:\Users\lakshanf\AppData\Local\SourceServer\949bfc535556cc424365649b90d34d915a1862937e5613484aca67950874cfbe\src\Microsoft.Diagnostics.NETCore.Client\DiagnosticsClient\EventPipeSession.cs
+
+
+  modified:   Diagnostics.txt
+        modified:   Logging/EventSource/DiagnsoticsClient/DiagnsoticsClient.csproj
+        modified:   Logging/EventSource/DiagnsoticsClient/Program.cs
+        modified:   Logging/EventSource/DotNet/Program.cs
+
+        sessionID: 0x0000016588c61e10
+
+
+ds_ipc_pal_init
+ds_ipc_alloc
+?ds_ipc_listen
+ds_ipc_to_string
+ds_ipc_poll
+
+
+
+interesting: ds_ipc_stream_read, ipc_stream_read_func
+
+
+ipc_stream_write_func
+
+
+
+---------------------------

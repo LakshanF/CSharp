@@ -7,8 +7,8 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Please enter to continue:");
-        Console.ReadLine();
+        Console.WriteLine("Waiting 10 seconds to client to get the PID");
+        Thread.Sleep(10*1000);
 
         TargetStartLogging();
 
