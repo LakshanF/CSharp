@@ -17,7 +17,6 @@ public class Program
         {
             processName = args[0];
         }
-        Console.WriteLine("Assumes ProcessName is <target_process>");
         var intPid = Process.GetProcessesByName("target_process").Single().Id;
 
         Console.WriteLine($"Starting an StartEventPipeSession for Process:<{processName}>, PID:{intPid}");
