@@ -17,7 +17,7 @@ public static class Program
         Test1EventSource.Log.AppStarted("Hello World From .NET!", 12);
         Test1EventSource.Log.DebugMessage("Got here From .NET!");
         Test1EventSource.Log.DebugMessage("finishing startup From .NET!");
-        Test1EventSource.Log.AppInfo(new ClassTest(), new StructTest());
+        Test1EventSource.Log.AppInfo(new ClassTest());
         Test1EventSource.Log.RequestStart(3);
         Test1EventSource.Log.RequestStop(3);
     }
