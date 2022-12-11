@@ -17,7 +17,7 @@ public class Program
         {
             processName = args[0];
         }
-        var intPid = Process.GetProcessesByName("target_process").Single().Id;
+        var intPid = Process.GetProcessesByName(processName).Single().Id;
 
         Console.WriteLine($"Starting an StartEventPipeSession for Process:<{processName}>, PID:{intPid}");
 
@@ -44,7 +44,7 @@ public class Program
                 };
                 try
                 {
-                    source.Process();
+                   source.Process();
                 }
                 catch (Exception e)
                 {
