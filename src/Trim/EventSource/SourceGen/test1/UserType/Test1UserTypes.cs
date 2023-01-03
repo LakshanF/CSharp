@@ -1,10 +1,12 @@
-﻿namespace ES_Test1;
+﻿using System.Diagnostics.Tracing;
+namespace ES_Test1;
 public class ClassTest
 {
     public string S1 {get;set;}="ClassTest1";
     public int I1 {get;set;}=10;
 }
 
+[EventData]
 public struct StructTest
 {
     public StructTest(){}

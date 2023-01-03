@@ -18,7 +18,7 @@ public sealed class Test1EventSource : EventSource
     public void DebugMessage(string message) => WriteEvent(4, message);
 
     [Event(5, Keywords = Keywords.Requests)]
-    public void AppInfo(ClassTest arg) => WriteEvent(5, arg);
+    public void AppInfo(object arg) => WriteEvent(5, new {x = 3, y = 5});
     //protected void WriteEvent (int eventId, params object?[] args)
 
     public static class Keywords

@@ -12,7 +12,7 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string processName = "reproNative";
+        string processName = "Consumer";
         if (args.Length > 0)
         {
             processName = args[0];
