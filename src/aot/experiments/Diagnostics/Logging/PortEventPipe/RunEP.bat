@@ -10,7 +10,7 @@ REM call build.cmd -arch x64 -os windows -s clr.aot+clr.nativeaotlibs -c Release
 
 REM call build.cmd -arch x64 -os windows -s clr.aot -c Release > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe\build\buildLog_change_656.log
 
-call build.cmd -arch x64 -os windows -s clr.aot -c Release > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe\build\buildLog_change_901.log
+call build.cmd -arch x64 -os windows -s clr.aot+libs -c Debug > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe\build\buildLog_change_1.log
 
 REM call build.cmd -arch x64 -os windows -s clr.aot -c Release -v:diag > C:\Work\Core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe\build\buildLog_change_38.log
 
