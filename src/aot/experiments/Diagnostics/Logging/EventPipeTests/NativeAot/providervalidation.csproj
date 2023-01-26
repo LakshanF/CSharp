@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <CLRTestKind>BuildAndRun</CLRTestKind>
+    <CLRTestPriority>0</CLRTestPriority>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!--<PublishAot>true</PublishAot>-->
+  	<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <EventSourceSupport>true</EventSourceSupport>
+    <EnableNativeEventPipe>true</EnableNativeEventPipe>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Diagnostics.NETCore.Client" Version="0.2.351802" />
+    <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="3.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Diagnostics.Tools.RuntimeClient">
+      <HintPath>C:\work\core\CurrentWork2\runtime\artifacts\tests\coreclr\windows.x64.Debug\Tests\Core_Root\Microsoft.Diagnostics.Tools.RuntimeClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="IpcTraceTest.cs" />
+    <Compile Include="IpcUtils.cs" />
+    <Compile Include="providervalidation.cs" />
+    <Compile Include="Reverse.cs" />
+    <Compile Include="StreamProxy.cs" />
+    <Compile Include="Client\BinaryWriterExtensions.cs" />
+    <Compile Include="Client\HandleableCollection.cs" />
+    <Compile Include="Client\IpcHelpers.cs" />
+    <Compile Include="Client\NativeMethods.cs" />
+    <Compile Include="Client\StreamExtensions.cs" />
+    <Compile Include="Client\DiagnosticsClient\DiagnosticsClient.cs" />
+    <Compile Include="Client\DiagnosticsClient\DiagnosticsClientExceptions.cs" />
+    <Compile Include="Client\DiagnosticsClient\DumpType.cs" />
+    <Compile Include="Client\DiagnosticsClient\EventPipeProvider.cs" />
+    <Compile Include="Client\DiagnosticsClient\EventPipeSession.cs" />
+    <Compile Include="Client\DiagnosticsClient\EventPipeSessionConfiguration.cs" />
+    <Compile Include="Client\DiagnosticsClient\WriteDumpFlags.cs" />
+    <Compile Include="Client\DiagnosticsIpc\ExposedSocketNetworkStream.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcAdvertise.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcClient.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcCommands.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcEndpointConfig.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcHeader.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcMessage.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcResponse.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcServerTransport.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcSocket.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcTcpSocketEndPoint.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcTransport.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcUnixDomainSocket.cs" />
+    <Compile Include="Client\DiagnosticsIpc\IpcUnixDomainSocketEndPoint.cs" />
+    <Compile Include="Client\DiagnosticsIpc\ProcessEnvironment.cs" />
+    <Compile Include="Client\DiagnosticsIpc\ProcessInfo.cs" />
+    <Compile Include="Client\DiagnosticsServerRouter\DiagnosticsServerRouterFactory.cs" />
+    <Compile Include="Client\DiagnosticsServerRouter\DiagnosticsServerRouterRunner.cs" />
+    <Compile Include="Client\ReversedServer\IpcEndpointInfo.cs" />
+    <Compile Include="Client\ReversedServer\ReversedDiagnosticsServer.cs" />
+  </ItemGroup>
+
+</Project>
