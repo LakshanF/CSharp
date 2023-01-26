@@ -1,0 +1,32 @@
+  Determining projects to restore...
+  Writing C:\Users\lakshanf\AppData\Local\Temp\tmpB1A3.tmp
+info : X.509 certificate chain validation will use the default trust store selected by .NET.
+info : X.509 certificate chain validation will use the default trust store selected by .NET.
+info : Adding PackageReference for package 'Microsoft.Diagnostics.NETCore.Client' into project 'common.csproj'.
+info : Restoring packages for C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventPipeTests\CoreCLR\common\common.csproj...
+info :   CACHE https://api.nuget.org/v3-flatcontainer/microsoft.bcl.asyncinterfaces/index.json
+info :   CACHE https://pkgs.dev.azure.com/dnceng/9ee6d478-d288-47f7-aacc-f6e6d082ae6d/_packaging/49e5305d-d845-4a14-9d69-6f5dbfb9570c/nuget/v3/flat2/microsoft.bcl.asyncinterfaces/index.json
+info :   CACHE https://api.nuget.org/v3-flatcontainer/microsoft.extensions.logging/index.json
+info :   CACHE https://pkgs.dev.azure.com/dnceng/9ee6d478-d288-47f7-aacc-f6e6d082ae6d/_packaging/49e5305d-d845-4a14-9d69-6f5dbfb9570c/nuget/v3/flat2/microsoft.extensions.logging/index.json
+warn : NU1602: Microsoft.Diagnostics.NETCore.Client does not provide an inclusive lower bound for dependency Microsoft.Bcl.AsyncInterfaces. An approximate best match of Microsoft.Bcl.AsyncInterfaces 1.0.0 was resolved.
+warn : NU1602: Microsoft.Diagnostics.NETCore.Client does not provide an inclusive lower bound for dependency Microsoft.Extensions.Logging. An approximate best match of Microsoft.Extensions.Logging 1.0.0 was resolved.
+info : Package 'Microsoft.Diagnostics.NETCore.Client' is compatible with all the specified frameworks in project 'common.csproj'.
+error: Value cannot be null. (Parameter 'path1')
+
+
+Usage: NuGet.CommandLine.XPlat.dll package add [options]
+
+Options:
+  -h|--help               Show help information
+  --force-english-output  Forces the application to run using an invariant, English-based culture.
+  --package               Id of the package to be added.
+  --version               Version of the package to be added.
+  -d|--dg-file            Path to the dependency graph file to be used to restore preview and compatibility check.
+  -p|--project            Path to the project file.
+  -f|--framework          Frameworks for which the package reference should be added.
+  -n|--no-restore         Do not perform restore preview and compatibility check. The added package reference will be unconditional.
+  -s|--source             Specifies NuGet package sources to use during the restore.
+  --package-directory     Directory to restore packages in.
+  --interactive           Allow the command to block and require manual action for operations like authentication.
+  --prerelease            Allows prerelease packages to be installed.
+

@@ -21,11 +21,15 @@ public class Program
 
         Console.WriteLine($"Starting an StartEventPipeSession for Process:<{processName}>, PID:{intPid}");
 
-        PrintEventsLive(intPid);
+        var retCode = PrintEventsLive(intPid);
+
+        Console.WriteLine($"retCode:{retCode} - ");
     }
 
-    public static void PrintEventsLive(int processId)
+    public static int PrintEventsLive(int processId)
     {
+        int retCode = -1;
+        bool managedEvent = false, nativeEvent = false;
         var providers = new List<EventPipeProvider>()
         {
             new EventPipeProvider("Demo",
@@ -38,9 +42,21 @@ public class Program
             Task streamTask = Task.Run(() =>
             {
                 var source = new EventPipeEventSource(session.EventStream);
-                source.Dynamic.All += (TraceEvent obj) =>
+                source.Dynamic.All += (TraceEvent data) =>
                 {
-                    Console.WriteLine($"Got event, Name: {obj.EventName}, Details: {obj}");
+                    Console.WriteLine($"Got event, Name: {data.EventName}, Details: {data}");
+                    if(data.ProviderName=="Demo" && 
+                        data.EventName == "AppStarted" &&
+                        data.PayloadNames.Length == 2 &&
+                        (string)data.PayloadByName(data.PayloadNames[0])=="Hello World From .NET!" &&
+                        (int)data.PayloadByName(data.PayloadNames[1])==12)
+                    {
+                        managedEvent=true;
+                    }
+                    if (data.ProviderName=="Microsoft-DotNETCore-EventPipe" && data.EventName == "ProcessInfo")
+                    {
+                        nativeEvent = true;
+                    }
                 };
                 try
                 {
@@ -48,6 +64,7 @@ public class Program
                 }
                 catch (Exception e)
                 {
+                    retCode = 1;
                     Console.WriteLine("Error encountered while processing events");
                     Console.WriteLine(e.ToString());
                 }
@@ -65,5 +82,8 @@ public class Program
 
             Task.WaitAny(streamTask, inputTask);
         }
+        if (managedEvent && nativeEvent)
+            retCode = 100;
+        return retCode;
     }
 }

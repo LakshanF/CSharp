@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <OutputType>exe</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PublishTrimmed>true</PublishTrimmed>
+    <!--<PublishAot>true</PublishAot>-->
+	<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Diagnostics.NETCore.Client" Version="0.2.351802" />
+    <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="3.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Diagnostics.Tools.RuntimeClient">
+      <HintPath>C:\work\core\CurrentWork2\runtime\artifacts\tests\coreclr\windows.x64.Debug\Tests\Core_Root\Microsoft.Diagnostics.Tools.RuntimeClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
