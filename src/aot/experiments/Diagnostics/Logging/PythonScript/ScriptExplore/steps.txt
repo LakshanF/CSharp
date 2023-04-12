@@ -1,0 +1,8 @@
+Normal
+C:\Users\lakshanf\AppData\Local\Programs\Python\Python311\python.exe C:/work/core/LakshanF/CSharp/src/temp/python/assets/genEventing.py --man C:/work/core/LakshanF/CSharp/src/temp/python/assets/ClrEtwAll.man --inc C:/work/core/LakshanF/CSharp/src/temp/python/exp2/inc --dummy C:/work/core/LakshanF/CSharp/src/temp/python/exp2/inc/etmdummy.h --nonextern --noxplatheader 
+
+NO --noxplatheader
+C:\Users\lakshanf\AppData\Local\Programs\Python\Python311\python.exe C:/work/core/LakshanF/CSharp/src/temp/python/assets/genEventing.py --man C:/work/core/LakshanF/CSharp/src/temp/python/assets/ClrEtwAll.man --inc C:/work/core/LakshanF/CSharp/src/temp/python/exp2/inc --dummy C:/work/core/LakshanF/CSharp/src/temp/python/exp2/inc/etmdummy.h --nonextern
+
+NO --nonextern
+C:\Users\lakshanf\AppData\Local\Programs\Python\Python311\python.exe C:/work/core/LakshanF/CSharp/src/temp/python/assets/genEventing.py --man C:/work/core/LakshanF/CSharp/src/temp/python/assets/ClrEtwAll.man --inc C:/work/core/LakshanF/CSharp/src/temp/python/exp3/inc --dummy C:/work/core/LakshanF/CSharp/src/temp/python/exp3/inc/etmdummy.h --noxplatheader
