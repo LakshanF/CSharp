@@ -9,8 +9,8 @@ echo %ERRORLEVEL%
 
 mkdir c:\work\core\CurrentWork4\runtime\artifacts\tests\coreclr\windows.x64.Debug\tracing\eventpipe\simpleprovidervalidation\simpleprovidervalidation\native
 
-copy /Y C:\work\core\LakshanF\CSharp\src\temp\SimpleProvider\link.rsp c:\work\core\CurrentWork4\runtime\artifacts\tests\coreclr\obj\windows.x64.Debug\Managed\tracing\eventpipe\simpleprovidervalidation\simpleprovidervalidation\native
-copy /Y C:\work\core\LakshanF\CSharp\src\temp\SimpleProvider\simpleprovidervalidation.res c:\work\core\CurrentWork4\runtime\artifacts\tests\coreclr\obj\windows.x64.Debug\Managed\tracing\eventpipe\simpleprovidervalidation\simpleprovidervalidation\native
+copy /Y C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe3\SimpleProvider\link.rsp c:\work\core\CurrentWork4\runtime\artifacts\tests\coreclr\obj\windows.x64.Debug\Managed\tracing\eventpipe\simpleprovidervalidation\simpleprovidervalidation\native
+copy /Y C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\PortEventPipe3\SimpleProvider\simpleprovidervalidation.res c:\work\core\CurrentWork4\runtime\artifacts\tests\coreclr\obj\windows.x64.Debug\Managed\tracing\eventpipe\simpleprovidervalidation\simpleprovidervalidation\native
 
 
 "C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Tools\MSVC\14.35.32124\bin\Hostx64\x64\link.exe" @"c:\work\core\CurrentWork4\runtime\artifacts\tests\coreclr\obj\windows.x64.Debug\Managed\tracing\eventpipe\simpleprovidervalidation\simpleprovidervalidation\native\link.rsp"
