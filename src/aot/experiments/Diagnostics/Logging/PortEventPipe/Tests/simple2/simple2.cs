@@ -4,6 +4,7 @@
 using System;
 using System.Diagnostics.Tracing;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace Tracing.Tests.Simple2
 {
@@ -24,15 +25,31 @@ namespace Tracing.Tests.Simple2
             Thread.Sleep(10*1000);
 
             GC.Collect();
-            for (int i = 0; i < 100; i++)
-            {                
-                if (i % 10 == 0)
+            List<Foo> list = new List<Foo>();
+
+            for (int i = 0; i < 100000; i++)
+            {
+                list.Add(new Foo(i));
+                if (i % 10000 == 0)
                     Console.WriteLine($"Fired MyEvent {i:N0}/100,000 times...");
                 LaksDemoEventSource.Log.MyEvent();
             }
+            int rndValue = new Random().Next(0, 100000);
+            Console.WriteLine($"{list[rndValue].IValue}-{list[rndValue].SValue}");
             GC.Collect();
 
             return 100;
+        }
+    }
+
+    public class Foo
+    {
+        public int IValue{get;set;}
+        public string SValue{get;set;}
+        public Foo(int value)
+        {
+            IValue = value;
+            SValue = value.ToString();
         }
     }
 }
