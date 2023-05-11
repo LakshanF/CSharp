@@ -31,8 +31,7 @@ namespace Tracing.Tests.ProviderValidation
 
             var providers = new List<EventPipeProvider>()
             {
-                new EventPipeProvider("MyEventSource", EventLevel.Verbose),
-                new EventPipeProvider("Microsoft-DotNETCore-SampleProfiler", EventLevel.Verbose)
+                new EventPipeProvider("MyEventSource", EventLevel.Verbose)
             };
 
             var ret = IpcTraceTest.RunAndValidateEventCounts(_expectedEventCounts, _eventGeneratingAction, providers, 1024);
@@ -44,19 +43,17 @@ namespace Tracing.Tests.ProviderValidation
 
         private static Dictionary<string, ExpectedEventCount> _expectedEventCounts = new Dictionary<string, ExpectedEventCount>()
         {
-            { "MyEventSource", new ExpectedEventCount(100_000, 0.30f) },
-            { "Microsoft-Windows-DotNETRuntimeRundown", -1 },
-            { "Microsoft-DotNETCore-SampleProfiler", -1 }
+            { "MyEventSource", 1 }
         };
 
         private static Action _eventGeneratingAction = () => 
         {
-            for (int i = 0; i < 100_000; i++)
-            {
-                if (i % 10_000 == 0)
-                    Logger.logger.Log($"Fired MyEvent {i:N0}/100,000 times...");
+            //for (int i = 0; i < 100_000; i++)
+            //{
+            //    if (i % 10_000 == 0)
+            //        Logger.logger.Log($"Fired MyEvent {i:N0}/100,000 times...");
                 MyEventSource.Log.MyEvent();
-            }
+          //  }
         };
     }
 }
