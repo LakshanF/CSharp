@@ -38,6 +38,9 @@ namespace Tracing.Tests.Simple2
             Console.WriteLine($"{list[rndValue].IValue}-{list[rndValue].SValue}");
             GC.Collect();
 
+            Console.WriteLine("Waiting 10 seconds to EventPipe to write the data");
+            Thread.Sleep(10*1000);
+
             return 100;
         }
     }
