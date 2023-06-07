@@ -1,0 +1,2 @@
+Contains changes for python scripts to generate events
+see OneNote "Python hack to generate events.txt" in EVentPipe_Port\Investigations\Native_Events
