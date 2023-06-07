@@ -347,7 +347,7 @@ def parseTemplateNodes(templateNodes):
 
 def generateClrallEvents(eventNodes,allTemplates, target_cpp, runtimeFlavor, write_xplatheader):
     clrallEvents = []
-    inclusionList_laks  = ['GCAllocationTick_V4', 'GCBulkRootStaticVar', 'GCFinalizersEnd_V1', 'GCFitBucketInfo', 'GCGlobalHeapHistory_V4', 'GCHeapStats_V2', 'GCLOHCompact', 'GCSampledObjectAllocationHigh', 'GCSampledObjectAllocationLow', 'GenAwareBegin', 'GenAwareEnd', 'IncreaseMemoryPressure', 'PinObjectAtGCTime'] 
+    inclusionList_laks  = ['GCBulkRootStaticVar', 'GCFinalizersEnd_V1', 'GCFitBucketInfo', 'GCGlobalHeapHistory_V4', 'GCHeapStats_V2', 'GCLOHCompact', 'GCSampledObjectAllocationHigh', 'GCSampledObjectAllocationLow', 'GenAwareBegin', 'GenAwareEnd', 'IncreaseMemoryPressure', 'PinObjectAtGCTime'] 
     for eventNode in eventNodes:
         eventName    = eventNode.getAttribute('symbol')
         if eventName not in inclusionList_laks:
@@ -439,9 +439,9 @@ def generateClrallEvents(eventNodes,allTemplates, target_cpp, runtimeFlavor, wri
 
         fnbody.append("ActivityId,RelatedActivityId);\n")
 
-        if runtimeFlavor.coreclr or write_xplatheader:
-            fnbody.append(lindent)
-            fnbody.append("status &= FireEtXplat" + eventName + "(" + ''.join(line) + ");\n")
+        # if runtimeFlavor.coreclr or write_xplatheader:
+        #     fnbody.append(lindent)
+        #     fnbody.append("status &= FireEtXplat" + eventName + "(" + ''.join(line) + ");\n")
 
         fnbody.append(lindent)
         fnbody.append("return status;\n")
@@ -506,7 +506,7 @@ def generateClrXplatEvents(eventNodes, allTemplates, extern, runtimeFlavor):
 
 def generateClrEventPipeWriteEvents(eventNodes, allTemplates, extern, target_cpp, runtimeFlavor):
     clrallEvents = []
-    inclusionList_laks  = ['GCAllocationTick_V4', 'GCBulkRootStaticVar', 'GCFinalizersEnd_V1', 'GCFitBucketInfo', 'GCGlobalHeapHistory_V4', 'GCHeapStats_V2', 'GCLOHCompact', 'GCSampledObjectAllocationHigh', 'GCSampledObjectAllocationLow', 'GenAwareBegin', 'GenAwareEnd', 'IncreaseMemoryPressure', 'PinObjectAtGCTime'] 
+    inclusionList_laks  = ['GCBulkRootStaticVar', 'GCFinalizersEnd_V1', 'GCFitBucketInfo', 'GCGlobalHeapHistory_V4', 'GCHeapStats_V2', 'GCLOHCompact', 'GCSampledObjectAllocationHigh', 'GCSampledObjectAllocationLow', 'GenAwareBegin', 'GenAwareEnd', 'IncreaseMemoryPressure', 'PinObjectAtGCTime'] 
     for eventNode in eventNodes:
         eventName    = eventNode.getAttribute('symbol')
         if eventName not in inclusionList_laks:

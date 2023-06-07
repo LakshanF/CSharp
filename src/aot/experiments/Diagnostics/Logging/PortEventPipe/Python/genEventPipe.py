@@ -102,7 +102,7 @@ def includeEvent_laks(inclusionList, providerName, eventName):
 
 def generateClrEventPipeWriteEventsImpl(
         providerName, eventNodes, allTemplates, extern, target_cpp, runtimeFlavor, inclusionList, exclusionList):
-    inclusionList_laks  = ['GCAllocationTick_V4', 'GCBulkRootStaticVar', 'GCFinalizersEnd_V1', 'GCFitBucketInfo', 'GCGlobalHeapHistory_V4', 'GCHeapStats_V2', 'GCLOHCompact', 'GCSampledObjectAllocationHigh', 'GCSampledObjectAllocationLow', 'GenAwareBegin', 'GenAwareEnd', 'IncreaseMemoryPressure', 'PinObjectAtGCTime'] 
+    inclusionList_laks  = ['GCBulkRootStaticVar', 'GCFitBucketInfo', 'GCGlobalHeapHistory_V4', 'GCHeapStats_V2', 'GCLOHCompact', 'GCSampledObjectAllocationHigh', 'GCSampledObjectAllocationLow', 'GenAwareBegin', 'GenAwareEnd', 'IncreaseMemoryPressure', 'PinObjectAtGCTime'] 
     providerPrettyName = providerName.replace("Windows-", '')
     providerPrettyName = providerPrettyName.replace("Microsoft-", '')
     providerPrettyName = providerPrettyName.replace('-', '_')

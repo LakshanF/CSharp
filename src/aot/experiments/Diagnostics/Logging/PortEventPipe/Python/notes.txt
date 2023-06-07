@@ -1,2 +1,10 @@
 Contains changes for python scripts to generate events
 see OneNote "Python hack to generate events.txt" in EVentPipe_Port\Investigations\Native_Events
+
+build clr.runtime
+
+From source:
+for /F %I in (git_status.txt) do copy /Y c:\work\core\CurrentWork\runtime\%I
+
+To Source:
+for /F %I in (git_status.txt) do echo copy /Y %~nxI c:\work\core\CurrentWork\runtime\%I
