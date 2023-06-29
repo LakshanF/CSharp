@@ -1,0 +1,9 @@
+See https://developers.redhat.com/blog/2019/12/23/tracing-net-core-applications
+
+dotnet-trace collect --providers Microsoft.System.Net.Http::5,System.Net.Sockets::5 --name NetHttp
+
+dotnet-trace collect --providers System.Net.Http::5,System.Net.Sockets::5 --name NetHttp
+
+C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\RuntimeLibraries\NetHttp\bin\Release\net8.0\publish\NetHttp.exe
+
+rd /s/q obj & rd /s/q bin & dotnet publish
