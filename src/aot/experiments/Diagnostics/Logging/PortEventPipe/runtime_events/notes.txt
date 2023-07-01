@@ -1,0 +1,1 @@
+C:\work\core\main\runtime\artifacts\obj\coreclr\windows.x64.Debug\vm\eventing\eventpipe\eventpipe\dotnetruntimestress.cpp
