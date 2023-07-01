@@ -60,35 +60,35 @@ namespace HexGame
             for (int i = 0; i < Length; i++)
             {
                 for (int j = 0; j < i; j++)
-                    Console.WriteLine("  "); // 2 spaces
+                    Console.Write("  "); // 2 spaces
                 if (i != 0)
                 {
                     for (int j = 0; j < Length; j++)
                     {
-                        Console.WriteLine("\\ /");
+                        Console.Write("\\ /");
                     }
-                    Console.WriteLine(Environment.NewLine);
+                    Console.WriteLine();
                 }
                 for (int j = 0; j < i; j++)
-                    Console.WriteLine("  "); // 2 spaces
+                    Console.Write("  "); // 2 spaces
                 for (int j = 0; j < Length; j++)
                 {
                     switch (Nodes[i * Length+ j].Piece)
                     {
                         case Piece.empty:
-                            Console.WriteLine(".");
+                            Console.Write(".");
                             break;
                         case Piece.blue:
-                            Console.WriteLine("B");
+                            Console.Write("B");
                             break;
                         case Piece.red:
-                            Console.WriteLine("R");
+                            Console.Write("R");
                             break;
                     }
                     if (j != (Length - 1))
-                        Console.WriteLine(" - ");
+                        Console.Write(" - ");
                 }
-                Console.WriteLine(Environment.NewLine);
+                Console.WriteLine();
             }
         }
 
@@ -113,6 +113,30 @@ namespace HexGame
         /// </summary>
         /// <returns></returns>
         public int MakeComputerMove()
+        {
+            MakeMonteCarloMove();
+            return MakeSimpleMove();
+        }
+
+        /// <summary>
+        /// We will do a Monte Carlo simulation with a basic shuffle function
+        ///  - For all possible moves
+        ///     + Pick a move that hasn't been analyzed yet
+        ///     + prefill the empty squares with blue and red values
+        ///     + repeat for n times
+        ///         * shuffle the board
+        ///         * determine who won
+        ///     + note the probability of the move sucess
+        ///  - Return the best move
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        private int MakeMonteCarloMove()
+        {
+            throw new NotImplementedException();
+        }
+
+        private int MakeSimpleMove()
         {
             for (int i = 0; i < Length * Length; i++)
             {
