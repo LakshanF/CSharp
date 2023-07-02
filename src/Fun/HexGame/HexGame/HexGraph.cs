@@ -111,12 +111,21 @@ namespace HexGame
         }
 
         /// <summary>
+        /// Two computers play, need better names
+        /// </summary>
+        /// <returns></returns>
+        public int MakeUserAsComputerMove()
+        {
+            return MakeMonteCarloMove(Piece.blue);
+        }
+
+        /// <summary>
         /// Dumb strategy first: make a move on an empty square
         /// </summary>
         /// <returns></returns>
         public int MakeComputerMove()
         {
-            return MakeMonteCarloMove();
+            return MakeMonteCarloMove(Piece.red);
             //return MakeSimpleMove();
         }
 
@@ -133,7 +142,7 @@ namespace HexGame
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        private int MakeMonteCarloMove()
+        private int MakeMonteCarloMove(Piece pieceToMove)
         {
             // Get all possible moves
             Queue<int> queue = new Queue<int>();
@@ -149,21 +158,22 @@ namespace HexGame
 
             // Calculate prob for each move
             Dictionary<int, double> map = new Dictionary<int, double>();
+            Piece opposingMoveColor = pieceToMove==Piece.red ? Piece.blue : Piece.red;
             while(queue.Count > 0)
             {
-                int nodeId = queue.Dequeue();
-                List<int> emptyNodes = allEmptyNodes.Except(new List<int>() { nodeId }).ToList();
+                HexNode node = new HexNode() { Id = queue.Dequeue(), Piece=pieceToMove};
+                List<int> emptyNodes = allEmptyNodes.Except(new List<int>() { node.Id }).ToList();
                 List<HexNode> experimentalNodes = new List<HexNode>();
                 // Fill in the emptynodes with blue and red in random (?) order (simple first)
                 for(int i = 0;i < emptyNodes.Count; i++)
                 {
                     if (i%2==0)
-                        experimentalNodes.Add(new HexNode() { Id = emptyNodes[i], Piece = Piece.blue });
+                        experimentalNodes.Add(new HexNode() { Id = emptyNodes[i], Piece = opposingMoveColor });
                     else
-                        experimentalNodes.Add(new HexNode() { Id = emptyNodes[i], Piece = Piece.red });
+                        experimentalNodes.Add(new HexNode() { Id = emptyNodes[i], Piece = pieceToMove });
                 }
-                double successProb = CalculateSuccess(experimentalNodes, nodeId);
-                map.Add(nodeId, successProb);
+                double successProb = CalculateSuccess(experimentalNodes, node);
+                map.Add(node.Id, successProb);
             }
 
             (int id, double maxSuccess) nodeToSelect = (0, 0.0d);
@@ -174,7 +184,7 @@ namespace HexGame
                     nodeToSelect = (keyValue.Key, keyValue.Value);
                 }
             }
-            Nodes[nodeToSelect.id].Piece = Piece.red;
+            Nodes[nodeToSelect.id].Piece = pieceToMove;
             return nodeToSelect.id;
         }
 
@@ -184,9 +194,9 @@ namespace HexGame
         /// <param name="experimentalNodes"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        private double CalculateSuccess(List<HexNode> initialNodes, int currentNodeId)
+        private double CalculateSuccess(List<HexNode> initialNodes, HexNode currentNode)
         {
-            int n = 10000;
+            int n = 100000;
             int redWon = 0;
             Dictionary<int, Piece> cachedInitialMap = initialNodes.ToDictionary(x => x.Id, x => x.Piece);
             for (int i = 0; i < n; i++)
@@ -194,7 +204,7 @@ namespace HexGame
                 List<HexNode> experimentalNodes = new List<HexNode>();
                 // Lets get the Ids of the original nodes
                 var nodesTobeExcluded = initialNodes.Select(x => x.Id).ToList();
-                nodesTobeExcluded.Add(currentNodeId);
+                nodesTobeExcluded.Add(currentNode.Id);
                 var oldNodeIds = Nodes.Select(x => x.Id).Except(nodesTobeExcluded).ToList();
                 for (int j = 0; j<oldNodeIds.Count; j++)
                 {
@@ -202,7 +212,7 @@ namespace HexGame
                 }
 
                 // Add the current move and make its piece red
-                experimentalNodes.Add(new HexNode() { Id=currentNodeId, Piece=Piece.red });
+                experimentalNodes.Add(currentNode);
 
                 // Add the shuffled ones
                 List<int> nodesBeforeShuffled = initialNodes.Select(x => x.Id).ToList();
