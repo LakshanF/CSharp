@@ -9,7 +9,7 @@
             string line = Console.ReadLine();
             if (string.IsNullOrEmpty(line) )
             {
-                PlayComputerGame(3, 1_000_000);
+                PlayComputerGame(3, 10_000);
             }
             var values = line.Split(",", StringSplitOptions.TrimEntries);
             int boardSize = 3;

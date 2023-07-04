@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HexGame
 {
@@ -56,7 +57,6 @@ namespace HexGame
             this.mode = mode;
             this.monteCarloIteration = monteCarloIteration;
             stopwatch = new Stopwatch();
-            stopwatch.Start();
             HexEventSource.Log.GameStart($"Board Lenght:{length}, PlayMode:{mode}, MonteCarloIteration:{monteCarloIteration}");
         }
 
@@ -120,13 +120,14 @@ namespace HexGame
         ///     + repeat for n times
         ///         * shuffle the board
         ///         * determine who won
-        ///     + note the probability of the move sucess
+        ///     + note the probability of the move success
         ///  - Return the best move
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
         private int MakeMonteCarloMove(Piece pieceToMove)
         {
+            stopwatch.Restart();
             // Get all possible moves
             Queue<int> queue = new Queue<int>();
             List<int> allEmptyNodes = new List<int>();
@@ -170,7 +171,10 @@ namespace HexGame
                 }
             }
             Nodes[nodeToSelect.id].Piece = pieceToMove;
+
+            HexEventSource.Log.Move(nodeToSelect.id%Length, nodeToSelect.id/Length);
             HexEventSource.Log.TimeForMove(stopwatch.Elapsed.TotalMilliseconds);
+            
             return nodeToSelect.id;
         }
 

@@ -20,6 +20,8 @@ namespace HexGame
         public void SuccessRatioForMove(int row, int column, double ratio) => WriteEvent(3, row, column, ratio);
         [Event(4, Level = EventLevel.Informational)]
         public void TimeForMove(double time) => WriteEvent(4, time);
+        [Event(5, Level = EventLevel.Informational)]
+        public void Move(int row, int column) => WriteEvent(5, row, column);
         public static class Keywords
         {
             public const EventKeywords MonteCarloSimulation = (EventKeywords)(1 << 1);
