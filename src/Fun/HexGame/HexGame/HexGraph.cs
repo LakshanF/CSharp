@@ -46,7 +46,7 @@ namespace HexGame
         int monteCarloIteration;
         Stopwatch stopwatch;
 
-        public HexGraph(int length, PlayMode mode = PlayMode.SinglePlayer, int monteCarloIteration=0)
+        public HexGraph(PlayMode mode = PlayMode.Computer, int length=3, int monteCarloIteration= 10_000)
         {
             Length = length;
             Nodes = new List<HexNode>();
@@ -58,6 +58,58 @@ namespace HexGame
             this.monteCarloIteration = monteCarloIteration;
             stopwatch = new Stopwatch();
             HexEventSource.Log.GameStart($"Board Lenght:{length}, PlayMode:{mode}, MonteCarloIteration:{monteCarloIteration}");
+        }
+
+        internal void Play()
+        {
+            for (int i = 0; i < Length * Length; i++)
+            {
+                if (PlayMove(i))
+                    return;
+            }
+        }
+
+        private bool PlayMove(int moveNumber)
+        {
+            Piece movePiece = moveNumber%2==0 ? Piece.blue : Piece.red;
+            PrintBoard();
+            switch (mode)
+            {
+                case PlayMode.SinglePlayer when movePiece==Piece.blue:
+                case PlayMode.TwoPlayer:
+                    var (row, column) = GetUserMove();
+                    Nodes[row * Length + column].Piece = movePiece;
+                    break;
+                case PlayMode.SinglePlayer when movePiece==Piece.red:
+                case PlayMode.Computer:
+                    MakeMonteCarloMove(movePiece);
+                    break;
+            };
+            HexState state = GameState();
+            if (state != HexState.Playing)
+            {
+                Console.WriteLine($"{state}!");
+                PrintBoard();
+                return true;
+            }
+            return false;
+        }
+
+        private (int row, int column) GetUserMove()
+        {
+            int row, column;
+            while (true)
+            {
+                Console.WriteLine("Please make a move (row, column): ");
+                string? line = Console.ReadLine();
+                var values = line?.Split(",", StringSplitOptions.TrimEntries);
+                row = int.Parse(values[0]);
+                column = int.Parse(values[1]);
+                int position = row * Length + column;
+                if (Nodes[position].Piece==Piece.empty)
+                    break;
+            }
+            return (row, column);
         }
 
         public void PrintBoard()
@@ -95,21 +147,6 @@ namespace HexGame
                 }
                 Console.WriteLine();
             }
-        }
-
-        /// <summary>
-        /// Assumes first move, blue
-        /// </summary>
-        /// <param name="row"></param>
-        /// <param name="col"></param>
-        /// <returns></returns>
-        public bool MakeUserMove(int row, int col)
-        {
-            int position = row * Length + col;
-            if (Nodes[position].Piece != Piece.empty)
-                return false;
-            Nodes[position].Piece = Piece.blue;
-            return true;
         }
 
         /// <summary>
@@ -157,7 +194,7 @@ namespace HexGame
                         experimentalNodes.Add(new HexNode() { Id = emptyNodes[i], Piece = pieceToMove });
                 }
                 double successProb = CalculateSuccess(experimentalNodes, node);
-                HexEventSource.Log.SuccessRatioForMove(node.Id%Length, node.Id/Length, successProb);
+                HexEventSource.Log.SuccessRatioForMove(node.Id/Length, node.Id%Length, successProb);
                 map.Add(node.Id, successProb);
             }
 
@@ -172,7 +209,7 @@ namespace HexGame
             }
             Nodes[nodeToSelect.id].Piece = pieceToMove;
 
-            HexEventSource.Log.Move(nodeToSelect.id%Length, nodeToSelect.id/Length);
+            HexEventSource.Log.Move(nodeToSelect.id/Length, nodeToSelect.id%Length, (int)pieceToMove);
             HexEventSource.Log.TimeForMove(stopwatch.Elapsed.TotalMilliseconds);
             
             return nodeToSelect.id;
@@ -222,7 +259,7 @@ namespace HexGame
                 }
 
                 //Who won in this shuffle
-                HexGraph tempGraph = new HexGraph(Length);
+                HexGraph tempGraph = new HexGraph(length: Length);
                 experimentalNodes = experimentalNodes.OrderBy(x => x.Id).ToList();
                 tempGraph.Nodes = experimentalNodes;
                 HexState whoWon = tempGraph.GameState();
@@ -252,20 +289,6 @@ namespace HexGame
                 list[k] = list[n];
                 list[n] = value;
             }
-        }
-
-
-        private int MakeSimpleMove()
-        {
-            for (int i = 0; i < Length * Length; i++)
-            {
-                if (Nodes[i].Piece == Piece.empty)
-                {
-                    Nodes[i].Piece = Piece.red;
-                    return Nodes[i].Id;
-                }
-            }
-            return -1;
         }
 
         /// <summary>
@@ -486,37 +509,5 @@ namespace HexGame
 
         }
 
-        internal void Play()
-        {
-            for (int i = 0; i < Length * Length; i++)
-            {
-                PrintBoard();
-                MakeMonteCarloMove(Piece.blue);
-                //MakeUserAsComputerMove();
-                //while (true)
-                //{
-                //    Console.WriteLine("Please make a move (row, column): ");
-                //    string line = Console.ReadLine();
-                //    var values = line.Split(",", StringSplitOptions.TrimEntries);
-                //    row = int.Parse(values[0]);
-                //    col = int.Parse(values[1]);
-                //    if (graph.MakeUserMove(row, col))
-                //        break;
-                //}
-                if (GameState() == HexState.BlueWon)
-                {
-                    Console.WriteLine("Blue Computer (first play) won!");
-                    PrintBoard();
-                    break;
-                }
-                MakeMonteCarloMove(Piece.red);
-                if (GameState() == HexState.RedWon)
-                {
-                    Console.WriteLine("Red computer (seond play) won!");
-                    PrintBoard();
-                    break;
-                }
-            }
-        }
     }
 }

@@ -21,7 +21,7 @@ namespace HexGame
         [Event(4, Level = EventLevel.Informational)]
         public void TimeForMove(double time) => WriteEvent(4, time);
         [Event(5, Level = EventLevel.Informational)]
-        public void Move(int row, int column) => WriteEvent(5, row, column);
+        public void Move(int row, int column, int color) => WriteEvent(5, row, column, color);
         public static class Keywords
         {
             public const EventKeywords MonteCarloSimulation = (EventKeywords)(1 << 1);
