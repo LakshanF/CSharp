@@ -39,6 +39,10 @@ namespace HexGame
     }
     internal class HexGraph
     {
+        internal const int DEFAULT_BOARD_LENGTH = 3;
+        internal const int DEFAULT_MONTE_CARLO_SIMULATION_ITERATION = 10_000;
+        internal const PlayMode DEFAULT_PLAY_MODE = PlayMode.Computer;
+
         public int Length { get; init; }
         public List<HexNode> Nodes { get; set; }
         
@@ -46,7 +50,7 @@ namespace HexGame
         int monteCarloIteration;
         Stopwatch stopwatch;
 
-        public HexGraph(PlayMode mode = PlayMode.Computer, int length=3, int monteCarloIteration= 10_000)
+        public HexGraph(PlayMode mode = DEFAULT_PLAY_MODE, int length= DEFAULT_BOARD_LENGTH, int monteCarloIteration= DEFAULT_MONTE_CARLO_SIMULATION_ITERATION)
         {
             Length = length;
             Nodes = new List<HexNode>();
@@ -71,20 +75,28 @@ namespace HexGame
 
         private bool PlayMove(int moveNumber)
         {
+            int nodeId = -1;
+            stopwatch.Restart();
             Piece movePiece = moveNumber%2==0 ? Piece.blue : Piece.red;
             PrintBoard();
             switch (mode)
             {
                 case PlayMode.SinglePlayer when movePiece==Piece.blue:
                 case PlayMode.TwoPlayer:
-                    var (row, column) = GetUserMove();
-                    Nodes[row * Length + column].Piece = movePiece;
+                    nodeId = GetUserMove();
+                    Nodes[nodeId].Piece = movePiece;
                     break;
                 case PlayMode.SinglePlayer when movePiece==Piece.red:
                 case PlayMode.Computer:
-                    MakeMonteCarloMove(movePiece);
+                    nodeId = MakeMonteCarloMove(movePiece);
+                    Nodes[nodeId].Piece = movePiece;
                     break;
+                default:
+                    throw new NotSupportedException("Unknown state");
             };
+            HexEventSource.Log.Move(nodeId/Length, nodeId%Length, (int)movePiece);
+            HexEventSource.Log.TimeForMove(stopwatch.Elapsed.TotalMilliseconds);
+
             HexState state = GameState();
             if (state != HexState.Playing)
             {
@@ -95,7 +107,7 @@ namespace HexGame
             return false;
         }
 
-        private (int row, int column) GetUserMove()
+        private int GetUserMove()
         {
             int row, column;
             while (true)
@@ -103,13 +115,12 @@ namespace HexGame
                 Console.WriteLine("Please make a move (row, column): ");
                 string? line = Console.ReadLine();
                 var values = line?.Split(",", StringSplitOptions.TrimEntries);
-                row = int.Parse(values[0]);
+                row = int.Parse(values![0]);
                 column = int.Parse(values[1]);
-                int position = row * Length + column;
-                if (Nodes[position].Piece==Piece.empty)
+                if (Nodes[row * Length + column].Piece==Piece.empty)
                     break;
             }
-            return (row, column);
+            return row * Length + column;
         }
 
         public void PrintBoard()
@@ -164,7 +175,6 @@ namespace HexGame
         /// <exception cref="NotImplementedException"></exception>
         private int MakeMonteCarloMove(Piece pieceToMove)
         {
-            stopwatch.Restart();
             // Get all possible moves
             Queue<int> queue = new Queue<int>();
             List<int> allEmptyNodes = new List<int>();
@@ -193,6 +203,14 @@ namespace HexGame
                     else
                         experimentalNodes.Add(new HexNode() { Id = emptyNodes[i], Piece = pieceToMove });
                 }
+                // Its possible that the node has a winning path
+                // @TODO: Only check when the path is length-1, instead of all times
+                HexNode emptyNode = Nodes[node.Id];
+                Nodes[node.Id] = node;
+                if (GameState()==HexState.RedWon || GameState()==HexState.BlueWon)
+                    return node.Id;
+                // reset the original node
+                Nodes[node.Id] = emptyNode;
                 double successProb = CalculateSuccess(experimentalNodes, node);
                 HexEventSource.Log.SuccessRatioForMove(node.Id/Length, node.Id%Length, successProb);
                 map.Add(node.Id, successProb);
@@ -207,10 +225,6 @@ namespace HexGame
                     nodeToSelect = (keyValue.Key, keyValue.Value);
                 }
             }
-            Nodes[nodeToSelect.id].Piece = pieceToMove;
-
-            HexEventSource.Log.Move(nodeToSelect.id/Length, nodeToSelect.id%Length, (int)pieceToMove);
-            HexEventSource.Log.TimeForMove(stopwatch.Elapsed.TotalMilliseconds);
             
             return nodeToSelect.id;
         }
