@@ -12,28 +12,33 @@ using System.Xml.Linq;
 
 namespace HexGame
 {
-    internal enum PlayMode : short { TwoPlayer, SinglePlayer, Computer }
-    enum Piece : short { Empty, Blue, Red }
-    enum PathColor : short { White, Grey, Black }
-    enum HexState : short { Playing, BlueWon, RedWon }
-    record HexNode
+    // Blue goes first (human if only 1 person is playing), and goes east-west
+    // Red goes 2nd (computer if only 1 person is playing), and goes north-south
+    enum Piece : short { empty, blue, red };
+    enum PathColor : short { white, grey, black };
+
+    internal record HexNode
     {
         public int Id { get; init; }
         public Piece Piece { get; set; }
         public PathColor Color { get; set; }
     }
 
-    /// <summary>
-    /// Representing a Length x Length Hex Board
-    /// Blue goes first (human first, in SinglePlayer mode), and goes East-West
-    /// Red goes 2nd (computer, in SinglePlayer mode), and goes North-South
-    /// </summary>
+    internal enum PlayMode
+    {
+        TwoPlayer,
+        SinglePlayer,
+        Computer
+    }
+
+    internal enum HexState
+    {
+        Playing,
+        BlueWon,
+        RedWon
+    }
     internal class HexGraph
     {
-        internal const int DEFAULT_BOARD_LENGTH = 3;
-        internal const int DEFAULT_MONTE_CARLO_SIMULATION_ITERATION = 10_000;
-        internal const PlayMode DEFAULT_PLAY_MODE = PlayMode.Computer;
-
         public int Length { get; init; }
         public List<HexNode> Nodes { get; set; }
         
@@ -41,13 +46,7 @@ namespace HexGame
         int monteCarloIteration;
         Stopwatch stopwatch;
 
-        /// <summary>
-        /// Default play is empty ctor with the default values
-        /// </summary>
-        /// <param name="mode">PlayMode</param>
-        /// <param name="length">Size of Board</param>
-        /// <param name="monteCarloIteration">If computer is playing, monte carlo simulation</param>
-        public HexGraph(PlayMode mode = DEFAULT_PLAY_MODE, int length= DEFAULT_BOARD_LENGTH, int monteCarloIteration= DEFAULT_MONTE_CARLO_SIMULATION_ITERATION)
+        public HexGraph(int length, PlayMode mode = PlayMode.SinglePlayer, int monteCarloIteration=0)
         {
             Length = length;
             Nodes = new List<HexNode>();
@@ -61,83 +60,6 @@ namespace HexGame
             HexEventSource.Log.GameStart($"Board Lenght:{length}, PlayMode:{mode}, MonteCarloIteration:{monteCarloIteration}");
         }
 
-        /// <summary>
-        /// Play until one side wins
-        /// </summary>
-        internal void Play()
-        {
-            for (int i = 0; i < Length * Length; i++)
-            {
-                if (PlayMove(i))
-                    return;
-            }
-        }
-
-        /// <summary>
-        /// Play blue or red piece based on the move number
-        /// If computer's turn, uses monte carlo simulation to select the best move
-        /// Human interaction is handled via the console
-        /// </summary>
-        /// <param name="moveNumber"></param>
-        /// <returns></returns>
-        /// <exception cref="NotSupportedException"></exception>
-        private bool PlayMove(int moveNumber)
-        {
-            int nodeId;
-            stopwatch.Restart();
-            Piece movePiece = moveNumber%2==0 ? Piece.Blue : Piece.Red;
-            PrintBoard();
-            switch (mode)
-            {
-                case PlayMode.SinglePlayer when movePiece==Piece.Blue:
-                case PlayMode.TwoPlayer:
-                    nodeId = GetUserMove();
-                    Nodes[nodeId].Piece = movePiece;
-                    break;
-                case PlayMode.SinglePlayer when movePiece==Piece.Red:
-                case PlayMode.Computer:
-                    nodeId = MakeMonteCarloMove(movePiece);
-                    Nodes[nodeId].Piece = movePiece;
-                    break;
-                default:
-                    throw new NotSupportedException("Unknown state");
-            };
-            HexEventSource.Log.Move(nodeId/Length, nodeId%Length, (int)movePiece);
-            HexEventSource.Log.TimeForMove(stopwatch.Elapsed.TotalMilliseconds);
-
-            HexState state = GameState();
-            if (state != HexState.Playing)
-            {
-                Console.WriteLine($"{state}!");
-                PrintBoard();
-                return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Gets the user move via console
-        /// </summary>
-        /// <returns></returns>
-        private int GetUserMove()
-        {
-            int row, column;
-            while (true)
-            {
-                Console.WriteLine("Please make a move (row, column): ");
-                string? line = Console.ReadLine();
-                var values = line?.Split(",", StringSplitOptions.TrimEntries);
-                row = int.Parse(values![0]);
-                column = int.Parse(values[1]);
-                if (Nodes[row * Length + column].Piece==Piece.Empty)
-                    break;
-            }
-            return row * Length + column;
-        }
-
-        /// <summary>
-        /// Prints the board to the console
-        /// </summary>
         public void PrintBoard()
         {
             for (int i = 0; i < Length; i++)
@@ -158,13 +80,13 @@ namespace HexGame
                 {
                     switch (Nodes[i * Length+ j].Piece)
                     {
-                        case Piece.Empty:
+                        case Piece.empty:
                             Console.Write(".");
                             break;
-                        case Piece.Blue:
+                        case Piece.blue:
                             Console.Write("B");
                             break;
-                        case Piece.Red:
+                        case Piece.red:
                             Console.Write("R");
                             break;
                     }
@@ -173,6 +95,21 @@ namespace HexGame
                 }
                 Console.WriteLine();
             }
+        }
+
+        /// <summary>
+        /// Assumes first move, blue
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="col"></param>
+        /// <returns></returns>
+        public bool MakeUserMove(int row, int col)
+        {
+            int position = row * Length + col;
+            if (Nodes[position].Piece != Piece.empty)
+                return false;
+            Nodes[position].Piece = Piece.blue;
+            return true;
         }
 
         /// <summary>
@@ -190,12 +127,13 @@ namespace HexGame
         /// <exception cref="NotImplementedException"></exception>
         private int MakeMonteCarloMove(Piece pieceToMove)
         {
+            stopwatch.Restart();
             // Get all possible moves
             Queue<int> queue = new Queue<int>();
             List<int> allEmptyNodes = new List<int>();
             for (int i = 0; i < Length * Length; i++)
             {
-                if (Nodes[i].Piece == Piece.Empty)
+                if (Nodes[i].Piece == Piece.empty)
                 {
                     queue.Enqueue(i);
                     allEmptyNodes.Add(i);
@@ -204,7 +142,7 @@ namespace HexGame
 
             // Calculate prob for each move
             Dictionary<int, double> map = new Dictionary<int, double>();
-            Piece opposingMoveColor = pieceToMove==Piece.Red ? Piece.Blue : Piece.Red;
+            Piece opposingMoveColor = pieceToMove==Piece.red ? Piece.blue : Piece.red;
             while(queue.Count > 0)
             {
                 HexNode node = new HexNode() { Id = queue.Dequeue(), Piece=pieceToMove};
@@ -218,16 +156,8 @@ namespace HexGame
                     else
                         experimentalNodes.Add(new HexNode() { Id = emptyNodes[i], Piece = pieceToMove });
                 }
-                // Its possible that the node has a winning path
-                // @TODO: Only check when the path is length-1, instead of all times
-                HexNode emptyNode = Nodes[node.Id];
-                Nodes[node.Id] = node;
-                if (GameState()==HexState.RedWon || GameState()==HexState.BlueWon)
-                    return node.Id;
-                // reset the original node
-                Nodes[node.Id] = emptyNode;
                 double successProb = CalculateSuccess(experimentalNodes, node);
-                HexEventSource.Log.SuccessRatioForMove(node.Id/Length, node.Id%Length, successProb);
+                HexEventSource.Log.SuccessRatioForMove(node.Id%Length, node.Id/Length, successProb);
                 map.Add(node.Id, successProb);
             }
 
@@ -240,6 +170,10 @@ namespace HexGame
                     nodeToSelect = (keyValue.Key, keyValue.Value);
                 }
             }
+            Nodes[nodeToSelect.id].Piece = pieceToMove;
+
+            HexEventSource.Log.Move(nodeToSelect.id%Length, nodeToSelect.id/Length);
+            HexEventSource.Log.TimeForMove(stopwatch.Elapsed.TotalMilliseconds);
             
             return nodeToSelect.id;
         }
@@ -288,14 +222,14 @@ namespace HexGame
                 }
 
                 //Who won in this shuffle
-                HexGraph tempGraph = new HexGraph(length: Length);
+                HexGraph tempGraph = new HexGraph(Length);
                 experimentalNodes = experimentalNodes.OrderBy(x => x.Id).ToList();
                 tempGraph.Nodes = experimentalNodes;
                 HexState whoWon = tempGraph.GameState();
                 Debug.Assert(whoWon==HexState.RedWon || whoWon==HexState.BlueWon);
-                if (whoWon==HexState.RedWon && currentNode.Piece==Piece.Red)
+                if (whoWon==HexState.RedWon && currentNode.Piece==Piece.red)
                     numberOfWins++;
-                if (whoWon==HexState.BlueWon && currentNode.Piece==Piece.Blue)
+                if (whoWon==HexState.BlueWon && currentNode.Piece==Piece.blue)
                     numberOfWins++;
 
             }
@@ -320,6 +254,20 @@ namespace HexGame
             }
         }
 
+
+        private int MakeSimpleMove()
+        {
+            for (int i = 0; i < Length * Length; i++)
+            {
+                if (Nodes[i].Piece == Piece.empty)
+                {
+                    Nodes[i].Piece = Piece.red;
+                    return Nodes[i].Id;
+                }
+            }
+            return -1;
+        }
+
         /// <summary>
         /// Blue goes first, and need to create a path from east-west
         /// Red goes from south-north
@@ -340,7 +288,7 @@ namespace HexGame
                 for (int j = 0; j < Length; j++)
                 {
                     int col_pos = (j * Length) + i;
-                    if (Nodes[col_pos].Piece == Piece.Blue)
+                    if (Nodes[col_pos].Piece == Piece.blue)
                     {
                         blue_found = true;
                         break;
@@ -357,7 +305,7 @@ namespace HexGame
                 for (int i = 0; i < Length; i++)
                 {
                     int col_pos = i * Length;
-                    if (Nodes[col_pos].Piece == Piece.Blue)
+                    if (Nodes[col_pos].Piece == Piece.blue)
                     {
                         if (EndToEndPathFound(Nodes[col_pos]))
                         {
@@ -376,7 +324,7 @@ namespace HexGame
                 for (int j = 0; j < Length; j++)
                 {
                     int red_pos = i * Length + j;
-                    if (Nodes[red_pos].Piece == Piece.Red)
+                    if (Nodes[red_pos].Piece == Piece.red)
                     {
                         red_found = true;
                         break;
@@ -393,7 +341,7 @@ namespace HexGame
                 for (int i = 0; i < Length; i++)
                 {
                     int row_pos = i;
-                    if (Nodes[row_pos].Piece == Piece.Red)
+                    if (Nodes[row_pos].Piece == Piece.red)
                     {
                         if (EndToEndPathFound(Nodes[row_pos]))
                         {
@@ -428,30 +376,30 @@ namespace HexGame
             Queue<HexNode> node_queue = new();
             for (int i = 0; i < Length * Length; i++)
             {
-                Nodes[i].Color = PathColor.White;
+                Nodes[i].Color = PathColor.white;
             }
-            root.Color = PathColor.Grey;
+            root.Color = PathColor.grey;
             node_queue.Enqueue(root);
 
             while (node_queue.Count != 0)
             {
                 HexNode node = node_queue.Dequeue();
-                if (node.Piece == Piece.Blue && (node.Id % Length == (Length - 1)))
+                if (node.Piece == Piece.blue && (node.Id % Length == (Length - 1)))
                     return true;
-                if (node.Piece == Piece.Red && (node.Id >= (Length * Length - Length)))
+                if (node.Piece == Piece.red && (node.Id >= (Length * Length - Length)))
                     return true;
                 List<int> adjacentIds = GetAdjacentNodes(node.Id);
 
                 // @TODO: foreach?
                 foreach(int i in adjacentIds)
                 {
-                    if (Nodes[i].Piece == node.Piece && Nodes[i].Color == PathColor.White)
+                    if (Nodes[i].Piece == node.Piece && Nodes[i].Color == PathColor.white)
                     {
-                        Nodes[i].Color = PathColor.Grey;
+                        Nodes[i].Color = PathColor.grey;
                         node_queue.Enqueue(Nodes[i]);
                     }
                 }
-                node.Color = PathColor.Black;
+                node.Color = PathColor.black;
             }
             return false;
         }
@@ -538,5 +486,37 @@ namespace HexGame
 
         }
 
+        internal void Play()
+        {
+            for (int i = 0; i < Length * Length; i++)
+            {
+                PrintBoard();
+                MakeMonteCarloMove(Piece.blue);
+                //MakeUserAsComputerMove();
+                //while (true)
+                //{
+                //    Console.WriteLine("Please make a move (row, column): ");
+                //    string line = Console.ReadLine();
+                //    var values = line.Split(",", StringSplitOptions.TrimEntries);
+                //    row = int.Parse(values[0]);
+                //    col = int.Parse(values[1]);
+                //    if (graph.MakeUserMove(row, col))
+                //        break;
+                //}
+                if (GameState() == HexState.BlueWon)
+                {
+                    Console.WriteLine("Blue Computer (first play) won!");
+                    PrintBoard();
+                    break;
+                }
+                MakeMonteCarloMove(Piece.red);
+                if (GameState() == HexState.RedWon)
+                {
+                    Console.WriteLine("Red computer (seond play) won!");
+                    PrintBoard();
+                    break;
+                }
+            }
+        }
     }
 }

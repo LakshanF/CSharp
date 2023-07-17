@@ -1,0 +1,1 @@
+Plan to add multple NativeAOT assemblies to a single App, and test EventPipe behavior
