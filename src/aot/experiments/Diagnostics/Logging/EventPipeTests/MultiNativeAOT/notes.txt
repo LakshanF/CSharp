@@ -1,1 +1,14 @@
 Plan to add multple NativeAOT assemblies to a single App, and test EventPipe behavior
+1) Build a shared library, use a c program to call
+2) Build 2 shared libraries, and use a C program to call
+3) Build a shared and entrypoint exe using NativeAOT
+
+1) Steps
+ - dotnet new classlib -o NativeLibrary
+ - Add a function, write event
+ - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug
+ - C modification: ..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll
+ - cl.exe MultiAotTest.c
+ - MultiAotTest.exe
+ - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
+
