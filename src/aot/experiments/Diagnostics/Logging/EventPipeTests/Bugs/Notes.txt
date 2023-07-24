@@ -1,0 +1,37 @@
+Place to explore bugs
+
+dotnet nuget add source -n dotnet8 https://dnceng.pkgs.visualstudio.com/public/_packaging/dotnet8/nuget/v3/index.json
+
+rd /s/q bin & rd /s/q obj
+
+dotnet publish
+
+C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventPipeTests\Bugs\87769\WebServiceBug\bin\Release\net8.0\publish\
+C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventPipeTests\Bugs\87769\WebServiceBug\bin\Release\net8.0\win-x64\publish\
+
+WebServiceBug
+
+ - .net8
+ Event Name
+Microsoft-Windows-DotNETRuntimePrivate/GC/Settings
+Microsoft-Windows-DotNETRuntime/GC/FinalizersStart
+Microsoft-Windows-DotNETRuntime/GC/FinalizersStop
+Microsoft-Windows-DotNETRuntime/GC/AllocationTick
+Microsoft-Windows-DotNETRuntime/GC/FinalizersStart
+Microsoft-Windows-DotNETRuntime/GC/FinalizersStop
+
+- NativeAOT
+None
+
+Simple2
+Microsoft-Windows-DotNETRuntime/GC/CreateSegment
+Microsoft-Windows-DotNETRuntime/GC/SuspendEEStart
+Microsoft-Windows-DotNETRuntime/GC/SuspendEEStop
+Microsoft-Windows-DotNETRuntime/GC/Triggered
+Microsoft-Windows-DotNETRuntime/GC/Start
+Microsoft-Windows-DotNETRuntime/GC/GenerationRange
+Microsoft-Windows-DotNETRuntime/GC/MarkWithType
+Microsoft-Windows-DotNETRuntime/GC/PerHeapHistory
+Microsoft-Windows-DotNETRuntime/GC/Stop
+Microsoft-Windows-DotNETRuntime/GC/RestartEEStart
+Microsoft-Windows-DotNETRuntime/GC/RestartEEStop
