@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
-    <OutputType>exe</OutputType>
+    <OutputType>Exe</OutputType>
+    <!-- <PublishAot>true</PublishAot> -->
+    <EventSourceSupport>true</EventSourceSupport>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <ProjectReference Include="../Common/Common.csproj" />
     <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.20574.7" />
   </ItemGroup>
