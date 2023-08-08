@@ -1,12 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworkIdentifier>.NETCoreApp</TargetFrameworkIdentifier>
-    <OutputType>Library</OutputType>
-    <CLRTestKind>SharedLibrary</CLRTestKind>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <IsTestProject>false</IsTestProject>
-    <!-- <TargetFramework>netstandard2.1</TargetFramework> -->
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>

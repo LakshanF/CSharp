@@ -136,6 +136,10 @@ namespace Orchestrator
                 EventPipeEventSource epes = new EventPipeEventSource(session.EventStream);
                 epes.Dynamic.All += (TraceEvent data) => {
                     eventsRead += 1;
+                    if(eventsRead%100_000==0)
+                    {
+                        File.AppendAllText(@"C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventPipeTests\EventPipeStress\Results\EventFile_4.txt", $"{data.ToString()}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}");
+                    }
                     if (slowReader > 0)
                     {
                         if (slowReadSw.Elapsed > interval)
@@ -152,7 +156,7 @@ namespace Orchestrator
                 totalTimeSw.Stop();
                 if (slowReader > 0)
                     slowReadSw.Stop();
-                Console.WriteLine("Read total: " + eventsRead.ToString());
+                Console.WriteLine("Read total:laks4 " + eventsRead.ToString());
                 Console.WriteLine("Dropped total: " + epes.EventsLost.ToString());
 
                 return new TestResult(eventsRead, epes.EventsLost, totalTimeSw.Elapsed);
@@ -171,7 +175,7 @@ namespace Orchestrator
                 var totalTimeSw = new Stopwatch();
                 const string fileName = "./temp.nettrace";
 
-                EventPipeSession session = GetSession(pid, rundown, bufferSize);
+                EventPipeSession session = GetSession(pid, false, bufferSize);
                 Console.WriteLine("Session created.");
 
                 using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
@@ -182,10 +186,15 @@ namespace Orchestrator
                 }
                 EventPipeEventSource epes = new EventPipeEventSource(fileName);
                 epes.Dynamic.All += (TraceEvent data) => {
+                    if(eventsRead%100_000==0)
+                    {
+                        File.AppendAllText(@"C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventPipeTests\EventPipeStress\Results\EventFile_13.txt", $"{data.ToString()}{Environment.NewLine}{Environment.NewLine}{Environment.NewLine}");
+                    }
+
                     eventsRead += 1;
                 };
                 epes.Process();
-                Console.WriteLine("Read total: " + eventsRead.ToString());
+                Console.WriteLine("Read total: laks3" + eventsRead.ToString());
                 Console.WriteLine("Dropped total: " + epes.EventsLost.ToString());
 
                 return new TestResult(eventsRead, epes.EventsLost, totalTimeSw.Elapsed);
