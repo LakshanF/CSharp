@@ -1,0 +1,6 @@
+Nick Chapsas, https://youtu.be/pYl_jnqlXu8
+PS: wget http://localhost:5000/hello
+steps
+ - dotnet new console
+ - Change csproj sdk to Microsoft.NET.Sdk.Web
+ - 4 lines, compile, run
