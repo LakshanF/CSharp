@@ -1,4 +1,5 @@
-﻿namespace HexGame
+﻿using System;
+namespace HexGame
 {
     internal class HexGame
     {

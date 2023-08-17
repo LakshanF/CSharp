@@ -22,7 +22,7 @@ namespace Tracing.Tests.Simple2
             // This test (temp?) validates event behavior via dotnet-trace and perfview
 
             Console.WriteLine("Waiting 10 seconds to client to get the PID");
-            Thread.Sleep(60*1000);
+            Thread.Sleep(10*1000);
 
             GC.Collect();
             List<Foo> list = new List<Foo>();
