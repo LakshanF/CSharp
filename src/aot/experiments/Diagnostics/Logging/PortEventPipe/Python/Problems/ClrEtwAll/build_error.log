@@ -1,0 +1,916 @@
+  Determining projects to restore...
+  Tool 'coverlet.console' (version '6.0.0') was restored. Available commands: coverlet
+  Tool 'dotnet-reportgenerator-globaltool' (version '5.0.2') was restored. Available commands: reportgenerator
+  Tool 'microsoft.dotnet.xharness.cli' (version '8.0.0-prerelease.23407.2') was restored. Available commands: xharness
+  Tool 'microsoft.visualstudio.slngen.tool' (version '10.0.0') was restored. Available commands: slngen
+  Tool 'dotnet-format' (version '6.0.240501') was restored. Available commands: dotnet-format
+  
+  Restore was successful.
+  All projects are up-to-date for restore.
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Executing "C:\work\core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows -outputrid win-x64 -component alljits -component nativeaot
+  BUILD: Starting Build at 10:57:45.43
+  BUILD: Commencing CoreCLR product build
+  BUILD: Checking prerequisites
+  BUILD: Using CMake from C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe
+  BUILD: Number of processor cores 4
+  BUILD: Commencing build of native components for windows.x64.Debug
+  BUILD: Using environment: "C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\Auxiliary\Build\vcvarsall.bat" amd64
+  **********************************************************************
+  ** Visual Studio 2022 Developer Command Prompt v17.7.0-pre.5.0
+  ** Copyright (c) 2022 Microsoft Corporation
+  **********************************************************************
+  [vcvarsall.bat] Environment initialized for: 'x64'
+  BUILD: Regenerating the Visual Studio solution
+  Calling "C:\work\core\CurrentWork\runtime\eng\native\gen-buildsys.cmd" "C:\work\core\CurrentWork\runtime\src\coreclr" "C:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug" vs2022 x64 windows "-DCMAKE_BUILD_TYPE=Debug" "-DCLR_CMAKE_TARGET_ARCH=x64" "-DCLR_CMAKE_TARGET_OS=windows" "-DCLI_CMAKE_FALLBACK_OS=win10" "-DCLR_CMAKE_PGO_INSTRUMENT=0" "-DCLR_CMAKE_OPTDATA_PATH=" "-DCLR_CMAKE_PGO_OPTIMIZE=0" 
+  The CMake command line is the same as the last run. Skipping running CMake.
+  running "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --build C:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug --target  alljits nativeaot --config Debug -- 
+  [1/28] Linking CXX static library nativeaot\Runtime\eventpipe\eventpipe-disabled.lib
+  [2/28] cmd.exe /C "cd /D C:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug && "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_COMPONENT=coreclr_misc -DBUILD_TYPE=Debug -P C:/work/core/CurrentWork/runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+  -- Install configuration: "Debug"
+  [3/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\__\eventtrace_bulktype.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.dir/__/eventtrace_bulktype.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\__\eventtrace_bulktype.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.pdb /FS -c C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventtrace_bulktype.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): error C2144: syntax error: 'int' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C2143: syntax error: missing ';' before '__cdecl'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(322): error C7525: inline variables require at least '/std:c++17'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(364): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(373): warning C4508: 'McGenControlCallbackV2': function should return a value; 'void' return type assumed
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(400): error C3861: 'RtlZeroMemory': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(423): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(424): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(512): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2143: syntax error: missing ';' before '*'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2734: 'UNALIGNED': 'const' object must be initialized if not 'extern'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ')' before identifier 'UNALIGNED'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2059: syntax error: ')'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'UINT_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ';' before identifier 'Context'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(528): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2146: syntax error: missing ';' before identifier 'Traits'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(534): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(558): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(610): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14811): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15176): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15214): error C2065: '_Arg13': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15500): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): fatal error C1003: error count exceeds 100; stopping compilation
+  [4/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\inc\clretwallmain.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.dir/inc/clretwallmain.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\inc\clretwallmain.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.pdb /FS -c C:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc\clretwallmain.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): error C2144: syntax error: 'int' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C2143: syntax error: missing ';' before '__cdecl'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(322): error C7525: inline variables require at least '/std:c++17'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(364): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(373): warning C4508: 'McGenControlCallbackV2': function should return a value; 'void' return type assumed
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(400): error C3861: 'RtlZeroMemory': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(423): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(424): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(512): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2143: syntax error: missing ';' before '*'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2734: 'UNALIGNED': 'const' object must be initialized if not 'extern'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ')' before identifier 'UNALIGNED'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2059: syntax error: ')'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'UINT_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ';' before identifier 'Context'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(528): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2146: syntax error: missing ';' before identifier 'Traits'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(534): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(558): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(610): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14811): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15176): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15214): error C2065: '_Arg13': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15500): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): fatal error C1003: error count exceeds 100; stopping compilation
+  [5/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\__\eventtrace_gcheap.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.dir/__/eventtrace_gcheap.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\__\eventtrace_gcheap.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.pdb /FS -c C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventtrace_gcheap.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): error C2144: syntax error: 'int' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C2143: syntax error: missing ';' before '__cdecl'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(322): error C7525: inline variables require at least '/std:c++17'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(364): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(373): warning C4508: 'McGenControlCallbackV2': function should return a value; 'void' return type assumed
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(400): error C3861: 'RtlZeroMemory': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(423): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(424): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(512): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2143: syntax error: missing ';' before '*'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2734: 'UNALIGNED': 'const' object must be initialized if not 'extern'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ')' before identifier 'UNALIGNED'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2059: syntax error: ')'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'UINT_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ';' before identifier 'Context'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(528): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2146: syntax error: missing ';' before identifier 'Traits'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(534): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(558): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(610): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14811): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15176): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15214): error C2065: '_Arg13': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15500): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): fatal error C1003: error count exceeds 100; stopping compilation
+  [6/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.GuardCF.dir\__\eventpipeinternal.cpp.obj
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  [7/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\eventpipe\eventpipehelpers.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.dir/eventpipe/eventpipehelpers.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\eventpipe\eventpipehelpers.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.pdb /FS -c C:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\eventpipe\eventpipehelpers.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): error C2144: syntax error: 'int' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C2143: syntax error: missing ';' before '__cdecl'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(322): error C7525: inline variables require at least '/std:c++17'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(364): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(373): warning C4508: 'McGenControlCallbackV2': function should return a value; 'void' return type assumed
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(400): error C3861: 'RtlZeroMemory': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(423): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(424): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(512): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2143: syntax error: missing ';' before '*'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2734: 'UNALIGNED': 'const' object must be initialized if not 'extern'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ')' before identifier 'UNALIGNED'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2059: syntax error: ')'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'UINT_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ';' before identifier 'Context'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(528): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2146: syntax error: missing ';' before identifier 'Traits'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(534): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(558): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(610): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14811): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15176): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15214): error C2065: '_Arg13': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15500): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): fatal error C1003: error count exceeds 100; stopping compilation
+  [8/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\__\eventtrace.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.dir/__/eventtrace.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\__\eventtrace.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.pdb /FS -c C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventtrace.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): error C2144: syntax error: 'int' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C2143: syntax error: missing ';' before '__cdecl'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(322): error C7525: inline variables require at least '/std:c++17'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(364): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(373): warning C4508: 'McGenControlCallbackV2': function should return a value; 'void' return type assumed
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(400): error C3861: 'RtlZeroMemory': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(423): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(424): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(512): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2143: syntax error: missing ';' before '*'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2734: 'UNALIGNED': 'const' object must be initialized if not 'extern'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ')' before identifier 'UNALIGNED'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2059: syntax error: ')'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'UINT_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ';' before identifier 'Context'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(528): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2146: syntax error: missing ';' before identifier 'Traits'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(534): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(558): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(610): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14811): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15176): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15214): error C2065: '_Arg13': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15500): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): fatal error C1003: error count exceeds 100; stopping compilation
+  [9/28] cmd.exe /C "cd /D C:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug && "C:\Program Files\Microsoft Visual Studio\2022\Preview\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -DCMAKE_INSTALL_COMPONENT=alljits -DBUILD_TYPE=Debug -P C:/work/core/CurrentWork/runtime/artifacts/obj/coreclr/windows.x64.Debug/cmake_install.cmake"
+  -- Install configuration: "Debug"
+  [10/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\eventpipe\dotnetruntime.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.dir/eventpipe/dotnetruntime.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\eventpipe\dotnetruntime.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.pdb /FS -c C:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\eventpipe\dotnetruntime.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): error C2144: syntax error: 'int' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(323): error C2143: syntax error: missing ';' before '__cdecl'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(322): error C7525: inline variables require at least '/std:c++17'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(364): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(373): warning C4508: 'McGenControlCallbackV2': function should return a value; 'void' return type assumed
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(400): error C3861: 'RtlZeroMemory': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(423): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(424): error C2617: 'McGenControlCallbackV2': inconsistent return statement
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(324): note: see declaration of 'McGenControlCallbackV2'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(512): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(511): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2143: syntax error: missing ';' before '*'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2734: 'UNALIGNED': 'const' object must be initialized if not 'extern'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(521): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ')' before identifier 'UNALIGNED'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2059: syntax error: ')'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2065: 'UINT_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(526): error C2146: syntax error: missing ';' before identifier 'Context'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(528): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2146: syntax error: missing ';' before identifier 'Traits'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(533): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(534): error C2065: 'Traits': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(558): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(557): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2144: syntax error: 'ULONG' should be preceded by ';'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(610): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(609): error C2086: 'int DECLSPEC_NOINLINE': redefinition
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(321): note: see declaration of 'DECLSPEC_NOINLINE'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1328): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(1335): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6407): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(6414): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7733): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(7740): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8504): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(8511): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C2146: syntax error: missing ';' before identifier 'ULONG'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13136): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2065: 'ULONG_PTR': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: 'constant'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2143: syntax error: missing ';' before '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(13143): error C2059: syntax error: '}'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14811): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14824): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14825): error C2065: '_Arg1': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14823): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14828): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14829): error C2065: '_Arg2': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14827): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14832): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14833): error C2065: '_Arg3': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(14831): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15176): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15211): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15212): error C2065: '_Arg12': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15210): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15214): error C2065: '_Arg13': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15217): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15218): error C2065: '_Arg14': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): error C2660: 'EventDataDescCreate': function does not take 1 arguments
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\PalRedhawk.h(591): note: see declaration of 'EventDataDescCreate'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15216): note: while trying to match the argument list '(EVENT_DATA_DESCRIPTOR *)'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15500): error C2061: syntax error: identifier 'PCWSTR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15524): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): error C2065: '_Arg6': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(15525): fatal error C1003: error count exceeds 100; stopping compilation
+  [11/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\ep-rt-aot.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.dir/ep-rt-aot.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.dir\ep-rt-aot.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.pdb /FS -c C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  [12/28] Building CXX object nativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.GuardCF.dir\ep-rt-aot.cpp.obj
+  FAILED: nativeaot/Runtime/eventpipe/CMakeFiles/eventpipe-enabled.GuardCF.dir/ep-rt-aot.cpp.obj 
+  C:\PROGRA~1\MICROS~4\2022\Preview\VC\Tools\MSVC\1437~1.328\bin\Hostx64\x64\cl.exe  /nologo /TP -DBUILDENV_DEBUG=1 -DDEBUG -DFEATURE_BASICFREEZE -DFEATURE_CACHED_INTERFACE_DISPATCH -DFEATURE_CONSERVATIVE_GC -DFEATURE_CUSTOM_IMPORTS -DFEATURE_DYNAMIC_CODE -DFEATURE_ETW -DFEATURE_EVENT_TRACE -DFEATURE_GC_STRESS -DFEATURE_MANUALLY_MANAGED_CARD_BUNDLES -DFEATURE_NATIVEAOT -DFEATURE_PERFTRACING -DFEATURE_SPECIAL_USER_MODE_APC -DFEATURE_SUSPEND_REDIRECTION -DFEATURE_USE_SOFTWARE_WRITE_WATCH_FOR_GC_HEAP -DHOST_64BIT -DHOST_AMD64 -DHOST_WINDOWS -DNATIVEAOT -DTARGET_64BIT -DTARGET_AMD64 -DTARGET_WINDOWS -DUNICODE=1 -DURTBLDENV_FRIENDLY=Debug -DVERIFY_HEAP -D_DBG -D_DEBUG -D_FILE_OFFSET_BITS=64 -D_LIB -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe -IC:\work\core\CurrentWork\runtime\src\native -IC:\work\core\CurrentWork\runtime\src\native\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\pal\prebuilt\inc -IC:\work\core\CurrentWork\runtime\artifacts\obj -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\. -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\..\..\gc\env -IC:\work\core\CurrentWork\runtime\artifacts\obj\coreclr\windows.x64.Debug\nativeaot\Runtime\eventpipe\inc -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\windows -IC:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\amd64 /DWIN32 /D_WINDOWS  /GR-  /guard:ehcont /Zi /Ob0 /Od /RTC1 -MTd /Od /nologo /W4 /WX /Oi /Oy- /Gm- /Zp8 /Gy /GS /fp:precise /FC /MP /Zm200 /Zc:strictStrings /Zc:wchar_t /Zc:inline /Zc:forScope /wd4065 /wd4100 /wd4127 /wd4131 /wd4189 /wd4200 /wd4201 /wd4206 /wd4239 /wd4245 /wd4291 /wd4310 /wd4324 /wd4366 /wd4456 /wd4457 /wd4458 /wd4459 /wd4463 /wd4505 /wd4702 /wd4706 /wd4733 /wd4815 /wd4838 /wd4918 /wd4960 /wd4961 /wd5105 /wd5205 /we4007 /we4013 /we4102 /we4551 /we4700 /we4640 /we4806 /w34092 /w34121 /w34125 /w34130 /w34132 /w34212 /w34530 /w35038 /w44177 /Zi /ZH:SHA_256 /source-charset:utf-8 /homeparams /EHa /EHa- /EHs- /GL- /guard:cf /showIncludes /Fonativeaot\Runtime\eventpipe\CMakeFiles\eventpipe-enabled.GuardCF.dir\ep-rt-aot.cpp.obj /Fdnativeaot\Runtime\eventpipe\eventpipe-enabled.GuardCF.pdb /FS -c C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\eventpipe\ep-rt-aot.cpp
+  cl : Command line warning D9025 : overriding '/EHa' with '/EHa-'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(330): error C2061: syntax error: identifier 'PEVENT_FILTER_DESCRIPTOR'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(365): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(369): error C2065: 'FilterData': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(382): error C2065: 'EVENT_CONTROL_CODE_ENABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(394): error C2065: 'EVENT_CONTROL_CODE_DISABLE_PROVIDER': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(378): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(393): error C2051: case expression not constant
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(538): error C3861: 'EventWriteTransfer': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(561): error C2061: syntax error: identifier 'PENABLECALLBACK'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(592): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'EnableCallback': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'CallbackContext': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C2065: 'RegHandle': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(598): error C3861: 'EventRegister': identifier not found
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2065: 'PREGHANDLE': undeclared identifier
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(611): error C2146: syntax error: missing ')' before identifier 'RegHandle'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2143: syntax error: missing ';' before '{'
+  C:\work\core\CurrentWork\runtime\src\coreclr\nativeaot\Runtime\EtwEvents.h(629): error C2447: '{': missing function header (old-style formal list?)
+  ninja: build stopped: subcommand failed.
+  BUILD: Error: native component build failed. Refer to the build log files for details.
+      "C:\work\core\CurrentWork\runtime\artifacts\log\Debug\CoreCLR_windows__x64__Debug__x64.log"
+      "C:\work\core\CurrentWork\runtime\artifacts\log\Debug\CoreCLR_windows__x64__Debug__x64.wrn"
+      "C:\work\core\CurrentWork\runtime\artifacts\log\Debug\CoreCLR_windows__x64__Debug__x64.err"
+C:\work\core\CurrentWork\runtime\src\coreclr\runtime.proj(94,5): error MSB3073: The command ""C:\work\core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows -outputrid win-x64 -component alljits -component nativeaot" exited with code 1.
+
+Build FAILED.
+
+C:\work\core\CurrentWork\runtime\src\coreclr\runtime.proj(94,5): error MSB3073: The command ""C:\work\core\CurrentWork\runtime\src\coreclr\build-runtime.cmd" -x64 -debug -os windows -outputrid win-x64 -component alljits -component nativeaot" exited with code 1.
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:14.96
+Build failed with exit code 1. Check errors above.
+Some builds failed:
+	Configuration: Debug, Architecture: x64
