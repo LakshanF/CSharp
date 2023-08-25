@@ -48,9 +48,7 @@
 //
 //*****************************************************************************
 
-#include <wmistr.h>
-#include <evntrace.h>
-#include <evntprov.h>
+#include <wchar.h>
 
 #ifndef ETW_INLINE
   #ifdef _ETW_KM_
