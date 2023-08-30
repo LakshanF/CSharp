@@ -21,3 +21,7 @@ Plan to add multple NativeAOT assemblies to a single App, and test EventPipe beh
  - cl.exe MultiAotTest.c
  - MultiAotTest.exe
  - dotnet-trace collect --providers LaksDemoEventSource,LaksDemoEventSource2,Microsoft-Windows-DotNETRuntime --name MultiAotTest
+
+
+Utilities
+rd /s/q bin & rd /s/q obj
