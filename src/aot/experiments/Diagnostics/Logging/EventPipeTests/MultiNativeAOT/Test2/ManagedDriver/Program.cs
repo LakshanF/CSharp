@@ -24,26 +24,24 @@ namespace ManagedDriverNS
 
         public static int Main()
         {
-            // This test (temp?) validates event behavior via dotnet-trace and perfview
-
-            Console.WriteLine("Waiting 10 seconds to client to get the PID");
+            Console.WriteLine("NativeLibrary1: Waiting 10 seconds to client to get the PID");
             Thread.Sleep(10*1000);
 
             Console.WriteLine($"addInLib1:{addInLib1(2, 3)}");
 
-            // GC.Collect();
-            // List<Foo> list = new List<Foo>();
+            GC.Collect();
+            List<Foo> list = new List<Foo>();
 
-            // for (int i = 0; i < 100000; i++)
-            // {
-            //     list.Add(new Foo(i));
-            //     if (i % 10000 == 0)
-            //         Console.WriteLine($"Fired MyEvent {i:N0}/100,000 times...");
-            //     LaksManagedEventSource.Log.MyEvent();
-            // }
-            // int rndValue = new Random().Next(0, 100000);
-            // Console.WriteLine($"{list[rndValue].IValue}-{list[rndValue].SValue}");
-            // GC.Collect();
+            for (int i = 0; i < 100000; i++)
+            {
+                list.Add(new Foo(i));
+                if (i % 10000 == 0)
+                    Console.WriteLine($"Fired MyEvent {i:N0}/100,000 times...");
+                LaksManagedEventSource.Log.MyEvent();
+            }
+            int rndValue = new Random().Next(0, 100000);
+            Console.WriteLine($"{list[rndValue].IValue}-{list[rndValue].SValue}");
+            GC.Collect();
 
             Console.WriteLine("Waiting 10 seconds to EventPipe to write the data");
             Thread.Sleep(10*1000);
@@ -52,14 +50,14 @@ namespace ManagedDriverNS
         }
     }
 
-    // public class Foo
-    // {
-    //     public int IValue{get;set;}
-    //     public string SValue{get;set;}
-    //     public Foo(int value)
-    //     {
-    //         IValue = value;
-    //         SValue = value.ToString();
-    //     }
-    // }
+    public class Foo
+    {
+        public int IValue{get;set;}
+        public string SValue{get;set;}
+        public Foo(int value)
+        {
+            IValue = value;
+            SValue = value.ToString();
+        }
+    }
 }

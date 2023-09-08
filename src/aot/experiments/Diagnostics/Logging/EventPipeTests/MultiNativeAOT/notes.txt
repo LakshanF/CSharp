@@ -4,6 +4,7 @@ Notes
  - Add <PublishAot>true</PublishAot> to ensure the projects are native aot'd
  - Add <EventSourceSupport>true</EventSourceSupport> to enable eventpipe
  - dotnet publish -r win-x64
+ - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name 
 
 Plan to add multple NativeAOT assemblies to a single App, and test EventPipe behavior
 1) Build a shared library, use a c program to call

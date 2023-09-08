@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <PublishAot>true</PublishAot>
     <NativeLib>Shared</NativeLib>
+    <EventSourceSupport>true</EventSourceSupport>
   </PropertyGroup>
 
 </Project>
