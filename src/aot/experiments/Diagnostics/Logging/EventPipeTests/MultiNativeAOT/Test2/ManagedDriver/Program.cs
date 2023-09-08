@@ -5,6 +5,8 @@ using System;
 using System.Diagnostics.Tracing;
 using System.Threading;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace ManagedDriverNS
 {
@@ -17,12 +19,17 @@ namespace ManagedDriverNS
 
     public class ManagedDriver
     {
+        [DllImport("NativeLibrary1", CallingConvention = CallingConvention.StdCall)]
+        private static extern int addInLib1(int a, int b);
+
         public static int Main()
         {
             // This test (temp?) validates event behavior via dotnet-trace and perfview
 
             Console.WriteLine("Waiting 10 seconds to client to get the PID");
             Thread.Sleep(10*1000);
+
+            Console.WriteLine($"addInLib1:{addInLib1(2, 3)}");
 
             // GC.Collect();
             // List<Foo> list = new List<Foo>();

@@ -3,6 +3,7 @@ Notes
  - Use ctrl-c to get a valide trace file, otherwise the trace file can be corrupted on abnormal process exit scenarios
  - Add <PublishAot>true</PublishAot> to ensure the projects are native aot'd
  - Add <EventSourceSupport>true</EventSourceSupport> to enable eventpipe
+ - dotnet publish -r win-x64
 
 Plan to add multple NativeAOT assemblies to a single App, and test EventPipe behavior
 1) Build a shared library, use a c program to call
