@@ -14,3 +14,13 @@
 
 # Scratch files
 scratch*.txt
+
+# tmp dir
+tmp/
+
+# exe and obj
+*.exe
+*.obj
+
+# nettrace files
+*.nettrace

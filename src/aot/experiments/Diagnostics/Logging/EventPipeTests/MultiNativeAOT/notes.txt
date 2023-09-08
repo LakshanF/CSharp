@@ -1,7 +1,13 @@
+Notes
+ - Requires PR https://github.com/dotnet/runtime/pull/91715 to be merged
+ - Use ctrl-c to get a valide trace file, otherwise the trace file can be corrupted on abnormal process exit scenarios
+ - Add <PublishAot>true</PublishAot> to ensure the projects are native aot'd
+ - Add <EventSourceSupport>true</EventSourceSupport> to enable eventpipe
+
 Plan to add multple NativeAOT assemblies to a single App, and test EventPipe behavior
 1) Build a shared library, use a c program to call
-2) Build 2 shared libraries, and use a C program to call
-3) Build a shared and entrypoint exe using NativeAOT
+2) Build a shared and entrypoint exe using NativeAOT
+3) Build 2 shared libraries, and use a C program to call
 
 1) Steps
  - dotnet new classlib -o NativeLibrary
@@ -13,6 +19,17 @@ Plan to add multple NativeAOT assemblies to a single App, and test EventPipe beh
  - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
 
 2) Steps
+ - dotnet new console -o ManagedDriver
+ - dotnet publish -r win-x64 -c Debug
+ - dotnet new classlib -o NativeLibrary1
+ - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug
+ - Add a function, write event
+ - C modification: ..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll
+ - cl.exe MultiAotTest.c
+ - MultiAotTest.exe
+ - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
+
+3) Steps
  - dotnet new classlib -o NativeLibrary
  - dotnet new classlib -o NativeLibrary2
  - Add a function, write event in both

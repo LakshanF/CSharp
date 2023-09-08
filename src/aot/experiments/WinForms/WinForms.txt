@@ -8,6 +8,8 @@ Goals:
 dotnet new winforms
 dotnet publish /p:PublishAot=true -r win-x64 -c Release /p:_SuppressWinFormsTrimError=true
 
+sizoscope
+
 176
 C:\work\core\main\sdk\artifacts\bin\redist\Debug\dotnet\sdk\7.0.100-dev\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.RuntimeIdentifierInference.targets
 
