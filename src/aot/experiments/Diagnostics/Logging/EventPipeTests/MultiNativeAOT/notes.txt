@@ -2,7 +2,7 @@ Notes
  - Requires PR https://github.com/dotnet/runtime/pull/91715 to be merged
  - Use ctrl-c to get a valide trace file, otherwise the trace file can be corrupted on abnormal process exit scenarios
  - Add <PublishAot>true</PublishAot> to ensure the projects are native aot'd
- - Add <EventSourceSupport>true</EventSourceSupport> to enable eventpipe
+ - Add <EventSourceSupport>false</EventSourceSupport> to disable eventpipe in the tests\tracing\eventpipe tree
  - dotnet publish -r win-x64
  - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name 
 
