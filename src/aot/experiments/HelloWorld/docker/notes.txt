@@ -1,0 +1,16 @@
+# Create and publish a .net app
+dotnet new console -o App -n NetCore.Docker
+cd App
+dotnet publish -c Release
+
+# Create a Dockerfile for .net
+FROM mcr.microsoft.com/dotnet/runtime:8.0
+WORKDIR /app
+COPY bin/Release/net8.0/publish/ .
+ENTRYPOINT ["dotnet", "DotNet.Docker.dll"]
+
+# Build a docker image
+docker build -t hello-world-dotnet .
+
+# Create and run a docker container
+docker run hello-world-dotnet
