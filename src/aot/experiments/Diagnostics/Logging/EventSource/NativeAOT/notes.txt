@@ -1,0 +1,16 @@
+    <EventSourceSupport>true</EventSourceSupport>
+    <PublishAot>true</PublishAot>
+    <IlcGenerateMstatFile>true</IlcGenerateMstatFile>
+    <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile>
+
+rd /s/q bin & rd /s/q obj
+dotnet publish
+
+dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name simple2
+dotnet-trace collect --providers DemoEventSource,Microsoft-Windows-DotNETRuntime --name NativeAotTest
+
+c:\work\core\main\runtime\artifacts\tests\coreclr\obj\windows.x64.Release\Managed\tracing\eventpipe\simple2\simple2\native
+c:\work\core\main\runtime\artifacts\tests\coreclr\windows.x64.Release\tracing\eventpipe\simple2\simple2\native
+
+C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\NativeAOT\bin\Release\net8.0\win-x64\publish\
+C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventSource\NativeAOT\obj\Release\net8.0\win-x64\native

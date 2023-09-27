@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.Tracing;
+﻿using System;
+using System.Diagnostics.Tracing;
+using System.Threading;
 
 namespace EventSourceDemo
 {
@@ -6,6 +8,8 @@ namespace EventSourceDemo
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Waiting 10 seconds to client to get the PID");
+            Thread.Sleep(10*1000);
             DemoEventSource.Log.AppStarted("Hello World From NativeAOT!", 12);
             DemoEventSource.Log.DebugMessage("Got here From NativeAOT");
             DemoEventSource.Log.DebugMessage("finishing startup From NativeAOT");
@@ -15,7 +19,6 @@ namespace EventSourceDemo
         }
     }
 
-    [EventSource(Name = "Demo")]
     class DemoEventSource : EventSource
     {
         public static DemoEventSource Log { get; } = new DemoEventSource();
