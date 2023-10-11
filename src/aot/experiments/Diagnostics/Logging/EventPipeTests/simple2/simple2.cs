@@ -5,6 +5,7 @@ using System;
 using System.Diagnostics.Tracing;
 using System.Threading;
 using System.Collections.Generic;
+using Xunit;
 
 namespace Tracing.Tests.Simple2
 {
@@ -17,7 +18,8 @@ namespace Tracing.Tests.Simple2
 
     public class ProviderValidation2
     {
-        public static int Main()
+        [Fact]
+        public static int TestEntryPoint()
         {
             // This test (temp?) validates event behavior via dotnet-trace and perfview
 
@@ -41,7 +43,10 @@ namespace Tracing.Tests.Simple2
             Console.WriteLine("Waiting 10 seconds to EventPipe to write the data");
             Thread.Sleep(10*1000);
 
-            return 100;
+            if(new Random().Next(100)>100)
+                return -1;
+            else
+                return 100;
         }
     }
 
