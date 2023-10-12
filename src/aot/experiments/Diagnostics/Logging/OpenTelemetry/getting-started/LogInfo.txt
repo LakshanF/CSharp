@@ -1,0 +1,700 @@
+PS C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\OpenTelemetry\getting-started> dotnet run
+Building...
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:8080
+LogRecord.Timestamp:               2023-10-02T22:47:06.2591188Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.Body:                    Now listening on: {address}
+LogRecord.Attributes (Key:Value):
+    address: http://localhost:8080
+    OriginalFormat (a.k.a Body): Now listening on: {address}
+LogRecord.EventId:                 14
+LogRecord.EventName:               ListeningOnAddress
+
+Resource associated with LogRecord:
+telemetry.auto.version: 1.0.2
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.6.0
+service.name: RollDiceService
+
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+LogRecord.Timestamp:               2023-10-02T22:47:06.2923894Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.Body:                    Application started. Press Ctrl+C to shut down.
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Application started. Press Ctrl+C to shut down.
+
+Resource associated with LogRecord:
+telemetry.auto.version: 1.0.2
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.6.0
+service.name: RollDiceService
+
+LogRecord.Timestamp:               2023-10-02T22:47:06.2982888Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.Body:                    Hosting environment: {EnvName}
+LogRecord.Attributes (Key:Value):
+info    EnvName: Development
+    OriginalFormat (a.k.a Body): Hosting environment: {EnvName}
+
+Resource associated with LogRecord:
+telemetry.auto.version: 1.0.2
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.6.0
+service.name: RollDiceService
+
+: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+LogRecord.Timestamp:               2023-10-02T22:47:06.3066983Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+infoLogRecord.Body:                    Content root path: {ContentRoot}
+LogRecord.Attributes (Key:Value):
+    ContentRoot: C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\OpenTelemetry\getting-started
+    OriginalFormat (a.k.a Body): Content root path: {ContentRoot}
+
+Resource associated with LogRecord:
+telemetry.auto.version: 1.0.2
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.6.0
+service.name: RollDiceService
+
+: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\OpenTelemetry\getting-started
+Resource associated with Metric:
+    telemetry.auto.version: 1.0.2
+    telemetry.sdk.name: opentelemetry
+    telemetry.sdk.language: dotnet
+    telemetry.sdk.version: 1.6.0
+    service.name: RollDiceService
+
+Export process.runtime.dotnet.gc.collections.count, Number of garbage collections that have occurred since process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:15.8218272Z] generation: gen2 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:15.8218272Z] generation: gen1 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:15.8218272Z] generation: gen0 LongSum
+Value: 0
+
+Export process.runtime.dotnet.gc.objects.size, Count of bytes currently in use by objects in the GC heap that haven't been collected yet. Fragmentation and other GC committed memory pools are excluded., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955535Z, 2023-10-02T22:47:15.8219102Z] LongSumNonMonotonic
+Value: 6667480
+
+Export process.runtime.dotnet.gc.allocations.size, Count of bytes allocated on the managed GC heap since the process start. .NET objects are allocated from this heap. Object allocations from unmanaged languages such as C/C++ do not use this heap., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955849Z, 2023-10-02T22:47:15.8219112Z] LongSum
+Value: 6656848
+
+Export process.runtime.dotnet.gc.duration, The total amount of time paused in GC since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956268Z, 2023-10-02T22:47:15.8219153Z] LongSum
+Value: 0
+
+Export process.runtime.dotnet.jit.il_compiled.size, Count of bytes of intermediate language that have been compiled since the process start., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956353Z, 2023-10-02T22:47:15.8219159Z] LongSum
+Value: 776030
+
+Export process.runtime.dotnet.jit.methods_compiled.count, The number of times the JIT compiler compiled a method since the process start. The JIT compiler may be invoked multiple times for the same method to compile with different generic parameters, or because tiered compilation requested different optimization settings., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956476Z, 2023-10-02T22:47:15.8219165Z] LongSum
+Value: 11271
+
+Export process.runtime.dotnet.jit.compilation_time, The amount of time the JIT compiler has spent compiling methods since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956565Z, 2023-10-02T22:47:15.8219172Z] LongSum
+Value: 1813570000
+
+Export process.runtime.dotnet.monitor.lock_contention.count, The number of times there was contention when trying to acquire a monitor lock since the process start. Monitor locks are commonly acquired by using the lock keyword in C#, or by calling Monitor.Enter() and Monitor.TryEnter()., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956651Z, 2023-10-02T22:47:15.8219177Z] LongSum
+Value: 8
+
+Export process.runtime.dotnet.thread_pool.threads.count, The number of thread pool threads that currently exist., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956765Z, 2023-10-02T22:47:15.8219183Z] LongSumNonMonotonic
+Value: 3
+
+Export process.runtime.dotnet.thread_pool.completed_items.count, The number of work items that have been processed by the thread pool since the process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956856Z, 2023-10-02T22:47:15.8219189Z] LongSum
+Value: 5
+
+Export process.runtime.dotnet.thread_pool.queue.length, The number of work items that are currently queued to be processed by the thread pool., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956938Z, 2023-10-02T22:47:15.8219194Z] LongSumNonMonotonic
+Value: 0
+
+Export process.runtime.dotnet.timer.count, The number of timer instances that are currently active. Timers can be created by many sources such as System.Threading.Timer, Task.Delay, or the timeout in a CancellationSource. An active timer is registered to tick at some point in the future and has not yet been canceled., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957060Z, 2023-10-02T22:47:15.8219200Z] LongSumNonMonotonic
+Value: 1
+
+Export process.runtime.dotnet.assemblies.count, The number of .NET assemblies that are currently loaded., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957154Z, 2023-10-02T22:47:15.8219206Z] LongSumNonMonotonic
+Value: 119
+
+Export process.memory.usage, The amount of physical memory allocated for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963222Z, 2023-10-02T22:47:15.8219223Z] LongSumNonMonotonic
+Value: 72777728
+
+Export process.memory.virtual, The amount of committed virtual memory for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963329Z, 2023-10-02T22:47:15.8219232Z] LongSumNonMonotonic
+Value: 2480970244096
+
+Export process.cpu.time, Total CPU seconds broken down by different states., Unit: s, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:15.8220166Z] state: user DoubleSum
+Value: 0.515625
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:15.8220166Z] state: system DoubleSum
+Value: 0
+
+Export process.cpu.count, The number of processors (CPU cores) available to the current process., Unit: {processors}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966429Z, 2023-10-02T22:47:15.8220193Z] LongSumNonMonotonic
+Value: 8
+
+Export process.threads, Process threads count., Unit: {threads}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966536Z, 2023-10-02T22:47:15.8220206Z] LongSumNonMonotonic
+Value: 28
+
+Export process.runtime.dotnet.gc.collections.count, Number of garbage collections that have occurred since process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:25.8122719Z] generation: gen2 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:25.8122719Z] generation: gen1 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:25.8122719Z] generation: gen0 LongSum
+Value: 0
+
+Export process.runtime.dotnet.gc.objects.size, Count of bytes currently in use by objects in the GC heap that haven't been collected yet. Fragmentation and other GC committed memory pools are excluded., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955535Z, 2023-10-02T22:47:25.8122728Z] LongSumNonMonotonic
+Value: 6757608
+
+Export process.runtime.dotnet.gc.allocations.size, Count of bytes allocated on the managed GC heap since the process start. .NET objects are allocated from this heap. Object allocations from unmanaged languages such as C/C++ do not use this heap., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955849Z, 2023-10-02T22:47:25.8122733Z] LongSum
+Value: 6746736
+
+Export process.runtime.dotnet.gc.duration, The total amount of time paused in GC since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956268Z, 2023-10-02T22:47:25.8122748Z] LongSum
+Value: 0
+
+Export process.runtime.dotnet.jit.il_compiled.size, Count of bytes of intermediate language that have been compiled since the process start., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956353Z, 2023-10-02T22:47:25.8122753Z] LongSum
+Value: 802448
+
+Export process.runtime.dotnet.jit.methods_compiled.count, The number of times the JIT compiler compiled a method since the process start. The JIT compiler may be invoked multiple times for the same method to compile with different generic parameters, or because tiered compilation requested different optimization settings., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956476Z, 2023-10-02T22:47:25.8122757Z] LongSum
+Value: 11678
+
+Export process.runtime.dotnet.jit.compilation_time, The amount of time the JIT compiler has spent compiling methods since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956565Z, 2023-10-02T22:47:25.8122767Z] LongSum
+Value: 1857002900
+
+Export process.runtime.dotnet.monitor.lock_contention.count, The number of times there was contention when trying to acquire a monitor lock since the process start. Monitor locks are commonly acquired by using the lock keyword in C#, or by calling Monitor.Enter() and Monitor.TryEnter()., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956651Z, 2023-10-02T22:47:25.8122771Z] LongSum
+Value: 8
+
+Export process.runtime.dotnet.thread_pool.threads.count, The number of thread pool threads that currently exist., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956765Z, 2023-10-02T22:47:25.8122780Z] LongSumNonMonotonic
+Value: 3
+
+Export process.runtime.dotnet.thread_pool.completed_items.count, The number of work items that have been processed by the thread pool since the process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956856Z, 2023-10-02T22:47:25.8122784Z] LongSum
+Value: 6
+
+Export process.runtime.dotnet.thread_pool.queue.length, The number of work items that are currently queued to be processed by the thread pool., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956938Z, 2023-10-02T22:47:25.8122787Z] LongSumNonMonotonic
+Value: 0
+
+Export process.runtime.dotnet.timer.count, The number of timer instances that are currently active. Timers can be created by many sources such as System.Threading.Timer, Task.Delay, or the timeout in a CancellationSource. An active timer is registered to tick at some point in the future and has not yet been canceled., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957060Z, 2023-10-02T22:47:25.8122790Z] LongSumNonMonotonic
+Value: 1
+
+Export process.runtime.dotnet.assemblies.count, The number of .NET assemblies that are currently loaded., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957154Z, 2023-10-02T22:47:25.8122795Z] LongSumNonMonotonic
+Value: 119
+
+Export process.memory.usage, The amount of physical memory allocated for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963222Z, 2023-10-02T22:47:25.8122807Z] LongSumNonMonotonic
+Value: 69136384
+
+Export process.memory.virtual, The amount of committed virtual memory for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963329Z, 2023-10-02T22:47:25.8122811Z] LongSumNonMonotonic
+Value: 2480970637312
+
+Export process.cpu.time, Total CPU seconds broken down by different states., Unit: s, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:25.8122826Z] state: user DoubleSum
+Value: 0.515625
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:25.8122826Z] state: system DoubleSum
+Value: 0
+
+Export process.cpu.count, The number of processors (CPU cores) available to the current process., Unit: {processors}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966429Z, 2023-10-02T22:47:25.8122843Z] LongSumNonMonotonic
+Value: 8
+
+Export process.threads, Process threads count., Unit: {threads}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966536Z, 2023-10-02T22:47:25.8122845Z] LongSumNonMonotonic
+Value: 28
+
+Export process.runtime.dotnet.gc.collections.count, Number of garbage collections that have occurred since process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:35.8072772Z] generation: gen2 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:35.8072772Z] generation: gen1 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:35.8072772Z] generation: gen0 LongSum
+Value: 0
+
+Export process.runtime.dotnet.gc.objects.size, Count of bytes currently in use by objects in the GC heap that haven't been collected yet. Fragmentation and other GC committed memory pools are excluded., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955535Z, 2023-10-02T22:47:35.8072778Z] LongSumNonMonotonic
+Value: 6831368
+
+Export process.runtime.dotnet.gc.allocations.size, Count of bytes allocated on the managed GC heap since the process start. .NET objects are allocated from this heap. Object allocations from unmanaged languages such as C/C++ do not use this heap., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955849Z, 2023-10-02T22:47:35.8072782Z] LongSum
+Value: 6812880
+
+Export process.runtime.dotnet.gc.duration, The total amount of time paused in GC since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956268Z, 2023-10-02T22:47:35.8072957Z] LongSum
+Value: 0
+
+Export process.runtime.dotnet.jit.il_compiled.size, Count of bytes of intermediate language that have been compiled since the process start., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956353Z, 2023-10-02T22:47:35.8072962Z] LongSum
+Value: 811025
+
+Export process.runtime.dotnet.jit.methods_compiled.count, The number of times the JIT compiler compiled a method since the process start. The JIT compiler may be invoked multiple times for the same method to compile with different generic parameters, or because tiered compilation requested different optimization settings., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956476Z, 2023-10-02T22:47:35.8072966Z] LongSum
+Value: 11825
+
+Export process.runtime.dotnet.jit.compilation_time, The amount of time the JIT compiler has spent compiling methods since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956565Z, 2023-10-02T22:47:35.8072975Z] LongSum
+Value: 1884516100
+
+Export process.runtime.dotnet.monitor.lock_contention.count, The number of times there was contention when trying to acquire a monitor lock since the process start. Monitor locks are commonly acquired by using the lock keyword in C#, or by calling Monitor.Enter() and Monitor.TryEnter()., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956651Z, 2023-10-02T22:47:35.8072979Z] LongSum
+Value: 8
+
+Export process.runtime.dotnet.thread_pool.threads.count, The number of thread pool threads that currently exist., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956765Z, 2023-10-02T22:47:35.8072983Z] LongSumNonMonotonic
+Value: 2
+
+Export process.runtime.dotnet.thread_pool.completed_items.count, The number of work items that have been processed by the thread pool since the process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956856Z, 2023-10-02T22:47:35.8072986Z] LongSum
+Value: 7
+
+Export process.runtime.dotnet.thread_pool.queue.length, The number of work items that are currently queued to be processed by the thread pool., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956938Z, 2023-10-02T22:47:35.8072990Z] LongSumNonMonotonic
+Value: 0
+
+Export process.runtime.dotnet.timer.count, The number of timer instances that are currently active. Timers can be created by many sources such as System.Threading.Timer, Task.Delay, or the timeout in a CancellationSource. An active timer is registered to tick at some point in the future and has not yet been canceled., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957060Z, 2023-10-02T22:47:35.8072994Z] LongSumNonMonotonic
+Value: 1
+
+Export process.runtime.dotnet.assemblies.count, The number of .NET assemblies that are currently loaded., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957154Z, 2023-10-02T22:47:35.8072999Z] LongSumNonMonotonic
+Value: 119
+
+Export process.memory.usage, The amount of physical memory allocated for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963222Z, 2023-10-02T22:47:35.8073010Z] LongSumNonMonotonic
+Value: 71045120
+
+Export process.memory.virtual, The amount of committed virtual memory for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963329Z, 2023-10-02T22:47:35.8073015Z] LongSumNonMonotonic
+Value: 2480972144640
+
+Export process.cpu.time, Total CPU seconds broken down by different states., Unit: s, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:35.8073021Z] state: user DoubleSum
+Value: 0.53125
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:35.8073021Z] state: system DoubleSum
+Value: 0.015625
+
+Export process.cpu.count, The number of processors (CPU cores) available to the current process., Unit: {processors}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966429Z, 2023-10-02T22:47:35.8073025Z] LongSumNonMonotonic
+Value: 8
+
+Export process.threads, Process threads count., Unit: {threads}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966536Z, 2023-10-02T22:47:35.8073027Z] LongSumNonMonotonic
+Value: 29
+
+Export process.runtime.dotnet.gc.collections.count, Number of garbage collections that have occurred since process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:45.8077636Z] generation: gen2 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:45.8077636Z] generation: gen1 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:45.8077636Z] generation: gen0 LongSum
+Value: 0
+
+Export process.runtime.dotnet.gc.objects.size, Count of bytes currently in use by objects in the GC heap that haven't been collected yet. Fragmentation and other GC committed memory pools are excluded., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955535Z, 2023-10-02T22:47:45.8077641Z] LongSumNonMonotonic
+Value: 6913312
+
+Export process.runtime.dotnet.gc.allocations.size, Count of bytes allocated on the managed GC heap since the process start. .NET objects are allocated from this heap. Object allocations from unmanaged languages such as C/C++ do not use this heap., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955849Z, 2023-10-02T22:47:45.8077644Z] LongSum
+Value: 6894608
+
+Export process.runtime.dotnet.gc.duration, The total amount of time paused in GC since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956268Z, 2023-10-02T22:47:45.8077656Z] LongSum
+Value: 0
+
+Export process.runtime.dotnet.jit.il_compiled.size, Count of bytes of intermediate language that have been compiled since the process start., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956353Z, 2023-10-02T22:47:45.8077660Z] LongSum
+Value: 819453
+
+Export process.runtime.dotnet.jit.methods_compiled.count, The number of times the JIT compiler compiled a method since the process start. The JIT compiler may be invoked multiple times for the same method to compile with different generic parameters, or because tiered compilation requested different optimization settings., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956476Z, 2023-10-02T22:47:45.8077664Z] LongSum
+Value: 11976
+
+Export process.runtime.dotnet.jit.compilation_time, The amount of time the JIT compiler has spent compiling methods since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956565Z, 2023-10-02T22:47:45.8077667Z] LongSum
+Value: 1901600500
+
+Export process.runtime.dotnet.monitor.lock_contention.count, The number of times there was contention when trying to acquire a monitor lock since the process start. Monitor locks are commonly acquired by using the lock keyword in C#, or by calling Monitor.Enter() and Monitor.TryEnter()., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956651Z, 2023-10-02T22:47:45.8077670Z] LongSum
+Value: 8
+
+Export process.runtime.dotnet.thread_pool.threads.count, The number of thread pool threads that currently exist., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956765Z, 2023-10-02T22:47:45.8077680Z] LongSumNonMonotonic
+Value: 2
+
+Export process.runtime.dotnet.thread_pool.completed_items.count, The number of work items that have been processed by the thread pool since the process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956856Z, 2023-10-02T22:47:45.8077682Z] LongSum
+Value: 8
+
+Export process.runtime.dotnet.thread_pool.queue.length, The number of work items that are currently queued to be processed by the thread pool., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956938Z, 2023-10-02T22:47:45.8077685Z] LongSumNonMonotonic
+Value: 0
+
+Export process.runtime.dotnet.timer.count, The number of timer instances that are currently active. Timers can be created by many sources such as System.Threading.Timer, Task.Delay, or the timeout in a CancellationSource. An active timer is registered to tick at some point in the future and has not yet been canceled., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957060Z, 2023-10-02T22:47:45.8077688Z] LongSumNonMonotonic
+Value: 1
+
+Export process.runtime.dotnet.assemblies.count, The number of .NET assemblies that are currently loaded., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957154Z, 2023-10-02T22:47:45.8077692Z] LongSumNonMonotonic
+Value: 119
+
+Export process.memory.usage, The amount of physical memory allocated for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963222Z, 2023-10-02T22:47:45.8077701Z] LongSumNonMonotonic
+Value: 68608000
+
+Export process.memory.virtual, The amount of committed virtual memory for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963329Z, 2023-10-02T22:47:45.8077705Z] LongSumNonMonotonic
+Value: 2480972210176
+
+Export process.cpu.time, Total CPU seconds broken down by different states., Unit: s, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:45.8077710Z] state: user DoubleSum
+Value: 0.53125
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:45.8077710Z] state: system DoubleSum
+Value: 0.03125
+
+Export process.cpu.count, The number of processors (CPU cores) available to the current process., Unit: {processors}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966429Z, 2023-10-02T22:47:45.8077714Z] LongSumNonMonotonic
+Value: 8
+
+Export process.threads, Process threads count., Unit: {threads}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966536Z, 2023-10-02T22:47:45.8077716Z] LongSumNonMonotonic
+Value: 29
+LogRecord.Timestamp:               2023-10-02T22:47:52.9263083Z
+LogRecord.TraceId:                 eaa49035ed38e635a06a8694d70f51e3
+infoLogRecord.SpanId:                  15fb761100766fb2
+: getting-started[0]
+      Anonymous player is rolling the dice: 3
+LogRecord.TraceFlags:              Recorded
+LogRecord.CategoryName:            getting-started
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.Body:                    Anonymous player is rolling the dice: {result}
+LogRecord.Attributes (Key:Value):
+    result: 3
+    OriginalFormat (a.k.a Body): Anonymous player is rolling the dice: {result}
+
+Resource associated with LogRecord:
+telemetry.auto.version: 1.0.2
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.6.0
+service.name: RollDiceService
+
+Activity.TraceId:            eaa49035ed38e635a06a8694d70f51e3
+Activity.SpanId:             15fb761100766fb2
+Activity.TraceFlags:         Recorded
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName:        /rolldice
+Activity.Kind:               Server
+Activity.StartTime:          2023-10-02T22:47:52.8030686Z
+Activity.Duration:           00:00:00.1413678
+Activity.Tags:
+    net.host.name: localhost
+    net.host.port: 8080
+    http.method: GET
+    http.scheme: http
+    http.target: /rolldice
+    http.url: http://localhost:8080/rolldice
+    http.flavor: 1.1
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.31
+    http.status_code: 200
+Resource associated with Activity:
+    telemetry.auto.version: 1.0.2
+    telemetry.sdk.name: opentelemetry
+    telemetry.sdk.language: dotnet
+    telemetry.sdk.version: 1.6.0
+    service.name: RollDiceService
+
+Activity.TraceId:            363128b027f964c60f19f617436afaaa
+Activity.SpanId:             9d4c399450f38934
+Activity.TraceFlags:         Recorded
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName:        /favicon.ico
+Activity.Kind:               Server
+Activity.StartTime:          2023-10-02T22:47:53.0788308Z
+Activity.Duration:           00:00:00.0043018
+Activity.Tags:
+    net.host.name: localhost
+    net.host.port: 8080
+    http.method: GET
+    http.scheme: http
+    http.target: /favicon.ico
+    http.url: http://localhost:8080/favicon.ico
+    http.flavor: 1.1
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.31
+    http.status_code: 404
+Resource associated with Activity:
+    telemetry.auto.version: 1.0.2
+    telemetry.sdk.name: opentelemetry
+    telemetry.sdk.language: dotnet
+    telemetry.sdk.version: 1.6.0
+    service.name: RollDiceService
+
+
+Export process.runtime.dotnet.gc.collections.count, Number of garbage collections that have occurred since process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:55.7999037Z] generation: gen2 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:55.7999037Z] generation: gen1 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:47:55.7999037Z] generation: gen0 LongSum
+Value: 0
+
+Export process.runtime.dotnet.gc.objects.size, Count of bytes currently in use by objects in the GC heap that haven't been collected yet. Fragmentation and other GC committed memory pools are excluded., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955535Z, 2023-10-02T22:47:55.7999042Z] LongSumNonMonotonic
+Value: 7303928
+
+Export process.runtime.dotnet.gc.allocations.size, Count of bytes allocated on the managed GC heap since the process start. .NET objects are allocated from this heap. Object allocations from unmanaged languages such as C/C++ do not use this heap., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955849Z, 2023-10-02T22:47:55.7999046Z] LongSum
+Value: 7284216
+
+Export process.runtime.dotnet.gc.duration, The total amount of time paused in GC since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956268Z, 2023-10-02T22:47:55.7999090Z] LongSum
+Value: 0
+
+Export process.runtime.dotnet.jit.il_compiled.size, Count of bytes of intermediate language that have been compiled since the process start., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956353Z, 2023-10-02T22:47:55.7999096Z] LongSum
+Value: 1041986
+
+Export process.runtime.dotnet.jit.methods_compiled.count, The number of times the JIT compiler compiled a method since the process start. The JIT compiler may be invoked multiple times for the same method to compile with different generic parameters, or because tiered compilation requested different optimization settings., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956476Z, 2023-10-02T22:47:55.7999099Z] LongSum
+Value: 15059
+
+Export process.runtime.dotnet.jit.compilation_time, The amount of time the JIT compiler has spent compiling methods since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956565Z, 2023-10-02T22:47:55.7999111Z] LongSum
+Value: 2220903000
+
+Export process.runtime.dotnet.monitor.lock_contention.count, The number of times there was contention when trying to acquire a monitor lock since the process start. Monitor locks are commonly acquired by using the lock keyword in C#, or by calling Monitor.Enter() and Monitor.TryEnter()., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956651Z, 2023-10-02T22:47:55.7999115Z] LongSum
+Value: 8
+
+Export process.runtime.dotnet.thread_pool.threads.count, The number of thread pool threads that currently exist., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956765Z, 2023-10-02T22:47:55.7999119Z] LongSumNonMonotonic
+Value: 5
+
+Export process.runtime.dotnet.thread_pool.completed_items.count, The number of work items that have been processed by the thread pool since the process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956856Z, 2023-10-02T22:47:55.7999122Z] LongSum
+Value: 27
+
+Export process.runtime.dotnet.thread_pool.queue.length, The number of work items that are currently queued to be processed by the thread pool., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956938Z, 2023-10-02T22:47:55.7999125Z] LongSumNonMonotonic
+Value: 0
+
+Export process.runtime.dotnet.timer.count, The number of timer instances that are currently active. Timers can be created by many sources such as System.Threading.Timer, Task.Delay, or the timeout in a CancellationSource. An active timer is registered to tick at some point in the future and has not yet been canceled., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957060Z, 2023-10-02T22:47:55.7999129Z] LongSumNonMonotonic
+Value: 1
+
+Export process.runtime.dotnet.assemblies.count, The number of .NET assemblies that are currently loaded., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957154Z, 2023-10-02T22:47:55.7999133Z] LongSumNonMonotonic
+Value: 126
+
+Export process.memory.usage, The amount of physical memory allocated for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963222Z, 2023-10-02T22:47:55.7999143Z] LongSumNonMonotonic
+Value: 75780096
+
+Export process.memory.virtual, The amount of committed virtual memory for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963329Z, 2023-10-02T22:47:55.7999149Z] LongSumNonMonotonic
+Value: 2480984272896
+
+Export process.cpu.time, Total CPU seconds broken down by different states., Unit: s, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:55.7999156Z] state: user DoubleSum
+Value: 0.65625
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:47:55.7999156Z] state: system DoubleSum
+Value: 0.046875
+
+Export process.cpu.count, The number of processors (CPU cores) available to the current process., Unit: {processors}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966429Z, 2023-10-02T22:47:55.7999161Z] LongSumNonMonotonic
+Value: 8
+
+Export process.threads, Process threads count., Unit: {threads}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966536Z, 2023-10-02T22:47:55.7999163Z] LongSumNonMonotonic
+Value: 32
+
+Export http.server.duration, Measures the duration of inbound HTTP requests., Unit: ms, Meter: OpenTelemetry.Instrumentation.AspNetCore/1.0.0.0
+(2023-10-02T22:47:06.0508775Z, 2023-10-02T22:47:55.7999185Z] http.flavor: 1.1 http.method: GET http.route: /rolldice/{player?} http.scheme: http http.status_code: 200 net.host.name: localhost net.host.port: 8080 Histogram
+Value: Sum: 141.3678 Count: 1 Min: 141.3678 Max: 141.3678
+(-Infinity,0]:0
+(0,5]:0
+(5,10]:0
+(10,25]:0
+(25,50]:0
+(50,75]:0
+(75,100]:0
+(100,250]:1
+(250,500]:0
+(500,750]:0
+(750,1000]:0
+(1000,2500]:0
+(2500,5000]:0
+(5000,7500]:0
+(7500,10000]:0
+(10000,+Infinity]:0
+
+(2023-10-02T22:47:06.0508775Z, 2023-10-02T22:47:55.7999185Z] http.flavor: 1.1 http.method: GET http.scheme: http http.status_code: 404 net.host.name: localhost net.host.port: 8080 Histogram
+Value: Sum: 4.3018 Count: 1 Min: 4.3018 Max: 4.3018
+(-Infinity,0]:0
+(0,5]:1
+(5,10]:0
+(10,25]:0
+(25,50]:0
+(50,75]:0
+(75,100]:0
+(100,250]:0
+(250,500]:0
+(500,750]:0
+(750,1000]:0
+(1000,2500]:0
+(2500,5000]:0
+(5000,7500]:0
+(7500,10000]:0
+(10000,+Infinity]:0
+
+
+Export process.runtime.dotnet.gc.collections.count, Number of garbage collections that have occurred since process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:48:05.8144472Z] generation: gen2 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:48:05.8144472Z] generation: gen1 LongSum
+Value: 0
+(2023-10-02T22:47:05.7942552Z, 2023-10-02T22:48:05.8144472Z] generation: gen0 LongSum
+Value: 0
+
+Export process.runtime.dotnet.gc.objects.size, Count of bytes currently in use by objects in the GC heap that haven't been collected yet. Fragmentation and other GC committed memory pools are excluded., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955535Z, 2023-10-02T22:48:05.8144476Z] LongSumNonMonotonic
+Value: 7418352
+
+Export process.runtime.dotnet.gc.allocations.size, Count of bytes allocated on the managed GC heap since the process start. .NET objects are allocated from this heap. Object allocations from unmanaged languages such as C/C++ do not use this heap., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7955849Z, 2023-10-02T22:48:05.8144480Z] LongSum
+Value: 7398328
+
+Export process.runtime.dotnet.gc.duration, The total amount of time paused in GC since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956268Z, 2023-10-02T22:48:05.8144493Z] LongSum
+Value: 0
+
+Export process.runtime.dotnet.jit.il_compiled.size, Count of bytes of intermediate language that have been compiled since the process start., Unit: bytes, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956353Z, 2023-10-02T22:48:05.8144496Z] LongSum
+Value: 1052059
+
+Export process.runtime.dotnet.jit.methods_compiled.count, The number of times the JIT compiler compiled a method since the process start. The JIT compiler may be invoked multiple times for the same method to compile with different generic parameters, or because tiered compilation requested different optimization settings., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956476Z, 2023-10-02T22:48:05.8144499Z] LongSum
+Value: 15189
+
+Export process.runtime.dotnet.jit.compilation_time, The amount of time the JIT compiler has spent compiling methods since the process start., Unit: ns, Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956565Z, 2023-10-02T22:48:05.8144502Z] LongSum
+Value: 2249567600
+
+Export process.runtime.dotnet.monitor.lock_contention.count, The number of times there was contention when trying to acquire a monitor lock since the process start. Monitor locks are commonly acquired by using the lock keyword in C#, or by calling Monitor.Enter() and Monitor.TryEnter()., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956651Z, 2023-10-02T22:48:05.8144506Z] LongSum
+Value: 8
+
+Export process.runtime.dotnet.thread_pool.threads.count, The number of thread pool threads that currently exist., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956765Z, 2023-10-02T22:48:05.8144509Z] LongSumNonMonotonic
+Value: 5
+
+Export process.runtime.dotnet.thread_pool.completed_items.count, The number of work items that have been processed by the thread pool since the process start., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956856Z, 2023-10-02T22:48:05.8144512Z] LongSum
+Value: 28
+
+Export process.runtime.dotnet.thread_pool.queue.length, The number of work items that are currently queued to be processed by the thread pool., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7956938Z, 2023-10-02T22:48:05.8144514Z] LongSumNonMonotonic
+Value: 0
+
+Export process.runtime.dotnet.timer.count, The number of timer instances that are currently active. Timers can be created by many sources such as System.Threading.Timer, Task.Delay, or the timeout in a CancellationSource. An active timer is registered to tick at some point in the future and has not yet been canceled., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957060Z, 2023-10-02T22:48:05.8144517Z] LongSumNonMonotonic
+Value: 1
+
+Export process.runtime.dotnet.assemblies.count, The number of .NET assemblies that are currently loaded., Meter: OpenTelemetry.Instrumentation.Runtime/1.5.1.0
+(2023-10-02T22:47:05.7957154Z, 2023-10-02T22:48:05.8144521Z] LongSumNonMonotonic
+Value: 126
+
+Export process.memory.usage, The amount of physical memory allocated for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963222Z, 2023-10-02T22:48:05.8144530Z] LongSumNonMonotonic
+Value: 75935744
+
+Export process.memory.virtual, The amount of committed virtual memory for this process., Unit: By, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7963329Z, 2023-10-02T22:48:05.8144537Z] LongSumNonMonotonic
+Value: 2480979619840
+
+Export process.cpu.time, Total CPU seconds broken down by different states., Unit: s, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:48:05.8144540Z] state: user DoubleSum
+Value: 0.65625
+(2023-10-02T22:47:05.7966220Z, 2023-10-02T22:48:05.8144540Z] state: system DoubleSum
+Value: 0.046875
+
+Export process.cpu.count, The number of processors (CPU cores) available to the current process., Unit: {processors}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966429Z, 2023-10-02T22:48:05.8144545Z] LongSumNonMonotonic
+Value: 8
+
+Export process.threads, Process threads count., Unit: {threads}, Meter: OpenTelemetry.Instrumentation.Process/0.5.0.3
+(2023-10-02T22:47:05.7966536Z, 2023-10-02T22:48:05.8144546Z] LongSumNonMonotonic
+Value: 29
+
+Export http.server.duration, Measures the duration of inbound HTTP requests., Unit: ms, Meter: OpenTelemetry.Instrumentation.AspNetCore/1.0.0.0
+(2023-10-02T22:47:06.0508775Z, 2023-10-02T22:48:05.8144559Z] http.flavor: 1.1 http.method: GET http.route: /rolldice/{player?} http.scheme: http http.status_code: 200 net.host.name: localhost net.host.port: 8080 Histogram
+Value: Sum: 141.3678 Count: 1 Min: 141.3678 Max: 141.3678
+(-Infinity,0]:0
+(0,5]:0
+(5,10]:0
+(10,25]:0
+(25,50]:0
+(50,75]:0
+(75,100]:0
+(100,250]:1
+(250,500]:0
+(500,750]:0
+(750,1000]:0
+(1000,2500]:0
+(2500,5000]:0
+(5000,7500]:0
+(7500,10000]:0
+(10000,+Infinity]:0
+
+(2023-10-02T22:47:06.0508775Z, 2023-10-02T22:48:05.8144559Z] http.flavor: 1.1 http.method: GET http.scheme: http http.status_code: 404 net.host.name: localhost net.host.port: 8080 Histogram
+Value: Sum: 4.3018 Count: 1 Min: 4.3018 Max: 4.3018
+(-Infinity,0]:0
+(0,5]:1
+(5,10]:0
+(10,25]:0
+(25,50]:0
+(50,75]:0
+(75,100]:0
+(100,250]:0
+(250,500]:0
+(500,750]:0
+(750,1000]:0
+(1000,2500]:0
+(2500,5000]:0
+(5000,7500]:0
+(7500,10000]:0
+(10000,+Infinity]:0
+

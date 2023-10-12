@@ -1,0 +1,10 @@
+﻿PkgHash,ContainerPath,PkgHash1,Id,Version,max_majVersion2
+2e4da0ea248b472f96edd59763415425,lib/net6.0/KudoCode.Infrastructure.CodeGenerator.dll,2e4da0ea248b472f96edd59763415425,KudoCode.Infrastructure.CodeGenerator,1.1.0.8,1000000010000000000000008
+ab84250c42831bca254e020a391c2ab4,lib/net6.0/System.Threading.Channels.dll,ab84250c42831bca254e020a391c2ab4,System.Threading.Channels,6.0.0-rc.2.21480.5,6000000000000000000000000
+1b11d761138f538da9099630408fe85b,lib/net6.0/Inoxie.Tools.ApiServices.dll,1b11d761138f538da9099630408fe85b,Inoxie.Tools.ApiServices,6.1.9,6000000010000000900000000
+fdde433900fe60cf7e547e1faca6d800,lib/net6.0/HealthCheck.Module.EndpointControl.dll,fdde433900fe60cf7e547e1faca6d800,HealthCheck.Module.EndpointControl,4.0.164,4000000000000016400000000
+402f188928fb7b157b99f8f73491372a,lib/net6.0/VirtoCommerce.Platform.Data.dll,402f188928fb7b157b99f8f73491372a,VirtoCommerce.Platform.Data,3.254.0-alpha.12485,3000002540000000000000000
+d3ff82b5b397348737000a09ec16463e,lib/net6.0/Phoesion.Glow.SDK.Firefly.AspHost.dll,d3ff82b5b397348737000a09ec16463e,Phoesion.Glow.SDK.Firefly.AspHost,0.0.300-preview3,30000000000
+6d5e3ce1c1773ea71dd15afecfce1e5d,lib/net6.0/OneLink.Code.IviewUIAttribute.dll,6d5e3ce1c1773ea71dd15afecfce1e5d,OneLink.Code.IviewUIAttribute,0.0.7,700000000
+5c513343c110a1b8384d5888d495b17a,lib/net6.0/ChannelAdam.Soap.dll,5c513343c110a1b8384d5888d495b17a,ChannelAdam.Soap,3.1.0,3000000010000000000000000
+cf1bd2ca9faefb746c0895bb79269bd7,lib/net6.0/HotChocolate.Stitching.Redis.dll,cf1bd2ca9faefb746c0895bb79269bd7,HotChocolate.Stitching.Redis,12.4.0-preview.15,12000000040000000000000000

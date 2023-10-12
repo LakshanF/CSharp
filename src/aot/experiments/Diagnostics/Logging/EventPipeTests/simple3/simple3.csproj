@@ -4,12 +4,11 @@
     <OutputType>exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <UnloadabilityIncompatible>true</UnloadabilityIncompatible>
-    <JitOptimizationSensitive>true</JitOptimizationSensitive>
+    <!-- Tracing tests routinely time out with jitstress and gcstress -->
     <GCStressIncompatible>true</GCStressIncompatible>
-    <NativeAotIncompatible>false</NativeAotIncompatible>
+    <JitOptimizationSensitive>true</JitOptimizationSensitive>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildProjectName).cs" />
+    <Compile Include="simple3.cs" />
   </ItemGroup>
-
 </Project>
