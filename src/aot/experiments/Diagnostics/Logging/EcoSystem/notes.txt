@@ -3,6 +3,9 @@ See Telemetry OneNote for additional details
 Steps to run the tool
  - Go to Driver directory, "dotnet publish"
  - Copy the native AOT app to the TrimClient directory
+ - Pass the right set of Arguments
+   + <Kusto csv file> <dir to write results> <file to write results>
+   + driver.exe 2023_10_11_Results_500K.csv C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Results C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Analysis.txt
  - Ensure that a Kusto output in a csv file format is available
     + @"C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\test2\TrimClient\2023_10_11_Results_500K.csv"
  - Ensure @"C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Results" directory exists to write the Results

@@ -11,13 +11,18 @@ namespace ProjectCreator
     {
         static void Main(string[] args)
         {
-            CreateAndPublishProject();
+            if(args.Length < 3)
+            {
+                Console.WriteLine("Usage: Driver.exe <Kusto csv file> <dir to write results> <file to write results>");
+                return;
+            }
+            CreateAndPublishProjects(args[0], args[1], args[2]);
         }
 
         /// <summary>
         /// Read the csv file, update the csproj file with package Id, version, and the assembly name
         /// </summary>
-        static void CreateAndPublishProject()
+        static void CreateAndPublishProjects(string kustoFileName, string resultDir, string outputFileName)
         {
             Stopwatch sw = new Stopwatch();
             string projectPrefix = """
@@ -35,9 +40,11 @@ namespace ProjectCreator
                 <ItemGroup>
             """;
 
-            PkgManager manager = new PkgManager(@"C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\TrimClient\2023_10_11_Results_500K.csv");
+            PkgManager manager = new PkgManager(kustoFileName);
+            File.WriteAllText(outputFileName, $"PackageHAsh###Id###Version###AssemblyName###TimeTaken###PkgHashAlreadyExists###AssemblyNameMatchesId###NoOfTrimWarnings###TrimSuccess{Environment.NewLine}");
             foreach (NugetPkg pkg in manager)
             {
+                Console.Write(".");
                 sw.Restart();
 
                 // Create test project file
@@ -52,36 +59,67 @@ namespace ProjectCreator
                 builder.AppendLine("</Project>");
                 
                 File.WriteAllText("SimpleApp.csproj", builder.ToString());
-
-                string dirToWriteOutputFile = PrepareToPublish(pkg.PkgHash!);
-                PublishProject(dirToWriteOutputFile);
+                
+                string dirToWriteOutputFile = Path.Combine(resultDir, pkg.PkgHash);
+                bool pkgHashAlreadyExists = PrepareToPublish(dirToWriteOutputFile);
+                string resultFile = PublishProject(dirToWriteOutputFile);
                 sw.Stop();
-                Console.WriteLine($"Time taken to publish {pkg.Id} {pkg.Version} is {sw.ElapsedMilliseconds} ms");
-            }
 
+                File.AppendAllText(outputFileName, $"{AnalyseResultFile(resultFile, pkg, sw.ElapsedMilliseconds, pkgHashAlreadyExists)}{Environment.NewLine}");
+            }
+            Console.WriteLine();
         }
 
-        private static string PrepareToPublish(string pkgHash)
+        private static string AnalyseResultFile(string resultFile, NugetPkg pkg, long elapsedMilliseconds, bool publishSuccess)
+        {
+            const string FieldSeparator = "###";
+            // Check if the pkg.Id and ContainerPath are the same
+            // Check if there are any trim warnings
+            // check if the publish was successful
+           
+            StringBuilder builder = new StringBuilder($"{pkg.PkgHash}{FieldSeparator}{pkg.Id}{FieldSeparator}{pkg.Version}{FieldSeparator}{Path.GetFileNameWithoutExtension(pkg.ContainerPath)}{FieldSeparator}{elapsedMilliseconds}");
+            builder.Append(publishSuccess ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
+            builder.Append(pkg.Id.Equals(Path.GetFileNameWithoutExtension(pkg.ContainerPath)) ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
+
+            // Look at the publish output file
+            int trimCount = 0;
+            bool foundSuccessfullPublish = false;
+            foreach (string line in File.ReadLines(resultFile))
+            {
+                if (line.Contains("Trim analysis warning"))
+                {
+                    trimCount++;
+                }
+                //SimpleApp -> C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\TrimClient\bin\Release\net8.0\win-x64\publish\
+                if (line.Trim().StartsWith("SimpleApp -> ") && line.Trim().EndsWith(@"bin\Release\net8.0\win-x64\publish\"))
+                {
+                    foundSuccessfullPublish = true;
+                }   
+            }
+            builder.Append($"{FieldSeparator}{trimCount}");
+            builder.Append(foundSuccessfullPublish ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
+
+            return builder.ToString();
+        }
+
+        private static bool PrepareToPublish(string resultDir)
         {
             //clean up
             if (Directory.Exists("bin"))
                 Directory.Delete("bin", true);
             if (Directory.Exists("obj"))
                 Directory.Delete("obj", true);
-            string dir = Path.Combine(@"C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Results", pkgHash);
-            if (!Directory.Exists(dir))
+            if (!Directory.Exists(resultDir))
             {
-                Directory.CreateDirectory(dir);
+                Directory.CreateDirectory(resultDir);
+                return false;
             }else
             {
-                Console.WriteLine($"Directory {dir} already exists");
+                return true;
             }
-
-            return dir;
-
         }
 
-        static void PublishProject(string dir)
+        static string PublishProject(string dir)
         {
             // Publish the created project
             var publishProcess = Process.Start(new ProcessStartInfo
@@ -96,7 +134,10 @@ namespace ProjectCreator
             string publishOutput = publishProcess.StandardOutput.ReadToEnd();
             publishProcess.WaitForExit();
 
-            File.WriteAllText(Path.Combine(dir, "publish_output.txt"), publishOutput); // Write the output to a text file
+            string resultFile = Path.Combine(dir, "publish_output.txt");
+            File.WriteAllText(resultFile, publishOutput); // Write the output to a text file
+            return resultFile;
         }
+
     }
 }
