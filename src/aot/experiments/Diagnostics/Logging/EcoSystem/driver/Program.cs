@@ -63,94 +63,123 @@ namespace ProjectCreator
                 <ItemGroup>
             """;
 
-            string[] lines = File.ReadLines(kustoFileName).Skip(1).ToArray();
 
+            File.WriteAllText(outputFileName, $"PackageHAsh###Id###Version###AssemblyName###AssemblySize###TimeTaken###PkgHashAlreadyExists###AssemblyNameMatchesId###NoOfTrimWarnings###TrimSuccess{Environment.NewLine}");
+
+            string[] lines = File.ReadLines(kustoFileName).Skip(1).ToArray();
             // Create an array of DirInfo objects by using the constructor
             NugetPkg2[] packages = Array.ConvertAll(lines, line => new NugetPkg2(line));
             packages = RemoveSamePkgHash(packages);
 
-            // Create a cancellation token source
-            var cts = new CancellationTokenSource();
-
-            // Handle the Ctrl+C event to cancel the operation
-            Console.CancelKeyPress += (s, e) =>
+            // We do the parallel chunks at a time, since we want to cleanup some resources after each chunk
+            ArraySegment<NugetPkg2> segment;
+            for (int i = 0; i < packages.Length; i += 100)
             {
-                e.Cancel = true;
-                cts.Cancel();
-            };
+                segment = new ArraySegment<NugetPkg2>(packages, i, 100);
 
-            File.WriteAllText(outputFileName, $"PackageHAsh###Id###Version###AssemblyName###AssemblySize###TimeTaken###PkgHashAlreadyExists###AssemblyNameMatchesId###NoOfTrimWarnings###TrimSuccess{Environment.NewLine}");
 
-            try
-            {
-                // Use Parallel.ForEach to run a delegate for each DirInfo object in parallel
-                await Task.Run(() =>
+                // Create a cancellation token source
+                var cts = new CancellationTokenSource();
+
+                // Handle the Ctrl+C event to cancel the operation
+                Console.CancelKeyPress += (s, e) =>
                 {
-                    Parallel.ForEach(packages, new ParallelOptions { CancellationToken = cts.Token }, package =>
+                    e.Cancel = true;
+                    cts.Cancel();
+                };
+
+
+                try
+                {
+                    // Use Parallel.ForEach to run a delegate for each DirInfo object in parallel
+                    await Task.Run(() =>
                     {
-                        Console.Write(".");
-
-                        Stopwatch sw = new Stopwatch();
-                        sw.Restart();
-
-                        // Get the directory name from the object
-                        string dirName = package.PkgHash;
-
-                        // Create the directory if it does not exist
-                        Directory.CreateDirectory(dirName);
-
-                        // Create test project file
-                        StringBuilder builder = new StringBuilder(projectPrefix);
-                        builder.AppendLine("    <TrimmerRootAssembly Include=\"" + Path.GetFileNameWithoutExtension(package.ContainerPath) + "\" />");
-                        builder.AppendLine("  </ItemGroup>");
-                        builder.AppendLine();
-                        builder.AppendLine("<ItemGroup>");
-                        builder.AppendLine("    <PackageReference Include=\"" + package.Id + "\" Version=\"" + package.Version + "\" />");
-                        builder.AppendLine("</ItemGroup>");
-                        builder.AppendLine();
-                        builder.AppendLine("</Project>");
-
-                        File.WriteAllText(Path.Combine(dirName, "SimpleApp.csproj"), builder.ToString());
-                        // We need to copy the HW program that is on the current directory to the new directory as well
-                        File.Copy("Program.cs", Path.Combine(dirName, "Program.cs"), true);
-
-                        string dirToWriteOutputFile = Path.Combine(resultDir, package.PkgHash);
-                        bool pkgHashAlreadyExists = PrepareToPublish2(dirToWriteOutputFile);
-                        Debug.Assert(!pkgHashAlreadyExists, "Problems with hashes");
-                        // @TODO - we are ignoring multiple assemblies with the same PkgHash for now. Use BinHash
-                        string resultFile = PublishProject2(dirToWriteOutputFile, dirName);
-                        sw.Stop();
-
-                        // We should be able to find the assembly file in bin\Release\net8.0\win-x64 directory
-                        // If trimmed successfully, we should be able to find the assembly file in bin\Release\net8.0\win-x64\publish as well obj\Release\net8.0\win-x64\linked directories
-                        long assemblySize = -1;
-                        try
+                        Parallel.ForEach(segment, new ParallelOptions { CancellationToken = cts.Token }, package =>
                         {
-                            string assemblyFile = Path.Combine(dirName, @"bin\Release\net8.0\win-x64", Path.GetFileName(package.ContainerPath));
-                            assemblySize = new FileInfo(assemblyFile).Length;
-                        }
-                        catch { }
+                            Console.Write(".");
 
-                        // We assume that AnalyseResultFile2 is thread safe
-                        string result = $"{AnalyseResultFile2(resultFile, package, sw.ElapsedMilliseconds, pkgHashAlreadyExists, assemblySize)}{Environment.NewLine}";
-                        lock (_lock)
-                        {
-                            File.AppendAllText(outputFileName, result);
-                        }
+                            Stopwatch sw = new Stopwatch();
+                            sw.Restart();
 
-                        // We delete the directory since we can detect duplicate package hashes from the results directory
-                        // Directory.Delete(dirName, true);
+                            // Get the directory name from the object
+                            string dirName = package.PkgHash;
 
+                            // Create the directory if it does not exist
+                            Directory.CreateDirectory(dirName);
+
+                            // Create test project file
+                            StringBuilder builder = new StringBuilder(projectPrefix);
+                            builder.AppendLine("    <TrimmerRootAssembly Include=\"" + Path.GetFileNameWithoutExtension(package.ContainerPath) + "\" />");
+                            builder.AppendLine("  </ItemGroup>");
+                            builder.AppendLine();
+                            builder.AppendLine("<ItemGroup>");
+                            builder.AppendLine("    <PackageReference Include=\"" + package.Id + "\" Version=\"" + package.Version + "\" />");
+                            builder.AppendLine("</ItemGroup>");
+                            builder.AppendLine();
+                            builder.AppendLine("</Project>");
+
+                            File.WriteAllText(Path.Combine(dirName, "SimpleApp.csproj"), builder.ToString());
+                            // We need to copy the HW program that is on the current directory to the new directory as well
+                            File.Copy("Program.cs", Path.Combine(dirName, "Program.cs"), true);
+
+                            string dirToWriteOutputFile = Path.Combine(resultDir, package.PkgHash);
+                            bool pkgHashAlreadyExists = PrepareToPublish2(dirToWriteOutputFile);
+                            Debug.Assert(!pkgHashAlreadyExists, "Problems with hashes");
+                            // @TODO - we are ignoring multiple assemblies with the same PkgHash for now. Use BinHash
+                            string resultFile = PublishProject2(dirToWriteOutputFile, dirName);
+                            sw.Stop();
+
+                            // We should be able to find the assembly file in bin\Release\net8.0\win-x64 directory
+                            // If trimmed successfully, we should be able to find the assembly file in bin\Release\net8.0\win-x64\publish as well obj\Release\net8.0\win-x64\linked directories
+                            long assemblySize = -1;
+                            try
+                            {
+                                string assemblyFile = Path.Combine(dirName, @"bin\Release\net8.0\win-x64", Path.GetFileName(package.ContainerPath));
+                                assemblySize = new FileInfo(assemblyFile).Length;
+                            }
+                            catch { }
+
+                            // We assume that AnalyseResultFile2 is thread safe
+                            string result = $"{AnalyseResultFile2(resultFile, package, sw.ElapsedMilliseconds, pkgHashAlreadyExists, assemblySize)}{Environment.NewLine}";
+                            lock (_lock)
+                            {
+                                File.AppendAllText(outputFileName, result);
+                            }
+                        });
                     });
-                });
 
-                // Print a message when done
-                Console.WriteLine("All processes completed.");
-            }
-            catch (OperationCanceledException)
-            {
-                // Print a message when cancelled
-                Console.WriteLine("Operation cancelled.");
+                    // Print a message when done
+                    Console.WriteLine($"Chunk completed");
+                }
+                catch (OperationCanceledException)
+                {
+                    // Print a message when cancelled
+                    Console.WriteLine("Operation cancelled.");
+                }
+
+                // This segment is done, we can delete the directories
+                try
+                {
+                    // Use Parallel.ForEach to run a delegate for each DirInfo object in parallel
+                    await Task.Run(() =>
+                    {
+                        Parallel.ForEach(segment, new ParallelOptions { CancellationToken = cts.Token }, package =>
+                        {
+                            string dirName = package.PkgHash;
+
+                            // We delete the directory since we can detect duplicate package hashes from the results directory
+                            Directory.Delete(dirName, true);
+                        });
+                    });
+
+                    // Print a message when done
+                    Console.WriteLine("Chunk deleted.");
+                }
+                catch (OperationCanceledException)
+                {
+                    // Print a message when cancelled
+                    Console.WriteLine("Operation cancelled.");
+                }
             }
         }
 
