@@ -77,20 +77,18 @@ namespace ProjectCreator
             {
                 segment = new ArraySegment<NugetPkg2>(packages, i, 100);
 
-
-                // Create a cancellation token source
-                var cts = new CancellationTokenSource();
-
-                // Handle the Ctrl+C event to cancel the operation
-                Console.CancelKeyPress += (s, e) =>
-                {
-                    e.Cancel = true;
-                    cts.Cancel();
-                };
-
-
                 try
                 {
+                    // Create a cancellation token source
+                    var cts = new CancellationTokenSource();
+
+                    // Handle the Ctrl+C event to cancel the operation
+                    Console.CancelKeyPress += (s, e) =>
+                    {
+                        e.Cancel = true;
+                        cts.Cancel();
+                    };
+
                     // Use Parallel.ForEach to run a delegate for each DirInfo object in parallel
                     await Task.Run(() =>
                     {
@@ -160,6 +158,16 @@ namespace ProjectCreator
                 // This segment is done, we can delete the directories
                 try
                 {
+                    // Create a cancellation token source
+                    var cts = new CancellationTokenSource();
+
+                    // Handle the Ctrl+C event to cancel the operation
+                    Console.CancelKeyPress += (s, e) =>
+                    {
+                        e.Cancel = true;
+                        cts.Cancel();
+                    };
+
                     // Use Parallel.ForEach to run a delegate for each DirInfo object in parallel
                     await Task.Run(() =>
                     {
