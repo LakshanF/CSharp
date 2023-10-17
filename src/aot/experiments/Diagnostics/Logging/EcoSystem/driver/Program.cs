@@ -139,7 +139,7 @@ namespace ProjectCreator
                         }
 
                         // We delete the directory since we can detect duplicate package hashes from the results directory
-                        Directory.Delete(dirName, true);
+                        // Directory.Delete(dirName, true);
 
                     });
                 });
