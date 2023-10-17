@@ -22,6 +22,22 @@ namespace ProjectCreator
             await CreateAndPublishProjects2(args[0], args[1], args[2]);
         }
 
+        static NugetPkg2[] RemoveSamePkgHash(NugetPkg2[] packages)
+        {
+            HashSet<string> hashes = new HashSet<string>();
+            List<NugetPkg2> result = new List<NugetPkg2>();
+            foreach (NugetPkg2 pkg in packages)
+            {
+                if (!hashes.Contains(pkg.PkgHash))
+                {
+                    hashes.Add(pkg.PkgHash);
+                    result.Add(pkg);
+                }
+            }
+            return result.ToArray();
+        }
+
+
         /// <summary>
         /// Parallel version of CreateAndPublishProjects
         /// </summary>
@@ -32,7 +48,6 @@ namespace ProjectCreator
         private static async Task CreateAndPublishProjects2(string kustoFileName, string resultDir, string outputFileName)
         {
 
-            Stopwatch sw = new Stopwatch();
             string projectPrefix = """
                 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -52,6 +67,7 @@ namespace ProjectCreator
 
             // Create an array of DirInfo objects by using the constructor
             NugetPkg2[] packages = Array.ConvertAll(lines, line => new NugetPkg2(line));
+            packages = RemoveSamePkgHash(packages);
 
             // Create a cancellation token source
             var cts = new CancellationTokenSource();
@@ -73,6 +89,8 @@ namespace ProjectCreator
                     Parallel.ForEach(packages, new ParallelOptions { CancellationToken = cts.Token }, package =>
                     {
                         Console.Write(".");
+
+                        Stopwatch sw = new Stopwatch();
                         sw.Restart();
 
                         // Get the directory name from the object
@@ -98,16 +116,20 @@ namespace ProjectCreator
 
                         string dirToWriteOutputFile = Path.Combine(resultDir, package.PkgHash);
                         bool pkgHashAlreadyExists = PrepareToPublish2(dirToWriteOutputFile);
+                        Debug.Assert(!pkgHashAlreadyExists, "Problems with hashes");
+                        // @TODO - we are ignoring multiple assemblies with the same PkgHash for now. Use BinHash
                         string resultFile = PublishProject2(dirToWriteOutputFile, dirName);
                         sw.Stop();
 
                         // We should be able to find the assembly file in bin\Release\net8.0\win-x64 directory
                         // If trimmed successfully, we should be able to find the assembly file in bin\Release\net8.0\win-x64\publish as well obj\Release\net8.0\win-x64\linked directories
                         long assemblySize = -1;
-                        try{
+                        try
+                        {
                             string assemblyFile = Path.Combine(dirName, @"bin\Release\net8.0\win-x64", Path.GetFileName(package.ContainerPath));
                             assemblySize = new FileInfo(assemblyFile).Length;
-                        }catch{}
+                        }
+                        catch { }
 
                         // We assume that AnalyseResultFile2 is thread safe
                         string result = $"{AnalyseResultFile2(resultFile, package, sw.ElapsedMilliseconds, pkgHashAlreadyExists, assemblySize)}{Environment.NewLine}";
@@ -117,7 +139,7 @@ namespace ProjectCreator
                         }
 
                         // We delete the directory since we can detect duplicate package hashes from the results directory
-                        // Directory.Delete(dirName, true);
+                        Directory.Delete(dirName, true);
 
                     });
                 });
@@ -145,7 +167,7 @@ namespace ProjectCreator
             }
         }
 
-        private static string AnalyseResultFile2(string resultFile, NugetPkg2 pkg, long elapsedMilliseconds, bool publishSuccess, long assemblySize)
+        private static string AnalyseResultFile2(string resultFile, NugetPkg2 pkg, long elapsedMilliseconds, bool pkgAlreadyExists, long assemblySize)
         {
             const string FieldSeparator = "###";
             // Check if the pkg.Id and ContainerPath are the same
@@ -153,7 +175,7 @@ namespace ProjectCreator
             // check if the publish was successful
 
             StringBuilder builder = new StringBuilder($"{pkg.PkgHash}{FieldSeparator}{pkg.Id}{FieldSeparator}{pkg.Version}{FieldSeparator}{Path.GetFileNameWithoutExtension(pkg.ContainerPath)}{FieldSeparator}{assemblySize}{FieldSeparator}{elapsedMilliseconds}");
-            builder.Append(publishSuccess ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
+            builder.Append(pkgAlreadyExists ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
             builder.Append(pkg.Id.Equals(Path.GetFileNameWithoutExtension(pkg.ContainerPath)) ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
 
             // Look at the publish output file
