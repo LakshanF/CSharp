@@ -7,10 +7,16 @@ Steps to run the tool
    + <Kusto csv file> <dir to write results> <file to write results>
    + driver.exe 2023_10_11_Results_500K.csv C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Results C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Analysis.txt
    + driver.exe 2023_10_16_Results_99K.csv C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Results C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Analysis.txt
+   + driver.exe 2023_10_18_Results_230K.csv C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Results C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Analysis.txt
  - Ensure that a Kusto output in a csv file format is available
     + @"C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\test2\TrimClient\2023_10_11_Results_500K.csv"
     + C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\TrimClient\2023_10_16_Results_99K.csv
  - Ensure @"C:\work\core\LakshanF\CSharp\src\tmp\Telemetry\Results" directory exists to write the Results
     + Each package will have a text output of the comilation process under its PkgHash subdirectory
 
-rd /s/q bin & rd /s/q obj
+ - C:\work\core\LakshanF\CSharp\src\tmp\Telemetry
+del Analysis.txt & rd /s/q Results & md Results
+ - C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\driver
+rd /s/q bin & rd /s/q obj & dotnet publish
+ - C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\TrimClient
+del driver.* & copy C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\driver\bin\Release\net8.0\win-x64\publish\
