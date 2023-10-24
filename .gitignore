@@ -25,3 +25,10 @@ tmp/
 
 # nettrace files
 *.nettrace
+
+# csv files
+*.csv
+
+# ruleset
+*.ruleset
+
