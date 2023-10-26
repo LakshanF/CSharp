@@ -1,0 +1,261 @@
+ Volume in drive C is Windows
+ Volume Serial Number is 6229-B616
+
+ Directory of C:\work\core\main\winforms\eng\common\internal
+
+10/24/2023  09:34 AM             2,071 Tools.csproj
+               1 File(s)          2,071 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates
+
+10/24/2023  09:34 AM             2,824 Microsoft.Dotnet.Winforms.ProjectTemplates.csproj
+               1 File(s)          2,824 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsApplication-CSharp\net5.0
+
+10/24/2023  09:34 AM               697 Company.WinFormsApplication1.csproj
+               1 File(s)            697 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsApplication-CSharp\net6.0
+
+10/24/2023  09:34 AM               798 Company.WinFormsApplication1.csproj
+               1 File(s)            798 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsApplication-CSharp\netcoreapp3.1
+
+10/24/2023  09:34 AM               627 Company.WinFormsApplication1.csproj
+               1 File(s)            627 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsControlLibrary-CSharp\net5.0
+
+10/24/2023  09:34 AM               657 Company.ControlLibrary1.csproj
+               1 File(s)            657 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsControlLibrary-CSharp\net6.0
+
+10/24/2023  09:34 AM               758 Company.ControlLibrary1.csproj
+               1 File(s)            758 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsControlLibrary-CSharp\netcoreapp3.1
+
+10/24/2023  09:34 AM               587 Company.ControlLibrary1.csproj
+               1 File(s)            587 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsLibrary-CSharp\net5.0
+
+10/24/2023  09:34 AM               655 Company.ClassLibrary1.csproj
+               1 File(s)            655 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsLibrary-CSharp\net6.0
+
+10/24/2023  09:34 AM               756 Company.ClassLibrary1.csproj
+               1 File(s)            756 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Dotnet.WinForms.ProjectTemplates\content\WinFormsLibrary-CSharp\netcoreapp3.1
+
+10/24/2023  09:34 AM               585 Company.ClassLibrary1.csproj
+               1 File(s)            585 bytes
+
+ Directory of C:\work\core\main\winforms\pkg\Microsoft.Private.Winforms
+
+10/24/2023  09:34 AM             5,632 Microsoft.Private.Winforms.csproj
+               1 File(s)          5,632 bytes
+
+ Directory of C:\work\core\main\winforms\src\Accessibility\ver
+
+10/24/2023  09:34 AM               238 Accessibility-version.csproj
+               1 File(s)            238 bytes
+
+ Directory of C:\work\core\main\winforms\src\Common\tests\TestUtilities
+
+10/24/2023  09:34 AM               894 System.Windows.Forms.Common.TestUtilities.csproj
+               1 File(s)            894 bytes
+
+ Directory of C:\work\core\main\winforms\src\Microsoft.VisualBasic\src
+
+10/24/2023  09:34 AM               383 Microsoft.VisualBasic.Facade.csproj
+               1 File(s)            383 bytes
+
+ Directory of C:\work\core\main\winforms\src\Microsoft.VisualBasic\tests\IntegrationTests\Microsoft.VisualBasic.IntegrationTests
+
+10/24/2023  09:34 AM               573 Microsoft.VisualBasic.IntegrationTests.csproj
+               1 File(s)            573 bytes
+
+ Directory of C:\work\core\main\winforms\src\Microsoft.VisualBasic\tests\IntegrationTests\VisualBasicRuntimeTest
+
+10/24/2023  09:34 AM               245 VisualBasicRuntimeTest.csproj
+               1 File(s)            245 bytes
+
+ Directory of C:\work\core\main\winforms\src\Microsoft.VisualBasic\tests\UnitTests
+
+10/24/2023  09:34 AM               995 Microsoft.VisualBasic.Tests.csproj
+               1 File(s)            995 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Design\src
+
+10/24/2023  09:34 AM               285 System.Design.Facade.csproj
+               1 File(s)            285 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Drawing\src
+
+10/24/2023  09:34 AM               715 System.Drawing.Facade.csproj
+               1 File(s)            715 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Drawing.Common\src
+
+10/24/2023  09:34 AM            22,228 System.Drawing.Common.csproj
+               1 File(s)         22,228 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Drawing.Common\tests
+
+10/24/2023  09:34 AM             7,645 System.Drawing.Common.Tests.csproj
+               1 File(s)          7,645 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Drawing.Design\src
+
+10/24/2023  09:34 AM               388 System.Drawing.Design.Facade.csproj
+               1 File(s)            388 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\src
+
+10/24/2023  09:34 AM             4,036 System.Windows.Forms.csproj
+               1 File(s)          4,036 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\AccessibilityTests
+
+10/24/2023  09:34 AM             1,225 Accessibility_Core_App.csproj
+               1 File(s)          1,225 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\AxHosts
+
+10/24/2023  09:34 AM             2,263 AxHosts.csproj
+               1 File(s)          2,263 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\DesignSurface\DemoConsole
+
+10/24/2023  09:34 AM             1,777 DemoConsole.csproj
+               1 File(s)          1,777 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\DesignSurface\DesignSurfaceExt
+
+10/24/2023  09:34 AM             1,250 DesignSurfaceExt.csproj
+               1 File(s)          1,250 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\NativeHost.ManagedControl
+
+10/24/2023  09:34 AM               575 NativeHost.ManagedControl.csproj
+               1 File(s)            575 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\ScratchProject
+
+10/24/2023  09:34 AM               915 ScratchProject.csproj
+               1 File(s)            915 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\System.Windows.Forms.IntegrationTests
+
+10/24/2023  09:34 AM               325 System.Windows.Forms.IntegrationTests.csproj
+               1 File(s)            325 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\System.Windows.Forms.IntegrationTests.Common
+
+10/24/2023  09:34 AM               759 System.Windows.Forms.IntegrationTests.Common.csproj
+               1 File(s)            759 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\System.Windows.Forms.Maui.IntegrationTests
+
+10/24/2023  09:34 AM               421 System.Windows.Forms.Maui.IntegrationTests.csproj
+               1 File(s)            421 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\UIIntegrationTests
+
+10/24/2023  09:34 AM             2,494 System.Windows.Forms.UI.IntegrationTests.csproj
+               1 File(s)          2,494 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\IntegrationTests\WinformsControlsTest
+
+10/24/2023  09:34 AM             6,742 WinformsControlsTest.csproj
+               1 File(s)          6,742 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\InteropTests
+
+10/24/2023  09:34 AM             1,434 System.Windows.Forms.Interop.Tests.csproj
+               1 File(s)          1,434 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\TestUtilities
+
+10/24/2023  09:34 AM             1,150 System.Windows.Forms.TestUtilities.csproj
+               1 File(s)          1,150 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms\tests\UnitTests
+
+10/24/2023  09:34 AM             3,653 System.Windows.Forms.Tests.csproj
+               1 File(s)          3,653 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Analyzers\src
+
+10/24/2023  09:34 AM             1,403 System.Windows.Forms.Analyzers.csproj
+               1 File(s)          1,403 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Analyzers\tests\UnitTests
+
+10/24/2023  09:34 AM             2,203 System.Windows.Forms.Analyzers.Tests.csproj
+               1 File(s)          2,203 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Analyzers.CSharp\src
+
+10/24/2023  09:34 AM             2,413 System.Windows.Forms.Analyzers.CSharp.csproj
+               1 File(s)          2,413 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Analyzers.CSharp\tests\UnitTests
+
+10/24/2023  09:34 AM             1,729 System.Windows.Forms.Analyzers.CSharp.Tests.csproj
+               1 File(s)          1,729 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Design\src
+
+10/24/2023  09:34 AM             5,221 System.Windows.Forms.Design.csproj
+               1 File(s)          5,221 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Design\tests\UnitTests
+
+10/24/2023  09:34 AM             2,950 System.Windows.Forms.Design.Tests.csproj
+               1 File(s)          2,950 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Design.Editors\src
+
+10/24/2023  09:34 AM               402 System.Windows.Forms.Design.Editors.Facade3x.csproj
+               1 File(s)            402 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Primitives\src
+
+10/24/2023  09:34 AM             2,813 System.Windows.Forms.Primitives.csproj
+               1 File(s)          2,813 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Primitives\tests\TestUtilities
+
+10/24/2023  09:34 AM             1,093 System.Windows.Forms.Primitives.TestUtilities.csproj
+               1 File(s)          1,093 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Primitives\tests\TestUtilities.Tests
+
+10/24/2023  09:34 AM               811 System.Windows.Forms.Primitives.TestUtilities.Tests.csproj
+               1 File(s)            811 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.Primitives\tests\UnitTests
+
+10/24/2023  09:34 AM             1,040 System.Windows.Forms.Primitives.Tests.csproj
+               1 File(s)          1,040 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.PrivateSourceGenerators\src
+
+10/24/2023  09:34 AM               784 System.Windows.Forms.PrivateSourceGenerators.csproj
+               1 File(s)            784 bytes
+
+ Directory of C:\work\core\main\winforms\src\System.Windows.Forms.PrivateSourceGenerators\tests\UnitTests
+
+10/24/2023  09:34 AM               768 System.Windows.Forms.PrivateSourceGenerators.Tests.csproj
+               1 File(s)            768 bytes
+
+     Total Files Listed:
+              51 File(s)        103,885 bytes
+               0 Dir(s)  1,564,741,206,016 bytes free

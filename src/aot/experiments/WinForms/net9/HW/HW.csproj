@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishTrimmed>true</PublishTrimmed>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+  </PropertyGroup>
+
+<ItemGroup>
+    <ProjectReference Include="C:\work\core\main\winforms\src\System.Windows.Forms.Primitives\src\System.Windows.Forms.Primitives.csproj" />
+    <TrimmerRootAssembly Include="System.Windows.Forms.Primitives" />
+  </ItemGroup>
+
+</Project>

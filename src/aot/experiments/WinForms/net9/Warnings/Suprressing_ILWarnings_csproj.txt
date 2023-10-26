@@ -1,0 +1,3 @@
+System.Windows.Forms\src\System.Windows.Forms.csproj:14:    <NoWarn>$(NoWarn);IL2026;IL2050;IL2057;IL2062;IL2067;IL2070;IL2072;IL2075;IL2077;IL2080;IL2092;IL2093;IL2094;IL2096;IL2111</NoWarn>
+System.Windows.Forms.Design\src\System.Windows.Forms.Design.csproj:15:    <NoWarn>$(NoWarn);IL2026;IL2046;IL2057;IL2067;IL2070;IL2072;IL2075;IL2094;IL2111</NoWarn>
+System.Windows.Forms.Primitives\src\System.Windows.Forms.Primitives.csproj:23:    <NoWarn>$(NoWarn);IL2026;IL2050</NoWarn>

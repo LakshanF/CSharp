@@ -1,4 +1,4 @@
-namespace net9;
+namespace winformstest1;
 
 public partial class Form1 : Form
 {
