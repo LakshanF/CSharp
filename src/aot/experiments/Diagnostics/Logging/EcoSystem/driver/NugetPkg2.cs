@@ -12,6 +12,7 @@ namespace EcoSystemDriver
         public string? Id { get; set; }
         public string? ContainerPath { get; set; }
         public string? Version { get; set; }
+        public long? DownloadCount { get; set; }
 
         public NugetPkg2(string line)
         {
@@ -20,7 +21,7 @@ namespace EcoSystemDriver
             Id = values[1];
             ContainerPath = values[2];
             Version = values[3];
-
+            DownloadCount = values[4] == "" ? null : (long?)long.Parse(values[4]);
         }
     }
 }

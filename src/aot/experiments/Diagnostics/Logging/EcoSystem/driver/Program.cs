@@ -12,6 +12,7 @@ class Program
 {
     static object _lock = new object();
     static object _errorLock = new object();
+    static object _cancelLock = new object();
     static async Task Main(string[] args)
     {
         if (args.Length < 3)
@@ -69,6 +70,8 @@ class Program
     /// <returns></returns>
     private static async Task CreateAndPublishProjectsAsync(string kustoFileName, string resultDir, string? outputFileName)
     {
+        // we want to parallelize but given that the kustoFileName is ordered (from the Kusto query), we want to preserve the order in some way and will use ArraySegement to do that
+        const int CHUNK_SIZE = 1000;
 
         string projectPrefix = """
             <Project Sdk="Microsoft.NET.Sdk">
@@ -84,7 +87,7 @@ class Program
         """;
 
 
-        File.WriteAllText(outputFileName!, $"PackageHAsh###Id###Version###AssemblyName###AssemblySize###TimeTaken###PkgHashAlreadyExists###AssemblyNameMatchesId###NoOfTrimWarnings###TrimSuccess{Environment.NewLine}");
+        File.WriteAllText(outputFileName!, $"PackageHAsh###Id###Version###AssemblyName###AssemblySize###TimeTaken###PkgHashAlreadyExists###AssemblyNameMatchesId###NoOfTrimWarnings###TrimSuccess###DownLoadCount{Environment.NewLine}");
 
         string[] lines = File.ReadLines(kustoFileName).Skip(1).ToArray();
         // Create an array of DirInfo objects by using the constructor
@@ -92,113 +95,125 @@ class Program
         packages = RemoveSamePkgHash(packages);
         string errorFileName = Path.Combine(Path.GetDirectoryName(outputFileName!), "error.txt");
 
-        try
+        ArraySegment<NugetPkg2> segment;
+        bool userCancelled = false;
+        for (int i = 0; i < packages.Length && !userCancelled; i += CHUNK_SIZE)
         {
-            // Create a cancellation token source
-            var cts = new CancellationTokenSource();
+            segment = new ArraySegment<NugetPkg2>(packages, i, CHUNK_SIZE);
 
-            // Handle the Ctrl+C event to cancel the operation
-            Console.CancelKeyPress += (s, e) =>
+            try
             {
-                e.Cancel = true;
-                cts.Cancel();
-            };
+                // Create a cancellation token source
+                var cts = new CancellationTokenSource();
 
-            // Use Parallel.ForEach to run a delegate for each DirInfo object in parallel
-            await Task.Run(() =>
-            {
-                Parallel.ForEach(packages, new ParallelOptions { CancellationToken = cts.Token }, package =>
+                // Handle the Ctrl+C event to cancel the operation
+                Console.CancelKeyPress += (s, e) =>
                 {
-                    Console.Write(".");
+                    e.Cancel = true;
+                    cts.Cancel();
+                };
 
-                    Stopwatch sw = new Stopwatch();
-                    sw.Restart();
-
-                    // Get the directory name from the object
-                    string dirName = package.PkgHash!;
-
-                    // Create the directory if it does not exist
-                    Directory.CreateDirectory(dirName);
-
-                    // Create test project file
-                    StringBuilder builder = new StringBuilder(projectPrefix);
-
-                    builder.AppendLine("\t\t<_ExtraTrimmerArgs>--singlewarn- "  + Path.GetFileNameWithoutExtension(package.ContainerPath) + "</_ExtraTrimmerArgs>");
-                    builder.AppendLine("    </PropertyGroup>");
-                    builder.AppendLine();
-                    builder.AppendLine("    <ItemGroup>");
-
-                    builder.AppendLine("    <TrimmerRootAssembly Include=\"" + Path.GetFileNameWithoutExtension(package.ContainerPath) + "\" />");
-                    builder.AppendLine("  </ItemGroup>");
-                    builder.AppendLine();
-                    builder.AppendLine("<ItemGroup>");
-                    builder.AppendLine("    <PackageReference Include=\"" + package.Id + "\" Version=\"" + package.Version + "\" />");
-                    builder.AppendLine("</ItemGroup>");
-                    builder.AppendLine();
-                    builder.AppendLine("</Project>");
-
-                    File.WriteAllText(Path.Combine(dirName, "SimpleApp.csproj"), builder.ToString());
-                    // We need to copy the HW program that is on the current directory to the new directory as well
-                    File.Copy("Program.cs", Path.Combine(dirName, "Program.cs"), true);
-
-                    string dirToWriteOutputFile = Path.Combine(resultDir, package.PkgHash!);
-                    bool pkgHashAlreadyExists = PrepareToPublishAsync(dirToWriteOutputFile);
-                    Debug.Assert(!pkgHashAlreadyExists, "Problems with hashes");
-                    // @TODO - we are ignoring multiple assemblies with the same PkgHash for now. Use BinHash
-                    string resultFile = PublishProjectAsync(dirToWriteOutputFile, dirName);
-                    sw.Stop();
-
-                    // We should be able to find the assembly file in bin\Release\net8.0\win-x64 directory
-                    // If trimmed successfully, we should be able to find the assembly file in bin\Release\net8.0\win-x64\publish as well obj\Release\net8.0\win-x64\linked directories
-                    long assemblySize = -1;
-                    try
+                // Use Parallel.ForEach to run a delegate for each DirInfo object in parallel
+                await Task.Run(() =>
+                {
+                    Parallel.ForEach(segment, new ParallelOptions { CancellationToken = cts.Token }, package =>
                     {
-                        string assemblyFile = Path.Combine(dirName, @"bin\Release\net8.0\win-x64", Path.GetFileName(package.ContainerPath!));
-                        assemblySize = new FileInfo(assemblyFile).Length;
-                    }
-                    catch { }
+                        Console.Write(".");
 
-                    // We assume that AnalyseResultFileAsync is thread safe
-                    string result = $"{AnalyseResultFileAsync(resultFile, package, sw.ElapsedMilliseconds, pkgHashAlreadyExists, assemblySize)}{Environment.NewLine}";
-                    lock (_lock)
-                    {
-                        File.AppendAllText(outputFileName!, result);
-                    }
+                        Stopwatch sw = new Stopwatch();
+                        sw.Restart();
 
-                    // delete the directory, this operation can fail, and we will retry and do full cleanup later
-                    int retryDelete = 0;
-                    const int RetryMax = 10;
-                    while (retryDelete < RetryMax)
-                    {
+                        // Get the directory name from the object
+                        string dirName = package.PkgHash!;
+
+                        // Create the directory if it does not exist
+                        Directory.CreateDirectory(dirName);
+
+                        // Create test project file
+                        StringBuilder builder = new StringBuilder(projectPrefix);
+
+                        builder.AppendLine("\t\t<_ExtraTrimmerArgs>--singlewarn- "  + Path.GetFileNameWithoutExtension(package.ContainerPath) + "</_ExtraTrimmerArgs>");
+                        builder.AppendLine("    </PropertyGroup>");
+                        builder.AppendLine();
+                        builder.AppendLine("    <ItemGroup>");
+
+                        builder.AppendLine("    <TrimmerRootAssembly Include=\"" + Path.GetFileNameWithoutExtension(package.ContainerPath) + "\" />");
+                        builder.AppendLine("  </ItemGroup>");
+                        builder.AppendLine();
+                        builder.AppendLine("<ItemGroup>");
+                        builder.AppendLine("    <PackageReference Include=\"" + package.Id + "\" Version=\"" + package.Version + "\" />");
+                        builder.AppendLine("</ItemGroup>");
+                        builder.AppendLine();
+                        builder.AppendLine("</Project>");
+
+                        File.WriteAllText(Path.Combine(dirName, "SimpleApp.csproj"), builder.ToString());
+                        // We need to copy the HW program that is on the current directory to the new directory as well
+                        File.Copy("Program.cs", Path.Combine(dirName, "Program.cs"), true);
+
+                        string dirToWriteOutputFile = Path.Combine(resultDir, package.PkgHash!);
+                        bool pkgHashAlreadyExists = PrepareToPublishAsync(dirToWriteOutputFile);
+                        Debug.Assert(!pkgHashAlreadyExists, "Problems with hashes");
+                        // @TODO - we are ignoring multiple assemblies with the same PkgHash for now. Use BinHash
+                        string resultFile = PublishProjectAsync(dirToWriteOutputFile, dirName);
+                        sw.Stop();
+
+                        // We should be able to find the assembly file in bin\Release\net8.0\win-x64 directory
+                        // If trimmed successfully, we should be able to find the assembly file in bin\Release\net8.0\win-x64\publish as well obj\Release\net8.0\win-x64\linked directories
+                        long assemblySize = -1;
                         try
                         {
-                            Directory.Delete(dirName, true);
-                            break;
+                            string assemblyFile = Path.Combine(dirName, @"bin\Release\net8.0\win-x64", Path.GetFileName(package.ContainerPath!));
+                            assemblySize = new FileInfo(assemblyFile).Length;
                         }
-                        catch
+                        catch { }
+
+                        // We assume that AnalyseResultFileAsync is thread safe
+                        string result = $"{AnalyseResultFileAsync(resultFile, package, sw.ElapsedMilliseconds, pkgHashAlreadyExists, assemblySize)}{Environment.NewLine}";
+                        lock (_lock)
                         {
-                            Thread.Sleep(100);
-                            retryDelete++;
-                            if(retryDelete >= RetryMax)
+                            File.AppendAllText(outputFileName!, result);
+                        }
+
+                        // delete the directory, this operation can fail, and we will retry and do full cleanup later
+                        int retryDelete = 0;
+                        const int RetryMax = 10;
+                        while (retryDelete < RetryMax)
+                        {
+                            try
                             {
-                                lock(_errorLock)
+                                Directory.Delete(dirName, true);
+                                break;
+                            }
+                            catch
+                            {
+                                Thread.Sleep(100);
+                                retryDelete++;
+                                if(retryDelete >= RetryMax)
                                 {
-                                    File.AppendAllText(errorFileName, $"{dirName}{Environment.NewLine}");
+                                    lock(_errorLock)
+                                    {
+                                        File.AppendAllText(errorFileName, $"{dirName}{Environment.NewLine}");
+                                    }
                                 }
                             }
                         }
-                    }
+                    });
                 });
-            });
 
+            }
+            catch (OperationCanceledException)
+            {
+                // Its ok for this to be a bottleneck. We absolutely need to make sure that no more processing happens after this point
+                lock (_cancelLock)
+                {
+                    userCancelled = true;
+                }
+                // Print a message when cancelled
+                Console.WriteLine("Operation cancelled.");
+                // @TODO - delete any directories that were missed being deleted
+            }
             // Print a message when done
             Console.WriteLine($"Chunk completed");
-        }
-        catch (OperationCanceledException)
-        {
-            // Print a message when cancelled
-            Console.WriteLine("Operation cancelled.");
-            // @TODO - delete any directories that were missed being deleted
         }
 
     }
@@ -244,6 +259,9 @@ class Program
         }
         builder.Append($"{FieldSeparator}{trimCount}");
         builder.Append(foundSuccessfullPublish ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
+
+        // We will write the download size at the end
+        builder.Append($"{FieldSeparator}{pkg.DownloadCount}");
 
         return builder.ToString();
     }
