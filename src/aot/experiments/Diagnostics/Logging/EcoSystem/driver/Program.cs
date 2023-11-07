@@ -31,30 +31,21 @@ class Program
     /// <returns></returns>
     static NugetPkg2[] RemoveSamePkgHash(NugetPkg2[] packages)
     {
+        // First, lets get the hashes that we need to include (unique and ID and assembly name match)
+        // Second, we will iterate and remove any that contains file extensions like ".resources" or the grandparent directory name is not "lib"
+        // Finally, this shouldn't happen but we will double check that the hash is unique
         HashSet<string> allHashes = new HashSet<string>();
-        HashSet<string> includedhashes = new HashSet<string>();
         List<NugetPkg2> result = new List<NugetPkg2>();
         foreach (NugetPkg2 pkg in packages)
         {
-            if (!allHashes.Contains(pkg.PkgHash!))
+            if (!allHashes.Contains(pkg.PkgHash!)
+                && pkg.Id!.Equals(Path.GetFileNameWithoutExtension(pkg.ContainerPath), StringComparison.InvariantCultureIgnoreCase)
+                && Path.GetDirectoryName(Path.GetDirectoryName(pkg.ContainerPath!))!.Equals("lib", StringComparison.InvariantCultureIgnoreCase)
+                && !Path.GetFileNameWithoutExtension(pkg.ContainerPath!).EndsWith(".resources", StringComparison.InvariantCultureIgnoreCase)
+                )
             {
                 allHashes.Add(pkg.PkgHash!);
-            }
-            if (pkg.Id!.Equals(Path.GetFileNameWithoutExtension(pkg.ContainerPath), StringComparison.InvariantCultureIgnoreCase))
-            {
                 result.Add(pkg);
-                includedhashes.Add(pkg.PkgHash!);
-            }
-        }
-
-        // For pkgs where Id and the container name doesn't match, we should just pick a suitable assembly (not ones ending with resources.dll)
-        HashSet<string> hashesToInclude = allHashes.Except(includedhashes).ToHashSet();
-        foreach (NugetPkg2 pkg in packages)
-        {
-            if (hashesToInclude.Contains(pkg.PkgHash!) && !Path.GetFileNameWithoutExtension(pkg.ContainerPath!).EndsWith(".resources", StringComparison.InvariantCultureIgnoreCase))
-            {
-                result.Add(pkg);
-                hashesToInclude.Remove(pkg.PkgHash!);
             }
         }
 
