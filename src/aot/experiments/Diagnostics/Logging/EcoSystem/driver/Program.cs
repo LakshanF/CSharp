@@ -33,6 +33,7 @@ class Program
     {
         // First, lets get the hashes that we need to include (unique and ID and assembly name match)
         // Second, we will iterate and remove any that contains file extensions like ".resources" or the grandparent directory name is not "lib"
+        // Next, exclude problematic packages - from Vitek: Syncfusion.Maui.*, Vintasoft.Imaging.*
         // Finally, this shouldn't happen but we will double check that the hash is unique
         HashSet<string> allHashes = new HashSet<string>();
         List<NugetPkg2> result = new List<NugetPkg2>();
@@ -42,6 +43,8 @@ class Program
                 && pkg.Id!.Equals(Path.GetFileNameWithoutExtension(pkg.ContainerPath), StringComparison.InvariantCultureIgnoreCase)
                 && Path.GetDirectoryName(Path.GetDirectoryName(pkg.ContainerPath!))!.Equals("lib", StringComparison.InvariantCultureIgnoreCase)
                 && !Path.GetFileNameWithoutExtension(pkg.ContainerPath!).EndsWith(".resources", StringComparison.InvariantCultureIgnoreCase)
+                && !pkg.Id.StartsWith("Syncfusion.Maui.", StringComparison.InvariantCultureIgnoreCase)
+                && !pkg.Id.StartsWith("Vintasoft.Imaging.", StringComparison.InvariantCultureIgnoreCase)
                 )
             {
                 allHashes.Add(pkg.PkgHash!);
@@ -49,7 +52,22 @@ class Program
             }
         }
 
-        return result.ToArray();
+        // Include packages that doesn't meet the criteria where the assembly name matches the package id
+        foreach (NugetPkg2 pkg in packages)
+        {
+            if (!allHashes.Contains(pkg.PkgHash!)
+                && Path.GetDirectoryName(Path.GetDirectoryName(pkg.ContainerPath!))!.Equals("lib", StringComparison.InvariantCultureIgnoreCase)
+                && !Path.GetFileNameWithoutExtension(pkg.ContainerPath!).EndsWith(".resources", StringComparison.InvariantCultureIgnoreCase)
+                && !pkg.Id.StartsWith("Syncfusion.Maui.", StringComparison.InvariantCultureIgnoreCase)
+                && !pkg.Id.StartsWith("Vintasoft.Imaging.", StringComparison.InvariantCultureIgnoreCase)
+                )
+            {
+                allHashes.Add(pkg.PkgHash!);
+                result.Add(pkg);
+            }
+        }
+
+        return result.OrderByDescending(x => x.DownloadCount).ToArray();
     }
 
     /// <summary>
