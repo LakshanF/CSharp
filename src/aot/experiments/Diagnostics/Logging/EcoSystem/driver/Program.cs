@@ -34,7 +34,7 @@ class Program
         // First, lets get the hashes that we need to include (unique and ID and assembly name match)
         // Second, we will iterate and remove any that contains file extensions like ".resources" or the grandparent directory name is not "lib"
         // Next, exclude problematic packages - from Vitek: Syncfusion.Maui.*, Vintasoft.Imaging.*
-        // Finally, this shouldn't happen but we will double check that the hash is unique
+        // We keep track of the package hashes that we added since we do post additions after the first pass
         HashSet<string> allHashes = new HashSet<string>();
         List<NugetPkg2> result = new List<NugetPkg2>();
         foreach (NugetPkg2 pkg in packages)
@@ -67,6 +67,7 @@ class Program
             }
         }
 
+        // Since we have messed up the download ordering, we will sort it again
         return result.OrderByDescending(x => x.DownloadCount).ToArray();
     }
 
@@ -79,7 +80,6 @@ class Program
     /// <returns></returns>
     private static async Task CreateAndPublishProjectsAsync(string kustoFileName, string resultDir, string? outputFileName)
     {
-        // we want to parallelize but given that the kustoFileName is ordered (from the Kusto query), we want to preserve the order in some way and will use ArraySegement to do that
         const int CHUNK_SIZE = 1000;
 
         string projectPrefix = """
@@ -96,7 +96,7 @@ class Program
         """;
 
 
-        File.WriteAllText(outputFileName!, $"PackageHAsh###Id###Version###AssemblyName###AssemblySize###TimeTaken###PkgHashAlreadyExists###AssemblyNameMatchesId###NoOfTrimWarnings###TrimSuccess###DownLoadCount{Environment.NewLine}");
+        File.WriteAllText(outputFileName!, $"PackageHAsh###Id###Version###AssemblyName###AssemblySize###TimeTaken###PkgHashAlreadyExists###AssemblyNameMatchesId###NoOfTrimWarnings###TrimSuccess###DownLoadCount###SingleWarn{Environment.NewLine}");
 
         string[] lines = File.ReadLines(kustoFileName).Skip(1).ToArray();
         // Create an array of DirInfo objects by using the constructor
@@ -104,6 +104,7 @@ class Program
         packages = RemoveSamePkgHash(packages);
         string errorFileName = Path.Combine(Path.GetDirectoryName(outputFileName!), "error.txt");
 
+        // we want to parallelize but given that the kustoFileName is ordered (from the Kusto query), we want to preserve the order in some way and will use ArraySegement to do that
         ArraySegment<NugetPkg2> segment;
         bool userCancelled = false;
         for (int i = 0; i < packages.Length && !userCancelled; i += CHUNK_SIZE)
@@ -253,7 +254,7 @@ class Program
 
         // Look at the publish output file
         int trimCount = 0;
-        bool foundSuccessfullPublish = false;
+        bool foundSuccessfullPublish = false, singleAssemblyWarningFound = false;
         foreach (string line in File.ReadLines(resultFile))
         {
             if (line.Contains("Trim analysis warning"))
@@ -265,12 +266,17 @@ class Program
             {
                 foundSuccessfullPublish = true;
             }
+            if (line.Contains(" warning IL2104: Assembly "))
+            {
+                singleAssemblyWarningFound=true;
+            }
         }
         builder.Append($"{FieldSeparator}{trimCount}");
         builder.Append(foundSuccessfullPublish ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
 
-        // We will write the download size at the end
+        // We will write the download size and singleAssemblyWarningFound at the end
         builder.Append($"{FieldSeparator}{pkg.DownloadCount}");
+        builder.Append(singleAssemblyWarningFound ? $"{FieldSeparator}Y" : $"{FieldSeparator}N");
 
         return builder.ToString();
     }

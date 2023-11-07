@@ -9,7 +9,8 @@
         <TrimmerSingleWarn>false</TrimmerSingleWarn>
     </PropertyGroup>
 
-    <ItemGroup>    <TrimmerRootAssembly Include="HotChocolate.Stitching.Redis" />
+    <ItemGroup>    
+    <TrimmerRootAssembly Include="HotChocolate.Stitching.Redis" />
   </ItemGroup>
 
 <ItemGroup>
