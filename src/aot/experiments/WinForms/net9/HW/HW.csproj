@@ -7,11 +7,12 @@
     <Nullable>enable</Nullable>
     <PublishTrimmed>true</PublishTrimmed>
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
   </PropertyGroup>
 
-<ItemGroup>
+<!-- <ItemGroup>
     <ProjectReference Include="C:\work\core\main\winforms\src\System.Windows.Forms.Primitives\src\System.Windows.Forms.Primitives.csproj" />
     <TrimmerRootAssembly Include="System.Windows.Forms.Primitives" />
-  </ItemGroup>
+  </ItemGroup> -->
 
 </Project>
