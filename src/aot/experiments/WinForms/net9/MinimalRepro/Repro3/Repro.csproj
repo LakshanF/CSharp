@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn>
+    <!-- <PublishTrimmed>true</PublishTrimmed> -->
+    <!-- <_ExtraTrimmerArgs>--><!--dependencies-file-format dgml</_ExtraTrimmerArgs> -->
+    <!-- <PublishAot>true</PublishAot> -->
+    <!-- <IlcGenerateMstatFile>true</IlcGenerateMstatFile>
+    <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile> -->
+  </PropertyGroup>
+
+  <!--Hack to prevent wpf not being brought in -->
+  <!--@TODO: Need the target for Trimming-->
+  <!-- <Target Name="RemoveWPFReference" BeforeTargets="WriteIlcRspFileForCompilation">
+    <ItemGroup>
+      <IlcReference Remove="@(IlcReference)" Condition="'%(Filename)' == 'PresentationFramework'" />
+    </ItemGroup>
+  </Target> -->
+  <Target Name="RemoveWPFReference" AfterTargets="_ComputeAssembliesToPostprocessOnPublish">
+    <ItemGroup>
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="'%(FileName)' == 'PresentationFramework'" />
+    </ItemGroup>
+  </Target>  
+
+  <!--Feature swithes -  not to being in the network stack-->
+  <PropertyGroup>
+    <XmlResolverIsNetworkingEnabledByDefault>false</XmlResolverIsNetworkingEnabledByDefault>
+  </PropertyGroup>
+  <ItemGroup>
+  <!-- We really should introduce a first class property for this -->
+    <RuntimeHostConfigurationOption Include="System.Windows.Forms.PictureBox.UseWebRequest" Value="false" Trim="true" />
+  </ItemGroup>  
+</Project>

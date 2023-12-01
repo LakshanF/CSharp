@@ -1,0 +1,438 @@
+
+
+
+0:004> kn
+ # Child-SP          RetAddr           Call Site
+00 0000002e`1f2feaf0 00007ff7`04113831 HexGame!Assert+0xed
+01 0000002e`1f2feb60 00007ff7`041126f6 HexGame!StackFrameIterator::InternalInit+0x481
+02 0000002e`1f2feba0 00007ff7`0410e971 HexGame!StackFrameIterator::StackFrameIterator+0xb6
+03 0000002e`1f2febd0 00007ff7`041380c7 HexGame!Thread::GcScanRoots+0x71
+04 0000002e`1f2fee70 00007ff7`04197f30 HexGame!GCToEEInterface::GcScanRoots+0x207
+05 0000002e`1f2feef0 00007ff7`04176b9f HexGame!GCScan::GcScanRoots+0x30
+06 0000002e`1f2fef20 00007ff7`0416835a HexGame!WKS::gc_heap::mark_phase+0x41f
+07 0000002e`1f2ff030 00007ff7`041680d9 HexGame!WKS::gc_heap::gc1+0x19a
+08 0000002e`1f2ff140 00007ff7`0414462a HexGame!WKS::gc_heap::garbage_collect+0x4d9
+09 0000002e`1f2ff1b0 00007ff7`0414478f HexGame!WKS::GCHeap::GarbageCollectGeneration+0x1ba
+0a 0000002e`1f2ff230 00007ff7`041443ff HexGame!WKS::GCHeap::GarbageCollectTry+0xdf
+0b 0000002e`1f2ff270 00007ff7`041a7b38 HexGame!WKS::GCHeap::GarbageCollect+0x2af
+0c 0000002e`1f2ff310 00007ff7`041a7a95 HexGame!ETW::GCLog::ForceGCForDiagnostics+0x98
+0d 0000002e`1f2ff370 00007ff7`041a67a1 HexGame!ETW::GCLog::ForceGC+0x35
+0e 0000002e`1f2ff3a0 00007ff7`041a67f0 HexGame!EtwCallbackCommon+0x281
+0f 0000002e`1f2ff420 00007ff7`041bcee7 HexGame!EventPipeEtwCallbackDotNETRuntime+0x40
+10 0000002e`1f2ff460 00007ff7`041c6605 HexGame!ep_rt_provider_invoke_callback+0x97
+11 0000002e`1f2ff4b0 00007ff7`041b44ae HexGame!provider_invoke_callback+0x3d5
+12 0000002e`1f2ff5e0 00007ff7`041e478f HexGame!ep_enable_3+0x10e
+13 0000002e`1f2ff6a0 00007ff7`041de8b5 HexGame!eventpipe_protocol_helper_collect_tracing+0x13f
+14 0000002e`1f2ff790 00007ff7`041e868c HexGame!ds_eventpipe_protocol_helper_handle_ipc_message+0xc5
+15 0000002e`1f2ff7e0 00007ffa`145a257d HexGame!server_thread+0x1cc
+16 0000002e`1f2ff880 00007ffa`15ecaa58 kernel32!BaseThreadInitThunk+0x1d
+17 0000002e`1f2ff8b0 00000000`00000000 ntdll!RtlUserThreadStart+0x28
+
+
+
+//
+// The stack trace indicates that the current thread triggered the
+//
+//      ASSERT(m_pInstance->IsManaged(m_ControlPC));
+//
+// assert on line 314 in StackFrameIterator.cpp.
+//
+
+0:004> ub 00007ff7`04113831 l8
+HexGame!StackFrameIterator::InternalInit+0x45e:
+00007ff7`0411380e 0fb6c0          movzx   eax,al
+00007ff7`04113811 85c0            test    eax,eax
+00007ff7`04113813 751c            jne     HexGame!StackFrameIterator::InternalInit+0x481 (00007ff7`04113831)
+00007ff7`04113815 4533c9          xor     r9d,r9d
+00007ff7`04113818 41b83a010000    mov     r8d,13Ah
+00007ff7`0411381e 488d150b017e00  lea     rdx,[HexGame!`string'+0x1a00 (00007ff7`048f3930)]
+00007ff7`04113825 488d0d54017e00  lea     rcx,[HexGame!`string'+0x1a50 (00007ff7`048f3980)]
+00007ff7`0411382c e8efef0000      call    HexGame!Assert (00007ff7`04122820)
+
+0:004> da 00007ff7`048f3980
+00007ff7`048f3980  "m_pInstance->IsManaged(m_ControlPC)"
+
+0:004> ?13a
+Evaluate expression: 314 = 00000000`0000013a
+
+0:004> da 00007ff7`048f3930
+00007ff7`048f3930  "C:\work\core\main\runtime\src\coreclr\nativeaot\Runtime\StackFrameIterator.cpp"
+
+
+//
+// Moving to the Thread::GcScanRoots frame to understand which thread the GC is examining
+// at the time of the assert.
+//
+
+
+0:004> .frame /c 3
+03 0000002e`1f2febd0 00007ff7`041380c7 HexGame!Thread::GcScanRoots+0x71
+rax=0000000000000001 rbx=0000000000000000 rcx=0000000000002002
+rdx=00007ff704abcfd8 rsi=0000000000000000 rdi=0000002e1f2fee60
+rip=00007ff70410e971 rsp=0000002e1f2febd0 rbp=0000000000000000
+ r8=00000000fffffd7f  r9=0000000000000000 r10=0000000000000000
+r11=0000000000000246 r12=0000000000000000 r13=0000000000000000
+r14=0000000000000000 r15=0000000000000000
+iopl=0         nv up ei pl nz na pe nc
+cs=0033  ss=002b  ds=002b  es=002b  fs=0053  gs=002b             efl=00000200
+HexGame!Thread::GcScanRoots+0x71:
+00007ff7`0410e971 4c8d4c2430      lea     r9,[rsp+30h]
+
+
+0:004> dv /t /v /A
+0000002e`1f2fee80 void * pvCallbackData = 0x0000002e`1f2fef48
+0000002e`1f2fee78 void * pfnEnumCallback = 0x00007ff7`041471e0
+0000002e`1f2fee70 class Thread * this = 0x000001fc`78a2ba20
+0000002e`1f2fec00 class StackFrameIterator frameIterator = class StackFrameIterator
+
+
+0:004> dt HexGame!StackFrameIterator 0000002e`1f2fec00
+   +0x000 m_pThread        : 0x000001fc`78a2ba20 Thread
+   +0x008 m_pInstance      : 0x000001fc`78a2b980 RuntimeInstance
+   +0x010 m_FramePointer   : 0xcccccccc`cccccccc Void
+   +0x018 m_ControlPC      : 0x00007ffa`15f72d01 Void
+   +0x020 m_RegDisplay     : REGDISPLAY
+   +0x150 m_pCodeManager   : (null)
+   +0x158 m_methodInfo     : MethodInfo
+   +0x1a0 m_effectiveSafePointAddress : 0xcccccccc`cccccccc Void
+   +0x1a8 m_pHijackedReturnValue : (null)
+   +0x1b0 m_HijackedReturnValueKind : ff ( GCRK_Unknown )
+   +0x1b8 m_pConservativeStackRangeLowerBound : (null)
+   +0x1c0 m_pConservativeStackRangeUpperBound : (null)
+   +0x1c8 m_dwFlags        : 0x8a
+   +0x1d0 m_pNextExInfo    : (null)
+   +0x1d8 m_pendingFuncletFramePointer : (null)
+   +0x1e0 m_funcletPtrs    : StackFrameIterator::PreservedRegPtrs
+   +0x220 m_ShouldSkipRegularGcReporting : 0
+   +0x228 m_OriginalControlPC : 0x00007ffa`15f72d01 Void
+   +0x230 m_pPreviousTransitionFrame : 0x0000002e`1f2ff1e8 PInvokeTransitionFrame
+
+
+//
+// The output above uniformly suggests that the thread being walked is the one described by
+// the HexGame!Thread structure at: 000001fc`78a2ba20
+//
+// The embedded m_threadId and m_hPalThread both suggest that this thread (i.e., the thread
+// being walked) is thread ID 0x161c, which only matches the ~4 thread that is executing at
+// the time of the assert, i.e.:
+//
+//      .  4  Id: 2968.161c Suspend: 0 Teb: 0000002e`1ed59000 Unfrozen
+//
+// In other words, the state suggests that the GC is walking the stack of the same thread
+// where the assert is happening, i.e., the same thread which is carrying out the
+// HexGame!ETW::GCLog::ForceGC call as shown in the callstack above.
+//
+
+
+0:004> dt HexGame!Thread 000001fc`78a2ba20
+   +0x000 m_rgbAllocContextBuffer : [56]  ""
+   +0x038 m_ThreadStateFlags : 1
+   +0x040 m_pTransitionFrame : (null)
+   +0x048 m_pDeferredTransitionFrame : 0x0000002e`1f2ff1e8 PInvokeTransitionFrame
+   +0x050 m_pCachedTransitionFrame : (null)
+   +0x058 m_pNext          : 0x000001fc`78a6d740 Thread
+   +0x060 m_hPalThread     : 0x00000000`00000218 Void
+   +0x068 m_ppvHijackedReturnAddressLocation : (null)
+   +0x070 m_pvHijackedReturnAddress : (null)
+   +0x078 m_uHijackedReturnValueFlags : 0
+   +0x080 m_pExInfoStackHead : (null)
+   +0x088 m_threadAbortException : (null)
+   +0x090 m_pThreadLocalStatics : 0x000001fc`7c801228 Object
+   +0x098 m_pInlinedThreadLocalStatics : (null)
+   +0x0a0 m_pGCFrameRegistrations : (null)
+   +0x0a8 m_pStackLow      : 0x0000002e`1f200000 Void
+   +0x0b0 m_pStackHigh     : 0x0000002e`1f300000 Void
+   +0x0b8 m_threadId       : EEThreadId
+   +0x0c0 m_pThreadStressLog : (null)
+   +0x0c8 m_interruptedContext : (null)
+   +0x0d0 m_redirectionContextBuffer : (null)
+   +0x0d8 m_uRand          : 0
+
+
+0:004> dt HexGame!Thread 000001fc`78a2ba20 m_threadId.
+   +0x0b8 m_threadId  :
+      +0x000 m_uiId      : 0x161c
+
+
+0:004> ~
+   0  Id: 2968.88f0 Suspend: 0 Teb: 0000002e`1ed51000 Unfrozen
+   1  Id: 2968.1f4c Suspend: 0 Teb: 0000002e`1ed53000 Unfrozen
+   2  Id: 2968.80c Suspend: 0 Teb: 0000002e`1ed55000 Unfrozen
+   3  Id: 2968.d81c Suspend: 0 Teb: 0000002e`1ed57000 Unfrozen
+.  4  Id: 2968.161c Suspend: 0 Teb: 0000002e`1ed59000 Unfrozen
+   5  Id: 2968.a3e8 Suspend: 0 Teb: 0000002e`1ed5b000 Unfrozen
+
+
+0:004> !handle 00000218 ff
+Handle 0000000000000218
+  Type          Thread
+  Attributes    0
+  GrantedAccess 0x1fffff:
+         Delete,ReadControl,WriteDac,WriteOwner,Synch
+         Terminate,Suspend,Alert,GetContext,SetContext,SetInfo,QueryInfo,SetToken,Impersonate,DirectImpersonate
+  HandleCount   5
+  PointerCount  163753
+  Name          <none>
+  Object specific information
+    Thread Id   2968.161c
+    Priority    10
+    Base Priority 0
+
+
+0:004> ??sizeof(HexGame!gc_alloc_context)
+unsigned int64 0x38
+
+0:004> dt HexGame!Thread 000001fc`78a2ba20
+   +0x000 m_rgbAllocContextBuffer : [56]  ""
+   +0x038 m_ThreadStateFlags : 1
+   ...
+
+0:004> dt HexGame!gc_alloc_context 000001fc`78a2ba20
+   +0x000 alloc_ptr        : (null)
+   +0x008 alloc_limit      : (null)
+   +0x010 alloc_bytes      : 0n166640
+   +0x018 alloc_bytes_uoh  : 0n0
+   +0x020 gc_reserved_1    : (null)
+   +0x028 gc_reserved_2    : (null)
+   +0x030 alloc_count      : 0n0
+
+0:004> dt HexGame!alloc_context 000001fc`78a2ba20
+   +0x000 alloc_ptr        : (null)
+   +0x008 alloc_limit      : (null)
+   +0x010 alloc_bytes      : 0n166640
+   +0x018 alloc_bytes_uoh  : 0n0
+   +0x020 gc_reserved_1    : (null)
+   +0x028 gc_reserved_2    : (null)
+   +0x030 alloc_count      : 0n0
+
+
+
+//
+// Correlating against the analysis in SrcListings.txt shows that
+//
+//    .
+//      the targeted thread (i.e., 000001fc`78a2ba20) matches the current
+//      ThreadStore::GetSuspendingThread() (i.e., the current RhpSuspendingThread)
+//
+//    .
+//      meaning the stack walk of the targeted thread will "start" at the targeted thread's
+//      "Thread::m_pDeferredTransitionFrame" (which will be passed as the
+//      "pInitialTransitionFrame" argument to the StackFrameIterator ctor).
+//
+
+
+0:004> x /t HexGame!*RhpSuspendingThread*
+00007ff7`04ac7fa8 class Thread * HexGame!RhpSuspendingThread = 0x000001fc`78a2ba20
+
+
+0:004> dt HexGame!Thread 000001fc`78a2ba20 m_pDeferredTransitionFrame
+   +0x048 m_pDeferredTransitionFrame : 0x0000002e`1f2ff1e8 PInvokeTransitionFrame
+
+
+
+//
+// Since Thread::m_pDeferredTransitionFrame is 0000002e`1f2ff1e8 (as opposed to a
+// "sentinel" value like INTERRUPTED_THREAD_MARKER or TOP_OF_STACK_MARKER), the analysis in
+// SrcListings.txt shows that the content of this structure (i.e., the content of the
+// "pInitialTransitionFrame" passed to the StackFrameIterator ctor) will be comprehensively
+// examined and captured along the following stack:
+//
+//      StackFrameIterator::InternalInit(Thread*, PInvokeTransitionFrame*, uint32_t)
+//      StackFrameIterator::StackFrameIterator
+//      Thread::GcScanRoots
+//      ...
+//
+// Note that the m_pPreviousTransitionFrame corroborates the idea that the
+// 0000002e`1f2ff1e8 frame was processed in exactly this manner:
+//
+//      0:004> dt HexGame!StackFrameIterator 0000002e`1f2fec00 m_pPreviousTransitionFrame
+//         +0x230 m_pPreviousTransitionFrame : 0x0000002e`1f2ff1e8 PInvokeTransitionFrame
+//
+// The code in StackFrameIterator::InternalInit(Thread*, PInvokeTransitionFrame*, uint32_t)
+// does not necessarily "care very much" about all of the fields in the supplied
+// PInvokeTransitionFrame, but it definitely does care about the value in the m_RIP field.
+//
+// In particular, the value in the m_RIP field must be either a pointer to managed code or
+// a pointer to one of the well-known "non-EH thunk" functions that are implemented within
+// the runtime itself.  If the m_RIP value isn't in either of these categories, then at
+// least an assert is guaranteed to occur.
+//
+// In this case, the m_RIP value points to native OS code, meaning it isn't in either
+// allowed category (i.e., is not managed code and is not a special thunk within the
+// NativeAOT runtime), meaning an assert is guaranteed to happen.  The assert shown in the
+// callstack is exactly this assert.
+//
+// Some other fields in the structure do not "look valid" either (e.g., m_FramePointer is
+// generally required to be a pointer to the stack, but definitely isn't in this case).
+//
+// Overall, the most likely explanation is that
+//
+//    .
+//      the Thread::m_pDeferredTransitionFrame field is "stale" and points to a location on the
+//      stack which held a valid PInvokeTransitionFrame during some previous operation (maybe a
+//      previous GC),
+//
+//    .
+//      but that previous operation has since completed, and subsequent code running on the same
+//      thread has since "stomped on" the same stack space (which is a natural and valid
+//      phenomenon since this code runs on the same thread and therefore uses the same stack
+//      space that was used by any number of now-complete operations which may have run on the
+//      thread in the past).
+//
+
+
+0:004> dt HexGame!PInvokeTransitionFrame 0000002e`1f2ff1e8
+   +0x000 m_RIP            : 0x00007ffa`15f72d01 Void
+   +0x008 m_FramePointer   : 0x00007ff7`04acac30 Void
+   +0x010 m_pThread        : 0x00000000`00000001 Thread
+   +0x018 m_Flags          : 1
+   +0x020 m_PreservedRegs  : [0] 0x00007ff7`00000002
+
+
+0:004> u 00007ffa`15f72d01
+ntdll!RtlpGetExtendedDataSize+0x6 [inlined in ntdll!RtlpCheckBusyBlockTail+0x179]:
+00007ffa`15f72d01 750a            jne     ntdll!RtlpCheckBusyBlockTail+0x185 (00007ffa`15f72d0d)
+...
+
+
+
+//
+// #
+//
+// The discussion above shows that the assert is happening because
+//
+//    .
+//      the GC is trying to walk the stack of the current thread (i.e., the thread which is in
+//      the middle in the HexGame!ETW::GCLog::ForceGC call shown in the callstack)
+//
+//    .
+//      but that thread "not walkable" because
+//
+//        .
+//          it is the current ThreadStore::GetSuspendingThread() (i.e., it is the current
+//          RhpSuspendingThread)
+//
+//        .
+//          meaning the runtime is hardcoded to walk it by starting at the "starting location"
+//          described by the thread's Thread::m_pDeferredTransitionFrame
+//
+//        .
+//          but the current thread's Thread::m_pDeferredTransitionFrame is "stale" and points to
+//          random "stomped on" stack content which does not describe any kind of valid "starting
+//          location" that the StackFrameIterator can use to carry out the stackwalk.
+//
+//
+// #
+//
+// Possible root causes include:
+//
+//    #R1
+//      The current thread has missed some required step which it needed to take to "make itself
+//      walkable" before the GC got started.
+//
+//    #R2
+//      The current thread shouldn't be walked by the GC at all, and there is some product
+//      malfunction which is causing the current thread to be erroneously included in the list
+//      of threads that are walked during GC.
+//
+//
+// #
+//
+// One way to look into possibility #R2 is to ask:
+//
+//      In the current dump, why did the GC decide to walk the current thread?
+//
+//
+// #
+//
+// The GCToEEInterface::GcScanRoots analysis in SrcListings.txt suggests that among the
+// threads that are "known to the runtime" (i.e., among the threads that are listed in the
+// ThreadStore and therefore have associated HexGame!Thread structures)
+//
+//    .
+//      the GC skips "GCSpecial" threads
+//
+//        .
+//          (i.e., skips any and all dedicated foreground GC and background GC threads that the GC
+//          has created for its own use, where it is important to note that these threads do not run
+//          anything other than GC code and runtime/OS code that is invoked during core GC
+//          processing)
+//
+//    .
+//      but scans ALL other threads.
+//
+//
+// Since the thread that calls HexGame!ETW::GCLog::ForceGCForDiagnostics is definitely not
+// a GC thread, the analysis above suggests that it will definitely be scanned and walked
+// by the GC, and that this is definitely by-design.
+//
+// In other words, it seems very unlikely that #R2 is the root cause.
+//
+//
+// #
+//
+// With #R2 eliminated, it seems much more likely that #R1 is the root cause (i.e., that
+// the thread that calls HexGame!ETW::GCLog::ForceGCForDiagnostics missed some required
+// step which it needed to take to "make itself walkable" before starting the GC).
+//
+//
+// #
+//
+// Correlating against the extensive analysis in SrcListings.txt, it is likely that #R1
+// is the root cause, and a sequence like the following has specifically occurred:
+//
+//    1
+//      Earlier on, activity on thread ~4 loaded that thread's Thread::m_pDeferredTransitionFrame
+//      field with a value that is not null and is also not TOP_OF_STACK_MARKER, and which
+//      specifically points to a part of the thread's stack which held a valid
+//      PInvokeTransitionFrame at the time.
+//
+//        .
+//          The #m_pDeferredTransitionFrame_SETTER_INFO discussion talks about the paths that could
+//          have loaded such a value.
+//
+//        .
+//          For example, one possibility is that thread ~4 was running managed code at some earlier
+//          point, the managed code tried to allocate an ordinary object, the runtime found that the
+//          allocation couldn't be satisfied from the thread's current alloc context, the runtime
+//          called through to the RhpGcAlloc helper that is used in such cases, and therefore loaded
+//          the m_pDeferredTransitionFrame field (since loading the field is a normal and by-design
+//          side effect of all RhpGcAlloc calls).
+//
+//    2
+//      Thread ~4 executes forward, finishes whatever operation was active in step #1, and runs
+//      some arbitrary set of subsequent operations.
+//
+//    3
+//      Some of these subsequent operations end up using the same stack space that was
+//      temporarily used to hold a PInvokeTransitionFrame at the time of step #1, but which are
+//      now overwritten with "random" data associated with whatever subsequent operations are
+//      underway.
+//
+//    4
+//      At this point, the Thread::m_pDeferredTransitionFrame value for thread ~4 is "stale"
+//      (i.e., points to a location on the thread stack which held a PInvokeTransitionFrame
+//      during some past operation but holds unrelated data in the context of the current
+//      operation).
+//
+//    5
+//      At some later point, thread ~4 enters HexGame!ETW::GCLog::ForceGCForDiagnostics, meaning
+//      it is now calling into ETW::GCLog::ForceGCForDiagnostics with a stale m_pDeferredTransitionFrame
+//      value in place.
+//
+//    6
+//      As detailed at the #ROOT_CAUSE mark, calling into ETW::GCLog::ForceGCForDiagnostics with
+//      a stale m_pDeferredTransitionFrame in place is guaranteed to trigger the
+//      #STALE_m_pDeferredTransitionFrame_HAZARD and is therefore guaranteed to be prone to
+//      crashes or other undefined behavior.
+//
+//      Specifically, the triggered GC is guaranteed to tell the StackFrameIterator
+//      initialization code that the stale m_pDeferredTransitionFrame value (i.e.,
+//      0000002e`1f2ff1e8 in this dump) is the address of a valid data structure which describes
+//      the "starting location" that should be used when walking the thread ~4 stack.
+//
+//      In this dump, this leads to the exact failure that is seen on the callstack and is
+//      analyzed in detail above.
+//
+
+

@@ -1,0 +1,3320 @@
+
+Marks:
+
+    #THREAD_MODE_MODEL
+    #m_pDeferredTransitionFrame_SETTER_INFO
+    #STALE_m_pDeferredTransitionFrame_HAZARD
+    #ROOT_CAUSE
+
+
+
+
+#
+
+Notes on the cooperative/preemptive model:
+
+
+
+    #
+
+    #THREAD_MODE_MODEL
+    Def:#THREAD_MODE_MODEL
+
+    In general, the model SMosier built encodes the "cooperative vs preemptive" indicator
+    into the Thread::m_pTransitionFrame field, with the encoding having the following
+    traits:
+
+      .
+        If the Thread::m_pTransitionFrame is non-null,
+
+          .
+            then the thread is in preemptive mode.
+
+          .
+            Product comments often talk about non-null m_pTransitionFrame values indicating that
+            "the thread has posted a transition frame".
+
+          .
+            This has some strong conceptual soundness when viewed as part of a model where:
+
+              .
+                The conceptual baseline assumption is that the threads known to the runtime exist to
+                execute managed code in cooperative mode,
+
+                  .
+                    and that a null m_pTransitionFrame encodes this baseline state.
+
+              .
+                If a thread known to the runtime is NOT executing managed code, then it has conceptually
+                "transitioned out of the baseline state",
+
+                  .
+                    and a non-null m_pTransitionFrame value encodes the fact that thread has left the
+                    "null m_pTransitionFrame" state associated with this baseline.
+
+              .
+                In this view, a thread moves out of the baseline state (and therefore implicitly moves
+                from cooperative mode to preemptive mode)
+
+                  .
+                    only by conceptually making an explicit transition
+
+                  .
+                    where that explicit transition is physically encoded by filling m_pTransitionFrame with
+                    a non-null value which describes the "nature and location" of the transition
+
+                      .
+                        (where the idea of "posting a transition frame" mentioned in product comments therefore
+                        specifically refers to the act of writing the m_pTransitionFrame field).
+
+          .
+            That said, the idea of "posting a transition frame" can be confusing, especially in the
+            context of threads which are known to the runtime but do NOT have managed code anywhere
+            on the stack (and potentially have NEVER had managed code anywhere on the stack).
+
+              .
+                These cases are encoded by setting m_pTransitionFrame to the TOP_OF_STACK_MARKER
+                sentinel value.
+
+              .
+                This fits the model above in that m_pTransitionFrame holds a non-null value which fully
+                and unambiguously describes the "nature and location" of the "transition out of managed
+                code" which has conceptually occurred on this thread
+
+                  .
+                    with the caveat that the "nature and location of the transition" in this case is the
+                    degenerate case where it was a "from birth" transition which never involved any
+                    preceding managed execution.
+
+              .
+                In another sense, this fits the model by construing TOP_OF_STACK_MARKER as an indication
+                that a `"managed -> native" transition' has occurred on the thread, with the caveat that
+                the "managed" side of the transition is defined as "the baseline execution environment
+                which conceptually existed before the thread jumped to its start address in native
+                code".
+
+      .
+        Otherwise (i.e., if the Thread::m_pTransitionFrame is null),
+
+          .
+            then the thread is in cooperative mode.
+
+          .
+            Relative to the model used in CLR, a crucial trait of this encoding scheme is that, when
+            a thread is in cooperative mode, its Thread structure generally does not track ANY
+            information on historical transitions which may have occurred into and out of managed
+            code.
+
+              .
+                In other words, the Thread structure does not track ANYTHING remotely analogous to the
+                Frame chain that is always available in CLR.
+
+          .
+            Further,
+
+              .
+                given that m_pTransitionFrame describes the "nature and location" of the preceding
+                "managed -> native" transition during preemptive mode execution (as discussed above)
+
+              .
+                running a "cooperative -> preemptive" transition (and therefore nulling-out
+                m_pTransitionFrame) has the effect of "wiping out" the transition details that were
+                previously stored in the m_pTransitionFrame field.
+
+          .
+            As a result,
+
+              1
+                whenever the runtime pushes a thread through a "preemptive -> cooperative" transition,
+
+              2
+                there generally MUST be some kind of accompanying scheme which "manually keeps track of"
+                the transition details that are being displaced from m_pTransitionFrame
+
+              3
+                so that these details can be restored back into m_pTransitionFrame whenever the current
+                operation "unwinds" and applies a matching "cooperative -> preemptive" transition (i.e.,
+                applies a transition which "rolls back" the original "preemptive -> cooperative"
+                transition from step #1).
+
+          .
+            For example,
+
+              .
+                for any "preemptive -> cooperative" transition applied in
+                Thread::ReversePInvokeAttachOrTrapThread
+
+              .
+                the original m_pTransitionFrame value is saved into the ReversePInvokeFrame
+
+              .
+                and is unconditionally restored by Thread::InlineReversePInvokeReturn if/when the
+                reverse PInvoke unwinds.
+
+
+
+
+
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+void
+Thread::GcScanRoots(
+    void* pfnEnumCallback,
+    void* pvCallbackData
+    )
+{
+
+
+    this->CrossThreadUnhijack();
+
+
+
+    StackFrameIterator frameIterator(
+        pThreadToWalk: this,
+        pInitialTransitionFrame: this->Thread::GetTransitionFrame()
+    );
+
+
+
+    this->Thread::GcScanRootsWorker(
+        pfnEnumCallback,
+        pvCallbackData,
+        frameIterator
+    );
+
+
+
+    return;
+}
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+PInvokeTransitionFrame*
+Thread::GetTransitionFrame(
+    )
+{
+
+
+    //
+    // This function is only used after ThreadStore::SuspendAllThreads has successfully stopped
+    // all threads.
+    //
+    // That earlier processing is guaranteed to have cached a transition frame for all threads
+    // EXCEPT for the thread that was running the ThreadStore::SuspendAllThreads.  This one and
+    // only "suspending thread" therefore does NOT have a standard cached transition frame and
+    // therefore must be handled specially below.
+    //
+    // Notes:
+    //
+    //    .
+    //      The special handling applied here in turn potentially implies special requirements on
+    //      any thread that will potentially trigger a call into ThreadStore::SuspendAllThreads
+    //      (since the participation in a "special" protocol may be needed to ensure that the
+    //      m_pDeferredTransitionFrame setting matches the requirements that are assumed below).
+    //
+    ;
+
+
+
+    if (this != ThreadStore::GetSuspendingThread())
+    {
+
+
+        ASSERT(
+            m_pCachedTransitionFrame != NULL
+        );
+
+
+
+        return m_pCachedTransitionFrame;
+
+
+    }
+    else // I.e., if (this == ThreadStore::GetSuspendingThread())
+    {
+
+
+        //
+        // <InOriginal>
+        //
+        // This thread is in cooperative mode, so we grab the deferred frame which is the frame
+        // from the most recent "cooperative pinvoke" transition that brought us here.
+        //
+        // </InOriginal>
+        //
+        // #m_pDeferredTransitionFrame_SETTER_INFO
+        // Def:#m_pDeferredTransitionFrame_SETTER_INFO
+        //
+        // In the amd64 product, the m_pDeferredTransitionFrame field is set along the following
+        // paths:
+        //
+        //    .
+        //      In Thread::Construct, m_pDeferredTransitionFrame is set to TOP_OF_STACK_MARKER.
+        //
+        //    .
+        //      In RhpWaitForGC and RhpGcStressProbe, the assembly-language PUSH_PROBE_FRAME macro is
+        //      used to point m_pDeferredTransitionFrame to a newly-constructed on-stack
+        //      PInvokeTransitionFrame which generally describes the "managed -> native" transition that
+        //      is underway (where I believe these are always special transitions related to both
+        //      regular and GCStress hijacks).
+        //
+        //    .
+        //      In Thread::SetDeferredTransitionFrame, m_pDeferredTransitionFrame is set to whatever
+        //      value was supplied by the caller; as shown in the listing, this only occurs during
+        //      mainline object allocation, and only occurs along the following stack:
+        //
+        //          Thread::SetDeferredTransitionFrame
+        //          RhpGcAlloc {nativeaot\Runtime\gcrhenv.cpp}
+        //          ...
+        //
+        //    .
+        //      In Thread::DeferTransitionFrame, m_pDeferredTransitionFrame is set equal to the current
+        //      m_pTransitionFrame setting; as shown in the listing, this only occurs in the context of
+        //      PInovkes from managed code into the runtime (which implicitly point "m_pTransitionFrame"
+        //      to a newly-constructed PInvokeTransitionFrame), and only occurs along the following
+        //      tree:
+        //
+        //          Thread::DeferTransitionFrame
+        //              |
+        //              +-- RhpCollect {nativeaot\Runtime\GCHelpers.cpp}
+        //              |
+        //              +-- RhpGetGcTotalMemory {nativeaot\Runtime\GCHelpers.cpp}
+        //              |
+        //              +-- RhpStartNoGCRegion {nativeaot\Runtime\GCHelpers.cpp}
+        //              |
+        //              +-- RhAllocateNewArray {nativeaot\Runtime\GCHelpers.cpp}
+        //              |
+        //              +-- RhAllocateNewObject {nativeaot\Runtime\GCHelpers.cpp}
+        //              |
+        //              +-- RhpGetCurrentThreadStackTrace {nativeaot\Runtime\MiscHelpers.cpp}
+        //
+        ;
+
+
+
+        ASSERT(
+            m_pDeferredTransitionFrame != NULL
+        );
+
+
+
+        return m_pDeferredTransitionFrame;
+
+
+    } // End of: else // I.e., if (this == ThreadStore::GetSuspendingThread())
+
+
+
+    UNREACHABLE();
+}
+
+
+
+
+
+
+{nativeaot\Runtime\threadstore.cpp}
+
+
+static
+PTR_Thread
+ThreadStore::GetSuspendingThread(
+    )
+{
+
+    return RhpSuspendingThread;
+}
+
+
+
+
+
+{nativeaot\Runtime\StackFrameIterator.cpp}
+
+
+StackFrameIterator::StackFrameIterator(
+    Thread* pThreadToWalk,
+    PInvokeTransitionFrame* pInitialTransitionFrame
+    )
+{
+
+
+    STRESS_LOG0(
+        LF_STACKWALK,
+        LL_INFO10000,
+        "----Init---- [ GC ]\n"
+    );
+
+
+
+    ASSERT(
+       !pThreadToWalk->IsHijacked()
+    );
+
+
+
+    //
+    // Ref:
+    //      thread.h:44:#define INTERRUPTED_THREAD_MARKER ((PInvokeTransitionFrame*)(ptrdiff_t)-2)
+    //
+    ;
+
+
+
+    if (pInitialTransitionFrame != INTERRUPTED_THREAD_MARKER)
+    {
+
+
+        this->StackFrameIterator::InternalInit(
+            pThreadToWalk: pThreadToWalk,
+            pFrame: pInitialTransitionFrame,
+            dwFlags: GcStackWalkFlags
+        );
+
+
+    }
+    else // I.e., if (pInitialTransitionFrame == INTERRUPTED_THREAD_MARKER)
+    {
+
+
+        this->StackFrameIterator::InternalInit(
+            pThreadToWalk,
+            pThreadToWalk->GetInterruptedContext(),
+            (GcStackWalkFlags | ActiveStackFrame)
+        );
+
+
+    } // End of: else // I.e., if (pInitialTransitionFrame == INTERRUPTED_THREAD_MARKER)
+
+
+
+    this->StackFrameIterator::PrepareToYieldFrame();
+
+
+
+    return;
+}
+
+
+
+
+
+{nativeaot\Runtime\StackFrameIterator.cpp}
+
+
+void
+StackFrameIterator::SetControlPC(
+    PTR_VOID controlPC
+    )
+{
+
+
+    m_OriginalControlPC = controlPC;
+
+
+
+    m_ControlPC = controlPC;
+
+
+
+    return;
+}
+
+
+
+
+
+{nativeaot\Runtime\StackFrameIterator.cpp}
+
+
+//
+// <InOriginal>
+//
+// Prepare to start a stack walk from the context listed in the supplied
+// PInvokeTransitionFrame.
+//
+// The supplied frame can be TOP_OF_STACK_MARKER to indicate that there are no more managed
+// frames on the stack.
+//
+// Otherwise, the context in the frame always describes a callsite where control
+// transitioned from managed to unmanaged code.
+//
+// Notes:
+//
+//    .
+//      When a return address hijack is executed, the PC in the generated PInvokeTransitionFrame
+//      matches the hijacked return address.
+//
+//        .
+//          This PC is not guaranteed to be in managed code since the hijacked return address may
+//          refer to a location where an assembly thunk called into managed code.
+//
+//    .
+//      When the PC is in an assembly thunk, this function will unwind to the next managed frame
+//      and may publish a conservative stack range (if and only if any of the unwound thunks
+//      report a conservative range).
+//
+// </InOriginal>
+//
+
+void
+StackFrameIterator::InternalInit(
+    Thread* pThreadToWalk,
+    PInvokeTransitionFrame* pFrame,
+    uint32_t dwFlags
+    )
+{
+
+
+    //
+    // <InOriginal>
+    //
+    // EH stackwalks are always required to unwind non-volatile floating point state.
+    //
+    // This state is never carried by PInvokeTransitionFrames, implying that they can never be
+    // used as the initial state for an EH stackwalk.
+    //
+    // </InOriginal>
+    //
+
+    ASSERT_MSG(
+        !(dwFlags & ApplyReturnAddressAdjustment)
+      ,
+        "PInvokeTransitionFrame content is not sufficient to seed an EH stackwalk"
+    );
+
+
+
+    this->StackFrameIterator::EnterInitialInvalidState(
+        pThreadToWalk
+    );
+
+
+
+    //
+    // Ref:
+    //      thread.h:40:#define TOP_OF_STACK_MARKER ((PInvokeTransitionFrame*)(ptrdiff_t)-1)
+    //
+    ;
+
+
+
+    if (pFrame == TOP_OF_STACK_MARKER)
+    {
+
+
+        //
+        // <InOriginal>
+        //
+        // There are no managed frames on the stack.
+        //
+        // Leave the iterator in its initial invalid state.
+        //
+        // </InOriginal>
+        //
+
+        return;
+
+
+    }
+    else // I.e., if (pFrame != TOP_OF_STACK_MARKER)
+    {
+
+
+        m_dwFlags = dwFlags;
+
+
+
+        m_pPreviousTransitionFrame = pFrame;
+
+
+
+        //
+        // <InOriginal>
+        //
+        // We need to walk the ExInfo chain in parallel with the stackwalk so that we know when we
+        // cross over exception throw points.
+        //
+        // So we must find our initial point in the ExInfo chain here so that we can properly walk
+        // it in parallel.
+        //
+        // </InOriginal>
+        //
+
+        this->StackFrameIterator::ResetNextExInfoForSP(
+            (uintptr_t)dac_cast<TADDR>(pFrame)
+        );
+
+
+
+        //
+        // Note that the listing below has been trimmed to only show the code that runs in amd64
+        // versions of the runtime (i.e., the code that runs when TARGET_AMD64 is defined).
+        //
+        ;
+
+
+
+        memset(
+            target: &m_RegDisplay,
+            byteValue: 0,
+            byteCount: sizeof(m_RegDisplay)
+        );
+
+
+
+        m_RegDisplay.SetIP(
+            (PCODE)pFrame->m_RIP
+        );
+
+
+
+        m_RegDisplay.SetAddrOfIP(
+            (PTR_PCODE)(
+                PTR_HOST_MEMBER(PInvokeTransitionFrame, pFrame, m_RIP)
+            )
+        );
+
+
+
+        //
+        // Bind m_ControlPC to the m_RIP value that is listed in the supplied
+        // PInvokeTransitionFrame (by relying on the fact that the previous call was guaranteed to
+        // load "m_RegDisplay.pIP" with a pointer to this m_RIP value).
+        //
+
+        this->StackFrameIterator::SetControlPC(
+            dac_cast<PTR_VOID>(
+                *(m_RegDisplay.pIP)
+            )
+        );
+
+
+
+        PTR_UIntNative pPreservedRegsCursor = (PTR_UIntNative)(
+            PTR_HOST_MEMBER(PInvokeTransitionFrame, pFrame, m_PreservedRegs)
+        );
+
+
+
+        if (pFrame->m_Flags & PTFF_SAVE_RBX)  { m_RegDisplay.pRbx = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_RSI)  { m_RegDisplay.pRsi = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_RDI)  { m_RegDisplay.pRdi = pPreservedRegsCursor++; }
+
+
+
+        //
+        // <InOriginal>
+        //
+        // RBP should never contain a GC ref because we require a frame pointer for methods with
+        // pinvokes.
+        //
+        // </InOriginal>
+        //
+        // Ref:
+        //      inc\rhbinder.h:354:    PTFF_SAVE_RBP       = 0x00000008,
+        //
+
+        ASSERT(
+           !(pFrame->m_Flags & PTFF_SAVE_RBP)
+        );
+
+
+
+        if (pFrame->m_Flags & PTFF_SAVE_R12)  { m_RegDisplay.pR12 = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_R13)  { m_RegDisplay.pR13 = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_R14)  { m_RegDisplay.pR14 = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_R15)  { m_RegDisplay.pR15 = pPreservedRegsCursor++; }
+
+
+
+        m_RegDisplay.pRbp = (PTR_UIntNative)(
+            PTR_HOST_MEMBER(PInvokeTransitionFrame, pFrame, m_FramePointer)
+        );
+
+
+
+        if (pFrame->m_Flags & PTFF_SAVE_RSP)  { m_RegDisplay.SP   = *pPreservedRegsCursor++; }
+
+
+
+        if (pFrame->m_Flags & PTFF_SAVE_RAX)  { m_RegDisplay.pRax = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_RCX)  { m_RegDisplay.pRcx = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_RDX)  { m_RegDisplay.pRdx = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_R8 )  { m_RegDisplay.pR8  = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_R9 )  { m_RegDisplay.pR9  = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_R10)  { m_RegDisplay.pR10 = pPreservedRegsCursor++; }
+
+        if (pFrame->m_Flags & PTFF_SAVE_R11)  { m_RegDisplay.pR11 = pPreservedRegsCursor++; }
+
+
+
+        GCRefKind retValueKind = TransitionFrameFlagsToReturnKind(
+            pFrame->m_Flags
+        );
+
+
+
+        if (retValueKind != GCRK_Scalar)
+        {
+
+
+            m_pHijackedReturnValue = (PTR_RtuObjectRef)(
+                m_RegDisplay.pRax
+            );
+
+
+
+            m_HijackedReturnValueKind = retValueKind;
+
+
+        } // End of: if (retValueKind != GCRK_Scalar)
+
+
+
+        //
+        // <InOriginal>
+        //
+        // This function guarantees that the final initialized context will refer to a managed
+        // frame.
+        //
+        // In the rare case where the PC does not refer to managed code (and refers to an assembly
+        // thunk instead), unwind through the thunk sequence to find the nearest managed
+        // frame.
+        //
+        // Notes:
+        //
+        //    .
+        //      When thunks are present, the thunk sequence may report a conservative GC reporting lower
+        //      bound that must be applied when processing the managed frame.
+        //
+        // </InOriginal>
+        //
+        ;
+
+
+
+        ReturnAddressCategory category = StackFrameIterator::CategorizeUnadjustedReturnAddress(
+            m_ControlPC
+        );
+
+
+
+        if (category == InManagedCode)
+        {
+
+
+            ASSERT(
+                m_pInstance->IsManaged(
+                    m_ControlPC
+                )
+            );
+
+
+        }
+        else // I.e., if (category != InManagedCode)
+        {
+
+
+            if (!IsNonEHThunk(category))
+            {
+
+
+                FAILFAST_OR_DAC_FAIL_UNCONDITIONALLY(
+                    "PInvokeTransitionFrame PC points to an unexpected assembly thunk kind."
+                );
+
+
+            } // End of: if (!IsNonEHThunk(category))
+
+
+
+            this->StackFrameIterator::UnwindNonEHThunkSequence();
+
+
+
+            ASSERT(
+                m_pInstance->IsManaged(
+                    m_ControlPC
+                )
+            );
+
+
+        } // End of: else // I.e., if (category != InManagedCode)
+
+
+
+        STRESS_LOG1(
+            LF_STACKWALK,
+            LL_INFO10000,
+            "   %p\n",
+            m_ControlPC
+        );
+
+
+    } // End of: else // I.e., if (pFrame != TOP_OF_STACK_MARKER)
+
+
+
+    UNREACHABLE();
+}
+
+
+
+
+
+
+{nativeaot\Runtime\gcrhscan.cpp}
+
+
+//
+// <InOriginal>
+// Scan all stack and statics roots.
+// </InOriginal>
+//
+
+void
+GCToEEInterface::GcScanRoots(
+    EnumGcRefCallbackFunc* fn,
+    int condemned,
+    int max_gen,
+    EnumGcRefScanContext* sc
+    )
+{
+
+
+    FOREACH_THREAD(pThread)
+    {
+
+
+        //
+        // It apears that IsGCSpecial is set if and only if the thread was created along the
+        // following stack:
+        //
+        //      PalStartBackgroundGCThread
+        //      GCToEEInterface::CreateThread
+        //      ...
+        //
+        // As a result, it appears that IsGCSpecial is set only for
+        //
+        //    .
+        //      the dedicated foreground GC threads which the GC creates if and only if SVR GC is
+        //      enabled
+        //
+        //    .
+        //      and the dedicated background GC threads which the GC can create whenever background GC
+        //      is enabled (across both WKS GC and SVR GC modes).
+        //
+        ;
+
+
+
+        if (pThread->IsGCSpecial())
+        {
+
+
+            //
+            // <InOriginal>
+            //
+            // Skip "GC Special" threads which are really background workers that will never have any
+            // roots.
+            //
+            // </InOriginal>
+            //
+
+            continue;
+
+
+        }
+        else // I.e., if (!pThread->IsGCSpecial())
+        {
+
+
+            bool thisGcThreadIsAllowedToScanTheCurrentTargetThread =
+                GCHeapUtilities::GetGCHeap()->IsThreadUsingAllocationContextHeap(
+                    context: pThread->GetAllocContext(),
+                    thread_number: sc->thread_number
+                );
+
+
+
+            if (!thisGcThreadIsAllowedToScanTheCurrentTargetThread)
+            {
+
+
+                //
+                // <InOriginal>
+                //
+                // // STRESS_LOG2(LF_GC|LF_GCROOTS, LL_INFO100, "{ Scan of Thread %p (ID = %x) declined by this heap\n",
+                // //             pThread, pThread->GetThreadId());
+                //
+                // </InOriginal>
+                //
+
+                continue;
+
+
+            }
+            else // I.e., if (thisGcThreadIsAllowedToScanTheCurrentTargetThread)
+            {
+
+
+                InlinedThreadStaticRoot* pRoot = pThread->GetInlinedThreadStaticList();
+
+
+
+                while (pRoot != NULL)
+                {
+
+
+                    STRESS_LOG2(
+                        LF_GC | LF_GCROOTS,
+                        LL_INFO100,
+                        "{ Scanning Thread's %p inline thread statics root %p. \n",
+                        pThread,
+                        pRoot
+                    );
+
+
+
+                    GcEnumObject(
+                        &pRoot->m_threadStaticsBase,
+                        0 /*flags*/,
+                        fn,
+                        sc
+                    );
+
+
+
+                    pRoot = pRoot->m_next;
+
+                    continue;
+
+
+                } // End of: while (pRoot != NULL)
+
+
+
+                STRESS_LOG1(
+                    LF_GC | LF_GCROOTS,
+                    LL_INFO100,
+                    "{ Scanning Thread's %p thread statics root. \n",
+                    pThread
+                );
+
+
+
+                GcEnumObject(
+                    pThread->GetThreadStaticStorage(),
+                    0 /*flags*/,
+                    fn,
+                    sc
+                );
+
+
+
+                STRESS_LOG1(
+                    LF_GC | LF_GCROOTS,
+                    LL_INFO100,
+                    "{ Starting scan of Thread %p\n",
+                    pThread
+                );
+
+
+
+                sc->thread_under_crawl = pThread;
+
+
+
+                #if defined(FEATURE_EVENT_TRACE) && !defined(DACCESS_COMPILE)
+
+
+                    sc->dwEtwRootKind = kEtwGCRootKindStack;
+
+
+                #endif // defined(FEATURE_EVENT_TRACE) && !defined(DACCESS_COMPILE)
+
+
+
+                pThread->Thread::GcScanRoots(
+                    pfnEnumCallback: reinterpret_cast<void*>(fn),
+                    pvCallbackData: sc
+                );
+
+
+
+                #if defined(FEATURE_EVENT_TRACE) && !defined(DACCESS_COMPILE)
+
+
+                    sc->dwEtwRootKind = kEtwGCRootKindOther;
+
+
+                #endif // defined(FEATURE_EVENT_TRACE) && !defined(DACCESS_COMPILE)
+
+
+
+                STRESS_LOG1(
+                    LF_GC | LF_GCROOTS,
+                    LL_INFO100,
+                    "Ending scan of Thread %p }\n",
+                    pThread
+                );
+
+
+
+                continue;
+
+
+            } // End of: else // I.e., if (thisGcThreadIsAllowedToScanTheCurrentTargetThread)
+
+            UNREACHABLE();
+
+        } // End of: else // I.e., if (!pThread->IsGCSpecial())
+
+
+
+        UNREACHABLE();
+
+
+    }
+    END_FOREACH_THREAD
+
+
+
+    sc->thread_under_crawl = NULL;
+
+
+
+    return;
+}
+
+
+
+
+
+{gc\gc.cpp}
+
+
+bool
+GCHeap::IsThreadUsingAllocationContextHeap(
+    gc_alloc_context* context,
+    int thread_number
+    )
+{
+
+
+    alloc_context* acontext = static_cast<alloc_context*>(
+        context
+    );
+
+
+
+    #if !defined(MULTIPLE_HEAPS)
+
+
+
+        //
+        // WKS GC.
+        //
+        ;
+
+
+
+        UNREFERENCED_PARAMETER(acontext);
+
+        UNREFERENCED_PARAMETER(thread_number);
+
+
+
+        return true;
+
+
+
+    #else // defined(MULTIPLE_HEAPS)
+
+
+
+        //
+        // SVR GC.
+        //
+        ;
+
+
+
+        //
+        // <InOriginal>
+        // The thread / heap number must be in range.
+        // </InOriginal>
+        //
+        ;
+
+
+
+        assert (
+            thread_number < gc_heap::n_heaps
+        );
+
+
+
+        if (acontext->get_home_heap() != NULL)
+        {
+
+
+            assert (
+                acontext->get_home_heap()->pGenGCHeap->heap_number < gc_heap::n_heaps
+            );
+
+
+        } // End of: if (acontext->get_home_heap() != NULL)
+
+
+
+        //
+        // Allow GC threads to scan all of their associated assigned alloc contexts, and allow GC
+        // thread #0 to scan any and all alloc contexts which have not been assigned to any
+        // associated heap.
+        //
+
+        bool suppliedGcThreadIsAllowedToScanTheSuppliedAllocContext = (
+
+                (acontext->get_home_heap() == GetHeap(thread_number))
+
+            ||
+
+                (
+                        (acontext->get_home_heap() == NULL)
+                    &&
+                        (thread_number == 0)
+                )
+        );
+
+
+
+        return (suppliedGcThreadIsAllowedToScanTheSuppliedAllocContext ? true : false);
+
+
+    #endif // defined(MULTIPLE_HEAPS)
+
+
+
+    UNREACHABLE();
+}
+
+
+
+
+
+
+{gc\gc.h}
+
+
+inline
+SVR::GCHeap*
+alloc_context::get_home_heap(
+    )
+{
+
+    return static_cast<SVR::GCHeap*>(
+        gc_reserved_2
+    );
+}
+
+
+
+
+
+
+{nativeaot\Runtime\thread.inl}
+
+
+//
+// <InOriginal>
+//
+// Setup the m_pDeferredTransitionFrame field for GC helpers entered via regular PInvoke.
+//
+// Do not use anywhere else.
+//
+// </InOriginal>
+//
+// Tree:
+//
+//      Thread::DeferTransitionFrame
+//          |
+//          +-- RhpCollect {nativeaot\Runtime\GCHelpers.cpp}
+//          |
+//          +-- RhpGetGcTotalMemory {nativeaot\Runtime\GCHelpers.cpp}
+//          |
+//          +-- RhpStartNoGCRegion {nativeaot\Runtime\GCHelpers.cpp}
+//          |
+//          +-- RhAllocateNewArray {nativeaot\Runtime\GCHelpers.cpp}
+//          |
+//          +-- RhAllocateNewObject {nativeaot\Runtime\GCHelpers.cpp}
+//          |
+//          +-- RhpGetCurrentThreadStackTrace {nativeaot\Runtime\MiscHelpers.cpp}
+//
+// Notes:
+//
+//    .
+//      All of the caller functions are "QCall-like" entrypoints into the runtime (i.e.,
+//      entrypoints reached via a PInvoke sequence initiated in managed code).
+//
+//    .
+//      In all cases, the PInvokeTransitionFrame that is captured into
+//      "m_pDeferredTransitionFrame" here was implicitly constructed during the PInvoke
+//      sequence (and its address was stored into the "m_pTransitionFrame" field at that time).
+//
+
+inline
+void
+Thread::DeferTransitionFrame(
+    )
+{
+
+
+    ASSERT(
+        ThreadStore::GetCurrentThread() == this
+    );
+
+
+
+    ASSERT(
+       !Thread::IsCurrentThreadInCooperativeMode()
+    );
+
+
+
+    m_pDeferredTransitionFrame = m_pTransitionFrame;
+
+
+
+    return;
+}
+
+
+
+
+
+
+
+{nativeaot\Runtime\thread.inl}
+
+
+//
+// <InOriginal>
+//
+// Set the m_pDeferredTransitionFrame field for GC allocation helpers that setup transition
+// frame in assembly code.
+//
+// Do not use anywhere else.
+//
+// </InOriginal>
+//
+// Tree:
+//
+//      Thread::SetDeferredTransitionFrame
+//      RhpGcAlloc {nativeaot\Runtime\gcrhenv.cpp}
+//      ...
+//
+// Notes:
+//
+//    .
+//      The caller function is specialized "FCall-like" entrypoint into the runtime (i.e.,
+//      entrypoint reached via a direct call made from managed code into FCall-like helper
+//      function code in the runtime); see the RhpGcAlloc listing for more information.
+//
+//    .
+//      In all cases, the PInvokeTransitionFrame that is written into
+//      "m_pDeferredTransitionFrame" here was manually constructed by the assembly-language
+//      helper functions which branch through to RhpGcAlloc.
+//
+
+inline
+void
+Thread::SetDeferredTransitionFrame(
+    PInvokeTransitionFrame* pTransitionFrame
+    )
+{
+
+
+    ASSERT(
+        ThreadStore::GetCurrentThread() == this
+    );
+
+
+
+    ASSERT(
+        Thread::IsCurrentThreadInCooperativeMode()
+    );
+
+
+
+    ASSERT(
+       !(
+            Thread::IsHijackTarget(
+                pTransitionFrame->m_RIP
+            )
+        )
+    );
+
+
+
+    m_pDeferredTransitionFrame = pTransitionFrame;
+
+
+
+    return;
+}
+
+
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+//
+// <InOriginal>
+//
+// This function simulates a PInvoke transition using a frame pointer from somewhere
+// further up the stack that was passed in via the m_pDeferredTransitionFrame field.
+//
+// It is used to allow us to grandfather-in the set of GC code that runs in cooperative
+// mode without having to rewrite it in managed code.
+//
+// The result is that the code that calls into this special mode must spill preserved
+// registers as if it's going to PInvoke, but record its transition frame pointer in
+// m_pDeferredTransitionFrame and leave the thread in the cooperative mode.
+//
+// Later on, when this function is called, we effect the state transition to "unmanaged"
+// using the previously setup transition frame.
+//
+// </InOriginal>
+//
+// Tree (as of e839d51ba3e957ab3890a4e8c83db17d3f0f014e):
+//
+//      Thread::EnablePreemptiveMode
+//
+//          |
+//          +-- [[ cases that conditionally "enable then disable" preemptive mode ONLY when the caller was already in cooperative mode ]]
+//                  [[
+//                      When the caller is in preemptive mode (which is the common case for native code), these
+//                      cases do not apply any mode transitions of any kind.
+//
+//                      At least CLREventStatic::Wait has callers that reside in eventpipe code and therefore
+//                      are "completely outside of and unrelated to the GC".
+//
+//                      That said, many/most/all other paths into these functions originate from places which
+//                      conceptually reside "inside of an active already-triggered GC".
+//                  ]]
+//
+//                  |
+//                  +-- GCToEEInterface::EnablePreemptiveGC
+//                          [[
+//                              Thread* pThread = ThreadStore::GetCurrentThread();
+//
+//                              if (pThread->IsCurrentThreadInCooperativeMode())
+//                              {
+//                                  pThread->EnablePreemptiveMode();
+//                                  return true;
+//                              }
+//
+//                              return false;
+//                          ]]
+//
+//                  |
+//                  +-- ThreadStore::LockThreadStore
+//                          [[
+//                              Note that this function is ONLY called immediately before an imminent call to
+//                              ThreadStore::SuspendAllThreads.
+//
+//                              ----------------
+//
+//                              // the thread should not be in coop mode when taking the threadstore lock.
+//                              // this is required to avoid deadlocks if suspension is in progress.
+//                              bool wasCooperative = false;
+//                              Thread* pThisThread = ThreadStore::GetCurrentThreadIfAvailable();
+//                              if (pThisThread && pThisThread->IsCurrentThreadInCooperativeMode())
+//                              {
+//                                  wasCooperative = true;
+//                                  pThisThread->EnablePreemptiveMode();
+//                              }
+//
+//                              m_Lock.Enter();
+//
+//                              if (wasCooperative)
+//                              {
+//                                  // we just got the lock thus EE can't be suspending, so no waiting here
+//                                  pThisThread->DisablePreemptiveMode();
+//                              }
+//                          ]]
+//                      GCToEEInterface::SuspendEE
+//                      ...
+//
+//                  |
+//                  +-- CLREventStatic::Wait
+//                          [[
+//                              bool disablePreemptive = false;
+//                              Thread* pCurThread = ThreadStore::GetCurrentThreadIfAvailable();
+//
+//                              if (pCurThread != NULL)
+//                              {
+//                                  if (pCurThread->IsCurrentThreadInCooperativeMode())
+//                                  {
+//                                      pCurThread->EnablePreemptiveMode();
+//                                      disablePreemptive = true;
+//                                  }
+//                              }
+//
+//                              result = PalCompatibleWaitAny(bAlertable, dwMilliseconds, 1, &m_hEvent, bAllowReentrantWait);
+//
+//                              if (disablePreemptive)
+//                              {
+//                                  pCurThread->DisablePreemptiveMode();
+//                              }
+//                          ]]
+//
+//          |
+//          +-- [[ cases that unconditionally "disable then enable" preemptive mode ]]
+//                  [[
+//                      These cases generally implicitly or explicitly assume that the thread is already in
+//                      preemptive mode at the start of the sequence (and sometimes contain asserts to enforce
+//                      this).
+//                  ]]
+//
+//                  |
+//                  +-- [[ cases where m_pDeferredTransitionFrame points to content just built by a "QCall-like" PInvoke from managed code ]]
+//
+//                          |
+//                          +-- RhpCollect {nativeaot\Runtime\GCHelpers.cpp}
+//                                  [[
+//                                      Thread * pCurThread = ThreadStore::GetCurrentThread();
+//                                      pCurThread->DeferTransitionFrame();
+//                                      pCurThread->DisablePreemptiveMode();
+//                                      GCHeapUtilities::GetGCHeap()->GarbageCollect(uGeneration, lowMemoryP, uMode);
+//                                      pCurThread->EnablePreemptiveMode();
+//                                  ]]
+//
+//                          |
+//                          +-- RhpGetGcTotalMemory {nativeaot\Runtime\GCHelpers.cpp}
+//                                  [[
+//                                      Thread * pCurThread = ThreadStore::GetCurrentThread();
+//                                      pCurThread->DeferTransitionFrame();
+//                                      pCurThread->DisablePreemptiveMode();
+//                                      int64_t ret = GCHeapUtilities::GetGCHeap()->GetTotalBytesInUse();
+//                                      pCurThread->EnablePreemptiveMode();
+//                                  ]]
+//
+//                          |
+//                          +-- RhpStartNoGCRegion {nativeaot\Runtime\GCHelpers.cpp}
+//                                  [[
+//                                      Thread *pCurThread = ThreadStore::GetCurrentThread();
+//                                      ASSERT(!pCurThread->IsCurrentThreadInCooperativeMode());
+//                                      pCurThread->DeferTransitionFrame();
+//                                      pCurThread->DisablePreemptiveMode();
+//                                      int result = GCHeapUtilities::GetGCHeap()->StartNoGCRegion(totalSize, hasLohSize, lohSize, disallowFullBlockingGC);
+//                                      pCurThread->EnablePreemptiveMode();
+//                                  ]]
+//
+//                          |
+//                          +-- RhAllocateNewArray {nativeaot\Runtime\GCHelpers.cpp}
+//                                  [[
+//                                      Thread* pThread = ThreadStore::GetCurrentThread();
+//                                      pThread->DeferTransitionFrame();
+//                                      pThread->DisablePreemptiveMode();
+//                                      *pResult = (Array*)GcAllocInternal(pArrayEEType, flags, numElements, pThread);
+//                                      pThread->EnablePreemptiveMode();
+//                                  ]]
+//
+//                          |
+//                          +-- RhAllocateNewObject {nativeaot\Runtime\GCHelpers.cpp}
+//                                  [[
+//                                      Thread* pThread = ThreadStore::GetCurrentThread();
+//                                      pThread->DeferTransitionFrame();
+//                                      pThread->DisablePreemptiveMode();
+//                                      *pResult = GcAllocInternal(pEEType, flags, 0, pThread);
+//                                      pThread->EnablePreemptiveMode();
+//                                  ]]
+//
+//                  |
+//                  +-- [[ cases that do not configure m_pDeferredTransitionFrame and thus may be exposed to the #STALE_m_pDeferredTransitionFrame_HAZARD ]]
+//
+//                          |
+//                          +-- ETW::GCLog::ForceGCForDiagnostics
+//                                  [[
+//                                      #ROOT_CAUSE
+//                                      Def:#ROOT_CAUSE
+//
+//                                      If this function is ever reached at a point where the m_pDeferredTransitionFrame field
+//                                      holds a "stale" pointer (i.e., a pointer which is not null, is not TOP_OF_STACK_MARKER,
+//                                      and points to a location on the thread stack which held a PInvokeTransitionFrame during
+//                                      some past operation but holds unrelated data in the context of the current operation),
+//                                      then the #STALE_m_pDeferredTransitionFrame_HAZARD will occur and the program will be
+//                                      prone to crashes or other undefined behavior during the GC that is triggered below.
+//
+//                                      Specifically, the following sequence will occur once the newly-triggered GC gets
+//                                      underway:
+//
+//                                        .
+//                                          When Thread::GcScanRoots scans this thread, it will use the m_pDeferredTransitionFrame
+//                                          as the "starting state" for the stack walk
+//
+//                                            .
+//                                              (because this thread triggered the GC and, at least in WKS GC, is therefore guaranteed
+//                                              to be the "suspending thread" associated with the GC
+//
+//                                            .
+//                                              meaning the Thread::GetTransitionFrame call in Thread::GcScanRoots is guaranteed to
+//                                              return the m_pDeferredTransitionFrame instead of the m_pCachedTransitionFrame that would
+//                                              normally be used).
+//
+//                                        .
+//                                          As a result, StackFrameIterator initialization will load and interact with "random"
+//                                          stale stack content, and will very often crash or malfunction as a result
+//
+//                                            .
+//                                              (because it will effectively be taking random numbers and then proceeding as if they
+//                                              were valid code and stack addresses associated with this thread).
+//
+//                                      ---------------
+//
+//                                      Thread* pThread = ThreadStore::GetCurrentThread();
+//                                      pThread->DisablePreemptiveMode();
+//                                      hr = GCHeapUtilities::GetGCHeap()->GarbageCollect(-1, FALSE, collection_blocking);
+//                                      pThread->EnablePreemptiveMode();
+//                                  ]]
+//
+// Notes:
+//
+//    .
+//      This function is exposed to the #STALE_m_pDeferredTransitionFrame_HAZARD.
+//
+//    .
+//      Every call to this function matches a corresponding subsequent call to
+//      Thread::DisablePreemptiveMode.
+//
+
+void
+Thread::EnablePreemptiveMode(
+    )
+{
+
+
+    ASSERT(
+        ThreadStore::GetCurrentThread() == this
+    );
+
+
+
+    //
+    // #STALE_m_pDeferredTransitionFrame_HAZARD
+    // Def:#STALE_m_pDeferredTransitionFrame_HAZARD
+    //
+    // Notes:
+    //
+    //    .
+    //      This assert correctly indicates that this function relies on m_pDeferredTransitionFrame
+    //      being valid, but does nothing to actually catch cases where the value is
+    //      invalid.
+    //
+    //    .
+    //      As shown at #m_pDeferredTransitionFrame_SETTER_INFO:
+    //
+    //        .
+    //          On a "brand new" thread, the m_pDeferredTransitionFrame field is set to
+    //          TOP_OF_STACK_MARKER (and is therefore NOT set to null).
+    //
+    //        .
+    //          As the thread runs, there are lots of paths which will result in
+    //          m_pDeferredTransitionFrame attaining a non-null value (e.g., whenever any normal managed
+    //          object allocation on that thread cannot be satisfied from the alloc context and needs to
+    //          call through to RhpGcAlloc)
+    //
+    //        .
+    //          There do NOT appear to be any paths which will set the m_pDeferredTransitionFrame value
+    //          back to null once one of these events has occurred on a given thread.
+    //
+    //    .
+    //      As a result:
+    //
+    //        .
+    //          m_pDeferredTransitionFrame will never be null, so the assert below will never fire.
+    //
+    //        .
+    //          In many cases (especially on threads which have run little or no managed code),
+    //          m_pDeferredTransitionFrame will be set to TOP_OF_STACK_MARKER.
+    //
+    //            .
+    //              Note that, relative to the operation of this function and the eventual matching call to
+    //              Thread::DisablePreemptiveMode, TOP_OF_STACK_MARKER is generally a "valid" value which
+    //              will not lead to any unpredictable behavior.
+    //
+    //        .
+    //          Most concerning, it is extremely easy for a thread to end up carring a
+    //          m_pDeferredTransitionFrame value which is not null and is not TOP_OF_STACK_MARKER but is
+    //          "stale" and has no meaning relative to the current state of the thread.
+    //
+    //            .
+    //              Specifically, in these cases the stale m_pDeferredTransitionFrame value will generally
+    //              point to an area of the thread stack
+    //
+    //                .
+    //                  which held valid PInvokeTransitionFrame content at the time when the address was written
+    //                  into the m_pDeferredTransitionFrame field,
+    //
+    //                .
+    //                  but now just points to a "random" area of the current thread's stack that has very
+    //                  likely been overwritten with unrelated content during the thread execution which has
+    //                  occurred in the meantime.
+    //
+    //            .
+    //              Note that, relative to the operation of this function and the eventual matching call to
+    //              Thread::DisablePreemptiveMode, this kind of stale address is generally NOT a "valid"
+    //              value and can easily lead to unpredictable behavior.
+    //
+    //            .
+    //              For example, if this thread goes on to trigger a GC with the stale m_pDeferredTransitionFrame
+    //              value in place, then when Thread::GcScanRoots scans this thread it will try to use the
+    //              m_pDeferredTransitionFrame as the "starting state" for the stack walk, and
+    //              StackFrameIterator initialization will load and interact with "random" stale stack
+    //              content.
+    //
+
+    ASSERT(
+        m_pDeferredTransitionFrame != NULL
+    );
+
+
+
+    //
+    // <InOriginal>
+    // Set preemptive mode.
+    // </InOriginal>
+    //
+
+    VolatileStoreWithoutBarrier(
+        ptrToSlot: &m_pTransitionFrame,
+        valueToStore: m_pDeferredTransitionFrame
+    );
+
+
+
+    return;
+}
+
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+//
+// Tree (as of e839d51ba3e957ab3890a4e8c83db17d3f0f014e):
+//
+//      Thread::DisablePreemptiveMode
+//          |
+//          +-- CLREventStatic::Wait [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- ETW::GCLog::ForceGCForDiagnostics [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- RhpCollect [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- RhpGetGcTotalMemory [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- RhpStartNoGCRegion [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- RhAllocateNewArray [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- RhAllocateNewObject [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- ThreadStore::LockThreadStore [[ see the Thread::EnablePreemptiveMode caller tree for usage details ]]
+//          |
+//          +-- GCToEEInterface::DisablePreemptiveGC
+//                  [[
+//                      ThreadStore::GetCurrentThread()->DisablePreemptiveMode();
+//                  ]]
+//
+// Notes:
+//
+//    .
+//      Like Thread::EnablePreemptiveMode, this function is exposed to the
+//      #STALE_m_pDeferredTransitionFrame_HAZARD.
+//
+//    .
+//      Every call to this function matches a corresponding preceding call to
+//      Thread::EnablePreemptiveMode.
+//
+
+void
+Thread::DisablePreemptiveMode(
+    )
+{
+
+
+    ASSERT(
+        ThreadStore::GetCurrentThread() == this
+    );
+
+
+
+    //
+    // <InOriginal>
+    // Must be in cooperative mode when checking the trap flag.
+    // </InOriginal>
+    //
+
+    VolatileStoreWithoutBarrier(
+        ptrToSlot: &m_pTransitionFrame,
+        valueToStore: NULL
+    );
+
+
+
+    if (ThreadStore::IsTrapThreadsRequested())
+    {
+
+
+        if (this != ThreadStore::GetSuspendingThread())
+        {
+
+
+            //
+            // Wait for the completion of any GC which might have already observed a non-null cached
+            // transition frame for the current thread (meaning the GC may already be underway).
+            //
+
+            this->Thread::WaitForGC(
+                pTransitionFrame: m_pDeferredTransitionFrame
+            );
+
+
+
+            //
+            // When control reaches this point, it is guaranteed that no ThreadStore::SuspendAllThreads
+            // operation has observed a non-null cached transition frame for the current thread (and
+            // will generally not observe one until the eventual matching Thread::EnablePreemptiveMode
+            // call occurs).
+            //
+            ;
+
+
+        } // End of: if (this != ThreadStore::GetSuspendingThread())
+
+
+    } // End of: if (ThreadStore::IsTrapThreadsRequested())
+
+
+
+    return;
+}
+
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+//
+// This function waits for the completion of any GC which might have already observed a
+// non-null cached transition frame for the current thread (meaning the GC may already be
+// underway).
+//
+// When control returns from this function, it is guaranteed that no
+// ThreadStore::SuspendAllThreads operation has observed a non-null cached transition frame
+// for the current thread (and will generally not observe one until the eventual matching
+// Thread::EnablePreemptiveMode call occurs).
+//
+
+void
+Thread::WaitForGC(
+    PInvokeTransitionFrame* pTransitionFrame
+    )
+{
+
+
+    ASSERT(
+       !this->IsDoNotTriggerGcSet()
+    );
+
+
+
+    //
+    // <InOriginal>
+    //
+    // The wait operation below may trash the last win32 error.
+    //
+    // We save the error here so that it can be restored after the wait operation.
+    //
+    // </InOriginal>
+    //
+
+    int32_t lastErrorOnEntry = PalGetLastError();
+
+
+
+    while (TRUE)
+    {
+
+
+        //
+        // <InOriginal>
+        // Set preemptive mode.
+        // </InOriginal>
+        //
+
+        VolatileStoreWithoutBarrier(
+            ptrToSlot: &m_pTransitionFrame,
+            valueToStore: pTransitionFrame
+        );
+
+
+
+        #if defined(FEATURE_SUSPEND_REDIRECTION)
+
+
+
+            this->ClearState(
+                TSF_Redirected
+            );
+
+
+        #endif // defined(FEATURE_SUSPEND_REDIRECTION)
+
+
+
+        RedhawkGCInterface::WaitForGCCompletion();
+
+
+
+        //
+        // <InOriginal>
+        // Must be in cooperative mode when checking the trap flag.
+        // </InOriginal>
+        //
+
+        VolatileStoreWithoutBarrier(
+            ptrToSlot: &m_pTransitionFrame,
+            valueToStore: NULL
+        );
+
+
+
+        //
+        // If the trap flag is observed to be clear AFTER clearing the "m_pTransitionFrame" field,
+        // then it is guaranteed that no ThreadStore::SuspendAllThreads operation is underway, and
+        // that any future operation will observe the null "m_pTransitionFrame" value that was
+        // published above.
+        //
+
+        if (!ThreadStore::IsTrapThreadsRequested())
+        {
+            goto SuspendAllThreadsCannotObserveANonNullTransitionFrameUntilThisThreadReentersPreemptiveMode;
+        }
+
+
+
+        //
+        // Control reaches this point if and only if there is a chance that the trap flag was set
+        // BEFORE clearing the "m_pTransitionFrame" field, implying a chance that the associated
+        // ThreadStore::SuspendAllThreads operation was able to observe and cache a non-null
+        // transition frame pointer for this thread.
+        //
+        // Since this new GC may already be underway (in the case where it did managed to cache a
+        // non-null transition frame for this thread), there is no safe choice but to re-loop to
+        // block until the GC completes.
+        //
+
+        continue;
+
+
+    }
+    while (ThreadStore::IsTrapThreadsRequested());
+
+
+
+    UNREACHABLE();
+
+
+
+SuspendAllThreadsCannotObserveANonNullTransitionFrameUntilThisThreadReentersPreemptiveMode:
+
+
+
+    //
+    // <InOriginal>
+    // Restore the saved error.
+    // </InOriginal>
+    //
+
+    PalSetLastError(
+        lastErrorOnEntry
+    );
+
+
+
+    return;
+}
+
+
+
+
+
+
+
+{nativeaot\Runtime\gcrhenv.cpp}
+
+
+//
+// <InOriginal>
+//
+// Allocate an object on the GC heap.
+//
+// Arguments:
+//
+//      pEEType - Type of the object.
+//
+//      uFlags - GC type flags (see gc.h GC_ALLOC_*).
+//
+//      numElements - Number of array elements.
+//
+//      pTransitionFrame - Transition frame to make stack crawlable.
+//
+// Return value:
+//
+//      Returns a pointer to the object allocated or NULL on failure.
+//
+// </InOriginal>
+//
+// Calls to this function appear to only arrive via assembly-language helpers.  In the
+// amd64 product, calls specifically appear to arrive only along the following stack:
+//
+//      RhpGcAlloc [[ in the amd64 product ]]
+//          |
+//          +-- RhpNewObject {nativeaot\Runtime\amd64\AllocFast.asm}
+//                  |
+//                  +-- RhpNewFast [[ branches to RhpNewObjcet only when simple alloc_context increment isn't possible ]]
+//                  |
+//                  +-- RhpNewFinalizable [[ unconditionally branches to RhpNewObject ]]
+//          |
+//          +-- RhpNewArrayRare {nativeaot\Runtime\amd64\AllocFast.asm}
+//                  |
+//                  +-- RhpNewString [[ branches to RhpNewArrayRare only when simple alloc_context increment isn't possible ]]
+//                  |
+//                  +-- RhpNewArray [[ branches to RhpNewArrayRare only when simple alloc_context increment isn't possible ]]
+//
+// Overall, this function is the high-level language component of the "slow path" which is
+// used when the fast assembly-language allocation helpers are not able to satisfy the
+// allocation via alloc_context increment (which amounts to just a tiny handful of
+// instructions executed in a "GC-starving" FCall-like call which has been made from
+// managed code into the runtime).
+//
+
+COOP_PINVOKE_HELPER(
+    void*,
+RhpGcAlloc, (
+        MethodTable* pEEType,
+        uint32_t uFlags,
+        uintptr_t numElements,
+        PInvokeTransitionFrame* pTransitionFrame
+    ))
+{
+
+
+    Thread* pThread = ThreadStore::GetCurrentThread();
+
+
+
+    //
+    // <InOriginal>
+    //
+    // The allocation fast path is an asm helper that runs in coop mode and handles most
+    // allocation cases.
+    //
+    // The helper can also be tail-called.
+    //
+    // That is desirable for the fast path.
+    //
+    // Here we are on the slow(er) path when we need to call into GC.
+    //
+    // The fast path pushes a frame and calls here.
+    //
+    // In extremely rare cases the caller of the asm helper is hijacked and the helper is
+    // tail-called.
+    //
+    // As a result the asm helper may capture a hijacked return address into the transition
+    // frame.
+    //
+    // We do not want to put the burden of preventing such scenario on the fast path.
+    //
+    // Instead we will check for "hijacked frame" here and un-hijack m_RIP.
+    //
+    // We do not need to re-hijack when we are done, since m_RIP is discarded in
+    // POP_COOP_PINVOKE_FRAME.
+    //
+    // </InOriginal>
+    //
+    ;
+
+
+
+    #if defined(TARGET_X86) || defined(TARGET_AMD64)
+
+
+
+        if (Thread::IsHijackTarget(pTransitionFrame->m_RIP))
+        {
+
+
+            ASSERT(
+                pThread->IsHijacked()
+            );
+
+
+
+            pTransitionFrame->m_RIP = pThread->GetHijackedReturnAddress();
+
+
+        } // End of: if (Thread::IsHijackTarget(pTransitionFrame->m_RIP))
+
+
+
+    #else // !defined(TARGET_X86) && !defined(TARGET_AMD64)
+
+
+
+        //
+        // <InOriginal>
+        //
+        // Notes:
+        //
+        //    .
+        //      The x64 fixup above would not be sufficient on ARM64 and similar architectures since
+        //      m_RIP is used to restore LR in POP_COOP_PINVOKE_FRAME.
+        //
+        //    .
+        //      However, this entire scenario is not a problem on architectures where the return address
+        //      is in a register as that makes tail-calling methods not hijackable.
+        //
+        //    .
+        //      (See GetReturnAddressHijackInfo for detailed reasons in the context of ARM64.)
+        //
+        // </InOriginal>
+        //
+
+        ASSERT(
+           !(
+                Thread::IsHijackTarget(
+                    pTransitionFrame->m_RIP
+                )
+            )
+        );
+
+
+    #endif // !defined(TARGET_X86) && !defined(TARGET_AMD64)
+
+
+
+    pThread->Thread::SetDeferredTransitionFrame(
+        pTransitionFrame: pTransitionFrame
+    );
+
+
+
+    return GcAllocInternal(
+        pEEType,
+        uFlags,
+        numElements,
+        pThread
+    );
+}
+
+
+
+
+
+
+
+{nativeaot\Runtime\threadstore.cpp}
+
+
+//
+// Tree:
+//
+//      ThreadStore::SuspendAllThreads
+//
+//          |
+//          +-- [[ waitForGCEvent = true ]]
+//                  |
+//                  +-- GCToEEInterface::SuspendEE
+//
+//          |
+//          +-- [[ waitForGCEvent = false ]]
+//                  |
+//                  +-- ThreadStore::InitiateThreadAbort
+//                  |
+//                  +-- ThreadStore::CancelThreadAbort
+//
+
+void
+ThreadStore::SuspendAllThreads(
+    bool waitForGCEvent
+    )
+{
+
+
+    Thread* pThisThread = ThreadStore::GetCurrentThreadIfAvailable();
+
+
+
+    RhpSuspendingThread = pThisThread;
+
+
+
+    if (waitForGCEvent)
+    {
+
+
+        GCHeapUtilities::GetGCHeap()->ResetWaitForGCEvent();
+
+
+    } // End of: if (waitForGCEvent)
+
+
+
+    //
+    // <InOriginal>
+    // Set the global trap for pinvoke leave and return.
+    // </InOriginal>
+    //
+
+    RhpTrapThreads |= (uint32_t)TrapThreadsFlags::TrapThreads;
+
+
+
+    //
+    // <InOriginal>
+    //
+    // Our lock-free algorithm depends on flushing write buffers of all processors running RH
+    // code.
+    //
+    // The reason for this is that we essentially implement Dekker's algorithm, which requires
+    // write ordering.
+    //
+    // </InOriginal>
+    //
+
+    PalFlushProcessWriteBuffers();
+
+
+
+    int retries = 0;
+
+
+
+    int prevRemaining = 0;
+
+
+
+    int remaining = 0;
+
+
+
+    bool observeOnly = false;
+
+
+
+    while (TRUE)
+    {
+
+
+        prevRemaining = remaining;
+
+
+
+        remaining = 0;
+
+
+
+        FOREACH_THREAD(pTargetThread)
+        {
+
+
+            if (pTargetThread != pThisThread)
+            {
+
+
+                //
+                // Notes:
+                //
+                //    .
+                //      When the Thread::CacheTransitionFrameForSuspend() call below returns true, note that
+                //      this is very often an indication that the TOP_OF_STACK_MARKER sentinel has been cached
+                //      into the Thread::m_pCachedTransitionFrame field.
+                //
+                //    .
+                //      This is an important special case, generally representing a situation where the current
+                //      target thread does NOT have managed code anywhere on its stack,
+                //
+                //        .
+                //          conceptually meaning it HAS implicitly "transitioned out of managed code",
+                //
+                //        .
+                //          with the caveat that this transition is the degenerate "from birth" transition which
+                //          does NOT involve any actual preceding managed execution.
+                //
+                //    .
+                //      This case can be confusing
+                //
+                //        .
+                //          because the conceptual and implemented model generally talks in terms of a
+                //          `"managed -> native" transition' having been captured,
+                //
+                //        .
+                //          while this is literally true only when the "managed" side of the transition is defined
+                //          as "the baseline execution environment which conceptually existed before the thread
+                //          jumped to its start address in native code".
+                //
+                //    .
+                //      See #THREAD_MODE_MODEL for more discussion of this topic.
+                //
+                ;
+
+
+
+                bool managedToNativeTransitionFrameHasBeenCapturedAndCachedForThisThread =
+                    pTargetThread->Thread::CacheTransitionFrameForSuspend();
+
+
+
+                if (!managedToNativeTransitionFrameHasBeenCapturedAndCachedForThisThread)
+                {
+
+
+                    //
+                    // The current thread is NOT guaranteed to be corraled into native code, meaning it counts
+                    // as a "remaining thread" that still needs to be rendezvoused before this
+                    // ThreadStore::SuspendAllThreads operation can complete.
+                    //
+
+                    remaining++;
+
+
+
+                    if (!observeOnly)
+                    {
+
+
+                        //
+                        // Ensure that a return-address-hijack is installed on the target thread to ensure that all
+                        // possible attempts are being made to rendezvous it into native code.
+                        //
+
+                        pTargetThread->Hijack();
+
+
+                    } // End of: if (!observeOnly)
+
+
+                } // End of: if (!managedToNativeTransitionFrameHasBeenCapturedAndCachedForThisThread)
+
+
+            } // End of: if (pTargetThread != pThisThread)
+
+
+
+            continue;
+
+
+        }
+        END_FOREACH_THREAD
+
+
+
+        if (remaining == 0)
+        {
+            goto AllThreadsHaveBeenSuspended;
+        }
+
+
+
+        //
+        // <InOriginal>
+        //
+        // If we see progress or have just done a hijacking pass, then do not hijack in the next
+        // iteration.
+        //
+        // </InOriginal>
+        //
+        ;
+
+
+
+        bool neitherProgressNorHijacksWereAddedDuringTheCurrentPass = (
+                (remaining >= prevRemaining)
+            &&
+                observeOnly
+        );
+
+
+
+        if (!neitherProgressNorHijacksWereAddedDuringTheCurrentPass)
+        {
+
+
+            //
+            // <InOriginal>
+            // 5 usec delay, then check for more progress.
+            // </InOriginal>
+            //
+            ;
+
+
+
+            SpinWait(
+                -1
+              ,
+                5
+            );
+
+
+
+            observeOnly = true;
+
+
+        }
+        else // I.e., if (neitherProgressNorHijacksWereAddedDuringTheCurrentPass)
+        {
+
+
+            SpinWait(
+                retries++
+              ,
+                100
+            );
+
+
+
+            observeOnly = false;
+
+
+
+            //
+            // <InOriginal>
+            //
+            // Make sure our spining is not starving other threads, but not too often.
+            //
+            // This can cause a 1-15 msec delay, depending on OS, and that is a lot while very rarely
+            // needed, since threads are supposed to be releasing their CPUs.
+            //
+            // </InOriginal>
+            //
+
+            if ((retries & 127) == 0)
+            {
+
+
+                PalSwitchToThread();
+
+
+            } // End of: if ((retries & 127) == 0)
+
+
+        } // End of: else // I.e., if (neitherProgressNorHijacksWereAddedDuringTheCurrentPass)
+
+
+
+        continue;
+
+
+    } // End of: while (TRUE)
+
+
+
+    UNREACHABLE();
+
+
+
+AllThreadsHaveBeenSuspended:
+
+
+
+    //
+    // <InOriginal>
+    //
+    // Flush the store buffers on all CPUs, to ensure that all changes made so far are seen by
+    // the GC threads.
+    //
+    // This only matters on weak memory ordered processors as the strong memory ordered
+    // processors wouldn't have reordered the relevant writes.
+    //
+    // This is needed to synchronize threads that were running in preemptive mode thus were
+    // left alone by suspension to flush their writes that they made before they switched to
+    // preemptive mode.
+    //
+    // </InOriginal>
+    //
+
+    #if defined(TARGET_ARM) || defined(TARGET_ARM64)
+
+
+        PalFlushProcessWriteBuffers();
+
+
+    #endif // defined(TARGET_ARM) || defined(TARGET_ARM64)
+
+
+
+    return;
+}
+
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+//
+// <InOriginal>
+//
+// This is used by the suspension code when driving all threads to unmanaged code.
+//
+// It is performed after the FlushProcessWriteBuffers call so that we know that once the
+// thread reaches unmanaged code, it won't reenter managed code.
+//
+// Therefore, the m_pTransitionFrame is stable.
+//
+// Except that it isn't.
+//
+// The return-to-managed sequence will temporarily overwrite the m_pTransitionFrame to be
+// null.
+//
+// As a result, we need to cache the non-zero m_pTransitionFrame value that we saw during
+// suspend so that stackwalks can read this value without concern of sometimes reading a
+// null value, as would be the case if they read m_pTransitionFrame directly.
+//
+// Return value:
+//
+//      Returns true if it successfully cached the transition frame (i.e. the thread was in
+//      unmanaged).
+//
+//      Returns false otherwise.
+//
+// Warning:
+//
+//      This method is called by suspension while one thread is interrupted in a random
+//      location, possibly holding random locks.
+//
+//      It is unsafe to use blocking APIs or allocate in this method.
+//
+//      Please ensure that all methods called by this one also have this warning.
+//
+// </InOriginal>
+//
+
+bool
+Thread::CacheTransitionFrameForSuspend(
+    )
+{
+
+
+    if (m_pCachedTransitionFrame != NULL)
+    {
+
+
+        //
+        // The "managed -> native" transition frame has already been cached for this thread (and
+        // will generally remain cached until it is cleared during ThreadStore::ResumeAllThreads).
+        //
+
+        return true;
+
+
+    }
+    else // I.e., if (m_pCachedTransitionFrame == NULL)
+    {
+
+
+        //
+        // <InOriginal>
+        //
+        // Once we see a thread posted a transition frame we can assume it will not enter
+        // cooperative mode.
+        //
+        // It may temporarily set the frame to NULL when checking the trap flag, but will revert.
+        //
+        // We can safely return true here and cache the frame.
+        //
+        // Make sure compiler emits only one read.
+        //
+        // </InOriginal>
+        //
+        ;
+
+
+
+        PInvokeTransitionFrame* temp = VolatileLoadWithoutBarrier(
+            &m_pTransitionFrame
+        );
+
+
+
+        if (temp == NULL)
+        {
+
+
+            //
+            // This thread has not published any visible "managed -> native" transition frame.  Return
+            // false to indicate that no transition frame has been cached (which, e.g., means caller
+            // code in ThreadStore::SuspendAllThreads will wait and check this thread again later).
+            //
+
+            return false;
+
+
+        }
+        else // I.e., if (temp != NULL)
+        {
+
+
+            //
+            // The volatile load above has captured a "managed -> native" transition frame that has
+            // been published for this thread.
+            //
+            // Cache the address of this transition frame into the m_pCachedTransitionFrame field, then
+            // return true to indicate that the transition frame has now been successfully cached (and
+            // will generally remain cached until it is cleared during ThreadStore::ResumeAllThreads).
+            //
+            // Notes:
+            //
+            //    .
+            //      Note that the captured "m_pCachedTransitionFrame" value will very often be the
+            //      TOP_OF_STACK_MARKER sentinel.
+            //
+            //    .
+            //      This is an important special case, generally representing a situation where this thread
+            //      does NOT have managed code anywhere on its stack,
+            //
+            //        .
+            //          conceptually meaning it HAS implicitly "transitioned out of managed code",
+            //
+            //        .
+            //          with the caveat that this transition is the degenerate "from birth" transition which
+            //          does NOT involve any actual preceding managed execution.
+            //
+            //    .
+            //      This case can be confusing
+            //
+            //        .
+            //          because the conceptual and implemented model generally talks in terms of a
+            //          `"managed -> native" transition' having been captured,
+            //
+            //        .
+            //          while this is literally true only when the "managed" side of the transition is defined
+            //          as "the baseline execution environment which conceptually existed before the thread
+            //          jumped to its start address in native code".
+            //
+            //    .
+            //      See #THREAD_MODE_MODEL for more discussion of this topic.
+            //
+            ;
+
+
+
+            m_pCachedTransitionFrame = temp;
+
+
+
+            return true;
+
+
+        } // End of: else // I.e., if (temp != NULL)
+
+        UNREACHABLE();
+
+    } // End of: else // I.e., if (m_pCachedTransitionFrame == NULL)
+
+
+
+    UNREACHABLE();
+}
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+bool
+Thread::IsCurrentThreadInCooperativeMode(
+    )
+{
+
+
+    #if !defined(DACCESS_COMPILE)
+
+
+
+        ASSERT(
+            ThreadStore::GetCurrentThread() == this
+        );
+
+
+    #endif // !defined(DACCESS_COMPILE)
+
+
+
+    return ((m_pTransitionFrame == NULL) ? true : false);
+}
+
+
+
+
+
+
+{nativeaot\Runtime\threadstore.h}
+
+
+#define FOREACH_THREAD(p_thread_name) <
+
+
+    {
+
+
+        ThreadStore::Iterator __threads;
+
+
+
+        Thread* p_thread_name;
+
+
+
+        while ((p_thread_name = __threads.GetNext()) != NULL)
+        {
+
+
+> // End of: FOREACH_THREAD macro
+
+
+
+
+{nativeaot\Runtime\threadstore.h}
+
+
+#define END_FOREACH_THREAD <
+
+
+        } // End of: while ((p_thread_name = __threads.GetNext()) != NULL)
+
+
+    } // End of: Anonymous scope opened in FOREACH_THREAD
+
+
+> // End of: END_FOREACH_THREAD macro
+
+
+
+
+
+
+{nativeaot\Runtime\threadstore.cpp}
+
+
+ThreadStore::Iterator::Iterator(
+    )
+      :
+        m_pCurrentPosition(
+            ThreadStore::GetThreadStore()->m_ThreadList.GetHead()
+        )
+{
+
+
+    //
+    // <InOriginal>
+    //
+    // GC threads may access threadstore without locking as the lock taken during suspension
+    // effectively held by the entire GC.
+    //
+    // Others must take a lock.
+    //
+    // </InOriginal>
+    //
+
+    if (!GetThreadStore()->m_Lock.OwnedByCurrentThread())
+    {
+
+
+        ASSERT(
+                ThreadStore::GetCurrentThread()->IsGCSpecial()
+            &&
+                GCHeapUtilities::IsGCInProgress()
+        );
+
+
+    } // End of: if (!GetThreadStore()->m_Lock.OwnedByCurrentThread())
+
+
+
+    return;
+}
+
+
+
+
+
+
+{nativeaot\Runtime\threadstore.cpp}
+
+
+PTR_Thread
+ThreadStore::Iterator::GetNext()
+{
+
+
+    PTR_Thread pResult = m_pCurrentPosition;
+
+
+
+    if (pResult != NULL)
+    {
+
+
+        m_pCurrentPosition = pResult->m_pNext;
+
+
+    } // End of: if (pResult != NULL)
+
+
+
+    return pResult;
+}
+
+
+
+
+
+
+
+{nativeaot\Runtime\threadstore.cpp}
+
+
+//
+// See the ThreadStore::AttachCurrentThread(bool) listing for caller details.
+//
+
+static
+void
+ThreadStore::AttachCurrentThread(
+    )
+{
+
+
+    ThreadStore::AttachCurrentThread(
+        fAcquireThreadStoreLock: true
+    );
+
+
+
+    return;
+}
+
+
+
+
+
+{nativeaot\Runtime\threadstore.cpp}
+
+
+//
+// Tree (as of e839d51ba3e957ab3890a4e8c83db17d3f0f014e):
+//
+//          //
+//          // Note that calls through the ThreadStore::AttachCurrentThread() wrapper are listed as
+//          // if they were direct calls into this function.
+//          //
+//
+//      ThreadStore::AttachCurrentThread(bool)
+//
+//          |
+//          +-- [[ fAcquireThreadStoreLock = false ]]
+//
+//                  |
+//                  +-- {"threadStub" lambda function}
+//                          [[
+//                              if (pStartContext->m_isSuspendable)
+//                              {
+//                                  // Initialize the Thread for this thread. The false being passed indicates that the thread store lock
+//                                  // should not be acquired as part of this operation. This is necessary because this thread is created in
+//                                  // the context of a garbage collection and the lock is already held by the GC.
+//                                  ASSERT(GCHeapUtilities::IsGCInProgress());
+//                                  ThreadStore::AttachCurrentThread(false);
+//                              }
+//
+//                              ThreadStore::RawGetCurrentThread()->SetGCSpecial();
+//                              ...
+//                              realStartRoutine(realContext);
+//                              return 0;
+//                          ]]
+//                      ...
+//                      PalStartBackgroundGCThread
+//                      GCToEEInterface::CreateThread
+//                      ...
+//
+//          |
+//          +-- [[ fAcquireThreadStoreLock = true ]]
+//
+//                  |
+//                  +-- Thread::ReversePInvokeAttachOrTrapThread
+//                          [
+//                              Note that the "m_pTransitionFrame" clearing below is reverted in the eventual matching
+//                              Thread::InlineReversePInvokeReturn.
+//
+//                              -----------------
+//
+//                              if (!IsStateSet(TSF_Attached))
+//                              {
+//                                  if (g_RuntimeInitializationCallback != NULL && g_RuntimeInitializingThread != this)
+//                                  {
+//                                      EnsureRuntimeInitialized();
+//                                  }
+//
+//                                  ThreadStore::AttachCurrentThread();
+//                              }
+//
+//                              // If the thread is already in cooperative mode, this is a bad transition.
+//                              if (IsCurrentThreadInCooperativeMode())
+//                              {
+//                                  // The TSF_DoNotTriggerGc mode is handled by the fast path (InlineTryFastReversePInvoke or equivalent assembly code)
+//                                  ASSERT(!IsDoNotTriggerGcSet());
+//                                  PalPrintFatalError("\nFatal error. Invalid Program: attempted to call a UnmanagedCallersOnly method from managed code.\n");
+//                                  RhFailFast();
+//                              }
+//
+//                              pFrame->m_savedPInvokeTransitionFrame = m_pTransitionFrame;
+//                              VolatileStoreWithoutBarrier(&m_pTransitionFrame, NULL);
+//
+//                              if (ThreadStore::IsTrapThreadsRequested())
+//                              {
+//                                  WaitForGC(pFrame->m_savedPInvokeTransitionFrame);
+//                              }
+//                          ]]
+//
+//                  |
+//                  +-- FinalizerStart {nativeaot\Runtime\FinalizerHelpers.cpp}
+//                          [[
+//                              Note that the ProcessFinalizers call is a reverse PInvoke.
+//
+//                              -----------------
+//
+//                              ThreadStore::AttachCurrentThread();
+//                              Thread * pThread = ThreadStore::GetCurrentThread();
+//                              ...
+//                              // Run the managed portion of the finalizer. This call will never return.
+//                              ProcessFinalizers();
+//                          ]]
+//
+//                  |
+//                  +-- ETW::GCLog::ForceGCForDiagnostics
+//                          [[
+//                              Note that the "pThread->DisablePreemptiveMode()" operation below (along with the
+//                              Thread::GcScanRoots processing of this thread which will occur during the triggered GC)
+//                              is silently assuming that a valid m_pDeferredTransitionFrame has been configured for the
+//                              current thread.
+//
+//                              ------------------
+//
+//                              ThreadStore::AttachCurrentThread();
+//                              Thread* pThread = ThreadStore::GetCurrentThread();
+//                              pThread->DisablePreemptiveMode();
+//                              hr = GCHeapUtilities::GetGCHeap()->GarbageCollect(-1, FALSE, collection_blocking);
+//                              pThread->EnablePreemptiveMode();
+//                              return hr;
+//                          ]]
+//
+//                  |
+//                  +-- ep_rt_aot_setup_thread
+//                          [[
+//                              ThreadStore::AttachCurrentThread();
+//                              return ThreadStore::GetCurrentThread();
+//                          ]]
+//
+
+static
+void
+ThreadStore::AttachCurrentThread(
+    bool fAcquireThreadStoreLock
+    )
+{
+
+
+    //
+    // <InOriginal>
+    //
+    // Step 1: ThreadStore::InitCurrentThread
+    //
+    // Step 2: Add this thread to the ThreadStore.
+    //
+    // </InOriginal>
+    //
+    ;
+
+
+
+    //
+    // <InOriginal>
+    //
+    // The thread has been constructed, during which some data is initialized (like which
+    // RuntimeInstance the thread belongs to), but it hasn't been added to the thread store
+    // because doing so takes a lock, which we want to avoid at construction time because the
+    // loader lock is held then.
+    //
+    // </InOriginal>
+    //
+    ;
+
+
+
+    Thread* pAttachingThread = RawGetCurrentThread();
+
+
+
+    if (pAttachingThread->IsInitialized())
+    {
+
+
+        //
+        // <InOriginal>
+        // The thread was already initialized, so it is already attached.
+        // </InOriginal>
+        //
+
+        return;
+
+
+    }
+    else // I.e., if (!pAttachingThread->IsInitialized())
+    {
+
+
+        PalAttachThread(
+            pAttachingThread
+        );
+
+
+
+        //
+        // <InOriginal>
+        // Init the thread buffer.
+        // </InOriginal>
+        //
+        // Notes:
+        //
+        //    .
+        //      As shown in the callee listing, this step is GUARANTEED to set both "m_pTransitionFrame"
+        //      and "m_pDeferredTransitionFrame" to the TOP_OF_STACK_MARKER sentinel.
+        //
+
+        pAttachingThread->Thread::Construct();
+
+
+
+        ASSERT(
+            pAttachingThread->m_ThreadStateFlags == Thread::TSF_Unknown
+        );
+
+
+
+        //
+        // <InOriginal>
+        //
+        // fAcquireThreadStoreLock is false when threads are created/attached for GC purpose.
+        //
+        // In such case the lock is already held and GC takes care to ensure safe access to the
+        // threadstore.
+        //
+        // </InOriginal>
+        //
+        ;
+
+
+
+        ThreadStore* pTS = ThreadStore::GetThreadStore();
+
+
+
+        CrstHolderWithState threadStoreLock(
+            &pTS->m_Lock,
+            fAcquireThreadStoreLock
+        );
+
+
+
+        //
+        // <InOriginal>
+        // Set thread state to be attached
+        // </InOriginal>
+        //
+        ;
+
+
+
+        ASSERT(
+            pAttachingThread->m_ThreadStateFlags == Thread::TSF_Unknown
+        );
+
+
+
+        pAttachingThread->m_ThreadStateFlags = Thread::TSF_Attached;
+
+
+
+        pTS->m_ThreadList.PushHead(
+            pAttachingThread
+        );
+
+
+
+        return;
+
+
+    } // End of: else // I.e., if (!pAttachingThread->IsInitialized())
+
+
+
+    UNREACHABLE();
+}
+
+
+
+
+
+
+{nativeaot\Runtime\thread.cpp}
+
+
+void
+Thread::Construct(
+    )
+{
+
+
+    C_ASSERT(
+        OFFSETOF__Thread__m_pTransitionFrame == (offsetof(Thread, m_pTransitionFrame))
+    );
+
+
+
+    //
+    // <InOriginal>
+    //
+    // Notes:
+    //
+    //    .
+    //      We do not explicitly defer to the GC implementation to initialize the alloc_context.
+    //
+    //    .
+    //      The alloc_context will be initialized to 0 via the static initialization of
+    //      tls_CurrentThread.
+    //
+    //    .
+    //      If the alloc_context ever needs different initialization, a matching change to the
+    //      tls_CurrentThread static initialization will need to be made.
+    //
+    // </InOriginal>
+    //
+    ;
+
+
+
+    m_pTransitionFrame = TOP_OF_STACK_MARKER;
+
+
+
+    m_pDeferredTransitionFrame = TOP_OF_STACK_MARKER;
+
+
+
+    m_hPalThread = INVALID_HANDLE_VALUE;
+
+
+
+    m_threadId.SetToCurrentThread();
+
+
+
+    HANDLE curProcessPseudo = PalGetCurrentProcess();
+
+
+
+    HANDLE curThreadPseudo = PalGetCurrentThread();
+
+
+
+    //
+    // <InOriginal>
+    //
+    // This can fail!
+    //
+    // Users of m_hPalThread must be able to handle INVALID_HANDLE_VALUE!!
+    //
+    // </InOriginal>
+    //
+
+    PalDuplicateHandle(
+        curProcessPseudo,
+        curThreadPseudo,
+        curProcessPseudo,
+        &m_hPalThread,
+        0,      // ignored
+        FALSE,  // inherit
+        DUPLICATE_SAME_ACCESS
+    );
+
+
+
+    bool successfullyLoadedTheStackBoundsForThisThread =
+        PalGetMaximumStackBounds(
+            &m_pStackLow,
+            &m_pStackHigh
+        );
+
+
+    if (!successfullyLoadedTheStackBoundsForThisThread)
+    {
+        RhFailFast();
+    }
+
+
+
+    #if defined(STRESS_LOG)
+
+
+
+        if (StressLog::StressLogOn(~0u, 0))
+        {
+
+
+            m_pThreadStressLog = StressLog::CreateThreadStressLog(
+                this
+            );
+
+
+        } // End of: if (StressLog::StressLogOn(~0u, 0))
+
+
+    #endif // defined(STRESS_LOG)
+
+
+
+    //
+    // <InOriginal>
+    //
+    // Everything else should be initialized to 0 via the static initialization of
+    // tls_CurrentThread.
+    //
+    // </InOriginal>
+    //
+    ;
+
+
+
+    ASSERT(
+        m_pThreadLocalStatics == NULL
+    );
+
+
+
+    ASSERT(
+        m_pInlinedThreadLocalStatics == NULL
+    );
+
+
+
+    ASSERT(
+        m_pGCFrameRegistrations == NULL
+    );
+
+
+
+    ASSERT(
+        m_threadAbortException == NULL
+    );
+
+
+
+    #if defined(FEATURE_SUSPEND_REDIRECTION)
+
+
+
+        ASSERT(
+            m_redirectionContextBuffer == NULL
+        );
+
+
+    #endif // defined(FEATURE_SUSPEND_REDIRECTION)
+
+
+
+    ASSERT(
+        m_interruptedContext == NULL
+    );
+
+
+
+    return;
+}
+
+
+
+
+
+
+{nativeaot\Runtime\eventtrace_gcheap.cpp}
+
+
+//
+// <InOriginal>
+//
+// Contains code common to profapi and ETW scenarios where the profiler wants to force the
+// CLR to perform a GC.
+//
+// The important work here is to create a managed thread for the current thread BEFORE the
+// GC begins.
+//
+// On both ETW and profapi threads, there may not yet be a managed thread object.
+//
+// But some scenarios require a managed thread object be present.
+//
+// Return Value:
+//
+//      HRESULT indicating success or failure.
+//
+// Assumptions:
+//
+//      Caller should ensure that the EE has fully started up and that the GC heap is
+//      initialized enough to actually perform a GC
+//
+// </InOriginal>
+//
+// Tree:
+//
+//      ETW::GCLog::ForceGCForDiagnostics
+//      ETW::GCLog::ForceGC
+//      EtwCallbackCommon {nativeaot\Runtime\eventtrace.cpp}
+//          |
+//          +-- EtwCallback {nativeaot\Runtime\eventtrace.cpp}
+//          |
+//          +-- EventPipeEtwCallbackDotNETRuntime {nativeaot\Runtime\eventtrace.cpp}
+//          |
+//          +-- EventPipeEtwCallbackDotNETRuntimePrivate {nativeaot\Runtime\eventtrace.cpp}
+//
+// #BUG
+//
+// As shown at #ROOT_CAUSE, the current implementation of this function is prone to the
+// #STALE_m_pDeferredTransitionFrame_HAZARD and is prone to crashes or undefined behavior
+// as a result.
+//
+
+static
+HRESULT
+ETW::GCLog::ForceGCForDiagnostics(
+    )
+{
+
+
+    CONTRACTL
+    {
+        NOTHROW;
+        GC_TRIGGERS;
+        MODE_ANY;
+    }
+    CONTRACTL_END;
+
+
+
+    HRESULT hr = E_FAIL;
+
+
+
+    _ASSERTE(
+        GCHeapUtilities::IsGCHeapInitialized()
+    );
+
+
+
+    ThreadStore::AttachCurrentThread();
+
+
+
+    Thread* pThread = ThreadStore::GetCurrentThread();
+
+
+
+    //
+    // <InOriginal>
+    //
+    // While doing the GC, much code assumes and asserts the thread doing the GC is in
+    // cooperative mode.
+    //
+    // </InOriginal>
+    //
+
+    pThread->Thread::DisablePreemptiveMode();
+
+
+
+    hr = GCHeapUtilities::GetGCHeap()->GarbageCollect(
+        -1,     // all generations should be collected
+        FALSE,  // low_memory_p
+        collection_blocking
+    );
+
+
+
+    //
+    // <InOriginal>
+    //
+    // In case this thread (generated by the ETW OS APIs) hangs around a while, better stick it
+    // back into preemptive mode, so it doesn't block any other GCs.
+    //
+    // </InOriginal>
+    //
+
+    pThread->Thread::EnablePreemptiveMode();
+
+
+
+    return hr;
+}
+
+
+
+

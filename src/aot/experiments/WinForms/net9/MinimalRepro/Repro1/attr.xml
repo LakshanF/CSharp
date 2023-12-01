@@ -1,0 +1,16 @@
+<linker>
+  <assembly fullname="System.ComponentModel.Primitives">
+    <type fullname="System.ComponentModel.DesignerAttribute">
+        <attribute internal="RemoveAttributeInstances" />
+    </type>
+    <type fullname="System.ComponentModel.EditorAttribute">
+        <attribute internal="RemoveAttributeInstances" />
+    </type>
+  </assembly>
+
+  <assembly fullname="System.ComponentModel.TypeConverter">
+    <type fullname="System.ComponentModel.ToolboxItemAttribute">
+        <attribute internal="RemoveAttributeInstances" />
+    </type>
+  </assembly>
+</linker>
