@@ -59,15 +59,58 @@ internal static class Program
         textBox3.DataBindings.Add(new Binding("Text", ordersTable, "OrderDate"));
         textBox3.Location = new Point(10, 100);
 
-        // Add the controls to the form.
         Form form = new Form();
         form.Controls.Add(dateTimePicker);
         form.Controls.Add(textBox);
         form.Controls.Add(textBox2);
         form.Controls.Add(textBox3);
 
-// Set the form size and display the form.
-        form.ClientSize = new Size(250, 150);
         Application.Run(form);
+
+
+        // /**
+        //     Below code will iterate through the column values via a "Next" and "Previous" value
+        // **/
+        // DataTable table = new DataTable();
+        // table.Columns.Add("Column1");
+
+        // for (int i = 0; i < 3; i++)
+        // {
+        //     table.Rows.Add($"Value {i}");
+        // }
+
+        // int index = 0;
+
+        // TextBox textBox1 = new TextBox();
+        // textBox1.DataBindings.Add("Text", table, "Column1");
+        // textBox1.Location = new Point(10, 10);
+
+        // Button nextButton = new Button();
+        // nextButton.Text = "Next";
+        // nextButton.Click += (sender, e) =>
+        // {
+        //     index = (index + 1) % table.Rows.Count;
+        //     textBox1.Text = table.Rows[index]["Column1"].ToString();
+        // };
+
+        // Button prevButton = new Button();
+        // prevButton.Text = "Previous";
+        // prevButton.Click += (sender, e) =>
+        // {
+        //     index = (index - 1 + table.Rows.Count) % table.Rows.Count;
+        //     textBox1.Text = table.Rows[index]["Column1"].ToString();
+        // };
+
+        // FlowLayoutPanel panel = new FlowLayoutPanel();
+        // panel.Controls.Add(prevButton);
+        // panel.Controls.Add(nextButton);
+        // panel.Location = new Point(10, 70);
+
+        // Form form = new Form();
+        // form.Controls.Add(panel);
+        // form.Controls.Add(textBox1);
+
+        // Application.Run(form);
+
     }
 }
