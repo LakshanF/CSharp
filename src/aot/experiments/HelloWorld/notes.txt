@@ -1,0 +1,13 @@
+Computer,3,100
+rd /s/q obj & rd /s/q bin
+rd /s/q obj & rd /s/q bin & dotnet publish
+
+rd /s/q obj & rd /s/q bin & dotnet publish /p:dependencies-file-format=dgml
+
+mstat
+C:\work\core\LakshanF\CSharp\src\aot\experiments\HelloWorld\Net8\HexGame\obj\Release\net8.0\win-x64\native\HexGame.mstat
+C:\work\core\LakshanF\CSharp\src\aot\experiments\HelloWorld\Net8\HexGameWoEP\obj\Release\net8.0\win-x64\native\HexGame.mstat
+
+exe
+C:\work\core\LakshanF\CSharp\src\aot\experiments\HelloWorld\Net8\HexGame\bin\Release\net8.0\win-x64\publish
+C:\work\core\LakshanF\CSharp\src\aot\experiments\HelloWorld\Net8\HexGameWoEP\bin\Release\net8.0\win-x64\publish

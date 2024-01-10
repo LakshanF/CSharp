@@ -23,3 +23,13 @@ C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net8.0\illinkanalyzer.exe
 
 
 C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net8.0\illinkanalyzer.exe -r Primitives.ElementMarkupObject::GetProperties linker-dependencies.xml
+
+Repo2
+
+rd /s/q c:\work\core\CurrentWork\illinkrepro\repro & c:\work\core\CurrentWork\illinkrepro\bin\Debug\net7.0\illinkrepro.exe create C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\Repro2\msbuild.binlog
+copy /Y c:\work\core\CurrentWork\winforms\artifacts\bin\System.Windows.Forms\Debug\net9.0\System.Windows.Forms.dll c:\work\core\CurrentWork\illinkrepro\repro\input
+copy /Y c:\work\core\CurrentWork3\runtime\artifacts\bin\coreclr\windows.x64.Debug\ilc\System.Private.CoreLib.dll c:\work\core\CurrentWork\illinkrepro\repro\input
+
+
+cd repro
+c:\dotnet\dotnet.exe C:\Users\lakshanf\.nuget\packages\microsoft.net.illink.tasks\9.0.0-alpha.1.23576.3\tools\net8.0\illink.dll @linker.rsp > C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\Repro_Live_Trimmed_Warnings_9.txt
