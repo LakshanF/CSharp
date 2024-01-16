@@ -67,8 +67,15 @@
             // Bind the Text property of the TextBox to the Name property of the person object
             // Specify the DataSourceUpdateMode option as OnPropertyChanged
             person = new Person();
+
+            // Currently, cant get this to work since it throws and ArgumentException ("Message=Cannot bind to the property or column Name on the DataSource. (Parameter 'dataMember')")
+            //MyBindableComponent bindableComponent = new MyBindableComponent();
+            //bindableComponent.DataSource = person;
+            //bindableComponent.DataMember = "Name";
+            //textBox1.DataBindings.Add("Text", bindableComponent, "Name");
+
             // Since the Name property is null for a default Person, textBox1's original Text property (HelloWorld) is going to be overwritten by the new binding
-            textBox1.DataBindings.Add("Text", person, "Name", false, DataSourceUpdateMode.OnPropertyChanged);
+            textBox1.DataBindings.Add("Text", person, "LaksName", false, DataSourceUpdateMode.OnPropertyChanged);
             // The above adds an implicit Binding object with the parameters
             // textBox1.DataBindings.Add(new Binding("Text", person, "Name", false, DataSourceUpdateMode.OnPropertyChanged));
 

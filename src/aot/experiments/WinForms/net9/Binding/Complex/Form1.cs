@@ -12,9 +12,10 @@ namespace WinFormsApp2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            people.Clear();
             people.Add(new Person() { Name = "Alice" });
             people.Add(new Person() { Name = "Bob" });
-            people.Add(new Person() { Name = "Charlie" });
+            //people.Add(new Person() { Name = "Charlie" });
             bindingSource.ResetBindings(false);
         }
 
@@ -31,6 +32,7 @@ namespace WinFormsApp2
     public class Person : INotifyPropertyChanged // Implement the INotifyPropertyChanged interface
     {
         private string name; // Use a private field to store the name value
+        private int age;
 
         public string Name
         {
@@ -41,6 +43,16 @@ namespace WinFormsApp2
                 OnPropertyChanged("Name"); // Raise the PropertyChanged event with the property name
             }
         }
+
+        public int Age
+        {
+            get { return age; }
+            set
+            {
+                age = value;
+            }
+        }
+
 
         // Declare the PropertyChanged event
         public event PropertyChangedEventHandler PropertyChanged;

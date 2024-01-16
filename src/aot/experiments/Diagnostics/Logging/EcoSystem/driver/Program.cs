@@ -5,6 +5,7 @@ using System.Text;
 using System.Linq;
 using EcoSystemDriver;
 using System.Runtime;
+using System.Xml.Linq;
 
 namespace ProjectCreator;
 
@@ -29,7 +30,7 @@ class Program
     /// </summary>
     /// <param name="packages"></param>
     /// <returns></returns>
-    static NugetPkg2[] RemoveSamePkgHash(NugetPkg2[] packages)
+    static NugetPkg2[] RemoveProblematicPackages(NugetPkg2[] packages)
     {
         // First, lets get the hashes that we need to include (unique and ID and assembly name match)
         // Second, we will iterate and remove any that contains file extensions like ".resources" or the grandparent directory name is not "lib"
@@ -43,8 +44,7 @@ class Program
                 && pkg.Id!.Equals(Path.GetFileNameWithoutExtension(pkg.ContainerPath), StringComparison.InvariantCultureIgnoreCase)
                 && Path.GetDirectoryName(Path.GetDirectoryName(pkg.ContainerPath!))!.Equals("lib", StringComparison.InvariantCultureIgnoreCase)
                 && !Path.GetFileNameWithoutExtension(pkg.ContainerPath!).EndsWith(".resources", StringComparison.InvariantCultureIgnoreCase)
-                && !pkg.Id.StartsWith("Syncfusion.Maui.", StringComparison.InvariantCultureIgnoreCase)
-                && !pkg.Id.StartsWith("Vintasoft.Imaging.", StringComparison.InvariantCultureIgnoreCase)
+                && !IsAKnownProblematicPackage(pkg.Id)
                 )
             {
                 allHashes.Add(pkg.PkgHash!);
@@ -58,8 +58,7 @@ class Program
             if (!allHashes.Contains(pkg.PkgHash!)
                 && Path.GetDirectoryName(Path.GetDirectoryName(pkg.ContainerPath!))!.Equals("lib", StringComparison.InvariantCultureIgnoreCase)
                 && !Path.GetFileNameWithoutExtension(pkg.ContainerPath!).EndsWith(".resources", StringComparison.InvariantCultureIgnoreCase)
-                && !pkg.Id.StartsWith("Syncfusion.Maui.", StringComparison.InvariantCultureIgnoreCase)
-                && !pkg.Id.StartsWith("Vintasoft.Imaging.", StringComparison.InvariantCultureIgnoreCase)
+                && !IsAKnownProblematicPackage(pkg.Id)
                 )
             {
                 allHashes.Add(pkg.PkgHash!);
@@ -69,6 +68,22 @@ class Program
 
         // Since we have messed up the download ordering, we will sort it again
         return result.OrderByDescending(x => x.DownloadCount).ToArray();
+    }
+
+    private static bool IsAKnownProblematicPackage(string pkgName)
+    {
+        List<string> badPackages = new List<string>();
+        badPackages.Add("Syncfusion.Maui.");
+        badPackages.Add("Vintasoft.Imaging.");
+        
+        foreach(string badPackage in badPackages)
+        {
+            if (pkgName.StartsWith(badPackage, StringComparison.InvariantCultureIgnoreCase))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     /// <summary>
@@ -101,7 +116,7 @@ class Program
         string[] lines = File.ReadLines(kustoFileName).Skip(1).ToArray();
         // Create an array of DirInfo objects by using the constructor
         NugetPkg2[] packages = Array.ConvertAll(lines, line => new NugetPkg2(line));
-        packages = RemoveSamePkgHash(packages);
+        packages = RemoveProblematicPackages(packages);
         string errorFileName = Path.Combine(Path.GetDirectoryName(outputFileName!), "error.txt");
 
         // we want to parallelize but given that the kustoFileName is ordered (from the Kusto query), we want to preserve the order in some way and will use ArraySegement to do that
