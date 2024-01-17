@@ -25,8 +25,8 @@ namespace BindingPoc
             Console.WriteLine("Done!");
         }
 
-        Person a;
-        Person b;
+        Person? a;
+        Person? b;
         private void SetupBinding()
         {
             a = new Person();
@@ -36,8 +36,8 @@ namespace BindingPoc
 
         private void ChangePropertiesOfDataElements()
         {
-            a.Name = "A1";
-            b.Name = "B1";
+            a!.Name = "A1";
+            b!.Name = "B1";
         }
     }
 }

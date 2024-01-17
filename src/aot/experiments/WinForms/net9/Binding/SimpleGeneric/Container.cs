@@ -10,7 +10,7 @@ namespace BindingPoc
 {
     public class TestControl
     {
-        public string TestProperty { get; set; }
+        public string? TestProperty { get; set; }
     }
 
     public class Container
@@ -31,19 +31,19 @@ namespace BindingPoc
 
             dataElement1.PropertyChanged += OnChanged;
 
-            PropertyInfo controlAProperty = typeof(Container).GetProperty("ControlA");
-            PropertyInfo dataElementAProperty = typeof(Person).GetProperty("Name");
-            bindingA = new TestBinding<Person>(dataElement1, dataElementAProperty);
+            PropertyInfo? controlAProperty = typeof(Container).GetProperty("ControlA");
+            PropertyInfo? dataElementAProperty = typeof(Person).GetProperty("Name");
+            bindingA = new TestBinding<Person>(dataElement1, dataElementAProperty!);
 
             dataElement2.PropertyChanged += OnChanged;
 
-            PropertyInfo controlBProperty = typeof(Container).GetProperty("ControlB");
-            PropertyInfo dataElementBProperty = typeof(Person).GetProperty("Name");
-            bindingB = new TestBinding<Person>(dataElement2, dataElementBProperty);
+            PropertyInfo? controlBProperty = typeof(Container).GetProperty("ControlB");
+            PropertyInfo? dataElementBProperty = typeof(Person).GetProperty("Name");
+            bindingB = new TestBinding<Person>(dataElement2, dataElementBProperty!);
 
         }
 
-        private void OnChanged(object sender, PropertyChangedEventArgs e)
+        private void OnChanged(object? sender, PropertyChangedEventArgs e)
         {
             DisplayControlProperties("Property Changes");
         }

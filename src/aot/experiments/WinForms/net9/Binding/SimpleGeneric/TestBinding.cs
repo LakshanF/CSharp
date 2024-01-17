@@ -10,7 +10,7 @@ namespace BindingPoc
 {
     public class TestBinding<T>
     {
-        PropertyInfo _dataElement;
+        PropertyInfo? _dataElement;
         T _t;
         public TestBinding(T t, PropertyInfo dataElement)
         {
@@ -21,10 +21,10 @@ namespace BindingPoc
         public TProperty GetPropertyValue<TObject, TProperty>()
         {
             // Get the value of the property as an object
-            object value = _dataElement.GetValue(_t, null);
+            object? value = _dataElement?.GetValue(_t, null);
 
             // Convert the value to the desired property type using Convert.ChangeType
-            return (TProperty)Convert.ChangeType(value, typeof(TProperty));
+            return (TProperty)Convert.ChangeType(value!, typeof(TProperty));
         }
 
     }

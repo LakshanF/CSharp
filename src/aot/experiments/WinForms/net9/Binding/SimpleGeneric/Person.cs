@@ -10,11 +10,11 @@ namespace BindingPoc
     // Define a custom class with a property
     public class Person : INotifyPropertyChanged
     {
-        private string _name;
+        private string? _name;
          
-        public string Name
+        public string? Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 _name = value;
@@ -23,7 +23,7 @@ namespace BindingPoc
         }
 
         // Declare the PropertyChanged event
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
         {
