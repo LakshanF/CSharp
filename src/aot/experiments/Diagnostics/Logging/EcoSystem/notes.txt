@@ -26,6 +26,7 @@ del driver.* & copy C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics
 
 
 -- EcoSystem
+rd /s/q bin & rd /s/q obj & dotnet publish
 del msbuild.binlog & rd /s/q bin & rd /s/q obj & dotnet publish -bl
 
 rd /s/q repro & C:\work\core\Tools\illinkrepro\bin\Debug\net7.0\illinkrepro.exe create C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EcoSystem\Test1\msbuild.binlog

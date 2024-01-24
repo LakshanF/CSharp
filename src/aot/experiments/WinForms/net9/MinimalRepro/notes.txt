@@ -5,9 +5,9 @@ rd /s/q obj & rd /s/q bin
 rd /s/q obj & rd /s/q bin & dotnet publish /p:_SuppressWinFormsTrimError=true /p:SuppressTrimAnalysisWarnings=false
 
 rd /s/q obj & rd /s/q bin & del msbuild.binlog & c:\dotnet\dotnet publish /p:_SuppressWinFormsTrimError=true /p:SuppressTrimAnalysisWarnings=false -bl
-c:\work\core\CurrentWork\illinkrepro\bin\Debug\net7.0\illinkrepro.exe create C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\Repro1\msbuild.binlog
+c:\work\core\CurrentWork\illinkrepro\bin\Debug\net7.0\illinkrepro.exe create C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\Binding\SimpleVs\msbuild.binlog
 copy /Y c:\work\core\CurrentWork\winforms\artifacts\bin\System.Windows.Forms\Debug\net9.0\System.Windows.Forms.dll c:\work\core\CurrentWork\illinkrepro\repro\input
-c:\dotnet\dotnet.exe C:\Users\lakshanf\.nuget\packages\microsoft.net.illink.tasks\9.0.0-alpha.1.23576.3\tools\net8.0\illink.dll @linker.rsp
+c:\dotnet\dotnet.exe C:\Users\lakshanf\.nuget\packages\microsoft.net.illink.tasks\9.0.0-preview.2.24072.10\tools\net9.0\illink.dll @linker.rsp
 
 rd /s/q obj & rd /s/q bin & c:\dotnet\dotnet publish /p:_SuppressWinFormsTrimError=true /p:SuppressTrimAnalysisWarnings=false /p:_TrimmerDumpDependencies=true
 
@@ -32,4 +32,4 @@ copy /Y c:\work\core\CurrentWork3\runtime\artifacts\bin\coreclr\windows.x64.Debu
 
 
 cd repro
-c:\dotnet\dotnet.exe C:\Users\lakshanf\.nuget\packages\microsoft.net.illink.tasks\9.0.0-alpha.1.23576.3\tools\net8.0\illink.dll @linker.rsp > C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\Repro_Live_Trimmed_Warnings_9.txt
+c:\dotnet\dotnet.exe C:\Users\lakshanf\.nuget\packages\microsoft.net.illink.tasks\9.0.0-preview.2.24072.10\tools\net9.0\illink.dll @linker.rsp > C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\Repro_Live_Trimmed_Warnings_9.txt
