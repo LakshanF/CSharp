@@ -10,19 +10,9 @@
     <PublishTrimmed>true</PublishTrimmed>
     <_ExtraTrimmerArgs>--link-attributes attr.xml</_ExtraTrimmerArgs>
     <!-- <_ExtraTrimmerArgs>add__dependencies-file-format dgml</_ExtraTrimmerArgs> -->
-
-    <!-- <PublishAot>true</PublishAot>
-    <IlcGenerateMstatFile>true</IlcGenerateMstatFile>
-    <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile> -->
   </PropertyGroup>
 
   <!--Hack to prevent wpf not being brought in -->
-  <!--target for aot-->
-  <!-- <Target Name="RemoveWPFReference" BeforeTargets="WriteIlcRspFileForCompilation">
-    <ItemGroup>
-      <IlcReference Remove="@(IlcReference)" Condition="'%(Filename)' == 'PresentationFramework'" />
-    </ItemGroup>
-  </Target> -->
   <!--target for Trimming-->
   <Target Name="RemoveWPFReference" AfterTargets="_ComputeAssembliesToPostprocessOnPublish">
     <ItemGroup>
@@ -30,7 +20,7 @@
     </ItemGroup>
   </Target>  
 
-  <!--Feature swithes -  not to being in the network stack-->
+  <!--Feature switches -  not to being in the network stack-->
   <PropertyGroup>
     <XmlResolverIsNetworkingEnabledByDefault>false</XmlResolverIsNetworkingEnabledByDefault>
   </PropertyGroup>

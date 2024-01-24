@@ -38,7 +38,7 @@
             // 
             // textBox1
             // 
-            textBox1.DataBindings.Add(new Binding("Text", contactBindingSource, "Name", true));
+            textBox1.DataBindings.Add(new Binding("Text", contactBindingSource, "FirstName", true));
             textBox1.Location = new Point(204, 131);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(100, 23);
