@@ -9,13 +9,13 @@ namespace SimpleBindingViaVS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            contact = new Contact() { Email = "Laks@home.net", Name = "Lakshan" };
+            contact = new Contact() { FirstName = "Lakshan", LastName = "Fernando" };
             contactBindingSource.DataSource = contact;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            contact.Name = "Casimir";
+            contact.FirstName = "Casimir";
         }
     }
 }
