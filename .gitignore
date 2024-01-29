@@ -8,6 +8,7 @@
 # Visual Studio
 .vs/
 .vscode/
+*.csproj.user
 
 # Binlog files
 *.binlog

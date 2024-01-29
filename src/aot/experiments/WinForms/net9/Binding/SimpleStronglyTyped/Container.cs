@@ -34,15 +34,12 @@ namespace BindingPoc
 
             DisplayControlProperties("Initial Binding");
 
-            dataElement1.PropertyChanged += OnChanged;
-
             PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(Person));
-            PropertyDescriptor? myProperty = properties.Find("Name", false);
 
+            dataElement1.PropertyChanged += OnChanged;
             bindingA = new TestBinding(properties!, "Name", dataElement1);
 
             dataElement2.PropertyChanged += OnChanged;
-
             bindingB = new TestBinding(properties!, "Address", dataElement2);
 
         }
