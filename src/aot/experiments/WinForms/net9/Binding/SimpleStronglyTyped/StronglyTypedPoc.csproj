@@ -7,7 +7,6 @@
     <Nullable>enable</Nullable>
     <PublishTrimmed>true</PublishTrimmed>
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
-    <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
   </PropertyGroup>
 
