@@ -7,28 +7,28 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
-    <PublishTrimmed>true</PublishTrimmed>
+    <PublishAot>true</PublishAot>
     <_ExtraTrimmerArgs>--link-attributes attr.xml</_ExtraTrimmerArgs>
-    <!-- <_ExtraTrimmerArgs>add__dependencies-file-format dgml</_ExtraTrimmerArgs> -->
-
-    <!-- <PublishAot>true</PublishAot>
+    <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
     <IlcGenerateMstatFile>true</IlcGenerateMstatFile>
-    <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile> -->
+    <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile>
   </PropertyGroup>
 
-  <!--Hack to prevent wpf not being brought in -->
-  <!--target for aot-->
-  <!-- <Target Name="RemoveWPFReference" BeforeTargets="WriteIlcRspFileForCompilation">
-    <ItemGroup>
-      <IlcReference Remove="@(IlcReference)" Condition="'%(Filename)' == 'PresentationFramework'" />
-    </ItemGroup>
-  </Target> -->
   <!--target for Trimming-->
-  <Target Name="RemoveWPFReference" AfterTargets="_ComputeAssembliesToPostprocessOnPublish">
+  <!-- <Target Name="RemoveWPFReference" AfterTargets="_ComputeAssembliesToPostprocessOnPublish">
     <ItemGroup>
       <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="'%(FileName)' == 'PresentationFramework'" />
     </ItemGroup>
-  </Target>  
+  </Target> -->
+
+  <!--target for aot-->
+  <Target Name="RemoveWPFReference" BeforeTargets="WriteIlcRspFileForCompilation">
+    <ItemGroup>
+      <IlcReference Remove="@(IlcReference)" Condition="'%(Filename)' == 'PresentationFramework'" />
+    </ItemGroup>
+  </Target>
+
 
   <!--Feature swithes -  not to being in the network stack-->
   <PropertyGroup>
