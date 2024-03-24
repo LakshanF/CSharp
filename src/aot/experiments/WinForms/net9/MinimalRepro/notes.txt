@@ -1,12 +1,19 @@
+rd /s/q obj & rd /s/q bin & del msbuild.binlog & del linker-dependencies.xml & dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_15.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
+
+C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.ContainerControl::BindingContext() linker-dependencies.xml
+
+
 This is the repro that is in PR #10274, https://github.com/dotnet/winforms/pull/10274
 
 rd /s/q obj & rd /s/q bin
 
 rd /s/q obj & rd /s/q bin & dotnet publish /p:_SuppressWinFormsTrimError=true /p:SuppressTrimAnalysisWarnings=false
 
-rd /s/q obj & rd /s/q bin & c:\dotnet\dotnet publish -bl
 
-rd /s/q obj & rd /s/q bin & del msbuild.binlog & c:\dotnet\dotnet publish /p:_SuppressWinFormsTrimError=true /p:SuppressTrimAnalysisWarnings=false -bl
+
+rd /s/q obj & rd /s/q bin & dotnet publish
+
+rd /s/q obj & rd /s/q bin & del msbuild.binlog & dotnet publish /p:_SuppressWinFormsTrimError=true /p:SuppressTrimAnalysisWarnings=false -bl
 c:\work\core\CurrentWork\illinkrepro\bin\Debug\net7.0\illinkrepro.exe create C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\Repro1\msbuild.binlog
 copy /Y c:\work\core\CurrentWork\winforms\artifacts\bin\System.Windows.Forms\Debug\net9.0\System.Windows.Forms.dll c:\work\core\CurrentWork\illinkrepro\repro\input
 c:\dotnet\dotnet.exe C:\Users\lakshanf\.nuget\packages\microsoft.net.illink.tasks\9.0.0-preview.2.24072.10\tools\net9.0\illink.dll @linker.rsp
