@@ -7,10 +7,10 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
-    <PublishAot>true</PublishAot>
     <_ExtraTrimmerArgs>--link-attributes attr.xml</_ExtraTrimmerArgs>
     <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    <PublishAot>true</PublishAot>
     <IlcGenerateMstatFile>true</IlcGenerateMstatFile>
     <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile>
   </PropertyGroup>

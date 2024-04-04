@@ -1,0 +1,45 @@
+Loading dependency tree from: linker-dependencies.xml
+
+--- Raw dependencies: 'System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor::GetIComponentConverter' ---
+
+--- Method:System.ComponentModel.TypeConverter System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor::GetIComponentConverter() dependencies ---
+Dependency #1
+	Method:System.ComponentModel.TypeConverter System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor::GetIComponentConverter()
+	| Method:System.ComponentModel.TypeConverter System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor/ComTypeDescriptor::System.ComponentModel.ICustomTypeDescriptor.GetConverter() [1 deps]
+	| Method:System.ComponentModel.TypeConverter System.ComponentModel.ICustomTypeDescriptor::GetConverter() [7 deps]
+	| Method:System.ComponentModel.TypeConverter System.ComponentModel.TypeDescriptor/DefaultTypeDescriptor::GetConverter() [1 deps]
+	| Method:System.ComponentModel.TypeConverter System.ComponentModel.TypeDescriptor::GetConverter(System.Type) [14 deps]
+	| Method:System.String System.Windows.Forms.ListControl::GetItemText(System.Object) [20 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::set_Text(System.String) [1 deps]
+	| TypeDef:System.Windows.Forms.ComboBox [272 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Form1::InitializeComponent() [1 deps]
+	| Method:System.Void ScratchProject.Form1::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Program::Main() [1 deps]
+	| TypeDef:ScratchProject.Program:Repro.dll [2 deps]
+	| Assembly:Repro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null [1 deps]
+	| Module:Repro.dll [2 deps]
+	| TypeDef:ScratchProject.Form1 [12 deps]
+	| Field:System.Windows.Forms.SplitContainer ScratchProject.Form1::splitContainer1 [1 deps]
+	warning: loop to Method:System.Void ScratchProject.Form1::InitializeComponent()
+Dependency #2
+	Method:System.ComponentModel.TypeConverter System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor::GetIComponentConverter()
+	| Method:System.ComponentModel.TypeConverter System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor/NullTypeDescriptor::System.ComponentModel.ICustomTypeDescriptor.GetConverter() [1 deps]
+	| Method:System.ComponentModel.TypeConverter System.ComponentModel.ICustomTypeDescriptor::GetConverter() [7 deps]
+	| Method:System.ComponentModel.TypeConverter System.ComponentModel.TypeDescriptor/DefaultTypeDescriptor::GetConverter() [1 deps]
+	| Method:System.ComponentModel.TypeConverter System.ComponentModel.TypeDescriptor::GetConverter(System.Type) [14 deps]
+	| Method:System.String System.Windows.Forms.ListControl::GetItemText(System.Object) [20 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::set_Text(System.String) [1 deps]
+	| TypeDef:System.Windows.Forms.ComboBox [272 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Form1::InitializeComponent() [1 deps]
+	| Method:System.Void ScratchProject.Form1::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Program::Main() [1 deps]
+	| TypeDef:ScratchProject.Program:Repro.dll [2 deps]
+	| Assembly:Repro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null [1 deps]
+	| Module:Repro.dll [2 deps]
+	| TypeDef:ScratchProject.Form1 [12 deps]
+	| Field:System.Windows.Forms.SplitContainer ScratchProject.Form1::splitContainer1 [1 deps]
+	warning: loop to Method:System.Void ScratchProject.Form1::InitializeComponent()
+
+Found 1 matches

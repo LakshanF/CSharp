@@ -1,0 +1,22 @@
+Loading dependency tree from: linker-dependencies.xml
+
+--- Raw dependencies: 'System.Windows.Forms.MdiWindowDialog::InitializeComponent' ---
+
+--- Method:System.Void System.Windows.Forms.MdiWindowDialog::InitializeComponent() dependencies ---
+Dependency #1
+	Method:System.Void System.Windows.Forms.MdiWindowDialog::InitializeComponent()
+	| Method:System.Void System.Windows.Forms.MdiWindowDialog::.ctor() [1 deps]
+	| Method:System.Void System.Windows.Forms.MdiWindowListStrip::OnMoreWindowsMenuItemClick(System.Object,System.EventArgs) [1 deps]
+	| Method:System.Void System.Windows.Forms.MdiWindowListStrip::PopulateItems(System.Windows.Forms.Form,System.Windows.Forms.ToolStripMenuItem,System.Boolean) [1 deps]
+	| Method:System.Void System.Windows.Forms.Form::UpdateMdiWindowListStrip() [2 deps]
+	| Method:System.Void System.Windows.Forms.Form::OnVisibleChanged(System.EventArgs) [1 deps]
+	| TypeDef:System.Windows.Forms.Form [444 deps]
+	| TypeDef:ScratchProject.Form1 [12 deps]
+	| Method:System.Void ScratchProject.Form1::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Program::Main() [1 deps]
+	| TypeDef:ScratchProject.Program:Repro.dll [2 deps]
+	| Assembly:Repro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null [1 deps]
+	| Module:Repro.dll [2 deps]
+	warning: loop to TypeDef:ScratchProject.Form1
+
+Found 1 matches

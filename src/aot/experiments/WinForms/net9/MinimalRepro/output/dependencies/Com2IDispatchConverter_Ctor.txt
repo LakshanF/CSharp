@@ -1,0 +1,97 @@
+Loading dependency tree from: linker-dependencies.xml
+
+--- Raw dependencies: 'System.Windows.Forms.ComponentModel.Com2Interop.Com2IDispatchConverter::.ctor' ---
+
+--- Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IDispatchConverter::.ctor(System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor,System.Boolean) dependencies ---
+Dependency #1
+	Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IDispatchConverter::.ctor(System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor,System.Boolean)
+	| Method:System.ComponentModel.TypeConverter System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor::GetBaseTypeConverter() [1 deps]
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor::GetTypeConverterAndTypeEditor(System.ComponentModel.TypeConverter&,System.Type,System.Object&) [2 deps]
+	| Method:System.ComponentModel.TypeConverter System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor::get_Converter() [2 deps]
+	| TypeDef:System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor:System.Windows.Forms.dll [140 deps]
+	| TypeSpec:System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor[]:System.Windows.Forms.dll [16 deps]
+	| Method:System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor[] System.Windows.Forms.ComponentModel.Com2Interop.Com2Properties::get_Properties() [1 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor::GetProperties(System.Object) [2 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor/ComTypeDescriptor::System.ComponentModel.ICustomTypeDescriptor.GetProperties(System.Attribute[]) [1 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.ICustomTypeDescriptor::GetProperties(System.Attribute[]) [7 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetPropertiesImpl(System.Object,System.Attribute[],System.Boolean,System.Boolean) [2 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetProperties(System.Object,System.Boolean) [1 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetProperties(System.Object) [8 deps]
+	| Method:System.Object System.Windows.Forms.ListControl::FilterItemOnProperty(System.Object,System.String) [2 deps]
+	| Method:System.String System.Windows.Forms.ListControl::GetItemText(System.Object) [20 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::set_Text(System.String) [1 deps]
+	| TypeDef:System.Windows.Forms.ComboBox [272 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Form1::InitializeComponent() [1 deps]
+	| Method:System.Void ScratchProject.Form1::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Program::Main() [1 deps]
+	| TypeDef:ScratchProject.Program:Repro.dll [2 deps]
+	| Assembly:Repro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null [1 deps]
+	| Module:Repro.dll [2 deps]
+	| TypeDef:ScratchProject.Form1 [12 deps]
+	| Field:System.Windows.Forms.SplitContainer ScratchProject.Form1::splitContainer1 [1 deps]
+	warning: loop to Method:System.Void ScratchProject.Form1::InitializeComponent()
+Dependency #2
+	Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IDispatchConverter::.ctor(System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor,System.Boolean)
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler::OnGetTypeConverterAndTypeEditor(System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor,System.Windows.Forms.ComponentModel.Com2Interop.GetTypeConverterAndTypeEditorEvent) [1 deps]
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler::RegisterEvents(System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor[]) [1 deps]
+	| TypeDef:System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler:System.Windows.Forms.dll [10 deps]
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler::.ctor() [1 deps]
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor::.ctor() [1 deps]
+	| Method:System.Void System.ComponentModel.TypeDescriptor/ComNativeDescriptorProxy::.ctor() [1 deps]
+	| TypeDef:System.ComponentModel.TypeDescriptor/TypeDescriptorComObject:System.ComponentModel.TypeConverter.dll [2 deps]
+	| Method:System.Type System.ComponentModel.TypeDescriptor::get_ComObjectType() [1 deps]
+	| Method:System.ComponentModel.TypeDescriptor/TypeDescriptionNode System.ComponentModel.TypeDescriptor::NodeFor(System.Object,System.Boolean) [1 deps]
+	| Method:System.ComponentModel.TypeDescriptor/TypeDescriptionNode System.ComponentModel.TypeDescriptor::NodeFor(System.Object) [3 deps]
+	| Method:System.ComponentModel.ICustomTypeDescriptor System.ComponentModel.TypeDescriptor::GetDescriptor(System.Object,System.Boolean) [3 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetPropertiesImpl(System.Object,System.Attribute[],System.Boolean,System.Boolean) [2 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetProperties(System.Object,System.Boolean) [1 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetProperties(System.Object) [8 deps]
+	| Method:System.Object System.Windows.Forms.ListControl::FilterItemOnProperty(System.Object,System.String) [2 deps]
+	| Method:System.String System.Windows.Forms.ListControl::GetItemText(System.Object) [20 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::set_Text(System.String) [1 deps]
+	| TypeDef:System.Windows.Forms.ComboBox [272 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Form1::InitializeComponent() [1 deps]
+	| Method:System.Void ScratchProject.Form1::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Program::Main() [1 deps]
+	| TypeDef:ScratchProject.Program:Repro.dll [2 deps]
+	| Assembly:Repro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null [1 deps]
+	| Module:Repro.dll [2 deps]
+	| TypeDef:ScratchProject.Form1 [12 deps]
+	| Field:System.Windows.Forms.SplitContainer ScratchProject.Form1::splitContainer1 [1 deps]
+	warning: loop to Method:System.Void ScratchProject.Form1::InitializeComponent()
+
+--- Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IDispatchConverter::.ctor(System.Boolean,System.ComponentModel.TypeConverter) dependencies ---
+Dependency #1
+	Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IDispatchConverter::.ctor(System.Boolean,System.ComponentModel.TypeConverter)
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler::OnGetTypeConverterAndTypeEditor(System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor,System.Windows.Forms.ComponentModel.Com2Interop.GetTypeConverterAndTypeEditorEvent) [1 deps]
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler::RegisterEvents(System.Windows.Forms.ComponentModel.Com2Interop.Com2PropertyDescriptor[]) [1 deps]
+	| TypeDef:System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler:System.Windows.Forms.dll [10 deps]
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.Com2IVsPerPropertyBrowsingHandler::.ctor() [1 deps]
+	| Method:System.Void System.Windows.Forms.ComponentModel.Com2Interop.ComNativeDescriptor::.ctor() [1 deps]
+	| Method:System.Void System.ComponentModel.TypeDescriptor/ComNativeDescriptorProxy::.ctor() [1 deps]
+	| TypeDef:System.ComponentModel.TypeDescriptor/TypeDescriptorComObject:System.ComponentModel.TypeConverter.dll [2 deps]
+	| Method:System.Type System.ComponentModel.TypeDescriptor::get_ComObjectType() [1 deps]
+	| Method:System.ComponentModel.TypeDescriptor/TypeDescriptionNode System.ComponentModel.TypeDescriptor::NodeFor(System.Object,System.Boolean) [1 deps]
+	| Method:System.ComponentModel.TypeDescriptor/TypeDescriptionNode System.ComponentModel.TypeDescriptor::NodeFor(System.Object) [3 deps]
+	| Method:System.ComponentModel.ICustomTypeDescriptor System.ComponentModel.TypeDescriptor::GetDescriptor(System.Object,System.Boolean) [3 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetPropertiesImpl(System.Object,System.Attribute[],System.Boolean,System.Boolean) [2 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetProperties(System.Object,System.Boolean) [1 deps]
+	| Method:System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.TypeDescriptor::GetProperties(System.Object) [8 deps]
+	| Method:System.Object System.Windows.Forms.ListControl::FilterItemOnProperty(System.Object,System.String) [2 deps]
+	| Method:System.String System.Windows.Forms.ListControl::GetItemText(System.Object) [20 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::set_Text(System.String) [1 deps]
+	| TypeDef:System.Windows.Forms.ComboBox [272 deps]
+	| Method:System.Void System.Windows.Forms.ComboBox::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Form1::InitializeComponent() [1 deps]
+	| Method:System.Void ScratchProject.Form1::.ctor() [1 deps]
+	| Method:System.Void ScratchProject.Program::Main() [1 deps]
+	| TypeDef:ScratchProject.Program:Repro.dll [2 deps]
+	| Assembly:Repro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null [1 deps]
+	| Module:Repro.dll [2 deps]
+	| TypeDef:ScratchProject.Form1 [12 deps]
+	| Field:System.Windows.Forms.SplitContainer ScratchProject.Form1::splitContainer1 [1 deps]
+	warning: loop to Method:System.Void ScratchProject.Form1::InitializeComponent()
+
+Found 2 matches
