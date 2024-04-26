@@ -1,6 +1,17 @@
 rd /s/q obj & rd /s/q bin & del msbuild.binlog & del linker-dependencies.xml & dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_15.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
 
-C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.ContainerControl::BindingContext() linker-dependencies.xml
+dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_15.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
+
+
+C:\work\core\StevenHarter2\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.Control.System.Windows.Forms.Layout.IArrangedElement::SetBounds linker-dependencies.xml
+
+C:\work\core\StevenHarter2\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.Binding::CheckBinding() linker-dependencies.xml
+
+
+C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -rSystem.Windows.Forms.ButtonBase::BackColor.set linker-dependencies.xml
+
+
+C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -rSystem.Windows.Forms.Cotnrol::set_BindingContext
 
 
 This is the repro that is in PR #10274, https://github.com/dotnet/winforms/pull/10274
