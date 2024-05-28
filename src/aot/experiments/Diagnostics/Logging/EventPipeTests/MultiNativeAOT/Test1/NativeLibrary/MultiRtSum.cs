@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -20,13 +21,16 @@ namespace NativeLibrary
         [UnmanagedCallersOnly(EntryPoint = "add")]
         public static int Add(int a, int b)
         {
-            Console.WriteLine("Waiting 10 seconds to client to get the PID");
+            Console.WriteLine($"Waiting 10 seconds to client to get the PID: Name: {Process.GetCurrentProcess().ProcessName}, Id:{Process.GetCurrentProcess().Id}");
             Thread.Sleep(10*1000);
 
             for (int i = 0; i < 100; i++)
             {
                 LaksDemoEventSource.Log.MyEvent();
             }
+
+            Console.WriteLine($"Waiting 10 seconds to complete the tracing (ctrl0c)");
+            Thread.Sleep(10*1000);
 
             return a + b;
         }

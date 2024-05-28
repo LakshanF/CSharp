@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using System.Threading;
 using System.Collections.Generic;
@@ -24,10 +25,8 @@ namespace ManagedDriverNS
 
         public static int Main()
         {
-            Console.WriteLine("NativeLibrary1: Waiting 10 seconds to client to get the PID");
+            Console.WriteLine($"ManagedDriver: Waiting 10 seconds to client to get the PID: Name: {Process.GetCurrentProcess().ProcessName}, Id:{Process.GetCurrentProcess().Id}");
             Thread.Sleep(10*1000);
-
-            Console.WriteLine($"addInLib1:{addInLib1(2, 3)}");
 
             GC.Collect();
             List<Foo> list = new List<Foo>();
@@ -43,7 +42,9 @@ namespace ManagedDriverNS
             Console.WriteLine($"{list[rndValue].IValue}-{list[rndValue].SValue}");
             GC.Collect();
 
-            Console.WriteLine("Waiting 10 seconds to EventPipe to write the data");
+            Console.WriteLine($"addInLib1:{addInLib1(2, 3)}");
+
+            Console.WriteLine("ManagedDriver: Waiting 10 seconds to EventPipe to write the data");
             Thread.Sleep(10*1000);
 
             return 100;

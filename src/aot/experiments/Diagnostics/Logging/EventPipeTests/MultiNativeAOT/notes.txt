@@ -4,7 +4,7 @@ Notes
  - Add <PublishAot>true</PublishAot> to ensure the projects are native aot'd
  - Add <EventSourceSupport>false</EventSourceSupport> to disable eventpipe in the tests\tracing\eventpipe tree
  - dotnet publish -r win-x64
- - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name 
+ - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name
 
 Plan to add multple NativeAOT assemblies to a single App, and test EventPipe behavior
 1) Build a shared library, use a c program to call
@@ -14,33 +14,36 @@ Plan to add multple NativeAOT assemblies to a single App, and test EventPipe beh
 1) Steps
  - dotnet new classlib -o NativeLibrary
  - Add a function, write event
- - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug
+ - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug -bl
  - C modification: ..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll
  - cl.exe MultiAotTest.c
  - MultiAotTest.exe
  - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
+ - Remember to terminate dotnet-trace with ctrl-c
+ - Expected Result: Traces to be collected if ctrl-C is used to terminate before process exit
 
 2) Steps
  - dotnet new console -o ManagedDriver
- - dotnet publish -r win-x64 -c Debug
+ - dotnet publish -r win-x64 -c Debug -bl
  - dotnet new classlib -o NativeLibrary1
- - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug
- - Add a function, write event
- - C modification: ..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll
- - cl.exe MultiAotTest.c
- - MultiAotTest.exe
- - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
+ - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug -bl
+ - [From ManagedDriver] 
+    + pushd  bin\Debug\net8.0\win-x64\publish\
+    + copy C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventPipeTests\MultiNativeAOT\Test2\NativeLibrary1\bin\Debug\net8.0\win-x64\publish
+ - dotnet-trace collect --providers LaksManagedEventSource,LaksNativeLib1EventSource,Microsoft-Windows-DotNETRuntime --name ManagedDriver
+ - Remember to terminate dotnet-trace with ctrl-c
+ - Expected Result: Only ManagedDriver traces will be collected
 
 3) Steps
  - dotnet new classlib -o NativeLibrary
  - dotnet new classlib -o NativeLibrary2
  - Add a function, write event in both
- - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug
+ - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug -bl
  - C modification: ..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll
  - cl.exe MultiAotTest.c
  - MultiAotTest.exe
- - dotnet-trace collect --providers LaksDemoEventSource,LaksDemoEventSource2,Microsoft-Windows-DotNETRuntime --name MultiAotTest
+ - dotnet-trace collect --providers LaksNativeLib1EventSource,LaksNativeLib2EventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
 
 
 Utilities
-rd /s/q bin & rd /s/q obj
+rd /s/q bin & rd /s/q obj & del msbuild.binlog

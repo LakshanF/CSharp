@@ -1,4 +1,18 @@
-rd /s/q obj & rd /s/q bin & del msbuild.binlog & del linker-dependencies.xml & dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_15.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
+rd /s/q obj & rd /s/q bin & del msbuild.binlog & del linker-dependencies.xml & dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_74.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
+
+rd /s/q obj & rd /s/q bin & dotnet publish
+
+cd.. & for /F %I in (projectdirs.txt) do pushd %I & rd /s/q bin & rd /s/q obj & popd
+cd TimeTamer.WinForms & dotnet publish > C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\Binding\TimeTamer\output\wrn_52.txt & dir bin\Release\net9.0-windows\win-x64\publish\ & windbgx bin\Release\net9.0-windows\win-x64\publish\TimeTamer9.WinForms.exe
+
+rd /s/q obj & rd /s/q bin & del msbuild.binlog & del linker-dependencies.xml & dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_15.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml & bin\Release\net9.0-windows\win-x64\publish\Repro.exe & dir bin\Release\net9.0-windows\win-x64\publish
+
+bin\Release\net9.0-windows\win-x64\publish\Repro.exe
+bin\Release\net9.0-windows\win-x64\publish\TrimTestBinaryDeserialization.exe
+
+rd /s/q obj & rd /s/q bin & del msbuild.binlog & dotnet publish -bl
+
+rd /s/q obj & rd /s/q bin & del msbuild.binlog & dotnet publish -bl C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\Binding\TimeTamer\output\wrn_5.txt
 
 dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_15.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
 
@@ -8,10 +22,13 @@ C:\work\core\StevenHarter2\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkana
 C:\work\core\StevenHarter2\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.Binding::CheckBinding() linker-dependencies.xml
 
 
-C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -rSystem.Windows.Forms.ButtonBase::BackColor.set linker-dependencies.xml
+C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.ButtonBase::BackColor.set linker-dependencies.xml
 
 
-C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -rSystem.Windows.Forms.Cotnrol::set_BindingContext
+C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.Control.ActiveXImpl::Load
+
+
+C:\work\core\main\runtime\artifacts\bin\analyzer\Debug\net9.0\illinkanalyzer.exe -r System.Windows.Forms.ImageIndexConverter::GetStandardValues 
 
 
 This is the repro that is in PR #10274, https://github.com/dotnet/winforms/pull/10274

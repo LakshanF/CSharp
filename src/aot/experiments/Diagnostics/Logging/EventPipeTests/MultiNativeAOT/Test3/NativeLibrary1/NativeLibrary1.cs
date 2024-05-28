@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -15,10 +16,10 @@ public sealed class LaksNativeLib1EventSource : EventSource
 
 public class MultiRtSum
 {
-    [UnmanagedCallersOnly(EntryPoint = "addInLib1")]
-    public static int AddInLib1(int a, int b)
+    [UnmanagedCallersOnly(EntryPoint = "add")]
+    public static int Add(int a, int b)
     {
-        Console.WriteLine("NativeLibrary1: Waiting 10 seconds to client to get the PID");
+        Console.WriteLine($"NativeLibrary1:  Waiting 10 seconds to client to get the PID: Name: {Process.GetCurrentProcess().ProcessName}, Id:{Process.GetCurrentProcess().Id}");
         Thread.Sleep(10*1000);
 
         GC.Collect();

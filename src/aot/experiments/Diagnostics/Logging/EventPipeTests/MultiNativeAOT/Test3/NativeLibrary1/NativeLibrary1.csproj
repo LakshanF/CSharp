@@ -1,21 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!-- <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PublishAot>true</PublishAot>
     <NativeLib>Shared</NativeLib>
-    <EventSourceSupport>true</EventSourceSupport> -->
-    <OutputType>Library</OutputType>
-    <CLRTestKind>BuildAndRun</CLRTestKind>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <NativeLib>Shared</NativeLib>
     <EventSourceSupport>true</EventSourceSupport>
-    <!-- <EventSourceSupport>false</EventSourceSupport> -->
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildProjectName).cs" />
-  </ItemGroup>
-
 </Project>

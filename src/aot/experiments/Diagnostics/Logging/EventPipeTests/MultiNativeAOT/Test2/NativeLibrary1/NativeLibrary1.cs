@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 using System.Diagnostics.Tracing;
 
 namespace NativeLibrary1;
@@ -16,7 +17,7 @@ public class MultiRtSum
     [UnmanagedCallersOnly(EntryPoint = "addInLib1")]
     public static int AddInLib1(int a, int b)
     {
-        Console.WriteLine("NativeLibrary1: Waiting 10 seconds to client to get the PID");
+        Console.WriteLine($"NativeLibrary1: Waiting 10 seconds to client to get the PID: Name: {Process.GetCurrentProcess().ProcessName}, Id:{Process.GetCurrentProcess().Id}");
         Thread.Sleep(10*1000);
 
         GC.Collect();
