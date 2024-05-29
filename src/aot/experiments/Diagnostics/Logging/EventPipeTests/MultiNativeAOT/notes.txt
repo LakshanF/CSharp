@@ -15,9 +15,12 @@ Plan to add multple NativeAOT assemblies to a single App, and test EventPipe beh
  - dotnet new classlib -o NativeLibrary
  - Add a function, write event
  - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug -bl
+   + dotnet publish /p:NativeLib=Shared -r linux-x64 -c Debug -bl
  - C modification: ..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll
  - cl.exe MultiAotTest.c
+   + gcc MultiAotTest.c -o MultiAotTest
  - MultiAotTest.exe
+   + ./MultiAotTest
  - dotnet-trace collect --providers LaksDemoEventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
  - Remember to terminate dotnet-trace with ctrl-c
  - Expected Result: Traces to be collected if ctrl-C is used to terminate before process exit
@@ -25,11 +28,15 @@ Plan to add multple NativeAOT assemblies to a single App, and test EventPipe beh
 2) Steps
  - dotnet new console -o ManagedDriver
  - dotnet publish -r win-x64 -c Debug -bl
+   + dotnet publish -r linux-x64 -c Debug -bl
  - dotnet new classlib -o NativeLibrary1
  - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug -bl
+   + dotnet publish /p:NativeLib=Shared -r linux-x64 -c Debug -bl
  - [From ManagedDriver] 
     + pushd  bin\Debug\net8.0\win-x64\publish\
+      * pushd  bin/Debug/net8.0/linux-x64/publish/
     + copy C:\work\core\LakshanF\CSharp\src\aot\experiments\Diagnostics\Logging\EventPipeTests\MultiNativeAOT\Test2\NativeLibrary1\bin\Debug\net8.0\win-x64\publish
+      * cp /home/lakshanf/laks/CSharp/src/aot/experiments/Diagnostics/Logging/EventPipeTests/MultiNativeAOT/Test2/NativeLibrary1/bin/Debug/net8.0/linux-x64/publish/* ./
  - dotnet-trace collect --providers LaksManagedEventSource,LaksNativeLib1EventSource,Microsoft-Windows-DotNETRuntime --name ManagedDriver
  - Remember to terminate dotnet-trace with ctrl-c
  - Expected Result: Only ManagedDriver traces will be collected
@@ -39,11 +46,26 @@ Plan to add multple NativeAOT assemblies to a single App, and test EventPipe beh
  - dotnet new classlib -o NativeLibrary2
  - Add a function, write event in both
  - dotnet publish /p:NativeLib=Shared -r win-x64 -c Debug -bl
+   + dotnet publish /p:NativeLib=Shared -r linux-x64 -c Debug -bl
  - C modification: ..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll
  - cl.exe MultiAotTest.c
+   + gcc MultiAotTest.c -o MultiAotTest
  - MultiAotTest.exe
  - dotnet-trace collect --providers LaksNativeLib1EventSource,LaksNativeLib2EventSource,Microsoft-Windows-DotNETRuntime --name MultiAotTest
 
 
 Utilities
-rd /s/q bin & rd /s/q obj & del msbuild.binlog
+ - rd /s/q bin & rd /s/q obj & del msbuild.binlog
+
+Running on Linux
+ - rm -r -d -f bin & rm -r -d -f obj & rm msbuild.binlog
+ - install dotnet on linux
+ - export PATH=$PATH:/home/lakshanf/.dotnet
+ - dotnet publish /p:NativeLib=Shared -r linux-x64 -c Debug -bl
+ - ensure dotnet-trace works
+   + required multiple attempts since dotnet wasn't recognized (sudo apt-get update & sudo apt-get install -y dotnet-sdk-8.0) and such
+   + export PATH=$PATH:/home/lakshanf/.dotnet/tools
+
+
+/home/lakshanf/.dotnet/dotnet --info
+src\aot\experiments\Diagnostics\Logging\EventPipeTests\MultiNativeAOT\Test1\MultiRTTest

@@ -8,9 +8,11 @@
 #define PathToLibrary1 "..\\NativeLibrary1\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary1.dll"
 #define PathToLibrary2 "..\\NativeLibrary2\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary2.dll"
 #elif defined(__APPLE__)
-#define PathToLibrary "./bin/Debug/net6.0/osx-x64/native/NativeLibrary.dylib"
+#define PathToLibrary1 "../NativeLibrary1/bin/Debug/net8.0/osx-x64/publish/NativeLibrary1.dylib"
+#define PathToLibrary2 "../NativeLibrary2/bin/Debug/net8.0/osx-x64/publish/NativeLibrary2.dylib"
 #else
-#define PathToLibrary "./bin/Debug/net6.0/linux-x64/native/NativeLibrary.so"
+#define PathToLibrary1 "../NativeLibrary1/bin/Debug/net8.0/linux-x64/publish/NativeLibrary1.so"
+#define PathToLibrary2 "../NativeLibrary2/bin/Debug/net8.0/linux-x64/publish/NativeLibrary2.so"
 #endif
 
 #ifdef _WIN32
@@ -47,15 +49,15 @@ int main()
         return 0;
     }
 
-    // Sum two integers from library2
-    printf("Calling function in library2\n");
-    int sum2 = callSumFunc2(PathToLibrary2, "addInLib2", 12, 80);
-    printf("The sum is %d \n", sum2);
-
     // Sum two integers from library1
     printf("Calling function in library1\n");
     int sum1 = callSumFunc1(PathToLibrary1, "add", 2, 8);
     printf("The sum is %d \n", sum1);
+
+    // Sum two integers from library2
+    printf("Calling function in library2\n");
+    int sum2 = callSumFunc2(PathToLibrary2, "addInLib2", 12, 80);
+    printf("The sum is %d \n", sum2);
 
     printf("Done!");
 }

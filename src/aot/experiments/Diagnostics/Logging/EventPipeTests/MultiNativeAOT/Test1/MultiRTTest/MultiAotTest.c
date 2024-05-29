@@ -7,9 +7,9 @@
 #if defined(_WIN32)
 #define PathToLibrary "..\\NativeLibrary\\bin\\Debug\\net8.0\\win-x64\\publish\\NativeLibrary.dll"
 #elif defined(__APPLE__)
-#define PathToLibrary "./bin/Debug/net6.0/osx-x64/native/NativeLibrary.dylib"
+#define PathToLibrary "../NativeLibrary/bin/Debug/net8.0/osx-x64/publish/NativeLibrary.dylib"
 #else
-#define PathToLibrary "./bin/Debug/net6.0/linux-x64/native/NativeLibrary.so"
+#define PathToLibrary "../NativeLibrary/bin/Debug/net8.0/linux-x64/publish/NativeLibrary.so"
 #endif
 
 #ifdef _WIN32
