@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RootNamespace>winforms_app</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PublishSelfContained>true</PublishSelfContained>
+    <SelfContained>true</SelfContained>
+    <!-- <BuiltInComInteropSupport>true</BuiltInComInteropSupport> -->
+  </PropertyGroup>
+
+  <!-- Trimming settings -->
+  <PropertyGroup>
+    <ILLinkTasksAssembly>c:/work/core/main/runtime/artifacts/bin/ILLink.Tasks/Debug/net9.0/ILLink.Tasks.dll</ILLinkTasksAssembly>
+    <PublishTrimmed>true</PublishTrimmed>
+    <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
+    <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+    <TrimmerSingleWarn>false</TrimmerSingleWarn> 
+    <_TrimmerDumpDependencies>true</_TrimmerDumpDependencies>
+    <_ExtraTrimmerArgs>$(_ExtraTrimmerArgs) --keep-com-interfaces false</_ExtraTrimmerArgs>
+
+    <!-- <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+     <PublishAot>true</PublishAot>
+    <IlcGenerateMstatFile>true</IlcGenerateMstatFile>
+    <IlcGenerateDgmlFile>true</IlcGenerateDgmlFile> -->
+  </PropertyGroup>
+
+  <!-- feature switches-->
+  <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.ComponentModel.Design.IDesignerHost.IsSupported"
+                                    Value="false"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.Windows.Forms.Binding.IsSupported"
+                                    Value="false"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.ComponentModel.DefaultValueAttribute.IsSupported"
+                                    Value="false"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.Drawing.Design.UITypeEditor.IsSupported"
+                                    Value="false"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.Windows.Forms.ActiveXImpl.IsSupported"
+                                    Value="false"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.Windows.Forms.Control.AreDesignTimeFeaturesSupported"
+                                    Value="false"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.Windows.Forms.MdiWindowDialog.IsSupported"
+                                    Value="false"
+                                    Trim="true" />
+     <RuntimeHostConfigurationOption Include="System.Windows.Forms.ImageIndexConverter.IsSupported"
+                                    Value="false"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.Windows.Forms.Primitives.TypeConverterHelper.UseComponentModelRegisteredTypes"
+                                    Value="true"
+                                    Trim="true" />
+    <RuntimeHostConfigurationOption Include="System.Windows.Forms.Control.UseComponentModelRegisteredTypes"
+                                    Value="true"
+                                    Trim="true" />
+  </ItemGroup>
+
+  <!--
+    Changes I've made:
+    1. Use local runtime
+    2. Use local winforms
+    3. Use live trim analyzer
+    4. Update KnownFrameworkReference
+    5. Update KnownAppHostPack
+  -->
+
+  <!-- Use local runtime. -->
+  <ItemGroup>
+    <FrameworkReference Update="Microsoft.NETCore.App" RuntimeFrameworkVersion="9.0.0-dev" />
+  </ItemGroup>
+
+  <!-- Use local winforms. -->
+
+  <ItemGroup>
+    <Reference Include="c:\work\core\CurrentWork\winforms\artifacts\bin\System.Windows.Forms\Debug\net9.0\System.Windows.Forms.dll" />
+    <Reference Include="c:\work\core\CurrentWork\winforms\artifacts\bin\System.Private.Windows.Core\Debug\net9.0\System.Private.Windows.Core.dll" />
+    <Reference Include="c:\work\core\CurrentWork\winforms\artifacts\bin\System.Windows.Forms.Design\Debug\net9.0\System.Windows.Forms.Design.dll" />
+    <Reference Include="c:\work\core\CurrentWork\winforms\artifacts\bin\System.Windows.Forms.Design.Editors.Facade3x\Debug\net9.0\System.Windows.Forms.Design.Editors.dll" />
+    <Reference Include="c:\work\core\CurrentWork\winforms\artifacts\bin\System.Windows.Forms.Primitives\Debug\net9.0\System.Windows.Forms.Primitives.dll" />
+  </ItemGroup>
+
+  <Target Name="UseLiveTrimAnalyzer"
+          BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <Analyzer Remove="@(Analyzer)" Condition="'%(FileName)' == 'ILLink.RoslynAnalyzer'" />
+      <Analyzer Remove="@(Analyzer)" Condition="'%(FileName)' == 'ILLink.CodeFixProvider'" />
+      <Analyzer Include="c:\work\core\main\runtime\artifacts\bin\ILLink.RoslynAnalyzer\Debug\netstandard2.0\ILLink.RoslynAnalyzer.dll" />
+      <Analyzer Include="c:\work\core\main\runtime\artifacts\bin\ILLink.CodeFixProvider\Debug\netstandard2.0\ILLink.CodeFixProvider.dll" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="Laks"
+    BeforeTargets="ProcessFrameworkReferences">
+    <ItemGroup>
+      <KnownFrameworkReference Condition="'%(KnownFrameworkReference.Identity)' == 'Microsoft.NETCore.App'"
+        RuntimeFrameworkVersion="9.0.0-dev"
+        TargetingPackVersion="9.0.0-dev" />
+      <KnownAppHostPack Condition="'%(KnownAppHostPack.Identity)' == 'Microsoft.NETCore.App'"
+        AppHostPackVersion="9.0.0-dev" />
+      <!-- <KnownFrameworkReference Condition="'%(KnownFrameworkReference.Identity)' == 'Microsoft.WindowsDesktop.App'"
+        RuntimeFrameworkVersion="9.0.0-dev"
+        TargetingPackVersion="9.0.0-dev" /> -->
+    </ItemGroup>
+  </Target>
+
+  <!-- <Target Name="RemoveWPFReference" AfterTargets="_ComputeAssembliesToPostprocessOnPublish">
+    <ItemGroup>
+      <ResolvedFileToPublish Remove="@(ResolvedFileToPublish)" Condition="'%(FileName)' == 'PresentationFramework'" />
+    </ItemGroup>
+  </Target>   -->
+
+</Project>

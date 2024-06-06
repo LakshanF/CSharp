@@ -1,4 +1,5 @@
 rd /s/q obj & rd /s/q bin & del msbuild.binlog & del linker-dependencies.xml & dotnet publish -bl>C:\work\core\LakshanF\CSharp\src\aot\experiments\WinForms\net9\MinimalRepro\output\current\Repro_Live_Trimmed_Warnings_74.txt & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
+rd /s/q obj & rd /s/q bin & del msbuild.binlog & del linker-dependencies.xml & dotnet publish -bl & copy obj\Release\net9.0-windows\win-x64\linked\linker-dependencies.xml
 
 rd /s/q obj & rd /s/q bin & dotnet publish
 
