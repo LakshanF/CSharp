@@ -6,16 +6,15 @@
     <OutputType>exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-    <!-- <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable> -->
-    <!-- <PublishAot>true</PublishAot>
-    <EventSourceSupport>true</EventSourceSupport> -->
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <EventSourceSupport>true</EventSourceSupport>
   </PropertyGroup>
-  <ItemGroup>
+  <!-- <ItemGroup>
     <Compile Include="$(MSBuildProjectName).cs" />
     <Compile Include="HexEventSource.cs" />
     <Compile Include="HexGraph.cs" />
-  </ItemGroup>
+  </ItemGroup> -->
 </Project>
