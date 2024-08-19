@@ -24,13 +24,21 @@ class Program
             Console.WriteLine("Usage: Driver.exe <Kusto csv file> <dir to write results> <file to write results>");
             return;
         }
-        for (int i = 0; i<100; i++)
+
+        string inputDataFile = args[0];
+        string outputDir = args[1];
+        String outputFileName = args[2];
+
+        if(File.Exists(outputFileName))
+            File.Delete(outputFileName);
+        if (Directory.Exists(outputDir))
         {
-            File.Delete(@"C:\work\core\LakshanF\CSharp\src\tmp\Telemetry12\Analysis.txt");
-            Directory.Delete(@"C:\work\core\LakshanF\CSharp\src\tmp\Telemetry12\Results", true);
-            Directory.CreateDirectory(@"C:\work\core\LakshanF\CSharp\src\tmp\Telemetry12\Results");
-            await CreateAndPublishProjectsAsync(args[0], args[1], args[2]);
+            Directory.Delete(outputDir, true);
         }
+        if (!Directory.Exists(outputDir))
+            Directory.CreateDirectory(outputDir);
+        
+        await CreateAndPublishProjectsAsync(inputDataFile, outputDir, outputFileName);
     }
 
     /// <summary>
@@ -127,7 +135,7 @@ class Program
                         bool pkgHashAlreadyExists = PrepareToPublishAsync(dirToWriteOutputFile);
                         Debug.Assert(!pkgHashAlreadyExists, "Problems with hashes");
                         // @TODO - we are ignoring multiple assemblies with the same PkgHash for now. Use BinHash
-                        string resultFile = PublishProjectAsync(dirToWriteOutputFile, dirName);
+                        var resultFile = PublishProjectAsync(dirToWriteOutputFile, dirName).Result;
                         sw.Stop();
 
                         // We should be able to find the assembly file in bin\Release\net8.0\win-x64 directory
@@ -185,6 +193,16 @@ class Program
                 Console.WriteLine("Operation cancelled.");
                 // @TODO - delete any directories that were missed being deleted
             }
+            catch (AggregateException ex)
+            {
+                Console.WriteLine("AggregateException thrown...");
+                foreach (var innerEx in ex.InnerExceptions)
+                {
+                    Console.WriteLine($"Message: {innerEx.Message}");
+                    // Optionally log the stack trace or other details
+                }
+            }
+
             // Print a message when done
             Console.WriteLine($"Chunk completed");
         }
@@ -317,28 +335,45 @@ class Program
         return builder.ToString();
     }
 
-    static string PublishProjectAsync(string resultDir, string projectDir)
+    static async Task<string> PublishProjectAsync(string resultDir, string projectDir)
     {
-        // Publish the created project
-        var publishProcess = Process.Start(new ProcessStartInfo
+        var publishProcess = new Process
         {
-            WorkingDirectory = projectDir,
-            FileName = "dotnet",
-            Arguments = "publish",
-            UseShellExecute = false, // Do not use OS shell
-            RedirectStandardOutput = true // Redirect the output stream of the process
-        });
+            StartInfo = new ProcessStartInfo
+            {
+                WorkingDirectory = projectDir,
+                FileName = "dotnet",
+                Arguments = "publish",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
+            }
+        };
 
-        // To avoid deadlocks, always read the output stream first and then wait.  
-        string publishOutput = publishProcess!.StandardOutput.ReadToEnd();
-        bool result = publishProcess.WaitForExit(TimeSpan.FromSeconds(10*60));
+        var outputBuilder = new StringBuilder();
+        var errorBuilder = new StringBuilder();
+
+        publishProcess.OutputDataReceived += (sender, args) => outputBuilder.AppendLine(args.Data);
+        publishProcess.ErrorDataReceived += (sender, args) => errorBuilder.AppendLine(args.Data);
+
+        publishProcess.Start();
+        publishProcess.BeginOutputReadLine();
+        publishProcess.BeginErrorReadLine();
+
+        bool result = await Task.Run(() => publishProcess.WaitForExit(10 * 60 * 1000)); // 10 minutes timeout
 
         string resultFile = PROCESS_NOT_COMPLETED;
         if (result)
         {
             resultFile = Path.Combine(resultDir, "publish_output.txt");
-            File.WriteAllText(resultFile, publishOutput); // Write the output to a text file
+            await File.WriteAllTextAsync(resultFile, outputBuilder.ToString()); // Write the output to a text file
         }
+        else
+        {
+            // Handle the case where the process did not exit in time
+            await File.WriteAllTextAsync(resultFile, $"Process did not complete in the expected time. Errors: {errorBuilder}");
+        }
+
         return resultFile;
     }
 }
